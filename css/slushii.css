@@ -533,7 +533,6 @@ section {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
-
   to {
     -webkit-transform: rotate(359deg);
     transform: rotate(359deg);
@@ -545,7 +544,6 @@ section {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
-
   to {
     -webkit-transform: rotate(359deg);
     transform: rotate(359deg);
@@ -894,252 +892,207 @@ Notes: Flex-system Created by https://github.com/jgthms for Bulma CSS. Extra Fle
     -ms-flex: none;
     flex: none;
   }
-
   .column.is-full-mobile {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 100%;
   }
-
   .column.is-three-quarters-mobile {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 75%;
   }
-
   .column.is-two-thirds-mobile {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 66.6666%;
   }
-
   .column.is-half-mobile {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 50%;
   }
-
   .column.is-one-third-mobile {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 33.3333%;
   }
-
   .column.is-one-quarter-mobile {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 25%;
   }
-
   .column.is-one-fifth-mobile {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 20%;
   }
-
   .column.is-two-fifths-mobile {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 40%;
   }
-
   .column.is-three-fifths-mobile {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 60%;
   }
-
   .column.is-four-fifths-mobile {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 80%;
   }
-
   .column.is-offset-three-quarters-mobile {
     margin-left: 75%;
   }
-
   .column.is-offset-two-thirds-mobile {
     margin-left: 66.6666%;
   }
-
   .column.is-offset-half-mobile {
     margin-left: 50%;
   }
-
   .column.is-offset-one-third-mobile {
     margin-left: 33.3333%;
   }
-
   .column.is-offset-one-quarter-mobile {
     margin-left: 25%;
   }
-
   .column.is-offset-one-fifth-mobile {
     margin-left: 20%;
   }
-
   .column.is-offset-two-fifths-mobile {
     margin-left: 40%;
   }
-
   .column.is-offset-three-fifths-mobile {
     margin-left: 60%;
   }
-
   .column.is-offset-four-fifths-mobile {
     margin-left: 80%;
   }
-
   .column.is-0-mobile {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 0%;
   }
-
   .column.is-offset-0-mobile {
     margin-left: 0%;
   }
-
   .column.is-1-mobile {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 8.33333%;
   }
-
   .column.is-offset-1-mobile {
     margin-left: 8.33333%;
   }
-
   .column.is-2-mobile {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 16.66667%;
   }
-
   .column.is-offset-2-mobile {
     margin-left: 16.66667%;
   }
-
   .column.is-3-mobile {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 25%;
   }
-
   .column.is-offset-3-mobile {
     margin-left: 25%;
   }
-
   .column.is-4-mobile {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 33.33333%;
   }
-
   .column.is-offset-4-mobile {
     margin-left: 33.33333%;
   }
-
   .column.is-5-mobile {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 41.66667%;
   }
-
   .column.is-offset-5-mobile {
     margin-left: 41.66667%;
   }
-
   .column.is-6-mobile {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 50%;
   }
-
   .column.is-offset-6-mobile {
     margin-left: 50%;
   }
-
   .column.is-7-mobile {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 58.33333%;
   }
-
   .column.is-offset-7-mobile {
     margin-left: 58.33333%;
   }
-
   .column.is-8-mobile {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 66.66667%;
   }
-
   .column.is-offset-8-mobile {
     margin-left: 66.66667%;
   }
-
   .column.is-9-mobile {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 75%;
   }
-
   .column.is-offset-9-mobile {
     margin-left: 75%;
   }
-
   .column.is-10-mobile {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 83.33333%;
   }
-
   .column.is-offset-10-mobile {
     margin-left: 83.33333%;
   }
-
   .column.is-11-mobile {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 91.66667%;
   }
-
   .column.is-offset-11-mobile {
     margin-left: 91.66667%;
   }
-
   .column.is-12-mobile {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 100%;
   }
-
   .column.is-offset-12-mobile {
     margin-left: 100%;
   }
@@ -1152,7 +1105,6 @@ Notes: Flex-system Created by https://github.com/jgthms for Bulma CSS. Extra Fle
     -ms-flex: none;
     flex: none;
   }
-
   .column.is-full,
   .column.is-full-tablet {
     -webkit-box-flex: 0;
@@ -1160,7 +1112,6 @@ Notes: Flex-system Created by https://github.com/jgthms for Bulma CSS. Extra Fle
     flex: none;
     width: 100%;
   }
-
   .column.is-three-quarters,
   .column.is-three-quarters-tablet {
     -webkit-box-flex: 0;
@@ -1168,7 +1119,6 @@ Notes: Flex-system Created by https://github.com/jgthms for Bulma CSS. Extra Fle
     flex: none;
     width: 75%;
   }
-
   .column.is-two-thirds,
   .column.is-two-thirds-tablet {
     -webkit-box-flex: 0;
@@ -1176,7 +1126,6 @@ Notes: Flex-system Created by https://github.com/jgthms for Bulma CSS. Extra Fle
     flex: none;
     width: 66.6666%;
   }
-
   .column.is-half,
   .column.is-half-tablet {
     -webkit-box-flex: 0;
@@ -1184,7 +1133,6 @@ Notes: Flex-system Created by https://github.com/jgthms for Bulma CSS. Extra Fle
     flex: none;
     width: 50%;
   }
-
   .column.is-one-third,
   .column.is-one-third-tablet {
     -webkit-box-flex: 0;
@@ -1192,7 +1140,6 @@ Notes: Flex-system Created by https://github.com/jgthms for Bulma CSS. Extra Fle
     flex: none;
     width: 33.3333%;
   }
-
   .column.is-one-quarter,
   .column.is-one-quarter-tablet {
     -webkit-box-flex: 0;
@@ -1200,7 +1147,6 @@ Notes: Flex-system Created by https://github.com/jgthms for Bulma CSS. Extra Fle
     flex: none;
     width: 25%;
   }
-
   .column.is-one-fifth,
   .column.is-one-fifth-tablet {
     -webkit-box-flex: 0;
@@ -1208,7 +1154,6 @@ Notes: Flex-system Created by https://github.com/jgthms for Bulma CSS. Extra Fle
     flex: none;
     width: 20%;
   }
-
   .column.is-two-fifths,
   .column.is-two-fifths-tablet {
     -webkit-box-flex: 0;
@@ -1216,7 +1161,6 @@ Notes: Flex-system Created by https://github.com/jgthms for Bulma CSS. Extra Fle
     flex: none;
     width: 40%;
   }
-
   .column.is-three-fifths,
   .column.is-three-fifths-tablet {
     -webkit-box-flex: 0;
@@ -1224,7 +1168,6 @@ Notes: Flex-system Created by https://github.com/jgthms for Bulma CSS. Extra Fle
     flex: none;
     width: 60%;
   }
-
   .column.is-four-fifths,
   .column.is-four-fifths-tablet {
     -webkit-box-flex: 0;
@@ -1232,52 +1175,42 @@ Notes: Flex-system Created by https://github.com/jgthms for Bulma CSS. Extra Fle
     flex: none;
     width: 80%;
   }
-
   .column.is-offset-three-quarters,
   .column.is-offset-three-quarters-tablet {
     margin-left: 75%;
   }
-
   .column.is-offset-two-thirds,
   .column.is-offset-two-thirds-tablet {
     margin-left: 66.6666%;
   }
-
   .column.is-offset-half,
   .column.is-offset-half-tablet {
     margin-left: 50%;
   }
-
   .column.is-offset-one-third,
   .column.is-offset-one-third-tablet {
     margin-left: 33.3333%;
   }
-
   .column.is-offset-one-quarter,
   .column.is-offset-one-quarter-tablet {
     margin-left: 25%;
   }
-
   .column.is-offset-one-fifth,
   .column.is-offset-one-fifth-tablet {
     margin-left: 20%;
   }
-
   .column.is-offset-two-fifths,
   .column.is-offset-two-fifths-tablet {
     margin-left: 40%;
   }
-
   .column.is-offset-three-fifths,
   .column.is-offset-three-fifths-tablet {
     margin-left: 60%;
   }
-
   .column.is-offset-four-fifths,
   .column.is-offset-four-fifths-tablet {
     margin-left: 80%;
   }
-
   .column.is-0,
   .column.is-0-tablet {
     -webkit-box-flex: 0;
@@ -1285,12 +1218,10 @@ Notes: Flex-system Created by https://github.com/jgthms for Bulma CSS. Extra Fle
     flex: none;
     width: 0%;
   }
-
   .column.is-offset-0,
   .column.is-offset-0-tablet {
     margin-left: 0%;
   }
-
   .column.is-1,
   .column.is-1-tablet {
     -webkit-box-flex: 0;
@@ -1298,12 +1229,10 @@ Notes: Flex-system Created by https://github.com/jgthms for Bulma CSS. Extra Fle
     flex: none;
     width: 8.33333%;
   }
-
   .column.is-offset-1,
   .column.is-offset-1-tablet {
     margin-left: 8.33333%;
   }
-
   .column.is-2,
   .column.is-2-tablet {
     -webkit-box-flex: 0;
@@ -1311,12 +1240,10 @@ Notes: Flex-system Created by https://github.com/jgthms for Bulma CSS. Extra Fle
     flex: none;
     width: 16.66667%;
   }
-
   .column.is-offset-2,
   .column.is-offset-2-tablet {
     margin-left: 16.66667%;
   }
-
   .column.is-3,
   .column.is-3-tablet {
     -webkit-box-flex: 0;
@@ -1324,12 +1251,10 @@ Notes: Flex-system Created by https://github.com/jgthms for Bulma CSS. Extra Fle
     flex: none;
     width: 25%;
   }
-
   .column.is-offset-3,
   .column.is-offset-3-tablet {
     margin-left: 25%;
   }
-
   .column.is-4,
   .column.is-4-tablet {
     -webkit-box-flex: 0;
@@ -1337,12 +1262,10 @@ Notes: Flex-system Created by https://github.com/jgthms for Bulma CSS. Extra Fle
     flex: none;
     width: 33.33333%;
   }
-
   .column.is-offset-4,
   .column.is-offset-4-tablet {
     margin-left: 33.33333%;
   }
-
   .column.is-5,
   .column.is-5-tablet {
     -webkit-box-flex: 0;
@@ -1350,12 +1273,10 @@ Notes: Flex-system Created by https://github.com/jgthms for Bulma CSS. Extra Fle
     flex: none;
     width: 41.66667%;
   }
-
   .column.is-offset-5,
   .column.is-offset-5-tablet {
     margin-left: 41.66667%;
   }
-
   .column.is-6,
   .column.is-6-tablet {
     -webkit-box-flex: 0;
@@ -1363,12 +1284,10 @@ Notes: Flex-system Created by https://github.com/jgthms for Bulma CSS. Extra Fle
     flex: none;
     width: 50%;
   }
-
   .column.is-offset-6,
   .column.is-offset-6-tablet {
     margin-left: 50%;
   }
-
   .column.is-7,
   .column.is-7-tablet {
     -webkit-box-flex: 0;
@@ -1376,12 +1295,10 @@ Notes: Flex-system Created by https://github.com/jgthms for Bulma CSS. Extra Fle
     flex: none;
     width: 58.33333%;
   }
-
   .column.is-offset-7,
   .column.is-offset-7-tablet {
     margin-left: 58.33333%;
   }
-
   .column.is-8,
   .column.is-8-tablet {
     -webkit-box-flex: 0;
@@ -1389,12 +1306,10 @@ Notes: Flex-system Created by https://github.com/jgthms for Bulma CSS. Extra Fle
     flex: none;
     width: 66.66667%;
   }
-
   .column.is-offset-8,
   .column.is-offset-8-tablet {
     margin-left: 66.66667%;
   }
-
   .column.is-9,
   .column.is-9-tablet {
     -webkit-box-flex: 0;
@@ -1402,12 +1317,10 @@ Notes: Flex-system Created by https://github.com/jgthms for Bulma CSS. Extra Fle
     flex: none;
     width: 75%;
   }
-
   .column.is-offset-9,
   .column.is-offset-9-tablet {
     margin-left: 75%;
   }
-
   .column.is-10,
   .column.is-10-tablet {
     -webkit-box-flex: 0;
@@ -1415,12 +1328,10 @@ Notes: Flex-system Created by https://github.com/jgthms for Bulma CSS. Extra Fle
     flex: none;
     width: 83.33333%;
   }
-
   .column.is-offset-10,
   .column.is-offset-10-tablet {
     margin-left: 83.33333%;
   }
-
   .column.is-11,
   .column.is-11-tablet {
     -webkit-box-flex: 0;
@@ -1428,12 +1339,10 @@ Notes: Flex-system Created by https://github.com/jgthms for Bulma CSS. Extra Fle
     flex: none;
     width: 91.66667%;
   }
-
   .column.is-offset-11,
   .column.is-offset-11-tablet {
     margin-left: 91.66667%;
   }
-
   .column.is-12,
   .column.is-12-tablet {
     -webkit-box-flex: 0;
@@ -1441,7 +1350,6 @@ Notes: Flex-system Created by https://github.com/jgthms for Bulma CSS. Extra Fle
     flex: none;
     width: 100%;
   }
-
   .column.is-offset-12,
   .column.is-offset-12-tablet {
     margin-left: 100%;
@@ -1454,252 +1362,207 @@ Notes: Flex-system Created by https://github.com/jgthms for Bulma CSS. Extra Fle
     -ms-flex: none;
     flex: none;
   }
-
   .column.is-full-touch {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 100%;
   }
-
   .column.is-three-quarters-touch {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 75%;
   }
-
   .column.is-two-thirds-touch {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 66.6666%;
   }
-
   .column.is-half-touch {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 50%;
   }
-
   .column.is-one-third-touch {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 33.3333%;
   }
-
   .column.is-one-quarter-touch {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 25%;
   }
-
   .column.is-one-fifth-touch {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 20%;
   }
-
   .column.is-two-fifths-touch {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 40%;
   }
-
   .column.is-three-fifths-touch {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 60%;
   }
-
   .column.is-four-fifths-touch {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 80%;
   }
-
   .column.is-offset-three-quarters-touch {
     margin-left: 75%;
   }
-
   .column.is-offset-two-thirds-touch {
     margin-left: 66.6666%;
   }
-
   .column.is-offset-half-touch {
     margin-left: 50%;
   }
-
   .column.is-offset-one-third-touch {
     margin-left: 33.3333%;
   }
-
   .column.is-offset-one-quarter-touch {
     margin-left: 25%;
   }
-
   .column.is-offset-one-fifth-touch {
     margin-left: 20%;
   }
-
   .column.is-offset-two-fifths-touch {
     margin-left: 40%;
   }
-
   .column.is-offset-three-fifths-touch {
     margin-left: 60%;
   }
-
   .column.is-offset-four-fifths-touch {
     margin-left: 80%;
   }
-
   .column.is-0-touch {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 0%;
   }
-
   .column.is-offset-0-touch {
     margin-left: 0%;
   }
-
   .column.is-1-touch {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 8.33333%;
   }
-
   .column.is-offset-1-touch {
     margin-left: 8.33333%;
   }
-
   .column.is-2-touch {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 16.66667%;
   }
-
   .column.is-offset-2-touch {
     margin-left: 16.66667%;
   }
-
   .column.is-3-touch {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 25%;
   }
-
   .column.is-offset-3-touch {
     margin-left: 25%;
   }
-
   .column.is-4-touch {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 33.33333%;
   }
-
   .column.is-offset-4-touch {
     margin-left: 33.33333%;
   }
-
   .column.is-5-touch {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 41.66667%;
   }
-
   .column.is-offset-5-touch {
     margin-left: 41.66667%;
   }
-
   .column.is-6-touch {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 50%;
   }
-
   .column.is-offset-6-touch {
     margin-left: 50%;
   }
-
   .column.is-7-touch {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 58.33333%;
   }
-
   .column.is-offset-7-touch {
     margin-left: 58.33333%;
   }
-
   .column.is-8-touch {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 66.66667%;
   }
-
   .column.is-offset-8-touch {
     margin-left: 66.66667%;
   }
-
   .column.is-9-touch {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 75%;
   }
-
   .column.is-offset-9-touch {
     margin-left: 75%;
   }
-
   .column.is-10-touch {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 83.33333%;
   }
-
   .column.is-offset-10-touch {
     margin-left: 83.33333%;
   }
-
   .column.is-11-touch {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 91.66667%;
   }
-
   .column.is-offset-11-touch {
     margin-left: 91.66667%;
   }
-
   .column.is-12-touch {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 100%;
   }
-
   .column.is-offset-12-touch {
     margin-left: 100%;
   }
@@ -1711,252 +1574,207 @@ Notes: Flex-system Created by https://github.com/jgthms for Bulma CSS. Extra Fle
     -ms-flex: none;
     flex: none;
   }
-
   .column.is-full-desktop {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 100%;
   }
-
   .column.is-three-quarters-desktop {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 75%;
   }
-
   .column.is-two-thirds-desktop {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 66.6666%;
   }
-
   .column.is-half-desktop {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 50%;
   }
-
   .column.is-one-third-desktop {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 33.3333%;
   }
-
   .column.is-one-quarter-desktop {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 25%;
   }
-
   .column.is-one-fifth-desktop {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 20%;
   }
-
   .column.is-two-fifths-desktop {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 40%;
   }
-
   .column.is-three-fifths-desktop {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 60%;
   }
-
   .column.is-four-fifths-desktop {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 80%;
   }
-
   .column.is-offset-three-quarters-desktop {
     margin-left: 75%;
   }
-
   .column.is-offset-two-thirds-desktop {
     margin-left: 66.6666%;
   }
-
   .column.is-offset-half-desktop {
     margin-left: 50%;
   }
-
   .column.is-offset-one-third-desktop {
     margin-left: 33.3333%;
   }
-
   .column.is-offset-one-quarter-desktop {
     margin-left: 25%;
   }
-
   .column.is-offset-one-fifth-desktop {
     margin-left: 20%;
   }
-
   .column.is-offset-two-fifths-desktop {
     margin-left: 40%;
   }
-
   .column.is-offset-three-fifths-desktop {
     margin-left: 60%;
   }
-
   .column.is-offset-four-fifths-desktop {
     margin-left: 80%;
   }
-
   .column.is-0-desktop {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 0%;
   }
-
   .column.is-offset-0-desktop {
     margin-left: 0%;
   }
-
   .column.is-1-desktop {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 8.33333%;
   }
-
   .column.is-offset-1-desktop {
     margin-left: 8.33333%;
   }
-
   .column.is-2-desktop {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 16.66667%;
   }
-
   .column.is-offset-2-desktop {
     margin-left: 16.66667%;
   }
-
   .column.is-3-desktop {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 25%;
   }
-
   .column.is-offset-3-desktop {
     margin-left: 25%;
   }
-
   .column.is-4-desktop {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 33.33333%;
   }
-
   .column.is-offset-4-desktop {
     margin-left: 33.33333%;
   }
-
   .column.is-5-desktop {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 41.66667%;
   }
-
   .column.is-offset-5-desktop {
     margin-left: 41.66667%;
   }
-
   .column.is-6-desktop {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 50%;
   }
-
   .column.is-offset-6-desktop {
     margin-left: 50%;
   }
-
   .column.is-7-desktop {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 58.33333%;
   }
-
   .column.is-offset-7-desktop {
     margin-left: 58.33333%;
   }
-
   .column.is-8-desktop {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 66.66667%;
   }
-
   .column.is-offset-8-desktop {
     margin-left: 66.66667%;
   }
-
   .column.is-9-desktop {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 75%;
   }
-
   .column.is-offset-9-desktop {
     margin-left: 75%;
   }
-
   .column.is-10-desktop {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 83.33333%;
   }
-
   .column.is-offset-10-desktop {
     margin-left: 83.33333%;
   }
-
   .column.is-11-desktop {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 91.66667%;
   }
-
   .column.is-offset-11-desktop {
     margin-left: 91.66667%;
   }
-
   .column.is-12-desktop {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 100%;
   }
-
   .column.is-offset-12-desktop {
     margin-left: 100%;
   }
@@ -1968,252 +1786,207 @@ Notes: Flex-system Created by https://github.com/jgthms for Bulma CSS. Extra Fle
     -ms-flex: none;
     flex: none;
   }
-
   .column.is-full-widescreen {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 100%;
   }
-
   .column.is-three-quarters-widescreen {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 75%;
   }
-
   .column.is-two-thirds-widescreen {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 66.6666%;
   }
-
   .column.is-half-widescreen {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 50%;
   }
-
   .column.is-one-third-widescreen {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 33.3333%;
   }
-
   .column.is-one-quarter-widescreen {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 25%;
   }
-
   .column.is-one-fifth-widescreen {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 20%;
   }
-
   .column.is-two-fifths-widescreen {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 40%;
   }
-
   .column.is-three-fifths-widescreen {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 60%;
   }
-
   .column.is-four-fifths-widescreen {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 80%;
   }
-
   .column.is-offset-three-quarters-widescreen {
     margin-left: 75%;
   }
-
   .column.is-offset-two-thirds-widescreen {
     margin-left: 66.6666%;
   }
-
   .column.is-offset-half-widescreen {
     margin-left: 50%;
   }
-
   .column.is-offset-one-third-widescreen {
     margin-left: 33.3333%;
   }
-
   .column.is-offset-one-quarter-widescreen {
     margin-left: 25%;
   }
-
   .column.is-offset-one-fifth-widescreen {
     margin-left: 20%;
   }
-
   .column.is-offset-two-fifths-widescreen {
     margin-left: 40%;
   }
-
   .column.is-offset-three-fifths-widescreen {
     margin-left: 60%;
   }
-
   .column.is-offset-four-fifths-widescreen {
     margin-left: 80%;
   }
-
   .column.is-0-widescreen {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 0%;
   }
-
   .column.is-offset-0-widescreen {
     margin-left: 0%;
   }
-
   .column.is-1-widescreen {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 8.33333%;
   }
-
   .column.is-offset-1-widescreen {
     margin-left: 8.33333%;
   }
-
   .column.is-2-widescreen {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 16.66667%;
   }
-
   .column.is-offset-2-widescreen {
     margin-left: 16.66667%;
   }
-
   .column.is-3-widescreen {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 25%;
   }
-
   .column.is-offset-3-widescreen {
     margin-left: 25%;
   }
-
   .column.is-4-widescreen {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 33.33333%;
   }
-
   .column.is-offset-4-widescreen {
     margin-left: 33.33333%;
   }
-
   .column.is-5-widescreen {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 41.66667%;
   }
-
   .column.is-offset-5-widescreen {
     margin-left: 41.66667%;
   }
-
   .column.is-6-widescreen {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 50%;
   }
-
   .column.is-offset-6-widescreen {
     margin-left: 50%;
   }
-
   .column.is-7-widescreen {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 58.33333%;
   }
-
   .column.is-offset-7-widescreen {
     margin-left: 58.33333%;
   }
-
   .column.is-8-widescreen {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 66.66667%;
   }
-
   .column.is-offset-8-widescreen {
     margin-left: 66.66667%;
   }
-
   .column.is-9-widescreen {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 75%;
   }
-
   .column.is-offset-9-widescreen {
     margin-left: 75%;
   }
-
   .column.is-10-widescreen {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 83.33333%;
   }
-
   .column.is-offset-10-widescreen {
     margin-left: 83.33333%;
   }
-
   .column.is-11-widescreen {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 91.66667%;
   }
-
   .column.is-offset-11-widescreen {
     margin-left: 91.66667%;
   }
-
   .column.is-12-widescreen {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 100%;
   }
-
   .column.is-offset-12-widescreen {
     margin-left: 100%;
   }
@@ -2225,252 +1998,207 @@ Notes: Flex-system Created by https://github.com/jgthms for Bulma CSS. Extra Fle
     -ms-flex: none;
     flex: none;
   }
-
   .column.is-full-fullhd {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 100%;
   }
-
   .column.is-three-quarters-fullhd {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 75%;
   }
-
   .column.is-two-thirds-fullhd {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 66.6666%;
   }
-
   .column.is-half-fullhd {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 50%;
   }
-
   .column.is-one-third-fullhd {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 33.3333%;
   }
-
   .column.is-one-quarter-fullhd {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 25%;
   }
-
   .column.is-one-fifth-fullhd {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 20%;
   }
-
   .column.is-two-fifths-fullhd {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 40%;
   }
-
   .column.is-three-fifths-fullhd {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 60%;
   }
-
   .column.is-four-fifths-fullhd {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 80%;
   }
-
   .column.is-offset-three-quarters-fullhd {
     margin-left: 75%;
   }
-
   .column.is-offset-two-thirds-fullhd {
     margin-left: 66.6666%;
   }
-
   .column.is-offset-half-fullhd {
     margin-left: 50%;
   }
-
   .column.is-offset-one-third-fullhd {
     margin-left: 33.3333%;
   }
-
   .column.is-offset-one-quarter-fullhd {
     margin-left: 25%;
   }
-
   .column.is-offset-one-fifth-fullhd {
     margin-left: 20%;
   }
-
   .column.is-offset-two-fifths-fullhd {
     margin-left: 40%;
   }
-
   .column.is-offset-three-fifths-fullhd {
     margin-left: 60%;
   }
-
   .column.is-offset-four-fifths-fullhd {
     margin-left: 80%;
   }
-
   .column.is-0-fullhd {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 0%;
   }
-
   .column.is-offset-0-fullhd {
     margin-left: 0%;
   }
-
   .column.is-1-fullhd {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 8.33333%;
   }
-
   .column.is-offset-1-fullhd {
     margin-left: 8.33333%;
   }
-
   .column.is-2-fullhd {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 16.66667%;
   }
-
   .column.is-offset-2-fullhd {
     margin-left: 16.66667%;
   }
-
   .column.is-3-fullhd {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 25%;
   }
-
   .column.is-offset-3-fullhd {
     margin-left: 25%;
   }
-
   .column.is-4-fullhd {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 33.33333%;
   }
-
   .column.is-offset-4-fullhd {
     margin-left: 33.33333%;
   }
-
   .column.is-5-fullhd {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 41.66667%;
   }
-
   .column.is-offset-5-fullhd {
     margin-left: 41.66667%;
   }
-
   .column.is-6-fullhd {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 50%;
   }
-
   .column.is-offset-6-fullhd {
     margin-left: 50%;
   }
-
   .column.is-7-fullhd {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 58.33333%;
   }
-
   .column.is-offset-7-fullhd {
     margin-left: 58.33333%;
   }
-
   .column.is-8-fullhd {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 66.66667%;
   }
-
   .column.is-offset-8-fullhd {
     margin-left: 66.66667%;
   }
-
   .column.is-9-fullhd {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 75%;
   }
-
   .column.is-offset-9-fullhd {
     margin-left: 75%;
   }
-
   .column.is-10-fullhd {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 83.33333%;
   }
-
   .column.is-offset-10-fullhd {
     margin-left: 83.33333%;
   }
-
   .column.is-11-fullhd {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 91.66667%;
   }
-
   .column.is-offset-11-fullhd {
     margin-left: 91.66667%;
   }
-
   .column.is-12-fullhd {
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
     width: 100%;
   }
-
   .column.is-offset-12-fullhd {
     margin-left: 100%;
   }
@@ -3235,46 +2963,39 @@ Notes: Flex-system Created by https://github.com/jgthms for Bulma CSS. Extra Fle
     display: -ms-flexbox;
     display: flex;
   }
-
   .medium-flex-child-auto {
     -webkit-box-flex: 1;
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
   }
-
   .medium-flex-child-grow {
     -webkit-box-flex: 1;
     -ms-flex: 1 0 auto;
     flex: 1 0 auto;
   }
-
   .medium-flex-child-shrink {
     -webkit-box-flex: 0;
     -ms-flex: 0 1 auto;
     flex: 0 1 auto;
   }
-
   .medium-flex-dir-row {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
     -ms-flex-direction: row;
     flex-direction: row;
   }
-
   .medium-flex-dir-row-reverse {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: reverse;
     -ms-flex-direction: row-reverse;
     flex-direction: row-reverse;
   }
-
   .medium-flex-dir-column {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
   }
-
   .medium-flex-dir-column-reverse {
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
@@ -3289,46 +3010,39 @@ Notes: Flex-system Created by https://github.com/jgthms for Bulma CSS. Extra Fle
     display: -ms-flexbox;
     display: flex;
   }
-
   .large-flex-child-auto {
     -webkit-box-flex: 1;
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
   }
-
   .large-flex-child-grow {
     -webkit-box-flex: 1;
     -ms-flex: 1 0 auto;
     flex: 1 0 auto;
   }
-
   .large-flex-child-shrink {
     -webkit-box-flex: 0;
     -ms-flex: 0 1 auto;
     flex: 0 1 auto;
   }
-
   .large-flex-dir-row {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
     -ms-flex-direction: row;
     flex-direction: row;
   }
-
   .large-flex-dir-row-reverse {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: reverse;
     -ms-flex-direction: row-reverse;
     flex-direction: row-reverse;
   }
-
   .large-flex-dir-column {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
   }
-
   .large-flex-dir-column-reverse {
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
@@ -3888,7 +3602,6 @@ Notes: None
   .section.is-medium {
     padding: 9rem 1.5rem;
   }
-
   .section.is-large {
     padding: 18rem 1.5rem;
   }
@@ -4013,7 +3726,6 @@ Notes: None
     display: -ms-flexbox;
     display: flex;
   }
-
   .hero-buttons .button:not(:last-child) {
     margin-bottom: 0.75rem;
   }
@@ -4028,7 +3740,6 @@ Notes: None
     -ms-flex-pack: center;
     justify-content: center;
   }
-
   .hero-buttons .button:not(:last-child) {
     margin-right: 1.5rem;
   }
@@ -4556,12 +4267,15 @@ div.icon-text {
 }
 
 li a {
-  color: rgb(0, 0, 0);
+  color: black;
   text-decoration: none;
 }
 
 .nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   padding-left: 0;
   margin-bottom: 0;
@@ -4572,12 +4286,15 @@ li a {
   display: block;
   padding: 0.5rem 1rem;
   text-decoration: none;
+  -webkit-transition: color 0.15s ease-in-out,
+    background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
     border-color 0.15s ease-in-out;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .nav-link {
+    -webkit-transition: none;
     transition: none;
   }
 }
@@ -4630,6 +4347,8 @@ li a {
 }
 
 .nav-pills a {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   color: black;
   text-align: center;
@@ -4640,6 +4359,8 @@ li a {
 }
 
 .nav-pills.vertical a {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   max-width: 300px;
 }
@@ -4701,13 +4422,18 @@ li a {
 
 .nav-pills .nav-fill > .nav-link,
 .nav-fill .nav-item {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
   flex: 1 1 auto;
   text-align: center;
 }
 
 .nav-justified > .nav-link,
 .nav-justified .nav-item {
+  -ms-flex-preferred-size: 0;
   flex-basis: 0;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
   flex-grow: 1;
   text-align: center;
 }
@@ -4812,14 +4538,17 @@ li a {
   min-width: 500px;
   border: none;
   border-radius: 10px;
+  -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.158);
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.158);
   z-index: 1;
 }
 
 .clickable-dropdown-content a {
-  color: rgb(0, 0, 0);
+  color: black;
   padding: 12px 16px;
   text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -5324,14 +5053,12 @@ li a {
     left: 0;
     width: 100%;
   }
-
   .page-wrapper.with-sidebar[data-sidebar-type~="overlayed-sm-and-down"]
     > .sidebar {
     height: 100%;
     top: 0;
     z-index: 50;
   }
-
   .page-wrapper.with-sidebar[data-sidebar-type~="overlayed-sm-and-down"]
     > .sidebar-overlay {
     position: absolute;
@@ -5340,7 +5067,6 @@ li a {
     z-index: 45;
     background-color: rgba(0, 0, 0, 0.75);
   }
-
   .page-wrapper.with-sidebar[data-sidebar-type~="overlayed-sm-and-down"][data-sidebar-hidden]
     > .sidebar-overlay {
     display: none;
@@ -5413,7 +5139,6 @@ li a {
   .navbar.is-white .navbar-end .navbar-link {
     color: #0a0a0a;
   }
-
   .navbar.is-white .navbar-start > a.navbar-item:focus,
   .navbar.is-white .navbar-start > a.navbar-item:hover,
   .navbar.is-white .navbar-start > a.navbar-item.is-active,
@@ -5429,19 +5154,16 @@ li a {
     background-color: #f2f2f2;
     color: #0a0a0a;
   }
-
   .navbar.is-white .navbar-start .navbar-link::after,
   .navbar.is-white .navbar-end .navbar-link::after {
     border-color: #0a0a0a;
   }
-
   .navbar.is-white .navbar-item.has-dropdown:focus .navbar-link,
   .navbar.is-white .navbar-item.has-dropdown:hover .navbar-link,
   .navbar.is-white .navbar-item.has-dropdown.is-active .navbar-link {
     background-color: #f2f2f2;
     color: #0a0a0a;
   }
-
   .navbar.is-white .navbar-dropdown a.navbar-item.is-active {
     background-color: white;
     color: #0a0a0a;
@@ -5483,7 +5205,6 @@ li a {
   .navbar.is-black .navbar-end .navbar-link {
     color: white;
   }
-
   .navbar.is-black .navbar-start > a.navbar-item:focus,
   .navbar.is-black .navbar-start > a.navbar-item:hover,
   .navbar.is-black .navbar-start > a.navbar-item.is-active,
@@ -5499,19 +5220,16 @@ li a {
     background-color: black;
     color: white;
   }
-
   .navbar.is-black .navbar-start .navbar-link::after,
   .navbar.is-black .navbar-end .navbar-link::after {
     border-color: white;
   }
-
   .navbar.is-black .navbar-item.has-dropdown:focus .navbar-link,
   .navbar.is-black .navbar-item.has-dropdown:hover .navbar-link,
   .navbar.is-black .navbar-item.has-dropdown.is-active .navbar-link {
     background-color: black;
     color: white;
   }
-
   .navbar.is-black .navbar-dropdown a.navbar-item.is-active {
     background-color: #0a0a0a;
     color: white;
@@ -5553,7 +5271,6 @@ li a {
   .navbar.is-light .navbar-end .navbar-link {
     color: rgba(0, 0, 0, 0.7);
   }
-
   .navbar.is-light .navbar-start > a.navbar-item:focus,
   .navbar.is-light .navbar-start > a.navbar-item:hover,
   .navbar.is-light .navbar-start > a.navbar-item.is-active,
@@ -5569,19 +5286,16 @@ li a {
     background-color: #e8e8e8;
     color: rgba(0, 0, 0, 0.7);
   }
-
   .navbar.is-light .navbar-start .navbar-link::after,
   .navbar.is-light .navbar-end .navbar-link::after {
     border-color: rgba(0, 0, 0, 0.7);
   }
-
   .navbar.is-light .navbar-item.has-dropdown:focus .navbar-link,
   .navbar.is-light .navbar-item.has-dropdown:hover .navbar-link,
   .navbar.is-light .navbar-item.has-dropdown.is-active .navbar-link {
     background-color: #e8e8e8;
     color: rgba(0, 0, 0, 0.7);
   }
-
   .navbar.is-light .navbar-dropdown a.navbar-item.is-active {
     background-color: whitesmoke;
     color: rgba(0, 0, 0, 0.7);
@@ -5623,7 +5337,6 @@ li a {
   .navbar.is-dark .navbar-end .navbar-link {
     color: #fff;
   }
-
   .navbar.is-dark .navbar-start > a.navbar-item:focus,
   .navbar.is-dark .navbar-start > a.navbar-item:hover,
   .navbar.is-dark .navbar-start > a.navbar-item.is-active,
@@ -5639,19 +5352,16 @@ li a {
     background-color: #292929;
     color: #fff;
   }
-
   .navbar.is-dark .navbar-start .navbar-link::after,
   .navbar.is-dark .navbar-end .navbar-link::after {
     border-color: #fff;
   }
-
   .navbar.is-dark .navbar-item.has-dropdown:focus .navbar-link,
   .navbar.is-dark .navbar-item.has-dropdown:hover .navbar-link,
   .navbar.is-dark .navbar-item.has-dropdown.is-active .navbar-link {
     background-color: #292929;
     color: #fff;
   }
-
   .navbar.is-dark .navbar-dropdown a.navbar-item.is-active {
     background-color: #363636;
     color: #fff;
@@ -5693,7 +5403,6 @@ li a {
   .navbar.is-primary .navbar-end .navbar-link {
     color: #fff;
   }
-
   .navbar.is-primary .navbar-start > a.navbar-item:focus,
   .navbar.is-primary .navbar-start > a.navbar-item:hover,
   .navbar.is-primary .navbar-start > a.navbar-item.is-active,
@@ -5709,19 +5418,16 @@ li a {
     background-color: #00b89c;
     color: #fff;
   }
-
   .navbar.is-primary .navbar-start .navbar-link::after,
   .navbar.is-primary .navbar-end .navbar-link::after {
     border-color: #fff;
   }
-
   .navbar.is-primary .navbar-item.has-dropdown:focus .navbar-link,
   .navbar.is-primary .navbar-item.has-dropdown:hover .navbar-link,
   .navbar.is-primary .navbar-item.has-dropdown.is-active .navbar-link {
     background-color: #00b89c;
     color: #fff;
   }
-
   .navbar.is-primary .navbar-dropdown a.navbar-item.is-active {
     background-color: #00d1b2;
     color: #fff;
@@ -5763,7 +5469,6 @@ li a {
   .navbar.is-link .navbar-end .navbar-link {
     color: #fff;
   }
-
   .navbar.is-link .navbar-start > a.navbar-item:focus,
   .navbar.is-link .navbar-start > a.navbar-item:hover,
   .navbar.is-link .navbar-start > a.navbar-item.is-active,
@@ -5779,19 +5484,16 @@ li a {
     background-color: #2366d1;
     color: #fff;
   }
-
   .navbar.is-link .navbar-start .navbar-link::after,
   .navbar.is-link .navbar-end .navbar-link::after {
     border-color: #fff;
   }
-
   .navbar.is-link .navbar-item.has-dropdown:focus .navbar-link,
   .navbar.is-link .navbar-item.has-dropdown:hover .navbar-link,
   .navbar.is-link .navbar-item.has-dropdown.is-active .navbar-link {
     background-color: #2366d1;
     color: #fff;
   }
-
   .navbar.is-link .navbar-dropdown a.navbar-item.is-active {
     background-color: #3273dc;
     color: #fff;
@@ -5833,7 +5535,6 @@ li a {
   .navbar.is-info .navbar-end .navbar-link {
     color: #fff;
   }
-
   .navbar.is-info .navbar-start > a.navbar-item:focus,
   .navbar.is-info .navbar-start > a.navbar-item:hover,
   .navbar.is-info .navbar-start > a.navbar-item.is-active,
@@ -5849,19 +5550,16 @@ li a {
     background-color: #238cd1;
     color: #fff;
   }
-
   .navbar.is-info .navbar-start .navbar-link::after,
   .navbar.is-info .navbar-end .navbar-link::after {
     border-color: #fff;
   }
-
   .navbar.is-info .navbar-item.has-dropdown:focus .navbar-link,
   .navbar.is-info .navbar-item.has-dropdown:hover .navbar-link,
   .navbar.is-info .navbar-item.has-dropdown.is-active .navbar-link {
     background-color: #238cd1;
     color: #fff;
   }
-
   .navbar.is-info .navbar-dropdown a.navbar-item.is-active {
     background-color: #3298dc;
     color: #fff;
@@ -5903,7 +5601,6 @@ li a {
   .navbar.is-success .navbar-end .navbar-link {
     color: #fff;
   }
-
   .navbar.is-success .navbar-start > a.navbar-item:focus,
   .navbar.is-success .navbar-start > a.navbar-item:hover,
   .navbar.is-success .navbar-start > a.navbar-item.is-active,
@@ -5919,19 +5616,16 @@ li a {
     background-color: #3abb67;
     color: #fff;
   }
-
   .navbar.is-success .navbar-start .navbar-link::after,
   .navbar.is-success .navbar-end .navbar-link::after {
     border-color: #fff;
   }
-
   .navbar.is-success .navbar-item.has-dropdown:focus .navbar-link,
   .navbar.is-success .navbar-item.has-dropdown:hover .navbar-link,
   .navbar.is-success .navbar-item.has-dropdown.is-active .navbar-link {
     background-color: #3abb67;
     color: #fff;
   }
-
   .navbar.is-success .navbar-dropdown a.navbar-item.is-active {
     background-color: #48c774;
     color: #fff;
@@ -5973,7 +5667,6 @@ li a {
   .navbar.is-warning .navbar-end .navbar-link {
     color: rgba(0, 0, 0, 0.7);
   }
-
   .navbar.is-warning .navbar-start > a.navbar-item:focus,
   .navbar.is-warning .navbar-start > a.navbar-item:hover,
   .navbar.is-warning .navbar-start > a.navbar-item.is-active,
@@ -5989,19 +5682,16 @@ li a {
     background-color: #ffd83d;
     color: rgba(0, 0, 0, 0.7);
   }
-
   .navbar.is-warning .navbar-start .navbar-link::after,
   .navbar.is-warning .navbar-end .navbar-link::after {
     border-color: rgba(0, 0, 0, 0.7);
   }
-
   .navbar.is-warning .navbar-item.has-dropdown:focus .navbar-link,
   .navbar.is-warning .navbar-item.has-dropdown:hover .navbar-link,
   .navbar.is-warning .navbar-item.has-dropdown.is-active .navbar-link {
     background-color: #ffd83d;
     color: rgba(0, 0, 0, 0.7);
   }
-
   .navbar.is-warning .navbar-dropdown a.navbar-item.is-active {
     background-color: #ffdd57;
     color: rgba(0, 0, 0, 0.7);
@@ -6043,7 +5733,6 @@ li a {
   .navbar.is-danger .navbar-end .navbar-link {
     color: #fff;
   }
-
   .navbar.is-danger .navbar-start > a.navbar-item:focus,
   .navbar.is-danger .navbar-start > a.navbar-item:hover,
   .navbar.is-danger .navbar-start > a.navbar-item.is-active,
@@ -6059,19 +5748,16 @@ li a {
     background-color: #ef2e55;
     color: #fff;
   }
-
   .navbar.is-danger .navbar-start .navbar-link::after,
   .navbar.is-danger .navbar-end .navbar-link::after {
     border-color: #fff;
   }
-
   .navbar.is-danger .navbar-item.has-dropdown:focus .navbar-link,
   .navbar.is-danger .navbar-item.has-dropdown:hover .navbar-link,
   .navbar.is-danger .navbar-item.has-dropdown.is-active .navbar-link {
     background-color: #ef2e55;
     color: #fff;
   }
-
   .navbar.is-danger .navbar-dropdown a.navbar-item.is-active {
     background-color: #f14668;
     color: #fff;
@@ -6331,7 +6017,6 @@ a.navbar-item.is-active,
   .navbar > .container {
     display: block;
   }
-
   .navbar-brand .navbar-item,
   .navbar-tabs .navbar-item {
     -webkit-box-align: center;
@@ -6341,22 +6026,18 @@ a.navbar-item.is-active,
     display: -ms-flexbox;
     display: flex;
   }
-
   .navbar-link::after {
     display: none;
   }
-
   .navbar-menu {
     background-color: white;
     -webkit-box-shadow: 0 8px 16px rgba(10, 10, 10, 0.1);
     box-shadow: 0 8px 16px rgba(10, 10, 10, 0.1);
     padding: 0.5rem 0;
   }
-
   .navbar-menu.is-active {
     display: block;
   }
-
   .navbar.is-fixed-bottom-touch,
   .navbar.is-fixed-top-touch {
     left: 0;
@@ -6364,32 +6045,26 @@ a.navbar-item.is-active,
     right: 0;
     z-index: 30;
   }
-
   .navbar.is-fixed-bottom-touch {
     bottom: 0;
   }
-
   .navbar.is-fixed-bottom-touch.has-shadow {
     -webkit-box-shadow: 0 -2px 3px rgba(10, 10, 10, 0.1);
     box-shadow: 0 -2px 3px rgba(10, 10, 10, 0.1);
   }
-
   .navbar.is-fixed-top-touch {
     top: 0;
   }
-
   .navbar.is-fixed-top .navbar-menu,
   .navbar.is-fixed-top-touch .navbar-menu {
     -webkit-overflow-scrolling: touch;
     max-height: calc(100vh - 3.25rem);
     overflow: auto;
   }
-
   html.has-navbar-fixed-top-touch,
   body.has-navbar-fixed-top-touch {
     padding-top: 3.25rem;
   }
-
   html.has-navbar-fixed-bottom-touch,
   body.has-navbar-fixed-bottom-touch {
     padding-bottom: 3.25rem;
@@ -6408,27 +6083,22 @@ a.navbar-item.is-active,
     display: -ms-flexbox;
     display: flex;
   }
-
   .navbar {
     min-height: 3.25rem;
   }
-
   .navbar.is-spaced {
     padding: 1rem 2rem;
   }
-
   .navbar.is-spaced .navbar-start,
   .navbar.is-spaced .navbar-end {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
   }
-
   .navbar.is-spaced a.navbar-item,
   .navbar.is-spaced .navbar-link {
     border-radius: 4px;
   }
-
   .navbar.is-transparent a.navbar-item:focus,
   .navbar.is-transparent a.navbar-item:hover,
   .navbar.is-transparent a.navbar-item.is-active,
@@ -6437,7 +6107,6 @@ a.navbar-item.is-active,
   .navbar.is-transparent .navbar-link.is-active {
     background-color: transparent !important;
   }
-
   .navbar.is-transparent .navbar-item.has-dropdown.is-active .navbar-link,
   .navbar.is-transparent
     .navbar-item.has-dropdown.is-hoverable:focus
@@ -6450,22 +6119,18 @@ a.navbar-item.is-active,
     .navbar-link {
     background-color: transparent !important;
   }
-
   .navbar.is-transparent .navbar-dropdown a.navbar-item:focus,
   .navbar.is-transparent .navbar-dropdown a.navbar-item:hover {
     background-color: whitesmoke;
     color: #0a0a0a;
   }
-
   .navbar.is-transparent .navbar-dropdown a.navbar-item.is-active {
     background-color: whitesmoke;
     color: #3273dc;
   }
-
   .navbar-burger {
     display: none;
   }
-
   .navbar-item,
   .navbar-link {
     -webkit-box-align: center;
@@ -6475,18 +6140,15 @@ a.navbar-item.is-active,
     display: -ms-flexbox;
     display: flex;
   }
-
   .navbar-item.has-dropdown {
     -webkit-box-align: stretch;
     -ms-flex-align: stretch;
     align-items: stretch;
   }
-
   .navbar-item.has-dropdown-up .navbar-link::after {
     -webkit-transform: rotate(135deg) translate(0.25em, -0.25em);
     transform: rotate(135deg) translate(0.25em, -0.25em);
   }
-
   .navbar-item.has-dropdown-up .navbar-dropdown {
     border-bottom: 2px solid #dbdbdb;
     border-radius: 6px 6px 0 0;
@@ -6496,14 +6158,12 @@ a.navbar-item.is-active,
     box-shadow: 0 -8px 8px rgba(10, 10, 10, 0.1);
     top: auto;
   }
-
   .navbar-item.is-active .navbar-dropdown,
   .navbar-item.is-hoverable:focus .navbar-dropdown,
   .navbar-item.is-hoverable:focus-within .navbar-dropdown,
   .navbar-item.is-hoverable:hover .navbar-dropdown {
     display: block;
   }
-
   .navbar.is-spaced .navbar-item.is-active .navbar-dropdown,
   .navbar-item.is-active .navbar-dropdown.is-boxed,
   .navbar.is-spaced .navbar-item.is-hoverable:focus .navbar-dropdown,
@@ -6517,7 +6177,6 @@ a.navbar-item.is-active,
     -webkit-transform: translateY(0);
     transform: translateY(0);
   }
-
   .navbar-menu {
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
@@ -6525,21 +6184,18 @@ a.navbar-item.is-active,
     -ms-flex-negative: 0;
     flex-shrink: 0;
   }
-
   .navbar-start {
     -webkit-box-pack: start;
     -ms-flex-pack: start;
     justify-content: flex-start;
     margin-right: auto;
   }
-
   .navbar-end {
     -webkit-box-pack: end;
     -ms-flex-pack: end;
     justify-content: flex-end;
     margin-left: auto;
   }
-
   .navbar-dropdown {
     background-color: white;
     border-bottom-left-radius: 6px;
@@ -6555,27 +6211,22 @@ a.navbar-item.is-active,
     top: 100%;
     z-index: 20;
   }
-
   .navbar-dropdown .navbar-item {
     padding: 0.375rem 1rem;
     white-space: nowrap;
   }
-
   .navbar-dropdown a.navbar-item {
     padding-right: 3rem;
   }
-
   .navbar-dropdown a.navbar-item:focus,
   .navbar-dropdown a.navbar-item:hover {
     background-color: whitesmoke;
     color: #0a0a0a;
   }
-
   .navbar-dropdown a.navbar-item.is-active {
     background-color: whitesmoke;
     color: #3273dc;
   }
-
   .navbar.is-spaced .navbar-dropdown,
   .navbar-dropdown.is-boxed {
     border-radius: 6px;
@@ -6596,26 +6247,21 @@ a.navbar-item.is-active,
     transition-property: opacity, transform;
     transition-property: opacity, transform, -webkit-transform;
   }
-
   .navbar-dropdown.is-right {
     left: auto;
     right: 0;
   }
-
   .navbar-divider {
     display: block;
   }
-
   .navbar > .container .navbar-brand,
   .container > .navbar .navbar-brand {
     margin-left: -0.75rem;
   }
-
   .navbar > .container .navbar-menu,
   .container > .navbar .navbar-menu {
     margin-right: -0.75rem;
   }
-
   .navbar.is-fixed-bottom-desktop,
   .navbar.is-fixed-top-desktop {
     left: 0;
@@ -6623,50 +6269,40 @@ a.navbar-item.is-active,
     right: 0;
     z-index: 30;
   }
-
   .navbar.is-fixed-bottom-desktop {
     bottom: 0;
   }
-
   .navbar.is-fixed-bottom-desktop.has-shadow {
     -webkit-box-shadow: 0 -2px 3px rgba(10, 10, 10, 0.1);
     box-shadow: 0 -2px 3px rgba(10, 10, 10, 0.1);
   }
-
   .navbar.is-fixed-top-desktop {
     top: 0;
   }
-
   html.has-navbar-fixed-top-desktop,
   body.has-navbar-fixed-top-desktop {
     padding-top: 3.25rem;
   }
-
   html.has-navbar-fixed-bottom-desktop,
   body.has-navbar-fixed-bottom-desktop {
     padding-bottom: 3.25rem;
   }
-
   html.has-spaced-navbar-fixed-top,
   body.has-spaced-navbar-fixed-top {
     padding-top: 5.25rem;
   }
-
   html.has-spaced-navbar-fixed-bottom,
   body.has-spaced-navbar-fixed-bottom {
     padding-bottom: 5.25rem;
   }
-
   a.navbar-item.is-active,
   .navbar-link.is-active {
     color: #0a0a0a;
   }
-
   a.navbar-item.is-active:not(:focus):not(:hover),
   .navbar-link.is-active:not(:focus):not(:hover) {
     background-color: transparent;
   }
-
   .navbar-item.has-dropdown:focus .navbar-link,
   .navbar-item.has-dropdown:hover .navbar-link,
   .navbar-item.has-dropdown.is-active .navbar-link {
@@ -7846,7 +7482,6 @@ a.box:active {
     display: -ms-flexbox;
     display: flex;
   }
-
   .level > .level-item:not(.is-narrow) {
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
@@ -8151,7 +7786,6 @@ a.box:active {
     -webkit-box-shadow: none;
     box-shadow: none;
   }
-
   .dark-mode .collapse-panel .collapse-header {
     color: rgba(255, 255, 255, 0.8);
     background-color: rgba(255, 255, 255, 0.02);
@@ -8159,12 +7793,10 @@ a.box:active {
     -webkit-box-shadow: none;
     box-shadow: none;
   }
-
   .collapse-panel .collapse-header {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
   }
-
   /* Collapse header arrow set using background image */
   .collapse-panel .collapse-header:not(.without-arrow) {
     padding: 1.2rem 2rem 1.2rem 4.4rem;
@@ -8173,22 +7805,18 @@ a.box:active {
     background-repeat: no-repeat;
     background-position: 2rem center;
   }
-
   /* Controlling display based on collapse open state */
   .collapse-panel .hidden-collapse-open {
     display: none;
   }
-
   .collapse-panel:not([open]) .hidden-collapse-closed {
     display: inline-block;
   }
-
   /* Collapse group */
   .collapse-group .collapse-panel:not(:first-child) .collapse-content {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
   }
-
   .collapse-group .collapse-panel:not(:last-child) .collapse-content {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
@@ -8273,12 +7901,10 @@ legend {
     padding-left: 1rem;
     padding-right: 1rem;
   }
-
   .form-row.row-eq-spacing-sm:not(.row-eq-spacing)
     > [class^="col"]:first-child {
     padding-left: 0;
   }
-
   .form-row.row-eq-spacing-sm:not(.row-eq-spacing) > [class^="col"]:last-child {
     padding-right: 0;
   }
@@ -8298,12 +7924,10 @@ legend {
     padding-left: 1rem;
     padding-right: 1rem;
   }
-
   .form-row.row-eq-spacing-md:not(.row-eq-spacing-sm):not(.row-eq-spacing)
     > [class^="col"]:first-child {
     padding-left: 0;
   }
-
   .form-row.row-eq-spacing-md:not(.row-eq-spacing-sm):not(.row-eq-spacing)
     > [class^="col"]:last-child {
     padding-right: 0;
@@ -8324,12 +7948,10 @@ legend {
     padding-left: 1rem;
     padding-right: 1rem;
   }
-
   .form-row.row-eq-spacing-lg:not(.row-eq-spacing-md):not(.row-eq-spacing-sm):not(.row-eq-spacing)
     > [class^="col"]:first-child {
     padding-left: 0;
   }
-
   .form-row.row-eq-spacing-lg:not(.row-eq-spacing-md):not(.row-eq-spacing-sm):not(.row-eq-spacing)
     > [class^="col"]:last-child {
     padding-right: 0;
@@ -8350,12 +7972,10 @@ legend {
     padding-left: 1rem;
     padding-right: 1rem;
   }
-
   .form-row.row-eq-spacing-xl:not(.row-eq-spacing-lg):not(.row-eq-spacing-md):not(.row-eq-spacing-sm):not(.row-eq-spacing)
     > [class^="col"]:first-child {
     padding-left: 0;
   }
-
   .form-row.row-eq-spacing-xl:not(.row-eq-spacing-lg):not(.row-eq-spacing-md):not(.row-eq-spacing-sm):not(.row-eq-spacing)
     > [class^="col"]:last-child {
     padding-right: 0;
@@ -8532,11 +8152,9 @@ legend {
     -webkit-box-align: center;
     align-items: center;
   }
-
   .form-inline-sm .form-group {
     width: 100%;
   }
-
   .form-inline-sm > .form-control,
   .form-inline-sm > .input-group,
   .form-inline-sm .form-group > .form-control,
@@ -8547,7 +8165,6 @@ legend {
     flex: 1 1 0%;
     min-width: 0;
   }
-
   .form-inline-sm > label,
   .form-inline-sm > .custom-control,
   .form-inline-sm > .form-text,
@@ -8564,7 +8181,6 @@ legend {
     align-items: center;
     min-width: 0;
   }
-
   .form-inline-sm > label,
   .form-inline-sm > .form-text,
   .form-inline-sm > .invalid-feedback,
@@ -8576,67 +8192,51 @@ legend {
     border: none;
     white-space: nowrap;
   }
-
   .form-inline-sm > .form-control:not(:last-child) {
     margin-right: 1rem;
   }
-
   .form-inline-sm > .input-group:not(:last-child) {
     margin-right: 1rem;
   }
-
   .form-inline-sm > label:not(:last-child) {
     margin-right: 1rem;
   }
-
   .form-inline-sm > .custom-control {
     margin-right: 1rem;
   }
-
   .form-inline-sm > .btn:not(:last-child) {
     margin-right: 1rem;
   }
-
   .form-inline-sm > a.btn:not(:last-child) {
     margin-right: 1rem;
   }
-
   .form-inline-sm > .form-text:not(:last-child) {
     margin-right: 1rem;
   }
-
   .form-inline-sm > .invalid-feedback:not(:last-child) {
     margin-right: 1rem;
   }
-
   .form-inline-sm .form-group > .form-control:not(:last-child) {
     margin-right: 1rem;
   }
-
   .form-inline-sm .form-group > .input-group:not(:last-child) {
     margin-right: 1rem;
   }
-
   .form-inline-sm .form-group > label:not(:last-child) {
     margin-right: 1rem;
   }
-
   .form-inline-sm .form-group > .custom-control {
     margin-right: 1rem;
   }
-
   .form-inline-sm .form-group > .btn:not(:last-child) {
     margin-right: 1rem;
   }
-
   .form-inline-sm .form-group > a.btn:not(:last-child) {
     margin-right: 1rem;
   }
-
   .form-inline-sm .form-group > .form-text:not(:last-child) {
     margin-right: 1rem;
   }
-
   .form-inline-sm .form-group > .invalid-feedback:not(:last-child) {
     margin-right: 1rem;
   }
@@ -8646,39 +8246,30 @@ legend {
   .form-inline-sm > .form-control:not(:last-child) {
     margin-bottom: 2rem;
   }
-
   .form-inline-sm > .input-group:not(:last-child) {
     margin-bottom: 2rem;
   }
-
   .form-inline-sm > .custom-control {
     margin-bottom: 2rem;
   }
-
   .form-inline-sm > .btn:not(:last-child) {
     margin-bottom: 2rem;
   }
-
   .form-inline-sm > a.btn:not(:last-child) {
     margin-bottom: 2rem;
   }
-
   .form-inline-sm .form-group > .form-control:not(:last-child) {
     margin-bottom: 2rem;
   }
-
   .form-inline-sm .form-group > .input-group:not(:last-child) {
     margin-bottom: 2rem;
   }
-
   .form-inline-sm .form-group > .custom-control {
     margin-bottom: 2rem;
   }
-
   .form-inline-sm .form-group > .btn:not(:last-child) {
     margin-bottom: 2rem;
   }
-
   .form-inline-sm .form-group > a.btn:not(:last-child) {
     margin-bottom: 2rem;
   }
@@ -8699,11 +8290,9 @@ legend {
     -webkit-box-align: center;
     align-items: center;
   }
-
   .form-inline-md .form-group {
     width: 100%;
   }
-
   .form-inline-md > .form-control,
   .form-inline-md > .input-group,
   .form-inline-md .form-group > .form-control,
@@ -8714,7 +8303,6 @@ legend {
     flex: 1 1 0%;
     min-width: 0;
   }
-
   .form-inline-md > label,
   .form-inline-md > .custom-control,
   .form-inline-md > .form-text,
@@ -8731,7 +8319,6 @@ legend {
     align-items: center;
     min-width: 0;
   }
-
   .form-inline-md > label,
   .form-inline-md > .form-text,
   .form-inline-md > .invalid-feedback,
@@ -8743,67 +8330,51 @@ legend {
     border: none;
     white-space: nowrap;
   }
-
   .form-inline-md > .form-control:not(:last-child) {
     margin-right: 1rem;
   }
-
   .form-inline-md > .input-group:not(:last-child) {
     margin-right: 1rem;
   }
-
   .form-inline-md > label:not(:last-child) {
     margin-right: 1rem;
   }
-
   .form-inline-md > .custom-control {
     margin-right: 1rem;
   }
-
   .form-inline-md > .btn:not(:last-child) {
     margin-right: 1rem;
   }
-
   .form-inline-md > a.btn:not(:last-child) {
     margin-right: 1rem;
   }
-
   .form-inline-md > .form-text:not(:last-child) {
     margin-right: 1rem;
   }
-
   .form-inline-md > .invalid-feedback:not(:last-child) {
     margin-right: 1rem;
   }
-
   .form-inline-md .form-group > .form-control:not(:last-child) {
     margin-right: 1rem;
   }
-
   .form-inline-md .form-group > .input-group:not(:last-child) {
     margin-right: 1rem;
   }
-
   .form-inline-md .form-group > label:not(:last-child) {
     margin-right: 1rem;
   }
-
   .form-inline-md .form-group > .custom-control {
     margin-right: 1rem;
   }
-
   .form-inline-md .form-group > .btn:not(:last-child) {
     margin-right: 1rem;
   }
-
   .form-inline-md .form-group > a.btn:not(:last-child) {
     margin-right: 1rem;
   }
-
   .form-inline-md .form-group > .form-text:not(:last-child) {
     margin-right: 1rem;
   }
-
   .form-inline-md .form-group > .invalid-feedback:not(:last-child) {
     margin-right: 1rem;
   }
@@ -8813,39 +8384,30 @@ legend {
   .form-inline-md > .form-control:not(:last-child) {
     margin-bottom: 2rem;
   }
-
   .form-inline-md > .input-group:not(:last-child) {
     margin-bottom: 2rem;
   }
-
   .form-inline-md > .custom-control {
     margin-bottom: 2rem;
   }
-
   .form-inline-md > .btn:not(:last-child) {
     margin-bottom: 2rem;
   }
-
   .form-inline-md > a.btn:not(:last-child) {
     margin-bottom: 2rem;
   }
-
   .form-inline-md .form-group > .form-control:not(:last-child) {
     margin-bottom: 2rem;
   }
-
   .form-inline-md .form-group > .input-group:not(:last-child) {
     margin-bottom: 2rem;
   }
-
   .form-inline-md .form-group > .custom-control {
     margin-bottom: 2rem;
   }
-
   .form-inline-md .form-group > .btn:not(:last-child) {
     margin-bottom: 2rem;
   }
-
   .form-inline-md .form-group > a.btn:not(:last-child) {
     margin-bottom: 2rem;
   }
@@ -8866,11 +8428,9 @@ legend {
     -webkit-box-align: center;
     align-items: center;
   }
-
   .form-inline-lg .form-group {
     width: 100%;
   }
-
   .form-inline-lg > .form-control,
   .form-inline-lg > .input-group,
   .form-inline-lg .form-group > .form-control,
@@ -8881,7 +8441,6 @@ legend {
     flex: 1 1 0%;
     min-width: 0;
   }
-
   .form-inline-lg > label,
   .form-inline-lg > .custom-control,
   .form-inline-lg > .form-text,
@@ -8898,7 +8457,6 @@ legend {
     align-items: center;
     min-width: 0;
   }
-
   .form-inline-lg > label,
   .form-inline-lg > .form-text,
   .form-inline-lg > .invalid-feedback,
@@ -8910,67 +8468,51 @@ legend {
     border: none;
     white-space: nowrap;
   }
-
   .form-inline-lg > .form-control:not(:last-child) {
     margin-right: 1rem;
   }
-
   .form-inline-lg > .input-group:not(:last-child) {
     margin-right: 1rem;
   }
-
   .form-inline-lg > label:not(:last-child) {
     margin-right: 1rem;
   }
-
   .form-inline-lg > .custom-control {
     margin-right: 1rem;
   }
-
   .form-inline-lg > .btn:not(:last-child) {
     margin-right: 1rem;
   }
-
   .form-inline-lg > a.btn:not(:last-child) {
     margin-right: 1rem;
   }
-
   .form-inline-lg > .form-text:not(:last-child) {
     margin-right: 1rem;
   }
-
   .form-inline-lg > .invalid-feedback:not(:last-child) {
     margin-right: 1rem;
   }
-
   .form-inline-lg .form-group > .form-control:not(:last-child) {
     margin-right: 1rem;
   }
-
   .form-inline-lg .form-group > .input-group:not(:last-child) {
     margin-right: 1rem;
   }
-
   .form-inline-lg .form-group > label:not(:last-child) {
     margin-right: 1rem;
   }
-
   .form-inline-lg .form-group > .custom-control {
     margin-right: 1rem;
   }
-
   .form-inline-lg .form-group > .btn:not(:last-child) {
     margin-right: 1rem;
   }
-
   .form-inline-lg .form-group > a.btn:not(:last-child) {
     margin-right: 1rem;
   }
-
   .form-inline-lg .form-group > .form-text:not(:last-child) {
     margin-right: 1rem;
   }
-
   .form-inline-lg .form-group > .invalid-feedback:not(:last-child) {
     margin-right: 1rem;
   }
@@ -8980,39 +8522,30 @@ legend {
   .form-inline-lg > .form-control:not(:last-child) {
     margin-bottom: 2rem;
   }
-
   .form-inline-lg > .input-group:not(:last-child) {
     margin-bottom: 2rem;
   }
-
   .form-inline-lg > .custom-control {
     margin-bottom: 2rem;
   }
-
   .form-inline-lg > .btn:not(:last-child) {
     margin-bottom: 2rem;
   }
-
   .form-inline-lg > a.btn:not(:last-child) {
     margin-bottom: 2rem;
   }
-
   .form-inline-lg .form-group > .form-control:not(:last-child) {
     margin-bottom: 2rem;
   }
-
   .form-inline-lg .form-group > .input-group:not(:last-child) {
     margin-bottom: 2rem;
   }
-
   .form-inline-lg .form-group > .custom-control {
     margin-bottom: 2rem;
   }
-
   .form-inline-lg .form-group > .btn:not(:last-child) {
     margin-bottom: 2rem;
   }
-
   .form-inline-lg .form-group > a.btn:not(:last-child) {
     margin-bottom: 2rem;
   }
@@ -9033,11 +8566,9 @@ legend {
     -webkit-box-align: center;
     align-items: center;
   }
-
   .form-inline-xl .form-group {
     width: 100%;
   }
-
   .form-inline-xl > .form-control,
   .form-inline-xl > .input-group,
   .form-inline-xl .form-group > .form-control,
@@ -9048,7 +8579,6 @@ legend {
     flex: 1 1 0%;
     min-width: 0;
   }
-
   .form-inline-xl > label,
   .form-inline-xl > .custom-control,
   .form-inline-xl > .form-text,
@@ -9065,7 +8595,6 @@ legend {
     align-items: center;
     min-width: 0;
   }
-
   .form-inline-xl > label,
   .form-inline-xl > .form-text,
   .form-inline-xl > .invalid-feedback,
@@ -9077,67 +8606,51 @@ legend {
     border: none;
     white-space: nowrap;
   }
-
   .form-inline-xl > .form-control:not(:last-child) {
     margin-right: 1rem;
   }
-
   .form-inline-xl > .input-group:not(:last-child) {
     margin-right: 1rem;
   }
-
   .form-inline-xl > label:not(:last-child) {
     margin-right: 1rem;
   }
-
   .form-inline-xl > .custom-control {
     margin-right: 1rem;
   }
-
   .form-inline-xl > .btn:not(:last-child) {
     margin-right: 1rem;
   }
-
   .form-inline-xl > a.btn:not(:last-child) {
     margin-right: 1rem;
   }
-
   .form-inline-xl > .form-text:not(:last-child) {
     margin-right: 1rem;
   }
-
   .form-inline-xl > .invalid-feedback:not(:last-child) {
     margin-right: 1rem;
   }
-
   .form-inline-xl .form-group > .form-control:not(:last-child) {
     margin-right: 1rem;
   }
-
   .form-inline-xl .form-group > .input-group:not(:last-child) {
     margin-right: 1rem;
   }
-
   .form-inline-xl .form-group > label:not(:last-child) {
     margin-right: 1rem;
   }
-
   .form-inline-xl .form-group > .custom-control {
     margin-right: 1rem;
   }
-
   .form-inline-xl .form-group > .btn:not(:last-child) {
     margin-right: 1rem;
   }
-
   .form-inline-xl .form-group > a.btn:not(:last-child) {
     margin-right: 1rem;
   }
-
   .form-inline-xl .form-group > .form-text:not(:last-child) {
     margin-right: 1rem;
   }
-
   .form-inline-xl .form-group > .invalid-feedback:not(:last-child) {
     margin-right: 1rem;
   }
@@ -9147,39 +8660,30 @@ legend {
   .form-inline-xl > .form-control:not(:last-child) {
     margin-bottom: 2rem;
   }
-
   .form-inline-xl > .input-group:not(:last-child) {
     margin-bottom: 2rem;
   }
-
   .form-inline-xl > .custom-control {
     margin-bottom: 2rem;
   }
-
   .form-inline-xl > .btn:not(:last-child) {
     margin-bottom: 2rem;
   }
-
   .form-inline-xl > a.btn:not(:last-child) {
     margin-bottom: 2rem;
   }
-
   .form-inline-xl .form-group > .form-control:not(:last-child) {
     margin-bottom: 2rem;
   }
-
   .form-inline-xl .form-group > .input-group:not(:last-child) {
     margin-bottom: 2rem;
   }
-
   .form-inline-xl .form-group > .custom-control {
     margin-bottom: 2rem;
   }
-
   .form-inline-xl .form-group > .btn:not(:last-child) {
     margin-bottom: 2rem;
   }
-
   .form-inline-xl .form-group > a.btn:not(:last-child) {
     margin-bottom: 2rem;
   }
@@ -10310,15 +9814,12 @@ select.form-control[multiple] > option:disabled {
   .medium-text-left {
     text-align: left;
   }
-
   .medium-text-right {
     text-align: right;
   }
-
   .medium-text-center {
     text-align: center;
   }
-
   .medium-text-justify {
     text-align: justify;
   }
@@ -10328,15 +9829,12 @@ select.form-control[multiple] > option:disabled {
   .large-text-left {
     text-align: left;
   }
-
   .large-text-right {
     text-align: right;
   }
-
   .large-text-center {
     text-align: center;
   }
-
   .large-text-justify {
     text-align: justify;
   }
@@ -11582,35 +11080,27 @@ select.form-control[multiple] > option:disabled {
   .overflow-sm-hidden {
     overflow: hidden !important;
   }
-
   .overflow-x-sm-hidden {
     overflow-x: hidden !important;
   }
-
   .overflow-y-sm-hidden {
     overflow-y: hidden !important;
   }
-
   .overflow-sm-auto {
     overflow: auto !important;
   }
-
   .overflow-x-sm-auto {
     overflow-x: auto !important;
   }
-
   .overflow-y-sm-auto {
     overflow-y: auto !important;
   }
-
   .overflow-sm-scroll {
     overflow: scroll !important;
   }
-
   .overflow-x-sm-scroll {
     overflow-x: scroll !important;
   }
-
   .overflow-y-sm-scroll {
     overflow-y: scroll !important;
   }
@@ -11620,35 +11110,27 @@ select.form-control[multiple] > option:disabled {
   .overflow-md-hidden {
     overflow: hidden !important;
   }
-
   .overflow-x-md-hidden {
     overflow-x: hidden !important;
   }
-
   .overflow-y-md-hidden {
     overflow-y: hidden !important;
   }
-
   .overflow-md-auto {
     overflow: auto !important;
   }
-
   .overflow-x-md-auto {
     overflow-x: auto !important;
   }
-
   .overflow-y-md-auto {
     overflow-y: auto !important;
   }
-
   .overflow-md-scroll {
     overflow: scroll !important;
   }
-
   .overflow-x-md-scroll {
     overflow-x: scroll !important;
   }
-
   .overflow-y-md-scroll {
     overflow-y: scroll !important;
   }
@@ -11658,35 +11140,27 @@ select.form-control[multiple] > option:disabled {
   .overflow-lg-hidden {
     overflow: hidden !important;
   }
-
   .overflow-x-lg-hidden {
     overflow-x: hidden !important;
   }
-
   .overflow-y-lg-hidden {
     overflow-y: hidden !important;
   }
-
   .overflow-lg-auto {
     overflow: auto !important;
   }
-
   .overflow-x-lg-auto {
     overflow-x: auto !important;
   }
-
   .overflow-y-lg-auto {
     overflow-y: auto !important;
   }
-
   .overflow-lg-scroll {
     overflow: scroll !important;
   }
-
   .overflow-x-lg-scroll {
     overflow-x: scroll !important;
   }
-
   .overflow-y-lg-scroll {
     overflow-y: scroll !important;
   }
@@ -11696,35 +11170,27 @@ select.form-control[multiple] > option:disabled {
   .overflow-xl-hidden {
     overflow: hidden !important;
   }
-
   .overflow-x-xl-hidden {
     overflow-x: hidden !important;
   }
-
   .overflow-y-xl-hidden {
     overflow-y: hidden !important;
   }
-
   .overflow-xl-auto {
     overflow: auto !important;
   }
-
   .overflow-x-xl-auto {
     overflow-x: auto !important;
   }
-
   .overflow-y-xl-auto {
     overflow-y: auto !important;
   }
-
   .overflow-xl-scroll {
     overflow: scroll !important;
   }
-
   .overflow-x-xl-scroll {
     overflow-x: scroll !important;
   }
-
   .overflow-y-xl-scroll {
     overflow-y: scroll !important;
   }
@@ -11762,27 +11228,21 @@ select.form-control[multiple] > option:disabled {
   .z-sm-0 {
     z-index: 0 !important;
   }
-
   .z-sm-10 {
     z-index: 10 !important;
   }
-
   .z-sm-20 {
     z-index: 20 !important;
   }
-
   .z-sm-30 {
     z-index: 30 !important;
   }
-
   .z-sm-40 {
     z-index: 40 !important;
   }
-
   .z-sm-50 {
     z-index: 50 !important;
   }
-
   .z-sm-auto {
     z-index: auto !important;
   }
@@ -11792,27 +11252,21 @@ select.form-control[multiple] > option:disabled {
   .z-md-0 {
     z-index: 0 !important;
   }
-
   .z-md-10 {
     z-index: 10 !important;
   }
-
   .z-md-20 {
     z-index: 20 !important;
   }
-
   .z-md-30 {
     z-index: 30 !important;
   }
-
   .z-md-40 {
     z-index: 40 !important;
   }
-
   .z-md-50 {
     z-index: 50 !important;
   }
-
   .z-md-auto {
     z-index: auto !important;
   }
@@ -11822,27 +11276,21 @@ select.form-control[multiple] > option:disabled {
   .z-lg-0 {
     z-index: 0 !important;
   }
-
   .z-lg-10 {
     z-index: 10 !important;
   }
-
   .z-lg-20 {
     z-index: 20 !important;
   }
-
   .z-lg-30 {
     z-index: 30 !important;
   }
-
   .z-lg-40 {
     z-index: 40 !important;
   }
-
   .z-lg-50 {
     z-index: 50 !important;
   }
-
   .z-lg-auto {
     z-index: auto !important;
   }
@@ -11852,27 +11300,21 @@ select.form-control[multiple] > option:disabled {
   .z-xl-0 {
     z-index: 0 !important;
   }
-
   .z-xl-10 {
     z-index: 10 !important;
   }
-
   .z-xl-20 {
     z-index: 20 !important;
   }
-
   .z-xl-30 {
     z-index: 30 !important;
   }
-
   .z-xl-40 {
     z-index: 40 !important;
   }
-
   .z-xl-50 {
     z-index: 50 !important;
   }
-
   .z-xl-auto {
     z-index: auto !important;
   }
@@ -12212,15 +11654,19 @@ select.form-control[multiple] > option:disabled {
 
 /* CSS Subgrid - This feature is shipped in Firefox 71, which is currently the only browser to implement subgrid. */
 .grid-columns-subgrid {
+  -ms-grid-columns: subgrid;
   grid-template-columns: subgrid;
 }
 
 .grid-rows-subgrid {
+  -ms-grid-rows: subgrid;
   grid-template-rows: subgrid;
 }
 
 .grid-subgrid-both {
+  -ms-grid-columns: subgrid;
   grid-template-columns: subgrid;
+  -ms-grid-rows: subgrid;
   grid-template-rows: subgrid;
 }
 
@@ -12250,12 +11696,10 @@ select.form-control[multiple] > option:disabled {
     -webkit-transform: translateY(0);
     transform: translateY(0);
   }
-
   40% {
     -webkit-transform: translateY(-30px);
     transform: translateY(-30px);
   }
-
   60% {
     -webkit-transform: translateY(-15px);
     transform: translateY(-15px);
@@ -12271,12 +11715,10 @@ select.form-control[multiple] > option:disabled {
     -webkit-transform: translateY(0);
     transform: translateY(0);
   }
-
   40% {
     -webkit-transform: translateY(-30px);
     transform: translateY(-30px);
   }
-
   60% {
     -webkit-transform: translateY(-15px);
     transform: translateY(-15px);
@@ -12357,15 +11799,12 @@ select.form-control[multiple] > option:disabled {
     transform: translateY(-20px);
     opacity: 0;
   }
-
   30% {
     opacity: 1;
   }
-
   60% {
     opacity: 1;
   }
-
   to {
     -webkit-transform: translateY(10px);
     transform: translateY(10px);
@@ -12379,15 +11818,12 @@ select.form-control[multiple] > option:disabled {
     transform: translateY(-20px);
     opacity: 0;
   }
-
   30% {
     opacity: 1;
   }
-
   60% {
     opacity: 1;
   }
-
   to {
     -webkit-transform: translateY(10px);
     transform: translateY(10px);
@@ -12994,27 +12430,22 @@ select.form-control[multiple] > option:disabled {
     -webkit-transform: translateX(5px);
     transform: translateX(5px);
   }
-
   30% {
     -webkit-transform: translateX(-5px);
     transform: translateX(-5px);
   }
-
   50% {
     -webkit-transform: translateX(3px);
     transform: translateX(3px);
   }
-
   65% {
     -webkit-transform: translateX(-3px);
     transform: translateX(-3px);
   }
-
   80% {
     -webkit-transform: translateX(2px);
     transform: translateX(2px);
   }
-
   100% {
     -webkit-transform: translateX(0);
     transform: translateX(0);
@@ -13026,27 +12457,22 @@ select.form-control[multiple] > option:disabled {
     -webkit-transform: translateX(5px);
     transform: translateX(5px);
   }
-
   30% {
     -webkit-transform: translateX(-5px);
     transform: translateX(-5px);
   }
-
   50% {
     -webkit-transform: translateX(3px);
     transform: translateX(3px);
   }
-
   65% {
     -webkit-transform: translateX(-3px);
     transform: translateX(-3px);
   }
-
   80% {
     -webkit-transform: translateX(2px);
     transform: translateX(2px);
   }
-
   100% {
     -webkit-transform: translateX(0);
     transform: translateX(0);
