@@ -217,6 +217,69 @@ li a {
   background-color: transparent;
 }
 
+.clickable-dropbutton {
+  background-color: var(--blue-400);
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.clickable-dropbutton:hover,
+.clickable-dropbutton:focus {
+  background-color: var(--blue-500);
+}
+
+.clickable-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.clickable-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--white);
+  min-width: 500px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.158);
+  z-index: 1;
+}
+
+.clickable-dropdown-content a {
+  color: rgb(0, 0, 0);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: flex;
+}
+
+.clickable-dropdown a:hover {
+  background-color: rgba(221, 221, 221, 0.26);
+}
+
+.clickable-dropdown-show {
+  display: block;
+}
+
+.clickable-dropdown-content.is-small {
+  min-width: 160px;
+}
+
+.clickable-dropdown-content.is-normal {
+  min-width: 200px;
+}
+
+.clickable-dropdown-content.is-medium {
+  min-width: 300px;
+}
+
+.clickable-dropdown-content.is-large {
+  min-width: 600px;
+}
+
 .tab-content > .tab-pane {
   display: none;
 }
