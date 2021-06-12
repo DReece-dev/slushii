@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 /*
 ----------------------------------------------------------------------------
 Slushii CSS Framework
@@ -12112,6 +12114,24 @@ select.form-control[multiple]>option:disabled {
   max-width: 100%;
   -webkit-box-ordinal-group: 2;
   order: 1;
+}
+
+/* CSS Subgrid - This feature is shipped in Firefox 71, which is currently the only browser to implement subgrid. */
+.grid-columns-subgrid {
+  -ms-grid-columns: subgrid;
+  grid-template-columns: subgrid;
+}
+
+.grid-rows-subgrid {
+  -ms-grid-rows: subgrid;
+  grid-template-rows: subgrid;
+}
+
+.grid-subgrid-both {
+  -ms-grid-columns: subgrid;
+  grid-template-columns: subgrid;
+  -ms-grid-rows: subgrid;
+  grid-template-rows: subgrid;
 }
 
 /* Slushii Hover Animations */
