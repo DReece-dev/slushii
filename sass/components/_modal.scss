@@ -1,0 +1,189 @@
+.modal {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  -webkit-transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  z-index: 99;
+  outline: none;
+}
+
+.dark-mode .modal {
+  background-color: rgba(0, 0, 0, 0.95);
+}
+
+.modal-dialog {
+  position: absolute;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  /* This hack corrects the scrollable modal content on IE. */
+  .modal.ie-scroll-fix .modal-dialog {
+    display: block;
+  }
+}
+
+.modal-content {
+  margin: auto;
+  width: 40rem;
+  max-width: 100%;
+  padding: 3rem;
+  color: rgba(0, 0, 0, 0.85);
+  background-color: #ffffff;
+  background-image: none;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.4rem;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.dark-mode .modal-content {
+  color: rgba(255, 255, 255, 0.8);
+  background-color: #191c20;
+  background-image: none;
+  border-color: rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+@media (max-width: 576px) {
+  .modal-content {
+    padding: 2rem;
+  }
+}
+
+.modal-title {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-top: 0;
+}
+
+.modal-content-media,
+.dark-mode .modal-content-media {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.modal-content-media img,
+.modal-content-media video {
+  display: block;
+}
+
+.modal-full .modal-content {
+  width: 100%;
+  border: none;
+  border-radius: 0;
+  padding: 3rem;
+  color: rgba(0, 0, 0, 0.85);
+  background-color: #ffffff;
+  background-image: none;
+}
+
+.dark-mode .modal-full .modal-content {
+  color: rgba(255, 255, 255, 0.8);
+  background-color: #191c20;
+  background-image: none;
+}
+
+@media (max-width: 576px) {
+  .modal-full .modal-content {
+    padding: 2rem;
+  }
+}
+
+.modal-content .close {
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-align: center;
+  -webkit-box-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  position: fixed;
+  cursor: pointer;
+  top: -100%;
+  left: 1rem;
+  z-index: 10;
+  padding: 0;
+  -webkit-transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  font-size: 2rem;
+  width: 4rem;
+  height: 4rem;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 50%;
+  border-color: transparent;
+}
+
+.modal-content .close:hover {
+  text-decoration: none;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.dark-mode .modal-content .close {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .modal-content .close:hover {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.modal-content .close:focus {
+  -webkit-transition: none;
+  transition: none;
+  outline: 2px solid rgba(24, 144, 255, 0.3);
+  outline-offset: 0.2rem;
+}
+
+.dark-mode .modal-content .close:focus {
+  outline-color: rgba(24, 144, 255, 0.3);
+}
+
+/* Showing modals */
+.modal:target,
+.modal.show {
+  top: 0;
+}
+
+.modal:target ~ .page-wrapper .sidebar,
+.modal:target ~ .page-wrapper .content-wrapper,
+.modal.show ~ .page-wrapper .sidebar,
+.modal.show ~ .page-wrapper .content-wrapper {
+  overflow: hidden;
+}
+
+.modal:target .modal-dialog,
+.modal.show .modal-dialog {
+  top: 0;
+}
+
+.modal:target .modal-content .close,
+.modal.show .modal-content .close {
+  top: 1rem;
+}

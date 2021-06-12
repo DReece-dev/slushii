@@ -1,0 +1,15 @@
+.breakpoint-s::before {
+  content: "640px";
+}
+
+.breakpoint-m::before {
+  content: "960px";
+}
+
+.breakpoint-l::before {
+  content: "1200px";
+}
+
+.breakpoint-xl::before {
+  content: "1600px";
+}

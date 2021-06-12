@@ -1,0 +1,618 @@
+/* Inputs */
+.form-control {
+  display: block;
+  width: 100%;
+  height: 3.2rem;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+  color: rgba(0, 0, 0, 0.85);
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.4rem;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  /* Removes the default styles on some devices. */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.form-control-sm {
+  height: 2.6rem;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+  font-size: 1.2rem;
+}
+
+.form-control-lg {
+  height: 4rem;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+  font-size: 1.8rem;
+}
+
+textarea.form-control {
+  max-width: 100%;
+  min-height: 10rem;
+  padding: 0.8rem;
+  line-height: 1.5;
+}
+
+textarea.form-control-sm {
+  min-height: 8rem;
+  padding: 0.8rem;
+}
+
+textarea.form-control-lg {
+  min-height: 14rem;
+  padding: 0.8rem;
+}
+
+.form-control:hover {
+  color: rgba(0, 0, 0, 0.85);
+  background-color: #ffffff;
+  border-color: rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.form-control:focus {
+  color: rgba(0, 0, 0, 0.85);
+  background-color: #ffffff;
+  border-color: rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(24, 144, 255, 0.6);
+  box-shadow: 0 0 0 0.2rem rgba(24, 144, 255, 0.6);
+  outline: none;
+}
+
+::-webkit-input-placeholder {
+  /* Edge */
+  color: rgba(0, 0, 0, 0.35);
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: rgba(0, 0, 0, 0.35);
+}
+
+::-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.35);
+}
+
+::placeholder {
+  color: rgba(0, 0, 0, 0.35);
+}
+
+.form-control.disabled {
+  /*
+      The :disabled selector must still be added to the input field for the
+      forms to work as intended. Moreover, since focusing on an input with the
+      :disabled selector is impossible, the :focus styles are not overridden
+      (along with the :focus box shadows).
+      */
+  cursor: not-allowed;
+  opacity: 0.6;
+  color: rgba(0, 0, 0, 0.85);
+  background-color: #ecf0f1;
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.form-control:disabled {
+  /*
+      The :disabled selector must still be added to the input field for the
+      forms to work as intended. Moreover, since focusing on an input with the
+      :disabled selector is impossible, the :focus styles are not overridden
+      (along with the :focus box shadows).
+      */
+  cursor: not-allowed;
+  opacity: 0.6;
+  color: rgba(0, 0, 0, 0.85);
+  background-color: #ecf0f1;
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.form-control.disabled:hover {
+  /*
+      The :disabled selector must still be added to the input field for the
+      forms to work as intended. Moreover, since focusing on an input with the
+      :disabled selector is impossible, the :focus styles are not overridden
+      (along with the :focus box shadows).
+      */
+  cursor: not-allowed;
+  opacity: 0.6;
+  color: rgba(0, 0, 0, 0.85);
+  background-color: #ecf0f1;
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.form-control:disabled:hover {
+  /*
+      The :disabled selector must still be added to the input field for the
+      forms to work as intended. Moreover, since focusing on an input with the
+      :disabled selector is impossible, the :focus styles are not overridden
+      (along with the :focus box shadows).
+      */
+  cursor: not-allowed;
+  opacity: 0.6;
+  color: rgba(0, 0, 0, 0.85);
+  background-color: #ecf0f1;
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode .form-control {
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.dark-mode .form-control:hover {
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.dark-mode .form-control:focus {
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(24, 144, 255, 0.3);
+  box-shadow: 0 0 0 0.2rem rgba(24, 144, 255, 0.3);
+  outline: none;
+}
+
+.dark-mode ::-webkit-input-placeholder {
+  /* Edge */
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.dark-mode :-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.dark-mode ::-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.dark-mode ::placeholder {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.dark-mode .form-control.disabled {
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(0, 0, 0, 0.15);
+  border-color: rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .form-control:disabled {
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(0, 0, 0, 0.15);
+  border-color: rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .form-control.disabled:hover {
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(0, 0, 0, 0.15);
+  border-color: rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .form-control:disabled:hover {
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(0, 0, 0, 0.15);
+  border-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Alternate dark mode inputs */
+.dark-mode .form-control.alt-dm {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.15);
+  border-color: transparent;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.dark-mode .form-control.alt-dm:hover {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.15);
+  border-color: rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.dark-mode .form-control.alt-dm:focus {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.15);
+  border-color: inherit;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  outline: none;
+}
+
+.dark-mode .form-control.alt-dm::-webkit-input-placeholder {
+  /* Edge */
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.dark-mode .form-control.alt-dm:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.dark-mode .form-control.alt-dm::-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.dark-mode .form-control.alt-dm::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.dark-mode .form-control.alt-dm.disabled {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-color: transparent;
+}
+
+.dark-mode .form-control.alt-dm:disabled {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-color: transparent;
+}
+
+.dark-mode .form-control.alt-dm.disabled:hover {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-color: transparent;
+}
+
+.dark-mode .form-control.alt-dm:disabled:hover {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-color: transparent;
+}
+
+/* Inputs invalid (with errors) */
+.form-group.is-invalid .form-control {
+  color: rgba(0, 0, 0, 0.85);
+  background-color: #ffffff;
+  border-color: #ff4d4f;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.form-control.is-invalid {
+  color: rgba(0, 0, 0, 0.85);
+  background-color: #ffffff;
+  border-color: #ff4d4f;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.form-group.is-invalid .form-control:hover {
+  color: rgba(0, 0, 0, 0.85);
+  background-color: #ffffff;
+  border-color: #ff4d4f;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.form-control.is-invalid:hover {
+  color: rgba(0, 0, 0, 0.85);
+  background-color: #ffffff;
+  border-color: #ff4d4f;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.form-group.is-invalid .form-control:focus {
+  color: rgba(0, 0, 0, 0.85);
+  background-color: #ffffff;
+  border-color: #f8d0d9;
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(245, 34, 45, 0.6);
+  box-shadow: 0 0 0 0.2rem rgba(245, 34, 45, 0.6);
+  outline: none;
+}
+
+.form-control.is-invalid:focus {
+  color: rgba(0, 0, 0, 0.85);
+  background-color: #ffffff;
+  border-color: #f8d0d9;
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(245, 34, 45, 0.6);
+  box-shadow: 0 0 0 0.2rem rgba(245, 34, 45, 0.6);
+  outline: none;
+}
+
+.form-group.is-invalid .form-control::-webkit-input-placeholder {
+  /* Edge */
+  color: rgba(0, 0, 0, 0.35);
+}
+
+.form-group.is-invalid .form-control:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: rgba(0, 0, 0, 0.35);
+}
+
+.form-group.is-invalid .form-control::-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.35);
+}
+
+.form-group.is-invalid .form-control::placeholder {
+  color: rgba(0, 0, 0, 0.35);
+}
+
+.form-control.is-invalid::-webkit-input-placeholder {
+  /* Edge */
+  color: rgba(0, 0, 0, 0.35);
+}
+
+.form-control.is-invalid:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: rgba(0, 0, 0, 0.35);
+}
+
+.form-control.is-invalid::-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.35);
+}
+
+.form-control.is-invalid::placeholder {
+  color: rgba(0, 0, 0, 0.35);
+}
+
+.dark-mode .form-group.is-invalid .form-control {
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: #ff4d4f;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.dark-mode .form-control.is-invalid {
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: #ff4d4f;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.dark-mode .form-group.is-invalid .form-control:hover {
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: #ff4d4f;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.dark-mode .form-control.is-invalid:hover {
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: #ff4d4f;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.dark-mode .form-group.is-invalid .form-control:focus {
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: #ff4d4f;
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(245, 34, 45, 0.3);
+  box-shadow: 0 0 0 0.2rem rgba(245, 34, 45, 0.3);
+  outline: none;
+}
+
+.dark-mode .form-control.is-invalid:focus {
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: #ff4d4f;
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(245, 34, 45, 0.3);
+  box-shadow: 0 0 0 0.2rem rgba(245, 34, 45, 0.3);
+  outline: none;
+}
+
+.dark-mode .form-group.is-invalid .form-control::-webkit-input-placeholder {
+  /* Edge */
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.dark-mode .form-group.is-invalid .form-control:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.dark-mode .form-group.is-invalid .form-control::-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.dark-mode .form-group.is-invalid .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.dark-mode .form-control.is-invalid::-webkit-input-placeholder {
+  /* Edge */
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.dark-mode .form-control.is-invalid:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.dark-mode .form-control.is-invalid::-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.dark-mode .form-control.is-invalid::placeholder {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.dark-mode .form-group.is-invalid .form-control.alt-dm {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.15);
+  border-color: #ed586c;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.dark-mode .form-control.alt-dm.is-invalid {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.15);
+  border-color: #ed586c;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.dark-mode .form-group.is-invalid .form-control.alt-dm:hover {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.15);
+  border-color: #ed586c;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.dark-mode .form-control.alt-dm.is-invalid:hover {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.15);
+  border-color: #ed586c;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.dark-mode .form-group.is-invalid .form-control.alt-dm:focus {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.15);
+  border-color: #ed586c;
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(245, 34, 45, 0.3);
+  box-shadow: 0 0 0 0.2rem rgba(245, 34, 45, 0.3);
+  outline: none;
+}
+
+.dark-mode .form-control.alt-dm.is-invalid:focus {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.15);
+  border-color: #ed586c;
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(245, 34, 45, 0.3);
+  box-shadow: 0 0 0 0.2rem rgba(245, 34, 45, 0.3);
+  outline: none;
+}
+
+.dark-mode
+  .form-group.is-invalid
+  .form-control.alt-dm.is-invalid::-webkit-input-placeholder {
+  /* Edge */
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.dark-mode
+  .form-group.is-invalid
+  .form-control.alt-dm.is-invalid:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.dark-mode
+  .form-group.is-invalid
+  .form-control.alt-dm.is-invalid::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.dark-mode
+  .form-group.is-invalid
+  .form-control.alt-dm.is-invalid:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.dark-mode
+  .form-group.is-invalid
+  .form-control.alt-dm.is-invalid::-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.dark-mode .form-group.is-invalid .form-control.alt-dm.is-invalid::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.dark-mode .form-control.alt-dm.is-invalid::-webkit-input-placeholder {
+  /* Edge */
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.dark-mode .form-control.alt-dm.is-invalid:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.dark-mode .form-control.alt-dm.is-invalid::-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.dark-mode .form-control.alt-dm.is-invalid::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Selects */
+select.form-control:not([multiple]) {
+  cursor: pointer;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAI9JREFUeNpiZACCyMjIBCDVD8SOy5cvv8BAAgDqNQBS+4G4EKh3ASPUsPlQ+Q+kGIpkmABUKJEJ6jIYAEnshyok1TAQ6AcZ6Ah1GdGG4jAM7DtGQgrQvU9ILSOxColVw0is7VA2QV8wkhA+DMQECSMJgc5AyDCcBhIwFG9aZSQxrRFM+IwkJGAGYnIRQIABACQuXCKovu2mAAAAAElFTkSuQmCC");
+  background-size: 1rem;
+  background-repeat: no-repeat;
+  background-position: calc(100% - 1rem) center;
+  padding-right: 3.6rem;
+}
+
+.dark-mode select.form-control:not([multiple]) > option {
+  /* Required for some browsers, such as Firefox, or the old Ms Edge (ignored on webkit browsers) */
+  color: rgba(255, 255, 255, 0.8);
+  background-color: #191c20;
+}
+
+.dark-mode select.form-control:not([multiple]) > option:hover {
+  /* Required for some browsers, such as Firefox, or the old Ms Edge (ignored on webkit browsers) */
+  color: rgba(255, 255, 255, 0.8);
+  background-color: #1890ff;
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  /*
+      This hack resets the select boxes to their defaults on IE, because it is
+      not possible to remove the default dropdown arrow.
+      */
+  select.form-control:not([multiple]) {
+    background-image: none;
+    background-size: auto;
+    background-repeat: initial;
+    background-position: 0% 0%;
+    padding-right: 0;
+  }
+}
+
+select.form-control[multiple] {
+  overflow: auto;
+  height: auto;
+  padding: 0.8rem;
+}
+
+select.form-control-sm[multiple] {
+  padding: 0.8rem;
+}
+
+select.form-control-lg[multiple] {
+  padding: 0.8rem;
+}
+
+select.form-control[multiple] > option:not(:checked) {
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.dark-mode select.form-control[multiple] > option:not(:checked) {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+select.form-control[multiple] > option:disabled {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.dark-mode select.form-control[multiple] > option:disabled {
+  color: rgba(255, 255, 255, 0.6);
+}

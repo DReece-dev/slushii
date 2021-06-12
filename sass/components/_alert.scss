@@ -1,0 +1,165 @@
+/* Sticky alerts */
+.sticky-alerts {
+  position: fixed;
+  top: 0;
+  right: 2.4rem;
+  z-index: 100;
+  /* Can be used on top of modals */
+}
+.alert {
+  position: relative;
+  padding: 1rem 2rem;
+  color: #fff;
+  background-color: #1890ff;
+  background-image: none;
+  border-color: #1890ff;
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
+}
+
+.dark-mode .alert {
+  color: rgba(255, 255, 255, 0.8);
+  background-color: #191c20;
+  background-image: none;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.alert-heading {
+  color: inherit;
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin: 0 0 0.5rem 0;
+}
+
+.dark-mode .alert-heading {
+  color: inherit;
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin: 0 0 0.5rem 0;
+}
+
+.alert-blue {
+  background-color: white;
+  color: var(--blue);
+}
+
+.alert-indigo {
+  background-color: white;
+  color: var(--indigo);
+}
+
+.alert-pink {
+  background-color: white;
+  color: var(--pink);
+}
+
+.alert-red {
+  background-color: white;
+  color: var(--red);
+}
+
+.alert-orange {
+  background-color: white;
+  color: var(--orange);
+}
+
+.alert-green {
+  background-color: white;
+  color: var(--green);
+}
+
+.alert-dark-grey {
+  background-color: white;
+  color: var(--gray-dark);
+}
+
+.alert-warning {
+  background-color: var(--darkmode-background);
+  color: var(--warning);
+}
+
+.alert-danger {
+  background-color: var(--darkmode-background);
+  color: var(--danger);
+}
+
+.alert-light {
+  background-color: var(--darkmode-background);
+  color: var(--light);
+}
+
+.alert-dark {
+  background: white;
+  color: var(--dark);
+}
+
+.alert-link,
+.dark-mode .alert-link {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: underline;
+}
+
+.alert-link:hover,
+.dark-mode .alert-link:hover {
+  color: inherit;
+  opacity: 0.75;
+}
+
+.alert .close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  color: inherit;
+  padding: 0.4rem 0.6rem;
+  line-height: 1;
+  font-size: 1.6rem;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.alert .close:focus {
+  outline: 2px solid rgba(0, 0, 0, 0.5);
+  outline-offset: 0.2rem;
+}
+
+.dark-mode .alert .close:focus {
+  outline-color: rgba(255, 255, 255, 0.5);
+}
+
+.alert.dispose {
+  display: none;
+}
+
+/* Sticky alerts */
+.sticky-alerts .alert {
+  display: none;
+  width: 27rem;
+  margin-top: 1rem;
+  right: -50rem;
+  /* Hidden by default */
+  -webkit-box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.045);
+  box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.045);
+}
+
+.sticky-alerts .alert.show {
+  right: 0;
+  -webkit-transition: right 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: right 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.sticky-alerts .alert.fade {
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: visibility 0s 0.4s, opacity 0.4s linear;
+  transition: visibility 0s 0.4s, opacity 0.4s linear;
+}
+
+.sticky-alerts .alert.alert-block {
+  display: block;
+}
+
+.sticky-alerts .alert.alert-block.dispose {
+  display: none;
+}

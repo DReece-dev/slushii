@@ -1,0 +1,55 @@
+:root {
+  --darkmode-background: #25282c;
+  --darkmode-font-color: #f8f8f8;
+  --blue: #0d6efd;
+  --blue-400: #2680eb;
+  --blue-500: #1473e6;
+  --blue-600: #0d66d0;
+  --blue-700: #095aba;
+  --indigo: #6610f2;
+  --indigo-400: #6767ec;
+  --indigo-500: #5c5ce0;
+  --indigo-600: #5151d3;
+  --indigo-700: #4646c6;
+  --purple: #6f42c1;
+  --pink: #d63384;
+  --red: #b42f3c;
+  --red-400: #e34850;
+  --red-500: #c9252d;
+  --red-600: #bb121a;
+  --orange: #ff7300;
+  --orange-400: #e68619;
+  --orange-500: #da7b11;
+  --orange-600: #cb6f10;
+  --orange-700: #bd640d;
+  --yellow: #ffc107;
+  --green: #198754;
+  --green-400: #2d9d78;
+  --green-500: #268e6c;
+  --green-600: #12805c;
+  --green-700: #107154;
+  --teal: #20c997;
+  --cyan: #0dcaf0;
+  --white: #fff;
+  --gray: #6c757d;
+  --gray-dark: #111111;
+  --lightgray: #6c757d;
+  --success: #18ca77;
+  --info: #0fd7ff;
+  --warning: #ffbf00;
+  --danger: #ee1a2f;
+  --light: #f3f0f0;
+  --dark: #212529;
+  --deafult-fonts: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --breakpoint-s: 640px;
+  --breakpoint-m: 960px;
+  --breakpoint-l: 1200px;
+  --breakpoint-xl: 1600px;
+  --font-size-xs: 0.7rem;
+  --font-size-s: 0.85rem;
+  --font-size-m: 1rem;
+  --font-size-l: 1.35rem;
+  --font-size-xl: 1.75rem;
+}

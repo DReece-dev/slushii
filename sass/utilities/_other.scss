@@ -1,0 +1,98 @@
+.svg,
+.svg:not(.preserve) [fill*="#"]:not(.preserve) {
+  fill: currentcolor;
+}
+
+.svg:not(.preserve) [stroke*="#"]:not(.preserve) {
+  stroke: currentcolor;
+}
+
+/*
+* Fix Firefox blurry SVG rendering: https://bugzilla.mozilla.org/show_bug.cgi?id=1046835
+*/
+.svg {
+  -webkit-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+
+.is-visible {
+  display: block !important;
+}
+
+.is-hidden {
+  display: none !important;
+}
+
+.clearfix::after {
+  display: block;
+  clear: both;
+  content: "";
+}
+
+/* Screen reader */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.sr-only-focusable:active,
+.sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+/* Box shadow utilities also with darkmode */
+.shadow-none {
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+.shadow-sm {
+  -webkit-box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.15) !important;
+  box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.dark-mode .shadow-sm {
+  -webkit-box-shadow: 0 0.1rem 0.6rem rgba(0, 0, 0, 0.4) !important;
+  box-shadow: 0 0.1rem 0.6rem rgba(0, 0, 0, 0.4) !important;
+}
+
+.shadow {
+  -webkit-box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.15) !important;
+  box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.dark-mode .shadow {
+  -webkit-box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.4) !important;
+  box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.4) !important;
+}
+
+.shadow-lg {
+  -webkit-box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.15) !important;
+  box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.dark-mode .shadow-lg {
+  -webkit-box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.4) !important;
+  box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Pointer events utilities */
+.pointer-events-auto {
+  pointer-events: auto !important;
+}
+
+.pointer-events-none {
+  pointer-events: none !important;
+}

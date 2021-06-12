@@ -1,0 +1,36 @@
+.label {
+  display: inline-block;
+  padding: 0.33333rem 0.5rem;
+  border-radius: 0;
+  font-size: 0.8rem;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: default;
+  background: var(--blue-400);
+  color: #fefefe;
+}
+.label.blue {
+  background: var(--blue-400);
+  color: #fefefe;
+}
+.label.indigo {
+  background: var(--indigo-400);
+  color: #fefefe;
+}
+.label.red {
+  background: var(--red);
+  color: #0a0a0a;
+}
+.label.orange {
+  background: var(--orange);
+  color: #0a0a0a;
+}
+.label.green {
+  background: var(--green);
+  color: #fefefe;
+}
+
+.label.dark-grey {
+  background: var(--gray-dark);
+  color: #fefefe;
+}

@@ -1,0 +1,33 @@
+.panel {
+  border: 0.05rem solid #dadee4;
+  border-radius: 0.1rem;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+}
+
+.panel .panel-header,
+.panel .panel-footer {
+  -ms-flex: 0 0 auto;
+  -webkit-box-flex: 0;
+  flex: 0 0 auto;
+  padding: 0.8rem;
+}
+
+.panel .panel-nav {
+  -ms-flex: 0 0 auto;
+  -webkit-box-flex: 0;
+  flex: 0 0 auto;
+}
+
+.panel .panel-body {
+  -ms-flex: 1 1 auto;
+  -webkit-box-flex: 1;
+  flex: 1 1 auto;
+  overflow-y: auto;
+  padding: 0 0.8rem;
+}

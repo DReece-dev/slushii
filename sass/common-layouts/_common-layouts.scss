@@ -1,0 +1,451 @@
+/* Layouts */
+/* Card Layout */
+.layout-cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-left: -8px;
+  margin-right: -8px;
+}
+
+.layout-cards__item {
+  -ms-flex-preferred-size: 25%;
+  flex-basis: 25%;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+/* Holy Grail */
+.holy-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.holy-container__main {
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.holy-container__left {
+  width: 25%;
+}
+
+.holy-container__middle {
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.holy-container__right {
+  width: 20%;
+}
+
+/* Masonry Grid */
+.masonry-grid {
+  -webkit-column-count: 3;
+  column-count: 3;
+  -webkit-column-gap: 1rem;
+  column-gap: 1rem;
+  width: 100%;
+}
+
+.masonry-grid__item {
+  -webkit-column-break-inside: avoid;
+  break-inside: avoid;
+  margin-bottom: 1rem;
+}
+
+.same-height-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.same-height-container__column {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  margin: 0 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.same-height-container__content {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+/* Sidebar */
+.side-bar-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.side-bar-container__sidebar {
+  width: 30%;
+}
+
+.side-bar-container__main {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  overflow: auto;
+}
+
+/* Simple Grid */
+.simple-grid-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: -8px;
+  margin-right: -8px;
+}
+
+.simple-grid-row-row__cell {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.simple-grid-row-row__cell--fill {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+/* Split screen */
+.split-screen-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.split-screen-container__half {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+/* Navigation Options */
+/* Dot Navigation */
+.dots {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dots__item {
+  border-radius: 9999px;
+  height: 12px;
+  width: 12px;
+  background-color: rgba(0, 0, 0, 0.3);
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  margin: 0 4px;
+}
+
+/* Drawer */
+.drawer-container {
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+.drawer-container__overlay {
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+.drawer-container__sidebar {
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 200px;
+  background-color: #fff;
+}
+
+/* Dropdown */
+.navigation-dropdown {
+  position: relative;
+}
+
+.navigation-dropdown__content {
+  display: none;
+  left: 0;
+  padding-top: 4px;
+  position: absolute;
+  top: 100%;
+  background-color: #fff;
+  z-index: 9999;
+  height: 200px;
+  width: 200px;
+}
+
+.navigation-dropdown:hover .dropdown__content {
+  display: block;
+}
+
+/* Nested */
+.nested-dropdown {
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nested-dropdown li {
+  padding: 8px;
+  position: relative;
+}
+
+/* The sub dropdown */
+.nested-dropdown ul {
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  display: none;
+  left: 0;
+  position: absolute;
+  top: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+}
+
+/* The second level sub dropdown */
+.nested-dropdown ul ul {
+  left: 100%;
+  position: absolute;
+  top: 0;
+}
+
+/* Change background color of list item when being hovered */
+.nested-dropdown li:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Show the direct sub dropdown when hovering the list item */
+.nested-dropdown li:hover > ul {
+  display: block;
+}
+
+/* Input */
+/* Button with icon */
+.button-with-icon {
+  /* Center the content */
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+/* Custom checkbox button */
+.custom-checkbox-label {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  cursor: pointer;
+}
+
+.custom-checkbox-label__input {
+  display: none;
+}
+
+.custom-checkbox-label__square {
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  margin-right: 8px;
+  padding: 4px;
+}
+
+.custom-checkbox-label__checkbox {
+  background-color: transparent;
+  border-radius: 4px;
+  height: 16px;
+  width: 16px;
+}
+
+.custom-checkbox-label__checkbox--selected {
+  background-color: #00449e;
+}
+
+.upload-button-container {
+  position: relative;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.upload-button-container__input {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  opacity: 0;
+}
+
+.upload-button-container__icon {
+  margin-right: 8px;
+}
+
+/* Cookie Banner */
+.cookie-banner {
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.cookie-banner__content {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+/* Layered card */
+.layered-card {
+  position: relative;
+}
+
+.layered-card::before {
+  background: rgba(0, 0, 0, 0.3);
+  content: "";
+  top: 0;
+  left: 0;
+  position: absolute;
+  -webkit-transform: translate(1rem, 1rem);
+  transform: translate(1rem, 1rem);
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+/* Pricing Table */
+.pricing-table-container {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.pricing-table-container__column {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  margin: 0 8px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+
+/* Questions and Answers */
+.q_a-container {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.q_a-container__heading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+/* Feedback */
+/* Notification */
+.notification {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
