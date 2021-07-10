@@ -18,6 +18,11 @@ body {
 }
 
 /* Simple Styles for change background colors */
+
+.body-color {
+  background-color: var(--white);
+}
+
 .body-dark {
   background-color: var(--gray-dark);
 }
@@ -56,6 +61,10 @@ hr {
   display: block;
   height: 2px;
   margin: 1.5rem 0;
+}
+
+hr:not([size]) {
+  height: 1px;
 }
 
 small {
@@ -116,4 +125,56 @@ header,
 hgroup,
 section {
   display: block;
+}
+
+::-webkit-datetime-edit-fields-wrapper,
+::-webkit-datetime-edit-text,
+::-webkit-datetime-edit-minute,
+::-webkit-datetime-edit-hour-field,
+::-webkit-datetime-edit-day-field,
+::-webkit-datetime-edit-month-field,
+::-webkit-datetime-edit-year-field {
+  padding: 0;
+}
+
+::-webkit-inner-spin-button {
+  height: auto;
+}
+
+[type=search] {
+  outline-offset: -2px;
+  -webkit-appearance: textfield;
+}
+
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+::file-selector-button {
+  font: inherit;
+}
+
+::-webkit-file-upload-button {
+  font: inherit;
+  -webkit-appearance: button;
+}
+
+output {
+  display: inline-block;
+}
+
+iframe {
+  border: 0;
+}
+
+progress {
+  vertical-align: baseline;
+}
+
+[hidden] {
+  display: none !important;
 }

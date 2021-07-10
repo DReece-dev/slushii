@@ -67,3 +67,68 @@ screen and (min-width: 64em) {
 .text-shadow-none {
   text-shadow: none;
 }
+
+.text-wrap {
+  white-space: normal !important;
+}
+
+.text-nowrap {
+  white-space: nowrap !important;
+}
+
+.text-break {
+  word-wrap: break-word !important;
+  word-break: break-word !important;
+}
+
+.text-reset {
+  color: inherit !important;
+}
+
+.text-white {
+  color: var(--white) !important;
+}
+
+.text-light {
+  color: var(--light) !important;
+}
+
+.text-dark {
+  color: var(--dark) !important;
+}
+
+.text-blue {
+  color: var(--blue) !important;
+}
+
+.text-indigo {
+  color: var(--indigo) !important;
+}
+
+.text-puple {
+  color: var(--purple) !important;
+}
+
+.text-red {
+  color: var(--red) !important;
+}
+
+.text-orange {
+  color: var(--orange-400) !important;
+}
+
+.text-yellow {
+  color: var(--yellow) !important;
+}
+
+.text-green {
+  color: var(--green) !important;
+}
+
+.text-cyan {
+  color: var(--cyan) !important;
+}
+
+.text-light-gray {
+  color: var(--lightgray) !important;
+}

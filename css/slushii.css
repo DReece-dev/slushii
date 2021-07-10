@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 /*
 ----------------------------------------------------------------------------
 Slushii CSS Framework
@@ -10,126 +12,63 @@ Notes / What I Need to Do / Improvements: Dialog Right Corner, Transitions, Scro
 */
 /* Slushii Base */
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
-/* Document
-   ========================================================================== */
-/**
- * 1. Correct the line height in all browsers.
- * 2. Prevent adjustments of font size after orientation changes in iOS.
- */
 html {
   line-height: 1.15;
-  /* 1 */
   -webkit-text-size-adjust: 100%;
-  /* 2 */
 }
 
-/* Sections
-     ========================================================================== */
-/**
-   * Remove the margin in all browsers.
-   */
 body {
   margin: 0;
 }
 
-/**
-   * Render the `main` element consistently in IE.
-   */
 main {
   display: block;
 }
 
-/**
-   * Correct the font size and margin on `h1` elements within `section` and
-   * `article` contexts in Chrome, Firefox, and Safari.
-   */
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
 }
 
-/* Grouping content
-     ========================================================================== */
-/**
-   * 1. Add the correct box sizing in Firefox.
-   * 2. Show the overflow in Edge and IE.
-   */
 hr {
   -webkit-box-sizing: content-box;
   box-sizing: content-box;
-  /* 1 */
   height: 0;
-  /* 1 */
   overflow: visible;
-  /* 2 */
 }
 
-/**
-   * 1. Correct the inheritance and scaling of font size in all browsers.
-   * 2. Correct the odd `em` font sizing in all browsers.
-   */
 pre {
   font-family: monospace, monospace;
-  /* 1 */
   font-size: 1em;
-  /* 2 */
 }
 
-/* Text-level semantics
-     ========================================================================== */
-/**
-   * Remove the gray background on active links in IE 10.
-   */
 a {
   background-color: transparent;
 }
 
-/**
-   * 1. Remove the bottom border in Chrome 57-
-   * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
-   */
 abbr[title] {
   border-bottom: none;
-  /* 1 */
   text-decoration: underline;
-  /* 2 */
   -webkit-text-decoration: underline dotted;
   text-decoration: underline dotted;
-  /* 2 */
 }
 
-/**
-   * Add the correct font weight in Chrome, Edge, and Safari.
-   */
 b,
 strong {
   font-weight: bolder;
 }
 
-/**
-   * 1. Correct the inheritance and scaling of font size in all browsers.
-   * 2. Correct the odd `em` font sizing in all browsers.
-   */
 code,
 kbd,
 samp {
   font-family: monospace, monospace;
-  /* 1 */
   font-size: 1em;
-  /* 2 */
 }
 
-/**
-   * Add the correct font size in all browsers.
-   */
 small {
   font-size: 80%;
 }
 
-/**
-   * Prevent `sub` and `sup` elements from affecting the line height in
-   * all browsers.
-   */
 sub,
 sup {
   font-size: 75%;
@@ -146,59 +85,31 @@ sup {
   top: -0.5em;
 }
 
-/* Embedded content
-     ========================================================================== */
-/**
-   * Remove the border on images inside links in IE 10.
-   */
 img {
   border-style: none;
 }
 
-/* Forms
-     ========================================================================== */
-/**
-   * 1. Change the font styles in all browsers.
-   * 2. Remove the margin in Firefox and Safari.
-   */
 button,
 input,
 optgroup,
 select,
 textarea {
   font-family: inherit;
-  /* 1 */
   font-size: 100%;
-  /* 1 */
   line-height: 1.15;
-  /* 1 */
   margin: 0;
-  /* 2 */
 }
 
-/**
-   * Show the overflow in IE.
-   * 1. Show the overflow in Edge.
-   */
 button,
 input {
-  /* 1 */
   overflow: visible;
 }
 
-/**
-   * Remove the inheritance of text transform in Edge, Firefox, and IE.
-   * 1. Remove the inheritance of text transform in Firefox.
-   */
 button,
 select {
-  /* 1 */
   text-transform: none;
 }
 
-/**
-   * Correct the inability to style clickable types in iOS and Safari.
-   */
 button,
 [type="button"],
 [type="reset"],
@@ -206,9 +117,6 @@ button,
   -webkit-appearance: button;
 }
 
-/**
-   * Remove the inner border and padding in Firefox.
-   */
 button::-moz-focus-inner,
 [type="button"]::-moz-focus-inner,
 [type="reset"]::-moz-focus-inner,
@@ -217,9 +125,6 @@ button::-moz-focus-inner,
   padding: 0;
 }
 
-/**
-   * Restore the focus styles unset by the previous rule.
-   */
 button:-moz-focusring,
 [type="button"]:-moz-focusring,
 [type="reset"]:-moz-focusring,
@@ -227,127 +132,66 @@ button:-moz-focusring,
   outline: 1px dotted ButtonText;
 }
 
-/**
-   * Correct the padding in Firefox.
-   */
 fieldset {
   padding: 0.35em 0.75em 0.625em;
 }
 
-/**
-   * 1. Correct the text wrapping in Edge and IE.
-   * 2. Correct the color inheritance from `fieldset` elements in IE.
-   * 3. Remove the padding so developers are not caught out when they zero out
-   *    `fieldset` elements in all browsers.
-   */
 legend {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  /* 1 */
   color: inherit;
-  /* 2 */
   display: table;
-  /* 1 */
   max-width: 100%;
-  /* 1 */
   padding: 0;
-  /* 3 */
   white-space: normal;
-  /* 1 */
 }
 
-/**
-   * Add the correct vertical alignment in Chrome, Firefox, and Opera.
-   */
 progress {
   vertical-align: baseline;
 }
 
-/**
-   * Remove the default vertical scrollbar in IE 10+.
-   */
 textarea {
   overflow: auto;
 }
 
-/**
-   * 1. Add the correct box sizing in IE 10.
-   * 2. Remove the padding in IE 10.
-   */
 [type="checkbox"],
 [type="radio"] {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  /* 1 */
   padding: 0;
-  /* 2 */
 }
 
-/**
-   * Correct the cursor style of increment and decrement buttons in Chrome.
-   */
 [type="number"]::-webkit-inner-spin-button,
 [type="number"]::-webkit-outer-spin-button {
   height: auto;
 }
 
-/**
-   * 1. Correct the odd appearance in Chrome and Safari.
-   * 2. Correct the outline style in Safari.
-   */
 [type="search"] {
   -webkit-appearance: textfield;
-  /* 1 */
   outline-offset: -2px;
-  /* 2 */
 }
 
-/**
-   * Remove the inner padding in Chrome and Safari on macOS.
-   */
 [type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-/**
-   * 1. Correct the inability to style clickable types in iOS and Safari.
-   * 2. Change font properties to `inherit` in Safari.
-   */
 ::-webkit-file-upload-button {
   -webkit-appearance: button;
-  /* 1 */
   font: inherit;
-  /* 2 */
 }
 
-/* Interactive
-     ========================================================================== */
-/*
-   * Add the correct display in Edge, IE 10+, and Firefox.
-   */
 details {
   display: block;
 }
 
-/*
-   * Add the correct display in all browsers.
-   */
 summary {
   display: list-item;
 }
 
-/* Misc
-     ========================================================================== */
-/**
-   * Add the correct display in IE 10+.
-   */
 template {
   display: none;
 }
 
-/**
-   * Add the correct display in IE 10.
-   */
 [hidden] {
   display: none;
 }
@@ -428,6 +272,10 @@ body {
 }
 
 /* Simple Styles for change background colors */
+.body-color {
+  background-color: var(--white);
+}
+
 .body-dark {
   background-color: var(--gray-dark);
 }
@@ -466,6 +314,10 @@ hr {
   display: block;
   height: 2px;
   margin: 1.5rem 0;
+}
+
+hr:not([size]) {
+  height: 1px;
 }
 
 small {
@@ -526,6 +378,58 @@ header,
 hgroup,
 section {
   display: block;
+}
+
+::-webkit-datetime-edit-fields-wrapper,
+::-webkit-datetime-edit-text,
+::-webkit-datetime-edit-minute,
+::-webkit-datetime-edit-hour-field,
+::-webkit-datetime-edit-day-field,
+::-webkit-datetime-edit-month-field,
+::-webkit-datetime-edit-year-field {
+  padding: 0;
+}
+
+::-webkit-inner-spin-button {
+  height: auto;
+}
+
+[type=search] {
+  outline-offset: -2px;
+  -webkit-appearance: textfield;
+}
+
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+::file-selector-button {
+  font: inherit;
+}
+
+::-webkit-file-upload-button {
+  font: inherit;
+  -webkit-appearance: button;
+}
+
+output {
+  display: inline-block;
+}
+
+iframe {
+  border: 0;
+}
+
+progress {
+  vertical-align: baseline;
+}
+
+[hidden] {
+  display: none !important;
 }
 
 @-webkit-keyframes spinAround {
@@ -3399,62 +3303,62 @@ Notes: None
 }
 
 .grid-cols-1 {
-  -ms-grid-columns: (minmax(0, 1fr)) [1];
+  -ms-grid-columns: (minmax(0, 1fr))[1];
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
 .grid-cols-2 {
-  -ms-grid-columns: (minmax(0, 1fr)) [2];
+  -ms-grid-columns: (minmax(0, 1fr))[2];
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .grid-cols-3 {
-  -ms-grid-columns: (minmax(0, 1fr)) [3];
+  -ms-grid-columns: (minmax(0, 1fr))[3];
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .grid-cols-4 {
-  -ms-grid-columns: (minmax(0, 1fr)) [4];
+  -ms-grid-columns: (minmax(0, 1fr))[4];
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .grid-cols-5 {
-  -ms-grid-columns: (minmax(0, 1fr)) [5];
+  -ms-grid-columns: (minmax(0, 1fr))[5];
   grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 
 .grid-cols-6 {
-  -ms-grid-columns: (minmax(0, 1fr)) [6];
+  -ms-grid-columns: (minmax(0, 1fr))[6];
   grid-template-columns: repeat(6, minmax(0, 1fr));
 }
 
 .grid-cols-7 {
-  -ms-grid-columns: (minmax(0, 1fr)) [7];
+  -ms-grid-columns: (minmax(0, 1fr))[7];
   grid-template-columns: repeat(7, minmax(0, 1fr));
 }
 
 .grid-cols-8 {
-  -ms-grid-columns: (minmax(0, 1fr)) [8];
+  -ms-grid-columns: (minmax(0, 1fr))[8];
   grid-template-columns: repeat(8, minmax(0, 1fr));
 }
 
 .grid-cols-9 {
-  -ms-grid-columns: (minmax(0, 1fr)) [9];
+  -ms-grid-columns: (minmax(0, 1fr))[9];
   grid-template-columns: repeat(9, minmax(0, 1fr));
 }
 
 .grid-cols-10 {
-  -ms-grid-columns: (minmax(0, 1fr)) [10];
+  -ms-grid-columns: (minmax(0, 1fr))[10];
   grid-template-columns: repeat(10, minmax(0, 1fr));
 }
 
 .grid-cols-11 {
-  -ms-grid-columns: (minmax(0, 1fr)) [11];
+  -ms-grid-columns: (minmax(0, 1fr))[11];
   grid-template-columns: repeat(11, minmax(0, 1fr));
 }
 
 .grid-cols-12 {
-  -ms-grid-columns: (minmax(0, 1fr)) [12];
+  -ms-grid-columns: (minmax(0, 1fr))[12];
   grid-template-columns: repeat(12, minmax(0, 1fr));
 }
 
@@ -3664,32 +3568,32 @@ Notes: None
 }
 
 .grid-rows-1 {
-  -ms-grid-rows: (minmax(0, 1fr)) [1];
+  -ms-grid-rows: (minmax(0, 1fr))[1];
   grid-template-rows: repeat(1, minmax(0, 1fr));
 }
 
 .grid-rows-2 {
-  -ms-grid-rows: (minmax(0, 1fr)) [2];
+  -ms-grid-rows: (minmax(0, 1fr))[2];
   grid-template-rows: repeat(2, minmax(0, 1fr));
 }
 
 .grid-rows-3 {
-  -ms-grid-rows: (minmax(0, 1fr)) [3];
+  -ms-grid-rows: (minmax(0, 1fr))[3];
   grid-template-rows: repeat(3, minmax(0, 1fr));
 }
 
 .grid-rows-4 {
-  -ms-grid-rows: (minmax(0, 1fr)) [4];
+  -ms-grid-rows: (minmax(0, 1fr))[4];
   grid-template-rows: repeat(4, minmax(0, 1fr));
 }
 
 .grid-rows-5 {
-  -ms-grid-rows: (minmax(0, 1fr)) [5];
+  -ms-grid-rows: (minmax(0, 1fr))[5];
   grid-template-rows: repeat(5, minmax(0, 1fr));
 }
 
 .grid-rows-6 {
-  -ms-grid-rows: (minmax(0, 1fr)) [6];
+  -ms-grid-rows: (minmax(0, 1fr))[6];
   grid-template-rows: repeat(6, minmax(0, 1fr));
 }
 
@@ -4590,10 +4494,8 @@ li a {
   display: block;
   padding: 0.5rem 1rem;
   text-decoration: none;
-  -webkit-transition: color 0.15s ease-in-out,
-    background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out;
+  -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -5374,10 +5276,8 @@ li a {
 .page-wrapper.with-transitions.with-sidebar .content-wrapper,
 .page-wrapper.with-transitions.with-sidebar[data-sidebar-type~="full-height"]>.navbar:not(.navbar-fixed-bottom),
 .page-wrapper.with-transitions.with-sidebar[data-sidebar-type~="full-height"]>.navbar.navbar-fixed-bottom {
-  -webkit-transition: width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
-    left 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-  transition: width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
-    left 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  -webkit-transition: width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), left 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), left 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 /* Janky scroll fix (for Safari) */
@@ -6601,8 +6501,7 @@ a.navbar-item.is-active,
   .navbar-dropdown.is-boxed {
     border-radius: 6px;
     border-top: none;
-    -webkit-box-shadow: 0 8px 8px rgba(10, 10, 10, 0.1),
-      0 0 0 1px rgba(10, 10, 10, 0.1);
+    -webkit-box-shadow: 0 8px 8px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
     box-shadow: 0 8px 8px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
     display: block;
     opacity: 0;
@@ -6895,10 +6794,8 @@ a.navbar-item.is-active,
 .box {
   background-color: white;
   border-radius: 6px;
-  -webkit-box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
-    0 0px 0 1px rgba(10, 10, 10, 0.02);
-  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
-    0 0px 0 1px rgba(10, 10, 10, 0.02);
+  -webkit-box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
+  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
   color: #4a4a4a;
   display: block;
   padding: 1.25rem;
@@ -6906,8 +6803,7 @@ a.navbar-item.is-active,
 
 a.box:hover,
 a.box:focus {
-  -webkit-box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
-    0 0 0 1px #3273dc;
+  -webkit-box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0 0 1px #3273dc;
   box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0 0 1px #3273dc;
 }
 
@@ -7313,10 +7209,8 @@ a.box:active {
 .card {
   background-color: white;
   border-radius: 0.25rem;
-  -webkit-box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
-    0 0px 0 1px rgba(10, 10, 10, 0.02);
-  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
-    0 0px 0 1px rgba(10, 10, 10, 0.02);
+  -webkit-box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
+  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
   color: #4a4a4a;
   max-width: 100%;
   position: relative;
@@ -10494,6 +10388,71 @@ screen and (min-width: 64em) {
   text-shadow: none;
 }
 
+.text-wrap {
+  white-space: normal !important;
+}
+
+.text-nowrap {
+  white-space: nowrap !important;
+}
+
+.text-break {
+  word-wrap: break-word !important;
+  word-break: break-word !important;
+}
+
+.text-reset {
+  color: inherit !important;
+}
+
+.text-white {
+  color: var(--white) !important;
+}
+
+.text-light {
+  color: var(--light) !important;
+}
+
+.text-dark {
+  color: var(--dark) !important;
+}
+
+.text-blue {
+  color: var(--blue) !important;
+}
+
+.text-indigo {
+  color: var(--indigo) !important;
+}
+
+.text-puple {
+  color: var(--purple) !important;
+}
+
+.text-red {
+  color: var(--red) !important;
+}
+
+.text-orange {
+  color: var(--orange-400) !important;
+}
+
+.text-yellow {
+  color: var(--yellow) !important;
+}
+
+.text-green {
+  color: var(--green) !important;
+}
+
+.text-cyan {
+  color: var(--cyan) !important;
+}
+
+.text-light-gray {
+  color: var(--lightgray) !important;
+}
+
 .float-left {
   float: left !important;
 }
@@ -10665,9 +10624,7 @@ screen and (min-width: 64em) {
 }
 
 .font-sans {
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 .font-serif {
@@ -10675,8 +10632,7 @@ screen and (min-width: 64em) {
 }
 
 .font-mono {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-    "Liberation Mono", "Courier New", monospace;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 .font-thin {
@@ -10753,6 +10709,42 @@ screen and (min-width: 64em) {
 
 .is-unset {
   text-transform: unset !important;
+}
+
+.font-size-xs {
+  font-size: var(--font-size-xs);
+}
+
+.font-size-s {
+  font-size: var(--font-size-s);
+}
+
+.font-size-m {
+  font-size: var(--font-size-m);
+}
+
+.font-size-l {
+  font-size: var(--font-size-l);
+}
+
+.font-size-xl {
+  font-size: var(--font-size-xl);
+}
+
+.lh-1 {
+  line-height: 1 !important;
+}
+
+.lh-sm {
+  line-height: 1.25 !important;
+}
+
+.lh-base {
+  line-height: 1.5 !important;
+}
+
+.lh-lg {
+  line-height: 2 !important;
 }
 
 .antialiased {
@@ -11656,6 +11648,14 @@ screen and (min-width: 64em) {
   border-left-width: 1px;
 }
 
+.border-bottom {
+  border-bottom: 1px solid #dee2e6 !important;
+}
+
+.border-bottom-0 {
+  border-bottom: 0 !important;
+}
+
 .box-border {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -12479,8 +12479,7 @@ screen and (min-width: 64em) {
   -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
   transition: -webkit-transform 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
   transition: transform 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-  transition: transform 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955),
-    -webkit-transform 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  transition: transform 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955), -webkit-transform 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
 
 .arrowFromLeft svg {
@@ -12491,15 +12490,10 @@ screen and (min-width: 64em) {
   opacity: 0;
   -webkit-transform: translate(-10px, -50%);
   transform: translate(-10px, -50%);
-  -webkit-transition: opacity 0.3s 0.05s cubic-bezier(0.455, 0.03, 0.515, 0.955),
-    -webkit-transform 0.3s 0.05s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-  transition: opacity 0.3s 0.05s cubic-bezier(0.455, 0.03, 0.515, 0.955),
-    -webkit-transform 0.3s 0.05s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-  transition: opacity 0.3s 0.05s cubic-bezier(0.455, 0.03, 0.515, 0.955),
-    transform 0.3s 0.05s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-  transition: opacity 0.3s 0.05s cubic-bezier(0.455, 0.03, 0.515, 0.955),
-    transform 0.3s 0.05s cubic-bezier(0.455, 0.03, 0.515, 0.955),
-    -webkit-transform 0.3s 0.05s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  -webkit-transition: opacity 0.3s 0.05s cubic-bezier(0.455, 0.03, 0.515, 0.955), -webkit-transform 0.3s 0.05s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  transition: opacity 0.3s 0.05s cubic-bezier(0.455, 0.03, 0.515, 0.955), -webkit-transform 0.3s 0.05s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  transition: opacity 0.3s 0.05s cubic-bezier(0.455, 0.03, 0.515, 0.955), transform 0.3s 0.05s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  transition: opacity 0.3s 0.05s cubic-bezier(0.455, 0.03, 0.515, 0.955), transform 0.3s 0.05s cubic-bezier(0.455, 0.03, 0.515, 0.955), -webkit-transform 0.3s 0.05s cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
 
 .arrowScrollDown svg {
@@ -12572,8 +12566,7 @@ screen and (min-width: 64em) {
   -webkit-transition: opacity 0.2s ease, -webkit-transform 0.2s ease;
   transition: opacity 0.2s ease, -webkit-transform 0.2s ease;
   transition: opacity 0.2s ease, transform 0.2s ease;
-  transition: opacity 0.2s ease, transform 0.2s ease,
-    -webkit-transform 0.2s ease;
+  transition: opacity 0.2s ease, transform 0.2s ease, -webkit-transform 0.2s ease;
 }
 
 .borderFade:hover::after {
@@ -12603,8 +12596,7 @@ screen and (min-width: 64em) {
   -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
   transition: -webkit-transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
   transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
-  transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1),
-    -webkit-transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
+  transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1), -webkit-transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
 }
 
 .borderLeftRight:hover::after {
@@ -12635,8 +12627,7 @@ screen and (min-width: 64em) {
   -webkit-transition: -webkit-transform 0.6s cubic-bezier(0.53, 0.21, 0, 1);
   transition: -webkit-transform 0.6s cubic-bezier(0.53, 0.21, 0, 1);
   transition: transform 0.6s cubic-bezier(0.53, 0.21, 0, 1);
-  transition: transform 0.6s cubic-bezier(0.53, 0.21, 0, 1),
-    -webkit-transform 0.6s cubic-bezier(0.53, 0.21, 0, 1);
+  transition: transform 0.6s cubic-bezier(0.53, 0.21, 0, 1), -webkit-transform 0.6s cubic-bezier(0.53, 0.21, 0, 1);
   -webkit-transform-origin: bottom;
   transform-origin: bottom;
   background-color: #dbe6ff;
@@ -12770,15 +12761,10 @@ screen and (min-width: 64em) {
   border-radius: 50%;
   -webkit-transform: translate3d(-50%, -50%, 0) scale3d(0, 0, 0);
   transform: translate3d(-50%, -50%, 0) scale3d(0, 0, 0);
-  -webkit-transition: opacity 0.4s cubic-bezier(0.19, 1, 0.22, 1),
-    -webkit-transform 0.75s cubic-bezier(0.19, 1, 0.22, 1);
-  transition: opacity 0.4s cubic-bezier(0.19, 1, 0.22, 1),
-    -webkit-transform 0.75s cubic-bezier(0.19, 1, 0.22, 1);
-  transition: opacity 0.4s cubic-bezier(0.19, 1, 0.22, 1),
-    transform 0.75s cubic-bezier(0.19, 1, 0.22, 1);
-  transition: opacity 0.4s cubic-bezier(0.19, 1, 0.22, 1),
-    transform 0.75s cubic-bezier(0.19, 1, 0.22, 1),
-    -webkit-transform 0.75s cubic-bezier(0.19, 1, 0.22, 1);
+  -webkit-transition: opacity 0.4s cubic-bezier(0.19, 1, 0.22, 1), -webkit-transform 0.75s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: opacity 0.4s cubic-bezier(0.19, 1, 0.22, 1), -webkit-transform 0.75s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: opacity 0.4s cubic-bezier(0.19, 1, 0.22, 1), transform 0.75s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: opacity 0.4s cubic-bezier(0.19, 1, 0.22, 1), transform 0.75s cubic-bezier(0.19, 1, 0.22, 1), -webkit-transform 0.75s cubic-bezier(0.19, 1, 0.22, 1);
   background-color: #5851ec;
   opacity: 0;
 }
@@ -12822,8 +12808,7 @@ screen and (min-width: 64em) {
   -webkit-transition: -webkit-transform 0.6s cubic-bezier(0.53, 0.21, 0, 1);
   transition: -webkit-transform 0.6s cubic-bezier(0.53, 0.21, 0, 1);
   transition: transform 0.6s cubic-bezier(0.53, 0.21, 0, 1);
-  transition: transform 0.6s cubic-bezier(0.53, 0.21, 0, 1),
-    -webkit-transform 0.6s cubic-bezier(0.53, 0.21, 0, 1);
+  transition: transform 0.6s cubic-bezier(0.53, 0.21, 0, 1), -webkit-transform 0.6s cubic-bezier(0.53, 0.21, 0, 1);
   will-change: transform;
 }
 
@@ -12888,19 +12873,10 @@ screen and (min-width: 64em) {
   border-radius: 61px;
   -webkit-box-shadow: inset 0 0 0 2px #5851ec;
   box-shadow: inset 0 0 0 2px #5851ec;
-  -webkit-transition: 300ms background-color cubic-bezier(0.4, 0, 0.6, 1),
-    300ms color cubic-bezier(0.4, 0, 0.6, 1),
-    300ms -webkit-box-shadow cubic-bezier(0.4, 0, 0.6, 1);
-  transition: 300ms background-color cubic-bezier(0.4, 0, 0.6, 1),
-    300ms color cubic-bezier(0.4, 0, 0.6, 1),
-    300ms -webkit-box-shadow cubic-bezier(0.4, 0, 0.6, 1);
-  transition: 300ms box-shadow cubic-bezier(0.4, 0, 0.6, 1),
-    300ms background-color cubic-bezier(0.4, 0, 0.6, 1),
-    300ms color cubic-bezier(0.4, 0, 0.6, 1);
-  transition: 300ms box-shadow cubic-bezier(0.4, 0, 0.6, 1),
-    300ms background-color cubic-bezier(0.4, 0, 0.6, 1),
-    300ms color cubic-bezier(0.4, 0, 0.6, 1),
-    300ms -webkit-box-shadow cubic-bezier(0.4, 0, 0.6, 1);
+  -webkit-transition: 300ms background-color cubic-bezier(0.4, 0, 0.6, 1), 300ms color cubic-bezier(0.4, 0, 0.6, 1), 300ms -webkit-box-shadow cubic-bezier(0.4, 0, 0.6, 1);
+  transition: 300ms background-color cubic-bezier(0.4, 0, 0.6, 1), 300ms color cubic-bezier(0.4, 0, 0.6, 1), 300ms -webkit-box-shadow cubic-bezier(0.4, 0, 0.6, 1);
+  transition: 300ms box-shadow cubic-bezier(0.4, 0, 0.6, 1), 300ms background-color cubic-bezier(0.4, 0, 0.6, 1), 300ms color cubic-bezier(0.4, 0, 0.6, 1);
+  transition: 300ms box-shadow cubic-bezier(0.4, 0, 0.6, 1), 300ms background-color cubic-bezier(0.4, 0, 0.6, 1), 300ms color cubic-bezier(0.4, 0, 0.6, 1), 300ms -webkit-box-shadow cubic-bezier(0.4, 0, 0.6, 1);
   color: #5851ec;
 }
 
@@ -12912,12 +12888,10 @@ screen and (min-width: 64em) {
 
 .magnifyText {
   color: #1b202d;
-  -webkit-transition: color 0.25s ease-in-out,
-    -webkit-transform 0.25s ease-in-out;
+  -webkit-transition: color 0.25s ease-in-out, -webkit-transform 0.25s ease-in-out;
   transition: color 0.25s ease-in-out, -webkit-transform 0.25s ease-in-out;
   transition: color 0.25s ease-in-out, transform 0.25s ease-in-out;
-  transition: color 0.25s ease-in-out, transform 0.25s ease-in-out,
-    -webkit-transform 0.25s ease-in-out;
+  transition: color 0.25s ease-in-out, transform 0.25s ease-in-out, -webkit-transform 0.25s ease-in-out;
 }
 
 .magnifyText:hover {
@@ -12961,8 +12935,7 @@ screen and (min-width: 64em) {
   -webkit-transition: -webkit-transform 0.6s cubic-bezier(0.53, 0.21, 0, 1);
   transition: -webkit-transform 0.6s cubic-bezier(0.53, 0.21, 0, 1);
   transition: transform 0.6s cubic-bezier(0.53, 0.21, 0, 1);
-  transition: transform 0.6s cubic-bezier(0.53, 0.21, 0, 1),
-    -webkit-transform 0.6s cubic-bezier(0.53, 0.21, 0, 1);
+  transition: transform 0.6s cubic-bezier(0.53, 0.21, 0, 1), -webkit-transform 0.6s cubic-bezier(0.53, 0.21, 0, 1);
 }
 
 .overlayLeftBtn:hover span {
@@ -13008,8 +12981,7 @@ screen and (min-width: 64em) {
   -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: -webkit-transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
-  transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1),
-    -webkit-transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
 .radiusPulse::after {
@@ -13024,15 +12996,10 @@ screen and (min-width: 64em) {
   -webkit-transform: scale(1);
   transform: scale(1);
   opacity: 1;
-  -webkit-transition: opacity 0.3s cubic-bezier(0.215, 0.61, 0.355, 1),
-    -webkit-transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
-  transition: opacity 0.3s cubic-bezier(0.215, 0.61, 0.355, 1),
-    -webkit-transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
-  transition: opacity 0.3s cubic-bezier(0.215, 0.61, 0.355, 1),
-    transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
-  transition: opacity 0.3s cubic-bezier(0.215, 0.61, 0.355, 1),
-    transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1),
-    -webkit-transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  -webkit-transition: opacity 0.3s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: opacity 0.3s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: opacity 0.3s cubic-bezier(0.215, 0.61, 0.355, 1), transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: opacity 0.3s cubic-bezier(0.215, 0.61, 0.355, 1), transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
 .radiusPulse:hover::before {
@@ -13095,8 +13062,7 @@ screen and (min-width: 64em) {
   -webkit-transition: -webkit-transform 0.5s cubic-bezier(1, 0.15, 0.34, 0.92);
   transition: -webkit-transform 0.5s cubic-bezier(1, 0.15, 0.34, 0.92);
   transition: transform 0.5s cubic-bezier(1, 0.15, 0.34, 0.92);
-  transition: transform 0.5s cubic-bezier(1, 0.15, 0.34, 0.92),
-    -webkit-transform 0.5s cubic-bezier(1, 0.15, 0.34, 0.92);
+  transition: transform 0.5s cubic-bezier(1, 0.15, 0.34, 0.92), -webkit-transform 0.5s cubic-bezier(1, 0.15, 0.34, 0.92);
 }
 
 .slideUpBtn::after {
@@ -13231,8 +13197,7 @@ screen and (min-width: 64em) {
   -webkit-transition: -webkit-transform 0.6s cubic-bezier(0.53, 0.21, 0, 1);
   transition: -webkit-transform 0.6s cubic-bezier(0.53, 0.21, 0, 1);
   transition: transform 0.6s cubic-bezier(0.53, 0.21, 0, 1);
-  transition: transform 0.6s cubic-bezier(0.53, 0.21, 0, 1),
-    -webkit-transform 0.6s cubic-bezier(0.53, 0.21, 0, 1);
+  transition: transform 0.6s cubic-bezier(0.53, 0.21, 0, 1), -webkit-transform 0.6s cubic-bezier(0.53, 0.21, 0, 1);
 }
 
 .visibleBorderLeftRight:hover::after {
