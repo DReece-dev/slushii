@@ -8728,6 +8728,60 @@ legend {
   appearance: none;
 }
 
+.form-control-small {
+  display: block;
+  width: 30%;
+  height: 3.6rem;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+  color: rgba(0, 0, 0, 0.85);
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.4rem;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  /* Removes the default styles on some devices. */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.form-control-medium {
+  display: block;
+  width: 50%;
+  height: 3.6rem;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+  color: rgba(0, 0, 0, 0.85);
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.4rem;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  /* Removes the default styles on some devices. */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.form-control-large {
+  display: block;
+  width: 70%;
+  height: 3.6rem;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+  color: rgba(0, 0, 0, 0.85);
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.4rem;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  /* Removes the default styles on some devices. */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
 .form-control-sm {
   height: 2.6rem;
   padding-left: 0.8rem;
@@ -8795,12 +8849,6 @@ textarea.form-control-lg {
 }
 
 .form-control.disabled {
-  /*
-      The :disabled selector must still be added to the input field for the
-      forms to work as intended. Moreover, since focusing on an input with the
-      :disabled selector is impossible, the :focus styles are not overridden
-      (along with the :focus box shadows).
-      */
   cursor: not-allowed;
   opacity: 0.6;
   color: rgba(0, 0, 0, 0.85);
@@ -8809,12 +8857,6 @@ textarea.form-control-lg {
 }
 
 .form-control:disabled {
-  /*
-      The :disabled selector must still be added to the input field for the
-      forms to work as intended. Moreover, since focusing on an input with the
-      :disabled selector is impossible, the :focus styles are not overridden
-      (along with the :focus box shadows).
-      */
   cursor: not-allowed;
   opacity: 0.6;
   color: rgba(0, 0, 0, 0.85);
@@ -8823,12 +8865,6 @@ textarea.form-control-lg {
 }
 
 .form-control.disabled:hover {
-  /*
-      The :disabled selector must still be added to the input field for the
-      forms to work as intended. Moreover, since focusing on an input with the
-      :disabled selector is impossible, the :focus styles are not overridden
-      (along with the :focus box shadows).
-      */
   cursor: not-allowed;
   opacity: 0.6;
   color: rgba(0, 0, 0, 0.85);
@@ -8837,12 +8873,6 @@ textarea.form-control-lg {
 }
 
 .form-control:disabled:hover {
-  /*
-      The :disabled selector must still be added to the input field for the
-      forms to work as intended. Moreover, since focusing on an input with the
-      :disabled selector is impossible, the :focus styles are not overridden
-      (along with the :focus box shadows).
-      */
   cursor: not-allowed;
   opacity: 0.6;
   color: rgba(0, 0, 0, 0.85);
@@ -9208,35 +9238,13 @@ textarea.form-control-lg {
   outline: none;
 }
 
-.dark-mode
-.form-group.is-invalid
-.form-control.alt-dm.is-invalid::-webkit-input-placeholder {
+.dark-mode .form-group.is-invalid .form-control.alt-dm.is-invalid::-webkit-input-placeholder {
   /* Edge */
   color: rgba(255, 255, 255, 0.5);
 }
 
-.dark-mode
-.form-group.is-invalid
-.form-control.alt-dm.is-invalid:-ms-input-placeholder {
+.dark-mode .form-group.is-invalid .form-control.alt-dm.is-invalid:-ms-input-placeholder {
   /* Internet Explorer 10-11 */
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.dark-mode
-.form-group.is-invalid
-.form-control.alt-dm.is-invalid::-webkit-input-placeholder {
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.dark-mode
-.form-group.is-invalid
-.form-control.alt-dm.is-invalid:-ms-input-placeholder {
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.dark-mode
-.form-group.is-invalid
-.form-control.alt-dm.is-invalid::-ms-input-placeholder {
   color: rgba(255, 255, 255, 0.5);
 }
 
@@ -9297,10 +9305,6 @@ select.form-control:not([multiple]) {
 }
 
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  /*
-      This hack resets the select boxes to their defaults on IE, because it is
-      not possible to remove the default dropdown arrow.
-      */
   select.form-control:not([multiple]) {
     background-image: none;
     background-size: auto;
