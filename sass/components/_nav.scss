@@ -18,11 +18,13 @@ li a {
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
     border-color 0.15s ease-in-out;
 }
+
 @media (prefers-reduced-motion: reduce) {
   .nav-link {
     transition: none;
   }
 }
+
 .nav-link.disabled {
   color: var(--lightgray);
   pointer-events: none;
@@ -36,6 +38,7 @@ li a {
 .nav-tabs {
   border-bottom: 1px solid #dee2e6;
 }
+
 .nav-tabs .nav-link {
   margin-bottom: -1px;
   background: none;
@@ -43,22 +46,26 @@ li a {
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
 }
+
 .nav-tabs .nav-link:hover,
 .nav-tabs .nav-link:focus {
   border-color: #e9ecef #e9ecef #dee2e6;
   isolation: isolate;
 }
+
 .nav-tabs .nav-link.disabled {
   color: #6c757d;
   background-color: transparent;
   border-color: transparent;
 }
+
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
   color: #495057;
   background-color: #fff;
   border-color: #dee2e6 #dee2e6 #fff;
 }
+
 .nav-tabs .dropdown-menu {
   margin-top: -1px;
   border-top-left-radius: 0;
@@ -135,13 +142,13 @@ li a {
   color: white;
 }
 
-.nav-pills .nav-fill > .nav-link,
+.nav-pills .nav-fill>.nav-link,
 .nav-fill .nav-item {
   flex: 1 1 auto;
   text-align: center;
 }
 
-.nav-justified > .nav-link,
+.nav-justified>.nav-link,
 .nav-justified .nav-item {
   flex-basis: 0;
   flex-grow: 1;
@@ -165,6 +172,22 @@ li a {
   border: none;
   font-size: 16px;
   cursor: pointer;
+}
+
+.hover-dropdown-button::after {
+  content: "";
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='24' height='24' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cdefs%3E%3Cpath id='a' d='M18.59 16.41L20 15l-8-8-8 8 1.41 1.41L12 9.83'/%3E%3C/defs%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cmask id='b' fill='%23fff'%3E%3Cuse xlink:href='%23a'/%3E%3C/mask%3E%3Cg mask='url(%23b)' fill='%235f6368'%3E%3Cpath d='M0 0h24v24H0z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  transform: rotate(180deg);
+  transform-origin: center center;
+  display: inline-block;
+  width: 12px;
+  margin-left: 4px;
+  height: 12px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  vertical-align: middle;
+  transition: transform 350ms ease;
 }
 
 .hover-dropdown {
@@ -228,6 +251,22 @@ li a {
   margin-bottom: 10px;
 }
 
+.clickable-dropbutton::after {
+  content: "";
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='24' height='24' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cdefs%3E%3Cpath id='a' d='M18.59 16.41L20 15l-8-8-8 8 1.41 1.41L12 9.83'/%3E%3C/defs%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cmask id='b' fill='%23fff'%3E%3Cuse xlink:href='%23a'/%3E%3C/mask%3E%3Cg mask='url(%23b)' fill='%235f6368'%3E%3Cpath d='M0 0h24v24H0z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  transform: rotate(180deg);
+  transform-origin: center center;
+  display: inline-block;
+  width: 12px;
+  margin-left: 4px;
+  height: 12px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  vertical-align: middle;
+  transition: transform 350ms ease;
+}
+
 .clickable-dropbutton:hover,
 .clickable-dropbutton:focus {
   background-color: var(--blue-500);
@@ -280,9 +319,10 @@ li a {
   min-width: 600px;
 }
 
-.tab-content > .tab-pane {
+.tab-content>.tab-pane {
   display: none;
 }
-.tab-content > .active {
+
+.tab-content>.active {
   display: block;
 }
