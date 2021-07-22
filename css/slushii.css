@@ -5107,6 +5107,190 @@ li a {
   margin-right: 0.4rem;
 }
 
+/* Flyout menus */
+.flyout-dropbutton {
+  background-color: var(--blue-400);
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.flyout-dropbutton::after {
+  content: "";
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='24' height='24' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cdefs%3E%3Cpath id='a' d='M18.59 16.41L20 15l-8-8-8 8 1.41 1.41L12 9.83'/%3E%3C/defs%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cmask id='b' fill='%23fff'%3E%3Cuse xlink:href='%23a'/%3E%3C/mask%3E%3Cg mask='url(%23b)' fill='%235f6368'%3E%3Cpath d='M0 0h24v24H0z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+  -webkit-transform-origin: center center;
+  transform-origin: center center;
+  display: inline-block;
+  width: 12px;
+  margin-left: 4px;
+  height: 12px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  vertical-align: middle;
+  -webkit-transition: -webkit-transform 350ms ease;
+  transition: -webkit-transform 350ms ease;
+  transition: transform 350ms ease;
+  transition: transform 350ms ease, -webkit-transform 350ms ease;
+}
+
+.flyout-dropbutton.transparent {
+  background-color: transparent;
+  color: black;
+}
+
+.flyout-dropbutton:hover,
+.flyoutdropbutton:focus {
+  /* background-color: var(--blue-500); */
+  color: #4f46e5;
+}
+
+.flyout-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.flyout-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--white);
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  border: none;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.158);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.158);
+  z-index: 1;
+}
+
+.flyout-dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.flyout-dropdown a:hover {
+  background-color: rgba(221, 221, 221, 0.26);
+}
+
+.flyout-dropdown-show {
+  display: block;
+}
+
+.flyout-dropdown-content.is-small {
+  min-width: 160px;
+}
+
+.flyout-dropdown-content.is-normal {
+  min-width: 200px;
+}
+
+.flyout-dropdown-content.is-medium {
+  min-width: 300px;
+}
+
+.flyout-dropdown-content.is-large {
+  min-width: 600px;
+}
+
+.hover-grey:hover {
+  background-color: rgba(221, 221, 221, 0.151);
+}
+
+.flyout-menu a {
+  float: left;
+  font-size: 16px;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+}
+
+.flyout-menu a:hover {
+  color: var(--blue-500);
+}
+
+.flyout-dropdown-menu {
+  float: left;
+  overflow: hidden;
+  white-space: none;
+}
+
+.flyout-dropdown-menu .flyout-dropbtn-menu {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: black;
+  padding: 14px 16px;
+  background-color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.flyout-menu a:hover,
+.flyout-dropdown-menu:hover .flyout-dropbtn-menu {
+  background-color: transparent;
+  color: #6366f1;
+}
+
+.flyout-dropdown-content-menu {
+  display: none;
+  position: absolute;
+  background-color: var(--white);
+  width: 100%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  left: 0;
+  -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.flyout-dropdown-menu:hover .flyout-dropdown-content-menu {
+  display: block;
+}
+
+.flyout-row-menu:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.flyout-dropbtn-menu::after {
+  content: "";
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='24' height='24' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cdefs%3E%3Cpath id='a' d='M18.59 16.41L20 15l-8-8-8 8 1.41 1.41L12 9.83'/%3E%3C/defs%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cmask id='b' fill='%23fff'%3E%3Cuse xlink:href='%23a'/%3E%3C/mask%3E%3Cg mask='url(%23b)' fill='%235f6368'%3E%3Cpath d='M0 0h24v24H0z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+  -webkit-transform-origin: center center;
+  transform-origin: center center;
+  display: inline-block;
+  width: 12px;
+  margin-left: 4px;
+  height: 12px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  vertical-align: middle;
+  -webkit-transition: -webkit-transform 350ms ease;
+  transition: -webkit-transform 350ms ease;
+  transition: transform 350ms ease;
+  transition: transform 350ms ease, -webkit-transform 350ms ease;
+}
+
+
 .page-wrapper {
   position: absolute;
   height: 100%;
