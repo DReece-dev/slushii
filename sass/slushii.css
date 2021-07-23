@@ -7275,61 +7275,6 @@ a.box:active {
   margin: 0 0 0.5rem 0;
 }
 
-.alert-blue {
-  background-color: white;
-  color: var(--blue);
-}
-
-.alert-indigo {
-  background-color: white;
-  color: var(--indigo);
-}
-
-.alert-pink {
-  background-color: white;
-  color: var(--pink);
-}
-
-.alert-red {
-  background-color: white;
-  color: var(--red);
-}
-
-.alert-orange {
-  background-color: white;
-  color: var(--orange);
-}
-
-.alert-green {
-  background-color: white;
-  color: var(--green);
-}
-
-.alert-dark-grey {
-  background-color: white;
-  color: var(--gray-dark);
-}
-
-.alert-warning {
-  background-color: var(--darkmode-background);
-  color: var(--warning);
-}
-
-.alert-danger {
-  background-color: var(--darkmode-background);
-  color: var(--danger);
-}
-
-.alert-light {
-  background-color: var(--darkmode-background);
-  color: var(--light);
-}
-
-.alert-dark {
-  background: white;
-  color: var(--dark);
-}
-
 .alert-link,
 .dark-mode .alert-link {
   cursor: pointer;
@@ -7399,6 +7344,119 @@ a.box:active {
 
 .sticky-alerts .alert.alert-block.dispose {
   display: none;
+}
+
+/* Filled alerts */
+.alert.alert-primary.filled {
+  color: #ffffff;
+  background-color: #1890ff;
+  background-image: none;
+  border-color: #1890ff;
+}
+
+.alert.alert-primary.filled-lm {
+  color: #ffffff;
+  background-color: #1890ff;
+  background-image: none;
+  border-color: #1890ff;
+}
+
+.alert.alert-success.filled {
+  color: rgba(0, 0, 0, 0.85);
+  background-color: #0be881;
+  background-image: none;
+  border-color: #0be881;
+}
+
+.alert.alert-success.filled-lm {
+  color: rgba(0, 0, 0, 0.85);
+  background-color: #0be881;
+  background-image: none;
+  border-color: #0be881;
+}
+
+.alert.alert-secondary.filled {
+  color: rgba(0, 0, 0, 0.85);
+  background-color: #ffcf00;
+  background-image: none;
+  border-color: #ffcf00;
+}
+
+.alert.alert-secondary.filled-lm {
+  color: rgba(0, 0, 0, 0.85);
+  background-color: #ffcf00;
+  background-image: none;
+  border-color: #ffcf00;
+}
+
+.alert.alert-danger.filled {
+  color: #ffffff;
+  background-color: #ff4d4f;
+  background-image: none;
+  border-color: #ff4d4f;
+}
+
+.alert.alert-danger.filled-lm {
+  color: #ffffff;
+  background-color: #ff4d4f;
+  background-image: none;
+  border-color: #ff4d4f;
+}
+
+/* Colors */
+.alert.alert-blue {
+  background-color: white;
+  color: var(--blue);
+}
+
+.alert.alert-indigo {
+  background-color: white;
+  color: var(--indigo);
+}
+
+.alert.alert-pink {
+  background-color: white;
+  color: var(--pink);
+}
+
+.alert.alert-red {
+  background-color: white;
+  color: var(--red);
+}
+
+.alert.alert-orange {
+  background-color: white;
+  color: var(--orange);
+}
+
+.alert.alert-green {
+  background-color: white;
+  color: var(--green);
+}
+
+.alert.alert-dark-grey {
+  background-color: white;
+  color: var(--gray-dark);
+}
+
+.alert.alert-warning {
+  background-color: var(--darkmode-background);
+  color: var(--warning);
+}
+
+.alert.alert-danger {
+  background-color: var(--darkmode-background);
+  color: var(--danger);
+}
+
+.alert.alert-light {
+  background-color: var(--darkmode-background);
+  color: var(--light);
+}
+
+.alert.alert-dark {
+  background: white;
+  color: var(--dark);
 }
 
 .popover {
