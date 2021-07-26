@@ -4572,8 +4572,8 @@ li a {
 }
 
 .nav-pills a:hover {
-  background-color: rgba(223, 223, 223, 0.377);
-  color: var(--dark);
+  background-color: #6366f1;
+  color: var(--white);
 }
 
 .nav-pills a.active {
@@ -4581,47 +4581,47 @@ li a {
   color: white;
 }
 
-.nav-pills.dark a.active {
+.nav-pills.dark a:hover {
   background-color: var(--gray-dark);
   color: white;
 }
 
-.nav-pills.blue a.active {
+.nav-pills.blue a:hover {
   background-color: var(--blue-500);
   color: white;
 }
 
-.nav-pills.indigo a.active {
+.nav-pills.indigo a:hover {
   background-color: var(--indigo-400);
   color: white;
 }
 
-.nav-pills.red a.active {
+.nav-pills.red a:hover {
   background-color: var(--red-600);
   color: white;
 }
 
-.nav-pills.orange a.active {
+.nav-pills.orange a:hover {
   background-color: var(--orange-500);
   color: white;
 }
 
-.nav-pills.green a.active {
+.nav-pills.green a:hover {
   background-color: var(--green-400);
   color: white;
 }
 
-.nav-pills.white a.active {
+.nav-pills.white a:hover {
   background-color: var(--white);
   color: white;
 }
 
-.nav-pills.info a.active {
+.nav-pills.info a:hover {
   background-color: var(--info);
   color: white;
 }
 
-.nav-pills.success a.active {
+.nav-pills.success a:hover {
   background-color: var(--success);
   color: white;
 }
