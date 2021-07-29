@@ -129,3 +129,21 @@
 .card .media:not(:last-child) {
   margin-bottom: 1.5rem;
 }
+
+.card-heading-container {
+  background-color: var(--white);
+  border: 1px solid #e8e9eb;
+  border-radius: 10px;
+}
+
+.card-heading-container.medium {
+  height: 15em;
+}
+
+.card-heading-container.large {
+  height: 35em;
+}
+
+.card-heading-container.max-content {
+  height: max-content;
+}
