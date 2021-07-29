@@ -4684,7 +4684,6 @@ li a {
   transition: transform 350ms ease, -webkit-transform 350ms ease;
 }
 
-
 .hover-dropdown {
   position: relative;
   display: inline-block;
@@ -5289,7 +5288,6 @@ li a {
   transition: transform 350ms ease;
   transition: transform 350ms ease, -webkit-transform 350ms ease;
 }
-
 
 .page-wrapper {
   position: absolute;
@@ -7644,6 +7642,11 @@ a.box:active {
 .label.dark-grey {
   background: var(--gray-dark);
   color: #fefefe;
+}
+
+.label.rounded {
+  border: none;
+  border-radius: 5px;
 }
 
 /* Sticky alerts */
