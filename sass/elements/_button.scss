@@ -112,9 +112,7 @@
   height: 1em;
   padding: 0.25em 0.25em;
   color: #000;
-  background: transparent
-    url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e")
-    center/1em auto no-repeat;
+  background: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat;
   border: 0;
   border-radius: 0.25rem;
   opacity: 0.5;
@@ -146,4 +144,115 @@
 .button-close-white {
   -webkit-filter: invert(1) grayscale(100%) brightness(200%);
   filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+.button-link {
+  font-weight: 400;
+  color: var(--blue-500);
+  text-decoration: underline;
+}
+
+.button-link:hover {
+  color: #0a58ca;
+}
+
+.button-link:disabled,
+.button-link.disabled {
+  color: #6c757d;
+}
+
+.button-group-lg>.button {
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
+  border-radius: 0.3rem;
+}
+
+.button-group-sm>.button {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  border-radius: 0.2rem;
+}
+
+.button-group,
+.button-group-vertical {
+  position: relative;
+  display: inline-flex;
+  vertical-align: middle;
+}
+
+.button-group>.button,
+.button-group-vertical>.button {
+  position: relative;
+  flex: 1 1 auto;
+}
+
+.button-group>.button-check:checked+.button,
+.button-group>.button-check:focus+.button,
+.button-group>.button:hover,
+.button-group>.button:focus,
+.button-group>.button:active,
+.button-group>.button.active,
+.button-group-vertical>.button-check:checked+.button,
+.button-group-vertical>.button-check:focus+.button,
+.button-group-vertical>.button:hover,
+.button-group-vertical>.button:focus,
+.button-group-vertical>.button:active,
+.button-group-vertical>.button.active {
+  z-index: 1;
+}
+
+.button-group>.button:not(:first-child),
+.button-group>.button-group:not(:first-child) {
+  margin-left: -1px;
+}
+
+.button-group>.button:not(:last-child):not(.dropdown-toggle),
+.button-group>.button-group:not(:last-child)>.button {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.button-group>.button:nth-child(n+3),
+.button-group> :not(.button-check)+.button,
+.button-group>.button-group:not(:first-child)>.button {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.button-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.button-toolbar .input-group {
+  width: auto;
+}
+
+.button-group-vertical {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.button-group-vertical>.button,
+.button-group-vertical>.button-group {
+  width: 100%;
+}
+
+.button-group-vertical>.button:not(:first-child),
+.button-group-vertical>.button-group:not(:first-child) {
+  margin-top: -1px;
+}
+
+.button-group-vertical>.button:not(:last-child):not(.dropdown-toggle),
+.button-group-vertical>.button-group:not(:last-child)>.button {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.button-group-vertical>.button~.button,
+.button-group-vertical>.button-group:not(:first-child)>.button {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
