@@ -7221,6 +7221,10 @@ a.box:active {
   height: max-content;
 }
 
+.card.rounded {
+  border-radius: 10px;
+}
+
 .chip {
   display: inline-block;
   padding: 0 25px;
