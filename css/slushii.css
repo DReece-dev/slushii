@@ -10828,6 +10828,18 @@ select.form-control[multiple]>option:disabled {
   border: 2px solid #4338ca;
 }
 
+.input-field-default.pilled {
+  padding: 10px;
+  border: 1px solid #e8e9eb;
+  border-radius: 30px;
+  width: 100%;
+}
+
+.input-field-default.pilled:focus {
+  outline: #4338ca;
+  border: 2px solid #4338ca;
+}
+
 [type=checkbox],
 [type=radio] {
   -webkit-appearance: none;
