@@ -43,6 +43,7 @@ Licensed under MIT (github.com/DReece-dev/slushii)
   --teal: #20c997;
   --cyan: #0dcaf0;
   --white: #fff;
+  --black: #000000;
   --gray: #6c757d;
   --gray-dark: #111111;
   --lightgray: #6c757d;
@@ -11461,6 +11462,10 @@ screen and (min-width: 64em) {
   color: inherit !important;
 }
 
+.text-black {
+  color: var(--black) !important;
+}
+
 .text-white {
   color: var(--white) !important;
 }
@@ -12227,6 +12232,278 @@ screen and (min-width: 64em) {
   padding-left: 3rem !important;
 }
 
+.max-h-0 {
+  max-height: 0px;
+}
+
+.max-h-1 {
+  max-height: 0.25rem;
+}
+
+.max-h-2 {
+  max-height: 0.5rem;
+}
+
+.max-h-3 {
+  max-height: 0.75rem;
+}
+
+.max-h-4 {
+  max-height: 1rem;
+}
+
+.max-h-5 {
+  max-height: 1.25rem;
+}
+
+.max-h-6 {
+  max-height: 1.5rem;
+}
+
+.max-h-7 {
+  max-height: 1.75rem;
+}
+
+.max-h-8 {
+  max-height: 2rem;
+}
+
+.max-h-9 {
+  max-height: 2.25rem;
+}
+
+.max-h-10 {
+  max-height: 2.5rem;
+}
+
+.max-h-11 {
+  max-height: 2.75rem;
+}
+
+.max-h-12 {
+  max-height: 3rem;
+}
+
+.max-h-14 {
+  max-height: 3.5rem;
+}
+
+.max-h-16 {
+  max-height: 4rem;
+}
+
+.max-h-20 {
+  max-height: 5rem;
+}
+
+.max-h-24 {
+  max-height: 6rem;
+}
+
+.max-h-28 {
+  max-height: 7rem;
+}
+
+.max-h-32 {
+  max-height: 8rem;
+}
+
+.max-h-36 {
+  max-height: 9rem;
+}
+
+.max-h-40 {
+  max-height: 10rem;
+}
+
+.max-h-44 {
+  max-height: 11rem;
+}
+
+.max-h-48 {
+  max-height: 12rem;
+}
+
+.max-h-52 {
+  max-height: 13rem;
+}
+
+.max-h-56 {
+  max-height: 14rem;
+}
+
+.max-h-60 {
+  max-height: 15rem;
+}
+
+.max-h-64 {
+  max-height: 16rem;
+}
+
+.max-h-72 {
+  max-height: 18rem;
+}
+
+.max-h-80 {
+  max-height: 20rem;
+}
+
+.max-h-96 {
+  max-height: 24rem;
+}
+
+.max-h-px {
+  max-height: 1px;
+}
+
+.max-h-0\.5 {
+  max-height: 0.125rem;
+}
+
+.max-h-1\.5 {
+  max-height: 0.375rem;
+}
+
+.max-h-2\.5 {
+  max-height: 0.625rem;
+}
+
+.max-h-3\.5 {
+  max-height: 0.875rem;
+}
+
+.max-h-full {
+  max-height: 100%;
+}
+
+.max-h-screen {
+  max-height: 100vh;
+}
+
+.max-w-0 {
+  max-width: 0rem;
+}
+
+.max-w-none {
+  max-width: none;
+}
+
+.max-w-xs {
+  max-width: 20rem;
+}
+
+.max-w-sm {
+  max-width: 24rem;
+}
+
+.max-w-md {
+  max-width: 28rem;
+}
+
+.max-w-lg {
+  max-width: 32rem;
+}
+
+.max-w-xl {
+  max-width: 36rem;
+}
+
+.max-w-2xl {
+  max-width: 42rem;
+}
+
+.max-w-3xl {
+  max-width: 48rem;
+}
+
+.max-w-4xl {
+  max-width: 56rem;
+}
+
+.max-w-5xl {
+  max-width: 64rem;
+}
+
+.max-w-6xl {
+  max-width: 72rem;
+}
+
+.max-w-7xl {
+  max-width: 80rem;
+}
+
+.max-w-full {
+  max-width: 100%;
+}
+
+.max-w-min {
+  max-width: -webkit-min-content;
+  max-width: -moz-min-content;
+  max-width: min-content;
+}
+
+.max-w-max {
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+}
+
+.max-w-prose {
+  max-width: 65ch;
+}
+
+.max-w-screen-sm {
+  max-width: 640px;
+}
+
+.max-w-screen-md {
+  max-width: 768px;
+}
+
+.max-w-screen-lg {
+  max-width: 1024px;
+}
+
+.max-w-screen-xl {
+  max-width: 1280px;
+}
+
+.max-w-screen-2xl {
+  max-width: 1536px;
+}
+
+.min-h-0 {
+  min-height: 0px;
+}
+
+.min-h-full {
+  min-height: 100%;
+}
+
+.min-h-screen {
+  min-height: 100vh;
+}
+
+.min-w-0 {
+  min-width: 0px;
+}
+
+.min-w-full {
+  min-width: 100%;
+}
+
+.min-w-min {
+  min-width: -webkit-min-content;
+  min-width: -moz-min-content;
+  min-width: min-content;
+}
+
+.min-w-max {
+  min-width: -webkit-max-content;
+  min-width: -moz-max-content;
+  min-width: max-content;
+}
+
 .bg-fixed {
   background-attachment: fixed;
 }
@@ -12722,6 +12999,306 @@ screen and (min-width: 64em) {
   box-sizing: content-box;
 }
 
+.opacity-0 {
+  opacity: 0;
+}
+
+.opacity-5 {
+  opacity: 0.05;
+}
+
+.opacity-10 {
+  opacity: 0.1;
+}
+
+.opacity-20 {
+  opacity: 0.2;
+}
+
+.opacity-25 {
+  opacity: 0.25;
+}
+
+.opacity-30 {
+  opacity: 0.3;
+}
+
+.opacity-40 {
+  opacity: 0.4;
+}
+
+.opacity-50 {
+  opacity: 0.5;
+}
+
+.opacity-60 {
+  opacity: 0.6;
+}
+
+.opacity-70 {
+  opacity: 0.7;
+}
+
+.opacity-75 {
+  opacity: 0.75;
+}
+
+.opacity-80 {
+  opacity: 0.8;
+}
+
+.opacity-90 {
+  opacity: 0.9;
+}
+
+.opacity-95 {
+  opacity: 0.95;
+}
+
+.opacity-100 {
+  opacity: 1;
+}
+
+.group:hover .group-hover\:opacity-0 {
+  opacity: 0;
+}
+
+.group:hover .group-hover\:opacity-5 {
+  opacity: 0.05;
+}
+
+.group:hover .group-hover\:opacity-10 {
+  opacity: 0.1;
+}
+
+.group:hover .group-hover\:opacity-20 {
+  opacity: 0.2;
+}
+
+.group:hover .group-hover\:opacity-25 {
+  opacity: 0.25;
+}
+
+.group:hover .group-hover\:opacity-30 {
+  opacity: 0.3;
+}
+
+.group:hover .group-hover\:opacity-40 {
+  opacity: 0.4;
+}
+
+.group:hover .group-hover\:opacity-50 {
+  opacity: 0.5;
+}
+
+.group:hover .group-hover\:opacity-60 {
+  opacity: 0.6;
+}
+
+.group:hover .group-hover\:opacity-70 {
+  opacity: 0.7;
+}
+
+.group:hover .group-hover\:opacity-75 {
+  opacity: 0.75;
+}
+
+.group:hover .group-hover\:opacity-80 {
+  opacity: 0.8;
+}
+
+.group:hover .group-hover\:opacity-90 {
+  opacity: 0.9;
+}
+
+.group:hover .group-hover\:opacity-95 {
+  opacity: 0.95;
+}
+
+.group:hover .group-hover\:opacity-100 {
+  opacity: 1;
+}
+
+.focus-within\:opacity-0:focus-within {
+  opacity: 0;
+}
+
+.focus-within\:opacity-5:focus-within {
+  opacity: 0.05;
+}
+
+.focus-within\:opacity-10:focus-within {
+  opacity: 0.1;
+}
+
+.focus-within\:opacity-20:focus-within {
+  opacity: 0.2;
+}
+
+.focus-within\:opacity-25:focus-within {
+  opacity: 0.25;
+}
+
+.focus-within\:opacity-30:focus-within {
+  opacity: 0.3;
+}
+
+.focus-within\:opacity-40:focus-within {
+  opacity: 0.4;
+}
+
+.focus-within\:opacity-50:focus-within {
+  opacity: 0.5;
+}
+
+.focus-within\:opacity-60:focus-within {
+  opacity: 0.6;
+}
+
+.focus-within\:opacity-70:focus-within {
+  opacity: 0.7;
+}
+
+.focus-within\:opacity-75:focus-within {
+  opacity: 0.75;
+}
+
+.focus-within\:opacity-80:focus-within {
+  opacity: 0.8;
+}
+
+.focus-within\:opacity-90:focus-within {
+  opacity: 0.9;
+}
+
+.focus-within\:opacity-95:focus-within {
+  opacity: 0.95;
+}
+
+.focus-within\:opacity-100:focus-within {
+  opacity: 1;
+}
+
+.hover\:opacity-0:hover {
+  opacity: 0;
+}
+
+.hover\:opacity-5:hover {
+  opacity: 0.05;
+}
+
+.hover\:opacity-10:hover {
+  opacity: 0.1;
+}
+
+.hover\:opacity-20:hover {
+  opacity: 0.2;
+}
+
+.hover\:opacity-25:hover {
+  opacity: 0.25;
+}
+
+.hover\:opacity-30:hover {
+  opacity: 0.3;
+}
+
+.hover\:opacity-40:hover {
+  opacity: 0.4;
+}
+
+.hover\:opacity-50:hover {
+  opacity: 0.5;
+}
+
+.hover\:opacity-60:hover {
+  opacity: 0.6;
+}
+
+.hover\:opacity-70:hover {
+  opacity: 0.7;
+}
+
+.hover\:opacity-75:hover {
+  opacity: 0.75;
+}
+
+.hover\:opacity-80:hover {
+  opacity: 0.8;
+}
+
+.hover\:opacity-90:hover {
+  opacity: 0.9;
+}
+
+.hover\:opacity-95:hover {
+  opacity: 0.95;
+}
+
+.hover\:opacity-100:hover {
+  opacity: 1;
+}
+
+.focus\:opacity-0:focus {
+  opacity: 0;
+}
+
+.focus\:opacity-5:focus {
+  opacity: 0.05;
+}
+
+.focus\:opacity-10:focus {
+  opacity: 0.1;
+}
+
+.focus\:opacity-20:focus {
+  opacity: 0.2;
+}
+
+.focus\:opacity-25:focus {
+  opacity: 0.25;
+}
+
+.focus\:opacity-30:focus {
+  opacity: 0.3;
+}
+
+.focus\:opacity-40:focus {
+  opacity: 0.4;
+}
+
+.focus\:opacity-50:focus {
+  opacity: 0.5;
+}
+
+.focus\:opacity-60:focus {
+  opacity: 0.6;
+}
+
+.focus\:opacity-70:focus {
+  opacity: 0.7;
+}
+
+.focus\:opacity-75:focus {
+  opacity: 0.75;
+}
+
+.focus\:opacity-80:focus {
+  opacity: 0.8;
+}
+
+.focus\:opacity-90:focus {
+  opacity: 0.9;
+}
+
+.focus\:opacity-95:focus {
+  opacity: 0.95;
+}
+
+.focus\:opacity-100:focus {
+  opacity: 1;
+}
+
 .cursor-auto {
   cursor: auto;
 }
@@ -13140,6 +13717,171 @@ screen and (min-width: 64em) {
 .dark-mode .shadow-lg {
   -webkit-box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.4) !important;
   box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.4) !important;
+}
+
+.transition-none {
+  -webkit-transition-property: none;
+  transition-property: none;
+}
+
+.transition-all {
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-transition-duration: 150ms;
+  transition-duration: 150ms;
+}
+
+.transition {
+  -webkit-transition-property: background-color, border-color, color, fill, stroke, opacity, -webkit-box-shadow, -webkit-transform;
+  transition-property: background-color, border-color, color, fill, stroke, opacity, -webkit-box-shadow, -webkit-transform;
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, -webkit-box-shadow, -webkit-transform;
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-transition-duration: 150ms;
+  transition-duration: 150ms;
+}
+
+.transition-colors {
+  -webkit-transition-property: background-color, border-color, color, fill, stroke;
+  transition-property: background-color, border-color, color, fill, stroke;
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-transition-duration: 150ms;
+  transition-duration: 150ms;
+}
+
+.transition-opacity {
+  -webkit-transition-property: opacity;
+  transition-property: opacity;
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-transition-duration: 150ms;
+  transition-duration: 150ms;
+}
+
+.transition-shadow {
+  -webkit-transition-property: -webkit-box-shadow;
+  transition-property: -webkit-box-shadow;
+  transition-property: box-shadow;
+  transition-property: box-shadow, -webkit-box-shadow;
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-transition-duration: 150ms;
+  transition-duration: 150ms;
+}
+
+.transition-transform {
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-transition-duration: 150ms;
+  transition-duration: 150ms;
+}
+
+.ease-linear {
+  -webkit-transition-timing-function: linear;
+  transition-timing-function: linear;
+}
+
+.ease-in {
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+}
+
+.ease-out {
+  -webkit-transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
+.ease-in-out {
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.duration-75 {
+  -webkit-transition-duration: 75ms;
+  transition-duration: 75ms;
+}
+
+.duration-100 {
+  -webkit-transition-duration: 100ms;
+  transition-duration: 100ms;
+}
+
+.duration-150 {
+  -webkit-transition-duration: 150ms;
+  transition-duration: 150ms;
+}
+
+.duration-200 {
+  -webkit-transition-duration: 200ms;
+  transition-duration: 200ms;
+}
+
+.duration-300 {
+  -webkit-transition-duration: 300ms;
+  transition-duration: 300ms;
+}
+
+.duration-500 {
+  -webkit-transition-duration: 500ms;
+  transition-duration: 500ms;
+}
+
+.duration-700 {
+  -webkit-transition-duration: 700ms;
+  transition-duration: 700ms;
+}
+
+.duration-1000 {
+  -webkit-transition-duration: 1000ms;
+  transition-duration: 1000ms;
+}
+
+.delay-75 {
+  -webkit-transition-delay: 75ms;
+  transition-delay: 75ms;
+}
+
+.delay-100 {
+  -webkit-transition-delay: 100ms;
+  transition-delay: 100ms;
+}
+
+.delay-150 {
+  -webkit-transition-delay: 150ms;
+  transition-delay: 150ms;
+}
+
+.delay-200 {
+  -webkit-transition-delay: 200ms;
+  transition-delay: 200ms;
+}
+
+.delay-300 {
+  -webkit-transition-delay: 300ms;
+  transition-delay: 300ms;
+}
+
+.delay-500 {
+  -webkit-transition-delay: 500ms;
+  transition-delay: 500ms;
+}
+
+.delay-700 {
+  -webkit-transition-delay: 700ms;
+  transition-delay: 700ms;
+}
+
+.delay-1000 {
+  -webkit-transition-delay: 1000ms;
+  transition-delay: 1000ms;
 }
 
 .svg,

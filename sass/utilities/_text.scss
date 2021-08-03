@@ -85,6 +85,10 @@ screen and (min-width: 64em) {
   color: inherit !important;
 }
 
+.text-black {
+  color: var(--black) !important;
+}
+
 .text-white {
   color: var(--white) !important;
 }
