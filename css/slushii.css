@@ -7590,24 +7590,44 @@ a.box:active {
   margin-bottom: 1.5rem;
 }
 
+/* Card Headings */
 .card-heading-container {
   background-color: var(--white);
   border: 1px solid #e8e9eb;
   border-radius: 10px;
 }
 
-.card-heading-container.medium {
-  height: 15em;
+.card-heading-container-custom-width {
+  background-color: var(--white);
+  border: 1px solid #e8e9eb;
+  border-radius: 10px;
+  width: 300px;
+  padding: 10px;
+}
+
+.card-heading-container-small {
+  background-color: var(--white);
+  border: 1px solid #e8e9eb;
+  border-radius: 10px;
+  height: 950px;
+  margin: 50px;
+}
+
+.card-heading-container-custom {
+  background-color: var(--white);
+  border: 1px solid #e8e9eb;
+  border-radius: 10px;
+  margin-top: 2em;
+  margin-left: 2em;
+  width: 90%;
 }
 
 .card-heading-container.large {
-  height: 35em;
-}
-
-.card-heading-container.max-content {
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
+  background-color: var(--white);
+  border: 1px solid #e8e9eb;
+  border-radius: 10px;
+  height: 950px;
+  margin: 50px;
 }
 
 .card.rounded {
