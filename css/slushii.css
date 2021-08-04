@@ -4286,6 +4286,45 @@ img {
   border-top-right-radius: 0;
 }
 
+.vertical-nav-links {
+  color: var(--white);
+}
+
+.vertical-button {
+  background-color: #4338ca;
+  width: 370px;
+  text-align: left;
+  border: none;
+  color: white;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.vertical-button:hover {
+  background-color: #3730a3;
+}
+
+.vertical-button.dark-mode {
+  background-color: #1f2937;
+  width: 370px;
+  text-align: left;
+  border: none;
+  color: white;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.vertical-button.dark-mode:hover {
+  background-color: #111827;
+  width: 370px;
+  text-align: left;
+  border: none;
+  color: white;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+
 .title {
   color: #363636;
   font-size: 2rem;
