@@ -14172,6 +14172,38 @@ screen and (min-width: 64em) {
 }
 
 /* Pointer events utilities */
+.pointer-events-all {
+  pointer-events: all !important;
+}
+
+.pointer-events-fill {
+  pointer-events: fill !important;
+}
+
+.pointer-events-painted {
+  pointer-events: painted !important;
+}
+
+.pointer-events-stroke {
+  pointer-events: stroke !important;
+}
+
+.pointer-events-visible {
+  pointer-events: visible !important;
+}
+
+.pointer-events-inherit {
+  pointer-events: inherit !important;
+}
+
+.pointer-events-initial {
+  pointer-events: initial !important;
+}
+
+.pointer-events-unset {
+  pointer-events: unset !important;
+}
+
 .pointer-events-auto {
   pointer-events: auto !important;
 }
