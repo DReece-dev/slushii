@@ -1,0 +1,44 @@
+.outline-none {
+    outline: 2px solid transparent;
+    outline-offset: 2px
+}
+
+.outline-white {
+    outline: 2px dotted white;
+    outline-offset: 2px
+}
+
+.outline-black {
+    outline: 2px dotted black;
+    outline-offset: 2px
+}
+
+.focus-within\:outline-none:focus-within {
+    outline: 2px solid transparent;
+    outline-offset: 2px
+}
+
+.focus-within\:outline-white:focus-within {
+    outline: 2px dotted white;
+    outline-offset: 2px
+}
+
+.focus-within\:outline-black:focus-within {
+    outline: 2px dotted black;
+    outline-offset: 2px
+}
+
+.focus\:outline-none:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px
+}
+
+.focus\:outline-white:focus {
+    outline: 2px dotted white;
+    outline-offset: 2px
+}
+
+.focus\:outline-black:focus {
+    outline: 2px dotted black;
+    outline-offset: 2px
+}

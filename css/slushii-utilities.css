@@ -1219,6 +1219,26 @@ screen and (min-width: 64em) {
     gap: 3rem !important;
 }
 
+.list-inside {
+    list-style-position: inside;
+}
+
+.list-outside {
+    list-style-position: outside;
+}
+
+.list-none {
+    list-style-type: none;
+}
+
+.list-disc {
+    list-style-type: disc;
+}
+
+.list-decimal {
+    list-style-type: decimal;
+}
+
 .m-0 {
     margin: 0 !important;
 }
@@ -2676,6 +2696,51 @@ screen and (min-width: 64em) {
     opacity: 1;
 }
 
+.outline-none {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+}
+
+.outline-white {
+    outline: 2px dotted white;
+    outline-offset: 2px;
+}
+
+.outline-black {
+    outline: 2px dotted black;
+    outline-offset: 2px;
+}
+
+.focus-within\:outline-none:focus-within {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+}
+
+.focus-within\:outline-white:focus-within {
+    outline: 2px dotted white;
+    outline-offset: 2px;
+}
+
+.focus-within\:outline-black:focus-within {
+    outline: 2px dotted black;
+    outline-offset: 2px;
+}
+
+.focus\:outline-none:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+}
+
+.focus\:outline-white:focus {
+    outline: 2px dotted white;
+    outline-offset: 2px;
+}
+
+.focus\:outline-black:focus {
+    outline: 2px dotted black;
+    outline-offset: 2px;
+}
+
 .cursor-auto {
     cursor: auto;
 }
@@ -3040,6 +3105,30 @@ screen and (min-width: 64em) {
     }
 }
 
+.tracking-tighter {
+    letter-spacing: -0.05em;
+}
+
+.tracking-tight {
+    letter-spacing: -0.025em;
+}
+
+.tracking-normal {
+    letter-spacing: 0em;
+}
+
+.tracking-wide {
+    letter-spacing: 0.025em;
+}
+
+.tracking-wider {
+    letter-spacing: 0.05em;
+}
+
+.tracking-widest {
+    letter-spacing: 0.1em;
+}
+
 .user-select-all {
     -webkit-user-select: all !important;
     -moz-user-select: all !important;
@@ -3059,6 +3148,22 @@ screen and (min-width: 64em) {
     -moz-user-select: none !important;
     -ms-user-select: none !important;
     user-select: none !important;
+}
+
+.resize-none {
+    resize: none;
+}
+
+.resize-y {
+    resize: vertical;
+}
+
+.resize-x {
+    resize: horizontal;
+}
+
+.resize {
+    resize: both;
 }
 
 .shadow-none {
@@ -3094,6 +3199,31 @@ screen and (min-width: 64em) {
 .dark-mode .shadow-lg {
     -webkit-box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.4) !important;
     box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.4) !important;
+}
+
+.animate-none {
+    -webkit-animation: none;
+    animation: none;
+}
+
+.animate-spin {
+    -webkit-animation: spin 1s linear infinite;
+    animation: spin 1s linear infinite;
+}
+
+.animate-ping {
+    -webkit-animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+    animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.animate-pulse {
+    -webkit-animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-bounce {
+    -webkit-animation: bounce 1s infinite;
+    animation: bounce 1s infinite;
 }
 
 .transition-none {
@@ -3261,6 +3391,56 @@ screen and (min-width: 64em) {
     transition-delay: 1000ms;
 }
 
+.transform-none {
+    -webkit-transform: none;
+    transform: none;
+}
+
+.origin-center {
+    -webkit-transform-origin: center;
+    transform-origin: center;
+}
+
+.origin-top {
+    -webkit-transform-origin: top;
+    transform-origin: top;
+}
+
+.origin-top-right {
+    -webkit-transform-origin: top right;
+    transform-origin: top right;
+}
+
+.origin-right {
+    -webkit-transform-origin: right;
+    transform-origin: right;
+}
+
+.origin-bottom-right {
+    -webkit-transform-origin: bottom right;
+    transform-origin: bottom right;
+}
+
+.origin-bottom {
+    -webkit-transform-origin: bottom;
+    transform-origin: bottom;
+}
+
+.origin-bottom-left {
+    -webkit-transform-origin: bottom left;
+    transform-origin: bottom left;
+}
+
+.origin-left {
+    -webkit-transform-origin: left;
+    transform-origin: left;
+}
+
+.origin-top-left {
+    -webkit-transform-origin: top left;
+    transform-origin: top left;
+}
+
 .svg,
 .svg:not(.preserve) [fill*="#"]:not(.preserve) {
     fill: currentcolor;
@@ -3313,42 +3493,6 @@ screen and (min-width: 64em) {
     overflow: visible;
     clip: auto;
     white-space: normal;
-}
-
-/* Box shadow utilities also with darkmode */
-.shadow-none {
-    -webkit-box-shadow: none !important;
-    box-shadow: none !important;
-}
-
-.shadow-sm {
-    -webkit-box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.15) !important;
-    box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.15) !important;
-}
-
-.dark-mode .shadow-sm {
-    -webkit-box-shadow: 0 0.1rem 0.6rem rgba(0, 0, 0, 0.4) !important;
-    box-shadow: 0 0.1rem 0.6rem rgba(0, 0, 0, 0.4) !important;
-}
-
-.shadow {
-    -webkit-box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.15) !important;
-    box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.15) !important;
-}
-
-.dark-mode .shadow {
-    -webkit-box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.4) !important;
-    box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.4) !important;
-}
-
-.shadow-lg {
-    -webkit-box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.15) !important;
-    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.15) !important;
-}
-
-.dark-mode .shadow-lg {
-    -webkit-box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.4) !important;
-    box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.4) !important;
 }
 
 /* Pointer events utilities */
