@@ -65,6 +65,9 @@ Licensed under MIT (github.com/DReece-dev/slushii)
   --font-size-m: 1rem;
   --font-size-l: 1.35rem;
   --font-size-xl: 1.75rem;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
 }
 
 *,
