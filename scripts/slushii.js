@@ -64,3 +64,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 });
+
+// List Box Toggle 
+
+let button = document.getElementById('button');
+
+button.onclick = function () {
+    let div = document.getElementById('up-panel');
+    if (div.style.display !== 'none') {
+        div.style.display = 'none';
+    }
+    else {
+        div.style.display = 'block';
+    }
+};
