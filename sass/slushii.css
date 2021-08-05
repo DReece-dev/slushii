@@ -10380,6 +10380,81 @@ select.form-control[multiple] > option:disabled {
   border: 2px solid #4338ca;
 }
 
+/* Listboxs */
+.list-box-postion-outter {
+  position: fixed;
+  top: 4rem;
+  width: 18rem;
+}
+
+.list-box-button {
+  position: relative;
+  min-width: 200px;
+  cursor: default;
+  border: 1px solid #ced4da;
+  border-radius: .5rem;
+  background-color: var(--white);
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  padding-left: .75rem;
+  padding-right: 2.5rem;
+  text-align: left;
+  -webkit-transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+}
+
+.list-box-span {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.list-box-icon {
+  pointer-events: none;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-right: .5rem;
+}
+
+.list-box-panel {
+  position: absolute;
+  min-width: 200px;
+  cursor: default;
+  border: 1px solid #ced4da;
+  border-radius: .5rem;
+  background-color: var(--white);
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  padding-left: .3rem;
+  text-align: left;
+  -webkit-transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  list-style-type: none;
+}
+
+.list-box-option {
+  cursor: pointer;
+  width: 100%;
+}
+
+.list-box-option:hover {
+  background-color: #4338ca;
+  color: var(--white);
+}
+
 [type=checkbox],
 [type=radio] {
   -webkit-appearance: none;
