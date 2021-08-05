@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // List Box Toggle 
 
-let button = document.getElementById('button');
+let button = document.getElementById('list-box-toggle');
 
 button.onclick = function () {
     let div = document.getElementById('up-panel');
