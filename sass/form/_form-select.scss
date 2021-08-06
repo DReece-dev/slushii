@@ -159,3 +159,38 @@
     background-color: #4338ca;
     color: var(--white);
 }
+
+/* Radio Groups */
+
+.radio-group-container {
+    background-color: var(--white);
+    border: 1.5px solid #e8e9eb;
+    border-radius: 10px;
+    width: 400px;
+    height: max-content;
+    padding-left: 1rem;
+}
+
+.radio-group-container:hover {
+    border: 2px solid #4338ca;
+    cursor: default;
+}
+
+.radio-group-container.large {
+    background-color: var(--white);
+    border: 1.5px solid #e8e9eb;
+    border-radius: 3px;
+    width: 40em;
+    height: max-content;
+    padding-left: 1rem;
+}
+
+.radio-group-container.large:hover {
+    color: #59579b;
+    background-color: #eef2ff;
+}
+
+.radio-group-container.large p:hover {
+    color: #574ecf;
+    background-color: #eef2ff;
+}
