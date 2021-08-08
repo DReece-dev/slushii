@@ -3337,6 +3337,24 @@ Notes: None
   }
 }
 
+/* CSS Subgrid - This feature is shipped in Firefox 71, which is currently the only browser to implement subgrid. */
+.grid-columns-subgrid {
+  -ms-grid-columns: subgrid;
+      grid-template-columns: subgrid;
+}
+
+.grid-rows-subgrid {
+  -ms-grid-rows: subgrid;
+      grid-template-rows: subgrid;
+}
+
+.grid-subgrid-both {
+  -ms-grid-columns: subgrid;
+      grid-template-columns: subgrid;
+  -ms-grid-rows: subgrid;
+      grid-template-rows: subgrid;
+}
+
 /* Slushii Darkmode */
 .dark-mode {
   background-color: #25282c;
@@ -9727,7 +9745,6 @@ legend {
   border-radius: 0.4rem;
   -webkit-box-shadow: none;
   box-shadow: none;
-  /* Removes the default styles on some devices. */
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -9745,7 +9762,6 @@ legend {
   border-radius: 0.4rem;
   -webkit-box-shadow: none;
   box-shadow: none;
-  /* Removes the default styles on some devices. */
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -9763,7 +9779,6 @@ legend {
   border-radius: 0.4rem;
   -webkit-box-shadow: none;
   box-shadow: none;
-  /* Removes the default styles on some devices. */
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -9781,7 +9796,6 @@ legend {
   border-radius: 0.4rem;
   -webkit-box-shadow: none;
   box-shadow: none;
-  /* Removes the default styles on some devices. */
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -9836,12 +9850,10 @@ textarea.form-control-lg {
 }
 
 ::-webkit-input-placeholder {
-  /* Edge */
   color: rgba(0, 0, 0, 0.35);
 }
 
 :-ms-input-placeholder {
-  /* Internet Explorer 10-11 */
   color: rgba(0, 0, 0, 0.35);
 }
 
@@ -9911,12 +9923,10 @@ textarea.form-control-lg {
 }
 
 .dark-mode ::-webkit-input-placeholder {
-  /* Edge */
   color: rgba(255, 255, 255, 0.2);
 }
 
 .dark-mode :-ms-input-placeholder {
-  /* Internet Explorer 10-11 */
   color: rgba(255, 255, 255, 0.2);
 }
 
@@ -9979,12 +9989,10 @@ textarea.form-control-lg {
 }
 
 .dark-mode .form-control.alt-dm::-webkit-input-placeholder {
-  /* Edge */
   color: rgba(255, 255, 255, 0.5);
 }
 
 .dark-mode .form-control.alt-dm:-ms-input-placeholder {
-  /* Internet Explorer 10-11 */
   color: rgba(255, 255, 255, 0.5);
 }
 
@@ -10072,12 +10080,10 @@ textarea.form-control-lg {
 }
 
 .form-group.is-invalid .form-control::-webkit-input-placeholder {
-  /* Edge */
   color: rgba(0, 0, 0, 0.35);
 }
 
 .form-group.is-invalid .form-control:-ms-input-placeholder {
-  /* Internet Explorer 10-11 */
   color: rgba(0, 0, 0, 0.35);
 }
 
@@ -10090,12 +10096,10 @@ textarea.form-control-lg {
 }
 
 .form-control.is-invalid::-webkit-input-placeholder {
-  /* Edge */
   color: rgba(0, 0, 0, 0.35);
 }
 
 .form-control.is-invalid:-ms-input-placeholder {
-  /* Internet Explorer 10-11 */
   color: rgba(0, 0, 0, 0.35);
 }
 
@@ -10158,12 +10162,10 @@ textarea.form-control-lg {
 }
 
 .dark-mode .form-group.is-invalid .form-control::-webkit-input-placeholder {
-  /* Edge */
   color: rgba(255, 255, 255, 0.2);
 }
 
 .dark-mode .form-group.is-invalid .form-control:-ms-input-placeholder {
-  /* Internet Explorer 10-11 */
   color: rgba(255, 255, 255, 0.2);
 }
 
@@ -10176,12 +10178,10 @@ textarea.form-control-lg {
 }
 
 .dark-mode .form-control.is-invalid::-webkit-input-placeholder {
-  /* Edge */
   color: rgba(255, 255, 255, 0.2);
 }
 
 .dark-mode .form-control.is-invalid:-ms-input-placeholder {
-  /* Internet Explorer 10-11 */
   color: rgba(255, 255, 255, 0.2);
 }
 
@@ -10244,12 +10244,10 @@ textarea.form-control-lg {
 }
 
 .dark-mode .form-group.is-invalid .form-control.alt-dm.is-invalid::-webkit-input-placeholder {
-  /* Edge */
   color: rgba(255, 255, 255, 0.5);
 }
 
 .dark-mode .form-group.is-invalid .form-control.alt-dm.is-invalid:-ms-input-placeholder {
-  /* Internet Explorer 10-11 */
   color: rgba(255, 255, 255, 0.5);
 }
 
@@ -10270,12 +10268,10 @@ textarea.form-control-lg {
 }
 
 .dark-mode .form-control.alt-dm.is-invalid::-webkit-input-placeholder {
-  /* Edge */
   color: rgba(255, 255, 255, 0.5);
 }
 
 .dark-mode .form-control.alt-dm.is-invalid:-ms-input-placeholder {
-  /* Internet Explorer 10-11 */
   color: rgba(255, 255, 255, 0.5);
 }
 
@@ -14553,24 +14549,6 @@ select.form-control[multiple] > option:disabled {
   max-width: 100%;
   -webkit-box-ordinal-group: 2;
   order: 1;
-}
-
-/* CSS Subgrid - This feature is shipped in Firefox 71, which is currently the only browser to implement subgrid. */
-.grid-columns-subgrid {
-  -ms-grid-columns: subgrid;
-      grid-template-columns: subgrid;
-}
-
-.grid-rows-subgrid {
-  -ms-grid-rows: subgrid;
-      grid-template-rows: subgrid;
-}
-
-.grid-subgrid-both {
-  -ms-grid-columns: subgrid;
-      grid-template-columns: subgrid;
-  -ms-grid-rows: subgrid;
-      grid-template-rows: subgrid;
 }
 
 /* Slushii Hover Animations */

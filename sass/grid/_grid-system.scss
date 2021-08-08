@@ -434,3 +434,18 @@ Notes: None
     gap: 0px 0px;
   }
 }
+
+/* CSS Subgrid - This feature is shipped in Firefox 71, which is currently the only browser to implement subgrid. */
+
+.grid-columns-subgrid {
+  grid-template-columns: subgrid;
+}
+
+.grid-rows-subgrid {
+  grid-template-rows: subgrid;
+}
+
+.grid-subgrid-both {
+  grid-template-columns: subgrid;
+  grid-template-rows: subgrid;
+}
