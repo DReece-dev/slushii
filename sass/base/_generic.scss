@@ -116,6 +116,10 @@ sup {
 }
 
 img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  -ms-interpolation-mode: bicubic;
   border-style: none;
 }
 

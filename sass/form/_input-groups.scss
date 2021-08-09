@@ -1,0 +1,593 @@
+.input-group {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    width: 100%;
+}
+
+.input-group>.form-control {
+    position: relative;
+    -ms-flex: 1 1 0%;
+    flex: 1 1 0%;
+    min-width: 0;
+    margin-bottom: 0;
+}
+
+.input-group-prepend,
+.input-group-append {
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.input-group-prepend>.btn,
+.input-group-append>.btn {
+    position: relative;
+}
+
+.input-group-sm>.form-control {
+    height: 2.6rem;
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+    font-size: 1.2rem;
+}
+
+.input-group-lg>.form-control {
+    height: 4rem;
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+    font-size: 1.8rem;
+}
+
+/* Input group text */
+
+.input-group-text {
+    white-space: nowrap;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+    color: rgba(0, 0, 0, 0.85);
+    background-color: #ecf0f1;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 0.4rem;
+}
+
+.dark-mode .input-group-text {
+    color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(0, 0, 0, 0.3);
+}
+
+.input-group-sm .input-group-text {
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+    font-size: 1.2rem;
+}
+
+.input-group-lg .input-group-text {
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+    font-size: 1.8rem;
+}
+
+/* Input group btn */
+
+.input-group-sm>.input-group-prepend>.btn {
+    height: 2.6rem;
+    line-height: 2.6rem;
+    padding: 0 1rem;
+    font-size: 1.2rem;
+}
+
+.input-group-sm>.input-group-append>.btn {
+    height: 2.6rem;
+    line-height: 2.6rem;
+    padding: 0 1rem;
+    font-size: 1.2rem;
+}
+
+.input-group-lg>.input-group-prepend>.btn {
+    height: 4rem;
+    line-height: 4rem;
+    padding: 0 2rem;
+    font-size: 1.8rem;
+}
+
+.input-group-lg>.input-group-append>.btn {
+    height: 4rem;
+    line-height: 4rem;
+    padding: 0 2rem;
+    font-size: 1.8rem;
+}
+
+.input-group-sm>.input-group-prepend>.btn-square {
+    width: 2.6rem;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.input-group-sm>.input-group-append>.btn-square {
+    width: 2.6rem;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.input-group-lg>.input-group-prepend>.btn-square {
+    width: 4rem;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.input-group-lg>.input-group-append>.btn-square {
+    width: 4rem;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.input-group-sm>.input-group-prepend>.btn-rounded {
+    border-radius: 2.6rem;
+}
+
+.input-group-sm>.input-group-append>.btn-rounded {
+    border-radius: 2.6rem;
+}
+
+.input-group-lg>.input-group-prepend>.btn-rounded {
+    border-radius: 4rem;
+}
+
+.input-group-lg>.input-group-append>.btn-rounded {
+    border-radius: 4rem;
+}
+
+/* Input group borders */
+
+.input-group>.form-control:not(:first-child),
+.input-group-prepend:not(:first-child)>.input-group-text,
+.input-group-append:not(:first-child)>.input-group-text,
+.input-group-prepend:not(:first-child)>.btn,
+.input-group-append:not(:first-child)>.btn {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.input-group>.form-control:not(:last-child),
+.input-group-prepend:not(:last-child)>.input-group-text,
+.input-group-append:not(:last-child)>.input-group-text,
+.input-group-prepend:not(:last-child)>.btn,
+.input-group-append:not(:last-child)>.btn {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.input-group>.form-control:focus,
+.input-group-prepend>.btn:focus,
+.input-group-prepend>.btn.active,
+.input-group-append>.btn:focus,
+.input-group-append>.btn.active {
+    z-index: 1;
+}
+
+.input-group>.form-control:not(:first-child) {
+    margin-left: calc((-1) * 1px);
+}
+
+.input-group-prepend:not(:first-child)>.input-group-text {
+    margin-left: calc((-1) * 1px);
+}
+
+.input-group-append:not(:first-child)>.input-group-text {
+    margin-left: calc((-1) * 1px);
+}
+
+.input-group-prepend:not(:first-child)>.btn {
+    margin-left: calc((-1) * 1px);
+}
+
+.input-group-append:not(:first-child)>.btn {
+    margin-left: calc((-1) * 1px);
+}
+
+/* btns (only border colors) */
+
+.input-group-prepend>.btn {
+    border-color: rgba(0, 0, 0, 0.2);
+}
+
+.input-group-append>.btn {
+    border-color: rgba(0, 0, 0, 0.2);
+}
+
+.input-group-prepend>.btn:hover {
+    border-color: rgba(0, 0, 0, 0.2);
+}
+
+.input-group-append>.btn:hover {
+    border-color: rgba(0, 0, 0, 0.2);
+}
+
+.input-group-prepend>.btn:focus {
+    border-color: rgba(0, 0, 0, 0.2);
+}
+
+.input-group-append>.btn:focus {
+    border-color: rgba(0, 0, 0, 0.2);
+}
+
+.input-group-prepend>.btn.active {
+    border-color: rgba(0, 0, 0, 0.2);
+}
+
+.input-group-append>.btn.active {
+    border-color: rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode .input-group-prepend>.btn {
+    border-color: rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .input-group-append>.btn {
+    border-color: rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .input-group-prepend>.btn:hover {
+    border-color: rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .input-group-append>.btn:hover {
+    border-color: rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .input-group-prepend>.btn:focus {
+    border-color: rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .input-group-append>.btn:focus {
+    border-color: rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .input-group-prepend>.btn.active {
+    border-color: rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .input-group-append>.btn.active {
+    border-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Link btn */
+
+.input-group-prepend>.btn.btn-link {
+    border-color: rgba(0, 0, 0, 0.2);
+}
+
+.input-group-append>.btn.btn-link {
+    border-color: rgba(0, 0, 0, 0.2);
+}
+
+.input-group-prepend>.btn.btn-link:hover {
+    border-color: rgba(0, 0, 0, 0.2);
+}
+
+.input-group-append>.btn.btn-link:hover {
+    border-color: rgba(0, 0, 0, 0.2);
+}
+
+.input-group-prepend>.btn.btn-link:focus {
+    border-color: rgba(0, 0, 0, 0.2);
+}
+
+.input-group-append>.btn.btn-link:focus {
+    border-color: rgba(0, 0, 0, 0.2);
+}
+
+.input-group-prepend>.btn.btn-link.active {
+    border-color: rgba(0, 0, 0, 0.2);
+}
+
+.input-group-append>.btn.btn-link.active {
+    border-color: rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode .input-group-prepend>.btn.btn-link {
+    border-color: rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode .input-group-append>.btn.btn-link {
+    border-color: rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode .input-group-prepend>.btn.btn-link:hover {
+    border-color: rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode .input-group-append>.btn.btn-link:hover {
+    border-color: rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode .input-group-prepend>.btn.btn-link:focus {
+    border-color: rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode .input-group-append>.btn.btn-link:focus {
+    border-color: rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode .input-group-prepend>.btn.btn-link.active {
+    border-color: rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode .input-group-append>.btn.btn-link.active {
+    border-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Primary btn */
+
+.input-group-prepend>.btn.btn-primary {
+    border-color: #1890ff;
+}
+
+.input-group-append>.btn.btn-primary {
+    border-color: #1890ff;
+}
+
+.input-group-prepend>.btn.btn-primary:hover {
+    border-color: #45a3fb;
+}
+
+.input-group-append>.btn.btn-primary:hover {
+    border-color: #45a3fb;
+}
+
+.input-group-prepend>.btn.btn-primary:focus {
+    border-color: #1890ff;
+}
+
+.input-group-append>.btn.btn-primary:focus {
+    border-color: #1890ff;
+}
+
+.input-group-prepend>.btn.btn-primary.active {
+    border-color: #1890ff;
+}
+
+.input-group-append>.btn.btn-primary.active {
+    border-color: #1890ff;
+}
+
+.dark-mode .input-group-prepend>.btn.btn-primary {
+    border-color: #1890ff;
+}
+
+.dark-mode .input-group-append>.btn.btn-primary {
+    border-color: #1890ff;
+}
+
+.dark-mode .input-group-prepend>.btn.btn-primary:hover {
+    border-color: #45a3fb;
+}
+
+.dark-mode .input-group-append>.btn.btn-primary:hover {
+    border-color: #45a3fb;
+}
+
+.dark-mode .input-group-prepend>.btn.btn-primary:focus {
+    border-color: #1890ff;
+}
+
+.dark-mode .input-group-append>.btn.btn-primary:focus {
+    border-color: #1890ff;
+}
+
+.dark-mode .input-group-prepend>.btn.btn-primary.active {
+    border-color: #1890ff;
+}
+
+.dark-mode .input-group-append>.btn.btn-primary.active {
+    border-color: #1890ff;
+}
+
+/* Success btn */
+
+.input-group-prepend>.btn.btn-success {
+    border-color: #0be881;
+}
+
+.input-group-append>.btn.btn-success {
+    border-color: #0be881;
+}
+
+.input-group-prepend>.btn.btn-success:hover {
+    border-color: #81eea8;
+}
+
+.input-group-append>.btn.btn-success:hover {
+    border-color: #81eea8;
+}
+
+.input-group-prepend>.btn.btn-success:focus {
+    border-color: #0be881;
+}
+
+.input-group-append>.btn.btn-success:focus {
+    border-color: #0be881;
+}
+
+.input-group-prepend>.btn.btn-success.active {
+    border-color: #0be881;
+}
+
+.input-group-append>.btn.btn-success.active {
+    border-color: #0be881;
+}
+
+.dark-mode .input-group-prepend>.btn.btn-success {
+    border-color: #0be881;
+}
+
+.dark-mode .input-group-append>.btn.btn-success {
+    border-color: #0be881;
+}
+
+.dark-mode .input-group-prepend>.btn.btn-success:hover {
+    border-color: #81eea8;
+}
+
+.dark-mode .input-group-append>.btn.btn-success:hover {
+    border-color: #81eea8;
+}
+
+.dark-mode .input-group-prepend>.btn.btn-success:focus {
+    border-color: #0be881;
+}
+
+.dark-mode .input-group-append>.btn.btn-success:focus {
+    border-color: #0be881;
+}
+
+.dark-mode .input-group-prepend>.btn.btn-success.active {
+    border-color: #0be881;
+}
+
+.dark-mode .input-group-append>.btn.btn-success.active {
+    border-color: #0be881;
+}
+
+/* Secondary btn */
+
+.input-group-prepend>.btn.btn-secondary {
+    border-color: #ffcf00;
+}
+
+.input-group-append>.btn.btn-secondary {
+    border-color: #ffcf00;
+}
+
+.input-group-prepend>.btn.btn-secondary:hover {
+    border-color: #ffe04d;
+}
+
+.input-group-append>.btn.btn-secondary:hover {
+    border-color: #ffe04d;
+}
+
+.input-group-prepend>.btn.btn-secondary:focus {
+    border-color: #ffcf00;
+}
+
+.input-group-append>.btn.btn-secondary:focus {
+    border-color: #ffcf00;
+}
+
+.input-group-prepend>.btn.btn-secondary.active {
+    border-color: #ffcf00;
+}
+
+.input-group-append>.btn.btn-secondary.active {
+    border-color: #ffcf00;
+}
+
+.dark-mode .input-group-prepend>.btn.btn-secondary {
+    border-color: #ffcf00;
+}
+
+.dark-mode .input-group-append>.btn.btn-secondary {
+    border-color: #ffcf00;
+}
+
+.dark-mode .input-group-prepend>.btn.btn-secondary:hover {
+    border-color: #ffe04d;
+}
+
+.dark-mode .input-group-append>.btn.btn-secondary:hover {
+    border-color: #ffe04d;
+}
+
+.dark-mode .input-group-prepend>.btn.btn-secondary:focus {
+    border-color: #ffcf00;
+}
+
+.dark-mode .input-group-append>.btn.btn-secondary:focus {
+    border-color: #ffcf00;
+}
+
+.dark-mode .input-group-prepend>.btn.btn-secondary.active {
+    border-color: #ffcf00;
+}
+
+.dark-mode .input-group-append>.btn.btn-secondary.active {
+    border-color: #ffcf00;
+}
+
+/* Danger btn */
+
+.input-group-prepend>.btn.btn-danger {
+    border-color: #ff4d4f;
+}
+
+.input-group-append>.btn.btn-danger {
+    border-color: #ff4d4f;
+}
+
+.input-group-prepend>.btn.btn-danger:hover {
+    border-color: #ed586c;
+}
+
+.input-group-append>.btn.btn-danger:hover {
+    border-color: #ed586c;
+}
+
+.input-group-prepend>.btn.btn-danger:focus {
+    border-color: #ff4d4f;
+}
+
+.input-group-append>.btn.btn-danger:focus {
+    border-color: #ff4d4f;
+}
+
+.input-group-prepend>.btn.btn-danger.active {
+    border-color: #ff4d4f;
+}
+
+.input-group-append>.btn.btn-danger.active {
+    border-color: #ff4d4f;
+}
+
+.dark-mode .input-group-prepend>.btn.btn-danger {
+    border-color: #ff4d4f;
+}
+
+.dark-mode .input-group-append>.btn.btn-danger {
+    border-color: #ff4d4f;
+}
+
+.dark-mode .input-group-prepend>.btn.btn-danger:hover {
+    border-color: #ed586c;
+}
+
+.dark-mode .input-group-append>.btn.btn-danger:hover {
+    border-color: #ed586c;
+}
+
+.dark-mode .input-group-prepend>.btn.btn-danger:focus {
+    border-color: #ff4d4f;
+}
+
+.dark-mode .input-group-append>.btn.btn-danger:focus {
+    border-color: #ff4d4f;
+}
+
+.dark-mode .input-group-prepend>.btn.btn-danger.active {
+    border-color: #ff4d4f;
+}
+
+.dark-mode .input-group-append>.btn.btn-danger.active {
+    border-color: #ff4d4f;
+}

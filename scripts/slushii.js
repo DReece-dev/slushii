@@ -1,9 +1,7 @@
 'use strict'
 
-// This is a JavaScript file with scripts for some components and functionality.
-
-// Clickable Dropdown Menu
-function myFunction() {
+// Clickable Dropdown
+function clickable() {
     document.getElementById("clickable-dropdown").classList.toggle("clickable-dropdown-show");
 }
 
@@ -21,7 +19,7 @@ window.onclick = function (event) {
 }
 
 // Flyout menu 1
-function myFunction2() {
+function flyout() {
     document.getElementById("flyout-dropdown").classList.toggle("flyout-dropdown-show");
 }
 
@@ -65,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-// List Box Toggle 
+// List Box Toggle
 
 let button = document.getElementById('list-box-toggle');
 

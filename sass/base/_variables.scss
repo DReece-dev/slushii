@@ -34,6 +34,15 @@
   --black: #000000;
   --gray: #6c757d;
   --gray-dark: #111111;
+  --gray-100: #f8f9fa;
+  --gray-200: #e9ecef;
+  --gray-300: #dee2e6;
+  --gray-400: #ced4da;
+  --gray-500: #adb5bd;
+  --gray-600: #6c757d;
+  --gray-700: #495057;
+  --gray-800: #343a40;
+  --gray-900: #212529;
   --lightgray: #6c757d;
   --success: #18ca77;
   --info: #0fd7ff;
@@ -48,10 +57,5 @@
   --breakpoint-m: 960px;
   --breakpoint-l: 1200px;
   --breakpoint-xl: 1600px;
-  --font-size-xs: 0.7rem;
-  --font-size-s: 0.85rem;
-  --font-size-m: 1rem;
-  --font-size-l: 1.35rem;
-  --font-size-xl: 1.75rem;
   tab-size: 4;
 }
