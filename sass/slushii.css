@@ -4694,64 +4694,6 @@ fieldset[disabled] .btn {
   border-top-right-radius: 0;
 }
 
-.vertical-nav-links {
-  color: var(--white);
-}
-
-.vertical-btn {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #212529;
-  text-align: center;
-  text-decoration: none;
-  vertical-align: middle;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-      user-select: none;
-  background-color: transparent;
-  border: 1px solid transparent;
-  padding: 0.375rem 0.75rem;
-  font-size: 1rem;
-  border-radius: 0.25rem;
-  -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
-}
-
-.vertical-btn:hover {
-  background-color: #3730a3;
-}
-
-.vertical-btn.dark-mode {
-  background-color: #1f2937;
-  width: 370px;
-  text-align: left;
-  border: none;
-  color: white;
-  padding: 20px;
-  border-radius: 5px;
-}
-
-.vertical-btn.dark-mode:hover {
-  background-color: #111827;
-  width: 370px;
-  text-align: left;
-  border: none;
-  color: white;
-  padding: 20px;
-  border-radius: 5px;
-}
-
 .btns {
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -4862,6 +4804,60 @@ fieldset[disabled] .btn {
 .btns.is-right:not(.has-addons) .btn:not(.is-fullwidth) {
   margin-left: 0.25rem;
   margin-right: 0.25rem;
+}
+
+.vertical--btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+      user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+}
+
+.vertical--btn:hover {
+  background-color: #3730a3;
+}
+
+.vertical--btn.dark-mode {
+  background-color: #1f2937;
+  width: 370px;
+  text-align: left;
+  border: none;
+  color: white;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.vertical--btn.dark-mode:hover {
+  background-color: #111827;
+  width: 370px;
+  text-align: left;
+  border: none;
+  color: white;
+  padding: 20px;
+  border-radius: 5px;
 }
 
 .title {
@@ -5438,6 +5434,19 @@ div.icon-text {
   display: block;
 }
 
+.vertical--navlink {
+  color: #6c747f;
+  text-align: left;
+  padding-right: 10em;
+  padding-left: 8px;
+}
+
+.vertical--navlink:hover {
+  color: #212836;
+  background-color: #f3f4f6;
+  border-radius: 5px;
+}
+
 .tabs {
   -webkit-overflow-scrolling: touch;
   -webkit-box-align: stretch;
@@ -5635,6 +5644,79 @@ div.icon-text {
 
 .tabs.is-large {
   font-size: 1.5rem;
+}
+
+.tabs-pilled {
+  -webkit-overflow-scrolling: touch;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  overflow: hidden;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.tabs-pilled a {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #777d8a;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: -1px;
+  padding: 0.5em 1em;
+  vertical-align: top;
+}
+
+.tabs-pilled a:hover {
+  color: #363636;
+  background-color: #f3f4f6;
+  border-radius: 5px;
+}
+
+.tabs-pilled li {
+  display: block;
+}
+
+.tabs-pilled li.is-active a {
+  border-bottom-color: var(--blue-600);
+  color: var(--blue-600);
+}
+
+.tabs-pilled ul {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.tabs-pilled.is-fullwidth li {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
 }
 
 .menu {
@@ -7669,193 +7751,140 @@ a.box:active {
 }
 
 .modal {
-  position: absolute;
-  top: -100%;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.8);
-  -webkit-transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-  z-index: 99;
-  outline: none;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow: hidden;
+  position: fixed;
+  z-index: 40;
+  border-radius: .5rem;
+  text-align: center;
+  margin: 20px;
+  -webkit-box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
+          box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
 }
 
-.dark-mode .modal {
-  background-color: rgba(0, 0, 0, 0.95);
-}
-
-.modal-dialog {
-  position: absolute;
-  display: -ms-flexbox;
+.modal.is-active {
   display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.modal-background {
+  background-color: var(--white);
+}
+
+.modal-content,
+.modal-card {
+  max-height: calc(100vh - 160px);
+  overflow: auto;
+  position: relative;
+  width: 100%;
+}
+
+@media screen and (min-width: 769px) {
+  .modal-content,
+  .modal-card {
+    margin: 0 auto;
+    max-height: calc(100vh - 40px);
+    width: 640px;
+  }
+}
+
+.modal-close {
+  background: none;
+  height: 40px;
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  width: 40px;
+}
+
+.modal-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  top: -100%;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-}
-
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  /* This hack corrects the scrollable modal content on IE. */
-  .modal.ie-scroll-fix .modal-dialog {
-    display: block;
-  }
-}
-
-.modal-content {
-  margin: auto;
-  width: 40rem;
-  max-width: 100%;
-  padding: 3rem;
-  color: rgba(0, 0, 0, 0.85);
-  background-color: #ffffff;
-  background-image: none;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 0.4rem;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-
-.dark-mode .modal-content {
-  color: rgba(255, 255, 255, 0.8);
-  background-color: #191c20;
-  background-image: none;
-  border-color: rgba(0, 0, 0, 0.2);
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-
-@media (max-width: 576px) {
-  .modal-content {
-    padding: 2rem;
-  }
-}
-
-.modal-title {
-  font-size: 2rem;
-  font-weight: 500;
-  margin-top: 0;
-}
-
-.modal-content-media,
-.dark-mode .modal-content-media {
-  padding: 0;
-  background-color: transparent;
-  border: none;
-  border-radius: 0;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-
-.modal-content-media img,
-.modal-content-media video {
-  display: block;
-}
-
-.modal-full .modal-content {
-  width: 100%;
-  border: none;
-  border-radius: 0;
-  padding: 3rem;
-  color: rgba(0, 0, 0, 0.85);
-  background-color: #ffffff;
-  background-image: none;
-}
-
-.dark-mode .modal-full .modal-content {
-  color: rgba(255, 255, 255, 0.8);
-  background-color: #191c20;
-  background-image: none;
-}
-
-@media (max-width: 576px) {
-  .modal-full .modal-content {
-    padding: 2rem;
-  }
-}
-
-.modal-content .close {
-  display: -ms-flexbox;
-  display: -webkit-box;
-  display: flex;
-  -ms-flex-align: center;
-  -webkit-box-align: center;
-  align-items: center;
-  -ms-flex-pack: center;
-  -webkit-box-pack: center;
-  justify-content: center;
-  position: fixed;
-  cursor: pointer;
-  top: -100%;
-  left: 1rem;
-  z-index: 10;
-  padding: 0;
-  -webkit-transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-  font-size: 2rem;
-  width: 4rem;
-  height: 4rem;
-  color: #ffffff;
-  background-color: rgba(0, 0, 0, 0.7);
-  border-radius: 50%;
-  border-color: transparent;
-}
-
-.modal-content .close:hover {
-  text-decoration: none;
-  color: #ffffff;
-  background-color: rgba(0, 0, 0, 0.6);
-}
-
-.dark-mode .modal-content .close {
-  color: #ffffff;
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-.dark-mode .modal-content .close:hover {
-  color: #ffffff;
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-.modal-content .close:focus {
-  -webkit-transition: none;
-  transition: none;
-  outline: 2px solid rgba(24, 144, 255, 0.3);
-  outline-offset: 0.2rem;
-}
-
-.dark-mode .modal-content .close:focus {
-  outline-color: rgba(24, 144, 255, 0.3);
-}
-
-/* Showing modals */
-.modal:target,
-.modal.show {
-  top: 0;
-}
-
-.modal:target ~ .page-wrapper .sidebar,
-.modal:target ~ .page-wrapper .content-wrapper,
-.modal.show ~ .page-wrapper .sidebar,
-.modal.show ~ .page-wrapper .content-wrapper {
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-height: calc(100vh - 40px);
   overflow: hidden;
 }
 
-.modal:target .modal-dialog,
-.modal.show .modal-dialog {
-  top: 0;
+.modal-card-head,
+.modal-card-foot {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: whitesmoke;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding: 20px;
+  position: relative;
 }
 
-.modal:target .modal-content .close,
-.modal.show .modal-content .close {
-  top: 1rem;
+.modal-card-head {
+  border-bottom: 1px solid #dbdbdb;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+.modal-card-title {
+  color: #363636;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.modal-card-foot {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  border-top: 1px solid #dbdbdb;
+}
+
+.modal-card-foot .button:not(:last-child) {
+  margin-right: 0.5em;
+}
+
+.modal-card-body {
+  -webkit-overflow-scrolling: touch;
+  background-color: white;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-negative: 1;
+      flex-shrink: 1;
+  overflow: auto;
+  padding: 20px;
 }
 
 .card {
