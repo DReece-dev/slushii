@@ -16377,6 +16377,66 @@ input:checked + label > .switch-inactive {
           transform-origin: top left;
 }
 
+.scroll-snap-type-none {
+  -ms-scroll-snap-type: none;
+      scroll-snap-type: none;
+}
+
+.scroll-snap-type-x {
+  -ms-scroll-snap-type: x;
+      scroll-snap-type: x;
+}
+
+.scroll-snap-type-y {
+  -ms-scroll-snap-type: y;
+      scroll-snap-type: y;
+}
+
+.scroll-snape-type-black {
+  -ms-scroll-snap-type: block;
+      scroll-snap-type: block;
+}
+
+.scroll-snap-type-inline {
+  -ms-scroll-snap-type: inline;
+      scroll-snap-type: inline;
+}
+
+.scroll-snap-type-both {
+  -ms-scroll-snap-type: both;
+      scroll-snap-type: both;
+}
+
+.scroll-snap-type-xm {
+  -ms-scroll-snap-type: x mandatory;
+      scroll-snap-type: x mandatory;
+}
+
+.scroll-snap-type-yp {
+  -ms-scroll-snap-type: y proximity;
+      scroll-snap-type: y proximity;
+}
+
+.scroll-snap-type-both-m {
+  -ms-scroll-snap-type: both mandatory;
+      scroll-snap-type: both mandatory;
+}
+
+.scroll-snap-type-inherit {
+  -ms-scroll-snap-type: inherit;
+      scroll-snap-type: inherit;
+}
+
+.scroll-snap-type-initial {
+  -ms-scroll-snap-type: initial;
+      scroll-snap-type: initial;
+}
+
+.scroll-snap-type-unset {
+  -ms-scroll-snap-type: unset;
+      scroll-snap-type: unset;
+}
+
 .svg,
 .svg:not(.preserve) [fill*="#"]:not(.preserve) {
   fill: currentcolor;
