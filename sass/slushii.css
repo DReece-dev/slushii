@@ -16437,6 +16437,47 @@ input:checked + label > .switch-inactive {
       scroll-snap-type: unset;
 }
 
+.isolate {
+  isolation: isolate;
+}
+
+.blend-multiply {
+  mix-blend-mode: multiply;
+}
+
+.blend-overlay {
+  mix-blend-mode: overlay;
+}
+
+.blend-difference {
+  mix-blend-mode: difference;
+}
+
+.perspective-xs {
+  -webkit-perspective: 250px;
+          perspective: 250px;
+}
+
+.perspective-sm {
+  -webkit-perspective: 500px;
+          perspective: 500px;
+}
+
+.perspective-md {
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+}
+
+.perspective-lg {
+  -webkit-perspective: 1500px;
+          perspective: 1500px;
+}
+
+.perspective-xl {
+  -webkit-perspective: 3000px;
+          perspective: 3000px;
+}
+
 .svg,
 .svg:not(.preserve) [fill*="#"]:not(.preserve) {
   fill: currentcolor;
