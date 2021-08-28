@@ -1,0 +1,68 @@
+.notification {
+    display: inline-flex;
+    flex-direction: row;
+    background-color: whitesmoke;
+    border-radius: 4px;
+    position: relative;
+    padding-top: 1rem;
+    padding-left: 1rem;
+    width: 300px;
+    height: 50px;
+    box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
+        0 0px 0 1px rgba(10, 10, 10, 0.02);
+}
+
+.notification a:not(.btn):not(.dropdown-item) {
+    color: currentColor;
+    text-decoration: underline;
+}
+
+.notification strong {
+    color: currentColor;
+}
+
+.notification code,
+.notification pre {
+    background: white;
+}
+
+.notification pre code {
+    background: transparent;
+}
+
+.notification>.delete {
+    right: 0.5rem;
+    position: absolute;
+    top: 0.5rem;
+}
+
+.notification .title,
+.notification .subtitle,
+.notification .content {
+    color: currentColor;
+}
+
+.notification.is-white {
+    color: var(--white);
+    color: black;
+}
+
+.notification.is-black {
+    background-color: black;
+    color: var(--white);
+}
+
+.notification.is-danger {
+    background-color: var(--danger);
+    color: var(--white);
+}
+
+.notification.is-success {
+    background-color: var(--success);
+    color: var(--white);
+}
+
+.notification.is-blue {
+    background-color: var(--blue-500);
+    color: var(--white);
+}
