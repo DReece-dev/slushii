@@ -11495,13 +11495,11 @@ select.form-control:not([multiple]) {
 }
 
 .dark-mode select.form-control:not([multiple]) > option {
-  /* Required for some browsers, such as Firefox, or the old Ms Edge (ignored on webkit browsers) */
   color: rgba(255, 255, 255, 0.8);
   background-color: #191c20;
 }
 
 .dark-mode select.form-control:not([multiple]) > option:hover {
-  /* Required for some browsers, such as Firefox, or the old Ms Edge (ignored on webkit browsers) */
   color: rgba(255, 255, 255, 0.8);
   background-color: #1890ff;
 }
