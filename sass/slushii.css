@@ -8442,6 +8442,7 @@ a.box:active {
   color: var(--dark);
 }
 
+/* Right Cornor Notification */
 .notification {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -8453,10 +8454,12 @@ a.box:active {
   background-color: whitesmoke;
   border-radius: 4px;
   position: relative;
-  padding-top: 1rem;
   padding-left: 1rem;
-  width: 300px;
-  height: 50px;
+  width: 25em;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  padding-bottom: 1.5rem;
   -webkit-box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
           box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
 }
@@ -8492,7 +8495,7 @@ a.box:active {
 }
 
 .notification.is-white {
-  color: var(--white);
+  background-color: var(--white);
   color: black;
 }
 
