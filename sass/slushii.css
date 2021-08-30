@@ -8178,41 +8178,40 @@ a.box:active {
   line-height: 1;
   white-space: nowrap;
   cursor: default;
+  color: #000000;
+}
+
+.label.is-blue {
   background: var(--blue-400);
   color: #fefefe;
 }
 
-.label.blue {
-  background: var(--blue-400);
-  color: #fefefe;
-}
-
-.label.indigo {
+.label.is-indigo {
   background: var(--indigo-400);
   color: #fefefe;
 }
 
-.label.red {
+.label.is-red {
   background: var(--red);
-  color: #0a0a0a;
+  color: #ffffff;
 }
 
-.label.orange {
+.label.is-orange {
   background: var(--orange);
   color: #0a0a0a;
 }
 
-.label.green {
+.label.is-green {
   background: var(--green);
   color: #fefefe;
 }
 
-.label.dark-grey {
+.label.is-dark-grey {
   background: var(--gray-dark);
   color: #fefefe;
 }
 
-.label.rounded {
+.label.is-rounded {
   border: none;
   border-radius: 5px;
 }
@@ -9576,9 +9575,9 @@ a.box:active {
 
 .badge {
   display: inline-block;
-  padding: 0.35em 0.65em;
+  padding: 0.45em 0.75em;
   font-size: 0.75em;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 1;
   color: #fff;
   text-align: center;
@@ -9589,6 +9588,50 @@ a.box:active {
 
 .badge:empty {
   display: none;
+}
+
+.badge.is-dark {
+  background-color: #f3f4f6;
+  color: #333c49;
+}
+
+.badge.is-red {
+  background-color: #fee2e2;
+  color: #b24d4d;
+}
+
+.badge.is-lightred {
+  background-color: #fce7f3;
+  color: #b0416e;
+}
+
+.badge.is-yellow {
+  background-color: #fef3c7;
+  color: #b37747;
+}
+
+.badge.is-green {
+  background-color: #d1fae5;
+  color: #38856c;
+}
+
+.badge.is-blue {
+  background-color: #dbeafe;
+  color: #2547b2;
+}
+
+.badge.is-lightblue {
+  background-color: #e0e7ff;
+  color: #4842ac;
+}
+
+.badge.is-purple {
+  background-color: #ede9fe;
+  color: #6a36be;
+}
+
+.badge.is-rounded {
+  border-radius: 2rem;
 }
 
 .button.badge {
@@ -15168,12 +15211,68 @@ input:checked + label > .switch-inactive {
   background-size: contain;
 }
 
-.border-collapse {
-  border-collapse: collapse;
+.bg-blend-normal {
+  background-blend-mode: normal;
 }
 
-.border-separate {
-  border-collapse: separate;
+.bg-blend-multiply {
+  background-blend-mode: multiply;
+}
+
+.bg-blend-screen {
+  background-blend-mode: screen;
+}
+
+.bg-blend-overlay {
+  background-blend-mode: overlay;
+}
+
+.bg-blend-darken {
+  background-blend-mode: darken;
+}
+
+.bg-blend-lighten {
+  background-blend-mode: lighten;
+}
+
+.bg-blend-color-dodge {
+  background-blend-mode: color-dodge;
+}
+
+.bg-blend-color-burn {
+  background-blend-mode: color-burn;
+}
+
+.bg-blend-hard-light {
+  background-blend-mode: hard-light;
+}
+
+.bg-blend-soft-light {
+  background-blend-mode: soft-light;
+}
+
+.bg-blend-difference {
+  background-blend-mode: difference;
+}
+
+.bg-blend-exclusion {
+  background-blend-mode: exclusion;
+}
+
+.bg-blend-hue {
+  background-blend-mode: hue;
+}
+
+.bg-blend-saturation {
+  background-blend-mode: saturation;
+}
+
+.bg-blend-color {
+  background-blend-mode: color;
+}
+
+.bg-blend-luminosity {
+  background-blend-mode: luminosity;
 }
 
 .rounded-none {
@@ -15414,6 +15513,14 @@ input:checked + label > .switch-inactive {
 
 .rounded-bl-full {
   border-bottom-left-radius: 9999px;
+}
+
+.border-collapse {
+  border-collapse: collapse;
+}
+
+.border-separate {
+  border-collapse: separate;
 }
 
 .border-solid {
@@ -16607,16 +16714,68 @@ input:checked + label > .switch-inactive {
   isolation: isolate;
 }
 
-.blend-multiply {
+.mix-blend-normal {
+  mix-blend-mode: normal;
+}
+
+.mix-blend-multiply {
   mix-blend-mode: multiply;
 }
 
-.blend-overlay {
+.mix-blend-screen {
+  mix-blend-mode: screen;
+}
+
+.mix-blend-overlay {
   mix-blend-mode: overlay;
 }
 
-.blend-difference {
+.mix-blend-darken {
+  mix-blend-mode: darken;
+}
+
+.mix-blend-lighten {
+  mix-blend-mode: lighten;
+}
+
+.mix-blend-color-dodge {
+  mix-blend-mode: color-dodge;
+}
+
+.mix-blend-color-burn {
+  mix-blend-mode: color-burn;
+}
+
+.mix-blend-hard-light {
+  mix-blend-mode: hard-light;
+}
+
+.mix-blend-soft-light {
+  mix-blend-mode: soft-light;
+}
+
+.mix-blend-difference {
   mix-blend-mode: difference;
+}
+
+.mix-blend-exclusion {
+  mix-blend-mode: exclusion;
+}
+
+.mix-blend-hue {
+  mix-blend-mode: hue;
+}
+
+.mix-blend-saturation {
+  mix-blend-mode: saturation;
+}
+
+.mix-blend-color {
+  mix-blend-mode: color;
+}
+
+.mix-blend-luminosity {
+  mix-blend-mode: luminosity;
 }
 
 .perspective-xs {
@@ -16642,6 +16801,46 @@ input:checked + label > .switch-inactive {
 .perspective-xl {
   -webkit-perspective: 3000px;
           perspective: 3000px;
+}
+
+.place-self-auto {
+  place-self: auto;
+}
+
+.place-self-start {
+  place-self: start;
+}
+
+.place-self-end {
+  place-self: end;
+}
+
+.place-self-center {
+  place-self: center;
+}
+
+.place-self-stretch {
+  place-self: stretch;
+}
+
+.whitespace-normal {
+  white-space: normal;
+}
+
+.whitespace-nowrap {
+  white-space: nowrap;
+}
+
+.whitespace-pre {
+  white-space: pre;
+}
+
+.whitespace-pre-line {
+  white-space: pre-line;
+}
+
+.whitespace-pre-wrap {
+  white-space: pre-wrap;
 }
 
 .svg,
