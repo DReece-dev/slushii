@@ -18,13 +18,6 @@
   -moz-osx-font-smoothing: auto;
 }
 
-.dark-mode .alert {
-  color: rgba(255, 255, 255, 0.8);
-  background-color: #191c20;
-  background-image: none;
-  border-color: rgba(255, 255, 255, 0.1);
-}
-
 .alert-heading {
   color: inherit;
   font-size: 1.6rem;
@@ -32,22 +25,15 @@
   margin: 0 0 0.5rem 0;
 }
 
-.dark-mode .alert-heading {
-  color: inherit;
-  font-size: 1.6rem;
-  font-weight: 500;
-  margin: 0 0 0.5rem 0;
-}
-
 .alert-link,
-.dark-mode .alert-link {
+.alert-link {
   cursor: pointer;
   color: inherit;
   text-decoration: underline;
 }
 
 .alert-link:hover,
-.dark-mode .alert-link:hover {
+.alert-link:hover {
   color: inherit;
   opacity: 0.75;
 }
@@ -68,10 +54,6 @@
 .alert .close:focus {
   outline: 2px solid rgba(0, 0, 0, 0.5);
   outline-offset: 0.2rem;
-}
-
-.dark-mode .alert .close:focus {
-  outline-color: rgba(255, 255, 255, 0.5);
 }
 
 .alert.dispose {

@@ -1,196 +1,182 @@
 .form-select {
-    display: block;
-    width: 100%;
-    padding: 0.375rem 2.25rem 0.375rem 0.75rem;
-    -moz-padding-start: calc(0.75rem - 3px);
-    font-size: 1rem;
-    font-weight: 300;
-    line-height: 1.5;
-    color: #212529;
-    background-color: #fff;
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
-    background-repeat: no-repeat;
-    background-position: right 0.75rem center;
-    background-size: 16px 12px;
-    border: 1px solid #ced4da;
-    border-radius: 0.25rem;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    border-radius: 6px;
+  display: block;
+  width: 100%;
+  padding: 0.375rem 2.25rem 0.375rem 0.75rem;
+  -moz-padding-start: calc(0.75rem - 3px);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 16px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
-
 @media (prefers-reduced-motion: reduce) {
-    .form-select {
-        transition: none;
-    }
+  .form-select {
+    transition: none;
+  }
 }
-
 .form-select:focus {
-    border-color: #86b7fe;
-    outline: 0;
-    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+  border-color: #86b7fe;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }
-
 .form-select[multiple],
 .form-select[size]:not([size="1"]) {
-    padding-right: 0.75rem;
-    background-image: none;
+  padding-right: 0.75rem;
+  background-image: none;
 }
-
 .form-select:disabled {
-    background-color: #e9ecef;
+  background-color: #e9ecef;
 }
-
 .form-select:-moz-focusring {
-    color: transparent;
-    text-shadow: 0 0 0 #212529;
+  color: transparent;
+  text-shadow: 0 0 0 #212529;
 }
 
 .form-select-sm {
-    padding-top: 0.25rem;
-    padding-bottom: 0.25rem;
-    padding-left: 0.5rem;
-    font-size: 0.875rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-left: 0.5rem;
+  font-size: 0.875rem;
 }
 
 .form-select-lg {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    padding-left: 1rem;
-    font-size: 1.25rem;
-}
-
-.form-select.is-dark {
-    background-color: #374151;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  font-size: 1.25rem;
 }
 
 .input-field-default {
-    padding: 10px;
-    border: 1px solid #e8e9eb;
-    border-radius: 10px;
-    width: 100%;
+  padding: 10px;
+  border: 1px solid #e8e9eb;
+  border-radius: 10px;
+  width: 100%;
 }
 
 .input-field-default:focus {
-    outline: #4338ca;
-    border: 2px solid #4338ca;
+  outline: #4338ca;
+  border: 2px solid #4338ca;
 }
 
 .input-field-default.pilled {
-    padding: 10px;
-    border: 1px solid #e8e9eb;
-    border-radius: 30px;
-    width: 100%;
+  padding: 10px;
+  border: 1px solid #e8e9eb;
+  border-radius: 30px;
+  width: 100%;
 }
 
 .input-field-default.pilled:focus {
-    outline: #4338ca;
-    border: 2px solid #4338ca;
+  outline: #4338ca;
+  border: 2px solid #4338ca;
 }
 
 /* Listboxs */
 
 .list-box-postion-outter {
-    position: fixed;
-    top: 4rem;
-    width: 18rem;
+  position: fixed;
+  top: 4rem;
+  width: 18rem;
 }
 
 .list-box-button {
-    position: relative;
-    min-width: 200px;
-    cursor: default;
-    border: 1px solid #ced4da;
-    border-radius: .5rem;
-    background-color: var(--white);
-    padding-top: .5rem;
-    padding-bottom: .5rem;
-    padding-left: .75rem;
-    padding-right: 2.5rem;
-    text-align: left;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  position: relative;
+  min-width: 200px;
+  cursor: default;
+  border: 1px solid #ced4da;
+  border-radius: 0.5rem;
+  background-color: var(--white);
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.75rem;
+  padding-right: 2.5rem;
+  text-align: left;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
 .list-box-span {
-    display: block;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .list-box-icon {
-    pointer-events: none;
-    position: absolute;
-    display: flex;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    align-items: center;
-    padding-right: .5rem;
+  pointer-events: none;
+  position: absolute;
+  display: flex;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  align-items: center;
+  padding-right: 0.5rem;
 }
 
 .list-box-panel {
-    position: absolute;
-    min-width: 200px;
-    cursor: default;
-    border: 1px solid #ced4da;
-    border-radius: .5rem;
-    background-color: var(--white);
-    padding-top: .5rem;
-    padding-bottom: .5rem;
-    padding-left: .3rem;
-    text-align: left;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    list-style-type: none;
+  position: absolute;
+  min-width: 200px;
+  cursor: default;
+  border: 1px solid #ced4da;
+  border-radius: 0.5rem;
+  background-color: var(--white);
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.3rem;
+  text-align: left;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  list-style-type: none;
 }
 
 .list-box-option {
-    cursor: pointer;
-    width: 100%;
+  cursor: pointer;
+  width: 100%;
 }
 
 .list-box-option:hover {
-    background-color: #4338ca;
-    color: var(--white);
+  background-color: #4338ca;
+  color: var(--white);
 }
 
 /* Radio Groups */
 
 .radio-group-container {
-    background-color: var(--white);
-    border: 1.5px solid #e8e9eb;
-    border-radius: 10px;
-    width: 400px;
-    height: max-content;
-    padding-left: 1rem;
+  background-color: var(--white);
+  border: 1.5px solid #e8e9eb;
+  border-radius: 10px;
+  width: 400px;
+  height: max-content;
+  padding-left: 1rem;
 }
 
 .radio-group-container:hover {
-    border: 2px solid #4338ca;
-    cursor: default;
+  border: 2px solid #4338ca;
+  cursor: default;
 }
 
 .radio-group-container.large {
-    background-color: var(--white);
-    border: 1.5px solid #e8e9eb;
-    border-radius: 3px;
-    width: 40em;
-    height: max-content;
-    padding-left: 1rem;
+  background-color: var(--white);
+  border: 1.5px solid #e8e9eb;
+  border-radius: 3px;
+  width: 40em;
+  height: max-content;
+  padding-left: 1rem;
 }
 
 .radio-group-container.large:hover {
-    color: #59579b;
-    background-color: #eef2ff;
+  color: #59579b;
+  background-color: #eef2ff;
 }
 
 .radio-group-container.large p:hover {
-    color: #574ecf;
-    background-color: #eef2ff;
+  color: #574ecf;
+  background-color: #eef2ff;
 }

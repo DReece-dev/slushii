@@ -1,153 +1,101 @@
 .table-responsive {
-    overflow-x: auto;
+  overflow-x: auto;
 }
 
 .table-responsive .table th,
 .table-responsive .table td {
-    white-space: nowrap;
+  white-space: nowrap;
 }
 
 .table {
-    width: 100%;
+  width: 100%;
 }
 
 .table thead tr {
-    border-bottom: 2px solid #dadfe1;
-}
-
-.dark-mode .table thead tr {
-    border-color: #47494d;
+  border-bottom: 2px solid #dadfe1;
 }
 
 .table tfoot tr {
-    border-top: 2px solid #dadfe1;
-}
-
-.dark-mode .table tfoot tr {
-    border-color: #47494d;
+  border-top: 2px solid #dadfe1;
 }
 
 .table tbody tr:not(:last-child) {
-    border-bottom: 1px solid #dadfe1;
-}
-
-.dark-mode .table tbody tr:not(:last-child) {
-    border-color: #47494d;
+  border-bottom: 1px solid #dadfe1;
 }
 
 .table th {
-    font-weight: 700;
+  font-weight: 700;
 }
 
 .table th,
 .table td {
-    text-align: left;
+  text-align: left;
 }
 
 .table th {
-    padding: 1.2rem 1.5rem;
+  padding: 1.2rem 1.5rem;
 }
 
 .table td {
-    padding: 1.2rem 1.5rem;
+  padding: 1.2rem 1.5rem;
 }
 
 /* No outer padding */
 
 .table-no-outer-padding th:first-child,
 .table-no-outer-padding td:first-child {
-    padding-left: 0;
+  padding-left: 0;
 }
 
 .table-no-outer-padding th:last-child,
 .table-no-outer-padding td:last-child {
-    padding-right: 0;
+  padding-right: 0;
 }
 
 /* Bordered table */
 
 .table-bordered {
-    border: 1px solid #dadfe1;
+  border: 1px solid #dadfe1;
 }
 
 .table-outer-bordered {
-    border: 1px solid #dadfe1;
-}
-
-.dark-mode .table-bordered {
-    border-color: #47494d;
-}
-
-.dark-mode .table-outer-bordered {
-    border-color: #47494d;
+  border: 1px solid #dadfe1;
 }
 
 .table-bordered th:not(:last-child) {
-    border-right: 1px solid #dadfe1;
+  border-right: 1px solid #dadfe1;
 }
 
 .table-bordered td:not(:last-child) {
-    border-right: 1px solid #dadfe1;
+  border-right: 1px solid #dadfe1;
 }
 
 .table-inner-bordered th:not(:last-child) {
-    border-right: 1px solid #dadfe1;
+  border-right: 1px solid #dadfe1;
 }
 
 .table-inner-bordered td:not(:last-child) {
-    border-right: 1px solid #dadfe1;
-}
-
-.dark-mode .table-bordered th:not(:last-child) {
-    border-color: #47494d;
-}
-
-.dark-mode .table-bordered td:not(:last-child) {
-    border-color: #47494d;
-}
-
-.dark-mode .table-inner-bordered th:not(:last-child) {
-    border-color: #47494d;
-}
-
-.dark-mode .table-inner-bordered td:not(:last-child) {
-    border-color: #47494d;
+  border-right: 1px solid #dadfe1;
 }
 
 /* Hoverable table */
 
 .table-hover tbody tr:hover th {
-    background-color: rgba(0, 0, 0, 0.05);
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 .table-hover tbody tr:hover td {
-    background-color: rgba(0, 0, 0, 0.05);
-}
-
-.dark-mode .table-hover tbody tr:hover th {
-    background-color: rgba(0, 0, 0, 0.2);
-}
-
-.dark-mode .table-hover tbody tr:hover td {
-    background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 /* Striped table */
 
 .table-striped tbody tr:nth-child(odd) {
-    background-color: #ecf0f1;
+  background-color: #ecf0f1;
 }
 
 .table-striped tbody tr:nth-child(odd) {
-    background-color: #ecf0f1;
-}
-
-.dark-mode .table-striped tbody tr:nth-child(odd) {
-    background-color: rgba(0, 0, 0, 0.15);
-}
-
-.dark-mode .table-striped tbody tr:nth-child(odd) {
-    background-color: rgba(0, 0, 0, 0.15);
+  background-color: #ecf0f1;
 }
 
 /* Primary, success, secondary, danger table rows. */
@@ -155,387 +103,193 @@
 /* Light mode */
 
 .table tbody tr.table-primary {
-    color: rgba(0, 0, 0, 0.85);
-    background-color: #cfe7fd;
-    border-color: #45a3fb;
+  color: rgba(0, 0, 0, 0.85);
+  background-color: #cfe7fd;
+  border-color: #45a3fb;
 }
 
 .table-striped tbody tr.table-primary {
-    color: rgba(0, 0, 0, 0.85);
-    background-color: #cfe7fd;
-    border-color: #45a3fb;
+  color: rgba(0, 0, 0, 0.85);
+  background-color: #cfe7fd;
+  border-color: #45a3fb;
 }
 
 .table-bordered tbody tr.table-primary {
-    color: rgba(0, 0, 0, 0.85);
-    background-color: #cfe7fd;
-    border-color: #45a3fb;
+  color: rgba(0, 0, 0, 0.85);
+  background-color: #cfe7fd;
+  border-color: #45a3fb;
 }
 
 .table-inner-bordered tbody tr.table-primary {
-    color: rgba(0, 0, 0, 0.85);
-    background-color: #cfe7fd;
-    border-color: #45a3fb;
+  color: rgba(0, 0, 0, 0.85);
+  background-color: #cfe7fd;
+  border-color: #45a3fb;
 }
 
 .table tbody tr.table-primary th {
-    border-color: #bababc;
+  border-color: #bababc;
 }
 
 .table tbody tr.table-primary td {
-    border-color: #bababc;
+  border-color: #bababc;
 }
 
 .table-bordered tbody tr.table-primary th {
-    border-color: #bababc;
+  border-color: #bababc;
 }
 
 .table-bordered tbody tr.table-primary td {
-    border-color: #bababc;
+  border-color: #bababc;
 }
 
 .table-inner-bordered tbody tr.table-primary th {
-    border-color: #bababc;
+  border-color: #bababc;
 }
 
 .table-inner-bordered tbody tr.table-primary td {
-    border-color: #bababc;
+  border-color: #bababc;
 }
 
 .table tbody tr.table-success {
-    color: rgba(0, 0, 0, 0.85);
-    background-color: #d5f9e5;
-    border-color: #0be881;
+  color: rgba(0, 0, 0, 0.85);
+  background-color: #d5f9e5;
+  border-color: #0be881;
 }
 
 .table-striped tbody tr.table-success {
-    color: rgba(0, 0, 0, 0.85);
-    background-color: #d5f9e5;
-    border-color: #0be881;
+  color: rgba(0, 0, 0, 0.85);
+  background-color: #d5f9e5;
+  border-color: #0be881;
 }
 
 .table-bordered tbody tr.table-success {
-    color: rgba(0, 0, 0, 0.85);
-    background-color: #d5f9e5;
-    border-color: #0be881;
+  color: rgba(0, 0, 0, 0.85);
+  background-color: #d5f9e5;
+  border-color: #0be881;
 }
 
 .table-inner-bordered tbody tr.table-success {
-    color: rgba(0, 0, 0, 0.85);
-    background-color: #d5f9e5;
-    border-color: #0be881;
+  color: rgba(0, 0, 0, 0.85);
+  background-color: #d5f9e5;
+  border-color: #0be881;
 }
 
 .table tbody tr.table-success th {
-    border-color: #bababc;
+  border-color: #bababc;
 }
 
 .table tbody tr.table-success td {
-    border-color: #bababc;
+  border-color: #bababc;
 }
 
 .table-bordered tbody tr.table-success th {
-    border-color: #bababc;
+  border-color: #bababc;
 }
 
 .table-bordered tbody tr.table-success td {
-    border-color: #bababc;
+  border-color: #bababc;
 }
 
 .table-inner-bordered tbody tr.table-success th {
-    border-color: #bababc;
+  border-color: #bababc;
 }
 
 .table-inner-bordered tbody tr.table-success td {
-    border-color: #bababc;
+  border-color: #bababc;
 }
 
 .table tbody tr.table-secondary {
-    color: rgba(0, 0, 0, 0.85);
-    background-color: #fff6cc;
-    border-color: #ffcf00;
+  color: rgba(0, 0, 0, 0.85);
+  background-color: #fff6cc;
+  border-color: #ffcf00;
 }
 
 .table-striped tbody tr.table-secondary {
-    color: rgba(0, 0, 0, 0.85);
-    background-color: #fff6cc;
-    border-color: #ffcf00;
+  color: rgba(0, 0, 0, 0.85);
+  background-color: #fff6cc;
+  border-color: #ffcf00;
 }
 
 .table-bordered tbody tr.table-secondary {
-    color: rgba(0, 0, 0, 0.85);
-    background-color: #fff6cc;
-    border-color: #ffcf00;
+  color: rgba(0, 0, 0, 0.85);
+  background-color: #fff6cc;
+  border-color: #ffcf00;
 }
 
 .table-inner-bordered tbody tr.table-secondary {
-    color: rgba(0, 0, 0, 0.85);
-    background-color: #fff6cc;
-    border-color: #ffcf00;
+  color: rgba(0, 0, 0, 0.85);
+  background-color: #fff6cc;
+  border-color: #ffcf00;
 }
 
 .table tbody tr.table-secondary th {
-    border-color: #bababc;
+  border-color: #bababc;
 }
 
 .table tbody tr.table-secondary td {
-    border-color: #bababc;
+  border-color: #bababc;
 }
 
 .table-bordered tbody tr.table-secondary th {
-    border-color: #bababc;
+  border-color: #bababc;
 }
 
 .table-bordered tbody tr.table-secondary td {
-    border-color: #bababc;
+  border-color: #bababc;
 }
 
 .table-inner-bordered tbody tr.table-secondary th {
-    border-color: #bababc;
+  border-color: #bababc;
 }
 
 .table-inner-bordered tbody tr.table-secondary td {
-    border-color: #bababc;
+  border-color: #bababc;
 }
 
 .table tbody tr.table-danger {
-    color: rgba(0, 0, 0, 0.85);
-    background-color: #f8d0d9;
-    border-color: #ed586c;
+  color: rgba(0, 0, 0, 0.85);
+  background-color: #f8d0d9;
+  border-color: #ed586c;
 }
 
 .table-striped tbody tr.table-danger {
-    color: rgba(0, 0, 0, 0.85);
-    background-color: #f8d0d9;
-    border-color: #ed586c;
+  color: rgba(0, 0, 0, 0.85);
+  background-color: #f8d0d9;
+  border-color: #ed586c;
 }
 
 .table-bordered tbody tr.table-danger {
-    color: rgba(0, 0, 0, 0.85);
-    background-color: #f8d0d9;
-    border-color: #ed586c;
+  color: rgba(0, 0, 0, 0.85);
+  background-color: #f8d0d9;
+  border-color: #ed586c;
 }
 
 .table-inner-bordered tbody tr.table-danger {
-    color: rgba(0, 0, 0, 0.85);
-    background-color: #f8d0d9;
-    border-color: #ed586c;
+  color: rgba(0, 0, 0, 0.85);
+  background-color: #f8d0d9;
+  border-color: #ed586c;
 }
 
 .table tbody tr.table-danger th {
-    border-color: #bababc;
+  border-color: #bababc;
 }
 
 .table tbody tr.table-danger td {
-    border-color: #bababc;
+  border-color: #bababc;
 }
 
 .table-bordered tbody tr.table-danger th {
-    border-color: #bababc;
+  border-color: #bababc;
 }
 
 .table-bordered tbody tr.table-danger td {
-    border-color: #bababc;
+  border-color: #bababc;
 }
 
 .table-inner-bordered tbody tr.table-danger th {
-    border-color: #bababc;
+  border-color: #bababc;
 }
 
 .table-inner-bordered tbody tr.table-danger td {
-    border-color: #bababc;
-}
-
-/* Dark mode */
-
-.dark-mode .table tbody tr.table-primary {
-    color: #1890ff;
-    background-color: #172636;
-    border-color: #0d518f;
-}
-
-.dark-mode .table-striped tbody tr.table-primary {
-    color: #1890ff;
-    background-color: #172636;
-    border-color: #0d518f;
-}
-
-.dark-mode .table-bordered tbody tr.table-primary {
-    color: #1890ff;
-    background-color: #172636;
-    border-color: #0d518f;
-}
-
-.dark-mode .table-inner-bordered tbody tr.table-primary {
-    color: #1890ff;
-    background-color: #172636;
-    border-color: #0d518f;
-}
-
-.dark-mode .table tbody tr.table-primary th {
-    border-color: #47494d;
-}
-
-.dark-mode .table tbody tr.table-primary td {
-    border-color: #47494d;
-}
-
-.dark-mode .table-bordered tbody tr.table-primary th {
-    border-color: #47494d;
-}
-
-.dark-mode .table-bordered tbody tr.table-primary td {
-    border-color: #47494d;
-}
-
-.dark-mode .table-inner-bordered tbody tr.table-primary th {
-    border-color: #47494d;
-}
-
-.dark-mode .table-inner-bordered tbody tr.table-primary td {
-    border-color: #47494d;
-}
-
-.dark-mode .table tbody tr.table-success {
-    color: #0be881;
-    background-color: #17312a;
-    border-color: #0d8951;
-}
-
-.dark-mode .table-striped tbody tr.table-success {
-    color: #0be881;
-    background-color: #17312a;
-    border-color: #0d8951;
-}
-
-.dark-mode .table-bordered tbody tr.table-success {
-    color: #0be881;
-    background-color: #17312a;
-    border-color: #0d8951;
-}
-
-.dark-mode .table-inner-bordered tbody tr.table-success {
-    color: #0be881;
-    background-color: #17312a;
-    border-color: #0d8951;
-}
-
-.dark-mode .table tbody tr.table-success th {
-    border-color: #47494d;
-}
-
-.dark-mode .table tbody tr.table-success td {
-    border-color: #47494d;
-}
-
-.dark-mode .table-bordered tbody tr.table-success th {
-    border-color: #47494d;
-}
-
-.dark-mode .table-bordered tbody tr.table-success td {
-    border-color: #47494d;
-}
-
-.dark-mode .table-inner-bordered tbody tr.table-success th {
-    border-color: #47494d;
-}
-
-.dark-mode .table-inner-bordered tbody tr.table-success td {
-    border-color: #47494d;
-}
-
-.dark-mode .table tbody tr.table-secondary {
-    color: #ffcf00;
-    background-color: #302c1d;
-    border-color: #8e7710;
-}
-
-.dark-mode .table-striped tbody tr.table-secondary {
-    color: #ffcf00;
-    background-color: #302c1d;
-    border-color: #8e7710;
-}
-
-.dark-mode .table-bordered tbody tr.table-secondary {
-    color: #ffcf00;
-    background-color: #302c1d;
-    border-color: #8e7710;
-}
-
-.dark-mode .table-inner-bordered tbody tr.table-secondary {
-    color: #ffcf00;
-    background-color: #302c1d;
-    border-color: #8e7710;
-}
-
-.dark-mode .table tbody tr.table-secondary th {
-    border-color: #47494d;
-}
-
-.dark-mode .table tbody tr.table-secondary td {
-    border-color: #47494d;
-}
-
-.dark-mode .table-bordered tbody tr.table-secondary th {
-    border-color: #47494d;
-}
-
-.dark-mode .table-bordered tbody tr.table-secondary td {
-    border-color: #47494d;
-}
-
-.dark-mode .table-inner-bordered tbody tr.table-secondary th {
-    border-color: #47494d;
-}
-
-.dark-mode .table-inner-bordered tbody tr.table-secondary td {
-    border-color: #47494d;
-}
-
-.dark-mode .table tbody tr.table-danger {
-    color: #ff4d4f;
-    background-color: #301923;
-    border-color: #8c0e2e;
-}
-
-.dark-mode .table-striped tbody tr.table-danger {
-    color: #ff4d4f;
-    background-color: #301923;
-    border-color: #8c0e2e;
-}
-
-.dark-mode .table-bordered tbody tr.table-danger {
-    color: #ff4d4f;
-    background-color: #301923;
-    border-color: #8c0e2e;
-}
-
-.dark-mode .table-inner-bordered tbody tr.table-danger {
-    color: #ff4d4f;
-    background-color: #301923;
-    border-color: #8c0e2e;
-}
-
-.dark-mode .table tbody tr.table-danger th {
-    border-color: #47494d;
-}
-
-.dark-mode .table tbody tr.table-danger td {
-    border-color: #47494d;
-}
-
-.dark-mode .table-bordered tbody tr.table-danger th {
-    border-color: #47494d;
-}
-
-.dark-mode .table-bordered tbody tr.table-danger td {
-    border-color: #47494d;
-}
-
-.dark-mode .table-inner-bordered tbody tr.table-danger th {
-    border-color: #47494d;
-}
-
-.dark-mode .table-inner-bordered tbody tr.table-danger td {
-    border-color: #47494d;
+  border-color: #bababc;
 }
