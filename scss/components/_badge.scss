@@ -9,10 +9,10 @@
   white-space: nowrap;
   vertical-align: baseline;
   border-radius: 0.25rem;
-}
 
-.badge:empty {
-  display: none;
+  &:empty {
+    display: none;
+  }
 }
 
 .badge.is-dark {
@@ -59,7 +59,9 @@
   border-radius: 2rem;
 }
 
-.button.badge {
-  position: relative;
-  top: -1px;
+.button {
+  .badge {
+    position: relative;
+    top: -1px;
+  }
 }

@@ -11,59 +11,64 @@
     padding-bottom: 1.5rem;
     box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
         0 0px 0 1px rgba(10, 10, 10, 0.02);
-}
 
-.notification a:not(.btn):not(.dropdown-item) {
-    color: currentColor;
-    text-decoration: underline;
-}
+    a {
+        &:not(.btn) {
+            &:not(.dropdown-item) {
+                color: currentColor;
+                text-decoration: underline;
+            }
+        }
+    }
 
-.notification strong {
-    color: currentColor;
-}
+    strong {
+        color: currentColor;
+    }
 
-.notification code,
-.notification pre {
-    background: white;
-}
+    code,
+    pre {
+        background: white;
+    }
 
-.notification pre code {
-    background: transparent;
-}
+    pre,
+    code {
+        background: transparent;
+    }
 
-.notification>.delete {
-    right: 0.5rem;
-    position: absolute;
-    top: 0.5rem;
-}
+    >.delete {
+        right: 0.5rem;
+        position: absolute;
+        top: 0.5rem;
+    }
 
-.notification .title,
-.notification .subtitle,
-.notification .content {
-    color: currentColor;
-}
+    .title,
+    .subtitle,
+    .content {
+        color: currentColor;
+    }
 
-.notification.is-white {
-    background-color: var(--white);
-    color: black;
-}
+    &.is-white {
+        background-color: var(--white);
+        color: black;
+    }
 
-.notification.is-black {
-    background-color: black;
-    color: var(--white);
-}
+    &.is-black {
+        background-color: black;
+        color: var(--white);
+    }
 
-.notification.is-danger {
-    background-color: var(--danger);
-    color: var(--white);
-}
+    &.is-danger {
+        background-color: var(--danger);
+        color: var(--white);
+    }
 
-.notification.is-success {
-    background-color: var(--success);
-    color: var(--white);
-}
+    &.is-success {
+        background-color: var(--success);
+        color: var(--white);
+    }
 
-.notification.is-blue {
-    background-color: var(--blue-500);
-    color: var(--white);
+    &.is-blue {
+        background-color: var(--blue-500);
+        color: var(--white);
+    }
 }

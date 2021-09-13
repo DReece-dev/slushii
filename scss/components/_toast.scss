@@ -9,14 +9,16 @@
   -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   border-radius: 0.25rem;
-}
 
-.toast:not(.showing):not(.show) {
-  opacity: 0;
-}
+  &:not(.showing) {
+    &:not(.show) {
+      opacity: 0;
+    }
+  }
 
-.toast.hide {
-  display: none;
+  &.hide {
+    display: none;
+  }
 }
 
 .toast-container {
@@ -25,10 +27,10 @@
   width: max-content;
   max-width: 100%;
   pointer-events: none;
-}
 
-.toast-container > :not(:last-child) {
-  margin-bottom: 0.75rem;
+  >:not(:last-child) {
+    margin-bottom: 0.75rem;
+  }
 }
 
 .toast-header {
@@ -45,11 +47,11 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   border-top-left-radius: calc(0.25rem - 1px);
   border-top-right-radius: calc(0.25rem - 1px);
-}
 
-.toast-header .button-close {
-  margin-right: -0.375rem;
-  margin-left: 0.75rem;
+  .button-close {
+    margin-right: -0.375rem;
+    margin-left: 0.75rem;
+  }
 }
 
 .toast-body {

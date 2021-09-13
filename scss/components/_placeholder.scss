@@ -5,27 +5,29 @@
     cursor: wait;
     background-color: currentColor;
     opacity: 0.5;
-}
 
-.placeholder.button::before {
-    display: inline-block;
-    content: "";
-}
+    &.button {
+        &::before {
+            display: inline-block;
+            content: "";
+        }
+    }
 
-.placeholder-xs {
-    min-height: 0.6em;
-}
+    &.xs {
+        min-height: 0.6em;
+    }
 
-.placeholder-sm {
-    min-height: 0.8em;
-}
+    &.sm {
+        min-height: 0.8em;
+    }
 
-.placeholder-lg {
-    min-height: 1.2em;
-}
+    &.lg {
+        min-height: 1.2em;
+    }
 
-.placeholder-xl {
-    min-height: 1.8em;
+    &.xl {
+        min-height: 1.8em;
+    }
 }
 
 .placeholder-glow .placeholder {

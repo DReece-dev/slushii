@@ -7,39 +7,39 @@
   white-space: nowrap;
   cursor: default;
   color: #000000;
-}
 
-.label.is-blue {
-  background: var(--blue-400);
-  color: #fefefe;
-}
+  &.is-blue {
+    background: var(--blue-400);
+    color: #fefefe;
+  }
 
-.label.is-indigo {
-  background: var(--indigo-400);
-  color: #fefefe;
-}
+  &.is-indigo {
+    background: var(--indigo-400);
+    color: #fefefe;
+  }
 
-.label.is-red {
-  background: var(--red);
-  color: #ffffff;
-}
+  &.is-red {
+    background: var(--red);
+    color: #ffffff;
+  }
 
-.label.is-orange {
-  background: var(--orange);
-  color: #0a0a0a;
-}
+  &.is-orange {
+    background: var(--orange);
+    color: #0a0a0a;
+  }
 
-.label.is-green {
-  background: var(--green);
-  color: #fefefe;
-}
+  &.is-green {
+    background: var(--green);
+    color: #fefefe;
+  }
 
-.label.is-dark-grey {
-  background: var(--gray-dark);
-  color: #fefefe;
-}
+  &.is-dark-grey {
+    background: var(--gray-dark);
+    color: #fefefe;
+  }
 
-.label.is-rounded {
-  border: none;
-  border-radius: 5px;
+  &.is-rounded {
+    border: none;
+    border-radius: 5px;
+  }
 }

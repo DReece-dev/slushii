@@ -9,93 +9,102 @@
   border-radius: 0.4rem;
   -webkit-box-shadow: none;
   box-shadow: none;
+
+  &:focus {
+    color: rgba(0, 0, 0, 0.85);
+    background-color: #f7f7f7;
+    border-color: rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+  }
 }
 
-.collapse-header:focus {
-  color: rgba(0, 0, 0, 0.85);
-  background-color: #f7f7f7;
-  border-color: rgba(0, 0, 0, 0.2);
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  outline: none;
-}
+.collapse-panel {
+  &[open] {
+    .collapse-header {
+      color: rgba(0, 0, 0, 0.85);
+      background-color: #f7f7f7;
+      border-color: rgba(0, 0, 0, 0.2);
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
 
-.collapse-panel[open] .collapse-header {
-  color: rgba(0, 0, 0, 0.85);
-  background-color: #f7f7f7;
-  border-color: rgba(0, 0, 0, 0.2);
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-
-.collapse-panel[open] .collapse-header:focus {
-  color: rgba(0, 0, 0, 0.85);
-  background-color: #f7f7f7;
-  border-color: rgba(0, 0, 0, 0.2);
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  outline: none;
-}
-
-.collapse-panel[open] .collapse-header {
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
+      &:focus {
+        color: rgba(0, 0, 0, 0.85);
+        background-color: #f7f7f7;
+        border-color: rgba(0, 0, 0, 0.2);
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        outline: none;
+      }
+    }
+  }
 }
 
 /* Collapse header arrow set using background image */
 .collapse-header {
-  /* Firefox */
   list-style-type: none;
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+
+  &::marker {
+    display: none;
+  }
+
+  &:not(.without-arrow) {
+    padding: 1.2rem 2rem 1.2rem 4.4rem;
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAUCAYAAAC58NwRAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH5AgHFAwNJY24UQAAAJVJREFUKM+lk8ENgzAMRZ9hgS4SiRFgDN+6QifpCD1mDFbIIQuwASNwcaSqKsEW/5RI/1n+jiMAqvoE3sCScy50JGb+2H2/ggar3PQAVlWdesBilV2QWIYJWM1Mrz1pBy8k37QHkt8eryD5F6wHydn4zqCBoO63FAodGmvo4UKrETG3bXWbG/DymgHGWmtJKW3A7PmiB2rUYYave/NSAAAAAElFTkSuQmCC");
+    background-size: 0.6rem;
+    background-repeat: no-repeat;
+    background-position: 2rem center;
+  }
 }
 
-.collapse-header::-webkit-details-marker {
-  /* Chrome */
-  display: none;
-}
-
-.collapse-header::marker {
-  display: none;
-}
-
-.collapse-header:not(.without-arrow) {
-  padding: 1.2rem 2rem 1.2rem 4.4rem;
-  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAUCAYAAAC58NwRAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH5AgHFAwNJY24UQAAAJVJREFUKM+lk8ENgzAMRZ9hgS4SiRFgDN+6QifpCD1mDFbIIQuwASNwcaSqKsEW/5RI/1n+jiMAqvoE3sCScy50JGb+2H2/ggar3PQAVlWdesBilV2QWIYJWM1Mrz1pBy8k37QHkt8eryD5F6wHydn4zqCBoO63FAodGmvo4UKrETG3bXWbG/DymgHGWmtJKW3A7PmiB2rUYYave/NSAAAAAElFTkSuQmCC");
-  background-size: 0.6rem;
-  background-repeat: no-repeat;
-  background-position: 2rem center;
-}
-
-.collapse-panel[open] .collapse-header:not(.without-arrow) {
-  padding: 1.2rem 2rem 1.2rem 4.4rem;
-  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAI9JREFUeNpiZACCyMjIBCDVD8SOy5cvv8BAAgDqNQBS+4G4EKh3ASPUsPlQ+Q+kGIpkmABUKJEJ6jIYAEnshyok1TAQ6AcZ6Ah1GdGG4jAM7DtGQgrQvU9ILSOxColVw0is7VA2QV8wkhA+DMQECSMJgc5AyDCcBhIwFG9aZSQxrRFM+IwkJGAGYnIRQIABACQuXCKovu2mAAAAAElFTkSuQmCC");
-  background-size: 1rem;
-  background-repeat: no-repeat;
-  background-position: 2rem center;
+.collapse-panel[open] {
+  .collapse-header {
+    &:not(.without-arrow) {
+      padding: 1.2rem 2rem 1.2rem 4.4rem;
+      background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAI9JREFUeNpiZACCyMjIBCDVD8SOy5cvv8BAAgDqNQBS+4G4EKh3ASPUsPlQ+Q+kGIpkmABUKJEJ6jIYAEnshyok1TAQ6AcZ6Ah1GdGG4jAM7DtGQgrQvU9ILSOxColVw0is7VA2QV8wkhA+DMQECSMJgc5AyDCcBhIwFG9aZSQxrRFM+IwkJGAGYnIRQIABACQuXCKovu2mAAAAAElFTkSuQmCC");
+      background-size: 1rem;
+      background-repeat: no-repeat;
+      background-position: 2rem center;
+    }
+  }
 }
 
 /* Collapse header focus effect (::after) */
-.collapse-header::after {
-  content: "";
-  position: absolute;
-  display: block;
-  top: 0.2rem;
-  left: 0.2rem;
-  width: calc(100% - (2 * 0.2rem));
-  height: calc(100% - (2 * 0.2rem));
-  border-radius: 0.4rem;
+.collapse-header {
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0.2rem;
+    left: 0.2rem;
+    width: calc(100% - (2 * 0.2rem));
+    height: calc(100% - (2 * 0.2rem));
+    border-radius: 0.4rem;
+  }
+
+  &:focus::after {
+    -webkit-box-shadow: inset 0 0 0 0.2rem #45a3fb;
+    box-shadow: inset 0 0 0 0.2rem #45a3fb;
+  }
 }
 
-.collapse-header:focus::after {
-  -webkit-box-shadow: inset 0 0 0 0.2rem #45a3fb;
-  box-shadow: inset 0 0 0 0.2rem #45a3fb;
-}
-/* Controlling display based on collapse open state */
-.collapse-panel[open] .hidden-collapse-open {
-  display: none;
+.collapse-panel[open] {
+  .hidden-collapse-open {
+    display: none;
+  }
 }
 
-.collapse-panel:not([open]) .hidden-collapse-closed {
-  display: none;
+.collapse-panel:not([open]) {
+  .hidden-collapse-closed {
+    display: none;
+  }
 }
 
 /* Collapse content */
@@ -112,7 +121,6 @@
   border-bottom-right-radius: 0.4rem;
 }
 
-/* Collapse group */
 .collapse-group .collapse-panel:not(:first-child) {
   margin-top: calc((-1) * 1px);
 }
@@ -138,12 +146,9 @@
   border-bottom: 0;
 }
 
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  /*
-      On IE, collapse panels are styled to be always open. This is because they
-      are not supporter by the browser.
-      */
-  /* Collapse header */
+@media screen and (-ms-high-contrast: active),
+(-ms-high-contrast: none) {
+
   .collapse-panel .collapse-header {
     cursor: auto;
     color: rgba(0, 0, 0, 0.85);
@@ -152,11 +157,12 @@
     -webkit-box-shadow: none;
     box-shadow: none;
   }
+
   .collapse-panel .collapse-header {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
   }
-  /* Collapse header arrow set using background image */
+
   .collapse-panel .collapse-header:not(.without-arrow) {
     padding: 1.2rem 2rem 1.2rem 4.4rem;
     background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAI9JREFUeNpiZACCyMjIBCDVD8SOy5cvv8BAAgDqNQBS+4G4EKh3ASPUsPlQ+Q+kGIpkmABUKJEJ6jIYAEnshyok1TAQ6AcZ6Ah1GdGG4jAM7DtGQgrQvU9ILSOxColVw0is7VA2QV8wkhA+DMQECSMJgc5AyDCcBhIwFG9aZSQxrRFM+IwkJGAGYnIRQIABACQuXCKovu2mAAAAAElFTkSuQmCC");
@@ -164,18 +170,20 @@
     background-repeat: no-repeat;
     background-position: 2rem center;
   }
-  /* Controlling display based on collapse open state */
+
   .collapse-panel .hidden-collapse-open {
     display: none;
   }
+
   .collapse-panel:not([open]) .hidden-collapse-closed {
     display: inline-block;
   }
-  /* Collapse group */
+
   .collapse-group .collapse-panel:not(:first-child) .collapse-content {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
   }
+
   .collapse-group .collapse-panel:not(:last-child) .collapse-content {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;

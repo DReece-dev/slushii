@@ -23,11 +23,11 @@
     background-color: #cacaca;
     -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
-}
 
-.slider-fill.is-dragging {
-    -webkit-transition: all 0s linear;
-    transition: all 0s linear;
+    &.is-dragging {
+        -webkit-transition: all 0s linear;
+        transition: all 0s linear;
+    }
 }
 
 .slider-handle {
@@ -47,19 +47,19 @@
     transition: all 0.2s ease-in-out;
     -ms-touch-action: manipulation;
     touch-action: manipulation;
+
+    &:hover {
+        background-color: #14679e;
+    }
+
+    &.is-dragging {
+        -webkit-transition: all 0s linear;
+        transition: all 0s linear;
+    }
 }
 
 [data-whatinput="mouse"] .slider-handle {
     outline: 0;
-}
-
-.slider-handle:hover {
-    background-color: #14679e;
-}
-
-.slider-handle.is-dragging {
-    -webkit-transition: all 0s linear;
-    transition: all 0s linear;
 }
 
 .slider.disabled,
