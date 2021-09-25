@@ -5510,48 +5510,93 @@ div.icon-text {
   max-width: 300px;
 }
 
-.nav-pills.dark a:hover {
+.nav-pills.dark a {
   background-color: var(--gray-dark);
   color: white;
 }
 
-.nav-pills.blue a:hover {
+.nav-pills.dark a:hover {
+  background-color: #111111af;
+  color: white;
+}
+
+.nav-pills.blue a {
   background-color: var(--blue-500);
   color: white;
 }
 
-.nav-pills.indigo a:hover {
+.nav-pills.blue a:hover {
+  background-color: #1473e6b2;
+  color: white;
+}
+
+.nav-pills.indigo a {
   background-color: var(--indigo-400);
   color: white;
 }
 
-.nav-pills.red a:hover {
+.nav-pills.indigo a:hover {
+  background-color: #6767ec91;
+  color: white;
+}
+
+.nav-pills.red a {
   background-color: var(--red-600);
   color: var(--black);
 }
 
-.nav-pills.orange a:hover {
+.nav-pills.red a:hover {
+  background-color: #dd1620;
+  color: var(--black);
+}
+
+.nav-pills.orange a {
   background-color: var(--orange-500);
   color: var(--black);
 }
 
-.nav-pills.green a:hover {
+.nav-pills.orange a:hover {
+  background-color: #da7c119f;
+  color: var(--black);
+}
+
+.nav-pills.green a {
   background-color: var(--green-400);
   color: white;
 }
 
-.nav-pills.white a:hover {
+.nav-pills.green a:hover {
+  background-color: #2d9d789c;
+  color: white;
+}
+
+.nav-pills.white a {
   background-color: var(--white);
   color: var(--black);
 }
 
-.nav-pills.info a:hover {
+.nav-pills.white a:hover {
+  background-color: rgba(255, 255, 255, 0.644);
+  color: var(--black);
+}
+
+.nav-pills.info a {
   background-color: var(--info);
   color: white;
 }
 
-.nav-pills.success a:hover {
+.nav-pills.info a:hover {
+  background-color: #0fd7ffa1;
+  color: white;
+}
+
+.nav-pills.success a {
   background-color: var(--success);
+  color: white;
+}
+
+.nav-pills.success a:hover {
+  background-color: #18ca779f;
   color: white;
 }
 

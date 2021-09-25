@@ -101,8 +101,11 @@
 
   &.dark {
     a {
+      background-color: var(--gray-dark);
+      color: white;
+
       &:hover {
-        background-color: var(--gray-dark);
+        background-color: #111111af;
         color: white;
       }
     }
@@ -110,8 +113,11 @@
 
   &.blue {
     a {
+      background-color: var(--blue-500);
+      color: white;
+
       &:hover {
-        background-color: var(--blue-500);
+        background-color: #1473e6b2;
         color: white;
       }
     }
@@ -119,8 +125,11 @@
 
   &.indigo {
     a {
+      background-color: var(--indigo-400);
+      color: white;
+
       &:hover {
-        background-color: var(--indigo-400);
+        background-color: #6767ec91;
         color: white;
       }
     }
@@ -128,8 +137,11 @@
 
   &.red {
     a {
+      background-color: var(--red-600);
+      color: var(--black);
+
       &:hover {
-        background-color: var(--red-600);
+        background-color: #dd1620;
         color: var(--black);
       }
     }
@@ -137,8 +149,11 @@
 
   &.orange {
     a {
+      background-color: var(--orange-500);
+      color: var(--black);
+
       &:hover {
-        background-color: var(--orange-500);
+        background-color: #da7c119f;
         color: var(--black);
       }
     }
@@ -146,8 +161,11 @@
 
   &.green {
     a {
+      background-color: var(--green-400);
+      color: white;
+
       &:hover {
-        background-color: var(--green-400);
+        background-color: #2d9d789c;
         color: white;
       }
     }
@@ -155,8 +173,11 @@
 
   &.white {
     a {
+      background-color: var(--white);
+      color: var(--black);
+
       &:hover {
-        background-color: var(--white);
+        background-color: rgba(255, 255, 255, 0.644);
         color: var(--black);
       }
     }
@@ -164,8 +185,11 @@
 
   &.info {
     a {
+      background-color: var(--info);
+      color: white;
+
       &:hover {
-        background-color: var(--info);
+        background-color: #0fd7ffa1;
         color: white;
       }
     }
@@ -173,8 +197,11 @@
 
   &.success {
     a {
+      background-color: var(--success);
+      color: white;
+
       &:hover {
-        background-color: var(--success);
+        background-color: #18ca779f;
         color: white;
       }
     }
