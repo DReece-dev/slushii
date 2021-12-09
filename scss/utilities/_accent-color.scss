@@ -1,0 +1,72 @@
+// For setting the color of a form input's accent
+.accent-auto {
+    accent-color: auto;
+}
+
+.accent-black {
+    accent-color: var(--black) !important;
+}
+
+.accent-white {
+    accent-color: var(--white) !important;
+}
+
+.accent-light {
+    accent-color: var(--light) !important;
+}
+
+.accent-dark {
+    accent-color: var(--dark) !important;
+}
+
+.accent-blue {
+    accent-color: var(--blue) !important;
+}
+
+.accent-indigo {
+    accent-color: var(--indigo) !important;
+}
+
+.accent-puple {
+    accent-color: var(--purple) !important;
+}
+
+.accent-red {
+    accent-color: var(--red) !important;
+}
+
+.accent-orange {
+    accent-color: var(--orange-400) !important;
+}
+
+.accent-yellow {
+    accent-color: var(--yellow) !important;
+}
+
+.accent-green {
+    accent-color: var(--green) !important;
+}
+
+.accent-cyan {
+    accent-color: var(--cyan) !important;
+}
+
+.accent-light-gray {
+    accent-color: var(--lightgray) !important;
+}
+
+.accent-inherit {
+    accent-color: inherit;
+}
+
+.accent-initial {
+    accent-color: initial;
+}
+
+.accent-revert {
+    accent-color: revert;
+}
+
+.accent-unset {
+    accent-color: unset;
+}

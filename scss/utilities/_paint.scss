@@ -1,0 +1,39 @@
+/* Normal */
+.paint-normal {
+    paint-order: normal;
+}
+
+/* Single values */
+.paint-stroke {
+    paint-order: stroke;
+}
+
+.paint-markers {
+    paint-order: markers;
+}
+
+.paint-stroke-fill {
+    paint-order: stroke fill;
+}
+
+.paint-makers-stroke-fill {
+    paint-order: markers stroke fill;
+}
+
+/* Global values */
+
+.paint-order-inherit {
+    paint-order: inherit;
+}
+
+.paint-order-initial {
+    paint-order: initial;
+}
+
+.paint-order-revert {
+    paint-order: revert;
+}
+
+.paint-order-unset {
+    paint-order: unset;
+}

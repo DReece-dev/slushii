@@ -1,0 +1,40 @@
+.will-change-auto {
+    will-change: auto;
+}
+
+.will-change-scroll-position {
+    will-change: scroll-position;
+}
+
+.will-change-contents {
+    will-change: contents;
+}
+
+.will-change-transform {
+    will-change: transform;
+}
+
+.will-change-opacity {
+    will-change: opacity;
+}
+
+.will-change-left-top {
+    will-change: left, top;
+}
+
+/* Global values */
+.will-change-inherit {
+    will-change: inherit;
+}
+
+.will-change-initial {
+    will-change: initial;
+}
+
+.will-change-revert {
+    will-change: revert;
+}
+
+.will-change-revert {
+    will-change: unset;
+}
