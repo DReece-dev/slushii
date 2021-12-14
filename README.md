@@ -2,7 +2,7 @@
 
 Slushii CSS Framework
 
-Version: v0.1.0
+Version: v0.1.1
 
 Created: 2021
 
