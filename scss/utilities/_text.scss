@@ -240,3 +240,19 @@ screen and (min-width: 64em) {
 .text-light-gray {
   color: var(--lightgray) !important;
 }
+
+.text-opacity-25 {
+  opacity: 0.25;
+}
+
+.text-opacity-50 {
+  opacity: 0.5;
+}
+
+.text-opacity-75 {
+  opacity: 0.75;
+}
+
+.text-opacity-100 {
+  opacity: 1;
+}
