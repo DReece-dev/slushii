@@ -1,21 +1,26 @@
 .scroll-snap-type-none {
     scroll-snap-type: none;
+
 }
 
 .scroll-snap-type-x {
     scroll-snap-type: x;
+
 }
 
 .scroll-snap-type-y {
     scroll-snap-type: y;
+
 }
 
 .scroll-snape-type-black {
     scroll-snap-type: block;
+
 }
 
 .scroll-snap-type-inline {
     scroll-snap-type: inline;
+
 }
 
 .scroll-snap-type-both {
@@ -44,4 +49,92 @@
 
 .scroll-snap-type-unset {
     scroll-snap-type: unset;
+}
+
+.snap-normal {
+    scroll-snap-stop: normal;
+}
+
+.snap-always {
+    scroll-snap-stop: always;
+}
+
+.snap-start {
+    scroll-snap-align: start;
+}
+
+.snap-end {
+    scroll-snap-align: end;
+}
+
+.snap-center {
+    scroll-snap-align: center;
+}
+
+.snap-align-none {
+    scroll-snap-align: none;
+}
+
+.scroll-m-0 {
+    scroll-margin: 0px;
+}
+
+.scroll-mx-0 {
+    scroll-margin-left: 0px;
+    scroll-margin-right: 0px;
+
+}
+
+.scroll-my-0 {
+    scroll-margin-top: 0px;
+    scroll-margin-bottom: 0px;
+
+}
+
+.scroll-mt-0 {
+    scroll-margin-top: 0px;
+}
+
+.scroll-mr-0 {
+    scroll-margin-right: 0px;
+}
+
+.scroll-mb-0 {
+    scroll-margin-bottom: 0px;
+}
+
+.scroll-ml-0 {
+    scroll-margin-left: 0px;
+}
+
+.scroll-p-0 {
+    scroll-padding: 0px;
+}
+
+.scroll-px-0 {
+    scroll-padding-left: 0px;
+    scroll-padding-right: 0px;
+
+}
+
+.scroll-py-0 {
+    scroll-padding-top: 0px;
+    scroll-padding-bottom: 0px;
+
+}
+
+.scroll-pt-0 {
+    scroll-padding-top: 0px;
+}
+
+.scroll-pr-0 {
+    scroll-padding-right: 0px;
+}
+
+.scroll-pb-0 {
+    scroll-padding-bottom: 0px;
+}
+
+.scroll-pl-0 {
+    scroll-padding-left: 0px;
 }
