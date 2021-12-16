@@ -24,6 +24,115 @@
     pointer-events: none;
     cursor: default;
   }
+
+  &.slate {
+    color: var(--slate);
+
+    &:hover,
+    &:focus {
+      color: var(--slate-500);
+    }
+  }
+
+  &.blue {
+    color: var(--blue);
+
+    &:hover,
+    &:focus {
+      color: var(--blue-500);
+    }
+  }
+
+  &.indigo {
+    color: var(--indigo);
+
+    &:hover,
+    &:focus {
+      color: var(--indigo-700);
+    }
+  }
+
+  &.purple {
+    color: var(--purple);
+
+    &:hover,
+    &:focus {
+      color: var(--purple-600);
+    }
+  }
+
+  &.pink {
+    color: var(--pink);
+
+    &:hover,
+    &:focus {
+      color: var(--pink-600);
+    }
+  }
+
+  &.red {
+    color: var(--red);
+
+    &:hover,
+    &:focus {
+      color: var(--red-600);
+    }
+  }
+
+  &.orange {
+    color: var(--orange);
+
+    &:hover,
+    &:focus {
+      color: var(--orange-600);
+    }
+  }
+
+  &.yellow {
+    color: var(--yellow);
+
+    &:hover,
+    &:focus {
+      color: var(--yellow-600);
+    }
+  }
+
+  &.green {
+    color: var(--green);
+
+    &:hover,
+    &:focus {
+      color: var(--green-600);
+    }
+  }
+
+  &.gray {
+    color: var(--gary-100);
+
+    &:hover,
+    &:focus {
+      color: var(--gray-600);
+    }
+  }
+
+  &.dark {
+    color: var(--dark);
+
+    &:hover,
+    &:focus {
+      color: var(--gray-800);
+    }
+  }
+
+
+  &.light {
+    color: var(--light);
+
+    &:hover,
+    &:focus {
+      color: var(--gray-600);
+    }
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -26,6 +26,10 @@
   margin: auto !important;
 }
 
+.m-custom {
+  margin: 10rem !important; // Custom Margin - Change Value
+}
+
 .mx-0 {
   margin-right: 0 !important;
   margin-left: 0 !important;
@@ -61,9 +65,14 @@
   margin-left: auto !important;
 }
 
+.mx-custom {
+  margin-right: 5rem !important;
+  margin-left: 5rem !important;
+}
+
 .my-0 {
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
+  margin-top: 0rem !important;
+  margin-bottom: 0rem !important;
 }
 
 .my-1 {
@@ -96,6 +105,11 @@
   margin-bottom: auto !important;
 }
 
+.my-custom {
+  margin-top: 10rem !important;
+  margin-bottom: 10rem !important;
+}
+
 .mt-0 {
   margin-top: 0 !important;
 }
@@ -122,6 +136,10 @@
 
 .mt-auto {
   margin-top: auto !important;
+}
+
+.mt-custom {
+  margin-top: 25rem !important;
 }
 
 .me-0 {
@@ -152,6 +170,11 @@
   margin-right: auto !important;
 }
 
+.me-custom {
+  margin-right: 10rem !important;
+}
+
+
 .mb-0 {
   margin-bottom: 0 !important;
 }
@@ -180,6 +203,10 @@
   margin-bottom: auto !important;
 }
 
+.mb-custom {
+  margin-bottom: 10rem !important;
+}
+
 .ms-0 {
   margin-left: 0 !important;
 }
@@ -206,4 +233,8 @@
 
 .ms-auto {
   margin-left: auto !important;
+}
+
+.ms-custom {
+  margin-left: 10 !important;
 }

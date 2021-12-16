@@ -22,6 +22,10 @@
   padding: 3rem !important;
 }
 
+.p-custom {
+  padding: 10rem !important;
+}
+
 .px-0 {
   padding-right: 0 !important;
   padding-left: 0 !important;
@@ -51,6 +55,12 @@
   padding-right: 3rem !important;
   padding-left: 3rem !important;
 }
+
+.px-custom {
+  padding-right: 10rem !important;
+  padding-left: 10rem !important;
+}
+
 
 .py-0 {
   padding-top: 0 !important;
@@ -82,6 +92,11 @@
   padding-bottom: 3rem !important;
 }
 
+.py-custom {
+  padding-top: 10rem !important;
+  padding-bottom: 10rem !important;
+}
+
 .pt-0 {
   padding-top: 0 !important;
 }
@@ -105,6 +120,11 @@
 .pt-5 {
   padding-top: 3rem !important;
 }
+
+.pt-custom {
+  padding-top: 10rem !important;
+}
+
 
 .pe-0 {
   padding-right: 0 !important;
@@ -130,6 +150,11 @@
   padding-right: 3rem !important;
 }
 
+.pe-custom {
+  padding-right: 10rem !important;
+}
+
+
 .pb-0 {
   padding-bottom: 0 !important;
 }
@@ -154,6 +179,10 @@
   padding-bottom: 3rem !important;
 }
 
+.pb-custom {
+  padding-bottom: 10rem !important;
+}
+
 .ps-0 {
   padding-left: 0 !important;
 }
@@ -176,4 +205,8 @@
 
 .ps-5 {
   padding-left: 3rem !important;
+}
+
+.ps-custom {
+  padding-left: 10rem !important;
 }
