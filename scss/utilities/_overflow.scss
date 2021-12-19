@@ -38,27 +38,35 @@
   .overflow-sm-hidden {
     overflow: hidden !important;
   }
+
   .overflow-x-sm-hidden {
     overflow-x: hidden !important;
   }
+
   .overflow-y-sm-hidden {
     overflow-y: hidden !important;
   }
+
   .overflow-sm-auto {
     overflow: auto !important;
   }
+
   .overflow-x-sm-auto {
     overflow-x: auto !important;
   }
+
   .overflow-y-sm-auto {
     overflow-y: auto !important;
   }
+
   .overflow-sm-scroll {
     overflow: scroll !important;
   }
+
   .overflow-x-sm-scroll {
     overflow-x: scroll !important;
   }
+
   .overflow-y-sm-scroll {
     overflow-y: scroll !important;
   }
@@ -68,27 +76,35 @@
   .overflow-md-hidden {
     overflow: hidden !important;
   }
+
   .overflow-x-md-hidden {
     overflow-x: hidden !important;
   }
+
   .overflow-y-md-hidden {
     overflow-y: hidden !important;
   }
+
   .overflow-md-auto {
     overflow: auto !important;
   }
+
   .overflow-x-md-auto {
     overflow-x: auto !important;
   }
+
   .overflow-y-md-auto {
     overflow-y: auto !important;
   }
+
   .overflow-md-scroll {
     overflow: scroll !important;
   }
+
   .overflow-x-md-scroll {
     overflow-x: scroll !important;
   }
+
   .overflow-y-md-scroll {
     overflow-y: scroll !important;
   }
@@ -98,27 +114,35 @@
   .overflow-lg-hidden {
     overflow: hidden !important;
   }
+
   .overflow-x-lg-hidden {
     overflow-x: hidden !important;
   }
+
   .overflow-y-lg-hidden {
     overflow-y: hidden !important;
   }
+
   .overflow-lg-auto {
     overflow: auto !important;
   }
+
   .overflow-x-lg-auto {
     overflow-x: auto !important;
   }
+
   .overflow-y-lg-auto {
     overflow-y: auto !important;
   }
+
   .overflow-lg-scroll {
     overflow: scroll !important;
   }
+
   .overflow-x-lg-scroll {
     overflow-x: scroll !important;
   }
+
   .overflow-y-lg-scroll {
     overflow-y: scroll !important;
   }
@@ -128,28 +152,56 @@
   .overflow-xl-hidden {
     overflow: hidden !important;
   }
+
   .overflow-x-xl-hidden {
     overflow-x: hidden !important;
   }
+
   .overflow-y-xl-hidden {
     overflow-y: hidden !important;
   }
+
   .overflow-xl-auto {
     overflow: auto !important;
   }
+
   .overflow-x-xl-auto {
     overflow-x: auto !important;
   }
+
   .overflow-y-xl-auto {
     overflow-y: auto !important;
   }
+
   .overflow-xl-scroll {
     overflow: scroll !important;
   }
+
   .overflow-x-xl-scroll {
     overflow-x: scroll !important;
   }
+
   .overflow-y-xl-scroll {
     overflow-y: scroll !important;
   }
+}
+
+.text-ellipsis {
+  text-overflow: ellipsis;
+}
+
+.text-clip {
+  text-overflow: clip;
+}
+
+.overflow-clip {
+  overflow: clip
+}
+
+.overflow-x-clip {
+  overflow-x: clip
+}
+
+.overflow-y-clip {
+  overflow-y: clip
 }
