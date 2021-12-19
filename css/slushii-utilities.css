@@ -11,452 +11,453 @@ Licensed under MIT (github.com/DReece-dev/slushii)
 */
 
 .grid {
-    display: -ms-grid;
-    display: grid;
+  display: -ms-grid;
+  display: grid;
 }
 
 .inline-grid {
-    display: -ms-inline-grid;
-    display: inline-grid;
+  display: -ms-inline-grid;
+  display: inline-grid;
 }
 
 .grid-flow-row {
-    grid-auto-flow: row;
+  grid-auto-flow: row;
 }
 
 .grid-flow-col {
-    grid-auto-flow: column;
+  grid-auto-flow: column;
 }
 
 .grid-flow-row-dense {
-    grid-auto-flow: row dense;
+  grid-auto-flow: row dense;
 }
 
 .grid-flow-col-dense {
-    grid-auto-flow: column dense;
+  grid-auto-flow: column dense;
 }
 
 .grid-cols-1 {
-    -ms-grid-columns: (minmax(0, 1fr))[1];
-    grid-template-columns: repeat(1, minmax(0, 1fr));
+  -ms-grid-columns: (minmax(0, 1fr))[1];
+  grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
 .grid-cols-2 {
-    -ms-grid-columns: (minmax(0, 1fr))[2];
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  -ms-grid-columns: (minmax(0, 1fr))[2];
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .grid-cols-3 {
-    -ms-grid-columns: (minmax(0, 1fr))[3];
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+  -ms-grid-columns: (minmax(0, 1fr))[3];
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .grid-cols-4 {
-    -ms-grid-columns: (minmax(0, 1fr))[4];
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+  -ms-grid-columns: (minmax(0, 1fr))[4];
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .grid-cols-5 {
-    -ms-grid-columns: (minmax(0, 1fr))[5];
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+  -ms-grid-columns: (minmax(0, 1fr))[5];
+  grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 
 .grid-cols-6 {
-    -ms-grid-columns: (minmax(0, 1fr))[6];
-    grid-template-columns: repeat(6, minmax(0, 1fr));
+  -ms-grid-columns: (minmax(0, 1fr))[6];
+  grid-template-columns: repeat(6, minmax(0, 1fr));
 }
 
 .grid-cols-7 {
-    -ms-grid-columns: (minmax(0, 1fr))[7];
-    grid-template-columns: repeat(7, minmax(0, 1fr));
+  -ms-grid-columns: (minmax(0, 1fr))[7];
+  grid-template-columns: repeat(7, minmax(0, 1fr));
 }
 
 .grid-cols-8 {
-    -ms-grid-columns: (minmax(0, 1fr))[8];
-    grid-template-columns: repeat(8, minmax(0, 1fr));
+  -ms-grid-columns: (minmax(0, 1fr))[8];
+  grid-template-columns: repeat(8, minmax(0, 1fr));
 }
 
 .grid-cols-9 {
-    -ms-grid-columns: (minmax(0, 1fr))[9];
-    grid-template-columns: repeat(9, minmax(0, 1fr));
+  -ms-grid-columns: (minmax(0, 1fr))[9];
+  grid-template-columns: repeat(9, minmax(0, 1fr));
 }
 
 .grid-cols-10 {
-    -ms-grid-columns: (minmax(0, 1fr))[10];
-    grid-template-columns: repeat(10, minmax(0, 1fr));
+  -ms-grid-columns: (minmax(0, 1fr))[10];
+  grid-template-columns: repeat(10, minmax(0, 1fr));
 }
 
 .grid-cols-11 {
-    -ms-grid-columns: (minmax(0, 1fr))[11];
-    grid-template-columns: repeat(11, minmax(0, 1fr));
+  -ms-grid-columns: (minmax(0, 1fr))[11];
+  grid-template-columns: repeat(11, minmax(0, 1fr));
 }
 
 .grid-cols-12 {
-    -ms-grid-columns: (minmax(0, 1fr))[12];
-    grid-template-columns: repeat(12, minmax(0, 1fr));
+  -ms-grid-columns: (minmax(0, 1fr))[12];
+  grid-template-columns: repeat(12, minmax(0, 1fr));
 }
 
 .grid-cols-none {
-    -ms-grid-columns: none;
-    grid-template-columns: none;
+  -ms-grid-columns: none;
+  grid-template-columns: none;
 }
 
 .auto-cols-auto {
-    grid-auto-columns: auto;
+  grid-auto-columns: auto;
 }
 
 .auto-cols-min {
-    grid-auto-columns: -webkit-min-content;
-    grid-auto-columns: min-content;
+  grid-auto-columns: -webkit-min-content;
+  grid-auto-columns: min-content;
 }
 
 .auto-cols-max {
-    grid-auto-columns: -webkit-max-content;
-    grid-auto-columns: max-content;
+  grid-auto-columns: -webkit-max-content;
+  grid-auto-columns: max-content;
 }
 
 .auto-cols-fr {
-    grid-auto-columns: minmax(0, 1fr);
+  grid-auto-columns: minmax(0, 1fr);
 }
 
 .col-auto {
-    grid-column: auto;
+  grid-column: auto;
 }
 
 .col-span-1 {
-    grid-column: span 1 / span 1;
+  grid-column: span 1 / span 1;
 }
 
 .col-span-2 {
-    grid-column: span 2 / span 2;
+  grid-column: span 2 / span 2;
 }
 
 .col-span-3 {
-    grid-column: span 3 / span 3;
+  grid-column: span 3 / span 3;
 }
 
 .col-span-4 {
-    grid-column: span 4 / span 4;
+  grid-column: span 4 / span 4;
 }
 
 .col-span-5 {
-    grid-column: span 5 / span 5;
+  grid-column: span 5 / span 5;
 }
 
 .col-span-6 {
-    grid-column: span 6 / span 6;
+  grid-column: span 6 / span 6;
 }
 
 .col-span-7 {
-    grid-column: span 7 / span 7;
+  grid-column: span 7 / span 7;
 }
 
 .col-span-8 {
-    grid-column: span 8 / span 8;
+  grid-column: span 8 / span 8;
 }
 
 .col-span-9 {
-    grid-column: span 9 / span 9;
+  grid-column: span 9 / span 9;
 }
 
 .col-span-10 {
-    grid-column: span 10 / span 10;
+  grid-column: span 10 / span 10;
 }
 
 .col-span-11 {
-    grid-column: span 11 / span 11;
+  grid-column: span 11 / span 11;
 }
 
 .col-span-12 {
-    grid-column: span 12 / span 12;
+  grid-column: span 12 / span 12;
 }
 
 .col-span-full {
-    grid-column: 1 / -1;
+  grid-column: 1 / -1;
 }
 
 .col-start-1 {
-    -ms-grid-column: 1;
-    grid-column-start: 1;
+  -ms-grid-column: 1;
+  grid-column-start: 1;
 }
 
 .col-start-2 {
-    -ms-grid-column: 2;
-    grid-column-start: 2;
+  -ms-grid-column: 2;
+  grid-column-start: 2;
 }
 
 .col-start-3 {
-    -ms-grid-column: 3;
-    grid-column-start: 3;
+  -ms-grid-column: 3;
+  grid-column-start: 3;
 }
 
 .col-start-4 {
-    -ms-grid-column: 4;
-    grid-column-start: 4;
+  -ms-grid-column: 4;
+  grid-column-start: 4;
 }
 
 .col-start-5 {
-    -ms-grid-column: 5;
-    grid-column-start: 5;
+  -ms-grid-column: 5;
+  grid-column-start: 5;
 }
 
 .col-start-6 {
-    -ms-grid-column: 6;
-    grid-column-start: 6;
+  -ms-grid-column: 6;
+  grid-column-start: 6;
 }
 
 .col-start-7 {
-    -ms-grid-column: 7;
-    grid-column-start: 7;
+  -ms-grid-column: 7;
+  grid-column-start: 7;
 }
 
 .col-start-8 {
-    -ms-grid-column: 8;
-    grid-column-start: 8;
+  -ms-grid-column: 8;
+  grid-column-start: 8;
 }
 
 .col-start-9 {
-    -ms-grid-column: 9;
-    grid-column-start: 9;
+  -ms-grid-column: 9;
+  grid-column-start: 9;
 }
 
 .col-start-10 {
-    -ms-grid-column: 10;
-    grid-column-start: 10;
+  -ms-grid-column: 10;
+  grid-column-start: 10;
 }
 
 .col-start-11 {
-    -ms-grid-column: 11;
-    grid-column-start: 11;
+  -ms-grid-column: 11;
+  grid-column-start: 11;
 }
 
 .col-start-12 {
-    -ms-grid-column: 12;
-    grid-column-start: 12;
+  -ms-grid-column: 12;
+  grid-column-start: 12;
 }
 
 .col-start-13 {
-    -ms-grid-column: 13;
-    grid-column-start: 13;
+  -ms-grid-column: 13;
+  grid-column-start: 13;
 }
 
 .col-start-auto {
-    -ms-grid-column: auto;
-    grid-column-start: auto;
+  -ms-grid-column: auto;
+  grid-column-start: auto;
 }
 
 .col-end-1 {
-    grid-column-end: 1;
+  grid-column-end: 1;
 }
 
 .col-end-2 {
-    grid-column-end: 2;
+  grid-column-end: 2;
 }
 
 .col-end-3 {
-    grid-column-end: 3;
+  grid-column-end: 3;
 }
 
 .col-end-4 {
-    grid-column-end: 4;
+  grid-column-end: 4;
 }
 
 .col-end-5 {
-    grid-column-end: 5;
+  grid-column-end: 5;
 }
 
 .col-end-6 {
-    grid-column-end: 6;
+  grid-column-end: 6;
 }
 
 .col-end-7 {
-    grid-column-end: 7;
+  grid-column-end: 7;
 }
 
 .col-end-8 {
-    grid-column-end: 8;
+  grid-column-end: 8;
 }
 
 .col-end-9 {
-    grid-column-end: 9;
+  grid-column-end: 9;
 }
 
 .col-end-10 {
-    grid-column-end: 10;
+  grid-column-end: 10;
 }
 
 .col-end-11 {
-    grid-column-end: 11;
+  grid-column-end: 11;
 }
 
 .col-end-12 {
-    grid-column-end: 12;
+  grid-column-end: 12;
 }
 
 .col-end-13 {
-    grid-column-end: 13;
+  grid-column-end: 13;
 }
 
 .col-end-auto {
-    grid-column-end: auto;
+  grid-column-end: auto;
 }
 
 .grid-rows-1 {
-    -ms-grid-rows: (minmax(0, 1fr))[1];
-    grid-template-rows: repeat(1, minmax(0, 1fr));
+  -ms-grid-rows: (minmax(0, 1fr))[1];
+  grid-template-rows: repeat(1, minmax(0, 1fr));
 }
 
 .grid-rows-2 {
-    -ms-grid-rows: (minmax(0, 1fr))[2];
-    grid-template-rows: repeat(2, minmax(0, 1fr));
+  -ms-grid-rows: (minmax(0, 1fr))[2];
+  grid-template-rows: repeat(2, minmax(0, 1fr));
 }
 
 .grid-rows-3 {
-    -ms-grid-rows: (minmax(0, 1fr))[3];
-    grid-template-rows: repeat(3, minmax(0, 1fr));
+  -ms-grid-rows: (minmax(0, 1fr))[3];
+  grid-template-rows: repeat(3, minmax(0, 1fr));
 }
 
 .grid-rows-4 {
-    -ms-grid-rows: (minmax(0, 1fr))[4];
-    grid-template-rows: repeat(4, minmax(0, 1fr));
+  -ms-grid-rows: (minmax(0, 1fr))[4];
+  grid-template-rows: repeat(4, minmax(0, 1fr));
 }
 
 .grid-rows-5 {
-    -ms-grid-rows: (minmax(0, 1fr))[5];
-    grid-template-rows: repeat(5, minmax(0, 1fr));
+  -ms-grid-rows: (minmax(0, 1fr))[5];
+  grid-template-rows: repeat(5, minmax(0, 1fr));
 }
 
 .grid-rows-6 {
-    -ms-grid-rows: (minmax(0, 1fr))[6];
-    grid-template-rows: repeat(6, minmax(0, 1fr));
+  -ms-grid-rows: (minmax(0, 1fr))[6];
+  grid-template-rows: repeat(6, minmax(0, 1fr));
 }
 
 .grid-rows-none {
-    -ms-grid-rows: none;
-    grid-template-rows: none;
+  -ms-grid-rows: none;
+  grid-template-rows: none;
 }
 
 .auto-rows-auto {
-    grid-auto-rows: auto;
+  grid-auto-rows: auto;
 }
 
 .auto-rows-min {
-    grid-auto-rows: -webkit-min-content;
-    grid-auto-rows: min-content;
+  grid-auto-rows: -webkit-min-content;
+  grid-auto-rows: min-content;
 }
 
 .auto-rows-max {
-    grid-auto-rows: -webkit-max-content;
-    grid-auto-rows: max-content;
+  grid-auto-rows: -webkit-max-content;
+  grid-auto-rows: max-content;
 }
 
 .auto-rows-fr {
-    grid-auto-rows: minmax(0, 1fr);
+  grid-auto-rows: minmax(0, 1fr);
 }
 
 .row-auto {
-    grid-row: auto;
+  grid-row: auto;
 }
 
 .row-span-1 {
-    grid-row: span 1 / span 1;
+  grid-row: span 1 / span 1;
 }
 
 .row-span-2 {
-    grid-row: span 2 / span 2;
+  grid-row: span 2 / span 2;
 }
 
 .row-span-3 {
-    grid-row: span 3 / span 3;
+  grid-row: span 3 / span 3;
 }
 
 .row-span-4 {
-    grid-row: span 4 / span 4;
+  grid-row: span 4 / span 4;
 }
 
 .row-span-5 {
-    grid-row: span 5 / span 5;
+  grid-row: span 5 / span 5;
 }
 
 .row-span-6 {
-    grid-row: span 6 / span 6;
+  grid-row: span 6 / span 6;
 }
 
 .row-span-full {
-    grid-row: 1 / -1;
+  grid-row: 1 / -1;
 }
 
 .row-start-1 {
-    -ms-grid-row: 1;
-    grid-row-start: 1;
+  -ms-grid-row: 1;
+  grid-row-start: 1;
 }
 
 .row-start-2 {
-    -ms-grid-row: 2;
-    grid-row-start: 2;
+  -ms-grid-row: 2;
+  grid-row-start: 2;
 }
 
 .row-start-3 {
-    -ms-grid-row: 3;
-    grid-row-start: 3;
+  -ms-grid-row: 3;
+  grid-row-start: 3;
 }
 
 .row-start-4 {
-    -ms-grid-row: 4;
-    grid-row-start: 4;
+  -ms-grid-row: 4;
+  grid-row-start: 4;
 }
 
 .row-start-5 {
-    -ms-grid-row: 5;
-    grid-row-start: 5;
+  -ms-grid-row: 5;
+  grid-row-start: 5;
 }
 
 .row-start-6 {
-    -ms-grid-row: 6;
-    grid-row-start: 6;
+  -ms-grid-row: 6;
+  grid-row-start: 6;
 }
 
 .row-start-7 {
-    -ms-grid-row: 7;
-    grid-row-start: 7;
+  -ms-grid-row: 7;
+  grid-row-start: 7;
 }
 
 .row-start-auto {
-    -ms-grid-row: auto;
-    grid-row-start: auto;
+  -ms-grid-row: auto;
+  grid-row-start: auto;
 }
 
 .row-end-1 {
-    grid-row-end: 1;
+  grid-row-end: 1;
 }
 
 .row-end-2 {
-    grid-row-end: 2;
+  grid-row-end: 2;
 }
 
 .row-end-3 {
-    grid-row-end: 3;
+  grid-row-end: 3;
 }
 
 .row-end-4 {
-    grid-row-end: 4;
+  grid-row-end: 4;
 }
 
 .row-end-5 {
-    grid-row-end: 5;
+  grid-row-end: 5;
 }
 
 .row-end-6 {
-    grid-row-end: 6;
+  grid-row-end: 6;
 }
 
 .row-end-7 {
-    grid-row-end: 7;
+  grid-row-end: 7;
 }
 
 .row-end-auto {
-    grid-row-end: auto;
+  grid-row-end: auto;
 }
+
 .flex {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -472,90 +473,90 @@ Licensed under MIT (github.com/DReece-dev/slushii)
 .flex-row {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
 }
 
 .flex-row-reverse {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
 }
 
 .flex-col {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .flex-col-reverse {
   -webkit-box-orient: vertical;
   -webkit-box-direction: reverse;
-      -ms-flex-direction: column-reverse;
-          flex-direction: column-reverse;
+  -ms-flex-direction: column-reverse;
+  flex-direction: column-reverse;
 }
 
 .flex-wrap {
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .flex-wrap-reverse {
   -ms-flex-wrap: wrap-reverse;
-      flex-wrap: wrap-reverse;
+  flex-wrap: wrap-reverse;
 }
 
 .flex-nowrap {
   -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  flex-wrap: nowrap;
 }
 
 .flex-1 {
   -webkit-box-flex: 1;
-      -ms-flex: 1 1 0%;
-          flex: 1 1 0%;
+  -ms-flex: 1 1 0%;
+  flex: 1 1 0%;
 }
 
 .flex-auto {
   -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
 }
 
 .flex-initial {
   -webkit-box-flex: 0;
-      -ms-flex: 0 1 auto;
-          flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
 }
 
 .flex-none {
   -webkit-box-flex: 0;
-      -ms-flex: none;
-          flex: none;
+  -ms-flex: none;
+  flex: none;
 }
 
 .flex-grow-0 {
   -webkit-box-flex: 0;
-      -ms-flex-positive: 0;
-          flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
 }
 
 .flex-grow {
   -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
 }
 
 .flex-shrink-0 {
   -ms-flex-negative: 0;
-      flex-shrink: 0;
+  flex-shrink: 0;
 }
 
 .flex-shrink {
   -ms-flex-negative: 1;
-      flex-shrink: 1;
+  flex-shrink: 1;
 }
 
 .flex-child-auto {
@@ -604,45 +605,53 @@ Licensed under MIT (github.com/DReece-dev/slushii)
   flex-direction: column-reverse;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print,
+screen and (min-width: 40em) {
   .medium-flex-container {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
   }
+
   .medium-flex-child-auto {
     -webkit-box-flex: 1;
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
   }
+
   .medium-flex-child-grow {
     -webkit-box-flex: 1;
     -ms-flex: 1 0 auto;
     flex: 1 0 auto;
   }
+
   .medium-flex-child-shrink {
     -webkit-box-flex: 0;
     -ms-flex: 0 1 auto;
     flex: 0 1 auto;
   }
+
   .medium-flex-dir-row {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
     -ms-flex-direction: row;
     flex-direction: row;
   }
+
   .medium-flex-dir-row-reverse {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: reverse;
     -ms-flex-direction: row-reverse;
     flex-direction: row-reverse;
   }
+
   .medium-flex-dir-column {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
   }
+
   .medium-flex-dir-column-reverse {
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
@@ -651,45 +660,53 @@ Licensed under MIT (github.com/DReece-dev/slushii)
   }
 }
 
-@media print, screen and (min-width: 64em) {
+@media print,
+screen and (min-width: 64em) {
   .large-flex-container {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
   }
+
   .large-flex-child-auto {
     -webkit-box-flex: 1;
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
   }
+
   .large-flex-child-grow {
     -webkit-box-flex: 1;
     -ms-flex: 1 0 auto;
     flex: 1 0 auto;
   }
+
   .large-flex-child-shrink {
     -webkit-box-flex: 0;
     -ms-flex: 0 1 auto;
     flex: 0 1 auto;
   }
+
   .large-flex-dir-row {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
     -ms-flex-direction: row;
     flex-direction: row;
   }
+
   .large-flex-dir-row-reverse {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: reverse;
     -ms-flex-direction: row-reverse;
     flex-direction: row-reverse;
   }
+
   .large-flex-dir-column {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
   }
+
   .large-flex-dir-column-reverse {
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
@@ -700,317 +717,317 @@ Licensed under MIT (github.com/DReece-dev/slushii)
 
 .basis-0 {
   -ms-flex-preferred-size: 0px;
-      flex-basis: 0px;
+  flex-basis: 0px;
 }
 
 .basis-1 {
   -ms-flex-preferred-size: 0.25rem;
-      flex-basis: 0.25rem;
+  flex-basis: 0.25rem;
 }
 
 .basis-2 {
   -ms-flex-preferred-size: 0.5rem;
-      flex-basis: 0.5rem;
+  flex-basis: 0.5rem;
 }
 
 .basis-3 {
   -ms-flex-preferred-size: 0.75rem;
-      flex-basis: 0.75rem;
+  flex-basis: 0.75rem;
 }
 
 .basis-4 {
   -ms-flex-preferred-size: 1rem;
-      flex-basis: 1rem;
+  flex-basis: 1rem;
 }
 
 .basis-5 {
   -ms-flex-preferred-size: 1.25rem;
-      flex-basis: 1.25rem;
+  flex-basis: 1.25rem;
 }
 
 .basis-6 {
   -ms-flex-preferred-size: 1.5rem;
-      flex-basis: 1.5rem;
+  flex-basis: 1.5rem;
 }
 
 .basis-7 {
   -ms-flex-preferred-size: 1.75rem;
-      flex-basis: 1.75rem;
+  flex-basis: 1.75rem;
 }
 
 .basis-8 {
   -ms-flex-preferred-size: 2rem;
-      flex-basis: 2rem;
+  flex-basis: 2rem;
 }
 
 .basis-9 {
   -ms-flex-preferred-size: 2.25rem;
-      flex-basis: 2.25rem;
+  flex-basis: 2.25rem;
 }
 
 .basis-10 {
   -ms-flex-preferred-size: 2.5rem;
-      flex-basis: 2.5rem;
+  flex-basis: 2.5rem;
 }
 
 .basis-11 {
   -ms-flex-preferred-size: 2.75rem;
-      flex-basis: 2.75rem;
+  flex-basis: 2.75rem;
 }
 
 .basis-12 {
   -ms-flex-preferred-size: 3rem;
-      flex-basis: 3rem;
+  flex-basis: 3rem;
 }
 
 .basis-14 {
   -ms-flex-preferred-size: 3.5rem;
-      flex-basis: 3.5rem;
+  flex-basis: 3.5rem;
 }
 
 .basis-16 {
   -ms-flex-preferred-size: 4rem;
-      flex-basis: 4rem;
+  flex-basis: 4rem;
 }
 
 .basis-20 {
   -ms-flex-preferred-size: 5rem;
-      flex-basis: 5rem;
+  flex-basis: 5rem;
 }
 
 .basis-24 {
   -ms-flex-preferred-size: 6rem;
-      flex-basis: 6rem;
+  flex-basis: 6rem;
 }
 
 .basis-28 {
   -ms-flex-preferred-size: 7rem;
-      flex-basis: 7rem;
+  flex-basis: 7rem;
 }
 
 .basis-32 {
   -ms-flex-preferred-size: 8rem;
-      flex-basis: 8rem;
+  flex-basis: 8rem;
 }
 
 .basis-36 {
   -ms-flex-preferred-size: 9rem;
-      flex-basis: 9rem;
+  flex-basis: 9rem;
 }
 
 .basis-40 {
   -ms-flex-preferred-size: 10rem;
-      flex-basis: 10rem;
+  flex-basis: 10rem;
 }
 
 .basis-44 {
   -ms-flex-preferred-size: 11rem;
-      flex-basis: 11rem;
+  flex-basis: 11rem;
 }
 
 .basis-48 {
   -ms-flex-preferred-size: 12rem;
-      flex-basis: 12rem;
+  flex-basis: 12rem;
 }
 
 .basis-52 {
   -ms-flex-preferred-size: 13rem;
-      flex-basis: 13rem;
+  flex-basis: 13rem;
 }
 
 .basis-56 {
   -ms-flex-preferred-size: 14rem;
-      flex-basis: 14rem;
+  flex-basis: 14rem;
 }
 
 .basis-60 {
   -ms-flex-preferred-size: 15rem;
-      flex-basis: 15rem;
+  flex-basis: 15rem;
 }
 
 .basis-64 {
   -ms-flex-preferred-size: 16rem;
-      flex-basis: 16rem;
+  flex-basis: 16rem;
 }
 
 .basis-72 {
   -ms-flex-preferred-size: 18rem;
-      flex-basis: 18rem;
+  flex-basis: 18rem;
 }
 
 .basis-80 {
   -ms-flex-preferred-size: 20rem;
-      flex-basis: 20rem;
+  flex-basis: 20rem;
 }
 
 .basis-96 {
   -ms-flex-preferred-size: 24rem;
-      flex-basis: 24rem;
+  flex-basis: 24rem;
 }
 
 .basis-auto {
   -ms-flex-preferred-size: auto;
-      flex-basis: auto;
+  flex-basis: auto;
 }
 
 .basis-px {
   -ms-flex-preferred-size: 1px;
-      flex-basis: 1px;
+  flex-basis: 1px;
 }
 
 .basis-0-5 {
   -ms-flex-preferred-size: 0.125rem;
-      flex-basis: 0.125rem;
+  flex-basis: 0.125rem;
 }
 
 .basis-1-5 {
   -ms-flex-preferred-size: 0.375rem;
-      flex-basis: 0.375rem;
+  flex-basis: 0.375rem;
 }
 
 .basis-2-5 {
   -ms-flex-preferred-size: 0.625rem;
-      flex-basis: 0.625rem;
+  flex-basis: 0.625rem;
 }
 
 .basis-3-5 {
   -ms-flex-preferred-size: 0.875rem;
-      flex-basis: 0.875rem;
+  flex-basis: 0.875rem;
 }
 
 .basis-1-2 {
   -ms-flex-preferred-size: 50%;
-      flex-basis: 50%;
+  flex-basis: 50%;
 }
 
 .basis-1-3 {
   -ms-flex-preferred-size: 33.333333%;
-      flex-basis: 33.333333%;
+  flex-basis: 33.333333%;
 }
 
 .basis-2-3 {
   -ms-flex-preferred-size: 66.666667%;
-      flex-basis: 66.666667%;
+  flex-basis: 66.666667%;
 }
 
 .basis-1-4 {
   -ms-flex-preferred-size: 25%;
-      flex-basis: 25%;
+  flex-basis: 25%;
 }
 
 .basis-2-4 {
   -ms-flex-preferred-size: 50%;
-      flex-basis: 50%;
+  flex-basis: 50%;
 }
 
 .basis-3-4 {
   -ms-flex-preferred-size: 75%;
-      flex-basis: 75%;
+  flex-basis: 75%;
 }
 
 .basis-1-5 {
   -ms-flex-preferred-size: 20%;
-      flex-basis: 20%;
+  flex-basis: 20%;
 }
 
 .basis-2-5 {
   -ms-flex-preferred-size: 40%;
-      flex-basis: 40%;
+  flex-basis: 40%;
 }
 
 .basis-3-5 {
   -ms-flex-preferred-size: 60%;
-      flex-basis: 60%;
+  flex-basis: 60%;
 }
 
 .basis-4-5 {
   -ms-flex-preferred-size: 80%;
-      flex-basis: 80%;
+  flex-basis: 80%;
 }
 
 .basis-1-6 {
   -ms-flex-preferred-size: 16.666667%;
-      flex-basis: 16.666667%;
+  flex-basis: 16.666667%;
 }
 
 .basis-2-6 {
   -ms-flex-preferred-size: 33.333333%;
-      flex-basis: 33.333333%;
+  flex-basis: 33.333333%;
 }
 
 .basis-3-6 {
   -ms-flex-preferred-size: 50%;
-      flex-basis: 50%;
+  flex-basis: 50%;
 }
 
 .basis-4-6 {
   -ms-flex-preferred-size: 66.666667%;
-      flex-basis: 66.666667%;
+  flex-basis: 66.666667%;
 }
 
 .basis-5-6 {
   -ms-flex-preferred-size: 83.333333%;
-      flex-basis: 83.333333%;
+  flex-basis: 83.333333%;
 }
 
 .basis-1-12 {
   -ms-flex-preferred-size: 8.333333%;
-      flex-basis: 8.333333%;
+  flex-basis: 8.333333%;
 }
 
 .basis-2-12 {
   -ms-flex-preferred-size: 16.666667%;
-      flex-basis: 16.666667%;
+  flex-basis: 16.666667%;
 }
 
 .basis-3-12 {
   -ms-flex-preferred-size: 25%;
-      flex-basis: 25%;
+  flex-basis: 25%;
 }
 
 .basis-4-12 {
   -ms-flex-preferred-size: 33.333333%;
-      flex-basis: 33.333333%;
+  flex-basis: 33.333333%;
 }
 
 .basis-5-12 {
   -ms-flex-preferred-size: 41.666667%;
-      flex-basis: 41.666667%;
+  flex-basis: 41.666667%;
 }
 
 .basis-6-12 {
   -ms-flex-preferred-size: 50%;
-      flex-basis: 50%;
+  flex-basis: 50%;
 }
 
 .basis-7-12 {
   -ms-flex-preferred-size: 58.333333%;
-      flex-basis: 58.333333%;
+  flex-basis: 58.333333%;
 }
 
 .basis-8-12 {
   -ms-flex-preferred-size: 66.666667%;
-      flex-basis: 66.666667%;
+  flex-basis: 66.666667%;
 }
 
 .basis-9-12 {
   -ms-flex-preferred-size: 75%;
-      flex-basis: 75%;
+  flex-basis: 75%;
 }
 
 .basis-10-12 {
   -ms-flex-preferred-size: 83.333333%;
-      flex-basis: 83.333333%;
+  flex-basis: 83.333333%;
 }
 
 .basis-11-12 {
   -ms-flex-preferred-size: 91.666667%;
-      flex-basis: 91.666667%;
+  flex-basis: 91.666667%;
 }
 
 .basis-full {
   -ms-flex-preferred-size: 100%;
-      flex-basis: 100%;
+  flex-basis: 100%;
 }
 
 .breakpoint-s::before {
@@ -2504,92 +2521,92 @@ Licensed under MIT (github.com/DReece-dev/slushii)
 
 .text-decoration-style-solid {
   -webkit-text-decoration-style: solid !important;
-          text-decoration-style: solid !important;
+  text-decoration-style: solid !important;
 }
 
 .text-decoration-style-double {
   -webkit-text-decoration-style: double !important;
-          text-decoration-style: double !important;
+  text-decoration-style: double !important;
 }
 
 .text-decoration-style-dotted {
   -webkit-text-decoration-style: dotted !important;
-          text-decoration-style: dotted !important;
+  text-decoration-style: dotted !important;
 }
 
 .text-decoration-style-dashed {
   -webkit-text-decoration-style: dashed !important;
-          text-decoration-style: dashed !important;
+  text-decoration-style: dashed !important;
 }
 
 .text-decoration-style-wavy {
   -webkit-text-decoration-style: wavy !important;
-          text-decoration-style: wavy !important;
+  text-decoration-style: wavy !important;
 }
 
 .decoration-black {
   -webkit-text-decoration-color: var(--black) !important;
-          text-decoration-color: var(--black) !important;
+  text-decoration-color: var(--black) !important;
 }
 
 .decoration-white {
   -webkit-text-decoration-color: var(--white) !important;
-          text-decoration-color: var(--white) !important;
+  text-decoration-color: var(--white) !important;
 }
 
 .decoration-light {
   -webkit-text-decoration-color: var(--light) !important;
-          text-decoration-color: var(--light) !important;
+  text-decoration-color: var(--light) !important;
 }
 
 .decoration-dark {
   -webkit-text-decoration-color: var(--dark) !important;
-          text-decoration-color: var(--dark) !important;
+  text-decoration-color: var(--dark) !important;
 }
 
 .decoration-blue {
   -webkit-text-decoration-color: var(--blue) !important;
-          text-decoration-color: var(--blue) !important;
+  text-decoration-color: var(--blue) !important;
 }
 
 .decoration-indigo {
   -webkit-text-decoration-color: var(--indigo) !important;
-          text-decoration-color: var(--indigo) !important;
+  text-decoration-color: var(--indigo) !important;
 }
 
 .decoration-puple {
   -webkit-text-decoration-color: var(--purple) !important;
-          text-decoration-color: var(--purple) !important;
+  text-decoration-color: var(--purple) !important;
 }
 
 .decoration-red {
   -webkit-text-decoration-color: var(--red) !important;
-          text-decoration-color: var(--red) !important;
+  text-decoration-color: var(--red) !important;
 }
 
 .decoration-orange {
   -webkit-text-decoration-color: var(--orange-400) !important;
-          text-decoration-color: var(--orange-400) !important;
+  text-decoration-color: var(--orange-400) !important;
 }
 
 .decoration-yellow {
   -webkit-text-decoration-color: var(--yellow) !important;
-          text-decoration-color: var(--yellow) !important;
+  text-decoration-color: var(--yellow) !important;
 }
 
 .decoration-green {
   -webkit-text-decoration-color: var(--green) !important;
-          text-decoration-color: var(--green) !important;
+  text-decoration-color: var(--green) !important;
 }
 
 .decoration-cyan {
   -webkit-text-decoration-color: var(--cyan) !important;
-          text-decoration-color: var(--cyan) !important;
+  text-decoration-color: var(--cyan) !important;
 }
 
 .decoration-light-gray {
   -webkit-text-decoration-color: var(--lightgray) !important;
-          text-decoration-color: var(--lightgray) !important;
+  text-decoration-color: var(--lightgray) !important;
 }
 
 .text-extra-letter-spacing {
@@ -2612,31 +2629,39 @@ Licensed under MIT (github.com/DReece-dev/slushii)
   text-align: justify;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print,
+screen and (min-width: 40em) {
   .medium-text-left {
     text-align: left;
   }
+
   .medium-text-right {
     text-align: right;
   }
+
   .medium-text-center {
     text-align: center;
   }
+
   .medium-text-justify {
     text-align: justify;
   }
 }
 
-@media print, screen and (min-width: 64em) {
+@media print,
+screen and (min-width: 64em) {
   .large-text-left {
     text-align: left;
   }
+
   .large-text-right {
     text-align: right;
   }
+
   .large-text-center {
     text-align: center;
   }
+
   .large-text-justify {
     text-align: justify;
   }
@@ -2786,19 +2811,19 @@ Licensed under MIT (github.com/DReece-dev/slushii)
   justify-content: space-around;
 }
 
-.align-left.vertical.menu > li > a {
+.align-left.vertical.menu>li>a {
   -webkit-box-pack: start;
   -ms-flex-pack: start;
   justify-content: flex-start;
 }
 
-.align-right.vertical.menu > li > a {
+.align-right.vertical.menu>li>a {
   -webkit-box-pack: end;
   -ms-flex-pack: end;
   justify-content: flex-end;
 }
 
-.align-center.vertical.menu > li > a {
+.align-center.vertical.menu>li>a {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
@@ -2891,50 +2916,50 @@ Licensed under MIT (github.com/DReece-dev/slushii)
 
 .order-first {
   -webkit-box-ordinal-group: 0 !important;
-      -ms-flex-order: -1 !important;
-          order: -1 !important;
+  -ms-flex-order: -1 !important;
+  order: -1 !important;
 }
 
 .order-0 {
   -webkit-box-ordinal-group: 1 !important;
-      -ms-flex-order: 0 !important;
-          order: 0 !important;
+  -ms-flex-order: 0 !important;
+  order: 0 !important;
 }
 
 .order-1 {
   -webkit-box-ordinal-group: 2 !important;
-      -ms-flex-order: 1 !important;
-          order: 1 !important;
+  -ms-flex-order: 1 !important;
+  order: 1 !important;
 }
 
 .order-2 {
   -webkit-box-ordinal-group: 3 !important;
-      -ms-flex-order: 2 !important;
-          order: 2 !important;
+  -ms-flex-order: 2 !important;
+  order: 2 !important;
 }
 
 .order-3 {
   -webkit-box-ordinal-group: 4 !important;
-      -ms-flex-order: 3 !important;
-          order: 3 !important;
+  -ms-flex-order: 3 !important;
+  order: 3 !important;
 }
 
 .order-4 {
   -webkit-box-ordinal-group: 5 !important;
-      -ms-flex-order: 4 !important;
-          order: 4 !important;
+  -ms-flex-order: 4 !important;
+  order: 4 !important;
 }
 
 .order-5 {
   -webkit-box-ordinal-group: 6 !important;
-      -ms-flex-order: 5 !important;
-          order: 5 !important;
+  -ms-flex-order: 5 !important;
+  order: 5 !important;
 }
 
 .order-last {
   -webkit-box-ordinal-group: 7 !important;
-      -ms-flex-order: 6 !important;
-          order: 6 !important;
+  -ms-flex-order: 6 !important;
+  order: 6 !important;
 }
 
 .position-static {
@@ -3078,45 +3103,58 @@ Licensed under MIT (github.com/DReece-dev/slushii)
   .is-size-1-mobile {
     font-size: 3rem !important;
   }
+
   .is-size-2-mobile {
     font-size: 2.5rem !important;
   }
+
   .is-size-3-mobile {
     font-size: 2rem !important;
   }
+
   .is-size-4-mobile {
     font-size: 1.5rem !important;
   }
+
   .is-size-5-mobile {
     font-size: 1.25rem !important;
   }
+
   .is-size-6-mobile {
     font-size: 1rem !important;
   }
+
   .is-size-7-mobile {
     font-size: 0.75rem !important;
   }
 }
 
-@media screen and (min-width: 769px), print {
+@media screen and (min-width: 769px),
+print {
   .is-size-1-tablet {
     font-size: 3rem !important;
   }
+
   .is-size-2-tablet {
     font-size: 2.5rem !important;
   }
+
   .is-size-3-tablet {
     font-size: 2rem !important;
   }
+
   .is-size-4-tablet {
     font-size: 1.5rem !important;
   }
+
   .is-size-5-tablet {
     font-size: 1.25rem !important;
   }
+
   .is-size-6-tablet {
     font-size: 1rem !important;
   }
+
   .is-size-7-tablet {
     font-size: 0.75rem !important;
   }
@@ -3126,21 +3164,27 @@ Licensed under MIT (github.com/DReece-dev/slushii)
   .is-size-1-touch {
     font-size: 3rem !important;
   }
+
   .is-size-2-touch {
     font-size: 2.5rem !important;
   }
+
   .is-size-3-touch {
     font-size: 2rem !important;
   }
+
   .is-size-4-touch {
     font-size: 1.5rem !important;
   }
+
   .is-size-5-touch {
     font-size: 1.25rem !important;
   }
+
   .is-size-6-touch {
     font-size: 1rem !important;
   }
+
   .is-size-7-touch {
     font-size: 0.75rem !important;
   }
@@ -3150,21 +3194,27 @@ Licensed under MIT (github.com/DReece-dev/slushii)
   .is-size-1-desktop {
     font-size: 3rem !important;
   }
+
   .is-size-2-desktop {
     font-size: 2.5rem !important;
   }
+
   .is-size-3-desktop {
     font-size: 2rem !important;
   }
+
   .is-size-4-desktop {
     font-size: 1.5rem !important;
   }
+
   .is-size-5-desktop {
     font-size: 1.25rem !important;
   }
+
   .is-size-6-desktop {
     font-size: 1rem !important;
   }
+
   .is-size-7-desktop {
     font-size: 0.75rem !important;
   }
@@ -3174,21 +3224,27 @@ Licensed under MIT (github.com/DReece-dev/slushii)
   .is-size-1-widescreen {
     font-size: 3rem !important;
   }
+
   .is-size-2-widescreen {
     font-size: 2.5rem !important;
   }
+
   .is-size-3-widescreen {
     font-size: 2rem !important;
   }
+
   .is-size-4-widescreen {
     font-size: 1.5rem !important;
   }
+
   .is-size-5-widescreen {
     font-size: 1.25rem !important;
   }
+
   .is-size-6-widescreen {
     font-size: 1rem !important;
   }
+
   .is-size-7-widescreen {
     font-size: 0.75rem !important;
   }
@@ -3198,21 +3254,27 @@ Licensed under MIT (github.com/DReece-dev/slushii)
   .is-size-1-fullhd {
     font-size: 3rem !important;
   }
+
   .is-size-2-fullhd {
     font-size: 2.5rem !important;
   }
+
   .is-size-3-fullhd {
     font-size: 2rem !important;
   }
+
   .is-size-4-fullhd {
     font-size: 1.5rem !important;
   }
+
   .is-size-5-fullhd {
     font-size: 1.25rem !important;
   }
+
   .is-size-6-fullhd {
     font-size: 1rem !important;
   }
+
   .is-size-7-fullhd {
     font-size: 0.75rem !important;
   }
@@ -6471,472 +6533,472 @@ Licensed under MIT (github.com/DReece-dev/slushii)
 
 .backdrop-blur-none {
   -webkit-backdrop-filter: blur(0);
-          backdrop-filter: blur(0);
+  backdrop-filter: blur(0);
 }
 
 .backdrop-blur-sm {
   -webkit-backdrop-filter: blur(4px);
-          backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
 }
 
 .backdrop-blur {
   -webkit-backdrop-filter: blur(8px);
-          backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
 }
 
 .backdrop-blur-md {
   -webkit-backdrop-filter: blur(12px);
-          backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
 }
 
 .backdrop-blur-lg {
   -webkit-backdrop-filter: blur(16px);
-          backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
 }
 
 .backdrop-blur-xl {
   -webkit-backdrop-filter: blur(24px);
-          backdrop-filter: blur(24px);
+  backdrop-filter: blur(24px);
 }
 
 .backdrop-blur-2xl {
   -webkit-backdrop-filter: blur(40px);
-          backdrop-filter: blur(40px);
+  backdrop-filter: blur(40px);
 }
 
 .backdrop-blur-3xl {
   -webkit-backdrop-filter: blur(64px);
-          backdrop-filter: blur(64px);
+  backdrop-filter: blur(64px);
 }
 
 .backdrop-brightness-0 {
   -webkit-backdrop-filter: brightness(0);
-          backdrop-filter: brightness(0);
+  backdrop-filter: brightness(0);
 }
 
 .backdrop-brightness-50 {
   -webkit-backdrop-filter: brightness(0.5);
-          backdrop-filter: brightness(0.5);
+  backdrop-filter: brightness(0.5);
 }
 
 .backdrop-brightness-75 {
   -webkit-backdrop-filter: brightness(0.75);
-          backdrop-filter: brightness(0.75);
+  backdrop-filter: brightness(0.75);
 }
 
 .backdrop-brightness-90 {
   -webkit-backdrop-filter: brightness(0.9);
-          backdrop-filter: brightness(0.9);
+  backdrop-filter: brightness(0.9);
 }
 
 .backdrop-brightness-95 {
   -webkit-backdrop-filter: brightness(0.95);
-          backdrop-filter: brightness(0.95);
+  backdrop-filter: brightness(0.95);
 }
 
 .backdrop-brightness-100 {
   -webkit-backdrop-filter: brightness(1);
-          backdrop-filter: brightness(1);
+  backdrop-filter: brightness(1);
 }
 
 .backdrop-brightness-105 {
   -webkit-backdrop-filter: brightness(1.05);
-          backdrop-filter: brightness(1.05);
+  backdrop-filter: brightness(1.05);
 }
 
 .backdrop-brightness-110 {
   -webkit-backdrop-filter: brightness(1.1);
-          backdrop-filter: brightness(1.1);
+  backdrop-filter: brightness(1.1);
 }
 
 .backdrop-brightness-125 {
   -webkit-backdrop-filter: brightness(1.25);
-          backdrop-filter: brightness(1.25);
+  backdrop-filter: brightness(1.25);
 }
 
 .backdrop-brightness-150 {
   -webkit-backdrop-filter: brightness(1.5);
-          backdrop-filter: brightness(1.5);
+  backdrop-filter: brightness(1.5);
 }
 
 .backdrop-brightness-200 {
   -webkit-backdrop-filter: brightness(2);
-          backdrop-filter: brightness(2);
+  backdrop-filter: brightness(2);
 }
 
 .backdrop-contrast-0 {
   -webkit-backdrop-filter: contrast(0);
-          backdrop-filter: contrast(0);
+  backdrop-filter: contrast(0);
 }
 
 .backdrop-contrast-50 {
   -webkit-backdrop-filter: contrast(0.5);
-          backdrop-filter: contrast(0.5);
+  backdrop-filter: contrast(0.5);
 }
 
 .backdrop-contrast-75 {
   -webkit-backdrop-filter: contrast(0.75);
-          backdrop-filter: contrast(0.75);
+  backdrop-filter: contrast(0.75);
 }
 
 .backdrop-contrast-100 {
   -webkit-backdrop-filter: contrast(1);
-          backdrop-filter: contrast(1);
+  backdrop-filter: contrast(1);
 }
 
 .backdrop-contrast-125 {
   -webkit-backdrop-filter: contrast(1.25);
-          backdrop-filter: contrast(1.25);
+  backdrop-filter: contrast(1.25);
 }
 
 .backdrop-contrast-150 {
   -webkit-backdrop-filter: contrast(1.5);
-          backdrop-filter: contrast(1.5);
+  backdrop-filter: contrast(1.5);
 }
 
 .backdrop-contrast-200 {
   -webkit-backdrop-filter: contrast(2);
-          backdrop-filter: contrast(2);
+  backdrop-filter: contrast(2);
 }
 
 .backdrop-grayscale-0 {
   -webkit-backdrop-filter: grayscale(0);
-          backdrop-filter: grayscale(0);
+  backdrop-filter: grayscale(0);
 }
 
 .backdrop-grayscale {
   -webkit-backdrop-filter: grayscale(100%);
-          backdrop-filter: grayscale(100%);
+  backdrop-filter: grayscale(100%);
 }
 
 .backdrop-hue-rotate-0 {
   -webkit-backdrop-filter: hue-rotate(0deg);
-          backdrop-filter: hue-rotate(0deg);
+  backdrop-filter: hue-rotate(0deg);
 }
 
 .backdrop-hue-rotate-15 {
   -webkit-backdrop-filter: hue-rotate(15deg);
-          backdrop-filter: hue-rotate(15deg);
+  backdrop-filter: hue-rotate(15deg);
 }
 
 .backdrop-hue-rotate-30 {
   -webkit-backdrop-filter: hue-rotate(30deg);
-          backdrop-filter: hue-rotate(30deg);
+  backdrop-filter: hue-rotate(30deg);
 }
 
 .backdrop-hue-rotate-60 {
   -webkit-backdrop-filter: hue-rotate(60deg);
-          backdrop-filter: hue-rotate(60deg);
+  backdrop-filter: hue-rotate(60deg);
 }
 
 .backdrop-hue-rotate-90 {
   -webkit-backdrop-filter: hue-rotate(90deg);
-          backdrop-filter: hue-rotate(90deg);
+  backdrop-filter: hue-rotate(90deg);
 }
 
 .backdrop-hue-rotate-180 {
   -webkit-backdrop-filter: hue-rotate(180deg);
-          backdrop-filter: hue-rotate(180deg);
+  backdrop-filter: hue-rotate(180deg);
 }
 
 .backdrop-invert-0 {
   -webkit-backdrop-filter: invert(0);
-          backdrop-filter: invert(0);
+  backdrop-filter: invert(0);
 }
 
 .backdrop-invert {
   -webkit-backdrop-filter: invert(100%);
-          backdrop-filter: invert(100%);
+  backdrop-filter: invert(100%);
 }
 
 .backdrop-opacity-0 {
   -webkit-backdrop-filter: opacity(0);
-          backdrop-filter: opacity(0);
+  backdrop-filter: opacity(0);
 }
 
 .backdrop-opacity-5 {
   -webkit-backdrop-filter: opacity(0.05);
-          backdrop-filter: opacity(0.05);
+  backdrop-filter: opacity(0.05);
 }
 
 .backdrop-opacity-10 {
   -webkit-backdrop-filter: opacity(0.1);
-          backdrop-filter: opacity(0.1);
+  backdrop-filter: opacity(0.1);
 }
 
 .backdrop-opacity-20 {
   -webkit-backdrop-filter: opacity(0.2);
-          backdrop-filter: opacity(0.2);
+  backdrop-filter: opacity(0.2);
 }
 
 .backdrop-opacity-25 {
   -webkit-backdrop-filter: opacity(0.25);
-          backdrop-filter: opacity(0.25);
+  backdrop-filter: opacity(0.25);
 }
 
 .backdrop-opacity-30 {
   -webkit-backdrop-filter: opacity(0.3);
-          backdrop-filter: opacity(0.3);
+  backdrop-filter: opacity(0.3);
 }
 
 .backdrop-opacity-40 {
   -webkit-backdrop-filter: opacity(0.4);
-          backdrop-filter: opacity(0.4);
+  backdrop-filter: opacity(0.4);
 }
 
 .backdrop-opacity-50 {
   -webkit-backdrop-filter: opacity(0.5);
-          backdrop-filter: opacity(0.5);
+  backdrop-filter: opacity(0.5);
 }
 
 .backdrop-saturate-0 {
   -webkit-backdrop-filter: saturate(0);
-          backdrop-filter: saturate(0);
+  backdrop-filter: saturate(0);
 }
 
 .backdrop-saturate-50 {
   -webkit-backdrop-filter: saturate(0.5);
-          backdrop-filter: saturate(0.5);
+  backdrop-filter: saturate(0.5);
 }
 
 .backdrop-saturate-100 {
   -webkit-backdrop-filter: saturate(1);
-          backdrop-filter: saturate(1);
+  backdrop-filter: saturate(1);
 }
 
 .backdrop-saturate-150 {
   -webkit-backdrop-filter: saturate(1.5);
-          backdrop-filter: saturate(1.5);
+  backdrop-filter: saturate(1.5);
 }
 
 .backdrop-saturate-200 {
   -webkit-backdrop-filter: saturate(2);
-          backdrop-filter: saturate(2);
+  backdrop-filter: saturate(2);
 }
 
 .backdrop-sepia-0 {
   -webkit-backdrop-filter: sepia(0);
-          backdrop-filter: sepia(0);
+  backdrop-filter: sepia(0);
 }
 
 .backdrop-sepia {
   -webkit-backdrop-filter: sepia(100%);
-          backdrop-filter: sepia(100%);
+  backdrop-filter: sepia(100%);
 }
 
 .blur-none {
   -webkit-filter: blur(0);
-          filter: blur(0);
+  filter: blur(0);
 }
 
 .blur-sm {
   -webkit-filter: blur(4px);
-          filter: blur(4px);
+  filter: blur(4px);
 }
 
 .blur {
   -webkit-filter: blur(8px);
-          filter: blur(8px);
+  filter: blur(8px);
 }
 
 .blur-md {
   -webkit-filter: blur(12px);
-          filter: blur(12px);
+  filter: blur(12px);
 }
 
 .blur-lg {
   -webkit-filter: blur(16px);
-          filter: blur(16px);
+  filter: blur(16px);
 }
 
 .blur-xl {
   -webkit-filter: blur(24px);
-          filter: blur(24px);
+  filter: blur(24px);
 }
 
 .blur-2xl {
   -webkit-filter: blur(40px);
-          filter: blur(40px);
+  filter: blur(40px);
 }
 
 .blur-3xl {
   -webkit-filter: blur(64px);
-          filter: blur(64px);
+  filter: blur(64px);
 }
 
 .brightness-0 {
   -webkit-filter: brightness(0);
-          filter: brightness(0);
+  filter: brightness(0);
 }
 
 .brightness-50 {
   -webkit-filter: brightness(0.5);
-          filter: brightness(0.5);
+  filter: brightness(0.5);
 }
 
 .brightness-75 {
   -webkit-filter: brightness(0.75);
-          filter: brightness(0.75);
+  filter: brightness(0.75);
 }
 
 .brightness-90 {
   -webkit-filter: brightness(0.9);
-          filter: brightness(0.9);
+  filter: brightness(0.9);
 }
 
 .brightness-95 {
   -webkit-filter: brightness(0.95);
-          filter: brightness(0.95);
+  filter: brightness(0.95);
 }
 
 .brightness-100 {
   -webkit-filter: brightness(1);
-          filter: brightness(1);
+  filter: brightness(1);
 }
 
 .brightness-105 {
   -webkit-filter: brightness(1.05);
-          filter: brightness(1.05);
+  filter: brightness(1.05);
 }
 
 .brightness-110 {
   -webkit-filter: brightness(1.1);
-          filter: brightness(1.1);
+  filter: brightness(1.1);
 }
 
 .brightness-125 {
   -webkit-filter: brightness(1.25);
-          filter: brightness(1.25);
+  filter: brightness(1.25);
 }
 
 .brightness-150 {
   -webkit-filter: brightness(1.5);
-          filter: brightness(1.5);
+  filter: brightness(1.5);
 }
 
 .brightness-200 {
   -webkit-filter: brightness(2);
-          filter: brightness(2);
+  filter: brightness(2);
 }
 
 .contrast-0 {
   -webkit-filter: contrast(0);
-          filter: contrast(0);
+  filter: contrast(0);
 }
 
 .contrast-50 {
   -webkit-filter: contrast(0.5);
-          filter: contrast(0.5);
+  filter: contrast(0.5);
 }
 
 .contrast-75 {
   -webkit-filter: contrast(0.75);
-          filter: contrast(0.75);
+  filter: contrast(0.75);
 }
 
 .contrast-100 {
   -webkit-filter: contrast(1);
-          filter: contrast(1);
+  filter: contrast(1);
 }
 
 .contrast-125 {
   -webkit-filter: contrast(1.25);
-          filter: contrast(1.25);
+  filter: contrast(1.25);
 }
 
 .contrast-150 {
   -webkit-filter: contrast(1.5);
-          filter: contrast(1.5);
+  filter: contrast(1.5);
 }
 
 .contrast-200 {
   -webkit-filter: contrast(2);
-          filter: contrast(2);
+  filter: contrast(2);
 }
 
 .grayscale-0 {
   -webkit-filter: grayscale(0);
-          filter: grayscale(0);
+  filter: grayscale(0);
 }
 
 .grayscale {
   -webkit-filter: grayscale(100%);
-          filter: grayscale(100%);
+  filter: grayscale(100%);
 }
 
 .hue-rotate-0 {
   -webkit-filter: hue-rotate(0deg);
-          filter: hue-rotate(0deg);
+  filter: hue-rotate(0deg);
 }
 
 .hue-rotate-15 {
   -webkit-filter: hue-rotate(15deg);
-          filter: hue-rotate(15deg);
+  filter: hue-rotate(15deg);
 }
 
 .hue-rotate-30 {
   -webkit-filter: hue-rotate(30deg);
-          filter: hue-rotate(30deg);
+  filter: hue-rotate(30deg);
 }
 
 .hue-rotate-60 {
   -webkit-filter: hue-rotate(60deg);
-          filter: hue-rotate(60deg);
+  filter: hue-rotate(60deg);
 }
 
 .hue-rotate-90 {
   -webkit-filter: hue-rotate(90deg);
-          filter: hue-rotate(90deg);
+  filter: hue-rotate(90deg);
 }
 
 .hue-rotate-180 {
   -webkit-filter: hue-rotate(180deg);
-          filter: hue-rotate(180deg);
+  filter: hue-rotate(180deg);
 }
 
 .invert-0 {
   -webkit-filter: invert(0);
-          filter: invert(0);
+  filter: invert(0);
 }
 
 .invert {
   -webkit-filter: invert(100%);
-          filter: invert(100%);
+  filter: invert(100%);
 }
 
 .saturate-0 {
   -webkit-filter: saturate(0);
-          filter: saturate(0);
+  filter: saturate(0);
 }
 
 .saturate-50 {
   -webkit-filter: saturate(0.5);
-          filter: saturate(0.5);
+  filter: saturate(0.5);
 }
 
 .saturate-100 {
   -webkit-filter: saturate(1);
-          filter: saturate(1);
+  filter: saturate(1);
 }
 
 .saturate-150 {
   -webkit-filter: saturate(1.5);
-          filter: saturate(1.5);
+  filter: saturate(1.5);
 }
 
 .saturate-200 {
   -webkit-filter: saturate(2);
-          filter: saturate(2);
+  filter: saturate(2);
 }
 
 .sepia-0 {
   -webkit-filter: sepia(0);
-          filter: sepia(0);
+  filter: sepia(0);
 }
 
 .sepia {
   -webkit-filter: sepia(100%);
-          filter: sepia(100%);
+  filter: sepia(100%);
 }
 
 .rounded-none {
@@ -7738,27 +7800,35 @@ Licensed under MIT (github.com/DReece-dev/slushii)
   .overflow-sm-hidden {
     overflow: hidden !important;
   }
+
   .overflow-x-sm-hidden {
     overflow-x: hidden !important;
   }
+
   .overflow-y-sm-hidden {
     overflow-y: hidden !important;
   }
+
   .overflow-sm-auto {
     overflow: auto !important;
   }
+
   .overflow-x-sm-auto {
     overflow-x: auto !important;
   }
+
   .overflow-y-sm-auto {
     overflow-y: auto !important;
   }
+
   .overflow-sm-scroll {
     overflow: scroll !important;
   }
+
   .overflow-x-sm-scroll {
     overflow-x: scroll !important;
   }
+
   .overflow-y-sm-scroll {
     overflow-y: scroll !important;
   }
@@ -7768,27 +7838,35 @@ Licensed under MIT (github.com/DReece-dev/slushii)
   .overflow-md-hidden {
     overflow: hidden !important;
   }
+
   .overflow-x-md-hidden {
     overflow-x: hidden !important;
   }
+
   .overflow-y-md-hidden {
     overflow-y: hidden !important;
   }
+
   .overflow-md-auto {
     overflow: auto !important;
   }
+
   .overflow-x-md-auto {
     overflow-x: auto !important;
   }
+
   .overflow-y-md-auto {
     overflow-y: auto !important;
   }
+
   .overflow-md-scroll {
     overflow: scroll !important;
   }
+
   .overflow-x-md-scroll {
     overflow-x: scroll !important;
   }
+
   .overflow-y-md-scroll {
     overflow-y: scroll !important;
   }
@@ -7798,27 +7876,35 @@ Licensed under MIT (github.com/DReece-dev/slushii)
   .overflow-lg-hidden {
     overflow: hidden !important;
   }
+
   .overflow-x-lg-hidden {
     overflow-x: hidden !important;
   }
+
   .overflow-y-lg-hidden {
     overflow-y: hidden !important;
   }
+
   .overflow-lg-auto {
     overflow: auto !important;
   }
+
   .overflow-x-lg-auto {
     overflow-x: auto !important;
   }
+
   .overflow-y-lg-auto {
     overflow-y: auto !important;
   }
+
   .overflow-lg-scroll {
     overflow: scroll !important;
   }
+
   .overflow-x-lg-scroll {
     overflow-x: scroll !important;
   }
+
   .overflow-y-lg-scroll {
     overflow-y: scroll !important;
   }
@@ -7828,27 +7914,35 @@ Licensed under MIT (github.com/DReece-dev/slushii)
   .overflow-xl-hidden {
     overflow: hidden !important;
   }
+
   .overflow-x-xl-hidden {
     overflow-x: hidden !important;
   }
+
   .overflow-y-xl-hidden {
     overflow-y: hidden !important;
   }
+
   .overflow-xl-auto {
     overflow: auto !important;
   }
+
   .overflow-x-xl-auto {
     overflow-x: auto !important;
   }
+
   .overflow-y-xl-auto {
     overflow-y: auto !important;
   }
+
   .overflow-xl-scroll {
     overflow: scroll !important;
   }
+
   .overflow-x-xl-scroll {
     overflow-x: scroll !important;
   }
+
   .overflow-y-xl-scroll {
     overflow-y: scroll !important;
   }
@@ -7926,24 +8020,31 @@ Licensed under MIT (github.com/DReece-dev/slushii)
   .z-sm-0 {
     z-index: 0 !important;
   }
+
   .z-sm-1 {
     z-index: 1 !important;
   }
+
   .z-sm-10 {
     z-index: 10 !important;
   }
+
   .z-sm-20 {
     z-index: 20 !important;
   }
+
   .z-sm-30 {
     z-index: 30 !important;
   }
+
   .z-sm-40 {
     z-index: 40 !important;
   }
+
   .z-sm-50 {
     z-index: 50 !important;
   }
+
   .z-sm-auto {
     z-index: auto !important;
   }
@@ -7953,24 +8054,31 @@ Licensed under MIT (github.com/DReece-dev/slushii)
   .z-md-0 {
     z-index: 0 !important;
   }
+
   .z-md-1 {
     z-index: 1 !important;
   }
+
   .z-md-10 {
     z-index: 10 !important;
   }
+
   .z-md-20 {
     z-index: 20 !important;
   }
+
   .z-md-30 {
     z-index: 30 !important;
   }
+
   .z-md-40 {
     z-index: 40 !important;
   }
+
   .z-md-50 {
     z-index: 50 !important;
   }
+
   .z-md-auto {
     z-index: auto !important;
   }
@@ -7980,24 +8088,31 @@ Licensed under MIT (github.com/DReece-dev/slushii)
   .z-lg-0 {
     z-index: 0 !important;
   }
+
   .z-lg-1 {
     z-index: 1 !important;
   }
+
   .z-lg-10 {
     z-index: 10 !important;
   }
+
   .z-lg-20 {
     z-index: 20 !important;
   }
+
   .z-lg-30 {
     z-index: 30 !important;
   }
+
   .z-lg-40 {
     z-index: 40 !important;
   }
+
   .z-lg-50 {
     z-index: 50 !important;
   }
+
   .z-lg-auto {
     z-index: auto !important;
   }
@@ -8007,24 +8122,31 @@ Licensed under MIT (github.com/DReece-dev/slushii)
   .z-xl-0 {
     z-index: 0 !important;
   }
+
   .z-xl-1 {
     z-index: 1 !important;
   }
+
   .z-xl-10 {
     z-index: 10 !important;
   }
+
   .z-xl-20 {
     z-index: 20 !important;
   }
+
   .z-xl-30 {
     z-index: 30 !important;
   }
+
   .z-xl-40 {
     z-index: 40 !important;
   }
+
   .z-xl-50 {
     z-index: 50 !important;
   }
+
   .z-xl-auto {
     z-index: auto !important;
   }
@@ -8058,71 +8180,71 @@ Licensed under MIT (github.com/DReece-dev/slushii)
   -webkit-user-select: all !important;
   -moz-user-select: all !important;
   -ms-user-select: all !important;
-      user-select: all !important;
+  user-select: all !important;
 }
 
 .user-select-auto {
   -webkit-user-select: auto !important;
   -moz-user-select: auto !important;
   -ms-user-select: auto !important;
-      user-select: auto !important;
+  user-select: auto !important;
 }
 
 .user-select-none {
   -webkit-user-select: none !important;
   -moz-user-select: none !important;
   -ms-user-select: none !important;
-      user-select: none !important;
+  user-select: none !important;
 }
 
 .touch-auto {
   -ms-touch-action: auto;
-      touch-action: auto;
+  touch-action: auto;
 }
 
 .touch-none {
   -ms-touch-action: none;
-      touch-action: none;
+  touch-action: none;
 }
 
 .touch-pan-x {
   -ms-touch-action: pan-x;
-      touch-action: pan-x;
+  touch-action: pan-x;
 }
 
 .touch-pan-left {
   -ms-touch-action: pan-left;
-      touch-action: pan-left;
+  touch-action: pan-left;
 }
 
 .touch-pan-right {
   -ms-touch-action: pan-right;
-      touch-action: pan-right;
+  touch-action: pan-right;
 }
 
 .touch-pan-y {
   -ms-touch-action: pan-y;
-      touch-action: pan-y;
+  touch-action: pan-y;
 }
 
 .touch-pan-up {
   -ms-touch-action: pan-up;
-      touch-action: pan-up;
+  touch-action: pan-up;
 }
 
 .touch-pan-down {
   -ms-touch-action: pan-down;
-      touch-action: pan-down;
+  touch-action: pan-down;
 }
 
 .touch-pinch-zoom {
   -ms-touch-action: pinch-zoom;
-      touch-action: pinch-zoom;
+  touch-action: pinch-zoom;
 }
 
 .touch-manipulation {
   -ms-touch-action: manipulation;
-      touch-action: manipulation;
+  touch-action: manipulation;
 }
 
 .resize-none {
@@ -8143,47 +8265,47 @@ Licensed under MIT (github.com/DReece-dev/slushii)
 
 .shadow-none {
   -webkit-box-shadow: none !important;
-          box-shadow: none !important;
+  box-shadow: none !important;
 }
 
 .shadow {
   -webkit-box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.15) !important;
-          box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.15) !important;
+  box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.15) !important;
 }
 
 .shadow-sm {
   -webkit-box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.15) !important;
-          box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.15) !important;
+  box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.15) !important;
 }
 
 .shadow-lg {
   -webkit-box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.15) !important;
-          box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.15) !important;
+  box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.15) !important;
 }
 
 .animate-none {
   -webkit-animation: none;
-          animation: none;
+  animation: none;
 }
 
 .animate-spin {
   -webkit-animation: spin 1s linear infinite;
-          animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
 }
 
 .animate-ping {
   -webkit-animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
-          animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
 
 .animate-pulse {
   -webkit-animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-          animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
 .animate-bounce {
   -webkit-animation: bounce 1s infinite;
-          animation: bounce 1s infinite;
+  animation: bounce 1s infinite;
 }
 
 .transition-none {
@@ -8195,9 +8317,9 @@ Licensed under MIT (github.com/DReece-dev/slushii)
   -webkit-transition-property: all;
   transition-property: all;
   -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   -webkit-transition-duration: 150ms;
-          transition-duration: 150ms;
+  transition-duration: 150ms;
 }
 
 .transition {
@@ -8206,27 +8328,27 @@ Licensed under MIT (github.com/DReece-dev/slushii)
   transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
   transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, -webkit-box-shadow, -webkit-transform;
   -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   -webkit-transition-duration: 150ms;
-          transition-duration: 150ms;
+  transition-duration: 150ms;
 }
 
 .transition-colors {
   -webkit-transition-property: background-color, border-color, color, fill, stroke;
   transition-property: background-color, border-color, color, fill, stroke;
   -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   -webkit-transition-duration: 150ms;
-          transition-duration: 150ms;
+  transition-duration: 150ms;
 }
 
 .transition-opacity {
   -webkit-transition-property: opacity;
   transition-property: opacity;
   -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   -webkit-transition-duration: 150ms;
-          transition-duration: 150ms;
+  transition-duration: 150ms;
 }
 
 .transition-shadow {
@@ -8235,9 +8357,9 @@ Licensed under MIT (github.com/DReece-dev/slushii)
   transition-property: box-shadow;
   transition-property: box-shadow, -webkit-box-shadow;
   -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   -webkit-transition-duration: 150ms;
-          transition-duration: 150ms;
+  transition-duration: 150ms;
 }
 
 .transition-transform {
@@ -8246,219 +8368,219 @@ Licensed under MIT (github.com/DReece-dev/slushii)
   transition-property: transform;
   transition-property: transform, -webkit-transform;
   -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   -webkit-transition-duration: 150ms;
-          transition-duration: 150ms;
+  transition-duration: 150ms;
 }
 
 .ease-linear {
   -webkit-transition-timing-function: linear;
-          transition-timing-function: linear;
+  transition-timing-function: linear;
 }
 
 .ease-in {
   -webkit-transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
-          transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
 
 .ease-out {
   -webkit-transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
-          transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
 
 .ease-in-out {
   -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .duration-75 {
   -webkit-transition-duration: 75ms;
-          transition-duration: 75ms;
+  transition-duration: 75ms;
 }
 
 .duration-100 {
   -webkit-transition-duration: 100ms;
-          transition-duration: 100ms;
+  transition-duration: 100ms;
 }
 
 .duration-150 {
   -webkit-transition-duration: 150ms;
-          transition-duration: 150ms;
+  transition-duration: 150ms;
 }
 
 .duration-200 {
   -webkit-transition-duration: 200ms;
-          transition-duration: 200ms;
+  transition-duration: 200ms;
 }
 
 .duration-300 {
   -webkit-transition-duration: 300ms;
-          transition-duration: 300ms;
+  transition-duration: 300ms;
 }
 
 .duration-500 {
   -webkit-transition-duration: 500ms;
-          transition-duration: 500ms;
+  transition-duration: 500ms;
 }
 
 .duration-700 {
   -webkit-transition-duration: 700ms;
-          transition-duration: 700ms;
+  transition-duration: 700ms;
 }
 
 .duration-1000 {
   -webkit-transition-duration: 1000ms;
-          transition-duration: 1000ms;
+  transition-duration: 1000ms;
 }
 
 .delay-75 {
   -webkit-transition-delay: 75ms;
-          transition-delay: 75ms;
+  transition-delay: 75ms;
 }
 
 .delay-100 {
   -webkit-transition-delay: 100ms;
-          transition-delay: 100ms;
+  transition-delay: 100ms;
 }
 
 .delay-150 {
   -webkit-transition-delay: 150ms;
-          transition-delay: 150ms;
+  transition-delay: 150ms;
 }
 
 .delay-200 {
   -webkit-transition-delay: 200ms;
-          transition-delay: 200ms;
+  transition-delay: 200ms;
 }
 
 .delay-300 {
   -webkit-transition-delay: 300ms;
-          transition-delay: 300ms;
+  transition-delay: 300ms;
 }
 
 .delay-500 {
   -webkit-transition-delay: 500ms;
-          transition-delay: 500ms;
+  transition-delay: 500ms;
 }
 
 .delay-700 {
   -webkit-transition-delay: 700ms;
-          transition-delay: 700ms;
+  transition-delay: 700ms;
 }
 
 .delay-1000 {
   -webkit-transition-delay: 1000ms;
-          transition-delay: 1000ms;
+  transition-delay: 1000ms;
 }
 
 .transform-none {
   -webkit-transform: none;
-          transform: none;
+  transform: none;
 }
 
 .origin-center {
   -webkit-transform-origin: center;
-          transform-origin: center;
+  transform-origin: center;
 }
 
 .origin-top {
   -webkit-transform-origin: top;
-          transform-origin: top;
+  transform-origin: top;
 }
 
 .origin-top-right {
   -webkit-transform-origin: top right;
-          transform-origin: top right;
+  transform-origin: top right;
 }
 
 .origin-right {
   -webkit-transform-origin: right;
-          transform-origin: right;
+  transform-origin: right;
 }
 
 .origin-bottom-right {
   -webkit-transform-origin: bottom right;
-          transform-origin: bottom right;
+  transform-origin: bottom right;
 }
 
 .origin-bottom {
   -webkit-transform-origin: bottom;
-          transform-origin: bottom;
+  transform-origin: bottom;
 }
 
 .origin-bottom-left {
   -webkit-transform-origin: bottom left;
-          transform-origin: bottom left;
+  transform-origin: bottom left;
 }
 
 .origin-left {
   -webkit-transform-origin: left;
-          transform-origin: left;
+  transform-origin: left;
 }
 
 .origin-top-left {
   -webkit-transform-origin: top left;
-          transform-origin: top left;
+  transform-origin: top left;
 }
 
 .scroll-snap-type-none {
   -ms-scroll-snap-type: none;
-      scroll-snap-type: none;
+  scroll-snap-type: none;
 }
 
 .scroll-snap-type-x {
   -ms-scroll-snap-type: x;
-      scroll-snap-type: x;
+  scroll-snap-type: x;
 }
 
 .scroll-snap-type-y {
   -ms-scroll-snap-type: y;
-      scroll-snap-type: y;
+  scroll-snap-type: y;
 }
 
 .scroll-snape-type-black {
   -ms-scroll-snap-type: block;
-      scroll-snap-type: block;
+  scroll-snap-type: block;
 }
 
 .scroll-snap-type-inline {
   -ms-scroll-snap-type: inline;
-      scroll-snap-type: inline;
+  scroll-snap-type: inline;
 }
 
 .scroll-snap-type-both {
   -ms-scroll-snap-type: both;
-      scroll-snap-type: both;
+  scroll-snap-type: both;
 }
 
 .scroll-snap-type-xm {
   -ms-scroll-snap-type: x mandatory;
-      scroll-snap-type: x mandatory;
+  scroll-snap-type: x mandatory;
 }
 
 .scroll-snap-type-yp {
   -ms-scroll-snap-type: y proximity;
-      scroll-snap-type: y proximity;
+  scroll-snap-type: y proximity;
 }
 
 .scroll-snap-type-both-m {
   -ms-scroll-snap-type: both mandatory;
-      scroll-snap-type: both mandatory;
+  scroll-snap-type: both mandatory;
 }
 
 .scroll-snap-type-inherit {
   -ms-scroll-snap-type: inherit;
-      scroll-snap-type: inherit;
+  scroll-snap-type: inherit;
 }
 
 .scroll-snap-type-initial {
   -ms-scroll-snap-type: initial;
-      scroll-snap-type: initial;
+  scroll-snap-type: initial;
 }
 
 .scroll-snap-type-unset {
   -ms-scroll-snap-type: unset;
-      scroll-snap-type: unset;
+  scroll-snap-type: unset;
 }
 
 .snap-normal {
@@ -8640,27 +8762,27 @@ Licensed under MIT (github.com/DReece-dev/slushii)
 
 .perspective-xs {
   -webkit-perspective: 250px;
-          perspective: 250px;
+  perspective: 250px;
 }
 
 .perspective-sm {
   -webkit-perspective: 500px;
-          perspective: 500px;
+  perspective: 500px;
 }
 
 .perspective-md {
   -webkit-perspective: 1000px;
-          perspective: 1000px;
+  perspective: 1000px;
 }
 
 .perspective-lg {
   -webkit-perspective: 1500px;
-          perspective: 1500px;
+  perspective: 1500px;
 }
 
 .perspective-xl {
   -webkit-perspective: 3000px;
-          perspective: 3000px;
+  perspective: 3000px;
 }
 
 .place-self-auto {
@@ -8739,10 +8861,10 @@ Licensed under MIT (github.com/DReece-dev/slushii)
 
 .image-rendering-pixelated {
   -ms-interpolation-mode: nearest-neighbor;
-      image-rendering: -webkit-optimize-contrast;
-      image-rendering: -moz-crisp-edges;
-      image-rendering: -o-pixelated;
-      image-rendering: pixelated;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -o-pixelated;
+  image-rendering: pixelated;
 }
 
 /* Global values */
@@ -8876,30 +8998,30 @@ Licensed under MIT (github.com/DReece-dev/slushii)
 
 .select-none {
   -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .select-text {
   -webkit-user-select: text;
-     -moz-user-select: text;
-      -ms-user-select: text;
-          user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
 }
 
 .select-all {
   -webkit-user-select: all;
-     -moz-user-select: all;
-      -ms-user-select: all;
-          user-select: all;
+  -moz-user-select: all;
+  -ms-user-select: all;
+  user-select: all;
 }
 
 .select-auto {
   -webkit-user-select: auto;
-     -moz-user-select: auto;
-      -ms-user-select: auto;
-          user-select: auto;
+  -moz-user-select: auto;
+  -ms-user-select: auto;
+  user-select: auto;
 }
 
 .accent-auto {
@@ -8987,219 +9109,219 @@ Licensed under MIT (github.com/DReece-dev/slushii)
 }
 
 .caret-black {
-  caret-color: var(--black);
+  caret-color: var(--black) !important;
 }
 
 .caret-white {
-  caret-color: var(--white);
+  caret-color: var(--white) !important;
 }
 
 .caret-slate {
-  caret-color: var(--slate);
+  caret-color: var(--slate) !important;
 }
 
 .caret-slate-200 {
-  caret-color: var(--slate-200);
+  caret-color: var(--slate-200) !important;
 }
 
 .caret-slate-300 {
-  caret-color: var(--slate-300);
+  caret-color: var(--slate-300) !important;
 }
 
 .caret-slate-400 {
-  caret-color: var(--slate-400);
+  caret-color: var(--slate-400) !important;
 }
 
 .caret-slate-500 {
-  caret-color: var(--slate-500);
+  caret-color: var(--slate-500) !important;
 }
 
 .caret-slate-600 {
-  caret-color: var(--slate-600);
+  caret-color: var(--slate-600) !important;
 }
 
 .caret-slate-700 {
-  caret-color: var(--slate-700);
+  caret-color: var(--slate-700) !important;
 }
 
 .caret-slate-800 {
-  caret-color: var(--slate-800);
+  caret-color: var(--slate-800) !important;
 }
 
 .caret-blue {
-  caret-color: var(--blue);
+  caret-color: var(--blue) !important;
 }
 
 .caret-blue-400 {
-  caret-color: var(--blue-400);
+  caret-color: var(--blue-400) !important;
 }
 
 .caret-blue-500 {
-  caret-color: var(--blue-500);
+  caret-color: var(--blue-500) !important;
 }
 
 .caret-blue-600 {
-  caret-color: var(--blue-600);
+  caret-color: var(--blue-600) !important;
 }
 
 .caret-blue-700 {
-  caret-color: var(--blue-700);
+  caret-color: var(--blue-700) !important;
 }
 
 .caret-purple {
-  caret-color: var(--purple);
+  caret-color: var(--purple) !important;
 }
 
 .caret-purple-400 {
-  caret-color: var(--purple-400);
+  caret-color: var(--purple-400) !important;
 }
 
 .caret-purple-500 {
-  caret-color: var(--purple-500);
+  caret-color: var(--purple-500) !important;
 }
 
 .caret-purple-600 {
-  caret-color: var(--purple-600);
+  caret-color: var(--purple-600) !important;
 }
 
 .caret-purple-700 {
-  caret-color: var(--purple-700);
+  caret-color: var(--purple-700) !important;
 }
 
 .caret-pink {
-  caret-color: var(--pink);
+  caret-color: var(--pink) !important;
 }
 
 .caret-pink-400 {
-  caret-color: var(--pink-400);
+  caret-color: var(--pink-400) !important;
 }
 
 .caret-pink-500 {
-  caret-color: var(--pink-500);
+  caret-color: var(--pink-500) !important;
 }
 
 .caret-pink-600 {
-  caret-color: var(--pink-600);
+  caret-color: var(--pink-600) !important;
 }
 
 .caret-pink-700 {
-  caret-color: var(--pink-700);
+  caret-color: var(--pink-700) !important;
 }
 
 .caret-red {
-  caret-color: var(--red);
+  caret-color: var(--red) !important;
 }
 
 .caret-red-400 {
-  caret-color: var(--red-400);
+  caret-color: var(--red-400) !important;
 }
 
 .caret-red-500 {
-  caret-color: var(--red-500);
+  caret-color: var(--red-500) !important;
 }
 
 .caret-red-600 {
-  caret-color: var(--red-600);
+  caret-color: var(--red-600) !important;
 }
 
 .caret-orange {
-  caret-color: var(--orange);
+  caret-color: var(--orange) !important;
 }
 
 .caret-orange-400 {
-  caret-color: var(--orange-400);
+  caret-color: var(--orange-400) !important;
 }
 
 .caret-orange-500 {
-  caret-color: var(--orange-500);
+  caret-color: var(--orange-500) !important;
 }
 
 .caret-orange-600 {
-  caret-color: var(--orange-600);
+  caret-color: var(--orange-600) !important;
 }
 
 .caret-orange-700 {
-  caret-color: var(--orange-700);
+  caret-color: var(--orange-700) !important;
 }
 
 .caret-yellow {
-  caret-color: var(--yellow);
+  caret-color: var(--yellow) !important;
 }
 
 .caret-yellow-400 {
-  caret-color: var(--yellow-400);
+  caret-color: var(--yellow-400) !important;
 }
 
 .caret-yellow-500 {
-  caret-color: var(--yellow-500);
+  caret-color: var(--yellow-500) !important;
 }
 
 .caret-yellow-600 {
-  caret-color: var(--yellow-600);
+  caret-color: var(--yellow-600) !important;
 }
 
 .caret-yellow-700 {
-  caret-color: var(--yellow-700);
+  caret-color: var(--yellow-700) !important;
 }
 
 .caret-green {
-  caret-color: var(--green);
+  caret-color: var(--green) !important;
 }
 
 .caret-green-400 {
-  caret-color: var(--green-400);
+  caret-color: var(--green-400) !important;
 }
 
 .caret-green-500 {
-  caret-color: var(--green-500);
+  caret-color: var(--green-500) !important;
 }
 
 .caret-green-600 {
-  caret-color: var(--green-600);
+  caret-color: var(--green-600) !important;
 }
 
 .caret-green-700 {
-  caret-color: var(--green-700);
+  caret-color: var(--green-700) !important;
 }
 
 .caret-gray {
-  caret-color: var(--gray);
+  caret-color: var(--gray) !important;
 }
 
 .caret-gray-100 {
-  caret-color: var(--gray-100);
+  caret-color: var(--gray-100) !important;
 }
 
 .caret-gray-200 {
-  caret-color: var(--gray-200);
+  caret-color: var(--gray-200) !important;
 }
 
 .caret-gray-300 {
-  caret-color: var(--gray-300);
+  caret-color: var(--gray-300) !important;
 }
 
 .caret-gray-400 {
-  caret-color: var(--gray-400);
+  caret-color: var(--gray-400) !important;
 }
 
 .caret-gray-500 {
-  caret-color: var(--gray-500);
+  caret-color: var(--gray-500) !important;
 }
 
 .caret-gray-600 {
-  caret-color: var(--gray-600);
+  caret-color: var(--gray-600) !important;
 }
 
 .caret-gray-700 {
-  caret-color: var(--gray-700);
+  caret-color: var(--gray-700) !important;
 }
 
 .caret-gray-800 {
-  caret-color: var(--gray-800);
+  caret-color: var(--gray-800) !important;
 }
 
 .caret-gray-900 {
-  caret-color: var(--gray-900);
+  caret-color: var(--gray-900) !important;
 }
 
 .will-change-auto {
