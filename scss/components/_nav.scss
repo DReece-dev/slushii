@@ -25,7 +25,7 @@
     cursor: default;
   }
 
-  &.slate {
+  &.is-slate {
     color: var(--slate);
 
     &:hover,
@@ -34,7 +34,7 @@
     }
   }
 
-  &.blue {
+  &.is-blue {
     color: var(--blue);
 
     &:hover,
@@ -43,7 +43,7 @@
     }
   }
 
-  &.indigo {
+  &.is-indigo {
     color: var(--indigo);
 
     &:hover,
@@ -52,7 +52,7 @@
     }
   }
 
-  &.purple {
+  &.is-purple {
     color: var(--purple);
 
     &:hover,
@@ -61,7 +61,7 @@
     }
   }
 
-  &.pink {
+  &.is-pink {
     color: var(--pink);
 
     &:hover,
@@ -70,7 +70,7 @@
     }
   }
 
-  &.red {
+  &.is-red {
     color: var(--red);
 
     &:hover,
@@ -79,7 +79,7 @@
     }
   }
 
-  &.orange {
+  &.is-orange {
     color: var(--orange);
 
     &:hover,
@@ -88,7 +88,7 @@
     }
   }
 
-  &.yellow {
+  &.is-yellow {
     color: var(--yellow);
 
     &:hover,
@@ -97,7 +97,7 @@
     }
   }
 
-  &.green {
+  &.is-green {
     color: var(--green);
 
     &:hover,
@@ -106,7 +106,7 @@
     }
   }
 
-  &.gray {
+  &.is-gray {
     color: var(--gary-100);
 
     &:hover,
@@ -115,7 +115,7 @@
     }
   }
 
-  &.dark {
+  &.is-dark {
     color: var(--dark);
 
     &:hover,
@@ -125,7 +125,7 @@
   }
 
 
-  &.light {
+  &.is-light {
     color: var(--light);
 
     &:hover,
@@ -208,7 +208,7 @@
     }
   }
 
-  &.dark {
+  &.is-dark {
     a {
       background-color: var(--gray-dark);
       color: white;
@@ -220,7 +220,7 @@
     }
   }
 
-  &.blue {
+  &.is-blue {
     a {
       background-color: var(--blue-500);
       color: white;
@@ -232,7 +232,7 @@
     }
   }
 
-  &.indigo {
+  &.is-indigo {
     a {
       background-color: var(--indigo-400);
       color: white;
@@ -244,7 +244,7 @@
     }
   }
 
-  &.red {
+  &.is-red {
     a {
       background-color: var(--red-600);
       color: var(--black);
@@ -256,7 +256,7 @@
     }
   }
 
-  &.orange {
+  &.is-orange {
     a {
       background-color: var(--orange-500);
       color: var(--black);
@@ -268,7 +268,7 @@
     }
   }
 
-  &.green {
+  &.is-green {
     a {
       background-color: var(--green-400);
       color: white;
@@ -280,7 +280,7 @@
     }
   }
 
-  &.white {
+  &.is-white {
     a {
       background-color: var(--white);
       color: var(--black);
@@ -292,7 +292,7 @@
     }
   }
 
-  &.info {
+  &.is-info {
     a {
       background-color: var(--info);
       color: white;
@@ -304,7 +304,7 @@
     }
   }
 
-  &.success {
+  &.is-success {
     a {
       background-color: var(--success);
       color: white;
@@ -416,7 +416,7 @@
 }
 
 .clickable-dropbutton {
-  background-color: var(--blue-400);
+  background-color: transparent;
   color: white;
   padding: 16px;
   font-size: 16px;
