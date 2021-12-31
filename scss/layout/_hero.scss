@@ -42,13 +42,15 @@
   padding: 1.5rem;
 }
 
-@media screen and (min-width: 769px), print {
+@media screen and (min-width: 769px),
+print {
   .hero.is-medium .hero-body {
     padding: 9rem 1.5rem;
   }
 }
 
-@media screen and (min-width: 769px), print {
+@media screen and (min-width: 769px),
+print {
   .hero.is-large .hero-body {
     padding: 18rem 1.5rem;
   }
@@ -61,9 +63,9 @@
   display: flex;
 }
 
-.hero.is-halfheight .hero-body > .container,
-.hero.is-fullheight .hero-body > .container,
-.hero.is-fullheight-with-navbar .hero-body > .container {
+.hero.is-halfheight .hero-body>.container,
+.hero.is-fullheight .hero-body>.container,
+.hero.is-fullheight-with-navbar .hero-body>.container {
   flex-grow: 1;
   flex-shrink: 1;
 }
@@ -99,25 +101,28 @@
   }
 }
 
-.hero-buttons {
+.hero-btns {
   margin-top: 1.5rem;
 }
 
 @media screen and (max-width: 768px) {
-  .hero-buttons .button {
+  .hero-btns .btn {
     display: flex;
   }
-  .hero-buttons .button:not(:last-child) {
+
+  .hero-btns .btn:not(:last-child) {
     margin-bottom: 0.75rem;
   }
 }
 
-@media screen and (min-width: 769px), print {
-  .hero-buttons {
+@media screen and (min-width: 769px),
+print {
+  .hero-btns {
     display: flex;
     justify-content: center;
   }
-  .hero-buttons .button:not(:last-child) {
+
+  .hero-btns .btn:not(:last-child) {
     margin-right: 1.5rem;
   }
 }

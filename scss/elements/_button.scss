@@ -80,9 +80,12 @@
     opacity: 0.5;
   }
 
+  &.is-halfwidth {
+    display: flex;
+    width: 50%;
+  }
+
   &.is-fullwidth {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     width: 100%;
   }
@@ -497,6 +500,176 @@
   border-color: var(--gray-300);
 }
 
+.btn-outline-blue {
+  color: var(--blue);
+  border-color: var(--blue);
+
+  &:hover {
+    color: var(--white);
+    background-color: var(--blue);
+    border-color: var(--blue);
+  }
+}
+
+.btn-check:focus+.btn-outline-blue,
+.btn-outline-blue:focus {
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.5);
+}
+
+.btn-check:checked+.btn-outline-blue,
+.btn-outline-blue:active+.btn-outline-blue,
+.btn-outline-blue:active:focus {
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.5);
+}
+
+.btn-outline-blue:disabled,
+.btn-outline-blue.disabled {
+  color: var(--blue);
+  background-color: transparent;
+}
+
+.btn-outline-indigo {
+  color: var(--indigo);
+  border-color: var(--indigo);
+
+  &:hover {
+    color: var(--white);
+    background-color: var(--indigo);
+    border-color: var(--indigo);
+  }
+}
+
+.btn-check:focus+.btn-outline-indigo,
+.btn-outline-indigo:focus {
+  box-shadow: 0 0 0 0.25rem rgba(137, 13, 253, 0.5);
+}
+
+.btn-check:checked+.btn-outline-indigo,
+.btn-outline-indigo:active+.btn-outline-indigo,
+.btn-outline-indigo:active:focus {
+  box-shadow: 0 0 0 0.25rem rgba(137, 13, 253, 0.5);
+}
+
+.btn-outline-indigo:disabled,
+.btn-outline-indigo.disabled {
+  color: var(--indigo);
+  background-color: transparent;
+}
+
+.btn-outline-red {
+  color: var(--red);
+  border-color: var(--red);
+
+  &:hover {
+    color: var(--white);
+    background-color: var(--red);
+    border-color: var(--red);
+  }
+}
+
+.btn-check:focus+.btn-outline-red,
+.btn-outline-red:focus {
+  box-shadow: 0 0 0 0.25rem rgba(253, 13, 13, 0.5);
+}
+
+.btn-check:checked+.btn-outline-red,
+.btn-outline-red:active+.btn-outline-red,
+.btn-outline-red:active:focus {
+  box-shadow: 0 0 0 0.25rem rgba(253, 13, 13, 0.5);
+}
+
+.btn-outline-red:disabled,
+.btn-outline-red.disabled {
+  color: var(--red);
+  background-color: transparent;
+}
+
+.btn-outline-orange {
+  color: var(--orange);
+  border-color: var(--orange);
+
+  &:hover {
+    color: var(--white);
+    background-color: var(--orange);
+    border-color: var(--orange);
+  }
+}
+
+.btn-check:focus+.btn-outline-orange,
+.btn-outline-orange:focus {
+  box-shadow: 0 0 0 0.25rem rgba(253, 149, 13, 0.5);
+}
+
+.btn-check:checked+.btn-outline-orange,
+.btn-outline-orange:active+.btn-outline-orange,
+.btn-outline-orange:active:focus {
+  box-shadow: 0 0 0 0.25rem rgba(253, 149, 13, 0.5);
+}
+
+.btn-outline-orange:disabled,
+.btn-outline-orange.disabled {
+  color: var(--orange);
+  background-color: transparent;
+}
+
+.btn-outline-yellow {
+  color: var(--yellow);
+  border-color: var(--yellow);
+
+  &:hover {
+    color: var(--yellow);
+    background-color: var(--yellow);
+    border-color: var(--yellow);
+  }
+}
+
+.btn-check:focus+.btn-outline-yellow,
+.btn-outline-yellow:focus {
+  box-shadow: 0 0 0 0.25rem rgba(253, 249, 13, 0.5);
+}
+
+.btn-check:checked+.btn-outline-yellow,
+.btn-outline-yellow:active+.btn-outline-yellow,
+.btn-outline-yellow:active:focus {
+  box-shadow: 0 0 0 0.25rem rgba(253, 249, 13, 0.5);
+}
+
+.btn-outline-yellow:disabled,
+.btn-outline-yellow.disabled {
+  color: var(--yellow);
+  background-color: transparent;
+}
+
+.btn-outline-green {
+  color: var(--green);
+  border-color: var(--green);
+
+  &:hover {
+    color: var(--green);
+    background-color: var(--green);
+    border-color: var(--green);
+  }
+}
+
+.btn-check:focus+.btn-outline-green,
+.btn-outline-green:focus {
+  box-shadow: 0 0 0 0.25rem rgba(81, 253, 13, 0.5);
+}
+
+.btn-check:checked+.btn-outline-green,
+.btn-outline-green:active+.btn-outline-green,
+.btn-outline-green:active:focus {
+  box-shadow: 0 0 0 0.25rem rgba(81, 253, 13, 0.5);
+}
+
+.btn-outline-green:disabled,
+.btn-outline-green.disabled {
+  color: var(--green);
+  background-color: transparent;
+}
+
+
+
 .btn-close {
   -webkit-box-sizing: content-box;
   box-sizing: content-box;
@@ -747,7 +920,7 @@
   margin-right: 0.25rem;
 }
 
-.vertical--btn {
+.vertical-btn {
   display: flex;
   flex-direction: row;
   font-weight: 400;
@@ -769,6 +942,6 @@
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-.vertical--btn:hover {
+.vertical-btn:hover {
   background-color: #3730a3;
 }

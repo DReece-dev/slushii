@@ -19,24 +19,29 @@
   -moz-appearance: none;
   appearance: none;
 }
+
 @media (prefers-reduced-motion: reduce) {
   .form-select {
     transition: none;
   }
 }
+
 .form-select:focus {
   border-color: #86b7fe;
   outline: 0;
   box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }
+
 .form-select[multiple],
 .form-select[size]:not([size="1"]) {
   padding-right: 0.75rem;
   background-image: none;
 }
+
 .form-select:disabled {
   background-color: #e9ecef;
 }
+
 .form-select:-moz-focusring {
   color: transparent;
   text-shadow: 0 0 0 #212529;
@@ -88,7 +93,7 @@
   width: 18rem;
 }
 
-.list-box-button {
+.list-box-btn {
   position: relative;
   min-width: 200px;
   cursor: default;

@@ -255,3 +255,8 @@ video {
 [hidden] {
     display: none;
 }
+
+.lead {
+    font-size: 1.25rem;
+    font-weight: 300;
+}
