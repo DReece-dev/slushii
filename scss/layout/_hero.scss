@@ -101,6 +101,14 @@ print {
   }
 }
 
+.hero-video.fullscreen video {
+  height: 100%;
+  object-fit: fill;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+
 .hero-btns {
   margin-top: 1.5rem;
 }
@@ -137,4 +145,56 @@ print {
   flex-grow: 1;
   flex-shrink: 0;
   padding: 3rem 1.5rem;
+}
+
+// Some color options
+
+.hero.is-white {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+.hero.is-black {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.hero.is-blue {
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+.hero.is-indigo {
+  background-color: var(--indigo);
+  color: var(--white);
+}
+
+.hero.is-purple {
+  background-color: var(--purple);
+  color: var(--white);
+}
+
+.hero.is-pink {
+  background-color: var(--pink);
+  color: var(--white);
+}
+
+.hero.is-red {
+  background-color: var(--red);
+  color: var(--white);
+}
+
+.hero.is-orange {
+  background-color: var(--orange);
+  color: var(--black);
+}
+
+.hero.is-yellow {
+  background-color: var(--yellow);
+  color: var(--black);
+}
+
+.hero.is-green {
+  background-color: var(--green);
+  color: var(--black);
 }

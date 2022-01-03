@@ -1,15 +1,21 @@
 .form-label {
   margin-bottom: 0.5rem;
-}
 
-.form-label-lg {
-  padding-top: calc(0.5rem + 1px);
-  padding-bottom: calc(0.5rem + 1px);
-  font-size: 1.25rem;
-}
+  &.sm {
+    padding-top: calc(0.25rem + 1px);
+    padding-bottom: calc(0.25rem + 1px);
+    font-size: 0.875rem;
+  }
 
-.form-label-sm {
-  padding-top: calc(0.25rem + 1px);
-  padding-bottom: calc(0.25rem + 1px);
-  font-size: 0.875rem;
+  &.lg {
+    padding-top: calc(0.5rem + 1px);
+    padding-bottom: calc(0.5rem + 1px);
+    font-size: 1.25rem;
+  }
+
+  &.xl {
+    padding-top: calc(0.8rem + 1px);
+    padding-bottom: calc(0.8rem + 1px);
+    font-size: 1.55rem;
+  }
 }

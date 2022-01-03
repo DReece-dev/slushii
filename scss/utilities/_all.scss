@@ -32,11 +32,11 @@
 @import "box-sizing";
 @import "opacity";
 @import "outline";
-@import "cursor";
 @import "overflow";
 @import "overscroll";
 @import "z-index";
 @import "tracking";
+@import "cursor";
 @import "user-select";
 @import "touch-action";
 @import "resize";
@@ -57,9 +57,12 @@
 @import "image";
 @import "paint";
 @import "place";
+@import "centered";
 @import "select";
 @import "accent-color";
 @import "caret-color";
 @import "will-change";
 @import "break";
+@import "backface";
+@import "caption-side";
 @import "other";

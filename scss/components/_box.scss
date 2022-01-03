@@ -1,5 +1,5 @@
 .box {
-  background-color: white;
+  background-color: var(--white);
   border-radius: 6px;
   -webkit-box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
     0 0px 0 1px rgba(10, 10, 10, 0.02);
@@ -29,10 +29,80 @@ a.box {
 }
 
 .box.is-dark {
-  background-color: #252f3f;
+  background-color: var(--dark);
   border-radius: 6px;
-  -webkit-box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
+  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
     0 0px 0 1px rgba(10, 10, 10, 0.02);
+  display: block;
+  padding: 1.25rem;
+}
+
+.box.is-blue {
+  background-color: var(--blue-400);
+  border-radius: 6px;
+  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
+    0 0px 0 1px rgba(10, 10, 10, 0.02);
+  display: block;
+  padding: 1.25rem;
+}
+
+.box.is-indigo {
+  background-color: var(--indigo-500);
+  border-radius: 6px;
+  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
+    0 0px 0 1px rgba(10, 10, 10, 0.02);
+  display: block;
+  padding: 1.25rem;
+}
+
+.box.is-purple {
+  background-color: var(--purple-500);
+  border-radius: 6px;
+  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
+    0 0px 0 1px rgba(10, 10, 10, 0.02);
+  display: block;
+  padding: 1.25rem;
+}
+
+.box.is-pink {
+  background-color: var(--pink-500);
+  border-radius: 6px;
+  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
+    0 0px 0 1px rgba(10, 10, 10, 0.02);
+  display: block;
+  padding: 1.25rem;
+}
+
+.box.is-red {
+  background-color: var(--red-500);
+  border-radius: 6px;
+  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
+    0 0px 0 1px rgba(10, 10, 10, 0.02);
+  display: block;
+  padding: 1.25rem;
+}
+
+.box.is-orange {
+  background-color: var(--orange-500);
+  border-radius: 6px;
+  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
+    0 0px 0 1px rgba(10, 10, 10, 0.02);
+  display: block;
+  padding: 1.25rem;
+}
+
+.box.is-yellow {
+  background-color: var(--yellow);
+  border-radius: 6px;
+  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
+    0 0px 0 1px rgba(10, 10, 10, 0.02);
+  display: block;
+  padding: 1.25rem;
+}
+
+.box.is-green {
+  background-color: var(--green-500);
+  border-radius: 6px;
   box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
     0 0px 0 1px rgba(10, 10, 10, 0.02);
   display: block;

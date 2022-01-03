@@ -1,0 +1,16 @@
+.centered {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 auto !important;
+    flex-wrap: wrap !important;
+}
+
+.centered-alt,
+.centered-alt:hover,
+.centered-alt:active {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+}

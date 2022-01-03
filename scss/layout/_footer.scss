@@ -2,4 +2,21 @@
 .footer {
   background-color: #fafafa;
   padding: 3rem 1.5rem 6rem;
+  margin-top: 5rem;
+  width: 100%;
+
+  &.fixed {
+    bottom: 0;
+    position: fixed;
+  }
+
+  &.is-dark {
+    background-color: var(--dark);
+    color: var(--white);
+  }
+
+  &.is-grey {
+    background-color: var(--grey-300);
+    color: var(--black);
+  }
 }
