@@ -1,6 +1,6 @@
 // For setting the color of a form input's accent
 .accent-auto {
-    accent-color: auto;
+    accent-color: auto !important;
 }
 
 .accent-black {
@@ -56,17 +56,17 @@
 }
 
 .accent-inherit {
-    accent-color: inherit;
+    accent-color: inherit !important;
 }
 
 .accent-initial {
-    accent-color: initial;
+    accent-color: initial !important;
 }
 
 .accent-revert {
-    accent-color: revert;
+    accent-color: revert !important;
 }
 
 .accent-unset {
-    accent-color: unset;
+    accent-color: unset !important;
 }

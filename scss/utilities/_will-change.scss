@@ -1,40 +1,40 @@
 .will-change-auto {
-    will-change: auto;
+    will-change: auto !important;
 }
 
 .will-change-scroll-position {
-    will-change: scroll-position;
+    will-change: scroll-position !important;
 }
 
 .will-change-contents {
-    will-change: contents;
+    will-change: contents !important;
 }
 
 .will-change-transform {
-    will-change: transform;
+    will-change: transform !important;
 }
 
 .will-change-opacity {
-    will-change: opacity;
+    will-change: opacity !important;
 }
 
 .will-change-left-top {
-    will-change: left, top;
+    will-change: left, top !important;
 }
 
 /* Global values */
 .will-change-inherit {
-    will-change: inherit;
+    will-change: inherit !important;
 }
 
 .will-change-initial {
-    will-change: initial;
+    will-change: initial !important;
 }
 
 .will-change-revert {
-    will-change: revert;
+    will-change: revert !important;
 }
 
 .will-change-revert {
-    will-change: unset;
+    will-change: unset !important;
 }

@@ -1,23 +1,23 @@
 .backface-visible {
-    backface-visibility: visible;
+    backface-visibility: visible !important;
 }
 
 .backface-hidden {
-    backface-visibility: hidden;
+    backface-visibility: hidden !important;
 }
 
 .backface-inherit {
-    backface-visibility: inherit;
+    backface-visibility: inherit !important;
 }
 
 .backface-initial {
-    backface-visibility: initial;
+    backface-visibility: initial !important;
 }
 
 .backface-revert {
-    backface-visibility: revert;
+    backface-visibility: revert !important;
 }
 
 .backface-unset {
-    backface-visibility: unset;
+    backface-visibility: unset !important;
 }

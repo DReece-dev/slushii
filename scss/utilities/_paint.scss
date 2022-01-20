@@ -1,39 +1,39 @@
 /* Normal */
 .paint-normal {
-    paint-order: normal;
+    paint-order: normal !important;
 }
 
 /* Single values */
 .paint-stroke {
-    paint-order: stroke;
+    paint-order: stroke !important;
 }
 
 .paint-markers {
-    paint-order: markers;
+    paint-order: markers !important;
 }
 
 .paint-stroke-fill {
-    paint-order: stroke fill;
+    paint-order: stroke fill !important;
 }
 
 .paint-makers-stroke-fill {
-    paint-order: markers stroke fill;
+    paint-order: markers stroke fill !important;
 }
 
 /* Global values */
 
 .paint-order-inherit {
-    paint-order: inherit;
+    paint-order: inherit !important;
 }
 
 .paint-order-initial {
-    paint-order: initial;
+    paint-order: initial !important;
 }
 
 .paint-order-revert {
-    paint-order: revert;
+    paint-order: revert !important;
 }
 
 .paint-order-unset {
-    paint-order: unset;
+    paint-order: unset !important;
 }

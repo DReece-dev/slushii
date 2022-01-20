@@ -187,22 +187,22 @@
 }
 
 .text-ellipsis {
-  text-overflow: ellipsis;
+  text-overflow: ellipsis !important;
   ;
 }
 
 .text-clip {
-  text-overflow: clip;
+  text-overflow: clip !important;
 }
 
 .overflow-clip {
-  overflow: clip;
+  overflow: clip !important;
 }
 
 .overflow-x-clip {
-  overflow-x: clip;
+  overflow-x: clip !important;
 }
 
 .overflow-y-clip {
-  overflow-y: clip;
+  overflow-y: clip !important;
 }

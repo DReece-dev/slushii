@@ -1,9 +1,9 @@
 .text-hide {
-  font: 0/0 a;
-  color: transparent;
-  text-shadow: none;
-  background-color: transparent;
-  border: 0;
+  font: 0/0 a !important;
+  color: transparent !important;
+  text-shadow: none !important;
+  background-color: transparent !important;
+  border: 0 !important;
 }
 
 .text-decoration-none {
@@ -98,78 +98,106 @@
   text-decoration-color: var(--lightgray) !important;
 }
 
+.decoration-auto {
+  text-decoration-thickness: auto !important;
+}
+
+.decoration-from-font {
+  text-decoration-thickness: from-font !important;
+}
+
+.decoration-0 {
+  text-decoration-thickness: 0px !important;
+}
+
+.decoration-1 {
+  text-decoration-thickness: 1px !important;
+}
+
+.decoration-2 {
+  text-decoration-thickness: 2px !important;
+}
+
+.decoration-4 {
+  text-decoration-thickness: 4px !important;
+}
+
+.decoration-8 {
+  text-decoration-thickness: 8px !important;
+}
+
 .text-extra-letter-spacing {
   letter-spacing: 0.03rem !important;
 }
 
 .text-left {
-  text-align: left;
+  text-align: left !important;
 }
 
 .text-right {
-  text-align: right;
+  text-align: right !important;
 }
 
 .text-center {
-  text-align: center;
+  text-align: center !important;
 }
 
 .text-justify {
-  text-align: justify;
+  text-align: justify !important;
 }
 
 @media print,
 screen and (min-width: 40em) {
   .medium-text-left {
-    text-align: left;
+    text-align: left !important;
   }
 
   .medium-text-right {
-    text-align: right;
+    text-align: right !important;
   }
 
   .medium-text-center {
-    text-align: center;
+    text-align: center !important;
   }
 
   .medium-text-justify {
-    text-align: justify;
+    text-align: justify !important;
   }
 }
 
 @media print,
 screen and (min-width: 64em) {
   .large-text-left {
-    text-align: left;
+    text-align: left !important;
   }
 
   .large-text-right {
-    text-align: right;
+    text-align: right !important;
   }
 
   .large-text-center {
-    text-align: center;
+    text-align: center !important;
   }
 
   .large-text-justify {
-    text-align: justify;
+    text-align: justify !important;
   }
 }
 
 .text-shadow {
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.10);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.10) !important;
 }
 
 .text-shadow-md {
-  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.08);
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.08) !important;
 }
 
 .text-shadow-lg {
-  text-shadow: 0 15px 30px rgba(0, 0, 0, 0.11), 0 5px 15px rgba(0, 0, 0, 0.08);
+  text-shadow: 0 15px 30px rgba(0, 0, 0, 0.11), 0 5px 15px rgba(0, 0, 0, 0.08) !important;
 }
 
 .text-shadow-none {
-  text-shadow: none;
+  text-shadow: none !important;
 }
 
 .text-wrap {
@@ -242,17 +270,17 @@ screen and (min-width: 64em) {
 }
 
 .text-opacity-25 {
-  opacity: 0.25;
+  opacity: 0.25 !important;
 }
 
 .text-opacity-50 {
-  opacity: 0.5;
+  opacity: 0.5 !important;
 }
 
 .text-opacity-75 {
-  opacity: 0.75;
+  opacity: 0.75 !important;
 }
 
 .text-opacity-100 {
-  opacity: 1;
+  opacity: 1 !important;
 }

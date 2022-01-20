@@ -1,0 +1,51 @@
+.contain-none {
+  contain: none !important;
+}
+
+.contain-strict {
+  contain: strict !important;
+}
+
+.contain-content {
+  contain: content !important;
+}
+
+.contain-size {
+  contain: size !important;
+}
+
+.contain-layout {
+  contain: layout !important;
+}
+
+.contain-style {
+  contain: style !important;
+}
+
+.contain-paint {
+  contain: paint !important;
+}
+
+.contain-size-paint {
+  contain: size paint !important;
+}
+
+.contain-size-layout-paint {
+  contain: size layout paint !important;
+}
+
+.contain-inherit {
+  contain: inherit !important;
+}
+
+.contain-initial {
+  contain: initial !important;
+}
+
+.contain-revert {
+  contain: revert !important;
+}
+
+.contain-unset {
+  contain: unset !important;
+}

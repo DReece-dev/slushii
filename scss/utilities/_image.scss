@@ -1,88 +1,88 @@
 /* keyword values */
 .image-orientation-none {
-    image-orientation: none;
+    image-orientation: none !important;
 }
 
 .image-orientation-from-image {
-    image-orientation: from-image;
+    image-orientation: from-image !important;
 }
 
 /* Global values */
 .image-orientation-inherit {
-    image-orientation: inherit;
+    image-orientation: inherit !important;
 }
 
 .image-orientation-initial {
-    image-orientation: initial;
+    image-orientation: initial !important;
 }
 
 .image-orientation-revert {
-    image-orientation: revert;
+    image-orientation: revert !important;
 }
 
 .image-orientation-unset {
-    image-orientation: unset;
+    image-orientation: unset !important;
 }
 
 // Image Rendering
 
 .image-rendering-auto {
-    image-rendering: auto;
+    image-rendering: auto !important;
 }
 
 .image-rendering-crisp-edges {
-    image-rendering: crisp-edges;
+    image-rendering: crisp-edges !important;
 }
 
 .image-rendering-pixelated {
-    image-rendering: pixelated;
+    image-rendering: pixelated !important;
 }
 
 /* Global values */
 .image-rendering-inherit {
-    image-rendering: inherit;
+    image-rendering: inherit !important;
 }
 
 .image-rendering-initial {
-    image-rendering: initial;
+    image-rendering: initial !important;
 }
 
 .image-rendering-revert {
-    image-rendering: revert;
+    image-rendering: revert !important;
 }
 
 .image-rendering-unset {
-    image-rendering: unset;
+    image-rendering: unset !important;
 }
 
 // This is experimental  Check the Browser compatibility carefully before using this in production.
 
 .image-resolution-from-image {
-    image-resolution: from-image;
+    image-resolution: from-image !important;
 }
 
 .image-resolution-300 {
-    image-resolution: 300dpi;
+    image-resolution: 300dpi !important;
 }
 
 .image-resolution-snap {
-    image-resolution: 300dpi snap;
+    image-resolution: 300dpi snap !important;
 }
 
 /* Global values */
 
 .image-resolution-inherit {
-    image-resolution: inherit;
+    image-resolution: inherit !important;
 }
 
 .image-resolution-initial {
-    image-resolution: initial;
+    image-resolution: initial !important;
 }
 
 .image-resolution-revert {
-    image-resolution: revert;
+    image-resolution: revert !important;
 }
 
 .image-resolution-unset {
-    image-resolution: unset;
+    image-resolution: unset !important;
 }

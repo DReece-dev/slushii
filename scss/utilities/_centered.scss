@@ -9,8 +9,11 @@
 .centered-alt,
 .centered-alt:hover,
 .centered-alt:active {
+    overflow: hidden !important;
     position: absolute !important;
-    top: 50% !important;
-    left: 50% !important;
-    transform: translate(-50%, -50%) !important;
+    width: 100% !important;
+    height: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
 }

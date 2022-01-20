@@ -43,6 +43,16 @@ hr {
     border-top-width: 1px;
 }
 
+p {
+    font-size: 15px;
+}
+
+@media (max-width: 612px) {
+    p {
+        font-size: 13px;
+    }
+}
+
 abbr[title] {
     -webkit-text-decoration: underline dotted;
     text-decoration: underline dotted;

@@ -1,24 +1,24 @@
 .scroll-auto {
-    scroll-behavior: auto;
+    scroll-behavior: auto !important;
 }
 
 .scroll-smooth {
-    scroll-behavior: smooth;
+    scroll-behavior: smooth !important;
 }
 
 /* Global values */
 .scroll-inherit {
-    scroll-behavior: inherit;
+    scroll-behavior: inherit !important;
 }
 
 .scroll-initial {
-    scroll-behavior: initial;
+    scroll-behavior: initial !important;
 }
 
 .scroll-revert {
-    scroll-behavior: revert;
+    scroll-behavior: revert !important;
 }
 
 .scroll-unset {
-    scroll-behavior: unset;
+    scroll-behavior: unset !important;
 }

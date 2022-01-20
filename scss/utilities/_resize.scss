@@ -1,15 +1,15 @@
 .resize-none {
-    resize: none;
+    resize: none !important;
 }
 
 .resize-y {
-    resize: vertical;
+    resize: vertical !important;
 }
 
 .resize-x {
-    resize: horizontal;
+    resize: horizontal !important;
 }
 
 .resize {
-    resize: both;
+    resize: both !important;
 }

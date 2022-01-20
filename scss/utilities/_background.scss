@@ -1,30 +1,30 @@
 .bg-fixed {
-  background-attachment: fixed;
+  background-attachment: fixed !important;
 }
 
 .bg-local {
-  background-attachment: local;
+  background-attachment: local !important;
 }
 
 .bg-scroll {
-  background-attachment: scroll;
+  background-attachment: scroll !important;
 }
 
 .bg-clip-border {
-  background-clip: border-box;
+  background-clip: border-box !important;
 }
 
 .bg-clip-padding {
-  background-clip: padding-box;
+  background-clip: padding-box !important;
 }
 
 .bg-clip-content {
-  background-clip: content-box;
+  background-clip: content-box !important;
 }
 
 .bg-clip-text {
-  -webkit-background-clip: text;
-  background-clip: text;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
 }
 
 .bg-transparent {
@@ -32,143 +32,143 @@
 }
 
 .bg-current {
-  background-color: currentColor;
+  background-color: currentColor !important;
 }
 
 .bg-bottom {
-  background-position: bottom;
+  background-position: bottom !important;
 }
 
 .bg-center {
-  background-position: center;
+  background-position: center !important;
 }
 
 .bg-left {
-  background-position: left;
+  background-position: left !important;
 }
 
 .bg-left-bottom {
-  background-position: left bottom;
+  background-position: left bottom !important;
 }
 
 .bg-left-top {
-  background-position: left top;
+  background-position: left top !important;
 }
 
 .bg-right {
-  background-position: right;
+  background-position: right !important;
 }
 
 .bg-right-bottom {
-  background-position: right bottom;
+  background-position: right bottom !important;
 }
 
 .bg-right-top {
-  background-position: right top;
+  background-position: right top !important;
 }
 
 .bg-top {
-  background-position: top;
+  background-position: top !important;
 }
 
 .bg-repeat {
-  background-repeat: repeat;
+  background-repeat: repeat !important;
 }
 
 .bg-no-repeat {
-  background-repeat: no-repeat;
+  background-repeat: no-repeat !important;
 }
 
 .bg-repeat-x {
-  background-repeat: repeat-x;
+  background-repeat: repeat-x !important;
 }
 
 .bg-repeat-y {
-  background-repeat: repeat-y;
+  background-repeat: repeat-y !important;
 }
 
 .bg-repeat-round {
-  background-repeat: round;
+  background-repeat: round !important;
 }
 
 .bg-repeat-space {
-  background-repeat: space;
+  background-repeat: space !important;
 }
 
 .bg-auto {
-  background-size: auto;
+  background-size: auto !important;
 }
 
 .bg-cover {
-  background-size: cover;
+  background-size: cover !important;
 }
 
 .bg-contain {
-  background-size: contain;
+  background-size: contain !important;
 }
 
 .bg-blend-normal {
-  background-blend-mode: normal;
+  background-blend-mode: normal !important;
 }
 
 .bg-blend-multiply {
-  background-blend-mode: multiply;
+  background-blend-mode: multiply !important;
 }
 
 .bg-blend-screen {
-  background-blend-mode: screen;
+  background-blend-mode: screen !important;
 }
 
 .bg-blend-overlay {
-  background-blend-mode: overlay;
+  background-blend-mode: overlay !important;
 }
 
 .bg-blend-darken {
-  background-blend-mode: darken;
+  background-blend-mode: darken !important;
 }
 
 .bg-blend-lighten {
-  background-blend-mode: lighten;
+  background-blend-mode: lighten !important;
 }
 
 .bg-blend-color-dodge {
-  background-blend-mode: color-dodge;
+  background-blend-mode: color-dodge !important;
 }
 
 .bg-blend-color-burn {
-  background-blend-mode: color-burn;
+  background-blend-mode: color-burn !important;
 }
 
 .bg-blend-hard-light {
-  background-blend-mode: hard-light;
+  background-blend-mode: hard-light !important;
 }
 
 .bg-blend-soft-light {
-  background-blend-mode: soft-light;
+  background-blend-mode: soft-light !important;
 }
 
 .bg-blend-difference {
-  background-blend-mode: difference;
+  background-blend-mode: difference !important;
 }
 
 .bg-blend-exclusion {
-  background-blend-mode: exclusion;
+  background-blend-mode: exclusion !important;
 }
 
 .bg-blend-hue {
-  background-blend-mode: hue;
+  background-blend-mode: hue !important;
 }
 
 .bg-blend-saturation {
-  background-blend-mode: saturation;
+  background-blend-mode: saturation !important;
 }
 
 .bg-blend-color {
-  background-blend-mode: color;
+  background-blend-mode: color !important;
 }
 
 .bg-blend-luminosity {
-  background-blend-mode: luminosity;
+  background-blend-mode: luminosity !important;
 }
 
 .bg-blue {
@@ -300,21 +300,21 @@
 }
 
 .bg-opacity-10 {
-  opacity: 0.1;
+  opacity: 0.1 !important;
 }
 
 .bg-opacity-25 {
-  opacity: 0.25;
+  opacity: 0.25 !important;
 }
 
 .bg-opacity-50 {
-  opacity: 0.5;
+  opacity: 0.5 !important;
 }
 
 .bg-opacity-75 {
-  opacity: 0.75;
+  opacity: 0.75 !important;
 }
 
 .bg-opacity-100 {
-  opacity: 1;
+  opacity: 1 !important;
 }

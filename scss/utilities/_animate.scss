@@ -1,6 +1,6 @@
 @keyframes spin {
     to {
-        transform: rotate(360deg);
+        transform: rotate(360deg) !important;
     }
 }
 
@@ -8,14 +8,14 @@
 
     75%,
     100% {
-        transform: scale(2);
-        opacity: 0;
+        transform: scale(2) !important;
+        opacity: 0 !important;
     }
 }
 
 @keyframes pulse {
     50% {
-        opacity: .5;
+        opacity: .5 !important;
     }
 }
 
@@ -23,32 +23,32 @@
 
     0%,
     100% {
-        transform: translateY(-25%);
-        animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+        transform: translateY(-25%) !important;
+        animation-timing-function: cubic-bezier(0.8, 0, 1, 1) !important;
     }
 
     50% {
-        transform: none;
-        animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+        transform: none !important;
+        animation-timing-function: cubic-bezier(0, 0, 0.2, 1) !important;
     }
 }
 
 .animate-none {
-    animation: none;
+    animation: none !important;
 }
 
 .animate-spin {
-    animation: spin 1s linear infinite;
+    animation: spin 1s linear infinite !important;
 }
 
 .animate-ping {
-    animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+    animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite !important;
 }
 
 .animate-pulse {
-    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite !important;
 }
 
 .animate-bounce {
-    animation: bounce 1s infinite;
+    animation: bounce 1s infinite !important;
 }
