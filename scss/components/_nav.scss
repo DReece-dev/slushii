@@ -25,6 +25,19 @@
     cursor: default;
   }
 
+  &.vertical {
+    color: #6c747f;
+    text-align: left;
+    padding-right: 10em;
+    padding-left: 8px;
+
+    &:hover {
+      color: #212836;
+      background-color: #f3f4f6;
+      border-radius: 5px;
+    }
+  }
+
   &.is-slate {
     color: var(--slate);
 
@@ -492,25 +505,4 @@
 
 .clickable-dropdown-show {
   display: block;
-}
-
-.tab-content>.tab-pane {
-  display: none;
-}
-
-.tab-content>.active {
-  display: block;
-}
-
-.vertical--navlink {
-  color: #6c747f;
-  text-align: left;
-  padding-right: 10em;
-  padding-left: 8px;
-}
-
-.vertical--navlink:hover {
-  color: #212836;
-  background-color: #f3f4f6;
-  border-radius: 5px;
 }

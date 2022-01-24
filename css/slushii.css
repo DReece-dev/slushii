@@ -11,8 +11,6 @@ Licensed under MIT (github.com/DReece-dev/slushii)
 */
 /* Slushii Base */
 :root {
-  --darkmode-background: #252f3f;
-  --darkmode-font-color: #f8f8f8;
   --slate: #F1F5F9;
   --slate-200: #E2E8F0;
   --slate-300: #CBD5E1;
@@ -7854,6 +7852,19 @@ div.icon-text {
   cursor: default;
 }
 
+.nav-link.vertical {
+  color: #6c747f;
+  text-align: left;
+  padding-right: 10em;
+  padding-left: 8px;
+}
+
+.nav-link.vertical:hover {
+  color: #212836;
+  background-color: #f3f4f6;
+  border-radius: 5px;
+}
+
 .nav-link.is-slate {
   color: var(--slate);
 }
@@ -8328,27 +8339,6 @@ div.icon-text {
   display: block;
 }
 
-.tab-content>.tab-pane {
-  display: none;
-}
-
-.tab-content>.active {
-  display: block;
-}
-
-.vertical--navlink {
-  color: #6c747f;
-  text-align: left;
-  padding-right: 10em;
-  padding-left: 8px;
-}
-
-.vertical--navlink:hover {
-  color: #212836;
-  background-color: #f3f4f6;
-  border-radius: 5px;
-}
-
 .tabs {
   -webkit-overflow-scrolling: touch;
   -webkit-box-align: stretch;
@@ -8621,6 +8611,14 @@ div.icon-text {
   flex-grow: 1;
   -ms-flex-negative: 0;
   flex-shrink: 0;
+}
+
+.tab-content>.tab-pane {
+  display: none;
+}
+
+.tab-content>.active {
+  display: block;
 }
 
 .menu {
@@ -8903,7 +8901,7 @@ div.icon-text {
   overflow-x: hidden;
   overflow-y: auto;
   z-index: 20;
-  background-color: var(--darkmode-background);
+  background-color: var(--gray-dark);
   border-right: 1px solid rgba(0, 0, 0, 0.2);
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -11182,15 +11180,6 @@ a.box:active {
   border-radius: 5px;
 }
 
-/* Sticky alerts */
-.sticky-alerts {
-  position: fixed;
-  top: 0;
-  right: 2.4rem;
-  z-index: 100;
-  /* Can be used on top of modals */
-}
-
 .alert {
   position: relative;
   padding: 1rem 2rem;
@@ -11243,12 +11232,18 @@ a.box:active {
 }
 
 /* Sticky alerts */
+.sticky-alerts {
+  position: fixed;
+  top: 0;
+  right: 2.4rem;
+  z-index: 100;
+}
+
 .sticky-alerts .alert {
   display: none;
   width: 27rem;
   margin-top: 1rem;
   right: -50rem;
-  /* Hidden by default */
   -webkit-box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.045);
   box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.045);
 }
@@ -11368,18 +11363,18 @@ a.box:active {
 }
 
 .alert.is-warning {
-  background-color: var(--darkmode-background);
-  color: var(--warning);
+  background-color: var(--warning);
+  color: var(--dark);
 }
 
 .alert.is-danger {
-  background-color: var(--darkmode-background);
-  color: var(--danger);
+  background-color: var(--danger);
+  color: var(--dark);
 }
 
 .alert.is-light {
-  background-color: var(--darkmode-background);
-  color: var(--light);
+  background-color: var(--light);
+  color: var(--dark);
 }
 
 .alert.is-dark {
@@ -14909,6 +14904,35 @@ input:checked+label>.switch-inactive {
 
 .switch.large input:checked~.switch-paddle::after {
   left: 2.75rem;
+}
+
+.search-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0.25rem;
+}
+
+.search-box .input {
+  border-color: transparent;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 
 .input-group {
@@ -28456,6 +28480,58 @@ print {
 
 .caption-side-unset {
   caption-side: unset !important;
+}
+
+.contain-none {
+  contain: none !important;
+}
+
+.contain-strict {
+  contain: strict !important;
+}
+
+.contain-content {
+  contain: content !important;
+}
+
+.contain-size {
+  contain: size !important;
+}
+
+.contain-layout {
+  contain: layout !important;
+}
+
+.contain-style {
+  contain: style !important;
+}
+
+.contain-paint {
+  contain: paint !important;
+}
+
+.contain-size-paint {
+  contain: size paint !important;
+}
+
+.contain-size-layout-paint {
+  contain: size layout paint !important;
+}
+
+.contain-inherit {
+  contain: inherit !important;
+}
+
+.contain-initial {
+  contain: initial !important;
+}
+
+.contain-revert {
+  contain: revert !important;
+}
+
+.contain-unset {
+  contain: unset !important;
 }
 
 .svg,
