@@ -20,8 +20,6 @@
   text-decoration: none;
   vertical-align: middle;
   cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
   user-select: none;
   border: 1px solid transparent;
   padding: 0.375rem 0.75rem;
@@ -173,7 +171,7 @@
 }
 
 .btn-check:focus+.btn-indigo,
-.btn-indigo.focus {
+.btn-indigo:focus {
   color: var(--white);
   background-color: var(--indigo);
   border-color: var(--indigo-500);
@@ -210,7 +208,7 @@
 }
 
 .btn-check:focus+.btn-red,
-.btn-red.focus {
+.btn-red:focus {
   color: var(--white);
   background-color: var(--red);
   border-color: var(--red-500);
@@ -253,7 +251,7 @@
 }
 
 .btn-check:focus+.btn-orange,
-.btn-orange.focus {
+.btn-orange:focus {
   color: var(--white);
   background-color: var(--orange);
   border-color: var(--orange-500);
@@ -290,7 +288,7 @@
 }
 
 .btn-check:focus+.btn-green,
-.btn-green.focus {
+.btn-green:focus {
   color: var(--white);
   background-color: var(--green);
   border-color: var(--green-500);
@@ -327,7 +325,7 @@
 }
 
 .btn-check:focus+.btn-dark-gray,
-.btn-dark-gray.focus {
+.btn-dark-gray:focus {
   color: var(--white);
   background-color: var(--gray-900);
   border-color: var(--gray-800);
@@ -364,7 +362,7 @@
 }
 
 .btn-check:focus+.btn-warning,
-.btn-warning.focus {
+.btn-warning:focus {
   color: var(--white);
   background-color: #d39f04;
   border-color: #d39f04;
@@ -401,7 +399,7 @@
 }
 
 .btn-check:focus+.btn-danger,
-.btn-danger.focus {
+.btn-danger:focus {
   color: var(--white);
   background-color: #b81828;
   border-color: #b81828;
@@ -438,7 +436,7 @@
 }
 
 .btn-check:focus+.btn-is-light,
-.btn-is-light.focus {
+.btn-is-light:focus {
   color: var(--white);
   background-color: #d8d8d8;
   border-color: #d8d8d8;
@@ -475,7 +473,7 @@
 }
 
 .btn-check:focus+.btn-is-dark,
-.btn-is-dark.focus {
+.btn-is-dark:focus {
   color: var(--white);
   background-color: #d8d8d8;
   border-color: #d8d8d8;
@@ -670,7 +668,6 @@
 
 
 .btn-close {
-  -webkit-box-sizing: content-box;
   box-sizing: content-box;
   width: 1em;
   height: 1em;
@@ -689,7 +686,6 @@
 
   &:focus {
     outline: 0;
-    -webkit-box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
     box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
     opacity: 1;
   }
@@ -698,9 +694,6 @@
 .btn-close:disabled,
 .btn-close.disabled {
   pointer-events: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
   opacity: 0.25;
 }
@@ -929,8 +922,6 @@
   text-decoration: none;
   vertical-align: middle;
   cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
   user-select: none;
   background-color: transparent;
   border: 1px solid transparent;

@@ -1,23 +1,14 @@
 .tile {
   align-content: space-between;
-  -webkit-box-align: start;
   align-items: flex-start;
-  display: -ms-flexbox;
-  display: -webkit-box;
   display: flex;
-  -ms-flex-align: start;
-  -ms-flex-line-pack: justify;
 
   .title-icon,
   .tile-action {
-    -ms-flex: 0 0 auto;
-    -webkit-box-flex: 0;
     flex: 0 0 auto;
   }
 
   .tile-content {
-    -ms-flex: 1 1 auto;
-    -webkit-box-flex: 1;
     flex: 1 1 auto;
 
     &:not(:first-child) {
@@ -35,9 +26,7 @@
   }
 
   &.tile-centered {
-    -webkit-box-align: center;
     align-items: center;
-    -ms-flex-align: center;
 
     .tile-content {
       overflow: hidden;

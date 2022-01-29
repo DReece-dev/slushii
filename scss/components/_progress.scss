@@ -19,13 +19,13 @@
     border-radius: 0.25rem;
 
     &:indeterminate {
-        -webkit-animation-duration: 1.5s;
+
         animation-duration: 1.5s;
-        -webkit-animation-iteration-count: infinite;
+
         animation-iteration-count: infinite;
-        -webkit-animation-name: moveIndeterminate;
+
         animation-name: moveIndeterminate;
-        -webkit-animation-timing-function: linear;
+
         animation-timing-function: linear;
         background-color: #ededed;
         background-image: linear-gradient(to right, #4a4a4a 30%, #ededed 30%);
@@ -76,7 +76,7 @@
     }
 
     &.animated {
-        -webkit-animation: 1s linear infinite progress-bar-stripes;
+
         animation: 1s linear infinite progress-bar-stripes;
     }
 }
@@ -89,7 +89,7 @@
 
 @media (prefers-reduced-motion: reduce) {
     .progress-bar.animated {
-        -webkit-animation: none;
+
         animation: none;
     }
 }

@@ -14,6 +14,7 @@
   opacity: 0;
   z-index: 90;
 }
+
 /* Tooltip content */
 
 [data-toggle="tooltip"]::after {
@@ -147,7 +148,6 @@
     visibility: visible;
     opacity: 1;
     transition: opacity 0.5s;
-    -webkit-transition: opacity 0.5s;
   }
 
   /* Content */
@@ -155,7 +155,6 @@
   [data-toggle="tooltip"][data-target-breakpoint="md"]:hover::after,
   [data-toggle="tooltip"][data-target-breakpoint="md"]:focus::after {
     visibility: visible;
-    -webkit-transition: all 0.1s, color 0s, background-color 0s;
     transition: all 0.1s, color 0s, background-color 0s;
   }
 

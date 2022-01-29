@@ -1,19 +1,16 @@
 .menu {
   background: #fff;
   border-radius: 0.1rem;
-  -webkit-box-shadow: 0 0.05rem 0.2rem rgba(48, 55, 66, 0.3);
   box-shadow: 0 0.05rem 0.2rem rgba(48, 55, 66, 0.3);
   list-style: none;
   margin: 0;
   min-width: 180px;
   padding: 0.4rem;
-  -webkit-transform: translateY(0.2rem);
   transform: translateY(0.2rem);
   z-index: 300;
 
   &.menu-nav {
     background: transparent;
-    -webkit-box-shadow: none;
     box-shadow: none;
   }
 
@@ -59,12 +56,8 @@
 .menu {
 
   .menu-badge {
-    -webkit-box-align: center;
     align-items: center;
-    display: -ms-flexbox;
-    display: -webkit-box;
     display: flex;
-    -ms-flex-align: center;
     height: 100%;
     position: absolute;
     right: 0;

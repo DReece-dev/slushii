@@ -1,9 +1,5 @@
 .level {
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
 
   code {
@@ -16,14 +12,10 @@
   }
 
   &.is-mobile {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
 
     .level-left,
     .level-right {
-      display: -webkit-box;
-      display: -ms-flexbox;
       display: flex;
     }
 
@@ -38,8 +30,6 @@
       }
 
       &:not(.is-narrow) {
-        -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
         flex-grow: 1;
       }
     }
@@ -49,14 +39,10 @@
 @media screen and (min-width: 769px),
 print {
   .level {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
 
     >.level-item {
       &:not(.is-narrow) {
-        -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
         flex-grow: 1;
       }
     }
@@ -64,21 +50,11 @@ print {
 }
 
 .level-item {
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-preferred-size: auto;
   flex-basis: auto;
-  -webkit-box-flex: 0;
-  -ms-flex-positive: 0;
   flex-grow: 0;
-  -ms-flex-negative: 0;
   flex-shrink: 0;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
 
   .title,
@@ -95,17 +71,11 @@ print {
 
 .level-left,
 .level-right {
-  -ms-flex-preferred-size: auto;
   flex-basis: auto;
-  -webkit-box-flex: 0;
-  -ms-flex-positive: 0;
   flex-grow: 0;
-  -ms-flex-negative: 0;
   flex-shrink: 0;
 
   .level-item.is-flexible {
-    -webkit-box-flex: 1;
-    -ms-flex-positive: 1;
     flex-grow: 1;
   }
 }
@@ -120,11 +90,7 @@ print {
 }
 
 .level-left {
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
   justify-content: flex-start;
 }
 
@@ -137,26 +103,18 @@ print {
 @media screen and (min-width: 769px),
 print {
   .level-left {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
   }
 }
 
 .level-right {
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: end;
-  -ms-flex-pack: end;
   justify-content: flex-end;
 }
 
 @media screen and (min-width: 769px),
 print {
   .level-right {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
   }
 }

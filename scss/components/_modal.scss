@@ -1,16 +1,13 @@
 .modal {
-  display: inline-flex;
+  display: none;
   align-items: center;
-  flex-direction: column;
-  justify-content: center;
   overflow: hidden;
   position: fixed;
   z-index: 40;
   border-radius: .5rem;
   text-align: center;
   margin: 20px;
-  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
-    0 0px 0 1px rgba(10, 10, 10, 0.02);
+  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
 
   &.is-active {
     display: flex;
@@ -27,7 +24,6 @@
   overflow: auto;
   position: relative;
   width: 100%;
-
 }
 
 @media screen and (min-width: 769px) {
@@ -76,7 +72,6 @@
 .modal-card-title {
   color: #363636;
   flex-grow: 1;
-  flex-shrink: 0;
   font-size: 1.5rem;
   line-height: 1;
 }
@@ -95,7 +90,6 @@
 }
 
 .modal-card-body {
-  -webkit-overflow-scrolling: touch;
   background-color: white;
   flex-grow: 1;
   flex-shrink: 1;

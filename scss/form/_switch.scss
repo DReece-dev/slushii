@@ -6,9 +6,6 @@
     font-size: 0.875rem;
     font-weight: bold;
     color: #fefefe;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
     user-select: none;
 }
 
@@ -25,7 +22,6 @@
     height: 2rem;
     border-radius: 30px;
     background: #cacaca;
-    -webkit-transition: all 0.25s ease-out;
     transition: all 0.25s ease-out;
     font-weight: inherit;
     color: inherit;
@@ -43,11 +39,9 @@ input+.switch-paddle {
     display: block;
     width: 1.5rem;
     height: 1.5rem;
-    -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
     border-radius: 30px;
     background: #fefefe;
-    -webkit-transition: all 0.25s ease-out;
     transition: all 0.25s ease-out;
     content: '';
 }
@@ -73,8 +67,6 @@ input:disabled~.switch-paddle {
 .switch-inactive {
     position: absolute;
     top: 50%;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
     transform: translateY(-50%);
 }
 

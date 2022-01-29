@@ -25,118 +25,109 @@ legend {
 
 /* Form rows */
 .form-row {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   margin-bottom: 2rem;
 }
 
 /* Form rows with equal spacing */
-.form-row.row-eq-spacing > [class^="col"] {
+.form-row.row-eq-spacing>[class^="col"] {
   padding-left: 1rem;
   padding-right: 1rem;
 }
 
-.form-row.row-eq-spacing > [class^="col"]:first-child {
+.form-row.row-eq-spacing>[class^="col"]:first-child {
   padding-left: 0;
 }
 
-.form-row.row-eq-spacing > [class^="col"]:last-child {
+.form-row.row-eq-spacing>[class^="col"]:last-child {
   padding-right: 0;
 }
 
 /* Adjustments for small screens and up (> 576px) */
 @media (min-width: 577px) {
-  .form-row.row-eq-spacing-sm:not(.row-eq-spacing) > [class^="col"] {
+  .form-row.row-eq-spacing-sm:not(.row-eq-spacing)>[class^="col"] {
     padding-left: 1rem;
     padding-right: 1rem;
   }
-  .form-row.row-eq-spacing-sm:not(.row-eq-spacing)
-    > [class^="col"]:first-child {
+
+  .form-row.row-eq-spacing-sm:not(.row-eq-spacing)>[class^="col"]:first-child {
     padding-left: 0;
   }
-  .form-row.row-eq-spacing-sm:not(.row-eq-spacing) > [class^="col"]:last-child {
+
+  .form-row.row-eq-spacing-sm:not(.row-eq-spacing)>[class^="col"]:last-child {
     padding-right: 0;
   }
 }
 
 @media (max-width: 576px) {
-  .form-row.row-eq-spacing-sm:not(.row-eq-spacing)
-    > [class^="col"]:not(:last-child) {
+  .form-row.row-eq-spacing-sm:not(.row-eq-spacing)>[class^="col"]:not(:last-child) {
     margin-bottom: 2rem;
   }
 }
 
 /* Adjustments for medium screens and up (> 768px) */
 @media (min-width: 769px) {
-  .form-row.row-eq-spacing-md:not(.row-eq-spacing-sm):not(.row-eq-spacing)
-    > [class^="col"] {
+  .form-row.row-eq-spacing-md:not(.row-eq-spacing-sm):not(.row-eq-spacing)>[class^="col"] {
     padding-left: 1rem;
     padding-right: 1rem;
   }
-  .form-row.row-eq-spacing-md:not(.row-eq-spacing-sm):not(.row-eq-spacing)
-    > [class^="col"]:first-child {
+
+  .form-row.row-eq-spacing-md:not(.row-eq-spacing-sm):not(.row-eq-spacing)>[class^="col"]:first-child {
     padding-left: 0;
   }
-  .form-row.row-eq-spacing-md:not(.row-eq-spacing-sm):not(.row-eq-spacing)
-    > [class^="col"]:last-child {
+
+  .form-row.row-eq-spacing-md:not(.row-eq-spacing-sm):not(.row-eq-spacing)>[class^="col"]:last-child {
     padding-right: 0;
   }
 }
 
 @media (max-width: 768px) {
-  .form-row.row-eq-spacing-md:not(.row-eq-spacing-sm):not(.row-eq-spacing)
-    > [class^="col"]:not(:last-child) {
+  .form-row.row-eq-spacing-md:not(.row-eq-spacing-sm):not(.row-eq-spacing)>[class^="col"]:not(:last-child) {
     margin-bottom: 2rem;
   }
 }
 
 /* Adjustments for large screens and up (> 992px) */
 @media (min-width: 993px) {
-  .form-row.row-eq-spacing-lg:not(.row-eq-spacing-md):not(.row-eq-spacing-sm):not(.row-eq-spacing)
-    > [class^="col"] {
+  .form-row.row-eq-spacing-lg:not(.row-eq-spacing-md):not(.row-eq-spacing-sm):not(.row-eq-spacing)>[class^="col"] {
     padding-left: 1rem;
     padding-right: 1rem;
   }
-  .form-row.row-eq-spacing-lg:not(.row-eq-spacing-md):not(.row-eq-spacing-sm):not(.row-eq-spacing)
-    > [class^="col"]:first-child {
+
+  .form-row.row-eq-spacing-lg:not(.row-eq-spacing-md):not(.row-eq-spacing-sm):not(.row-eq-spacing)>[class^="col"]:first-child {
     padding-left: 0;
   }
-  .form-row.row-eq-spacing-lg:not(.row-eq-spacing-md):not(.row-eq-spacing-sm):not(.row-eq-spacing)
-    > [class^="col"]:last-child {
+
+  .form-row.row-eq-spacing-lg:not(.row-eq-spacing-md):not(.row-eq-spacing-sm):not(.row-eq-spacing)>[class^="col"]:last-child {
     padding-right: 0;
   }
 }
 
 @media (max-width: 992px) {
-  .form-row.row-eq-spacing-lg:not(.row-eq-spacing-md):not(.row-eq-spacing-sm):not(.row-eq-spacing)
-    > [class^="col"]:not(:last-child) {
+  .form-row.row-eq-spacing-lg:not(.row-eq-spacing-md):not(.row-eq-spacing-sm):not(.row-eq-spacing)>[class^="col"]:not(:last-child) {
     margin-bottom: 2rem;
   }
 }
 
 /* Adjustments for extra large screens and up (> 1200px) */
 @media (min-width: 1201px) {
-  .form-row.row-eq-spacing-xl:not(.row-eq-spacing-lg):not(.row-eq-spacing-md):not(.row-eq-spacing-sm):not(.row-eq-spacing)
-    > [class^="col"] {
+  .form-row.row-eq-spacing-xl:not(.row-eq-spacing-lg):not(.row-eq-spacing-md):not(.row-eq-spacing-sm):not(.row-eq-spacing)>[class^="col"] {
     padding-left: 1rem;
     padding-right: 1rem;
   }
-  .form-row.row-eq-spacing-xl:not(.row-eq-spacing-lg):not(.row-eq-spacing-md):not(.row-eq-spacing-sm):not(.row-eq-spacing)
-    > [class^="col"]:first-child {
+
+  .form-row.row-eq-spacing-xl:not(.row-eq-spacing-lg):not(.row-eq-spacing-md):not(.row-eq-spacing-sm):not(.row-eq-spacing)>[class^="col"]:first-child {
     padding-left: 0;
   }
-  .form-row.row-eq-spacing-xl:not(.row-eq-spacing-lg):not(.row-eq-spacing-md):not(.row-eq-spacing-sm):not(.row-eq-spacing)
-    > [class^="col"]:last-child {
+
+  .form-row.row-eq-spacing-xl:not(.row-eq-spacing-lg):not(.row-eq-spacing-md):not(.row-eq-spacing-sm):not(.row-eq-spacing)>[class^="col"]:last-child {
     padding-right: 0;
   }
 }
 
 @media (max-width: 1200px) {
-  .form-row.row-eq-spacing-xl:not(.row-eq-spacing-lg):not(.row-eq-spacing-md):not(.row-eq-spacing-sm):not(.row-eq-spacing)
-    > [class^="col"]:not(:last-child) {
+  .form-row.row-eq-spacing-xl:not(.row-eq-spacing-lg):not(.row-eq-spacing-md):not(.row-eq-spacing-sm):not(.row-eq-spacing)>[class^="col"]:not(:last-child) {
     margin-bottom: 2rem;
   }
 }

@@ -5,11 +5,7 @@
     margin-bottom: 2.25rem;
     background-color: #e6e6e6;
     cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
     user-select: none;
-    -ms-touch-action: none;
     touch-action: none;
 }
 
@@ -21,11 +17,9 @@
     max-width: 100%;
     height: 0.5rem;
     background-color: #cacaca;
-    -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
 
     &.is-dragging {
-        -webkit-transition: all 0s linear;
         transition: all 0s linear;
     }
 }
@@ -33,8 +27,6 @@
 .slider-handle {
     position: absolute;
     top: 50%;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
     transform: translateY(-50%);
     left: 0;
     z-index: 1;
@@ -43,9 +35,7 @@
     height: 1.4rem;
     border-radius: 0;
     background-color: #1779ba;
-    -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
-    -ms-touch-action: manipulation;
     touch-action: manipulation;
 
     &:hover {
@@ -73,8 +63,6 @@
     width: 0.5rem;
     height: 12.5rem;
     margin: 0 1.25rem;
-    -webkit-transform: scale(1, -1);
-    -ms-transform: scale(1, -1);
     transform: scale(1, -1);
 }
 
@@ -90,7 +78,5 @@
     left: 50%;
     width: 1.4rem;
     height: 1.4rem;
-    -webkit-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
     transform: translateX(-50%);
 }

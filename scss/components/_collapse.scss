@@ -7,14 +7,12 @@
   background-color: #f7f7f7;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 0.4rem;
-  -webkit-box-shadow: none;
   box-shadow: none;
 
   &:focus {
     color: rgba(0, 0, 0, 0.85);
     background-color: #f7f7f7;
     border-color: rgba(0, 0, 0, 0.2);
-    -webkit-box-shadow: none;
     box-shadow: none;
     outline: none;
   }
@@ -26,7 +24,6 @@
       color: rgba(0, 0, 0, 0.85);
       background-color: #f7f7f7;
       border-color: rgba(0, 0, 0, 0.2);
-      -webkit-box-shadow: none;
       box-shadow: none;
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
@@ -35,7 +32,6 @@
         color: rgba(0, 0, 0, 0.85);
         background-color: #f7f7f7;
         border-color: rgba(0, 0, 0, 0.2);
-        -webkit-box-shadow: none;
         box-shadow: none;
         outline: none;
       }
@@ -90,7 +86,6 @@
   }
 
   &:focus::after {
-    -webkit-box-shadow: inset 0 0 0 0.2rem #45a3fb;
     box-shadow: inset 0 0 0 0.2rem #45a3fb;
   }
 }
@@ -114,7 +109,6 @@
   color: rgba(0, 0, 0, 0.85);
   background-color: transparent;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  -webkit-box-shadow: none;
   box-shadow: none;
   border-top: none;
   border-bottom-left-radius: 0.4rem;
@@ -154,7 +148,6 @@
     color: rgba(0, 0, 0, 0.85);
     background-color: #f7f7f7;
     border-color: rgba(0, 0, 0, 0.2);
-    -webkit-box-shadow: none;
     box-shadow: none;
   }
 

@@ -433,7 +433,6 @@ iframe,
 embed,
 object {
   display: block;
-  vertical-align: middle;
 }
 
 img,
@@ -6312,7 +6311,7 @@ fieldset[disabled] .btn {
 }
 
 .btn-check:focus+.btn-indigo,
-.btn-indigo.focus {
+.btn-indigo:focus {
   color: var(--white);
   background-color: var(--indigo);
   border-color: var(--indigo-500);
@@ -6350,7 +6349,7 @@ fieldset[disabled] .btn {
 }
 
 .btn-check:focus+.btn-red,
-.btn-red.focus {
+.btn-red:focus {
   color: var(--white);
   background-color: var(--red);
   border-color: var(--red-500);
@@ -6394,7 +6393,7 @@ fieldset[disabled] .btn {
 }
 
 .btn-check:focus+.btn-orange,
-.btn-orange.focus {
+.btn-orange:focus {
   color: var(--white);
   background-color: var(--orange);
   border-color: var(--orange-500);
@@ -6432,7 +6431,7 @@ fieldset[disabled] .btn {
 }
 
 .btn-check:focus+.btn-green,
-.btn-green.focus {
+.btn-green:focus {
   color: var(--white);
   background-color: var(--green);
   border-color: var(--green-500);
@@ -6470,7 +6469,7 @@ fieldset[disabled] .btn {
 }
 
 .btn-check:focus+.btn-dark-gray,
-.btn-dark-gray.focus {
+.btn-dark-gray:focus {
   color: var(--white);
   background-color: var(--gray-900);
   border-color: var(--gray-800);
@@ -6508,7 +6507,7 @@ fieldset[disabled] .btn {
 }
 
 .btn-check:focus+.btn-warning,
-.btn-warning.focus {
+.btn-warning:focus {
   color: var(--white);
   background-color: #d39f04;
   border-color: #d39f04;
@@ -6546,7 +6545,7 @@ fieldset[disabled] .btn {
 }
 
 .btn-check:focus+.btn-danger,
-.btn-danger.focus {
+.btn-danger:focus {
   color: var(--white);
   background-color: #b81828;
   border-color: #b81828;
@@ -6584,7 +6583,7 @@ fieldset[disabled] .btn {
 }
 
 .btn-check:focus+.btn-is-light,
-.btn-is-light.focus {
+.btn-is-light:focus {
   color: var(--white);
   background-color: #d8d8d8;
   border-color: #d8d8d8;
@@ -6622,7 +6621,7 @@ fieldset[disabled] .btn {
 }
 
 .btn-check:focus+.btn-is-dark,
-.btn-is-dark.focus {
+.btn-is-dark:focus {
   color: var(--white);
   background-color: #d8d8d8;
   border-color: #d8d8d8;
@@ -7721,13 +7720,10 @@ div.icon-text {
 }
 
 .delete {
-  -webkit-touch-callout: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  -moz-appearance: none;
-  -webkit-appearance: none;
   background-color: rgba(10, 10, 10, 0.2);
   /* background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat; */
   border: none;
@@ -8680,11 +8676,11 @@ div.icon-text {
 
 .menu .menu-badge {
   -webkit-box-align: center;
-  align-items: center;
-  display: -ms-flexbox;
-  display: -webkit-box;
-  display: flex;
   -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   height: 100%;
   position: absolute;
   right: 0;
@@ -10621,8 +10617,8 @@ a.box:active {
 .box.is-blue {
   background-color: var(--blue-400);
   border-radius: 6px;
-  -webkit-box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
-  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
+  -webkit-box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.1);
+  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.1);
   display: block;
   padding: 1.25rem;
 }
@@ -10630,8 +10626,8 @@ a.box:active {
 .box.is-indigo {
   background-color: var(--indigo-500);
   border-radius: 6px;
-  -webkit-box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
-  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
+  -webkit-box-shadow: 0 0.5em 1em -0.125em rgba(111, 0, 255, 0.1), 0 0px 0 1px 111, 0, 255, 0.1;
+  box-shadow: 0 0.5em 1em -0.125em rgba(111, 0, 255, 0.1), 0 0px 0 1px 111, 0, 255, 0.1;
   display: block;
   padding: 1.25rem;
 }
@@ -10639,8 +10635,8 @@ a.box:active {
 .box.is-purple {
   background-color: var(--purple-500);
   border-radius: 6px;
-  -webkit-box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
-  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
+  -webkit-box-shadow: 0 0.5em 1em -0.125em rgba(132, 0, 255, 0.1), 0 0px 0 1px rgba(132, 0, 255, 0.1);
+  box-shadow: 0 0.5em 1em -0.125em rgba(132, 0, 255, 0.1), 0 0px 0 1px rgba(132, 0, 255, 0.1);
   display: block;
   padding: 1.25rem;
 }
@@ -10648,8 +10644,8 @@ a.box:active {
 .box.is-pink {
   background-color: var(--pink-500);
   border-radius: 6px;
-  -webkit-box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
-  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
+  -webkit-box-shadow: 0 0.5em 1em -0.125em rgba(255, 0, 242, 0.1), 0 0px 0 1px rgba(255, 0, 242, 0.1);
+  box-shadow: 0 0.5em 1em -0.125em rgba(255, 0, 242, 0.1), 0 0px 0 1px rgba(255, 0, 242, 0.1);
   display: block;
   padding: 1.25rem;
 }
@@ -10657,8 +10653,8 @@ a.box:active {
 .box.is-red {
   background-color: var(--red-500);
   border-radius: 6px;
-  -webkit-box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
-  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
+  -webkit-box-shadow: 0 0.5em 1em -0.125em rgba(255, 0, 0, 0.1), 0 0px 0 1px rgba(255, 0, 0, 0.1);
+  box-shadow: 0 0.5em 1em -0.125em rgba(255, 0, 0, 0.1), 0 0px 0 1px rgba(255, 0, 0, 0.1);
   display: block;
   padding: 1.25rem;
 }
@@ -10666,8 +10662,8 @@ a.box:active {
 .box.is-orange {
   background-color: var(--orange-500);
   border-radius: 6px;
-  -webkit-box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
-  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
+  -webkit-box-shadow: 0 0.5em 1em -0.125em rgba(255, 145, 0, 0.1), 0 0px 0 1px rgba(255, 145, 0, 0.1);
+  box-shadow: 0 0.5em 1em -0.125em rgba(255, 145, 0, 0.1), 0 0px 0 1px rgba(255, 145, 0, 0.1);
   display: block;
   padding: 1.25rem;
 }
@@ -10675,8 +10671,8 @@ a.box:active {
 .box.is-yellow {
   background-color: var(--yellow);
   border-radius: 6px;
-  -webkit-box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
-  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
+  -webkit-box-shadow: 0 0.5em 1em -0.125em rgba(255, 251, 0, 0.1), 0 0px 0 1px rgba(255, 251, 0, 0.1);
+  box-shadow: 0 0.5em 1em -0.125em rgba(255, 251, 0, 0.1), 0 0px 0 1px rgba(255, 251, 0, 0.1);
   display: block;
   padding: 1.25rem;
 }
@@ -10684,8 +10680,8 @@ a.box:active {
 .box.is-green {
   background-color: var(--green-500);
   border-radius: 6px;
-  -webkit-box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
-  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
+  -webkit-box-shadow: 0 0.5em 1em -0.125em rgba(0, 255, 34, 0.1), 0 0px 0 1px rgba(0, 255, 34, 0.1);
+  box-shadow: 0 0.5em 1em -0.125em rgba(0, 255, 34, 0.1), 0 0px 0 1px rgba(0, 255, 34, 0.1);
   display: block;
   padding: 1.25rem;
 }
@@ -10794,19 +10790,10 @@ a.box:active {
 }
 
 .modal {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
+  display: none;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
   overflow: hidden;
   position: fixed;
   z-index: 40;
@@ -10895,8 +10882,6 @@ a.box:active {
   -webkit-box-flex: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
   font-size: 1.5rem;
   line-height: 1;
 }
@@ -10920,7 +10905,6 @@ a.box:active {
 }
 
 .modal-card-body {
-  -webkit-overflow-scrolling: touch;
   background-color: white;
   -webkit-box-flex: 1;
   -ms-flex-positive: 1;
@@ -11187,8 +11171,6 @@ a.box:active {
   background-color: #1890ff;
   background-image: none;
   border-color: #1890ff;
-  -webkit-font-smoothing: auto;
-  -moz-osx-font-smoothing: auto;
 }
 
 .alert-heading {
@@ -11531,58 +11513,58 @@ a.box:active {
 .panel {
   border: 0.05rem solid #dadee4;
   border-radius: 0.1rem;
-  display: -ms-flexbox;
   display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  -ms-flex-direction: column;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .panel .panel-header,
 .panel .panel-footer {
-  -ms-flex: 0 0 auto;
   -webkit-box-flex: 0;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding: 0.8rem;
 }
 
 .panel .panel-nav {
-  -ms-flex: 0 0 auto;
   -webkit-box-flex: 0;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
 .panel .panel-body {
-  -ms-flex: 1 1 auto;
   -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
   flex: 1 1 auto;
   overflow-y: auto;
   padding: 0 0.8rem;
 }
 
 .tile {
+  -ms-flex-line-pack: justify;
   align-content: space-between;
   -webkit-box-align: start;
-  align-items: flex-start;
-  display: -ms-flexbox;
-  display: -webkit-box;
-  display: flex;
   -ms-flex-align: start;
-  -ms-flex-line-pack: justify;
+  align-items: flex-start;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .tile .title-icon,
 .tile .tile-action {
-  -ms-flex: 0 0 auto;
   -webkit-box-flex: 0;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
 .tile .tile-content {
-  -ms-flex: 1 1 auto;
   -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
   flex: 1 1 auto;
 }
 
@@ -11601,8 +11583,8 @@ a.box:active {
 
 .tile.tile-centered {
   -webkit-box-align: center;
-  align-items: center;
   -ms-flex-align: center;
+  align-items: center;
 }
 
 .tile.tile-centered .tile-content {
@@ -11969,8 +11951,8 @@ a.box:active {
   [data-toggle="tooltip"][data-target-breakpoint="md"]:focus::before {
     visibility: visible;
     opacity: 1;
-    transition: opacity 0.5s;
     -webkit-transition: opacity 0.5s;
+    transition: opacity 0.5s;
   }
 
   /* Content */
@@ -12065,25 +12047,84 @@ a.box:active {
   }
 }
 
-.toast {
+#toast {
+  visibility: hidden;
   width: 350px;
   max-width: 100%;
   font-size: 0.875rem;
   pointer-events: auto;
-  background-color: rgba(255, 255, 255, 0.85);
+  margin-left: -125px;
+  background-color: var(--white);
   background-clip: padding-box;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: var(--black);
+  text-align: center;
+  border-radius: 5px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  opacity: 90%;
   -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-  border-radius: 0.25rem;
 }
 
-.toast:not(.showing):not(.show) {
-  opacity: 0;
+#toast.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
 }
 
-.toast.hide {
+#toast.hide {
   display: none;
+}
+
+@-webkit-keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
 }
 
 .toast-container {
@@ -14374,7 +14415,6 @@ textarea.form-control-lg {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  -webkit-print-color-adjust: exact;
   color-adjust: exact;
 }
 
@@ -14674,7 +14714,6 @@ textarea.form-control-lg {
   -moz-appearance: none;
   appearance: none;
   padding: 0;
-  -webkit-print-color-adjust: exact;
   color-adjust: exact;
   display: inline-block;
   vertical-align: middle;
