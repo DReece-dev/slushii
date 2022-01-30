@@ -34,7 +34,27 @@
   overflow-y: scroll !important;
 }
 
-@media (min-width: 577px) {
+.text-ellipsis {
+  text-overflow: ellipsis !important;
+}
+
+.text-clip {
+  text-overflow: clip !important;
+}
+
+.overflow-clip {
+  overflow: clip !important;
+}
+
+.overflow-x-clip {
+  overflow-x: clip !important;
+}
+
+.overflow-y-clip {
+  overflow-y: clip !important;
+}
+
+@media (min-width: 640px) {
   .overflow-sm-hidden {
     overflow: hidden !important;
   }
@@ -72,7 +92,7 @@
   }
 }
 
-@media (min-width: 769px) {
+@media (min-width: 768px) {
   .overflow-md-hidden {
     overflow: hidden !important;
   }
@@ -110,7 +130,7 @@
   }
 }
 
-@media (min-width: 993px) {
+@media (min-width: 1024px) {
   .overflow-lg-hidden {
     overflow: hidden !important;
   }
@@ -148,7 +168,7 @@
   }
 }
 
-@media (min-width: 1201px) {
+@media (min-width: 1280px) {
   .overflow-xl-hidden {
     overflow: hidden !important;
   }
@@ -184,25 +204,4 @@
   .overflow-y-xl-scroll {
     overflow-y: scroll !important;
   }
-}
-
-.text-ellipsis {
-  text-overflow: ellipsis !important;
-  ;
-}
-
-.text-clip {
-  text-overflow: clip !important;
-}
-
-.overflow-clip {
-  overflow: clip !important;
-}
-
-.overflow-x-clip {
-  overflow-x: clip !important;
-}
-
-.overflow-y-clip {
-  overflow-y: clip !important;
 }

@@ -30,7 +30,7 @@
   z-index: auto !important;
 }
 
-@media (min-width: 577px) {
+@media (min-width:640px) {
   .z-sm-0 {
     z-index: 0 !important;
   }
@@ -64,7 +64,7 @@
   }
 }
 
-@media (min-width: 769px) {
+@media (min-width: 768px) {
   .z-md-0 {
     z-index: 0 !important;
   }
@@ -98,7 +98,7 @@
   }
 }
 
-@media (min-width: 993px) {
+@media (min-width: 1024px) {
   .z-lg-0 {
     z-index: 0 !important;
   }
@@ -132,7 +132,7 @@
   }
 }
 
-@media (min-width: 1201px) {
+@media (min-width: 1280px) {
   .z-xl-0 {
     z-index: 0 !important;
   }

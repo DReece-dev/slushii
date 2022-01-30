@@ -27,14 +27,14 @@
   padding: 1.5rem;
 }
 
-@media screen and (min-width: 769px),
+@media screen and (min-width: 960px),
 print {
   .hero.is-medium .hero-body {
     padding: 9rem 1.5rem;
   }
 }
 
-@media screen and (min-width: 769px),
+@media screen and (min-width: 1200px),
 print {
   .hero.is-large .hero-body {
     padding: 18rem 1.5rem;
@@ -80,7 +80,7 @@ print {
   opacity: 0.3;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 640px) {
   .hero-video {
     display: none;
   }
@@ -98,7 +98,7 @@ print {
   margin-top: 1.5rem;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 640px) {
   .hero-btns .btn {
     display: flex;
   }
@@ -108,7 +108,7 @@ print {
   }
 }
 
-@media screen and (min-width: 769px),
+@media screen and (min-width: 640px),
 print {
   .hero-btns {
     display: flex;
