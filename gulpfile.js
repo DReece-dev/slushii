@@ -16,6 +16,26 @@ gulp.task('css', function () {
         .pipe(gulp.dest('./dist'));
 });
 
+gulp.task('utlis', function () {
+    let processors = [
+        autoprefixer
+    ];
+    return gulp.src('./src/slushii-utilities.scss')
+        .pipe(sass().on('error', sass.logError))
+        .pipe(postcss(processors))
+        .pipe(gulp.dest('./dist'));
+});
+
+gulp.task('grid', function () {
+    let processors = [
+        autoprefixer
+    ];
+    return gulp.src('./src/slushii-grid.scss')
+        .pipe(sass().on('error', sass.logError))
+        .pipe(postcss(processors))
+        .pipe(gulp.dest('./dist'));
+});
+
 gulp.task('purgecss', () => {
     return gulp.src('./dist/slushii.css')
         .pipe(purgecss({
