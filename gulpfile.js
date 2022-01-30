@@ -16,6 +16,16 @@ gulp.task('css', function () {
         .pipe(gulp.dest('./dist'));
 });
 
+gulp.task('base', function () {
+    let processors = [
+        autoprefixer
+    ];
+    return gulp.src('./src/slushii-base.scss')
+        .pipe(sass().on('error', sass.logError))
+        .pipe(postcss(processors))
+        .pipe(gulp.dest('./dist'));
+});
+
 gulp.task('utlis', function () {
     let processors = [
         autoprefixer
