@@ -55,153 +55,294 @@
 }
 
 @media (min-width: 640px) {
-  .overflow-sm-hidden {
+  .sm\:overflow-hidden {
     overflow: hidden !important;
   }
 
-  .overflow-x-sm-hidden {
+  .sm\:overflow-x-hidden {
     overflow-x: hidden !important;
   }
 
-  .overflow-y-sm-hidden {
+  .sm\:overflow-y-hidden {
     overflow-y: hidden !important;
   }
 
-  .overflow-sm-auto {
+  .sm\:overflow-auto {
     overflow: auto !important;
   }
 
-  .overflow-x-sm-auto {
+  .sm\:overflow-x-auto {
     overflow-x: auto !important;
   }
 
-  .overflow-y-sm-auto {
+  .sm\:overflow-y-auto {
     overflow-y: auto !important;
   }
 
-  .overflow-sm-scroll {
+  .sm\:overflow-scroll {
     overflow: scroll !important;
   }
 
-  .overflow-x-sm-scroll {
+  .sm\:overflow-x-scroll {
     overflow-x: scroll !important;
   }
 
-  .overflow-y-sm-scroll {
+  .sm\:overflow-y-scroll {
     overflow-y: scroll !important;
+  }
+
+  .sm\:text-ellipsis {
+    text-overflow: ellipsis !important;
+  }
+
+  .sm\:text-clip {
+    text-overflow: clip !important;
+  }
+
+  .sm\:overflow-clip {
+    overflow: clip !important;
+  }
+
+  .sm\:overflow-x-clip {
+    overflow-x: clip !important;
+  }
+
+  .sm\:overflow-y-clip {
+    overflow-y: clip !important;
   }
 }
 
+@media (min-width: 640px) {
+}
+
 @media (min-width: 768px) {
-  .overflow-md-hidden {
+  .md\:overflow-hidden {
     overflow: hidden !important;
   }
 
-  .overflow-x-md-hidden {
+  .md\:overflow-x-hidden {
     overflow-x: hidden !important;
   }
 
-  .overflow-y-md-hidden {
+  .md\:overflow-y-hidden {
     overflow-y: hidden !important;
   }
 
-  .overflow-md-auto {
+  .md\:overflow-auto {
     overflow: auto !important;
   }
 
-  .overflow-x-md-auto {
+  .md\:overflow-x-auto {
     overflow-x: auto !important;
   }
 
-  .overflow-y-md-auto {
+  .md\:overflow-y-auto {
     overflow-y: auto !important;
   }
 
-  .overflow-md-scroll {
+  .md\:overflow-scroll {
     overflow: scroll !important;
   }
 
-  .overflow-x-md-scroll {
+  .md\:overflow-x-scroll {
     overflow-x: scroll !important;
   }
 
-  .overflow-y-md-scroll {
+  .md\:overflow-y-scroll {
     overflow-y: scroll !important;
+  }
+
+  .md\:text-ellipsis {
+    text-overflow: ellipsis !important;
+  }
+
+  .md\:text-clip {
+    text-overflow: clip !important;
+  }
+
+  .md\:overflow-clip {
+    overflow: clip !important;
+  }
+
+  .md\:overflow-x-clip {
+    overflow-x: clip !important;
+  }
+
+  .md\:overflow-y-clip {
+    overflow-y: clip !important;
   }
 }
 
 @media (min-width: 1024px) {
-  .overflow-lg-hidden {
+  .lg\:overflow-hidden {
     overflow: hidden !important;
   }
 
-  .overflow-x-lg-hidden {
+  .lg\:overflow-x-hidden {
     overflow-x: hidden !important;
   }
 
-  .overflow-y-lg-hidden {
+  .lg\:overflow-y-hidden {
     overflow-y: hidden !important;
   }
 
-  .overflow-lg-auto {
+  .lg\:overflow-auto {
     overflow: auto !important;
   }
 
-  .overflow-x-lg-auto {
+  .lg\:overflow-x-auto {
     overflow-x: auto !important;
   }
 
-  .overflow-y-lg-auto {
+  .lg\:overflow-y-auto {
     overflow-y: auto !important;
   }
 
-  .overflow-lg-scroll {
+  .lg\:overflow-scroll {
     overflow: scroll !important;
   }
 
-  .overflow-x-lg-scroll {
+  .lg\:overflow-x-scroll {
     overflow-x: scroll !important;
   }
 
-  .overflow-y-lg-scroll {
+  .lg\:overflow-y-scroll {
     overflow-y: scroll !important;
+  }
+
+  .lg\:text-ellipsis {
+    text-overflow: ellipsis !important;
+  }
+
+  .lg\:text-clip {
+    text-overflow: clip !important;
+  }
+
+  .lg\:overflow-clip {
+    overflow: clip !important;
+  }
+
+  .lg\:overflow-x-clip {
+    overflow-x: clip !important;
+  }
+
+  .lg\:overflow-y-clip {
+    overflow-y: clip !important;
   }
 }
 
 @media (min-width: 1280px) {
-  .overflow-xl-hidden {
+  .xl\:overflow-hidden {
     overflow: hidden !important;
   }
 
-  .overflow-x-xl-hidden {
+  .xl\:overflow-x-hidden {
     overflow-x: hidden !important;
   }
 
-  .overflow-y-xl-hidden {
+  .xl\:overflow-y-hidden {
     overflow-y: hidden !important;
   }
 
-  .overflow-xl-auto {
+  .xl\:overflow-auto {
     overflow: auto !important;
   }
 
-  .overflow-x-xl-auto {
+  .xl\:overflow-x-auto {
     overflow-x: auto !important;
   }
 
-  .overflow-y-xl-auto {
+  .xl\:overflow-y-auto {
     overflow-y: auto !important;
   }
 
-  .overflow-xl-scroll {
+  .xl\:overflow-scroll {
     overflow: scroll !important;
   }
 
-  .overflow-x-xl-scroll {
+  .xl\:overflow-x-scroll {
     overflow-x: scroll !important;
   }
 
-  .overflow-y-xl-scroll {
+  .xl\:overflow-y-scroll {
     overflow-y: scroll !important;
+  }
+
+  .xl\:text-ellipsis {
+    text-overflow: ellipsis !important;
+  }
+
+  .xl\:text-clip {
+    text-overflow: clip !important;
+  }
+
+  .xl\:overflow-clip {
+    overflow: clip !important;
+  }
+
+  .xl\:overflow-x-clip {
+    overflow-x: clip !important;
+  }
+
+  .xl\:overflow-y-clip {
+    overflow-y: clip !important;
+  }
+}
+
+@media (min-width: 1536px) {
+  .\32xl\:overflow-hidden {
+    overflow: hidden !important;
+  }
+
+  .\32xl\:overflow-x-hidden {
+    overflow-x: hidden !important;
+  }
+
+  .\32xl\:overflow-y-hidden {
+    overflow-y: hidden !important;
+  }
+
+  .\32xl\:overflow-auto {
+    overflow: auto !important;
+  }
+
+  .\32xl\:overflow-x-auto {
+    overflow-x: auto !important;
+  }
+
+  .\32xl\:overflow-y-auto {
+    overflow-y: auto !important;
+  }
+
+  .\32xl\:overflow-scroll {
+    overflow: scroll !important;
+  }
+
+  .\32xl\:overflow-x-scroll {
+    overflow-x: scroll !important;
+  }
+
+  .\32xl\:overflow-y-scroll {
+    overflow-y: scroll !important;
+  }
+
+  .\32xl\:text-ellipsis {
+    text-overflow: ellipsis !important;
+  }
+
+  .\32xl\:text-clip {
+    text-overflow: clip !important;
+  }
+
+  .\32xl\:overflow-clip {
+    overflow: clip !important;
+  }
+
+  .\32xl\:overflow-x-clip {
+    overflow-x: clip !important;
+  }
+
+  .\32xl\:overflow-y-clip {
+    overflow-y: clip !important;
   }
 }

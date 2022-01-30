@@ -117,183 +117,152 @@
   font-size: 0.75rem !important;
 }
 
-@media screen and (max-width: 768px) {
-  .is-size-1-mobile {
+@media (min-width: 640px) {
+  .sm\:is-size-1 {
     font-size: 3rem !important;
   }
 
-  .is-size-2-mobile {
+  .sm\:is-size-2 {
     font-size: 2.5rem !important;
   }
 
-  .is-size-3-mobile {
+  .sm\:is-size-3 {
     font-size: 2rem !important;
   }
 
-  .is-size-4-mobile {
+  .sm\:is-size-4 {
     font-size: 1.5rem !important;
   }
 
-  .is-size-5-mobile {
+  .sm\:is-size-5 {
     font-size: 1.25rem !important;
   }
 
-  .is-size-6-mobile {
+  .sm\:is-size-6 {
     font-size: 1rem !important;
   }
 
-  .is-size-7-mobile {
+  .sm\:is-size-7 {
     font-size: 0.75rem !important;
   }
 }
 
-@media screen and (min-width: 769px),
-print {
-  .is-size-1-tablet {
+@media (min-width: 768px) {
+  .md\:is-size-1 {
     font-size: 3rem !important;
   }
 
-  .is-size-2-tablet {
+  .md\:is-size-2 {
     font-size: 2.5rem !important;
   }
 
-  .is-size-3-tablet {
+  .md\:is-size-3 {
     font-size: 2rem !important;
   }
 
-  .is-size-4-tablet {
+  .md\:is-size-4 {
     font-size: 1.5rem !important;
   }
 
-  .is-size-5-tablet {
+  .md\:is-size-5 {
     font-size: 1.25rem !important;
   }
 
-  .is-size-6-tablet {
+  .md\:is-size-6 {
     font-size: 1rem !important;
   }
 
-  .is-size-7-tablet {
+  .md\:is-size-7 {
     font-size: 0.75rem !important;
   }
 }
 
-@media screen and (max-width: 1023px) {
-  .is-size-1-touch {
+@media (min-width: 1024px) {
+  .lg\:is-size-1 {
     font-size: 3rem !important;
   }
 
-  .is-size-2-touch {
+  .lg\:is-size-2 {
     font-size: 2.5rem !important;
   }
 
-  .is-size-3-touch {
+  .lg\:is-size-3 {
     font-size: 2rem !important;
   }
 
-  .is-size-4-touch {
+  .lg\:is-size-4 {
     font-size: 1.5rem !important;
   }
 
-  .is-size-5-touch {
+  .lg\:is-size-5 {
     font-size: 1.25rem !important;
   }
 
-  .is-size-6-touch {
+  .lg\:is-size-6 {
     font-size: 1rem !important;
   }
 
-  .is-size-7-touch {
+  .lg\:is-size-7 {
     font-size: 0.75rem !important;
   }
 }
 
-@media screen and (min-width: 1024px) {
-  .is-size-1-desktop {
+@media (min-width: 1280px) {
+  .xl\:is-size-1 {
     font-size: 3rem !important;
   }
 
-  .is-size-2-desktop {
+  .xl\:is-size-2 {
     font-size: 2.5rem !important;
   }
 
-  .is-size-3-desktop {
+  .xl\:is-size-3 {
     font-size: 2rem !important;
   }
 
-  .is-size-4-desktop {
+  .xl\:is-size-4 {
     font-size: 1.5rem !important;
   }
 
-  .is-size-5-desktop {
+  .xl\:is-size-5 {
     font-size: 1.25rem !important;
   }
 
-  .is-size-6-desktop {
+  .xl\:is-size-6 {
     font-size: 1rem !important;
   }
 
-  .is-size-7-desktop {
+  .xl\:is-size-7 {
     font-size: 0.75rem !important;
   }
 }
 
-@media screen and (min-width: 1216px) {
-  .is-size-1-widescreen {
+@media (min-width: 1536px) {
+  .\32xl\:is-size-1 {
     font-size: 3rem !important;
   }
 
-  .is-size-2-widescreen {
+  .\32xl\:is-size-2 {
     font-size: 2.5rem !important;
   }
 
-  .is-size-3-widescreen {
+  .\32xl\:is-size-3 {
     font-size: 2rem !important;
   }
 
-  .is-size-4-widescreen {
+  .\32xl\:is-size-4 {
     font-size: 1.5rem !important;
   }
 
-  .is-size-5-widescreen {
+  .\32xl\:is-size-5 {
     font-size: 1.25rem !important;
   }
 
-  .is-size-6-widescreen {
+  .\32xl\:is-size-6 {
     font-size: 1rem !important;
   }
 
-  .is-size-7-widescreen {
-    font-size: 0.75rem !important;
-  }
-}
-
-@media screen and (min-width: 1408px) {
-  .is-size-1-fullhd {
-    font-size: 3rem !important;
-  }
-
-  .is-size-2-fullhd {
-    font-size: 2.5rem !important;
-  }
-
-  .is-size-3-fullhd {
-    font-size: 2rem !important;
-  }
-
-  .is-size-4-fullhd {
-    font-size: 1.5rem !important;
-  }
-
-  .is-size-5-fullhd {
-    font-size: 1.25rem !important;
-  }
-
-  .is-size-6-fullhd {
-    font-size: 1rem !important;
-  }
-
-  .is-size-7-fullhd {
+  .\32xl\:is-size-7 {
     font-size: 0.75rem !important;
   }
 }

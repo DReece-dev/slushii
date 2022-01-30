@@ -22,7 +22,6 @@
     will-change: left, top !important;
 }
 
-/* Global values */
 .will-change-inherit {
     will-change: inherit !important;
 }
@@ -37,4 +36,214 @@
 
 .will-change-revert {
     will-change: unset !important;
+}
+
+@media (min-width: 640px) {
+    .sm\:will-change-auto {
+        will-change: auto !important;
+    }
+
+    .sm\:will-change-scroll-position {
+        will-change: scroll-position !important;
+    }
+
+    .sm\:will-change-contents {
+        will-change: contents !important;
+    }
+
+    .sm\:will-change-transform {
+        will-change: transform !important;
+    }
+
+    .sm\:will-change-opacity {
+        will-change: opacity !important;
+    }
+
+    .sm\:will-change-left-top {
+        will-change: left, top !important;
+    }
+
+    .sm\:will-change-inherit {
+        will-change: inherit !important;
+    }
+
+    .sm\:will-change-initial {
+        will-change: initial !important;
+    }
+
+    .sm\:will-change-revert {
+        will-change: revert !important;
+    }
+
+    .sm\:will-change-revert {
+        will-change: unset !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .md\:will-change-auto {
+        will-change: auto !important;
+    }
+
+    .md\:will-change-scroll-position {
+        will-change: scroll-position !important;
+    }
+
+    .md\:will-change-contents {
+        will-change: contents !important;
+    }
+
+    .md\:will-change-transform {
+        will-change: transform !important;
+    }
+
+    .md\:will-change-opacity {
+        will-change: opacity !important;
+    }
+
+    .md\:will-change-left-top {
+        will-change: left, top !important;
+    }
+
+    .md\:will-change-inherit {
+        will-change: inherit !important;
+    }
+
+    .md\:will-change-initial {
+        will-change: initial !important;
+    }
+
+    .md\:will-change-revert {
+        will-change: revert !important;
+    }
+
+    .md\:will-change-revert {
+        will-change: unset !important;
+    }
+}
+
+@media (min-width: 1024px) {
+    .lg\:will-change-auto {
+        will-change: auto !important;
+    }
+
+    .lg\:will-change-scroll-position {
+        will-change: scroll-position !important;
+    }
+
+    .lg\:will-change-contents {
+        will-change: contents !important;
+    }
+
+    .lg\:will-change-transform {
+        will-change: transform !important;
+    }
+
+    .lg\:will-change-opacity {
+        will-change: opacity !important;
+    }
+
+    .lg\:will-change-left-top {
+        will-change: left, top !important;
+    }
+
+    .lg\:will-change-inherit {
+        will-change: inherit !important;
+    }
+
+    .lg\:will-change-initial {
+        will-change: initial !important;
+    }
+
+    .lg\:will-change-revert {
+        will-change: revert !important;
+    }
+
+    .lg\:will-change-revert {
+        will-change: unset !important;
+    }
+}
+
+@media (min-width: 1280px) {
+    .xl\:will-change-auto {
+        will-change: auto !important;
+    }
+
+    .xl\:will-change-scroll-position {
+        will-change: scroll-position !important;
+    }
+
+    .xl\:will-change-contents {
+        will-change: contents !important;
+    }
+
+    .xl\:will-change-transform {
+        will-change: transform !important;
+    }
+
+    .xl\:will-change-opacity {
+        will-change: opacity !important;
+    }
+
+    .xl\:will-change-left-top {
+        will-change: left, top !important;
+    }
+
+    .xl\:will-change-inherit {
+        will-change: inherit !important;
+    }
+
+    .xl\:will-change-initial {
+        will-change: initial !important;
+    }
+
+    .xl\:will-change-revert {
+        will-change: revert !important;
+    }
+
+    .xl\:will-change-revert {
+        will-change: unset !important;
+    }
+}
+
+@media (min-width: 1536px) {
+    .\32xl\:will-change-auto {
+        will-change: auto !important;
+    }
+
+    .\32xl\:will-change-scroll-position {
+        will-change: scroll-position !important;
+    }
+
+    .\32xl\:will-change-contents {
+        will-change: contents !important;
+    }
+
+    .\32xl\:will-change-transform {
+        will-change: transform !important;
+    }
+
+    .\32xl\:will-change-opacity {
+        will-change: opacity !important;
+    }
+
+    .\32xl\:will-change-left-top {
+        will-change: left, top !important;
+    }
+
+    .\32xl\:will-change-inherit {
+        will-change: inherit !important;
+    }
+
+    .\32xl\:will-change-initial {
+        will-change: initial !important;
+    }
+
+    .\32xl\:will-change-revert {
+        will-change: revert !important;
+    }
+
+    .\32xl\:will-change-revert {
+        will-change: unset !important;
+    }
 }

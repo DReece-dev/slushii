@@ -99,3 +99,523 @@
 .vertical-align-super {
   vertical-align: super !important;
 }
+
+@media (min-width: 640px) {
+  .sm\:align-left {
+    justify-content: flex-start !important;
+  }
+
+  .sm\:align-right {
+    justify-content: flex-end !important;
+  }
+
+  .sm\:align-center {
+    justify-content: center !important;
+  }
+
+  .sm\:align-justify {
+    justify-content: space-between !important;
+  }
+
+  .sm\:align-spaced {
+    justify-content: space-around !important;
+  }
+
+  .sm\:align-left.vertical.menu>li>a {
+    justify-content: flex-start !important;
+  }
+
+  .sm\:align-right.vertical.menu>li>a {
+    justify-content: flex-end !important;
+  }
+
+  .sm\:align-center.vertical.menu>li>a {
+    justify-content: center !important;
+  }
+
+  .sm\:align-top {
+    align-items: flex-start !important;
+  }
+
+  .sm\:align-self-top {
+    align-self: flex-start !important;
+  }
+
+  .sm\:lign-bottom {
+    align-items: flex-end !important;
+  }
+
+  .sm\:align-self-bottom {
+    align-self: flex-end !important;
+  }
+
+  .sm\:align-middle {
+    align-items: center !important;
+  }
+
+  .sm\:align-self-middle {
+    align-self: center !important;
+  }
+
+  .sm\:align-stretch {
+    align-items: stretch !important;
+  }
+
+  .sm\:align-self-stretch {
+    align-self: stretch !important;
+  }
+
+  .sm\:align-center-middle {
+    justify-content: center !important;
+    align-items: center !important;
+    align-content: center !important;
+  }
+
+  .sm\:vertical-align-baseline {
+    vertical-align: baseline !important;
+  }
+
+  .sm\:vertical-align-top {
+    vertical-align: top !important;
+  }
+
+  .sm\:vertical-align-middle {
+    vertical-align: middle !important;
+  }
+
+  .sm\:vertical-align-bottom {
+    vertical-align: bottom !important;
+  }
+
+  .sm\:vertical-align-text-top {
+    vertical-align: text-top !important;
+  }
+
+  .sm\:vertical-align-text-bottom {
+    vertical-align: text-bottom !important;
+  }
+
+  .sm\:vertical-align-sub {
+    vertical-align: sub !important;
+  }
+
+  .sm\:vertical-align-super {
+    vertical-align: super !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:align-left {
+    justify-content: flex-start !important;
+  }
+
+  .md\:align-right {
+    justify-content: flex-end !important;
+  }
+
+  .md\:align-center {
+    justify-content: center !important;
+  }
+
+  .md\:align-justify {
+    justify-content: space-between !important;
+  }
+
+  .md\:align-spaced {
+    justify-content: space-around !important;
+  }
+
+  .md\:align-left.vertical.menu>li>a {
+    justify-content: flex-start !important;
+  }
+
+  .md\:align-right.vertical.menu>li>a {
+    justify-content: flex-end !important;
+  }
+
+  .md\:align-center.vertical.menu>li>a {
+    justify-content: center !important;
+  }
+
+  .md\:align-top {
+    align-items: flex-start !important;
+  }
+
+  .md\:align-self-top {
+    align-self: flex-start !important;
+  }
+
+  .md\:align-bottom {
+    align-items: flex-end !important;
+  }
+
+  .md\:align-self-bottom {
+    align-self: flex-end !important;
+  }
+
+  .md\:align-middle {
+    align-items: center !important;
+  }
+
+  .md\:align-self-middle {
+    align-self: center !important;
+  }
+
+  .md\:align-stretch {
+    align-items: stretch !important;
+  }
+
+  .md\:align-self-stretch {
+    align-self: stretch !important;
+  }
+
+  .md\:align-center-middle {
+    justify-content: center !important;
+    align-items: center !important;
+    align-content: center !important;
+  }
+
+  .md\:vertical-align-baseline {
+    vertical-align: baseline !important;
+  }
+
+  .md\:vertical-align-top {
+    vertical-align: top !important;
+  }
+
+  .md\:vertical-align-middle {
+    vertical-align: middle !important;
+  }
+
+  .md\:vertical-align-bottom {
+    vertical-align: bottom !important;
+  }
+
+  .md\:vertical-align-text-top {
+    vertical-align: text-top !important;
+  }
+
+  .md\:vertical-align-text-bottom {
+    vertical-align: text-bottom !important;
+  }
+
+  .md\:vertical-align-sub {
+    vertical-align: sub !important;
+  }
+
+  .md\:vertical-align-super {
+    vertical-align: super !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:align-left {
+    justify-content: flex-start !important;
+  }
+
+  .lg\:align-right {
+    justify-content: flex-end !important;
+  }
+
+  .lg\:align-center {
+    justify-content: center !important;
+  }
+
+  .lg\:align-justify {
+    justify-content: space-between !important;
+  }
+
+  .lg\:align-spaced {
+    justify-content: space-around !important;
+  }
+
+  .lg\:align-left.vertical.menu>li>a {
+    justify-content: flex-start !important;
+  }
+
+  .lg\:align-right.vertical.menu>li>a {
+    justify-content: flex-end !important;
+  }
+
+  .lg\:align-center.vertical.menu>li>a {
+    justify-content: center !important;
+  }
+
+  .lg\:align-top {
+    align-items: flex-start !important;
+  }
+
+  .lg\:align-self-top {
+    align-self: flex-start !important;
+  }
+
+  .lg\:align-bottom {
+    align-items: flex-end !important;
+  }
+
+  .lg\:align-self-bottom {
+    align-self: flex-end !important;
+  }
+
+  .lg\:align-middle {
+    align-items: center !important;
+  }
+
+  .lg\:align-self-middle {
+    align-self: center !important;
+  }
+
+  .lg\:align-stretch {
+    align-items: stretch !important;
+  }
+
+  .lg\:align-self-stretch {
+    align-self: stretch !important;
+  }
+
+  .lg\:align-center-middle {
+    justify-content: center !important;
+    align-items: center !important;
+    align-content: center !important;
+  }
+
+  .lg\:vertical-align-baseline {
+    vertical-align: baseline !important;
+  }
+
+  .lg\:vertical-align-top {
+    vertical-align: top !important;
+  }
+
+  .lg\:vertical-align-middle {
+    vertical-align: middle !important;
+  }
+
+  .lg\:vertical-align-bottom {
+    vertical-align: bottom !important;
+  }
+
+  .lg\:vertical-align-text-top {
+    vertical-align: text-top !important;
+  }
+
+  .lg\:vertical-align-text-bottom {
+    vertical-align: text-bottom !important;
+  }
+
+  .lg\:vertical-align-sub {
+    vertical-align: sub !important;
+  }
+
+  .lg\:vertical-align-super {
+    vertical-align: super !important;
+  }
+}
+
+@media (min-width: 1280px) {
+  .xl\:align-left {
+    justify-content: flex-start !important;
+  }
+
+  .xl\:align-right {
+    justify-content: flex-end !important;
+  }
+
+  .xl\:align-center {
+    justify-content: center !important;
+  }
+
+  .xl\:align-justify {
+    justify-content: space-between !important;
+  }
+
+  .xl\:align-spaced {
+    justify-content: space-around !important;
+  }
+
+  .xl\:align-left.vertical.menu>li>a {
+    justify-content: flex-start !important;
+  }
+
+  .xl\:align-right.vertical.menu>li>a {
+    justify-content: flex-end !important;
+  }
+
+  .xl\:align-center.vertical.menu>li>a {
+    justify-content: center !important;
+  }
+
+  .xl\:align-top {
+    align-items: flex-start !important;
+  }
+
+  .xl\:align-self-top {
+    align-self: flex-start !important;
+  }
+
+  .xl\:align-bottom {
+    align-items: flex-end !important;
+  }
+
+  .xl\:align-self-bottom {
+    align-self: flex-end !important;
+  }
+
+  .xl\:align-middle {
+    align-items: center !important;
+  }
+
+  .xl\:align-self-middle {
+    align-self: center !important;
+  }
+
+  .xl\:align-stretch {
+    align-items: stretch !important;
+  }
+
+  .xl\:align-self-stretch {
+    align-self: stretch !important;
+  }
+
+  .xl\:align-center-middle {
+    justify-content: center !important;
+    align-items: center !important;
+    align-content: center !important;
+  }
+
+  .xl\:vertical-align-baseline {
+    vertical-align: baseline !important;
+  }
+
+  .xl\:vertical-align-top {
+    vertical-align: top !important;
+  }
+
+  .xl\:vertical-align-middle {
+    vertical-align: middle !important;
+  }
+
+  .xl\:vertical-align-bottom {
+    vertical-align: bottom !important;
+  }
+
+  .xl\:vertical-align-text-top {
+    vertical-align: text-top !important;
+  }
+
+  .xl\:vertical-align-text-bottom {
+    vertical-align: text-bottom !important;
+  }
+
+  .xl\:vertical-align-sub {
+    vertical-align: sub !important;
+  }
+
+  .xl\:vertical-align-super {
+    vertical-align: super !important;
+  }
+}
+
+@media (min-width: 1536px) {
+  .\32xl\:align-left {
+    justify-content: flex-start !important;
+  }
+
+  .\32xl\:align-right {
+    justify-content: flex-end !important;
+  }
+
+  .\32xl\:align-center {
+    justify-content: center !important;
+  }
+
+  .\32xl\:align-justify {
+    justify-content: space-between !important;
+  }
+
+  .\32xl\:align-spaced {
+    justify-content: space-around !important;
+  }
+
+  .\32xl\:align-left.vertical.menu>li>a {
+    justify-content: flex-start !important;
+  }
+
+  .\32xl\:align-right.vertical.menu>li>a {
+    justify-content: flex-end !important;
+  }
+
+  .\32xl\:align-center.vertical.menu>li>a {
+    justify-content: center !important;
+  }
+
+  .\32xl\:align-top {
+    align-items: flex-start !important;
+  }
+
+  .\32xl\:align-self-top {
+    align-self: flex-start !important;
+  }
+
+  .\32xl\:align-bottom {
+    align-items: flex-end !important;
+  }
+
+  .\32xl\:align-self-bottom {
+    align-self: flex-end !important;
+  }
+
+  .\32xl\:align-middle {
+    align-items: center !important;
+  }
+
+  .\32xl\:align-self-middle {
+    align-self: center !important;
+  }
+
+  .\32xl\:align-stretch {
+    align-items: stretch !important;
+  }
+
+  .\32xl\:align-self-stretch {
+    align-self: stretch !important;
+  }
+
+  .\32xl\:align-center-middle {
+    justify-content: center !important;
+    align-items: center !important;
+    align-content: center !important;
+  }
+
+  .\32xl\:vertical-align-baseline {
+    vertical-align: baseline !important;
+  }
+
+  .\32xl\:vertical-align-top {
+    vertical-align: top !important;
+  }
+
+  .\32xl\:vertical-align-middle {
+    vertical-align: middle !important;
+  }
+
+  .\32xl\:vertical-align-bottom {
+    vertical-align: bottom !important;
+  }
+
+  .\32xl\:vertical-align-text-top {
+    vertical-align: text-top !important;
+  }
+
+  .\32xl\:vertical-align-text-bottom {
+    vertical-align: text-bottom !important;
+  }
+
+  .\32xl\:vertical-align-sub {
+    vertical-align: sub !important;
+  }
+
+  .\32xl\:vertical-align-super {
+    vertical-align: super !important;
+  }
+}

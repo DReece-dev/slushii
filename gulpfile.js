@@ -26,7 +26,7 @@ gulp.task('base', function () {
         .pipe(gulp.dest('./dist'));
 });
 
-gulp.task('utlis', function () {
+gulp.task('utils', function () {
     let processors = [
         autoprefixer
     ];

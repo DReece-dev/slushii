@@ -30,138 +30,172 @@
   z-index: auto !important;
 }
 
-@media (min-width:640px) {
-  .z-sm-0 {
+@media (min-width: 640px) {
+  .sm\:z-0 {
     z-index: 0 !important;
   }
 
-  .z-sm-1 {
+  .sm\:z-1 {
     z-index: 1 !important;
   }
 
-  .z-sm-10 {
+  .sm\:z-10 {
     z-index: 10 !important;
   }
 
-  .z-sm-20 {
+  .sm\:z-20 {
     z-index: 20 !important;
   }
 
-  .z-sm-30 {
+  .sm\:z-30 {
     z-index: 30 !important;
   }
 
-  .z-sm-40 {
+  .sm\:z-40 {
     z-index: 40 !important;
   }
 
-  .z-sm-50 {
+  .sm\:z-50 {
     z-index: 50 !important;
   }
 
-  .z-sm-auto {
+  .sm\:z-auto {
     z-index: auto !important;
   }
 }
 
 @media (min-width: 768px) {
-  .z-md-0 {
+  .md\:z-0 {
     z-index: 0 !important;
   }
 
-  .z-md-1 {
+  .md\:z-1 {
     z-index: 1 !important;
   }
 
-  .z-md-10 {
+  .md\:z-10 {
     z-index: 10 !important;
   }
 
-  .z-md-20 {
+  .md\:z-20 {
     z-index: 20 !important;
   }
 
-  .z-md-30 {
+  .md\:z-30 {
     z-index: 30 !important;
   }
 
-  .z-md-40 {
+  .md\:z-40 {
     z-index: 40 !important;
   }
 
-  .z-md-50 {
+  .md\:z-50 {
     z-index: 50 !important;
   }
 
-  .z-md-auto {
+  .md\:z-auto {
     z-index: auto !important;
   }
 }
 
 @media (min-width: 1024px) {
-  .z-lg-0 {
+  .lg\:z-0 {
     z-index: 0 !important;
   }
 
-  .z-lg-1 {
+  .lg\:z-1 {
     z-index: 1 !important;
   }
 
-  .z-lg-10 {
+  .lg\:z-10 {
     z-index: 10 !important;
   }
 
-  .z-lg-20 {
+  .lg\:z-20 {
     z-index: 20 !important;
   }
 
-  .z-lg-30 {
+  .lg\:z-30 {
     z-index: 30 !important;
   }
 
-  .z-lg-40 {
+  .lg\:z-40 {
     z-index: 40 !important;
   }
 
-  .z-lg-50 {
+  .lg\:z-50 {
     z-index: 50 !important;
   }
 
-  .z-lg-auto {
+  .lg\:z-auto {
     z-index: auto !important;
   }
 }
 
 @media (min-width: 1280px) {
-  .z-xl-0 {
+  .xl\:z-0 {
     z-index: 0 !important;
   }
 
-  .z-xl-1 {
+  .xl\:z-1 {
     z-index: 1 !important;
   }
 
-  .z-xl-10 {
+  .xl\:z-10 {
     z-index: 10 !important;
   }
 
-  .z-xl-20 {
+  .xl\:z-20 {
     z-index: 20 !important;
   }
 
-  .z-xl-30 {
+  .xl\:z-30 {
     z-index: 30 !important;
   }
 
-  .z-xl-40 {
+  .xl\:z-40 {
     z-index: 40 !important;
   }
 
-  .z-xl-50 {
+  .xl\:z-50 {
     z-index: 50 !important;
   }
 
-  .z-xl-auto {
+  .xl\:z-auto {
+    z-index: auto !important;
+  }
+}
+
+@media (min-width: 1536px) {
+  .\32xl\:z-0 {
+    z-index: 0 !important;
+  }
+
+  .\32xl\:z-1 {
+    z-index: 1 !important;
+  }
+
+  .\32xl\:z-10 {
+    z-index: 10 !important;
+  }
+
+  .\32xl\:z-20 {
+    z-index: 20 !important;
+  }
+
+  .\32xl\:z-30 {
+    z-index: 30 !important;
+  }
+
+  .\32xl\:z-40 {
+    z-index: 40 !important;
+  }
+
+  .\32xl\:z-50 {
+    z-index: 50 !important;
+  }
+
+  .\32xl\:z-auto {
     z-index: auto !important;
   }
 }

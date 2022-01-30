@@ -1,9 +1,7 @@
-/* Normal */
 .paint-normal {
     paint-order: normal !important;
 }
 
-/* Single values */
 .paint-stroke {
     paint-order: stroke !important;
 }
@@ -19,8 +17,6 @@
 .paint-makers-stroke-fill {
     paint-order: markers stroke fill !important;
 }
-
-/* Global values */
 
 .paint-order-inherit {
     paint-order: inherit !important;

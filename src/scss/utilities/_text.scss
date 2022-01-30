@@ -146,46 +146,8 @@
   text-align: justify !important;
 }
 
-@media print,
-screen and (min-width: 40em) {
-  .medium-text-left {
-    text-align: left !important;
-  }
-
-  .medium-text-right {
-    text-align: right !important;
-  }
-
-  .medium-text-center {
-    text-align: center !important;
-  }
-
-  .medium-text-justify {
-    text-align: justify !important;
-  }
-}
-
-@media print,
-screen and (min-width: 64em) {
-  .large-text-left {
-    text-align: left !important;
-  }
-
-  .large-text-right {
-    text-align: right !important;
-  }
-
-  .large-text-center {
-    text-align: center !important;
-  }
-
-  .large-text-justify {
-    text-align: justify !important;
-  }
-}
-
 .text-shadow {
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.10) !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
 }
 
 .text-shadow-md {
@@ -283,4 +245,1259 @@ screen and (min-width: 64em) {
 
 .text-opacity-100 {
   opacity: 1 !important;
+}
+
+@media (min-width: 640px) {
+  .sm\:text-hide {
+    font: 0/0 a !important;
+    color: transparent !important;
+    text-shadow: none !important;
+    background-color: transparent !important;
+    border: 0 !important;
+  }
+
+  .sm\:text-decoration-none {
+    text-decoration: none !important;
+  }
+
+  .sm\:text-decoration-underline {
+    text-decoration: underline !important;
+  }
+
+  .sm\:text-decoration-overline {
+    text-decoration: overline !important;
+  }
+
+  .sm\:text-decoration-line-through {
+    text-decoration: line-through !important;
+  }
+
+  .sm\:text-decoration-blink {
+    text-decoration: blink !important;
+  }
+
+  .sm\:text-decoration-style-solid {
+    text-decoration-style: solid !important;
+  }
+
+  .sm\:text-decoration-style-double {
+    text-decoration-style: double !important;
+  }
+
+  .sm\:text-decoration-style-dotted {
+    text-decoration-style: dotted !important;
+  }
+
+  .sm\:text-decoration-style-dashed {
+    text-decoration-style: dashed !important;
+  }
+
+  .sm\:text-decoration-style-wavy {
+    text-decoration-style: wavy !important;
+  }
+
+  .sm\:decoration-black {
+    text-decoration-color: var(--black) !important;
+  }
+
+  .sm\:decoration-white {
+    text-decoration-color: var(--white) !important;
+  }
+
+  .sm\:decoration-light {
+    text-decoration-color: var(--light) !important;
+  }
+
+  .sm\:decoration-dark {
+    text-decoration-color: var(--dark) !important;
+  }
+
+  .sm\:decoration-blue {
+    text-decoration-color: var(--blue) !important;
+  }
+
+  .sm\:decoration-indigo {
+    text-decoration-color: var(--indigo) !important;
+  }
+
+  .sm\:decoration-puple {
+    text-decoration-color: var(--purple) !important;
+  }
+
+  .sm\:decoration-red {
+    text-decoration-color: var(--red) !important;
+  }
+
+  .sm\:decoration-orange {
+    text-decoration-color: var(--orange-400) !important;
+  }
+
+  .sm\:decoration-yellow {
+    text-decoration-color: var(--yellow) !important;
+  }
+
+  .sm\:decoration-green {
+    text-decoration-color: var(--green) !important;
+  }
+
+  .sm\:decoration-cyan {
+    text-decoration-color: var(--cyan) !important;
+  }
+
+  .sm\:decoration-light-gray {
+    text-decoration-color: var(--lightgray) !important;
+  }
+
+  .sm\:decoration-auto {
+    text-decoration-thickness: auto !important;
+  }
+
+  .sm\:decoration-from-font {
+    text-decoration-thickness: from-font !important;
+  }
+
+  .sm\:decoration-0 {
+    text-decoration-thickness: 0px !important;
+  }
+
+  .sm\:decoration-1 {
+    text-decoration-thickness: 1px !important;
+  }
+
+  .sm\:decoration-2 {
+    text-decoration-thickness: 2px !important;
+  }
+
+  .sm\:decoration-4 {
+    text-decoration-thickness: 4px !important;
+  }
+
+  .sm\:decoration-8 {
+    text-decoration-thickness: 8px !important;
+  }
+
+  .sm\:text-extra-letter-spacing {
+    letter-spacing: 0.03rem !important;
+  }
+
+  .sm\:text-left {
+    text-align: left !important;
+  }
+
+  .sm\:text-right {
+    text-align: right !important;
+  }
+
+  .sm\:text-center {
+    text-align: center !important;
+  }
+
+  .sm\:text-justify {
+    text-align: justify !important;
+  }
+
+  .sm\:text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+  }
+
+  .sm\:text-shadow-md {
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.08) !important;
+  }
+
+  .sm\:text-shadow-lg {
+    text-shadow: 0 15px 30px rgba(0, 0, 0, 0.11), 0 5px 15px rgba(0, 0, 0, 0.08) !important;
+  }
+
+  .sm\:text-shadow-none {
+    text-shadow: none !important;
+  }
+
+  .sm\:text-wrap {
+    white-space: normal !important;
+  }
+
+  .sm\:text-nowrap {
+    white-space: nowrap !important;
+  }
+
+  .sm\:text-break {
+    word-wrap: break-word !important;
+    word-break: break-word !important;
+  }
+
+  .sm\:text-reset {
+    color: inherit !important;
+  }
+
+  .sm\:text-black {
+    color: var(--black) !important;
+  }
+
+  .sm\:ext-white {
+    color: var(--white) !important;
+  }
+
+  .sm\:text-light {
+    color: var(--light) !important;
+  }
+
+  .sm\:text-dark {
+    color: var(--dark) !important;
+  }
+
+  .sm\:text-blue {
+    color: var(--blue) !important;
+  }
+
+  .sm\:text-indigo {
+    color: var(--indigo) !important;
+  }
+
+  .sm\:text-puple {
+    color: var(--purple) !important;
+  }
+
+  .sm\:text-red {
+    color: var(--red) !important;
+  }
+
+  .sm\:text-orange {
+    color: var(--orange-400) !important;
+  }
+
+  .sm\:text-yellow {
+    color: var(--yellow) !important;
+  }
+
+  .sm\:text-green {
+    color: var(--green) !important;
+  }
+
+  .sm\:text-cyan {
+    color: var(--cyan) !important;
+  }
+
+  .sm\:text-light-gray {
+    color: var(--lightgray) !important;
+  }
+
+  .sm\:text-opacity-25 {
+    opacity: 0.25 !important;
+  }
+
+  .sm\:text-opacity-50 {
+    opacity: 0.5 !important;
+  }
+
+  .sm\:text-opacity-75 {
+    opacity: 0.75 !important;
+  }
+
+  .sm\:text-opacity-100 {
+    opacity: 1 !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:text-hide {
+    font: 0/0 a !important;
+    color: transparent !important;
+    text-shadow: none !important;
+    background-color: transparent !important;
+    border: 0 !important;
+  }
+
+  .md\:text-decoration-none {
+    text-decoration: none !important;
+  }
+
+  .md\:text-decoration-underline {
+    text-decoration: underline !important;
+  }
+
+  .md\:text-decoration-overline {
+    text-decoration: overline !important;
+  }
+
+  .md\:text-decoration-line-through {
+    text-decoration: line-through !important;
+  }
+
+  .md\:text-decoration-blink {
+    text-decoration: blink !important;
+  }
+
+  .md\:text-decoration-style-solid {
+    text-decoration-style: solid !important;
+  }
+
+  .md\:text-decoration-style-double {
+    text-decoration-style: double !important;
+  }
+
+  .md\:text-decoration-style-dotted {
+    text-decoration-style: dotted !important;
+  }
+
+  .md\:text-decoration-style-dashed {
+    text-decoration-style: dashed !important;
+  }
+
+  .md\:text-decoration-style-wavy {
+    text-decoration-style: wavy !important;
+  }
+
+  .md\:decoration-black {
+    text-decoration-color: var(--black) !important;
+  }
+
+  .md\:decoration-white {
+    text-decoration-color: var(--white) !important;
+  }
+
+  .md\:decoration-light {
+    text-decoration-color: var(--light) !important;
+  }
+
+  .md\:decoration-dark {
+    text-decoration-color: var(--dark) !important;
+  }
+
+  .md\:decoration-blue {
+    text-decoration-color: var(--blue) !important;
+  }
+
+  .md\:decoration-indigo {
+    text-decoration-color: var(--indigo) !important;
+  }
+
+  .md\:decoration-puple {
+    text-decoration-color: var(--purple) !important;
+  }
+
+  .md\:decoration-red {
+    text-decoration-color: var(--red) !important;
+  }
+
+  .md\:decoration-orange {
+    text-decoration-color: var(--orange-400) !important;
+  }
+
+  .md\:decoration-yellow {
+    text-decoration-color: var(--yellow) !important;
+  }
+
+  .md\:decoration-green {
+    text-decoration-color: var(--green) !important;
+  }
+
+  .md\:decoration-cyan {
+    text-decoration-color: var(--cyan) !important;
+  }
+
+  .md\:decoration-light-gray {
+    text-decoration-color: var(--lightgray) !important;
+  }
+
+  .md\:decoration-auto {
+    text-decoration-thickness: auto !important;
+  }
+
+  .md\:decoration-from-font {
+    text-decoration-thickness: from-font !important;
+  }
+
+  .md\:decoration-0 {
+    text-decoration-thickness: 0px !important;
+  }
+
+  .md\:decoration-1 {
+    text-decoration-thickness: 1px !important;
+  }
+
+  .md\:decoration-2 {
+    text-decoration-thickness: 2px !important;
+  }
+
+  .md\:decoration-4 {
+    text-decoration-thickness: 4px !important;
+  }
+
+  .md\:decoration-8 {
+    text-decoration-thickness: 8px !important;
+  }
+
+  .md\:text-extra-letter-spacing {
+    letter-spacing: 0.03rem !important;
+  }
+
+  .md\:text-left {
+    text-align: left !important;
+  }
+
+  .md\:text-right {
+    text-align: right !important;
+  }
+
+  .md\:text-center {
+    text-align: center !important;
+  }
+
+  .md\:text-justify {
+    text-align: justify !important;
+  }
+
+  .md\:text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+  }
+
+  .md\:text-shadow-md {
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.08) !important;
+  }
+
+  .md\:text-shadow-lg {
+    text-shadow: 0 15px 30px rgba(0, 0, 0, 0.11), 0 5px 15px rgba(0, 0, 0, 0.08) !important;
+  }
+
+  .md\:text-shadow-none {
+    text-shadow: none !important;
+  }
+
+  .md\:text-wrap {
+    white-space: normal !important;
+  }
+
+  .md\:text-nowrap {
+    white-space: nowrap !important;
+  }
+
+  .md\:text-break {
+    word-wrap: break-word !important;
+    word-break: break-word !important;
+  }
+
+  .md\:text-reset {
+    color: inherit !important;
+  }
+
+  .md\:text-black {
+    color: var(--black) !important;
+  }
+
+  .md\:text-white {
+    color: var(--white) !important;
+  }
+
+  .md\:text-light {
+    color: var(--light) !important;
+  }
+
+  .md\:text-dark {
+    color: var(--dark) !important;
+  }
+
+  .md\:text-blue {
+    color: var(--blue) !important;
+  }
+
+  .md\:text-indigo {
+    color: var(--indigo) !important;
+  }
+
+  .md\:text-puple {
+    color: var(--purple) !important;
+  }
+
+  .md\:text-red {
+    color: var(--red) !important;
+  }
+
+  .md\:text-orange {
+    color: var(--orange-400) !important;
+  }
+
+  .md\:text-yellow {
+    color: var(--yellow) !important;
+  }
+
+  .md\:text-green {
+    color: var(--green) !important;
+  }
+
+  .md\:text-cyan {
+    color: var(--cyan) !important;
+  }
+
+  .md\:text-light-gray {
+    color: var(--lightgray) !important;
+  }
+
+  .md\:text-opacity-25 {
+    opacity: 0.25 !important;
+  }
+
+  .md\:text-opacity-50 {
+    opacity: 0.5 !important;
+  }
+
+  .md\:text-opacity-75 {
+    opacity: 0.75 !important;
+  }
+
+  .md\:text-opacity-100 {
+    opacity: 1 !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:text-hide {
+    font: 0/0 a !important;
+    color: transparent !important;
+    text-shadow: none !important;
+    background-color: transparent !important;
+    border: 0 !important;
+  }
+
+  .lg\:text-decoration-none {
+    text-decoration: none !important;
+  }
+
+  .lg\:text-decoration-underline {
+    text-decoration: underline !important;
+  }
+
+  .lg\:text-decoration-overline {
+    text-decoration: overline !important;
+  }
+
+  .lg\:text-decoration-line-through {
+    text-decoration: line-through !important;
+  }
+
+  .lg\:text-decoration-blink {
+    text-decoration: blink !important;
+  }
+
+  .lg\:text-decoration-style-solid {
+    text-decoration-style: solid !important;
+  }
+
+  .lg\:text-decoration-style-double {
+    text-decoration-style: double !important;
+  }
+
+  .lg\:text-decoration-style-dotted {
+    text-decoration-style: dotted !important;
+  }
+
+  .lg\:text-decoration-style-dashed {
+    text-decoration-style: dashed !important;
+  }
+
+  .lg\:text-decoration-style-wavy {
+    text-decoration-style: wavy !important;
+  }
+
+  .lg\:decoration-black {
+    text-decoration-color: var(--black) !important;
+  }
+
+  .lg\:decoration-white {
+    text-decoration-color: var(--white) !important;
+  }
+
+  .lg\:decoration-light {
+    text-decoration-color: var(--light) !important;
+  }
+
+  .lg\:decoration-dark {
+    text-decoration-color: var(--dark) !important;
+  }
+
+  .lg\:ecoration-blue {
+    text-decoration-color: var(--blue) !important;
+  }
+
+  .lg\:decoration-indigo {
+    text-decoration-color: var(--indigo) !important;
+  }
+
+  .lg\:decoration-puple {
+    text-decoration-color: var(--purple) !important;
+  }
+
+  .lg\:decoration-red {
+    text-decoration-color: var(--red) !important;
+  }
+
+  .lg\:decoration-orange {
+    text-decoration-color: var(--orange-400) !important;
+  }
+
+  .lg\:decoration-yellow {
+    text-decoration-color: var(--yellow) !important;
+  }
+
+  .lg\:decoration-green {
+    text-decoration-color: var(--green) !important;
+  }
+
+  .lg\:decoration-cyan {
+    text-decoration-color: var(--cyan) !important;
+  }
+
+  .lg\:decoration-light-gray {
+    text-decoration-color: var(--lightgray) !important;
+  }
+
+  .lg\:decoration-auto {
+    text-decoration-thickness: auto !important;
+  }
+
+  .lg\:decoration-from-font {
+    text-decoration-thickness: from-font !important;
+  }
+
+  .lg\:decoration-0 {
+    text-decoration-thickness: 0px !important;
+  }
+
+  .lg\:decoration-1 {
+    text-decoration-thickness: 1px !important;
+  }
+
+  .lg\:decoration-2 {
+    text-decoration-thickness: 2px !important;
+  }
+
+  .lg\:decoration-4 {
+    text-decoration-thickness: 4px !important;
+  }
+
+  .lg\:decoration-8 {
+    text-decoration-thickness: 8px !important;
+  }
+
+  .lg\:text-extra-letter-spacing {
+    letter-spacing: 0.03rem !important;
+  }
+
+  .lg\:text-left {
+    text-align: left !important;
+  }
+
+  .lg\:text-right {
+    text-align: right !important;
+  }
+
+  .lg\:text-center {
+    text-align: center !important;
+  }
+
+  .lg\:text-justify {
+    text-align: justify !important;
+  }
+
+  .lg\:text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+  }
+
+  .lg\:text-shadow-md {
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.08) !important;
+  }
+
+  .lg\:text-shadow-lg {
+    text-shadow: 0 15px 30px rgba(0, 0, 0, 0.11), 0 5px 15px rgba(0, 0, 0, 0.08) !important;
+  }
+
+  .lg\:text-shadow-none {
+    text-shadow: none !important;
+  }
+
+  .lg\:text-wrap {
+    white-space: normal !important;
+  }
+
+  .lg\:text-nowrap {
+    white-space: nowrap !important;
+  }
+
+  .lg\:text-break {
+    word-wrap: break-word !important;
+    word-break: break-word !important;
+  }
+
+  .lg\:text-reset {
+    color: inherit !important;
+  }
+
+  .lg\:text-black {
+    color: var(--black) !important;
+  }
+
+  .lg\:text-white {
+    color: var(--white) !important;
+  }
+
+  .lg\:text-light {
+    color: var(--light) !important;
+  }
+
+  .lg\:text-dark {
+    color: var(--dark) !important;
+  }
+
+  .lg\:text-blue {
+    color: var(--blue) !important;
+  }
+
+  .lg\:.text-indigo {
+    color: var(--indigo) !important;
+  }
+
+  .lg\:.text-puple {
+    color: var(--purple) !important;
+  }
+
+  .lg\:text-red {
+    color: var(--red) !important;
+  }
+
+  .lg\:text-orange {
+    color: var(--orange-400) !important;
+  }
+
+  .lg\:text-yellow {
+    color: var(--yellow) !important;
+  }
+
+  .lg\:text-green {
+    color: var(--green) !important;
+  }
+
+  .lg\:text-cyan {
+    color: var(--cyan) !important;
+  }
+
+  .lg\:text-light-gray {
+    color: var(--lightgray) !important;
+  }
+
+  .lg\:text-opacity-25 {
+    opacity: 0.25 !important;
+  }
+
+  .lg\:text-opacity-50 {
+    opacity: 0.5 !important;
+  }
+
+  .lg\:text-opacity-75 {
+    opacity: 0.75 !important;
+  }
+
+  .lg\:text-opacity-100 {
+    opacity: 1 !important;
+  }
+}
+
+@media (min-width: 1280px) {
+  .xl\:text-hide {
+    font: 0/0 a !important;
+    color: transparent !important;
+    text-shadow: none !important;
+    background-color: transparent !important;
+    border: 0 !important;
+  }
+
+  .xl\:text-decoration-none {
+    text-decoration: none !important;
+  }
+
+  .xl\:text-decoration-underline {
+    text-decoration: underline !important;
+  }
+
+  .xl\:text-decoration-overline {
+    text-decoration: overline !important;
+  }
+
+  .xl\:text-decoration-line-through {
+    text-decoration: line-through !important;
+  }
+
+  .xl\:text-decoration-blink {
+    text-decoration: blink !important;
+  }
+
+  .xl\:text-decoration-style-solid {
+    text-decoration-style: solid !important;
+  }
+
+  .xl\:text-decoration-style-double {
+    text-decoration-style: double !important;
+  }
+
+  .xl\:text-decoration-style-dotted {
+    text-decoration-style: dotted !important;
+  }
+
+  .xl\:text-decoration-style-dashed {
+    text-decoration-style: dashed !important;
+  }
+
+  .xl\:text-decoration-style-wavy {
+    text-decoration-style: wavy !important;
+  }
+
+  .xl\:decoration-black {
+    text-decoration-color: var(--black) !important;
+  }
+
+  .xl\:decoration-white {
+    text-decoration-color: var(--white) !important;
+  }
+
+  .xl\:decoration-light {
+    text-decoration-color: var(--light) !important;
+  }
+
+  .xl\:decoration-dark {
+    text-decoration-color: var(--dark) !important;
+  }
+
+  .xl\:decoration-blue {
+    text-decoration-color: var(--blue) !important;
+  }
+
+  .xl\:decoration-indigo {
+    text-decoration-color: var(--indigo) !important;
+  }
+
+  .xl\:decoration-puple {
+    text-decoration-color: var(--purple) !important;
+  }
+
+  .xl\:decoration-red {
+    text-decoration-color: var(--red) !important;
+  }
+
+  .xl\:decoration-orange {
+    text-decoration-color: var(--orange-400) !important;
+  }
+
+  .xl\:decoration-yellow {
+    text-decoration-color: var(--yellow) !important;
+  }
+
+  .xl\:decoration-green {
+    text-decoration-color: var(--green) !important;
+  }
+
+  .xl\:decoration-cyan {
+    text-decoration-color: var(--cyan) !important;
+  }
+
+  .xl\:decoration-light-gray {
+    text-decoration-color: var(--lightgray) !important;
+  }
+
+  .xl\:decoration-auto {
+    text-decoration-thickness: auto !important;
+  }
+
+  .xl\:decoration-from-font {
+    text-decoration-thickness: from-font !important;
+  }
+
+  .xl\:decoration-0 {
+    text-decoration-thickness: 0px !important;
+  }
+
+  .xl\:decoration-1 {
+    text-decoration-thickness: 1px !important;
+  }
+
+  .xl\:decoration-2 {
+    text-decoration-thickness: 2px !important;
+  }
+
+  .xl\:decoration-4 {
+    text-decoration-thickness: 4px !important;
+  }
+
+  .xl\:decoration-8 {
+    text-decoration-thickness: 8px !important;
+  }
+
+  .xl\:text-extra-letter-spacing {
+    letter-spacing: 0.03rem !important;
+  }
+
+  .xl\:text-left {
+    text-align: left !important;
+  }
+
+  .xl\:text-right {
+    text-align: right !important;
+  }
+
+  .xl\:text-center {
+    text-align: center !important;
+  }
+
+  .xl\:text-justify {
+    text-align: justify !important;
+  }
+
+  .xl\:text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+  }
+
+  .xl\:text-shadow-md {
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.08) !important;
+  }
+
+  .xl\:text-shadow-lg {
+    text-shadow: 0 15px 30px rgba(0, 0, 0, 0.11), 0 5px 15px rgba(0, 0, 0, 0.08) !important;
+  }
+
+  .xl\:text-shadow-none {
+    text-shadow: none !important;
+  }
+
+  .xl\:text-wrap {
+    white-space: normal !important;
+  }
+
+  .xl\:text-nowrap {
+    white-space: nowrap !important;
+  }
+
+  .xl\:text-break {
+    word-wrap: break-word !important;
+    word-break: break-word !important;
+  }
+
+  .xl\:text-reset {
+    color: inherit !important;
+  }
+
+  .xl\:text-black {
+    color: var(--black) !important;
+  }
+
+  .xl\:text-white {
+    color: var(--white) !important;
+  }
+
+  .xl\:text-light {
+    color: var(--light) !important;
+  }
+
+  .xl\:text-dark {
+    color: var(--dark) !important;
+  }
+
+  .xl\:text-blue {
+    color: var(--blue) !important;
+  }
+
+  .xl\:text-indigo {
+    color: var(--indigo) !important;
+  }
+
+  .xl\:text-puple {
+    color: var(--purple) !important;
+  }
+
+  .xl\:text-red {
+    color: var(--red) !important;
+  }
+
+  .xl\:text-orange {
+    color: var(--orange-400) !important;
+  }
+
+  .xl\:text-yellow {
+    color: var(--yellow) !important;
+  }
+
+  .xl\:text-green {
+    color: var(--green) !important;
+  }
+
+  .xl\:text-cyan {
+    color: var(--cyan) !important;
+  }
+
+  .xl\:text-light-gray {
+    color: var(--lightgray) !important;
+  }
+
+  .xl\:text-opacity-25 {
+    opacity: 0.25 !important;
+  }
+
+  .xl\:text-opacity-50 {
+    opacity: 0.5 !important;
+  }
+
+  .xl\:text-opacity-75 {
+    opacity: 0.75 !important;
+  }
+
+  .xl\:text-opacity-100 {
+    opacity: 1 !important;
+  }
+}
+
+@media (min-width: 1536px) {
+  .\32xl\:text-hide {
+    font: 0/0 a !important;
+    color: transparent !important;
+    text-shadow: none !important;
+    background-color: transparent !important;
+    border: 0 !important;
+  }
+
+  .\32xl\:text-decoration-none {
+    text-decoration: none !important;
+  }
+
+  .\32xl\:text-decoration-underline {
+    text-decoration: underline !important;
+  }
+
+  .\32xl\:text-decoration-overline {
+    text-decoration: overline !important;
+  }
+
+  .\32xl\:text-decoration-line-through {
+    text-decoration: line-through !important;
+  }
+
+  .\32xl\:text-decoration-blink {
+    text-decoration: blink !important;
+  }
+
+  .\32xl\:text-decoration-style-solid {
+    text-decoration-style: solid !important;
+  }
+
+  .\32xl\:text-decoration-style-double {
+    text-decoration-style: double !important;
+  }
+
+  .\32xl\:text-decoration-style-dotted {
+    text-decoration-style: dotted !important;
+  }
+
+  .\32xl\:text-decoration-style-dashed {
+    text-decoration-style: dashed !important;
+  }
+
+  .\32xl\:text-decoration-style-wavy {
+    text-decoration-style: wavy !important;
+  }
+
+  .\32xl\:decoration-black {
+    text-decoration-color: var(--black) !important;
+  }
+
+  .\32xl\:decoration-white {
+    text-decoration-color: var(--white) !important;
+  }
+
+  .\32xl\:decoration-light {
+    text-decoration-color: var(--light) !important;
+  }
+
+  .\32xl\:decoration-dark {
+    text-decoration-color: var(--dark) !important;
+  }
+
+  .\32xl\:decoration-blue {
+    text-decoration-color: var(--blue) !important;
+  }
+
+  .\32xl\:decoration-indigo {
+    text-decoration-color: var(--indigo) !important;
+  }
+
+  .\32xl\:decoration-puple {
+    text-decoration-color: var(--purple) !important;
+  }
+
+  .\32xl\:decoration-red {
+    text-decoration-color: var(--red) !important;
+  }
+
+  .\32xl\:decoration-orange {
+    text-decoration-color: var(--orange-400) !important;
+  }
+
+  .\32xl\:decoration-yellow {
+    text-decoration-color: var(--yellow) !important;
+  }
+
+  .\32xl\:decoration-green {
+    text-decoration-color: var(--green) !important;
+  }
+
+  .\32xl\:decoration-cyan {
+    text-decoration-color: var(--cyan) !important;
+  }
+
+  .\32xl\:decoration-light-gray {
+    text-decoration-color: var(--lightgray) !important;
+  }
+
+  .\32xl\:decoration-auto {
+    text-decoration-thickness: auto !important;
+  }
+
+  .\32xl\:decoration-from-font {
+    text-decoration-thickness: from-font !important;
+  }
+
+  .\32xl\:decoration-0 {
+    text-decoration-thickness: 0px !important;
+  }
+
+  .\32xl\:decoration-1 {
+    text-decoration-thickness: 1px !important;
+  }
+
+  .\32xl\:decoration-2 {
+    text-decoration-thickness: 2px !important;
+  }
+
+  .\32xl\:decoration-4 {
+    text-decoration-thickness: 4px !important;
+  }
+
+  .\32xl\:decoration-8 {
+    text-decoration-thickness: 8px !important;
+  }
+
+  .\32xl\:text-extra-letter-spacing {
+    letter-spacing: 0.03rem !important;
+  }
+
+  .\32xl\:text-left {
+    text-align: left !important;
+  }
+
+  .\32xl\:text-right {
+    text-align: right !important;
+  }
+
+  .\32xl\:text-center {
+    text-align: center !important;
+  }
+
+  .\32xl\:text-justify {
+    text-align: justify !important;
+  }
+
+  .\32xl\:text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+  }
+
+  .\32xl\:text-shadow-md {
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.08) !important;
+  }
+
+  .\32xl\:text-shadow-lg {
+    text-shadow: 0 15px 30px rgba(0, 0, 0, 0.11), 0 5px 15px rgba(0, 0, 0, 0.08) !important;
+  }
+
+  .\32xl\:text-shadow-none {
+    text-shadow: none !important;
+  }
+
+  .\32xl\:text-wrap {
+    white-space: normal !important;
+  }
+
+  .\32xl\:text-nowrap {
+    white-space: nowrap !important;
+  }
+
+  .\32xl\:text-break {
+    word-wrap: break-word !important;
+    word-break: break-word !important;
+  }
+
+  .\32xl\:text-reset {
+    color: inherit !important;
+  }
+
+  .\32xl\:text-black {
+    color: var(--black) !important;
+  }
+
+  .\32xl\:text-white {
+    color: var(--white) !important;
+  }
+
+  .\32xl\:text-light {
+    color: var(--light) !important;
+  }
+
+  .\32xl\:text-dark {
+    color: var(--dark) !important;
+  }
+
+  .\32xl\:text-blue {
+    color: var(--blue) !important;
+  }
+
+  .\32xl\:text-indigo {
+    color: var(--indigo) !important;
+  }
+
+  .\32xl\:text-puple {
+    color: var(--purple) !important;
+  }
+
+  .\32xl\:text-red {
+    color: var(--red) !important;
+  }
+
+  .\32xl\:text-orange {
+    color: var(--orange-400) !important;
+  }
+
+  .\32xl\:text-yellow {
+    color: var(--yellow) !important;
+  }
+
+  .\32xl\:text-green {
+    color: var(--green) !important;
+  }
+
+  .\32xl\:text-cyan {
+    color: var(--cyan) !important;
+  }
+
+  .\32xl\:text-light-gray {
+    color: var(--lightgray) !important;
+  }
+
+  .\32xl\:text-opacity-25 {
+    opacity: 0.25 !important;
+  }
+
+  .\32xl\:text-opacity-50 {
+    opacity: 0.5 !important;
+  }
+
+  .\32xl\:text-opacity-75 {
+    opacity: 0.75 !important;
+  }
+
+  .\32xl\:text-opacity-100 {
+    opacity: 1 !important;
+  }
 }
