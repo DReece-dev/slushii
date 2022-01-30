@@ -4,7 +4,9 @@
   "description": "Slushii CSS Framework",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "compile": "gulp css",
+    "purge": "gulp purgecss",
+    "mini": "gulp mini"
   },
   "repository": {
     "type": "git",
@@ -12,11 +14,14 @@
   },
   "keywords": [
     "cssframework",
-    "scss",
+    "sass",
     "postcss",
     "flexbox",
     "grid",
-    "css"
+    "css",
+    "responsive",
+    "front-end",
+    "framework"
   ],
   "author": "Dylan Reece",
   "license": "MIT",
