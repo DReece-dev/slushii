@@ -556,7 +556,7 @@ video {
 }
 
 .column.no-padding {
-  padding: none;
+  padding: 0;
 }
 
 .columns.is-mobile > .column.is-narrow {
