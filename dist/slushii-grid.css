@@ -54,15 +54,15 @@
   flex-grow: 1;
   flex-shrink: 1;
   padding: 0.75rem;
-  margin: 0.78rem;
 }
 
 .column.no-padding {
-  padding: 0;
+  padding: none;
 }
 
 .columns.is-mobile > .column.is-narrow {
   flex: none;
+  width: unset;
 }
 
 .columns.is-mobile > .column.is-full {
@@ -271,6 +271,7 @@
 @media screen and (max-width: 768px) {
   .column.is-narrow-mobile {
     flex: none;
+    width: unset;
   }
 
   .column.is-full-mobile {
@@ -480,6 +481,7 @@
   .column.is-narrow,
 .column.is-narrow-tablet {
     flex: none;
+    width: unset;
   }
 
   .column.is-full,
@@ -733,6 +735,7 @@
 @media screen and (max-width: 1023px) {
   .column.is-narrow-touch {
     flex: none;
+    width: unset;
   }
 
   .column.is-full-touch {
@@ -941,6 +944,7 @@
 @media screen and (min-width: 1024px) {
   .column.is-narrow-desktop {
     flex: none;
+    width: unset;
   }
 
   .column.is-full-desktop {
@@ -1149,6 +1153,7 @@
 @media screen and (min-width: 1216px) {
   .column.is-narrow-widescreen {
     flex: none;
+    width: unset;
   }
 
   .column.is-full-widescreen {
@@ -1357,6 +1362,7 @@
 @media screen and (min-width: 1408px) {
   .column.is-narrow-fullhd {
     flex: none;
+    width: unset;
   }
 
   .column.is-full-fullhd {
@@ -1627,7 +1633,7 @@
   margin-right: calc(-1 * var(--columnGap));
 }
 
-.columns.is-variable .column {
+.columns.is-variable > .column {
   padding-left: var(--columnGap);
   padding-right: var(--columnGap);
 }
