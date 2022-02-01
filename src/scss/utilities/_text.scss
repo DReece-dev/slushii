@@ -55,47 +55,43 @@
 }
 
 .decoration-light {
-  text-decoration-color: var(--light) !important;
+  text-decoration-color: var(--gray-200) !important;
 }
 
 .decoration-dark {
-  text-decoration-color: var(--dark) !important;
+  text-decoration-color: var(--gray-900) !important;
 }
 
 .decoration-blue {
-  text-decoration-color: var(--blue) !important;
+  text-decoration-color: var(--blue-500) !important;
 }
 
 .decoration-indigo {
-  text-decoration-color: var(--indigo) !important;
+  text-decoration-color: var(--indigo-500) !important;
 }
 
 .decoration-puple {
-  text-decoration-color: var(--purple) !important;
+  text-decoration-color: var(--purple-500) !important;
 }
 
 .decoration-red {
-  text-decoration-color: var(--red) !important;
+  text-decoration-color: var(--red-500) !important;
 }
 
 .decoration-orange {
-  text-decoration-color: var(--orange-400) !important;
+  text-decoration-color: var(--orange-500) !important;
 }
 
 .decoration-yellow {
-  text-decoration-color: var(--yellow) !important;
+  text-decoration-color: var(--yellow-500) !important;
 }
 
 .decoration-green {
-  text-decoration-color: var(--green) !important;
-}
-
-.decoration-cyan {
-  text-decoration-color: var(--cyan) !important;
+  text-decoration-color: var(--green-500) !important;
 }
 
 .decoration-light-gray {
-  text-decoration-color: var(--lightgray) !important;
+  text-decoration-color: var(--gray-200) !important;
 }
 
 .decoration-auto {
@@ -188,47 +184,43 @@
 }
 
 .text-light {
-  color: var(--light) !important;
+  color: var(--gray-200) !important;
 }
 
 .text-dark {
-  color: var(--dark) !important;
+  color: var(--gray-900) !important;
 }
 
 .text-blue {
-  color: var(--blue) !important;
+  color: var(--blue-500) !important;
 }
 
 .text-indigo {
-  color: var(--indigo) !important;
+  color: var(--indigo-500) !important;
 }
 
 .text-puple {
-  color: var(--purple) !important;
+  color: var(--purple-500) !important;
 }
 
 .text-red {
-  color: var(--red) !important;
+  color: var(--red-500) !important;
 }
 
 .text-orange {
-  color: var(--orange-400) !important;
+  color: var(--orange-500) !important;
 }
 
 .text-yellow {
-  color: var(--yellow) !important;
+  color: var(--yellow-500) !important;
 }
 
 .text-green {
-  color: var(--green) !important;
-}
-
-.text-cyan {
-  color: var(--cyan) !important;
+  color: var(--green-500) !important;
 }
 
 .text-light-gray {
-  color: var(--lightgray) !important;
+  color: var(--gray-200) !important;
 }
 
 .text-opacity-25 {
@@ -305,47 +297,43 @@
   }
 
   .sm\:decoration-light {
-    text-decoration-color: var(--light) !important;
+    text-decoration-color: var(--gray-200) !important;
   }
 
   .sm\:decoration-dark {
-    text-decoration-color: var(--dark) !important;
+    text-decoration-color: var(--gray-900) !important;
   }
 
   .sm\:decoration-blue {
-    text-decoration-color: var(--blue) !important;
+    text-decoration-color: var(--blue-500) !important;
   }
 
   .sm\:decoration-indigo {
-    text-decoration-color: var(--indigo) !important;
+    text-decoration-color: var(--indigo-500) !important;
   }
 
   .sm\:decoration-puple {
-    text-decoration-color: var(--purple) !important;
+    text-decoration-color: var(--purple-500) !important;
   }
 
   .sm\:decoration-red {
-    text-decoration-color: var(--red) !important;
+    text-decoration-color: var(--red-500) !important;
   }
 
   .sm\:decoration-orange {
-    text-decoration-color: var(--orange-400) !important;
+    text-decoration-color: var(--orange-500) !important;
   }
 
   .sm\:decoration-yellow {
-    text-decoration-color: var(--yellow) !important;
+    text-decoration-color: var(--yellow-500) !important;
   }
 
   .sm\:decoration-green {
-    text-decoration-color: var(--green) !important;
-  }
-
-  .sm\:decoration-cyan {
-    text-decoration-color: var(--cyan) !important;
+    text-decoration-color: var(--green-500) !important;
   }
 
   .sm\:decoration-light-gray {
-    text-decoration-color: var(--lightgray) !important;
+    text-decoration-color: var(--gray-200) !important;
   }
 
   .sm\:decoration-auto {
@@ -433,52 +421,48 @@
     color: var(--black) !important;
   }
 
-  .sm\:ext-white {
+  .sm\:text-white {
     color: var(--white) !important;
   }
 
   .sm\:text-light {
-    color: var(--light) !important;
+    color: var(--gray-200) !important;
   }
 
   .sm\:text-dark {
-    color: var(--dark) !important;
+    color: var(--gray-900) !important;
   }
 
   .sm\:text-blue {
-    color: var(--blue) !important;
+    color: var(--blue-500) !important;
   }
 
   .sm\:text-indigo {
-    color: var(--indigo) !important;
+    color: var(--indigo-500) !important;
   }
 
   .sm\:text-puple {
-    color: var(--purple) !important;
+    color: var(--purple-500) !important;
   }
 
   .sm\:text-red {
-    color: var(--red) !important;
+    color: var(--red-500) !important;
   }
 
   .sm\:text-orange {
-    color: var(--orange-400) !important;
+    color: var(--orange-500) !important;
   }
 
   .sm\:text-yellow {
-    color: var(--yellow) !important;
+    color: var(--yellow-500) !important;
   }
 
   .sm\:text-green {
-    color: var(--green) !important;
-  }
-
-  .sm\:text-cyan {
-    color: var(--cyan) !important;
+    color: var(--green-500) !important;
   }
 
   .sm\:text-light-gray {
-    color: var(--lightgray) !important;
+    color: var(--gray-200) !important;
   }
 
   .sm\:text-opacity-25 {
@@ -556,47 +540,43 @@
   }
 
   .md\:decoration-light {
-    text-decoration-color: var(--light) !important;
+    text-decoration-color: var(--gray-200) !important;
   }
 
   .md\:decoration-dark {
-    text-decoration-color: var(--dark) !important;
+    text-decoration-color: var(--gray-900) !important;
   }
 
   .md\:decoration-blue {
-    text-decoration-color: var(--blue) !important;
+    text-decoration-color: var(--blue-500) !important;
   }
 
   .md\:decoration-indigo {
-    text-decoration-color: var(--indigo) !important;
+    text-decoration-color: var(--indigo-500) !important;
   }
 
   .md\:decoration-puple {
-    text-decoration-color: var(--purple) !important;
+    text-decoration-color: var(--purple-500) !important;
   }
 
   .md\:decoration-red {
-    text-decoration-color: var(--red) !important;
+    text-decoration-color: var(--red-500) !important;
   }
 
   .md\:decoration-orange {
-    text-decoration-color: var(--orange-400) !important;
+    text-decoration-color: var(--orange-500) !important;
   }
 
   .md\:decoration-yellow {
-    text-decoration-color: var(--yellow) !important;
+    text-decoration-color: var(--yellow-500) !important;
   }
 
   .md\:decoration-green {
-    text-decoration-color: var(--green) !important;
-  }
-
-  .md\:decoration-cyan {
-    text-decoration-color: var(--cyan) !important;
+    text-decoration-color: var(--green-500) !important;
   }
 
   .md\:decoration-light-gray {
-    text-decoration-color: var(--lightgray) !important;
+    text-decoration-color: var(--gray-200) !important;
   }
 
   .md\:decoration-auto {
@@ -689,47 +669,43 @@
   }
 
   .md\:text-light {
-    color: var(--light) !important;
+    color: var(--gray-200) !important;
   }
 
   .md\:text-dark {
-    color: var(--dark) !important;
+    color: var(--gray-900) !important;
   }
 
   .md\:text-blue {
-    color: var(--blue) !important;
+    color: var(--blue-500) !important;
   }
 
   .md\:text-indigo {
-    color: var(--indigo) !important;
+    color: var(--indigo-500) !important;
   }
 
   .md\:text-puple {
-    color: var(--purple) !important;
+    color: var(--purple-500) !important;
   }
 
   .md\:text-red {
-    color: var(--red) !important;
+    color: var(--red-500) !important;
   }
 
   .md\:text-orange {
-    color: var(--orange-400) !important;
+    color: var(--orange-500) !important;
   }
 
   .md\:text-yellow {
-    color: var(--yellow) !important;
+    color: var(--yellow-500) !important;
   }
 
   .md\:text-green {
-    color: var(--green) !important;
-  }
-
-  .md\:text-cyan {
-    color: var(--cyan) !important;
+    color: var(--green-500) !important;
   }
 
   .md\:text-light-gray {
-    color: var(--lightgray) !important;
+    color: var(--gray-200) !important;
   }
 
   .md\:text-opacity-25 {
@@ -807,47 +783,43 @@
   }
 
   .lg\:decoration-light {
-    text-decoration-color: var(--light) !important;
+    text-decoration-color: var(--gray-200) !important;
   }
 
   .lg\:decoration-dark {
-    text-decoration-color: var(--dark) !important;
+    text-decoration-color: var(--gray-900) !important;
   }
 
   .lg\:ecoration-blue {
-    text-decoration-color: var(--blue) !important;
+    text-decoration-color: var(--blue-500) !important;
   }
 
   .lg\:decoration-indigo {
-    text-decoration-color: var(--indigo) !important;
+    text-decoration-color: var(--indigo-500) !important;
   }
 
   .lg\:decoration-puple {
-    text-decoration-color: var(--purple) !important;
+    text-decoration-color: var(--purple-500) !important;
   }
 
   .lg\:decoration-red {
-    text-decoration-color: var(--red) !important;
+    text-decoration-color: var(--red-500) !important;
   }
 
   .lg\:decoration-orange {
-    text-decoration-color: var(--orange-400) !important;
+    text-decoration-color: var(--orange-500) !important;
   }
 
   .lg\:decoration-yellow {
-    text-decoration-color: var(--yellow) !important;
+    text-decoration-color: var(--yellow-500) !important;
   }
 
   .lg\:decoration-green {
-    text-decoration-color: var(--green) !important;
-  }
-
-  .lg\:decoration-cyan {
-    text-decoration-color: var(--cyan) !important;
+    text-decoration-color: var(--green-500) !important;
   }
 
   .lg\:decoration-light-gray {
-    text-decoration-color: var(--lightgray) !important;
+    text-decoration-color: var(--gray-200) !important;
   }
 
   .lg\:decoration-auto {
@@ -940,47 +912,43 @@
   }
 
   .lg\:text-light {
-    color: var(--light) !important;
+    color: var(--gray-200) !important;
   }
 
   .lg\:text-dark {
-    color: var(--dark) !important;
+    color: var(--gray-900) !important;
   }
 
   .lg\:text-blue {
-    color: var(--blue) !important;
+    color: var(--blue-500) !important;
   }
 
   .lg\:.text-indigo {
-    color: var(--indigo) !important;
+    color: var(--indigo-500) !important;
   }
 
   .lg\:.text-puple {
-    color: var(--purple) !important;
+    color: var(--purple-500) !important;
   }
 
   .lg\:text-red {
-    color: var(--red) !important;
+    color: var(--red-500) !important;
   }
 
   .lg\:text-orange {
-    color: var(--orange-400) !important;
+    color: var(--orange-500) !important;
   }
 
   .lg\:text-yellow {
-    color: var(--yellow) !important;
+    color: var(--yellow-500) !important;
   }
 
   .lg\:text-green {
-    color: var(--green) !important;
-  }
-
-  .lg\:text-cyan {
-    color: var(--cyan) !important;
+    color: var(--green-500) !important;
   }
 
   .lg\:text-light-gray {
-    color: var(--lightgray) !important;
+    color: var(--gray-200) !important;
   }
 
   .lg\:text-opacity-25 {
@@ -1058,47 +1026,43 @@
   }
 
   .xl\:decoration-light {
-    text-decoration-color: var(--light) !important;
+    text-decoration-color: var(--gray-200) !important;
   }
 
   .xl\:decoration-dark {
-    text-decoration-color: var(--dark) !important;
+    text-decoration-color: var(--gray-900) !important;
   }
 
   .xl\:decoration-blue {
-    text-decoration-color: var(--blue) !important;
+    text-decoration-color: var(--blue-500) !important;
   }
 
   .xl\:decoration-indigo {
-    text-decoration-color: var(--indigo) !important;
+    text-decoration-color: var(--indigo-500) !important;
   }
 
   .xl\:decoration-puple {
-    text-decoration-color: var(--purple) !important;
+    text-decoration-color: var(--purple-500) !important;
   }
 
   .xl\:decoration-red {
-    text-decoration-color: var(--red) !important;
+    text-decoration-color: var(--red-500) !important;
   }
 
   .xl\:decoration-orange {
-    text-decoration-color: var(--orange-400) !important;
+    text-decoration-color: var(--orange-500) !important;
   }
 
   .xl\:decoration-yellow {
-    text-decoration-color: var(--yellow) !important;
+    text-decoration-color: var(--yellow-500) !important;
   }
 
   .xl\:decoration-green {
-    text-decoration-color: var(--green) !important;
-  }
-
-  .xl\:decoration-cyan {
-    text-decoration-color: var(--cyan) !important;
+    text-decoration-color: var(--green-500) !important;
   }
 
   .xl\:decoration-light-gray {
-    text-decoration-color: var(--lightgray) !important;
+    text-decoration-color: var(--gray-200) !important;
   }
 
   .xl\:decoration-auto {
@@ -1191,47 +1155,43 @@
   }
 
   .xl\:text-light {
-    color: var(--light) !important;
+    color: var(--gray-200) !important;
   }
 
   .xl\:text-dark {
-    color: var(--dark) !important;
+    color: var(--gray-900) !important;
   }
 
   .xl\:text-blue {
-    color: var(--blue) !important;
+    color: var(--blue-500) !important;
   }
 
   .xl\:text-indigo {
-    color: var(--indigo) !important;
+    color: var(--indigo-500) !important;
   }
 
   .xl\:text-puple {
-    color: var(--purple) !important;
+    color: var(--purple-500) !important;
   }
 
   .xl\:text-red {
-    color: var(--red) !important;
+    color: var(--red-500) !important;
   }
 
   .xl\:text-orange {
-    color: var(--orange-400) !important;
+    color: var(--orange-500) !important;
   }
 
   .xl\:text-yellow {
-    color: var(--yellow) !important;
+    color: var(--yellow-500) !important;
   }
 
   .xl\:text-green {
-    color: var(--green) !important;
-  }
-
-  .xl\:text-cyan {
-    color: var(--cyan) !important;
+    color: var(--green-500) !important;
   }
 
   .xl\:text-light-gray {
-    color: var(--lightgray) !important;
+    color: var(--gray-200) !important;
   }
 
   .xl\:text-opacity-25 {
@@ -1309,47 +1269,43 @@
   }
 
   .\32xl\:decoration-light {
-    text-decoration-color: var(--light) !important;
+    text-decoration-color: var(--gray-200) !important;
   }
 
   .\32xl\:decoration-dark {
-    text-decoration-color: var(--dark) !important;
+    text-decoration-color: var(--gray-900) !important;
   }
 
   .\32xl\:decoration-blue {
-    text-decoration-color: var(--blue) !important;
+    text-decoration-color: var(--blue-500) !important;
   }
 
   .\32xl\:decoration-indigo {
-    text-decoration-color: var(--indigo) !important;
+    text-decoration-color: var(--indigo-500) !important;
   }
 
   .\32xl\:decoration-puple {
-    text-decoration-color: var(--purple) !important;
+    text-decoration-color: var(--purple-500) !important;
   }
 
   .\32xl\:decoration-red {
-    text-decoration-color: var(--red) !important;
+    text-decoration-color: var(--red-500) !important;
   }
 
   .\32xl\:decoration-orange {
-    text-decoration-color: var(--orange-400) !important;
+    text-decoration-color: var(--orange-500) !important;
   }
 
   .\32xl\:decoration-yellow {
-    text-decoration-color: var(--yellow) !important;
+    text-decoration-color: var(--yellow-500) !important;
   }
 
   .\32xl\:decoration-green {
-    text-decoration-color: var(--green) !important;
-  }
-
-  .\32xl\:decoration-cyan {
-    text-decoration-color: var(--cyan) !important;
+    text-decoration-color: var(--green-500) !important;
   }
 
   .\32xl\:decoration-light-gray {
-    text-decoration-color: var(--lightgray) !important;
+    text-decoration-color: var(--gray-200) !important;
   }
 
   .\32xl\:decoration-auto {
@@ -1442,47 +1398,43 @@
   }
 
   .\32xl\:text-light {
-    color: var(--light) !important;
+    color: var(--gray-200) !important;
   }
 
   .\32xl\:text-dark {
-    color: var(--dark) !important;
+    color: var(--gray-900) !important;
   }
 
   .\32xl\:text-blue {
-    color: var(--blue) !important;
+    color: var(--blue-500) !important;
   }
 
   .\32xl\:text-indigo {
-    color: var(--indigo) !important;
+    color: var(--indigo-500) !important;
   }
 
   .\32xl\:text-puple {
-    color: var(--purple) !important;
+    color: var(--purple-500) !important;
   }
 
   .\32xl\:text-red {
-    color: var(--red) !important;
+    color: var(--red-500) !important;
   }
 
   .\32xl\:text-orange {
-    color: var(--orange-400) !important;
+    color: var(--orange-500) !important;
   }
 
   .\32xl\:text-yellow {
-    color: var(--yellow) !important;
+    color: var(--yellow-500) !important;
   }
 
   .\32xl\:text-green {
-    color: var(--green) !important;
-  }
-
-  .\32xl\:text-cyan {
-    color: var(--cyan) !important;
+    color: var(--green-500) !important;
   }
 
   .\32xl\:text-light-gray {
-    color: var(--lightgray) !important;
+    color: var(--gray-200) !important;
   }
 
   .\32xl\:text-opacity-25 {

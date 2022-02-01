@@ -2,9 +2,9 @@
   position: relative;
   padding: 1rem 2rem;
   color: #fff;
-  background-color: #1890ff;
+  background-color: var(--blue-700);
   background-image: none;
-  border-color: #1890ff;
+  border-color: var(--blue-700);
 }
 
 .alert-heading {
@@ -150,56 +150,56 @@
 
 /* Colors */
 .alert.is-blue {
-  background-color: var(--blue);
+  background-color: var(--blue-600);
   color: var(--white);
 }
 
 .alert.is-indigo {
-  background-color: var(--indigo);
+  background-color: var(--indigo-500);
   color: var(--white);
 }
 
 .alert.is-pink {
-  background-color: var(--pink);
+  background-color: var(--pink-500);
   color: var(--white);
 }
 
 .alert.is-red {
-  background-color: var(--red);
+  background-color: var(--red-500);
   color: var(--white);
 }
 
 .alert.is-orange {
-  background-color: var(--orange);
+  background-color: var(--orange-500);
   color: var(--white);
 }
 
 .alert.is-green {
-  background-color: var(--green);
+  background-color: var(--green-500);
   color: var(--white);
 }
 
 .alert.is-dark-grey {
-  background-color: var(--gray-dark);
+  background-color: var(--gray-900);
   color: var(--white);
 }
 
-.alert.is-warning {
-  background-color: var(--warning);
-  color: var(--dark);
+.alert.is-rose {
+  background-color: var(--rose-600);
+  color: var(--black);
 }
 
 .alert.is-danger {
-  background-color: var(--danger);
-  color: var(--dark);
+  background-color: var(--red-700);
+  color: var(-black);
 }
 
 .alert.is-light {
-  background-color: var(--light);
-  color: var(--dark);
+  background-color: var(--gray-200);
+  color: var(--black);
 }
 
 .alert.is-dark {
-  background: var(--dark);
+  background: var(--gray-900);
   color: var(--white);
 }

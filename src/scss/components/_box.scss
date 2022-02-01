@@ -22,7 +22,7 @@ a.box {
 }
 
 .box.is-dark {
-  background-color: var(--dark);
+  background-color: var(--gray-900);
   border-radius: 6px;
   box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
     0 0px 0 1px rgba(10, 10, 10, 0.02);
@@ -31,7 +31,7 @@ a.box {
 }
 
 .box.is-blue {
-  background-color: var(--blue-400);
+  background-color: var(--blue-500);
   border-radius: 6px;
   box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
     0 0px 0 1px rgba(10, 10, 10, 0.1);
@@ -85,7 +85,7 @@ a.box {
 }
 
 .box.is-yellow {
-  background-color: var(--yellow);
+  background-color: var(--yellow-500);
   border-radius: 6px;
   box-shadow: 0 0.5em 1em -0.125em rgba(255, 251, 0, 0.1),
     0 0px 0 1px rgba(255, 251, 0, 0.1);

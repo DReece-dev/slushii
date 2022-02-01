@@ -23,16 +23,12 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 
-.body-color {
-  background-color: var(--white);
-}
-
 .body-dark {
-  background-color: var(--dark);
+  background-color: var(--gray-900);
 }
 
 .body-light {
-  background-color: var(--light);
+  background-color: var(--gray-100);
 }
 
 hr {

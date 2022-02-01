@@ -1,72 +1,520 @@
 // For setting the color of a form input's accent
 .accent-auto {
-    accent-color: auto !important;
+  accent-color: auto !important;
 }
 
 .accent-black {
-    accent-color: var(--black) !important;
+  accent-color: var(--black) !important;
 }
 
 .accent-white {
-    accent-color: var(--white) !important;
+  accent-color: var(--white) !important;
 }
 
-.accent-light {
-    accent-color: var(--light) !important;
+.accent-gray-100 {
+  accent-color: var(--gray-100) !important;
 }
 
-.accent-dark {
-    accent-color: var(--dark) !important;
+.accent-gray-200 {
+  accent-color: var(--gray-200) !important;
 }
 
-.accent-blue {
-    accent-color: var(--blue) !important;
+.accent-gray-300 {
+  accent-color: var(--gray-300) !important;
 }
 
-.accent-indigo {
-    accent-color: var(--indigo) !important;
+.accent-gray-400 {
+  accent-color: var(--gray-400) !important;
 }
 
-.accent-puple {
-    accent-color: var(--purple) !important;
+.accent-gray-600 {
+  accent-color: var(--gray-600) !important;
 }
 
-.accent-red {
-    accent-color: var(--red) !important;
+.accent-gray-700 {
+  accent-color: var(--gray-700) !important;
 }
 
-.accent-orange {
-    accent-color: var(--orange-400) !important;
+.accent-gray-800 {
+  accent-color: var(--gray-800) !important;
 }
 
-.accent-yellow {
-    accent-color: var(--yellow) !important;
+.accent-gray-900 {
+  accent-color: var(--gray-900) !important;
 }
 
-.accent-green {
-    accent-color: var(--green) !important;
+.accent-slate {
+  accent-color: var(--slate) !important;
 }
 
-.accent-cyan {
-    accent-color: var(--cyan) !important;
+.accent-slate-100 {
+  accent-color: var(--slate-100) !important;
 }
 
-.accent-light-gray {
-    accent-color: var(--lightgray) !important;
+.accent-slate-200 {
+  accent-color: var(--slate-200) !important;
+}
+
+.accent-slate-300 {
+  accent-color: var(--slate-300) !important;
+}
+
+.accent-slate-400 {
+  accent-color: var(--slate-400) !important;
+}
+
+.accent-slate-500 {
+  accent-color: var(--slate-500) !important;
+}
+
+.accent-slate-600 {
+  accent-color: var(--slate-600) !important;
+}
+
+.accent-slate-700 {
+  accent-color: var(--slate-700) !important;
+}
+
+.accent-slate-800 {
+  accent-color: var(--slate-800) !important;
+}
+
+.accent-slate-900 {
+  accent-color: var(--slate-900) !important;
+}
+
+.accent-blue-100 {
+  accent-color: var(--blue-100) !important;
+}
+
+.accent-blue-200 {
+  accent-color: var(--blue-200) !important;
+}
+
+.accent-blue-300 {
+  accent-color: var(--blue-300) !important;
+}
+
+.accent-blue-400 {
+  accent-color: var(--blue-400) !important;
+}
+
+.accent-blue-500 {
+  accent-color: var(--blue-500) !important;
+}
+
+.accent-blue-600 {
+  accent-color: var(--blue-600) !important;
+}
+
+.accent-blue-700 {
+  accent-color: var(--blue-700) !important;
+}
+
+.accent-blue-800 {
+  accent-color: var(--blue-800) !important;
+}
+
+.accent-blue-900 {
+  accent-color: var(--blue-900) !important;
+}
+
+.accent-light-blue-100 {
+  accent-color: var(--light-blue-100) !important;
+}
+
+.accent-light-blue-200 {
+  accent-color: var(--light-blue-200) !important;
+}
+
+.accent-light-blue-300 {
+  accent-color: var(--light-blue-300) !important;
+}
+
+.accent-light-blue-400 {
+  accent-color: var(--light-blue-400) !important;
+}
+
+.accent-light-blue-500 {
+  accent-color: var(--light-blue-500) !important;
+}
+
+.accent-light-blue-600 {
+  accent-color: var(--light-blue-600) !important;
+}
+
+.accent-light-blue-700 {
+  accent-color: var(--light-blue-700) !important;
+}
+
+.accent-light-blue-800 {
+  accent-color: var(--light-blue-800) !important;
+}
+
+.accent-light-blue-900 {
+  accent-color: var(--light-blue-900) !important;
+}
+
+.accent-indigo-100 {
+  accent-color: var(--indigo-100) !important;
+}
+
+.accent-indigo-200 {
+  accent-color: var(--indigo-200) !important;
+}
+
+.accent-indigo-300 {
+  accent-color: var(--indigo-300) !important;
+}
+
+.accent-indigo-400 {
+  accent-color: var(--indigo-400) !important;
+}
+
+.accent-indigo-500 {
+  accent-color: var(--indigo-500) !important;
+}
+
+.accent-indigo-600 {
+  accent-color: var(--indigo-600) !important;
+}
+
+.accent-indigo-700 {
+  accent-color: var(--indigo-700) !important;
+}
+
+.accent-indigo-700 {
+  accent-color: var(--indigo-800) !important;
+}
+
+.accent-indigo-700 {
+  accent-color: var(--indigo-900) !important;
+}
+
+.accent-purple-100 {
+  accent-color: var(--purple-100) !important;
+}
+
+.accent-purple-200 {
+  accent-color: var(--purple-200) !important;
+}
+
+.accent-purple-300 {
+  accent-color: var(--purple-300) !important;
+}
+
+.accent-purple-400 {
+  accent-color: var(--purple-400) !important;
+}
+
+.accent-purple-500 {
+  accent-color: var(--purple-500) !important;
+}
+
+.accent-purple-600 {
+  accent-color: var(--purple-600) !important;
+}
+
+.accent-purple-700 {
+  accent-color: var(--purple-700) !important;
+}
+
+.accent-purple-800 {
+  accent-color: var(--purple-800) !important;
+}
+
+.accent-purple-900 {
+  accent-color: var(--purple-900) !important;
+}
+
+.accent-deep-purple-100 {
+  accent-color: var(--deep-purple-100) !important;
+}
+
+.accent-deep-purple-200 {
+  accent-color: var(--deep-purple-200) !important;
+}
+
+.accent-deep-purple-300 {
+  accent-color: var(--deep-purple-300) !important;
+}
+
+.accent-deep-purple-400 {
+  accent-color: var(--deep-purple-400) !important;
+}
+
+.accent-deep-purple-500 {
+  accent-color: var(--deep-purple-500) !important;
+}
+
+.accent-deep-purple-600 {
+  accent-color: var(--deep-purple-600) !important;
+}
+
+.accent-deep-purple-700 {
+  accent-color: var(--deep-purple-700) !important;
+}
+
+.accent-deep-purple-800 {
+  accent-color: var(--deep-purple-800) !important;
+}
+
+.accent-deep-purple-900 {
+  accent-color: var(--deep-purple-900) !important;
+}
+
+.accent-pink-100 {
+  accent-color: var(--pink-100) !important;
+}
+
+.accent-pink-200 {
+  accent-color: var(--pink-200) !important;
+}
+
+.accent-pink-300 {
+  accent-color: var(--pink-300) !important;
+}
+
+.accent-pink-400 {
+  accent-color: var(--pink-400) !important;
+}
+
+.accent-pink-500 {
+  accent-color: var(--pink-500) !important;
+}
+
+.accent-pink-600 {
+  accent-color: var(--pink-600) !important;
+}
+
+.accent-pink-700 {
+  accent-color: var(--pink-700) !important;
+}
+
+.accent-pink-800 {
+  accent-color: var(--pink-800) !important;
+}
+
+.accent-pink-900 {
+  accent-color: var(--pink-900) !important;
+}
+
+.accent-rose-300 {
+  accent-color: var(--rose-300) !important;
+}
+
+.accent-rose-400 {
+  accent-color: var(--rose-400) !important;
+}
+
+.accent-rose-500 {
+  accent-color: var(--rose-500) !important;
+}
+
+.accent-rose-600 {
+  accent-color: var(--rose-600) !important;
+}
+
+.accent-rose-700 {
+  accent-color: var(--rose-700) !important;
+}
+
+.accent-rose-800 {
+  accent-color: var(--rose-800) !important;
+}
+
+.accent-red-100 {
+  accent-color: var(--red-100) !important;
+}
+
+.accent-red-200 {
+  accent-color: var(--red-200) !important;
+}
+
+.accent-red-300 {
+  accent-color: var(--red-300) !important;
+}
+
+.accent-red-400 {
+  accent-color: var(--red-400) !important;
+}
+
+.accent-red-500 {
+  accent-color: var(--red-500) !important;
+}
+
+.accent-red-600 {
+  accent-color: var(--red-600) !important;
+}
+
+.accent-red-700 {
+  accent-color: var(--red-700) !important;
+}
+
+.accent-red-800 {
+  accent-color: var(--red-800) !important;
+}
+
+.accent-red-900 {
+  accent-color: var(--red-900) !important;
+}
+
+.accent-orange-100 {
+  accent-color: var(--orange-100) !important;
+}
+
+.accent-orange-200 {
+  accent-color: var(--orange-200) !important;
+}
+
+.accent-orange-300 {
+  accent-color: var(--orange-300) !important;
+}
+
+.accent-orange-400 {
+  accent-color: var(--orange-400) !important;
+}
+
+.accent-orange-500 {
+  accent-color: var(--orange-500) !important;
+}
+
+.accent-orange-600 {
+  accent-color: var(--orange-600) !important;
+}
+
+.accent-orange-700 {
+  accent-color: var(--orange-700) !important;
+}
+
+.accent-orange-800 {
+  accent-color: var(--orange-800) !important;
+}
+
+.accent-orange-900 {
+  accent-color: var(--orange-900) !important;
+}
+
+.accent-yellow-100 {
+  accent-color: var(--yellow-100) !important;
+}
+
+.accent-yellow-200 {
+  accent-color: var(--yellow-200) !important;
+}
+
+.accent-yellow-300 {
+  accent-color: var(--yellow-300) !important;
+}
+
+.accent-yellow-400 {
+  accent-color: var(--yellow-400) !important;
+}
+
+.accent-yellow-500 {
+  accent-color: var(--yellow-500) !important;
+}
+
+.accent-yellow-600 {
+  accent-color: var(--yellow-600) !important;
+}
+
+.accent-yellow-700 {
+  accent-color: var(--yellow-700) !important;
+}
+
+.accent-yellow-800 {
+  accent-color: var(--yellow-800) !important;
+}
+
+.accent-yellow-900 {
+  accent-color: var(--yellow-900) !important;
+}
+
+.accent-lime-100 {
+  accent-color: var(--lime-100) !important;
+}
+
+.accent-lime-200 {
+  accent-color: var(--lime-200) !important;
+}
+
+.accent-lime-300 {
+  accent-color: var(--lime-300) !important;
+}
+
+.accent-lime-400 {
+  accent-color: var(--lime-400) !important;
+}
+
+.accent-lime-500 {
+  accent-color: var(--lime-500) !important;
+}
+
+.accent-lime-600 {
+  accent-color: var(--lime-600) !important;
+}
+
+.accent-lime-700 {
+  accent-color: var(--lime-700) !important;
+}
+
+.accent-lime-800 {
+  accent-color: var(--lime-800) !important;
+}
+
+.accent-lime-900 {
+  accent-color: var(--lime-900) !important;
+}
+
+.accent-green-100 {
+  accent-color: var(--green-100) !important;
+}
+
+.accent-green-200 {
+  accent-color: var(--green-200) !important;
+}
+
+.accent-green-300 {
+  accent-color: var(--green-300) !important;
+}
+
+.accent-green-400 {
+  accent-color: var(--green-400) !important;
+}
+
+.accent-green-500 {
+  accent-color: var(--green-500) !important;
+}
+
+.accent-green-600 {
+  accent-color: var(--green-600) !important;
+}
+
+.accent-green-700 {
+  accent-color: var(--green-700) !important;
+}
+
+.accent-green-800 {
+  accent-color: var(--green-800) !important;
+}
+
+.accent-green-900 {
+  accent-color: var(--green-900) !important;
 }
 
 .accent-inherit {
-    accent-color: inherit !important;
+  accent-color: inherit !important;
 }
 
 .accent-initial {
-    accent-color: initial !important;
+  accent-color: initial !important;
 }
 
 .accent-revert {
-    accent-color: revert !important;
+  accent-color: revert !important;
 }
 
 .accent-unset {
-    accent-color: unset !important;
+  accent-color: unset !important;
 }

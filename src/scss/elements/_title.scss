@@ -426,10 +426,10 @@
 
 .heading-divider {
   padding-bottom: calc(5px + 0.1em);
-  border-bottom: calc(0.2px + 0.05em) solid #e5e5e5;
+  border-bottom: calc(0.2px + 0.05em) solid var(--gray-400);
 
   &.is-dark {
     padding-bottom: calc(5px + 0.1em);
-    border-bottom: calc(0.2px + 0.05em) solid #0e0e0e;
+    border-bottom: calc(0.2px + 0.05em) solid var(--gray-900);
   }
 }
