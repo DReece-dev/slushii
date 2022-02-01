@@ -30941,6 +30941,18 @@
   max-height: 100vh !important;
 }
 
+.min-h-min {
+  min-height: -webkit-min-content !important;
+  min-height: -moz-min-content !important;
+  min-height: min-content !important;
+}
+
+.min-h-max {
+  min-height: -webkit-max-content !important;
+  min-height: -moz-max-content !important;
+  min-height: max-content !important;
+}
+
 .max-w-0 {
   max-width: 0rem !important;
 }
@@ -31212,6 +31224,18 @@
 
   .sm\:max-h-screen {
     max-height: 100vh !important;
+  }
+
+  .sm\:min-h-min {
+    min-height: -webkit-min-content !important;
+    min-height: -moz-min-content !important;
+    min-height: min-content !important;
+  }
+
+  .sm\:min-h-max {
+    min-height: -webkit-max-content !important;
+    min-height: -moz-max-content !important;
+    min-height: max-content !important;
   }
 
   .sm\:max-w-0 {
@@ -31487,6 +31511,18 @@
     max-height: 100vh !important;
   }
 
+  .md\:min-h-min {
+    min-height: -webkit-min-content !important;
+    min-height: -moz-min-content !important;
+    min-height: min-content !important;
+  }
+
+  .md\:min-h-max {
+    min-height: -webkit-max-content !important;
+    min-height: -moz-max-content !important;
+    min-height: max-content !important;
+  }
+
   .md\:max-w-0 {
     max-width: 0rem !important;
   }
@@ -31754,6 +31790,18 @@
 
   .lg\:max-h-full {
     max-height: 100% !important;
+  }
+
+  .lg\:min-h-min {
+    min-height: -webkit-min-content !important;
+    min-height: -moz-min-content !important;
+    min-height: min-content !important;
+  }
+
+  .lg\:min-h-max {
+    min-height: -webkit-max-content !important;
+    min-height: -moz-max-content !important;
+    min-height: max-content !important;
   }
 
   .lg\:max-h-screen {
@@ -32033,6 +32081,18 @@
     max-height: 100vh !important;
   }
 
+  .xl\:min-h-min {
+    min-height: -webkit-min-content !important;
+    min-height: -moz-min-content !important;
+    min-height: min-content !important;
+  }
+
+  .xl\:min-h-max {
+    min-height: -webkit-max-content !important;
+    min-height: -moz-max-content !important;
+    min-height: max-content !important;
+  }
+
   .xl\:max-w-0 {
     max-width: 0rem !important;
   }
@@ -32304,6 +32364,18 @@
 
   .\32 xl\:max-h-screen {
     max-height: 100vh !important;
+  }
+
+  .\32 xl\:min-h-min {
+    min-height: -webkit-min-content !important;
+    min-height: -moz-min-content !important;
+    min-height: min-content !important;
+  }
+
+  .\32 xl\:min-h-max {
+    min-height: -webkit-max-content !important;
+    min-height: -moz-max-content !important;
+    min-height: max-content !important;
   }
 
   .\32 xl\:max-w-0 {
