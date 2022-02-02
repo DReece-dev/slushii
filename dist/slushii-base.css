@@ -136,43 +136,56 @@
   --breakpoint-xxl: 1536px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  :root {
-    scroll-behavior: smooth;
-  }
+*:where(:not(iframe, canvas, img, svg, video):not(svg *, symbol *)) {
+  all: unset;
+  display: revert;
 }
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-html {
-  line-height: 1.15;
-  -webkit-text-size-adjust: 100%;
-  -moz-tab-size: 4;
-    -o-tab-size: 4;
-       tab-size: 4;
+::before,
+::after {
+  text-decoration: inherit;
+  vertical-align: inherit;
 }
 
-body {
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    scroll-behavior: smooth;
+  }
+}
+:where(:root) {
+  cursor: default;
+  line-height: 1.5;
+  overflow-wrap: break-word;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+     tab-size: 4;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+       text-size-adjust: 100%;
+}
+
+:where(body) {
   margin: 0;
   font-family: var(--deafult-fonts);
-  -webkit-text-size-adjust: 100%;
-}
-
-.body-dark {
-  background-color: var(--gray-900);
-}
-
-.body-light {
-  background-color: var(--gray-100);
 }
 
 hr {
-  height: 0;
+  margin: 1rem 0;
   color: inherit;
-  border-top-width: 1px;
+  background-color: currentColor;
+  border: 0;
+  opacity: 0.25;
+}
+
+hr:not([size]) {
+  height: 1px;
 }
 
 h6,
@@ -248,6 +261,8 @@ h6,
 }
 
 p {
+  margin-top: 0;
+  margin-bottom: 1rem;
   font-size: 15px;
 }
 
@@ -256,9 +271,16 @@ p {
     font-size: 13px;
   }
 }
-abbr[title] {
+:where(abbr[title]) {
+  text-decoration: underline;
   -webkit-text-decoration: underline dotted;
           text-decoration: underline dotted;
+}
+
+address {
+  margin-bottom: 1rem;
+  font-style: normal;
+  line-height: inherit;
 }
 
 a {
@@ -270,20 +292,16 @@ a:hover {
   color: var(--blue-600);
 }
 
-b,
-strong {
+:where(b, strong) {
   font-weight: bolder;
 }
 
-code,
-kbd,
-samp,
-pre {
-  font-family: theme("fontFamily.mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace);
+:where(code, kbd, samp) {
+  font-family: monospace, monospace;
   font-size: 1em;
 }
 
-small {
+:where(small) {
   font-size: 80%;
 }
 
@@ -303,10 +321,10 @@ sup {
   top: -0.5em;
 }
 
-table {
-  text-indent: 0;
-  border-color: inherit;
+:where(table) {
   border-collapse: collapse;
+  border-color: currentColor;
+  text-indent: 0;
 }
 
 button,
@@ -327,13 +345,8 @@ select {
   text-transform: none;
 }
 
-button,
-[type=button],
-[type=reset],
-[type=submit] {
+:where(button, [type="button" i], [type="reset" i], [type="submit" i]) {
   -webkit-appearance: button;
-  background-color: transparent;
-  background-image: none;
 }
 
 :-moz-focusring {
@@ -344,7 +357,7 @@ button,
   box-shadow: none;
 }
 
-progress {
+:where(progress) {
   vertical-align: baseline;
 }
 
@@ -353,7 +366,7 @@ progress {
   height: auto;
 }
 
-[type=search] {
+:where([type="search" i]) {
   -webkit-appearance: textfield;
   outline-offset: -2px;
 }
@@ -365,6 +378,27 @@ progress {
 ::-webkit-file-upload-button {
   -webkit-appearance: button;
   font: inherit;
+}
+
+:where(dialog) {
+  background-color: white;
+  border: solid;
+  color: black;
+  height: -moz-fit-content;
+  height: -webkit-fit-content;
+  height: fit-content;
+  left: 0;
+  margin: auto;
+  padding: 1em;
+  position: absolute;
+  right: 0;
+  width: -moz-fit-content;
+  width: -webkit-fit-content;
+  width: fit-content;
+}
+
+:where(dialog:not([open])) {
+  display: none;
 }
 
 summary {
@@ -404,24 +438,9 @@ menu {
   padding: 0;
 }
 
-textarea {
+:where(textarea) {
+  margin: 0;
   resize: vertical;
-}
-
-input::-moz-placeholder, textarea::-moz-placeholder {
-  opacity: 1;
-  color: theme("colors.gray.400", #9ca3af);
-}
-
-input:-ms-input-placeholder, textarea:-ms-input-placeholder {
-  opacity: 1;
-  color: theme("colors.gray.400", #9ca3af);
-}
-
-input::placeholder,
-textarea::placeholder {
-  opacity: 1;
-  color: theme("colors.gray.400", #9ca3af);
 }
 
 button,
@@ -450,8 +469,25 @@ video {
   height: auto;
 }
 
-[hidden] {
+meter {
+  -webkit-appearance: revert;
+  -moz-appearance: revert;
+       appearance: revert;
+}
+
+:where([hidden]) {
   display: none;
+}
+
+:where([contenteditable]) {
+  -moz-user-modify: read-write;
+  -webkit-user-modify: read-write;
+  overflow-wrap: break-word;
+  -webkit-line-break: after-white-space;
+}
+
+:where([draggable="true"]) {
+  -webkit-user-drag: element;
 }
 
 .lead {
