@@ -164,11 +164,11 @@
   overflow-wrap: break-word;
   -moz-tab-size: 4;
   -o-tab-size: 4;
-     tab-size: 4;
+  tab-size: 4;
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
-       text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 :where(body) {
@@ -213,7 +213,7 @@ h1,
 
 @media (min-width: 1200px) {
   h1,
-.h1 {
+  .h1 {
     font-size: 2.5rem;
   }
 }
@@ -224,7 +224,7 @@ h2,
 
 @media (min-width: 1200px) {
   h2,
-.h2 {
+  .h2 {
     font-size: 2rem;
   }
 }
@@ -235,7 +235,7 @@ h3,
 
 @media (min-width: 1200px) {
   h3,
-.h3 {
+  .h3 {
     font-size: 1.75rem;
   }
 }
@@ -246,7 +246,7 @@ h4,
 
 @media (min-width: 1200px) {
   h4,
-.h4 {
+  .h4 {
     font-size: 1.5rem;
   }
 }
@@ -274,7 +274,7 @@ p {
 :where(abbr[title]) {
   text-decoration: underline;
   -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
+  text-decoration: underline dotted;
 }
 
 address {
@@ -444,7 +444,7 @@ menu {
 }
 
 button,
-[role=button] {
+[role="button"] {
   cursor: pointer;
 }
 
@@ -472,18 +472,11 @@ video {
 meter {
   -webkit-appearance: revert;
   -moz-appearance: revert;
-       appearance: revert;
+  appearance: revert;
 }
 
 :where([hidden]) {
   display: none;
-}
-
-:where([contenteditable]) {
-  -moz-user-modify: read-write;
-  -webkit-user-modify: read-write;
-  overflow-wrap: break-word;
-  -webkit-line-break: after-white-space;
 }
 
 :where([draggable="true"]) {

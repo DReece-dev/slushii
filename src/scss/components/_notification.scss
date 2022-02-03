@@ -1,64 +1,64 @@
 /* Right Cornor Notification */
 .notification {
-    display: inline-flex;
-    flex-direction: row;
-    background-color: whitesmoke;
-    border-radius: 4px;
-    position: relative;
-    padding-left: 1rem;
-    width: 25em;
-    height: max-content;
-    padding-bottom: 1.5rem;
-    box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
-        0 0px 0 1px rgba(10, 10, 10, 0.02);
+  display: inline-flex;
+  flex-direction: row;
+  background-color: whitesmoke;
+  border-radius: 4px;
+  position: relative;
+  padding-left: 1rem;
+  width: 25em;
+  height: max-content;
+  padding-bottom: 1.5rem;
+  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
+    0 0px 0 1px rgba(10, 10, 10, 0.02);
 
-    a {
-        &:not(.btn) {
-            &:not(.dropdown-item) {
-                color: currentColor;
-                text-decoration: underline;
-            }
-        }
-    }
-
-    strong {
+  a {
+    &:not(.btn) {
+      &:not(.dropdown-item) {
         color: currentColor;
+        text-decoration: underline;
+      }
     }
+  }
 
-    code,
-    pre {
-        background: white;
-    }
+  strong {
+    color: currentColor;
+  }
 
-    pre,
-    code {
-        background: transparent;
-    }
+  code,
+  pre {
+    background: white;
+  }
 
-    >.delete {
-        right: 0.5rem;
-        position: absolute;
-        top: 0.5rem;
-    }
+  pre,
+  code {
+    background: transparent;
+  }
 
-    .title,
-    .subtitle,
-    .content {
-        color: currentColor;
-    }
+  > .delete {
+    right: 0.5rem;
+    position: absolute;
+    top: 0.5rem;
+  }
 
-    &.is-white {
-        background-color: var(--white);
-        color: black;
-    }
+  .title,
+  .subtitle,
+  .content {
+    color: currentColor;
+  }
 
-    &.is-black {
-        background-color: black;
-        color: var(--white);
-    }
+  &.is-white {
+    background-color: var(--white);
+    color: black;
+  }
 
-    &.is-blue {
-        background-color: var(--blue-500);
-        color: var(--white);
-    }
+  &.is-black {
+    background-color: black;
+    color: var(--white);
+  }
+
+  &.is-blue {
+    background-color: var(--blue-500);
+    color: var(--white);
+  }
 }

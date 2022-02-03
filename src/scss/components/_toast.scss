@@ -24,7 +24,7 @@
   }
 
   &.hide {
-    display: none
+    display: none;
   }
 
   @-webkit-keyframes fadein {
@@ -81,7 +81,7 @@
   max-width: 100%;
   pointer-events: none;
 
-  >:not(:last-child) {
+  > :not(:last-child) {
     margin-bottom: 0.75rem;
   }
 }

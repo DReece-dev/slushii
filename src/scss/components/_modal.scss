@@ -4,10 +4,11 @@
   overflow: hidden;
   position: fixed;
   z-index: 40;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   text-align: center;
   margin: 20px;
-  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
+  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
+    0 0px 0 1px rgba(10, 10, 10, 0.02);
 
   &.is-active {
     display: flex;
@@ -27,7 +28,6 @@
 }
 
 @media screen and (min-width: 769px) {
-
   .modal-content,
   .modal-card {
     margin: 0 auto;

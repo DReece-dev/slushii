@@ -1,19 +1,19 @@
 .centered {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    margin: 0 auto !important;
-    flex-wrap: wrap !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 auto !important;
+  flex-wrap: wrap !important;
 }
 
 .centered-alt,
 .centered-alt:hover,
 .centered-alt:active {
-    overflow: hidden !important;
-    position: absolute !important;
-    width: 100% !important;
-    height: 100% !important;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
+  overflow: hidden !important;
+  position: absolute !important;
+  width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
 }

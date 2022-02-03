@@ -1,95 +1,98 @@
 @-webkit-keyframes progress-bar-stripes {
-    0% {
-        background-position-x: 1rem;
-    }
+  0% {
+    background-position-x: 1rem;
+  }
 }
 
 @keyframes progress-bar-stripes {
-    0% {
-        background-position-x: 1rem;
-    }
+  0% {
+    background-position-x: 1rem;
+  }
 }
 
 .progress {
-    display: flex;
-    height: 1rem;
-    overflow: hidden;
-    font-size: 0.75rem;
-    background-color: #e9ecef;
-    border-radius: 0.25rem;
+  display: flex;
+  height: 1rem;
+  overflow: hidden;
+  font-size: 0.75rem;
+  background-color: #e9ecef;
+  border-radius: 0.25rem;
 
-    &:indeterminate {
+  &:indeterminate {
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-name: moveIndeterminate;
+    animation-timing-function: linear;
+    background-color: #ededed;
+    background-image: linear-gradient(to right, #4a4a4a 30%, #ededed 30%);
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: 150% 150%;
+  }
 
-        animation-duration: 1.5s;
+  &:indeterminate::-webkit-progress-bar {
+    background-color: transparent;
+  }
 
-        animation-iteration-count: infinite;
+  &:indeterminate::-moz-progress-bar {
+    background-color: transparent;
+  }
 
-        animation-name: moveIndeterminate;
+  &:indeterminate::-ms-fill {
+    animation-name: none;
+  }
 
-        animation-timing-function: linear;
-        background-color: #ededed;
-        background-image: linear-gradient(to right, #4a4a4a 30%, #ededed 30%);
-        background-position: top left;
-        background-repeat: no-repeat;
-        background-size: 150% 150%;
-    }
+  &.is-small {
+    height: 0.75rem;
+  }
 
-    &:indeterminate::-webkit-progress-bar {
-        background-color: transparent;
-    }
+  &.is-medium {
+    height: 1.25rem;
+  }
 
-    &:indeterminate::-moz-progress-bar {
-        background-color: transparent;
-    }
-
-    &:indeterminate::-ms-fill {
-        animation-name: none;
-    }
-
-    &.is-small {
-        height: 0.75rem;
-    }
-
-    &.is-medium {
-        height: 1.25rem;
-    }
-
-    &.is-large {
-        height: 1.5rem;
-    }
+  &.is-large {
+    height: 1.5rem;
+  }
 }
 
 .progress-bar {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    overflow: hidden;
-    color: var(--white);
-    text-align: center;
-    white-space: nowrap;
-    background-color: var(--blue-500);
-    transition: width 0.6s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  color: var(--white);
+  text-align: center;
+  white-space: nowrap;
+  background-color: var(--blue-500);
+  transition: width 0.6s ease;
 
-    &.striped {
-        background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-        background-size: 1rem 1rem;
-    }
+  &.striped {
+    background-image: linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.15) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(255, 255, 255, 0.15) 50%,
+      rgba(255, 255, 255, 0.15) 75%,
+      transparent 75%,
+      transparent
+    );
+    background-size: 1rem 1rem;
+  }
 
-    &.animated {
-
-        animation: 1s linear infinite progress-bar-stripes;
-    }
+  &.animated {
+    animation: 1s linear infinite progress-bar-stripes;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .progress-bar {
-        transition: none;
-    }
+  .progress-bar {
+    transition: none;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .progress-bar.animated {
-
-        animation: none;
-    }
+  .progress-bar.animated {
+    animation: none;
+  }
 }

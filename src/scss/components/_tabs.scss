@@ -21,7 +21,6 @@
     vertical-align: top;
     text-decoration: none;
 
-
     &:hover {
       border-bottom-color: #363636;
       color: #363636;
@@ -125,7 +124,7 @@
       }
     }
 
-    li+li {
+    li + li {
       margin-left: -1px;
     }
 
@@ -241,10 +240,10 @@
   }
 }
 
-.tab-content>.tab-pane {
+.tab-content > .tab-pane {
   display: none;
 }
 
-.tab-content>.active {
+.tab-content > .active {
   display: block;
 }

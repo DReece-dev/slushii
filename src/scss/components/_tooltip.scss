@@ -2,8 +2,6 @@
   position: relative;
 }
 
-/* Tooltip arrow */
-
 [data-toggle="tooltip"]::before {
   content: " ";
   width: 1rem;
@@ -14,8 +12,6 @@
   opacity: 0;
   z-index: 90;
 }
-
-/* Tooltip content */
 
 [data-toggle="tooltip"]::after {
   content: attr(data-title);
@@ -33,8 +29,6 @@
   z-index: 90;
 }
 
-/* Tooltip top */
-
 [data-toggle="tooltip"]:not([data-placement])::before,
 [data-toggle="tooltip"][data-placement="top"]::before {
   left: 50%;
@@ -49,8 +43,6 @@
   transform: translate(-50%, -50%);
 }
 
-/* Tooltip bottom */
-
 [data-toggle="tooltip"][data-placement="bottom"]::before {
   left: 50%;
   bottom: -0.5rem;
@@ -63,8 +55,6 @@
   transform: translate(-50%, 50%);
 }
 
-/* Tooltip left */
-
 [data-toggle="tooltip"][data-placement="left"]::before {
   left: -0.5rem;
   transform: translate(-100%, 100%) rotate(45deg);
@@ -75,8 +65,6 @@
   top: 50%;
   transform: translate(-50%, -50%);
 }
-
-/* Tooltip right */
 
 [data-toggle="tooltip"][data-placement="right"]::before {
   right: -0.5rem;
@@ -89,10 +77,6 @@
   transform: translate(50%, -50%);
 }
 
-/* Show tooltips (on all screens) */
-
-/* Arrow */
-
 [data-toggle="tooltip"]:not([data-target-breakpoint]):hover::before,
 [data-toggle="tooltip"]:not([data-target-breakpoint]):focus::before {
   visibility: visible;
@@ -101,16 +85,12 @@
   -webkit-transition: opacity 0.5s;
 }
 
-/* Content */
-
 [data-toggle="tooltip"]:not([data-target-breakpoint]):hover::after,
 [data-toggle="tooltip"]:not([data-target-breakpoint]):focus::after {
   visibility: visible;
   -webkit-transition: all 0.1s, color 0s, background-color 0s;
   transition: all 0.1s, color 0s, background-color 0s;
 }
-
-/* Placement */
 
 [data-toggle="tooltip"]:not([data-target-breakpoint]):not([data-placement]):hover::after,
 [data-toggle="tooltip"]:not([data-target-breakpoint])[data-placement="top"]:hover::after,
@@ -138,11 +118,7 @@
   transform: translate(100%, -50%);
 }
 
-/* Show tooltips (only on screens with widths > 768px) */
-
 @media (min-width: 769px) {
-  /* Arrow */
-
   [data-toggle="tooltip"][data-target-breakpoint="md"]:hover::before,
   [data-toggle="tooltip"][data-target-breakpoint="md"]:focus::before {
     visibility: visible;
@@ -150,15 +126,11 @@
     transition: opacity 0.5s;
   }
 
-  /* Content */
-
   [data-toggle="tooltip"][data-target-breakpoint="md"]:hover::after,
   [data-toggle="tooltip"][data-target-breakpoint="md"]:focus::after {
     visibility: visible;
     transition: all 0.1s, color 0s, background-color 0s;
   }
-
-  /* Placement */
 
   [data-toggle="tooltip"][data-target-breakpoint="md"]:not([data-placement]):hover::after,
   [data-toggle="tooltip"][data-target-breakpoint="md"][data-placement="top"]:hover::after,
@@ -187,11 +159,7 @@
   }
 }
 
-/* Show tooltips (only on screens with widths > 992px) */
-
 @media (min-width: 993px) {
-  /* Arrow */
-
   [data-toggle="tooltip"][data-target-breakpoint="lg"]:hover::before,
   [data-toggle="tooltip"][data-target-breakpoint="lg"]:focus::before {
     visibility: visible;
@@ -200,16 +168,12 @@
     -webkit-transition: opacity 0.5s;
   }
 
-  /* Content */
-
   [data-toggle="tooltip"][data-target-breakpoint="lg"]:hover::after,
   [data-toggle="tooltip"][data-target-breakpoint="lg"]:focus::after {
     visibility: visible;
     -webkit-transition: all 0.1s, color 0s, background-color 0s;
     transition: all 0.1s, color 0s, background-color 0s;
   }
-
-  /* Placement */
 
   [data-toggle="tooltip"][data-target-breakpoint="lg"]:not([data-placement]):hover::after,
   [data-toggle="tooltip"][data-target-breakpoint="lg"][data-placement="top"]:hover::after,

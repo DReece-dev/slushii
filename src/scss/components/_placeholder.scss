@@ -1,65 +1,70 @@
 .placeholder {
-    display: inline-block;
-    min-height: 1em;
-    vertical-align: middle;
-    cursor: wait;
-    background-color: currentColor;
-    opacity: 0.5;
+  display: inline-block;
+  min-height: 1em;
+  vertical-align: middle;
+  cursor: wait;
+  background-color: currentColor;
+  opacity: 0.5;
 
-    &.btn {
-        &::before {
-            display: inline-block;
-            content: "";
-        }
+  &.btn {
+    &::before {
+      display: inline-block;
+      content: "";
     }
+  }
 
-    &.xs {
-        min-height: 0.6em;
-    }
+  &.xs {
+    min-height: 0.6em;
+  }
 
-    &.sm {
-        min-height: 0.8em;
-    }
+  &.sm {
+    min-height: 0.8em;
+  }
 
-    &.lg {
-        min-height: 1.2em;
-    }
+  &.lg {
+    min-height: 1.2em;
+  }
 
-    &.xl {
-        min-height: 1.8em;
-    }
+  &.xl {
+    min-height: 1.8em;
+  }
 }
 
 .placeholder-glow .placeholder {
-    animation: placeholder-glow 2s ease-in-out infinite;
+  animation: placeholder-glow 2s ease-in-out infinite;
 }
 
 @-webkit-keyframes placeholder-glow {
-    50% {
-        opacity: 0.2;
-    }
+  50% {
+    opacity: 0.2;
+  }
 }
 
 @keyframes placeholder-glow {
-    50% {
-        opacity: 0.2;
-    }
+  50% {
+    opacity: 0.2;
+  }
 }
 
 .placeholder-wave {
-    mask-image: linear-gradient(130deg, #000 55%, rgba(0, 0, 0, 0.8) 75%, #000 95%);
-    mask-size: 200% 100%;
-    animation: placeholder-wave 2s linear infinite;
+  mask-image: linear-gradient(
+    130deg,
+    #000 55%,
+    rgba(0, 0, 0, 0.8) 75%,
+    #000 95%
+  );
+  mask-size: 200% 100%;
+  animation: placeholder-wave 2s linear infinite;
 }
 
 @-webkit-keyframes placeholder-wave {
-    100% {
-        mask-position: -200% 0%;
-    }
+  100% {
+    mask-position: -200% 0%;
+  }
 }
 
 @keyframes placeholder-wave {
-    100% {
-        mask-position: -200% 0%;
-    }
+  100% {
+    mask-position: -200% 0%;
+  }
 }

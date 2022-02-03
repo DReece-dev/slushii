@@ -20,7 +20,7 @@
     position: relative;
     text-decoration: none;
 
-    >a {
+    > a {
       border-radius: 0.1rem;
       color: inherit;
       display: block;
@@ -40,7 +40,6 @@
       }
     }
   }
-
 }
 
 .menu .menu-item .form-checkbox,
@@ -49,12 +48,11 @@
   margin: 0.1rem 0;
 }
 
-.menu .menu-item+.menu-item {
+.menu .menu-item + .menu-item {
   margin-top: 0.2rem;
 }
 
 .menu {
-
   .menu-badge {
     align-items: center;
     display: flex;
@@ -67,10 +65,7 @@
       margin-right: 0.4rem;
     }
   }
-
 }
-
-/* Flyout menus */
 
 .flyout-dropbutton {
   background-color: var(--blue-500);
@@ -167,7 +162,6 @@
 }
 
 .flyout-menu {
-
   a {
     float: left;
     font-size: 16px;
@@ -196,7 +190,6 @@
     font: inherit;
     margin: 0;
   }
-
 }
 
 .flyout-menu a:hover,

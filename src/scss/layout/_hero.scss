@@ -1,7 +1,5 @@
 .hero {
   align-items: stretch;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -27,17 +25,27 @@
   padding: 1.5rem;
 }
 
-@media screen and (min-width: 960px),
-print {
+@media screen and (min-width: 768px), print {
   .hero.is-medium .hero-body {
     padding: 9rem 1.5rem;
   }
 }
 
-@media screen and (min-width: 1200px),
-print {
+@media screen and (min-width: 1024px), print {
   .hero.is-large .hero-body {
     padding: 18rem 1.5rem;
+  }
+}
+
+@media screen and (min-width: 1280px), print {
+  .hero.is-xlarge .hero-body {
+    padding: 24rem 1.5rem;
+  }
+}
+
+@media screen and (min-width: 1536px), print {
+  .hero.is-xxlarge .hero-body {
+    padding: 30rem 1.5rem;
   }
 }
 
@@ -48,9 +56,9 @@ print {
   display: flex;
 }
 
-.hero.is-halfheight .hero-body>.container,
-.hero.is-fullheight .hero-body>.container,
-.hero.is-fullheight-with-navbar .hero-body>.container {
+.hero.is-halfheight .hero-body > .container,
+.hero.is-fullheight .hero-body > .container,
+.hero.is-fullheight-with-navbar .hero-body > .container {
   flex-grow: 1;
   flex-shrink: 1;
 }
@@ -108,8 +116,7 @@ print {
   }
 }
 
-@media screen and (min-width: 640px),
-print {
+@media screen and (min-width: 640px), print {
   .hero-btns {
     display: flex;
     justify-content: center;
@@ -131,8 +138,6 @@ print {
   flex-shrink: 0;
   padding: 3rem 1.5rem;
 }
-
-// Some color options
 
 .hero.is-white {
   background-color: var(--white);
