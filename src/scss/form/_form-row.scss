@@ -43,7 +43,7 @@ legend {
 }
 
 /* Adjustments for small screens and up (> 576px) */
-@media (min-width: 577px) {
+@media (min-width: 640px) {
   .form-row.row-eq-spacing-sm:not(.row-eq-spacing) > [class^="col"] {
     padding-left: 1rem;
     padding-right: 1rem;
@@ -59,14 +59,14 @@ legend {
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 640px) {
   .form-row.row-eq-spacing-sm:not(.row-eq-spacing)
     > [class^="col"]:not(:last-child) {
     margin-bottom: 2rem;
   }
 }
 
-@media (min-width: 769px) {
+@media (min-width: 768px) {
   .form-row.row-eq-spacing-md:not(.row-eq-spacing-sm):not(.row-eq-spacing)
     > [class^="col"] {
     padding-left: 1rem;
@@ -91,7 +91,7 @@ legend {
   }
 }
 
-@media (min-width: 993px) {
+@media (min-width: 1024px) {
   .form-row.row-eq-spacing-lg:not(.row-eq-spacing-md):not(.row-eq-spacing-sm):not(.row-eq-spacing)
     > [class^="col"] {
     padding-left: 1rem;
@@ -109,14 +109,14 @@ legend {
   }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
   .form-row.row-eq-spacing-lg:not(.row-eq-spacing-md):not(.row-eq-spacing-sm):not(.row-eq-spacing)
     > [class^="col"]:not(:last-child) {
     margin-bottom: 2rem;
   }
 }
 
-@media (min-width: 1201px) {
+@media (min-width: 1280px) {
   .form-row.row-eq-spacing-xl:not(.row-eq-spacing-lg):not(.row-eq-spacing-md):not(.row-eq-spacing-sm):not(.row-eq-spacing)
     > [class^="col"] {
     padding-left: 1rem;
@@ -134,7 +134,7 @@ legend {
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1280px) {
   .form-row.row-eq-spacing-xl:not(.row-eq-spacing-lg):not(.row-eq-spacing-md):not(.row-eq-spacing-sm):not(.row-eq-spacing)
     > [class^="col"]:not(:last-child) {
     margin-bottom: 2rem;

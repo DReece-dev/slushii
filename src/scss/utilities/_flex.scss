@@ -94,6 +94,104 @@
   flex-direction: column-reverse !important;
 }
 
+@media (min-width: 360px) {
+  .xs\:flex {
+    display: flex !important;
+  }
+
+  .xs\:inline-flex {
+    display: inline-flex !important;
+  }
+
+  .xs\:flex-row {
+    flex-direction: row !important;
+  }
+
+  .xs\:flex-row-reverse {
+    flex-direction: row-reverse !important;
+  }
+
+  .xs\:flex-col {
+    flex-direction: column !important;
+  }
+
+  .xs\:flex-col-reverse {
+    flex-direction: column-reverse !important;
+  }
+
+  .xs\:flex-wrap {
+    flex-wrap: wrap !important;
+  }
+
+  .xs\:flex-wrap-reverse {
+    flex-wrap: wrap-reverse !important;
+  }
+
+  .xs\:flex-nowrap {
+    flex-wrap: nowrap !important;
+  }
+
+  .xs\:flex-1 {
+    flex: 1 1 0% !important;
+  }
+
+  .xs\:flex-auto {
+    flex: 1 1 auto !important;
+  }
+
+  .xs\:flex-initial {
+    flex: 0 1 auto !important;
+  }
+
+  .xs\:flex-none {
+    flex: none !important;
+  }
+
+  .xs\:flex-grow-0 {
+    flex-grow: 0 !important;
+  }
+
+  .xs\:flex-grow {
+    flex-grow: 1 !important;
+  }
+
+  .xs\:flex-shrink-0 {
+    flex-shrink: 0 !important;
+  }
+
+  .xs\:flex-shrink {
+    flex-shrink: 1 !important;
+  }
+
+  .xs\:flex-child-auto {
+    flex: 1 1 auto !important;
+  }
+
+  .xs\:flex-child-grow {
+    flex: 1 0 auto !important;
+  }
+
+  .xs\:flex-child-shrink {
+    flex: 0 1 auto !important;
+  }
+
+  .xs\:flex-dir-row {
+    flex-direction: row !important;
+  }
+
+  .xs\:flex-dir-row-reverse {
+    flex-direction: row-reverse !important;
+  }
+
+  .xs\:flex-dir-column {
+    flex-direction: column !important;
+  }
+
+  .xs\:flex-dir-column-reverse {
+    flex-direction: column-reverse !important;
+  }
+}
+
 @media (min-width: 640px) {
   .sm\:flex {
     display: flex !important;
@@ -192,7 +290,7 @@
   }
 }
 
-@media print, screen and (min-width: 768px) {
+@media (min-width: 768px) {
   .md\:flex {
     display: flex !important;
   }
@@ -290,7 +388,7 @@
   }
 }
 
-@media print, screen and (min-width: 1024px) {
+@media (min-width: 1024px) {
   .lg\:flex {
     display: flex !important;
   }
@@ -388,7 +486,7 @@
   }
 }
 
-@media print, screen and (min-width: 1280px) {
+@media (min-width: 1280px) {
   .xl\:flex {
     display: flex !important;
   }
@@ -486,7 +584,7 @@
   }
 }
 
-@media print, screen and (min-width: 1536px) {
+@media (min-width: 1536px) {
   .\32xl\:flex {
     display: flex !important;
   }

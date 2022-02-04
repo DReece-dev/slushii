@@ -30,6 +30,40 @@
   z-index: auto !important;
 }
 
+@media (min-width: 360px) {
+  .xs\:z-0 {
+    z-index: 0 !important;
+  }
+
+  .xs\:z-1 {
+    z-index: 1 !important;
+  }
+
+  .xs\:z-10 {
+    z-index: 10 !important;
+  }
+
+  .xs\:z-20 {
+    z-index: 20 !important;
+  }
+
+  .xs\:z-30 {
+    z-index: 30 !important;
+  }
+
+  .xs\:z-40 {
+    z-index: 40 !important;
+  }
+
+  .xs\:z-50 {
+    z-index: 50 !important;
+  }
+
+  .xs\:z-auto {
+    z-index: auto !important;
+  }
+}
+
 @media (min-width: 640px) {
   .sm\:z-0 {
     z-index: 0 !important;

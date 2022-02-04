@@ -102,6 +102,112 @@
   columns: 80rem !important;
 }
 
+@media (min-width: 360px) {
+  .xs\:columns-1 {
+    columns: 1 !important;
+  }
+
+  .xs\:columns-2 {
+    columns: 2 !important;
+  }
+
+  .xs\:columns-3 {
+    columns: 3 !important;
+  }
+
+  .xs\:columns-4 {
+    columns: 4 !important;
+  }
+
+  .xs\:columns-5 {
+    columns: 5 !important;
+  }
+
+  .xs\:columns-6 {
+    columns: 6 !important;
+  }
+
+  .xs\:columns-7 {
+    columns: 7 !important;
+  }
+
+  .xs\:columns-8 {
+    columns: 8 !important;
+  }
+
+  .xs\:columns-9 {
+    columns: 9 !important;
+  }
+
+  .xs\:columns-10 {
+    columns: 10 !important;
+  }
+
+  .xs\:columns-11 {
+    columns: 11 !important;
+  }
+
+  .xs\:columns-12 {
+    columns: 12 !important;
+  }
+
+  .xs\:columns-auto {
+    columns: auto !important;
+  }
+
+  .xs\:columns-3xs {
+    columns: 16rem !important;
+  }
+
+  .xs\:columns-2xs {
+    columns: 18rem !important;
+  }
+
+  .xs\:columns-xs {
+    columns: 20rem !important;
+  }
+
+  .xs\:columns-sm {
+    columns: 24rem !important;
+  }
+
+  .xs\:columns-md {
+    columns: 28rem !important;
+  }
+
+  .xs\:columns-lg {
+    columns: 32rem !important;
+  }
+
+  .xs\:columns-xl {
+    columns: 36rem !important;
+  }
+
+  .xs\:columns-2xl {
+    columns: 42rem !important;
+  }
+
+  .xs\:columns-3xl {
+    columns: 48rem !important;
+  }
+
+  .xs\:columns-4xl {
+    columns: 56rem !important;
+  }
+
+  .xs\:columns-5xl {
+    columns: 64rem !important;
+  }
+
+  .xs\:columns-6xl {
+    columns: 72rem !important;
+  }
+
+  .xs\:columns-7xl {
+    columns: 80rem !important;
+  }
+}
+
 @media (min-width: 640px) {
   .sm\:columns-1 {
     columns: 1 !important;

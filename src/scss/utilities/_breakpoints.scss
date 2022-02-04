@@ -1,12 +1,16 @@
-.breakpoint-s::before {
+.breakpoint-xs::before {
+  content: "360px" !important;
+}
+
+.breakpoint-sm::before {
   content: "640px" !important;
 }
 
-.breakpoint-m::before {
+.breakpoint-md::before {
   content: "768px" !important;
 }
 
-.breakpoint-l::before {
+.breakpoint-lg::before {
   content: "1024px" !important;
 }
 

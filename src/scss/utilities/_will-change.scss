@@ -38,6 +38,48 @@
   will-change: unset !important;
 }
 
+@media (min-width: 360px) {
+  .xs\:will-change-auto {
+    will-change: auto !important;
+  }
+
+  .xs\:will-change-scroll-position {
+    will-change: scroll-position !important;
+  }
+
+  .xs\:will-change-contents {
+    will-change: contents !important;
+  }
+
+  .xs\:will-change-transform {
+    will-change: transform !important;
+  }
+
+  .xs\:will-change-opacity {
+    will-change: opacity !important;
+  }
+
+  .xs\:will-change-left-top {
+    will-change: left, top !important;
+  }
+
+  .xs\:will-change-inherit {
+    will-change: inherit !important;
+  }
+
+  .xs\:will-change-initial {
+    will-change: initial !important;
+  }
+
+  .xs\:will-change-revert {
+    will-change: revert !important;
+  }
+
+  .xs\:will-change-revert {
+    will-change: unset !important;
+  }
+}
+
 @media (min-width: 640px) {
   .sm\:will-change-auto {
     will-change: auto !important;

@@ -54,6 +54,64 @@
   overflow-y: clip !important;
 }
 
+@media (min-width: 360px) {
+  .xs\:overflow-hidden {
+    overflow: hidden !important;
+  }
+
+  .xs\:overflow-x-hidden {
+    overflow-x: hidden !important;
+  }
+
+  .xs\:overflow-y-hidden {
+    overflow-y: hidden !important;
+  }
+
+  .xs\:overflow-auto {
+    overflow: auto !important;
+  }
+
+  .xs\:overflow-x-auto {
+    overflow-x: auto !important;
+  }
+
+  .xs\:overflow-y-auto {
+    overflow-y: auto !important;
+  }
+
+  .xs\:overflow-scroll {
+    overflow: scroll !important;
+  }
+
+  .xs\:overflow-x-scroll {
+    overflow-x: scroll !important;
+  }
+
+  .xs\:overflow-y-scroll {
+    overflow-y: scroll !important;
+  }
+
+  .xs\:text-ellipsis {
+    text-overflow: ellipsis !important;
+  }
+
+  .xs\:text-clip {
+    text-overflow: clip !important;
+  }
+
+  .xs\:overflow-clip {
+    overflow: clip !important;
+  }
+
+  .xs\:overflow-x-clip {
+    overflow-x: clip !important;
+  }
+
+  .xs\:overflow-y-clip {
+    overflow-y: clip !important;
+  }
+}
+
 @media (min-width: 640px) {
   .sm\:overflow-hidden {
     overflow: hidden !important;
@@ -110,9 +168,6 @@
   .sm\:overflow-y-clip {
     overflow-y: clip !important;
   }
-}
-
-@media (min-width: 640px) {
 }
 
 @media (min-width: 768px) {

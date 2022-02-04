@@ -100,6 +100,110 @@
   vertical-align: super !important;
 }
 
+@media (min-width: 360px) {
+  .xs\:align-left {
+    justify-content: flex-start !important;
+  }
+
+  .xs\:align-right {
+    justify-content: flex-end !important;
+  }
+
+  .xs\:align-center {
+    justify-content: center !important;
+  }
+
+  .xs\:align-justify {
+    justify-content: space-between !important;
+  }
+
+  .xs\:align-spaced {
+    justify-content: space-around !important;
+  }
+
+  .xs\:align-left.vertical.menu > li > a {
+    justify-content: flex-start !important;
+  }
+
+  .xs\:align-right.vertical.menu > li > a {
+    justify-content: flex-end !important;
+  }
+
+  .xs\:align-center.vertical.menu > li > a {
+    justify-content: center !important;
+  }
+
+  .xs\:align-top {
+    align-items: flex-start !important;
+  }
+
+  .xs\:align-self-top {
+    align-self: flex-start !important;
+  }
+
+  .xs\:lign-bottom {
+    align-items: flex-end !important;
+  }
+
+  .xs\:align-self-bottom {
+    align-self: flex-end !important;
+  }
+
+  .xs\:align-middle {
+    align-items: center !important;
+  }
+
+  .xs\:align-self-middle {
+    align-self: center !important;
+  }
+
+  .xs\:align-stretch {
+    align-items: stretch !important;
+  }
+
+  .xs\:align-self-stretch {
+    align-self: stretch !important;
+  }
+
+  .xs\:align-center-middle {
+    justify-content: center !important;
+    align-items: center !important;
+    align-content: center !important;
+  }
+
+  .xs\:vertical-align-baseline {
+    vertical-align: baseline !important;
+  }
+
+  .xs\:vertical-align-top {
+    vertical-align: top !important;
+  }
+
+  .xs\:vertical-align-middle {
+    vertical-align: middle !important;
+  }
+
+  .xs\:vertical-align-bottom {
+    vertical-align: bottom !important;
+  }
+
+  .xs\:vertical-align-text-top {
+    vertical-align: text-top !important;
+  }
+
+  .xs\:vertical-align-text-bottom {
+    vertical-align: text-bottom !important;
+  }
+
+  .xs\:vertical-align-sub {
+    vertical-align: sub !important;
+  }
+
+  .xs\:vertical-align-super {
+    vertical-align: super !important;
+  }
+}
+
 @media (min-width: 640px) {
   .sm\:align-left {
     justify-content: flex-start !important;

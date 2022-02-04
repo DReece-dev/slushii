@@ -107,7 +107,7 @@
 .form-inline .form-group > .invalid-feedback:not(:last-child) {
   margin-right: 1rem;
 }
-@media (min-width: 577px) {
+@media (min-width: 640px) {
   .form-inline-sm,
   .form-inline-sm .form-group {
     display: flex;
@@ -218,7 +218,7 @@
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 640px) {
   .form-inline-sm > .form-control:not(:last-child) {
     margin-bottom: 2rem;
   }
@@ -261,7 +261,7 @@
 }
 
 /* Inline form for medium screens and up (> 768px) */
-@media (min-width: 769px) {
+@media (min-width: 768px) {
   .form-inline-md,
   .form-inline-md .form-group {
     display: flex;
@@ -413,7 +413,7 @@
     margin-bottom: 2rem;
   }
 }
-@media (min-width: 993px) {
+@media (min-width: 1024px) {
   .form-inline-lg,
   .form-inline-lg .form-group {
     display: flex;
@@ -524,7 +524,7 @@
   }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
   .form-inline-lg > .form-control:not(:last-child) {
     margin-bottom: 2rem;
   }
@@ -677,7 +677,7 @@
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1280px) {
   .form-inline-xl > .form-control:not(:last-child) {
     margin-bottom: 2rem;
   }

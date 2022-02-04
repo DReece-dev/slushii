@@ -418,6 +418,428 @@
   row-gap: 0.875rem !important;
 }
 
+@media (min-width: 360px) {
+  .xs\:gap-0 {
+    gap: 0px !important;
+  }
+
+  .xs\:gap-1 {
+    gap: 0.25rem !important;
+  }
+
+  .xs\:gap-2 {
+    gap: 0.5rem !important;
+  }
+
+  .xs\:gap-3 {
+    gap: 0.75rem !important;
+  }
+
+  .xs\:gap-4 {
+    gap: 1rem !important;
+  }
+
+  .xs\:gap-5 {
+    gap: 1.25rem !important;
+  }
+
+  .xs\:gap-6 {
+    gap: 1.5rem !important;
+  }
+
+  .xs\:gap-7 {
+    gap: 1.75rem !important;
+  }
+
+  .xs\:gap-8 {
+    gap: 2rem !important;
+  }
+
+  .xs\:gap-9 {
+    gap: 2.25rem !important;
+  }
+
+  .xs\:gap-10 {
+    gap: 2.5rem !important;
+  }
+
+  .xs\:gap-11 {
+    gap: 2.75rem !important;
+  }
+
+  .xs\:gap-12 {
+    gap: 3rem !important;
+  }
+
+  .xs\:gap-14 {
+    gap: 3.5rem !important;
+  }
+
+  .xs\:gap-16 {
+    gap: 4rem !important;
+  }
+
+  .xs\:gap-20 {
+    gap: 5rem !important;
+  }
+
+  .xs\:gap-24 {
+    gap: 6rem !important;
+  }
+
+  .xs\:gap-28 {
+    gap: 7rem !important;
+  }
+
+  .xs\:gap-32 {
+    gap: 8rem !important;
+  }
+
+  .xs\:gap-36 {
+    gap: 9rem !important;
+  }
+
+  .xs\:gap-40 {
+    gap: 10rem !important;
+  }
+
+  .xs\:gap-44 {
+    gap: 11rem !important;
+  }
+
+  .xs\:gap-48 {
+    gap: 12rem !important;
+  }
+
+  .xs\:gap-52 {
+    gap: 13rem !important;
+  }
+
+  .xs\:gap-56 {
+    gap: 14rem !important;
+  }
+
+  .xs\:gap-60 {
+    gap: 15rem !important;
+  }
+
+  .xs\:gap-64 {
+    gap: 16rem !important;
+  }
+
+  .xs\:gap-72 {
+    gap: 18rem !important;
+  }
+
+  .xs\:gap-80 {
+    gap: 20rem !important;
+  }
+
+  .xs\:gap-96 {
+    gap: 24rem !important;
+  }
+
+  .xs\:gap-px {
+    gap: 1px !important;
+  }
+
+  .xs\:gap-0\.5 {
+    gap: 0.125rem !important;
+  }
+
+  .xs\:gap-1\.5 {
+    gap: 0.375rem !important;
+  }
+
+  .xs\:gap-2\.5 {
+    gap: 0.625rem !important;
+  }
+
+  .xs\:gap-3\.5 {
+    gap: 0.875rem !important;
+  }
+
+  .xs\:gap-x-0 {
+    column-gap: 0px !important;
+  }
+
+  .xs\:gap-x-1 {
+    column-gap: 0.25rem !important;
+  }
+
+  .xs\:gap-x-2 {
+    column-gap: 0.5rem !important;
+  }
+
+  .xs\:gap-x-3 {
+    column-gap: 0.75rem !important;
+  }
+
+  .xs\:gap-x-4 {
+    column-gap: 1rem !important;
+  }
+
+  .xs\:gap-x-5 {
+    column-gap: 1.25rem !important;
+  }
+
+  .xs\:gap-x-6 {
+    column-gap: 1.5rem !important;
+  }
+
+  .xs\:gap-x-7 {
+    column-gap: 1.75rem !important;
+  }
+
+  .xs\:gap-x-8 {
+    column-gap: 2rem !important;
+  }
+
+  .xs\:gap-x-9 {
+    column-gap: 2.25rem !important;
+  }
+
+  .xs\:gap-x-10 {
+    column-gap: 2.5rem !important;
+  }
+
+  .xs\:gap-x-11 {
+    column-gap: 2.75rem !important;
+  }
+
+  .xs\:gap-x-12 {
+    column-gap: 3rem !important;
+  }
+
+  .xs\:gap-x-14 {
+    column-gap: 3.5rem !important;
+  }
+
+  .xs\:gap-x-16 {
+    column-gap: 4rem !important;
+  }
+
+  .xs\:gap-x-20 {
+    column-gap: 5rem !important;
+  }
+
+  .xs\:gap-x-24 {
+    column-gap: 6rem !important;
+  }
+
+  .xs\:gap-x-28 {
+    column-gap: 7rem !important;
+  }
+
+  .xs\:gap-x-32 {
+    column-gap: 8rem !important;
+  }
+
+  .xs\:gap-x-36 {
+    column-gap: 9rem !important;
+  }
+
+  .xs\:gap-x-40 {
+    column-gap: 10rem !important;
+  }
+
+  .xs\:gap-x-44 {
+    column-gap: 11rem !important;
+  }
+
+  .xs\:gap-x-48 {
+    column-gap: 12rem !important;
+  }
+
+  .xs\:gap-x-52 {
+    column-gap: 13rem !important;
+  }
+
+  .xs\:gap-x-56 {
+    column-gap: 14rem !important;
+  }
+
+  .xs\:gap-x-60 {
+    column-gap: 15rem !important;
+  }
+
+  .xs\:gap-x-64 {
+    column-gap: 16rem !important;
+  }
+
+  .xs\:gap-x-72 {
+    column-gap: 18rem !important;
+  }
+
+  .xs\:gap-x-80 {
+    column-gap: 20rem !important;
+  }
+
+  .xs\:gap-x-96 {
+    column-gap: 24rem !important;
+  }
+
+  .xs\:gap-x-px {
+    column-gap: 1px !important;
+  }
+
+  .xs\:gap-x-0\.5 {
+    column-gap: 0.125rem !important;
+  }
+
+  .xs\:gap-x-1\.5 {
+    column-gap: 0.375rem !important;
+  }
+
+  .xs\:gap-x-2\.5 {
+    column-gap: 0.625rem !important;
+  }
+
+  .xs\:gap-x-3\.5 {
+    column-gap: 0.875rem !important;
+  }
+
+  .xs\:gap-y-0 {
+    row-gap: 0px !important;
+  }
+
+  .xs\:gap-y-1 {
+    row-gap: 0.25rem !important;
+  }
+
+  .xs\:gap-y-2 {
+    row-gap: 0.5rem !important;
+  }
+
+  .xs\:gap-y-3 {
+    row-gap: 0.75rem !important;
+  }
+
+  .xs\:gap-y-4 {
+    row-gap: 1rem !important;
+  }
+
+  .xs\:gap-y-5 {
+    row-gap: 1.25rem !important;
+  }
+
+  .xs\:gap-y-6 {
+    row-gap: 1.5rem !important;
+  }
+
+  .xs\:gap-y-7 {
+    row-gap: 1.75rem !important;
+  }
+
+  .xs\:gap-y-8 {
+    row-gap: 2rem !important;
+  }
+
+  .xs\:gap-y-9 {
+    row-gap: 2.25rem !important;
+  }
+
+  .xs\:gap-y-10 {
+    row-gap: 2.5rem !important;
+  }
+
+  .xs\:gap-y-11 {
+    row-gap: 2.75rem !important;
+  }
+
+  .xs\:gap-y-12 {
+    row-gap: 3rem !important;
+  }
+
+  .xs\:gap-y-14 {
+    row-gap: 3.5rem !important;
+  }
+
+  .xs\:gap-y-16 {
+    row-gap: 4rem !important;
+  }
+
+  .xs\:gap-y-20 {
+    row-gap: 5rem !important;
+  }
+
+  .xs\:gap-y-24 {
+    row-gap: 6rem !important;
+  }
+
+  .xs\:gap-y-28 {
+    row-gap: 7rem !important;
+  }
+
+  .xs\:gap-y-32 {
+    row-gap: 8rem !important;
+  }
+
+  .xs\:gap-y-36 {
+    row-gap: 9rem !important;
+  }
+
+  .xs\:gap-y-40 {
+    row-gap: 10rem !important;
+  }
+
+  .xs\:gap-y-44 {
+    row-gap: 11rem !important;
+  }
+
+  .xs\:gap-y-48 {
+    row-gap: 12rem !important;
+  }
+
+  .xs\:gap-y-52 {
+    row-gap: 13rem !important;
+  }
+
+  .xs\:gap-y-56 {
+    row-gap: 14rem !important;
+  }
+
+  .xs\:gap-y-60 {
+    row-gap: 15rem !important;
+  }
+
+  .xs\:gap-y-64 {
+    row-gap: 16rem !important;
+  }
+
+  .xs\:gap-y-72 {
+    row-gap: 18rem !important;
+  }
+
+  .xs\:gap-y-80 {
+    row-gap: 20rem !important;
+  }
+
+  .xs\:gap-y-96 {
+    row-gap: 24rem !important;
+  }
+
+  .xs\:gap-y-px {
+    row-gap: 1px !important;
+  }
+
+  .xs\:gap-y-0\.5 {
+    row-gap: 0.125rem !important;
+  }
+
+  .xs\:gap-y-1\.5 {
+    row-gap: 0.375rem !important;
+  }
+
+  .xs\:gap-y-2\.5 {
+    row-gap: 0.625rem !important;
+  }
+
+  .xs\:gap-y-3\.5 {
+    row-gap: 0.875rem !important;
+  }
+}
+
 @media (min-width: 640px) {
   .sm\:gap-0 {
     gap: 0px !important;

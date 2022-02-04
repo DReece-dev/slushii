@@ -15,3 +15,123 @@
 .float-none {
   float: none !important;
 }
+
+@media (min-width: 360px) {
+  .xs\:float-left {
+    float: left !important;
+  }
+
+  .xs\:float-right {
+    float: right !important;
+  }
+
+  .xs\:float-center {
+    display: block !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+  }
+
+  .xs\:float-none {
+    float: none !important;
+  }
+}
+
+@media (min-width: 640px) {
+  .sm\:float-left {
+    float: left !important;
+  }
+
+  .sm\:float-right {
+    float: right !important;
+  }
+
+  .sm\:float-center {
+    display: block !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+  }
+
+  .sm\:float-none {
+    float: none !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:float-left {
+    float: left !important;
+  }
+
+  .md\:float-right {
+    float: right !important;
+  }
+
+  .md\:float-center {
+    display: block !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+  }
+
+  .md\:float-none {
+    float: none !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:float-left {
+    float: left !important;
+  }
+
+  .lg\:float-right {
+    float: right !important;
+  }
+
+  .lg\:float-center {
+    display: block !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+  }
+
+  .lg\:float-none {
+    float: none !important;
+  }
+}
+
+@media (min-width: 1280px) {
+  .xl\:float-left {
+    float: left !important;
+  }
+
+  .xl\:float-right {
+    float: right !important;
+  }
+
+  .xl\:float-center {
+    display: block !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+  }
+
+  .xl\:float-none {
+    float: none !important;
+  }
+}
+
+@media (min-width: 1536px) {
+  .\32xl\:float-left {
+    float: left !important;
+  }
+
+  .\32xl\:float-right {
+    float: right !important;
+  }
+
+  .\32xl\:float-center {
+    display: block !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+  }
+
+  .\32xl\:float-none {
+    float: none !important;
+  }
+}
