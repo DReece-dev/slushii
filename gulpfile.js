@@ -19,7 +19,9 @@ gulp.task('css', function () {
 gulp.task('purgecss', () => {
     return gulp.src('./dist/slushii.css')
         .pipe(purgecss({
-            content: ['src/**/*.html']
+            safelist: [],
+            content: ['src/**/*.html'],
+            defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
         }))
         .pipe(gulp.dest('./dist'))
 })
