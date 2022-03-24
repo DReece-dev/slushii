@@ -182,7 +182,7 @@ Licensed under MIT (github.com/DReece-dev/slushii)
        text-size-adjust: 100%;
 }
 
-:where(body) {
+body {
   margin: 0;
   font-family: var(--deafult-fonts);
 }
