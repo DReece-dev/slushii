@@ -365,7 +365,7 @@ select {
   text-transform: none;
 }
 
-:where(button, [type="button"], [type="reset"], [type="submit"]) {
+:where(button, [type=button], [type=reset], [type=submit]) {
   -webkit-appearance: button;
 }
 
@@ -386,7 +386,7 @@ select {
   height: auto;
 }
 
-:where([type="search"]) {
+:where([type=search]) {
   -webkit-appearance: textfield;
   outline-offset: -2px;
 }
@@ -500,7 +500,7 @@ meter {
   display: none;
 }
 
-:where([draggable="true"]) {
+:where([draggable=true]) {
   -webkit-user-drag: element;
 }
 
@@ -7766,7 +7766,7 @@ div.icon-text {
   color: white;
 }
 .nav-pills.is-dark a:hover {
-  background-color: #111111af;
+  background-color: rgba(17, 17, 17, 0.6862745098);
   color: white;
 }
 .nav-pills.is-blue a {
@@ -7953,7 +7953,7 @@ div.icon-text {
   z-index: 1;
 }
 .clickable-dropdown-content a {
-  color: black;
+  color: rgb(0, 0, 0);
   padding: 12px 16px;
   text-decoration: none;
   display: flex;
@@ -8285,7 +8285,7 @@ div.icon-text {
   z-index: 1;
 }
 .flyout-dropdown-content a {
-  color: black;
+  color: rgb(0, 0, 0);
   padding: 12px 16px;
   text-decoration: none;
   display: flex;
@@ -9420,7 +9420,7 @@ a.box:active {
 }
 .page-link:hover {
   z-index: 2;
-  color: black;
+  color: rgb(0, 0, 0);
   background-color: #e7e7e7;
 }
 .page-link:focus {
@@ -12571,7 +12571,8 @@ textarea.form-control-lg {
      -moz-appearance: none;
           appearance: none;
   -webkit-print-color-adjust: exact;
-          color-adjust: exact;
+     color-adjust: exact;
+          print-color-adjust: exact;
 }
 
 .form-check-input[type=checkbox] {
@@ -12855,7 +12856,8 @@ textarea.form-control-lg {
           appearance: none;
   padding: 0;
   -webkit-print-color-adjust: exact;
-          color-adjust: exact;
+     color-adjust: exact;
+          print-color-adjust: exact;
   display: inline-block;
   vertical-align: middle;
   background-origin: border-box;
@@ -55673,7 +55675,7 @@ textarea.form-control.is-invalid {
 }
 
 .drop-shadow-none {
-  filter: drop-shadow(0, 0, #0000) !important;
+  filter: drop-shadow(0, 0, rgba(0, 0, 0, 0)) !important;
 }
 
 .rounded-none {
@@ -58276,7 +58278,7 @@ textarea.form-control.is-invalid {
 }
 
 .shadow-none {
-  box-shadow: 0 0 #0000 !important;
+  box-shadow: 0 0 rgba(0, 0, 0, 0) !important;
 }
 
 @-webkit-keyframes spin {

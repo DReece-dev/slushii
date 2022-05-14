@@ -42263,7 +42263,7 @@
 }
 
 .drop-shadow-none {
-  filter: drop-shadow(0, 0, #0000) !important;
+  filter: drop-shadow(0, 0, rgba(0, 0, 0, 0)) !important;
 }
 
 .rounded-none {
@@ -44866,7 +44866,7 @@
 }
 
 .shadow-none {
-  box-shadow: 0 0 #0000 !important;
+  box-shadow: 0 0 rgba(0, 0, 0, 0) !important;
 }
 
 @-webkit-keyframes spin {

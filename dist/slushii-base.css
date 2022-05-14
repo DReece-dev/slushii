@@ -355,7 +355,7 @@ select {
   text-transform: none;
 }
 
-:where(button, [type="button"], [type="reset"], [type="submit"]) {
+:where(button, [type=button], [type=reset], [type=submit]) {
   -webkit-appearance: button;
 }
 
@@ -376,7 +376,7 @@ select {
   height: auto;
 }
 
-:where([type="search"]) {
+:where([type=search]) {
   -webkit-appearance: textfield;
   outline-offset: -2px;
 }
@@ -490,7 +490,7 @@ meter {
   display: none;
 }
 
-:where([draggable="true"]) {
+:where([draggable=true]) {
   -webkit-user-drag: element;
 }
 
