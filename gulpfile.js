@@ -17,7 +17,7 @@ gulp.task('css', function () {
 });
 
 gulp.task('purgecss', () => {
-    return gulp.src('./dist/slushii.css')
+    return gulp.src('./dist/**/*.css')
         .pipe(purgecss({
             safelist: [],
             content: ['src/**/*.html'],
