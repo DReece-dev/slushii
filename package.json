@@ -30,13 +30,13 @@
   },
   "homepage": "https://github.com/DReece-dev/Slushii#readme",
   "devDependencies": {
-    "autoprefixer": "^10.4.2",
-    "cssnano": "^5.0.16",
+    "autoprefixer": "^10.4.7",
+    "cssnano": "^5.1.9",
     "gulp": "^4.0.2",
     "gulp-postcss": "^9.0.1",
     "gulp-purgecss": "^4.1.3",
     "gulp-sass": "^5.1.0",
-    "postcss-preset-env": "^7.2.3",
-    "sass": "^1.49.0"
+    "postcss-preset-env": "^7.6.0",
+    "sass": "^1.52.1"
   }
 }
