@@ -7,7 +7,6 @@
   image-orientation: from-image !important;
 }
 
-/* Global values */
 .image-orientation-inherit {
   image-orientation: inherit !important;
 }
@@ -23,8 +22,6 @@
 .image-orientation-unset {
   image-orientation: unset !important;
 }
-
-// Image Rendering
 
 .image-rendering-auto {
   image-rendering: auto !important;
@@ -68,8 +65,6 @@
 .image-resolution-snap {
   image-resolution: 300dpi snap !important;
 }
-
-/* Global values */
 
 .image-resolution-inherit {
   image-resolution: inherit !important;

@@ -22,10 +22,6 @@
   padding: 3rem !important;
 }
 
-.p-custom {
-  padding: 10rem !important;
-}
-
 .px-0 {
   padding-right: 0 !important;
   padding-left: 0 !important;
@@ -54,11 +50,6 @@
 .px-5 {
   padding-right: 3rem !important;
   padding-left: 3rem !important;
-}
-
-.px-custom {
-  padding-right: 10rem !important;
-  padding-left: 10rem !important;
 }
 
 .py-0 {
@@ -91,11 +82,6 @@
   padding-bottom: 3rem !important;
 }
 
-.py-custom {
-  padding-top: 10rem !important;
-  padding-bottom: 10rem !important;
-}
-
 .pt-0 {
   padding-top: 0 !important;
 }
@@ -118,10 +104,6 @@
 
 .pt-5 {
   padding-top: 3rem !important;
-}
-
-.pt-custom {
-  padding-top: 10rem !important;
 }
 
 .pe-0 {
@@ -148,10 +130,6 @@
   padding-right: 3rem !important;
 }
 
-.pe-custom {
-  padding-right: 10rem !important;
-}
-
 .pb-0 {
   padding-bottom: 0 !important;
 }
@@ -174,10 +152,6 @@
 
 .pb-5 {
   padding-bottom: 3rem !important;
-}
-
-.pb-custom {
-  padding-bottom: 10rem !important;
 }
 
 .ps-0 {
@@ -204,10 +178,6 @@
   padding-left: 3rem !important;
 }
 
-.ps-custom {
-  padding-left: 10rem !important;
-}
-
 @media (min-width: 360px) {
   .xs\:p-0 {
     padding: 0 !important;
@@ -231,10 +201,6 @@
 
   .xs\:p-5 {
     padding: 3rem !important;
-  }
-
-  .xs\:p-custom {
-    padding: 10rem !important;
   }
 
   .xs\:px-0 {
@@ -267,11 +233,6 @@
     padding-left: 3rem !important;
   }
 
-  .xs\:px-custom {
-    padding-right: 10rem !important;
-    padding-left: 10rem !important;
-  }
-
   .xs\:py-0 {
     padding-top: 0 !important;
     padding-bottom: 0 !important;
@@ -302,11 +263,6 @@
     padding-bottom: 3rem !important;
   }
 
-  .xs\:py-custom {
-    padding-top: 10rem !important;
-    padding-bottom: 10rem !important;
-  }
-
   .xs\:pt-0 {
     padding-top: 0 !important;
   }
@@ -329,10 +285,6 @@
 
   .xs\:pt-5 {
     padding-top: 3rem !important;
-  }
-
-  .xs\:pt-custom {
-    padding-top: 10rem !important;
   }
 
   .xs\:pe-0 {
@@ -359,10 +311,6 @@
     padding-right: 3rem !important;
   }
 
-  .xs\:pe-custom {
-    padding-right: 10rem !important;
-  }
-
   .xs\:pb-0 {
     padding-bottom: 0 !important;
   }
@@ -387,10 +335,6 @@
     padding-bottom: 3rem !important;
   }
 
-  .xs\:pb-custom {
-    padding-bottom: 10rem !important;
-  }
-
   .xs\:ps-0 {
     padding-left: 0 !important;
   }
@@ -413,10 +357,6 @@
 
   .xs\:ps-5 {
     padding-left: 3rem !important;
-  }
-
-  .xs\:ps-custom {
-    padding-left: 10rem !important;
   }
 }
 
@@ -443,10 +383,6 @@
 
   .sm\:p-5 {
     padding: 3rem !important;
-  }
-
-  .sm\:p-custom {
-    padding: 10rem !important;
   }
 
   .sm\:px-0 {
@@ -479,11 +415,6 @@
     padding-left: 3rem !important;
   }
 
-  .sm\:px-custom {
-    padding-right: 10rem !important;
-    padding-left: 10rem !important;
-  }
-
   .sm\:py-0 {
     padding-top: 0 !important;
     padding-bottom: 0 !important;
@@ -514,11 +445,6 @@
     padding-bottom: 3rem !important;
   }
 
-  .sm\:py-custom {
-    padding-top: 10rem !important;
-    padding-bottom: 10rem !important;
-  }
-
   .sm\:pt-0 {
     padding-top: 0 !important;
   }
@@ -541,10 +467,6 @@
 
   .sm\:pt-5 {
     padding-top: 3rem !important;
-  }
-
-  .sm\:pt-custom {
-    padding-top: 10rem !important;
   }
 
   .sm\:pe-0 {
@@ -571,10 +493,6 @@
     padding-right: 3rem !important;
   }
 
-  .sm\:pe-custom {
-    padding-right: 10rem !important;
-  }
-
   .sm\:pb-0 {
     padding-bottom: 0 !important;
   }
@@ -599,10 +517,6 @@
     padding-bottom: 3rem !important;
   }
 
-  .sm\:pb-custom {
-    padding-bottom: 10rem !important;
-  }
-
   .sm\:ps-0 {
     padding-left: 0 !important;
   }
@@ -625,10 +539,6 @@
 
   .sm\:ps-5 {
     padding-left: 3rem !important;
-  }
-
-  .sm\:ps-custom {
-    padding-left: 10rem !important;
   }
 }
 
@@ -655,10 +565,6 @@
 
   .md\:p-5 {
     padding: 3rem !important;
-  }
-
-  .md\:p-custom {
-    padding: 10rem !important;
   }
 
   .md\:px-0 {
@@ -691,11 +597,6 @@
     padding-left: 3rem !important;
   }
 
-  .md\:px-custom {
-    padding-right: 10rem !important;
-    padding-left: 10rem !important;
-  }
-
   .md\:py-0 {
     padding-top: 0 !important;
     padding-bottom: 0 !important;
@@ -726,11 +627,6 @@
     padding-bottom: 3rem !important;
   }
 
-  .md\:py-custom {
-    padding-top: 10rem !important;
-    padding-bottom: 10rem !important;
-  }
-
   .md\:pt-0 {
     padding-top: 0 !important;
   }
@@ -753,10 +649,6 @@
 
   .md\:pt-5 {
     padding-top: 3rem !important;
-  }
-
-  .md\:pt-custom {
-    padding-top: 10rem !important;
   }
 
   .md\:pe-0 {
@@ -783,10 +675,6 @@
     padding-right: 3rem !important;
   }
 
-  .md\:pe-custom {
-    padding-right: 10rem !important;
-  }
-
   .md\:pb-0 {
     padding-bottom: 0 !important;
   }
@@ -811,10 +699,6 @@
     padding-bottom: 3rem !important;
   }
 
-  .md\:pb-custom {
-    padding-bottom: 10rem !important;
-  }
-
   .md\:ps-0 {
     padding-left: 0 !important;
   }
@@ -837,10 +721,6 @@
 
   .md\:ps-5 {
     padding-left: 3rem !important;
-  }
-
-  .md\:ps-custom {
-    padding-left: 10rem !important;
   }
 }
 
@@ -867,10 +747,6 @@
 
   .lg\:p-5 {
     padding: 3rem !important;
-  }
-
-  .lg\:p-custom {
-    padding: 10rem !important;
   }
 
   .lg\:px-0 {
@@ -903,11 +779,6 @@
     padding-left: 3rem !important;
   }
 
-  .lg\:px-custom {
-    padding-right: 10rem !important;
-    padding-left: 10rem !important;
-  }
-
   .lg\:py-0 {
     padding-top: 0 !important;
     padding-bottom: 0 !important;
@@ -938,11 +809,6 @@
     padding-bottom: 3rem !important;
   }
 
-  .lg\:py-custom {
-    padding-top: 10rem !important;
-    padding-bottom: 10rem !important;
-  }
-
   .lg\:pt-0 {
     padding-top: 0 !important;
   }
@@ -965,10 +831,6 @@
 
   .lg\:pt-5 {
     padding-top: 3rem !important;
-  }
-
-  .lg\:pt-custom {
-    padding-top: 10rem !important;
   }
 
   .lg\:pe-0 {
@@ -995,10 +857,6 @@
     padding-right: 3rem !important;
   }
 
-  .lg\:pe-custom {
-    padding-right: 10rem !important;
-  }
-
   .lg\:pb-0 {
     padding-bottom: 0 !important;
   }
@@ -1023,10 +881,6 @@
     padding-bottom: 3rem !important;
   }
 
-  .lg\:pb-custom {
-    padding-bottom: 10rem !important;
-  }
-
   .lg\:ps-0 {
     padding-left: 0 !important;
   }
@@ -1049,10 +903,6 @@
 
   .lg\:ps-5 {
     padding-left: 3rem !important;
-  }
-
-  .lg\:ps-custom {
-    padding-left: 10rem !important;
   }
 }
 
@@ -1079,10 +929,6 @@
 
   .xl\:p-5 {
     padding: 3rem !important;
-  }
-
-  .xl\:p-custom {
-    padding: 10rem !important;
   }
 
   .xl\:px-0 {
@@ -1115,11 +961,6 @@
     padding-left: 3rem !important;
   }
 
-  .xl\:px-custom {
-    padding-right: 10rem !important;
-    padding-left: 10rem !important;
-  }
-
   .xl\:py-0 {
     padding-top: 0 !important;
     padding-bottom: 0 !important;
@@ -1150,11 +991,6 @@
     padding-bottom: 3rem !important;
   }
 
-  .xl\:py-custom {
-    padding-top: 10rem !important;
-    padding-bottom: 10rem !important;
-  }
-
   .xl\:pt-0 {
     padding-top: 0 !important;
   }
@@ -1177,10 +1013,6 @@
 
   .xl\:pt-5 {
     padding-top: 3rem !important;
-  }
-
-  .xl\:pt-custom {
-    padding-top: 10rem !important;
   }
 
   .xl\:pe-0 {
@@ -1207,10 +1039,6 @@
     padding-right: 3rem !important;
   }
 
-  .xl\:pe-custom {
-    padding-right: 10rem !important;
-  }
-
   .xl\:pb-0 {
     padding-bottom: 0 !important;
   }
@@ -1235,10 +1063,6 @@
     padding-bottom: 3rem !important;
   }
 
-  .xl\:pb-custom {
-    padding-bottom: 10rem !important;
-  }
-
   .xl\:ps-0 {
     padding-left: 0 !important;
   }
@@ -1261,10 +1085,6 @@
 
   .xl\:ps-5 {
     padding-left: 3rem !important;
-  }
-
-  .xl\:ps-custom {
-    padding-left: 10rem !important;
   }
 }
 
@@ -1291,10 +1111,6 @@
 
   .\32xl\:p-5 {
     padding: 3rem !important;
-  }
-
-  .\32xl\:p-custom {
-    padding: 10rem !important;
   }
 
   .\32xl\:px-0 {
@@ -1327,11 +1143,6 @@
     padding-left: 3rem !important;
   }
 
-  .\32xl\:px-custom {
-    padding-right: 10rem !important;
-    padding-left: 10rem !important;
-  }
-
   .\32xl\:py-0 {
     padding-top: 0 !important;
     padding-bottom: 0 !important;
@@ -1362,11 +1173,6 @@
     padding-bottom: 3rem !important;
   }
 
-  .\32xl\:py-custom {
-    padding-top: 10rem !important;
-    padding-bottom: 10rem !important;
-  }
-
   .\32xl\:pt-0 {
     padding-top: 0 !important;
   }
@@ -1389,10 +1195,6 @@
 
   .\32xl\:pt-5 {
     padding-top: 3rem !important;
-  }
-
-  .\32xl\:pt-custom {
-    padding-top: 10rem !important;
   }
 
   .\32xl\:pe-0 {
@@ -1419,10 +1221,6 @@
     padding-right: 3rem !important;
   }
 
-  .\32xl\:pe-custom {
-    padding-right: 10rem !important;
-  }
-
   .\32xl\:pb-0 {
     padding-bottom: 0 !important;
   }
@@ -1447,10 +1245,6 @@
     padding-bottom: 3rem !important;
   }
 
-  .\32xl\:pb-custom {
-    padding-bottom: 10rem !important;
-  }
-
   .\32xl\:ps-0 {
     padding-left: 0 !important;
   }
@@ -1473,9 +1267,5 @@
 
   .\32xl\:ps-5 {
     padding-left: 3rem !important;
-  }
-
-  .\32xl\:ps-custom {
-    padding-left: 10rem !important;
   }
 }
