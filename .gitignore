@@ -1,3 +1,6 @@
 .DS_Store
 src/scss/helpers
 node_modules
+
+# Testing files
+src/index.html
