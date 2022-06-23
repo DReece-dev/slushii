@@ -2,9 +2,9 @@
 
 Slushii CSS Framework
 
-Version: v0.1.4
+Version: v0.1.3
 
-Created: 2021 - 2022
+Created: 2021
 
 Copyright, Dylan R Hewitt
 

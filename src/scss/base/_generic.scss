@@ -1,4 +1,4 @@
-*:where(:not(html, iframe, canvas, img, svg, video):not(svg *, symbol *)) {
+*:where(:not(iframe, canvas, img, svg, video):not(svg *, symbol *)) {
   all: unset;
   display: revert;
 }
@@ -161,8 +161,7 @@ a:hover {
   color: var(--blue-600);
 }
 
-a:not([href]):not([class]),
-a:not([href]):not([class]):hover {
+a:not([href]):not([class]), a:not([href]):not([class]):hover {
   color: inherit;
   text-decoration: none;
 }
@@ -220,7 +219,7 @@ select {
   text-transform: none;
 }
 
-:where(button, [type='button'], [type='reset'], [type='submit']) {
+:where(button, [type="button"], [type="reset"], [type="submit"]) {
   -webkit-appearance: button;
 }
 
@@ -241,7 +240,7 @@ select {
   height: auto;
 }
 
-:where([type='search']) {
+:where([type="search"]) {
   -webkit-appearance: textfield;
   outline-offset: -2px;
 }
@@ -318,7 +317,7 @@ menu {
 }
 
 button,
-[role='button'] {
+[role="button"] {
   cursor: pointer;
 }
 
@@ -352,7 +351,7 @@ meter {
   display: none;
 }
 
-:where([draggable='true']) {
+:where([draggable="true"]) {
   -webkit-user-drag: element;
 }
 

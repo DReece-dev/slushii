@@ -4,6 +4,7 @@ const sass = require('gulp-sass')(require('sass'));
 const purgecss = require('gulp-purgecss');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
+// const postcssPresetEnv = require('postcss-preset-env');
 
 gulp.task('css', function () {
     let processors = [
@@ -29,7 +30,7 @@ gulp.task('mini', () => {
     let nano = [
         cssnano
     ];
-    return gulp.src('./dist/**/*.css')
+    return gulp.src('./dist/*.css')
         .pipe(postcss(nano))
         .pipe(gulp.dest('./dist'));
 });

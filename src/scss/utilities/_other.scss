@@ -1,9 +1,9 @@
 .svg,
-.svg:not(.preserve) [fill*='#']:not(.preserve) {
+.svg:not(.preserve) [fill*="#"]:not(.preserve) {
   fill: currentcolor !important;
 }
 
-.svg:not(.preserve) [stroke*='#']:not(.preserve) {
+.svg:not(.preserve) [stroke*="#"]:not(.preserve) {
   stroke: currentcolor !important;
 }
 
@@ -15,10 +15,18 @@
   transform: translate(0, 0) !important;
 }
 
+.is-visible {
+  display: block !important;
+}
+
+.is-hidden {
+  display: none !important;
+}
+
 .clearfix::after {
   display: block !important;
   clear: both !important;
-  content: '' !important;
+  content: "" !important;
 }
 
 /* Screen reader */
