@@ -582,36 +582,6 @@ meter {
   width: auto;
 }
 
-@media (min-width: 360px) {
-  .container {
-    max-width: 360px;
-  }
-}
-@media (min-width: 640px) {
-  .container {
-    max-width: 640px;
-  }
-}
-@media (min-width: 768px) {
-  .container {
-    max-width: 768px;
-  }
-}
-@media (min-width: 1042px) {
-  .container {
-    max-width: 1042px;
-  }
-}
-@media (min-width: 1280px) {
-  .container {
-    max-width: 1280px;
-  }
-}
-@media (min-width: 1536px) {
-  .container {
-    max-width: 1536px;
-  }
-}
 .container.is-fluid {
   max-width: none !important;
   padding-left: 32px;
@@ -619,6 +589,31 @@ meter {
   width: 100%;
 }
 
+@media (min-width: 1024px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media (max-width: 1215px) {
+  .container.is-widescreen:not(.is-max-desktop) {
+    max-width: 1152px;
+  }
+}
+@media (max-width: 1407px) {
+  .container.is-fullhd:not(.is-max-desktop):not(.is-max-widescreen) {
+    max-width: 1344px;
+  }
+}
+@media (min-width: 1216px) {
+  .container:not(.is-max-desktop) {
+    max-width: 1152px;
+  }
+}
+@media (min-width: 1408px) {
+  .container:not(.is-max-desktop):not(.is-max-widescreen) {
+    max-width: 1344px;
+  }
+}
 .text.container {
   font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
   max-width: 700px !important;
@@ -629,6 +624,7 @@ meter {
   font-size: 1.14285714rem;
 }
 
+/* flex system */
 .column {
   display: block;
   flex-basis: 0;
@@ -53231,10 +53227,6 @@ textarea.form-control.is-invalid {
   background-color: var(--gray-400) !important;
 }
 
-.bg-gray-500 {
-  background-color: var(--gray-500) !important;
-}
-
 .bg-gray-600 {
   background-color: var(--gray-600) !important;
 }
@@ -53755,10 +53747,6 @@ textarea.form-control.is-invalid {
   background-color: var(--gray-400) !important;
 }
 
-.hover\:bg-gray-500:hover {
-  background-color: var(--gray-500) !important;
-}
-
 .hover\:bg-gray-600:hover {
   background-color: var(--gray-600) !important;
 }
@@ -54257,10 +54245,6 @@ textarea.form-control.is-invalid {
 
 .focus\:bg-gray-400:focus {
   background-color: var(--gray-400) !important;
-}
-
-.focus\:bg-gray-500:focus {
-  background-color: var(--gray-500) !important;
 }
 
 .focus\:bg-gray-600:focus {
@@ -64317,6 +64301,9 @@ textarea.form-control.is-invalid {
   stroke: currentcolor !important;
 }
 
+/*
+* Fix Firefox blurry SVG rendering: https://bugzilla.mozilla.org/show_bug.cgi?id=1046835
+*/
 .svg {
   transform: translate(0, 0) !important;
 }
@@ -64335,33 +64322,7 @@ textarea.form-control.is-invalid {
   content: "" !important;
 }
 
-.hstack {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  align-self: stretch;
-}
-
-.vstack {
-  display: flex;
-  flex: 1 1 auto;
-  flex-direction: column;
-  align-self: stretch;
-}
-
-.visually-hidden,
-.visually-hidden-focusable:not(:focus):not(:focus-within) {
-  position: absolute !important;
-  width: 1px !important;
-  height: 1px !important;
-  padding: 0 !important;
-  margin: -1px !important;
-  overflow: hidden !important;
-  clip: rect(0, 0, 0, 0) !important;
-  white-space: nowrap !important;
-  border: 0 !important;
-}
-
+/* Screen reader */
 .sr-only {
   position: absolute !important;
   width: 1px !important;
@@ -64431,6 +64392,7 @@ textarea.form-control.is-invalid {
   white-space: normal !important;
 }
 
+/* Pointer events utilities */
 .pointer-events-all {
   pointer-events: all !important;
 }
