@@ -194,6 +194,10 @@
   background-color: var(--gray-400) !important;
 }
 
+.bg-gray-500 {
+  background-color: var(--gray-500) !important;
+}
+
 .bg-gray-600 {
   background-color: var(--gray-600) !important;
 }
@@ -714,6 +718,10 @@
   background-color: var(--gray-400) !important;
 }
 
+.hover\:bg-gray-500:hover {
+  background-color: var(--gray-500) !important;
+}
+
 .hover\:bg-gray-600:hover {
   background-color: var(--gray-600) !important;
 }
@@ -1212,6 +1220,10 @@
 
 .focus\:bg-gray-400:focus {
   background-color: var(--gray-400) !important;
+}
+
+.focus\:bg-gray-500:focus {
+  background-color: var(--gray-500) !important;
 }
 
 .focus\:bg-gray-600:focus {
