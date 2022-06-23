@@ -2,32 +2,23 @@
   padding: 3rem 1.5rem;
 }
 
-@media screen and (min-width: 360px) {
-  .section.is-xs-small {
+@media screen and (min-width: 1024px) {
+  .section {
+    padding: 3rem 3rem;
+  }
+  .section.xs-small {
     padding: 4.5rem 1.5rem;
   }
-}
-
-@media screen and (min-width: 640px) {
-  .section.is-small {
+  .section.small {
     padding: 4.5rem 1.5rem;
   }
-}
-
-@media screen and (min-width: 768px) {
-  .section.is-medium {
+  .section.medium {
     padding: 9rem 1.5rem;
   }
-}
-
-@media screen and (min-width: 1024px) {
-  .section.is-large {
+  .section.large {
     padding: 18rem 1.5rem;
   }
-}
-
-@media screen and (min-width: 1280px) {
-  .section.is-xl-large {
+  .section.xl-large {
     padding: 24rem 1.5rem;
   }
 }

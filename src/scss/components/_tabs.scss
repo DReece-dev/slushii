@@ -30,7 +30,7 @@
   li {
     display: block;
 
-    &.is-active {
+    &.active {
       a {
         border-bottom-color: var(--blue-600);
         color: var(--blue-600);
@@ -48,18 +48,18 @@
     flex-shrink: 0;
     justify-content: flex-start;
 
-    &.is-left {
+    &.left {
       padding-right: 0.75em;
     }
 
-    &.is-center {
+    &.center {
       flex: none;
       justify-content: center;
       padding-left: 0.75em;
       padding-right: 0.75em;
     }
 
-    &.is-right {
+    &.right {
       justify-content: flex-end;
       padding-left: 0.75em;
     }
@@ -75,15 +75,15 @@
     }
   }
 
-  &.is-centered ul {
+  &.centered ul {
     justify-content: center;
   }
 
-  &.is-right ul {
+  &.right ul {
     justify-content: center;
   }
 
-  &.is-boxed a {
+  &.boxed a {
     justify-content: center;
 
     &:hover {
@@ -92,7 +92,7 @@
     }
   }
 
-  &.is-boxed {
+  &.boxed {
     li {
       &.is-active a {
         background-color: var(--white);
@@ -102,14 +102,14 @@
     }
   }
 
-  &.is-fullwidth {
+  &.fullwidth {
     li {
       flex-grow: 1;
       flex-shrink: 0;
     }
   }
 
-  &.is-toggle {
+  &.toggle {
     a {
       border-color: #dbdbdb;
       border-style: solid;
@@ -155,7 +155,7 @@
       border-bottom: none;
     }
 
-    &.is-toggle-rounded {
+    &.toggle-rounded {
       li {
         &:first-child a {
           border-bottom-left-radius: 290486px;
@@ -165,7 +165,7 @@
       }
     }
 
-    &.is-toggle-rounded {
+    &.toggle-rounded {
       li {
         &:last-child a {
           border-bottom-right-radius: 290486px;
@@ -176,15 +176,15 @@
     }
   }
 
-  &.is-small {
+  &.small {
     font-size: 0.75rem;
   }
 
-  &.is-medium {
+  &.medium {
     font-size: 1.25rem;
   }
 
-  &.is-large {
+  &.large {
     font-size: 1.5rem;
   }
 }
@@ -218,7 +218,7 @@
   li {
     display: block;
 
-    &.is-active a {
+    &.active a {
       border-bottom-color: var(--blue-600);
       color: var(--blue-600);
     }
@@ -232,7 +232,7 @@
     justify-content: flex-start;
   }
 
-  &.is-fullwidth {
+  &.fullwidth {
     li {
       flex-grow: 1;
       flex-shrink: 0;

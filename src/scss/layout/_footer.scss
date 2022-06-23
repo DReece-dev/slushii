@@ -10,12 +10,12 @@
     position: fixed;
   }
 
-  &.is-dark {
+  &.dark {
     background-color: var(--gray-900);
     color: var(--white);
   }
 
-  &.is-grey {
+  &.grey {
     background-color: var(--grey-400);
     color: var(--black);
   }

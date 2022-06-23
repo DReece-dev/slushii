@@ -30,6 +30,7 @@
   flex-direction: column;
   align-self: stretch;
 }
+
 .visually-hidden,
 .visually-hidden-focusable:not(:focus):not(:focus-within) {
   position: absolute !important;
@@ -111,8 +112,6 @@
   clip: auto !important;
   white-space: normal !important;
 }
-
-/* Pointer events utilities */
 
 .pointer-events-all {
   pointer-events: all !important;

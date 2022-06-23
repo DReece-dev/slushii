@@ -8,37 +8,37 @@
   cursor: default;
   color: #000000;
 
-  &.is-blue {
+  &.blue {
     background: var(--blue-400);
     color: #fefefe;
   }
 
-  &.is-indigo {
+  &.indigo {
     background: var(--indigo-400);
     color: #fefefe;
   }
 
-  &.is-red {
+  &.red {
     background: var(--red-500);
     color: #ffffff;
   }
 
-  &.is-orange {
+  &.orange {
     background: var(--orange-500);
     color: #0a0a0a;
   }
 
-  &.is-green {
+  &.green {
     background: var(--green-500);
     color: #fefefe;
   }
 
-  &.is-dark {
+  &.dark {
     background: var(--gray-900);
     color: #fefefe;
   }
 
-  &.is-rounded {
+  &.rounded {
     border: none;
     border-radius: 5px;
   }

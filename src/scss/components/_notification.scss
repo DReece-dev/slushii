@@ -47,17 +47,17 @@
     color: currentColor;
   }
 
-  &.is-white {
+  &.white {
     background-color: var(--white);
     color: black;
   }
 
-  &.is-black {
+  &.black {
     background-color: black;
     color: var(--white);
   }
 
-  &.is-blue {
+  &.blue {
     background-color: var(--blue-500);
     color: var(--white);
   }

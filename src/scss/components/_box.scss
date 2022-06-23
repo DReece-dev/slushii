@@ -21,7 +21,7 @@ a.box {
   }
 }
 
-.box.is-dark {
+.box.dark {
   background-color: var(--gray-900);
   border-radius: 6px;
   box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
@@ -30,7 +30,7 @@ a.box {
   padding: 1.25rem;
 }
 
-.box.is-blue {
+.box.blue {
   background-color: var(--blue-500);
   border-radius: 6px;
   box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
@@ -39,7 +39,7 @@ a.box {
   padding: 1.25rem;
 }
 
-.box.is-indigo {
+.box.indigo {
   background-color: var(--indigo-500);
   border-radius: 6px;
   box-shadow: 0 0.5em 1em -0.125em rgba(111, 0, 255, 0.1),
@@ -48,7 +48,7 @@ a.box {
   padding: 1.25rem;
 }
 
-.box.is-purple {
+.box.purple {
   background-color: var(--purple-500);
   border-radius: 6px;
   box-shadow: 0 0.5em 1em -0.125em rgba(132, 0, 255, 0.1),
@@ -57,7 +57,7 @@ a.box {
   padding: 1.25rem;
 }
 
-.box.is-pink {
+.box.pink {
   background-color: var(--pink-500);
   border-radius: 6px;
   box-shadow: 0 0.5em 1em -0.125em rgba(255, 0, 242, 0.1),
@@ -66,7 +66,7 @@ a.box {
   padding: 1.25rem;
 }
 
-.box.is-red {
+.box.red {
   background-color: var(--red-500);
   border-radius: 6px;
   box-shadow: 0 0.5em 1em -0.125em rgba(255, 0, 0, 0.1),
@@ -75,7 +75,7 @@ a.box {
   padding: 1.25rem;
 }
 
-.box.is-orange {
+.box.orange {
   background-color: var(--orange-500);
   border-radius: 6px;
   box-shadow: 0 0.5em 1em -0.125em rgba(255, 145, 0, 0.1),
@@ -84,7 +84,7 @@ a.box {
   padding: 1.25rem;
 }
 
-.box.is-yellow {
+.box.yellow {
   background-color: var(--yellow-500);
   border-radius: 6px;
   box-shadow: 0 0.5em 1em -0.125em rgba(255, 251, 0, 0.1),
@@ -93,7 +93,7 @@ a.box {
   padding: 1.25rem;
 }
 
-.box.is-green {
+.box.green {
   background-color: var(--green-500);
   border-radius: 6px;
   box-shadow: 0 0.5em 1em -0.125em rgba(0, 255, 34, 0.1),

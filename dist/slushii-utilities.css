@@ -52657,7 +52657,6 @@
   white-space: normal !important;
 }
 
-/* Pointer events utilities */
 .pointer-events-all {
   pointer-events: all !important;
 }

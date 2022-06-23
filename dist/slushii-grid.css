@@ -35,7 +35,7 @@
     max-width: 1536px;
   }
 }
-.container.is-fluid {
+.container.fluid {
   max-width: none !important;
   padding-left: 32px;
   padding-right: 32px;
@@ -52,7 +52,6 @@
   font-size: 1.14285714rem;
 }
 
-/* flex system */
 .column {
   display: block;
   flex-basis: 0;
@@ -5197,7 +5196,6 @@
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
 }
-/* CSS Subgrid - This is experimental check if your browser supports it. */
 .grid-columns-subgrid {
   grid-template-columns: subgrid;
 }

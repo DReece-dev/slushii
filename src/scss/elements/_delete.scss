@@ -24,7 +24,7 @@
     height: 2px;
     width: 50%;
     background-color: white;
-    content: "";
+    content: '';
     display: block;
     left: 50%;
     position: absolute;
@@ -35,7 +35,7 @@
 
   &::after {
     background-color: white;
-    content: "";
+    content: '';
     display: block;
     left: 50%;
     position: absolute;
@@ -58,7 +58,7 @@
     background-color: rgba(10, 10, 10, 0.4);
   }
 
-  &.is-small {
+  &.small {
     height: 16px;
     max-height: 16px;
     max-width: 16px;
@@ -67,7 +67,7 @@
     width: 16px;
   }
 
-  &.is-medium {
+  &.medium {
     height: 24px;
     max-height: 24px;
     max-width: 24px;
@@ -76,7 +76,7 @@
     width: 24px;
   }
 
-  &.is-large {
+  &.large {
     height: 32px;
     max-height: 32px;
     max-width: 32px;

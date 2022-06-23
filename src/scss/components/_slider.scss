@@ -42,12 +42,12 @@
     background-color: var(--blue-800);
   }
 
-  &.is-dragging {
+  &.dragging {
     transition: all 0s linear;
   }
 }
 
-[data-whatinput="mouse"] .slider-handle {
+[data-whatinput='mouse'] .slider-handle {
   outline: 0;
 }
 
