@@ -5,6 +5,36 @@
   width: auto;
 }
 
+@media (min-width: 360px) {
+  .container {
+    max-width: 360px;
+  }
+}
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+@media (min-width: 1042px) {
+  .container {
+    max-width: 1042px;
+  }
+}
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+  }
+}
 .container.is-fluid {
   max-width: none !important;
   padding-left: 32px;
@@ -12,31 +42,6 @@
   width: 100%;
 }
 
-@media (min-width: 1024px) {
-  .container {
-    max-width: 960px;
-  }
-}
-@media (max-width: 1215px) {
-  .container.is-widescreen:not(.is-max-desktop) {
-    max-width: 1152px;
-  }
-}
-@media (max-width: 1407px) {
-  .container.is-fullhd:not(.is-max-desktop):not(.is-max-widescreen) {
-    max-width: 1344px;
-  }
-}
-@media (min-width: 1216px) {
-  .container:not(.is-max-desktop) {
-    max-width: 1152px;
-  }
-}
-@media (min-width: 1408px) {
-  .container:not(.is-max-desktop):not(.is-max-widescreen) {
-    max-width: 1344px;
-  }
-}
 .text.container {
   font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
   max-width: 700px !important;
