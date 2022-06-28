@@ -19,7 +19,7 @@
   background-color: #cacaca;
   transition: all 0.2s ease-in-out;
 
-  &.is-dragging {
+  &.dragging {
     transition: all 0s linear;
   }
 }

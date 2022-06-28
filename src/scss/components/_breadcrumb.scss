@@ -23,7 +23,7 @@
     }
   }
 
-  li.is-active a {
+  li.active a {
     color: #363636;
     cursor: default;
     pointer-events: none;
@@ -32,7 +32,7 @@
   li + li {
     &::before {
       color: #b5b5b5;
-      content: "\0002f";
+      content: '\0002f';
     }
   }
 
@@ -54,32 +54,32 @@
     }
   }
 
-  &.is-centered ol,
-  &.is-centered ul {
+  &.centered ol,
+  &.centered ul {
     justify-content: center;
   }
 
-  &.is-right ol,
-  &.is-right ul {
+  &.right ol,
+  &.right ul {
     justify-content: flex-end;
   }
 
-  &.is-small {
+  &.small {
     font-size: 0.75rem;
   }
 
-  &.is-medium {
+  &.medium {
     font-size: 1.25rem;
   }
 
-  &.is-large {
+  &.large {
     font-size: 1.5rem;
   }
 
   &.has-arrow-separator {
     li + li {
       &::before {
-        content: "\02192";
+        content: '\02192';
       }
     }
   }
@@ -87,7 +87,7 @@
   &.has-bullet-separator {
     li + li {
       &::before {
-        content: "\02022";
+        content: '\02022';
       }
     }
   }
@@ -95,7 +95,7 @@
   &.has-dot-separator {
     li + li {
       &:before {
-        content: "\000b7";
+        content: '\000b7';
       }
     }
   }
@@ -103,7 +103,7 @@
   &.has-succeeds-separator {
     li + li {
       &::before {
-        content: "\0227B";
+        content: '\0227B';
       }
     }
   }
