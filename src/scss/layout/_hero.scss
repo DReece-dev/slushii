@@ -21,53 +21,53 @@
   background: none;
 }
 
-.hero.is-small .hero-body {
+.hero.small .hero-body {
   padding: 1.5rem;
 }
 
 @media screen and (min-width: 768px), print {
-  .hero.is-medium .hero-body {
+  .hero.medium .hero-body {
     padding: 9rem 1.5rem;
   }
 }
 
 @media screen and (min-width: 1024px), print {
-  .hero.is-large .hero-body {
+  .hero.large .hero-body {
     padding: 18rem 1.5rem;
   }
 }
 
 @media screen and (min-width: 1280px), print {
-  .hero.is-xlarge .hero-body {
+  .hero.xlarge .hero-body {
     padding: 24rem 1.5rem;
   }
 }
 
 @media screen and (min-width: 1536px), print {
-  .hero.is-xxlarge .hero-body {
+  .hero.xxlarge .hero-body {
     padding: 30rem 1.5rem;
   }
 }
 
-.hero.is-halfheight .hero-body,
-.hero.is-fullheight .hero-body,
-.hero.is-fullheight-with-navbar .hero-body {
+.hero.halfheight .hero-body,
+.hero.fullheight .hero-body,
+.hero.fullheight-with-navbar .hero-body {
   align-items: center;
   display: flex;
 }
 
-.hero.is-halfheight .hero-body > .container,
-.hero.is-fullheight .hero-body > .container,
-.hero.is-fullheight-with-navbar .hero-body > .container {
+.hero.halfheight .hero-body > .container,
+.hero.fullheight .hero-body > .container,
+.hero.fullheight-with-navbar .hero-body > .container {
   flex-grow: 1;
   flex-shrink: 1;
 }
 
-.hero.is-halfheight {
+.hero.halfheight {
   min-height: 50vh;
 }
 
-.hero.is-fullheight {
+.hero.fullheight {
   min-height: 100vh;
 }
 
@@ -84,7 +84,7 @@
   transform: translate3d(-50%, -50%, 0);
 }
 
-.hero-video.is-transparent {
+.hero-video.transparent {
   opacity: 0.3;
 }
 
