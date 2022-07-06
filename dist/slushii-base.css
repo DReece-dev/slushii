@@ -317,12 +317,8 @@ address {
 }
 
 a {
-  color: var(--blue-500);
-  text-decoration: underline;
-}
-
-a:hover {
-  color: var(--blue-600);
+  color: inherit;
+  text-decoration: inherit;
 }
 
 a:not([href]):not([class]),
@@ -362,7 +358,7 @@ sup {
 
 :where(table) {
   border-collapse: collapse;
-  border-color: currentColor;
+  border-color: inherit;
   text-indent: 0;
 }
 
@@ -373,6 +369,7 @@ select,
 textarea {
   font-family: inherit;
   font-size: 100%;
+  font-weight: inherit;
   line-height: inherit;
   color: inherit;
   margin: 0;

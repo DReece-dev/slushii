@@ -694,6 +694,178 @@
   opacity: 1 !important;
 }
 
+.hover\:bg-fixed:hover {
+  background-attachment: fixed !important;
+}
+
+.hover\:bg-local:hover {
+  background-attachment: local !important;
+}
+
+.hover\:bg-scroll:hover {
+  background-attachment: scroll !important;
+}
+
+.hover\:bg-clip-border:hover {
+  background-clip: border-box !important;
+}
+
+.hover\:bg-clip-padding:hover {
+  background-clip: padding-box !important;
+}
+
+.hover\:bg-clip-content:hover {
+  background-clip: content-box !important;
+}
+
+.hover\:bg-clip-text:hover {
+  background-clip: text !important;
+}
+
+.hover\:bg-transparent:hover {
+  background-color: transparent !important;
+}
+
+.hover\:bg-current:hover {
+  background-color: currentColor !important;
+}
+
+.hover\:bg-bottom:hover {
+  background-position: bottom !important;
+}
+
+.hover\:bg-center:hover {
+  background-position: center !important;
+}
+
+.hover\:bg-left:hover {
+  background-position: left !important;
+}
+
+.hover\:bg-left-bottom:hover {
+  background-position: left bottom !important;
+}
+
+.hover\:bg-left-top:hover {
+  background-position: left top !important;
+}
+
+.hover\:bg-right:hover {
+  background-position: right !important;
+}
+
+.hover\:bg-right-bottom:hover {
+  background-position: right bottom !important;
+}
+
+.hover\:bg-right-top:hover {
+  background-position: right top !important;
+}
+
+.hover\:bg-top:hover {
+  background-position: top !important;
+}
+
+.hover\:bg-repeat:hover {
+  background-repeat: repeat !important;
+}
+
+.hover\:bg-no-repeat:hover {
+  background-repeat: no-repeat !important;
+}
+
+.hover\:bg-repeat-x:hover {
+  background-repeat: repeat-x !important;
+}
+
+.hover\:bg-repeat-y:hover {
+  background-repeat: repeat-y !important;
+}
+
+.hover\:bg-repeat-round:hover {
+  background-repeat: round !important;
+}
+
+.hover\:bg-repeat-space:hover {
+  background-repeat: space !important;
+}
+
+.hover\:bg-auto:hover {
+  background-size: auto !important;
+}
+
+.hover\:bg-cover:hover {
+  background-size: cover !important;
+}
+
+.hover\:bg-contain:hover {
+  background-size: contain !important;
+}
+
+.hover\:bg-blend-normal:hover {
+  background-blend-mode: normal !important;
+}
+
+.hover\:bg-blend-multiply:hover {
+  background-blend-mode: multiply !important;
+}
+
+.hover\:bg-blend-screen:hover {
+  background-blend-mode: screen !important;
+}
+
+.hover\:bg-blend-overlay:hover {
+  background-blend-mode: overlay !important;
+}
+
+.hover\:bg-blend-darken:hover {
+  background-blend-mode: darken !important;
+}
+
+.hover\:bg-blend-lighten:hover {
+  background-blend-mode: lighten !important;
+}
+
+.hover\:bg-blend-color-dodge:hover {
+  background-blend-mode: color-dodge !important;
+}
+
+.hover\:bg-blend-color-burn:hover {
+  background-blend-mode: color-burn !important;
+}
+
+.hover\:bg-blend-hard-light:hover {
+  background-blend-mode: hard-light !important;
+}
+
+.hover\:bg-blend-soft-light:hover {
+  background-blend-mode: soft-light !important;
+}
+
+.hover\:bg-blend-difference:hover {
+  background-blend-mode: difference !important;
+}
+
+.hover\:bg-blend-exclusion:hover {
+  background-blend-mode: exclusion !important;
+}
+
+.hover\:bg-blend-hue:hover {
+  background-blend-mode: hue !important;
+}
+
+.hover\:bg-blend-saturation:hover {
+  background-blend-mode: saturation !important;
+}
+
+.hover\:bg-blend-color:hover {
+  background-blend-mode: color !important;
+}
+
+.hover\:bg-blend-luminosity:hover {
+  background-blend-mode: luminosity !important;
+}
+
 .hover\:bg-black:hover {
   background-color: var(--black) !important;
 }
@@ -1066,7 +1238,7 @@
   background-color: var(--orange-300) !important;
 }
 
-.hover\:bg-orange-400 {
+.hover\:bg-orange-400:hover {
   background-color: var(--orange-400) !important;
 }
 
@@ -1102,7 +1274,7 @@
   background-color: var(--yellow-300) !important;
 }
 
-.hover\:bg-yellow-400 {
+.hover\:bg-yellow-400:hover {
   background-color: var(--yellow-400) !important;
 }
 
@@ -1196,6 +1368,178 @@
 
 .hover\:bg-green-900:hover {
   background-color: var(--green-900) !important;
+}
+
+focus\:bg-fixed:focus {
+  background-attachment: fixed !important;
+}
+
+.focus\:bg-local:focus {
+  background-attachment: local !important;
+}
+
+.focus\:bg-scroll:focus {
+  background-attachment: scroll !important;
+}
+
+.focus\:bg-clip-border:focus {
+  background-clip: border-box !important;
+}
+
+.focus\:bg-clip-padding:focus {
+  background-clip: padding-box !important;
+}
+
+.focus\:bg-clip-content:focus {
+  background-clip: content-box !important;
+}
+
+.focus\:bg-clip-text:focus {
+  background-clip: text !important;
+}
+
+.focus\:bg-transparent:focus {
+  background-color: transparent !important;
+}
+
+.focus\:bg-current:focus {
+  background-color: currentColor !important;
+}
+
+.focus\:bg-bottom:focus {
+  background-position: bottom !important;
+}
+
+.focus\:bg-center:focus {
+  background-position: center !important;
+}
+
+.focus\:bg-left:focus {
+  background-position: left !important;
+}
+
+.focus\:bg-left-bottom:focus {
+  background-position: left bottom !important;
+}
+
+.focus\:bg-left-top:focus {
+  background-position: left top !important;
+}
+
+.focus\:bg-right:focus {
+  background-position: right !important;
+}
+
+.focus\:bg-right-bottom:focus {
+  background-position: right bottom !important;
+}
+
+.focus\:bg-right-top:focus {
+  background-position: right top !important;
+}
+
+.focus\:bg-top:focus {
+  background-position: top !important;
+}
+
+.focus\:bg-repeat:focus {
+  background-repeat: repeat !important;
+}
+
+.focus\:bg-no-repeat:focus {
+  background-repeat: no-repeat !important;
+}
+
+.focus\:bg-repeat-x:focus {
+  background-repeat: repeat-x !important;
+}
+
+.focus\:bg-repeat-y:focus {
+  background-repeat: repeat-y !important;
+}
+
+.focus\:bg-repeat-round:focus {
+  background-repeat: round !important;
+}
+
+.focus\:bg-repeat-space:focus {
+  background-repeat: space !important;
+}
+
+.focus\:bg-auto:focus {
+  background-size: auto !important;
+}
+
+.focus\:bg-cover:focus {
+  background-size: cover !important;
+}
+
+.focus\:bg-contain:focus {
+  background-size: contain !important;
+}
+
+.focus\:bg-blend-normal:focus {
+  background-blend-mode: normal !important;
+}
+
+.focus\:bg-blend-multiply:focus {
+  background-blend-mode: multiply !important;
+}
+
+.focus\:bg-blend-screen:focus {
+  background-blend-mode: screen !important;
+}
+
+.focus\:bg-blend-overlay:focus {
+  background-blend-mode: overlay !important;
+}
+
+.focus\:bg-blend-darken:focus {
+  background-blend-mode: darken !important;
+}
+
+.focus\:bg-blend-lighten:focus {
+  background-blend-mode: lighten !important;
+}
+
+.focus\:bg-blend-color-dodge:focus {
+  background-blend-mode: color-dodge !important;
+}
+
+.focus\:bg-blend-color-burn:focus {
+  background-blend-mode: color-burn !important;
+}
+
+.focus\:bg-blend-hard-light:focus {
+  background-blend-mode: hard-light !important;
+}
+
+.focus\:bg-blend-soft-light:focus {
+  background-blend-mode: soft-light !important;
+}
+
+.focus\:bg-blend-difference:focus {
+  background-blend-mode: difference !important;
+}
+
+.focus\:bg-blend-exclusion:focus {
+  background-blend-mode: exclusion !important;
+}
+
+.focus\:bg-blend-hue:focus {
+  background-blend-mode: hue !important;
+}
+
+.focus\:bg-blend-saturation:focus {
+  background-blend-mode: saturation !important;
+}
+
+.focus\:bg-blend-color:focus {
+  background-blend-mode: color !important;
+}
+
+.focus\:bg-blend-luminosity:focus {
+  background-blend-mode: luminosity !important;
 }
 
 .focus\:bg-black:focus {
@@ -2070,7 +2414,7 @@
   background-color: var(--orange-300) !important;
 }
 
-.focus\:bg-orange-400 {
+.focus\:bg-orange-400:focus {
   background-color: var(--orange-400) !important;
 }
 
@@ -2106,7 +2450,7 @@
   background-color: var(--yellow-300) !important;
 }
 
-.focus\:bg-yellow-400 {
+.focus\:bg-yellow-400:focus {
   background-color: var(--yellow-400) !important;
 }
 
@@ -2118,7 +2462,7 @@
   background-color: var(--yellow-600) !important;
 }
 
-.bg-yellow-700:focus {
+.focus\:bg-yellow-700:focus {
   background-color: var(--yellow-700) !important;
 }
 
