@@ -121,19 +121,6 @@
   }
 }
 
-.btn.ghost {
-  background: none;
-  border-color: transparent;
-  color: #485fc7;
-  text-decoration: none;
-}
-
-.btn.ghost:hover,
-.btn.ghost.hovered {
-  color: #485fc7;
-  text-decoration: underline;
-}
-
 .btn-white {
   color: var(--black);
   background-color: var(--white);
