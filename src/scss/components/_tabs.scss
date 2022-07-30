@@ -94,7 +94,7 @@
 
   &.boxed {
     li {
-      &.is-active a {
+      &.active a {
         background-color: var(--white);
         border-color: #dbdbdb;
         border-bottom-color: transparent !important;
@@ -143,9 +143,9 @@
     }
 
     li {
-      &.is-active a {
+      &.active a {
         background-color: var(--blue-600);
-        border-color: var(--blue-600) c;
+        border-color: var(--blue-600);
         color: var(--white);
         z-index: 1;
       }

@@ -11,12 +11,12 @@
   }
 
   &.dark {
-    background-color: var(--gray-900);
+    background-color: var(--dark-800);
     color: var(--white);
   }
 
   &.grey {
-    background-color: var(--grey-400);
+    background-color: var(--grey-500);
     color: var(--black);
   }
 }

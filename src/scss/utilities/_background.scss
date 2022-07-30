@@ -170,50 +170,6 @@
   background-blend-mode: luminosity !important;
 }
 
-.bg-black {
-  background-color: var(--black) !important;
-}
-
-.bg-white {
-  background-color: var(--white) !important;
-}
-
-.bg-gray-100 {
-  background-color: var(--gray-100) !important;
-}
-
-.bg-gray-200 {
-  background-color: var(--gray-200) !important;
-}
-
-.bg-gray-300 {
-  background-color: var(--gray-300) !important;
-}
-
-.bg-gray-400 {
-  background-color: var(--gray-400) !important;
-}
-
-.bg-gray-500 {
-  background-color: var(--gray-500) !important;
-}
-
-.bg-gray-600 {
-  background-color: var(--gray-600) !important;
-}
-
-.bg-gray-700 {
-  background-color: var(--gray-700) !important;
-}
-
-.bg-gray-800 {
-  background-color: var(--gray-800) !important;
-}
-
-.bg-gray-900 {
-  background-color: var(--gray-900) !important;
-}
-
 .bg-slate {
   background-color: var(--slate) !important;
 }
@@ -252,6 +208,10 @@
 
 .bg-slate-900 {
   background-color: var(--slate-900) !important;
+}
+
+.bg-blue-50 {
+  background-color: var(--blue-50) !important;
 }
 
 .bg-blue-100 {
@@ -362,6 +322,10 @@
   background-color: var(--indigo-900) !important;
 }
 
+.bg-purple-50 {
+  background-color: var(--purple-50) !important;
+}
+
 .bg-purple-100 {
   background-color: var(--purple-100) !important;
 }
@@ -434,6 +398,50 @@
   background-color: var(--deep-purple-900) !important;
 }
 
+.bg-fuchsia-50 {
+  background-color: var(--fuchsia-50) !important;
+}
+
+.bg-fuchsia-100 {
+  background-color: var(--fuchsia-100) !important;
+}
+
+.bg-fuchsia-200 {
+  background-color: var(--fuchsia-200) !important;
+}
+
+.bg-fuchsia-300 {
+  background-color: var(--fuchsia-300) !important;
+}
+
+.bg-fuchsia-400 {
+  background-color: var(--fuchsia-400) !important;
+}
+
+.bg-fuchsia-500 {
+  background-color: var(--fuchsia-500) !important;
+}
+
+.bg-fuchsia-600 {
+  background-color: var(--fuchsia-600) !important;
+}
+
+.bg-fuchsia-700 {
+  background-color: var(--fuchsia-700) !important;
+}
+
+.bg-fuchsia-800 {
+  background-color: var(--fuchsia-800) !important;
+}
+
+.bg-fuchsia-900 {
+  background-color: var(--fuchsia-900) !important;
+}
+
+.bg-pink-50 {
+  background-color: var(--pink-50) !important;
+}
+
 .bg-pink-100 {
   background-color: var(--pink-100) !important;
 }
@@ -470,6 +478,18 @@
   background-color: var(--pink-900) !important;
 }
 
+.bg-rose-50 {
+  background-color: var(--rose-50) !important;
+}
+
+.bg-rose-100 {
+  background-color: var(--rose-100) !important;
+}
+
+.bg-rose-200 {
+  background-color: var(--rose-200) !important;
+}
+
 .bg-rose-300 {
   background-color: var(--rose-300) !important;
 }
@@ -492,6 +512,10 @@
 
 .bg-rose-800 {
   background-color: var(--rose-800) !important;
+}
+
+.bg-red-50 {
+  background-color: var(--red-50) !important;
 }
 
 .bg-red-100 {
@@ -530,6 +554,10 @@
   background-color: var(--red-900) !important;
 }
 
+.bg-orange-50 {
+  background-color: var(--orange-50) !important;
+}
+
 .bg-orange-100 {
   background-color: var(--orange-100) !important;
 }
@@ -564,6 +592,10 @@
 
 .bg-orange-900 {
   background-color: var(--orange-900) !important;
+}
+
+.bg-yellow-50 {
+  background-color: var(--yellow-50) !important;
 }
 
 .bg-yellow-100 {
@@ -638,6 +670,10 @@
   background-color: var(--lime-900) !important;
 }
 
+.bg-green-50 {
+  background-color: var(--green-50) !important;
+}
+
 .bg-green-100 {
   background-color: var(--green-100) !important;
 }
@@ -672,6 +708,206 @@
 
 .bg-green-900 {
   background-color: var(--green-900) !important;
+}
+
+.bg-teal-50 {
+  background-color: var(--teal-50) !important;
+}
+
+.bg-teal-100 {
+  background-color: var(--teal-100) !important;
+}
+
+.bg-teal-200 {
+  background-color: var(--teal-200) !important;
+}
+
+.bg-teal-300 {
+  background-color: var(--teal-300) !important;
+}
+
+.bg-teal-400 {
+  background-color: var(--teal-400) !important;
+}
+
+.bg-teal-500 {
+  background-color: var(--teal-500) !important;
+}
+
+.bg-teal-600 {
+  background-color: var(--teal-600) !important;
+}
+
+.bg-teal-700 {
+  background-color: var(--teal-700) !important;
+}
+
+.bg-teal-800 {
+  background-color: var(--teal-800) !important;
+}
+
+.bg-teal-900 {
+  background-color: var(--teal-900) !important;
+}
+
+.bg-gray-100 {
+  background-color: var(--gray-100) !important;
+}
+
+.bg-gray-200 {
+  background-color: var(--gray-200) !important;
+}
+
+.bg-gray-300 {
+  background-color: var(--gray-300) !important;
+}
+
+.bg-gray-400 {
+  background-color: var(--gray-400) !important;
+}
+
+.bg-gray-600 {
+  background-color: var(--gray-600) !important;
+}
+
+.bg-gray-700 {
+  background-color: var(--gray-700) !important;
+}
+
+.bg-gray-800 {
+  background-color: var(--gray-800) !important;
+}
+
+.bg-gray-900 {
+  background-color: var(--gray-900) !important;
+}
+
+.bg-zinc-50 {
+  background-color: var(--zinc-50) !important;
+}
+
+.bg-zinc-100 {
+  background-color: var(--zinc-100) !important;
+}
+
+.bg-zinc-200 {
+  background-color: var(--zinc-200) !important;
+}
+
+.bg-zinc-300 {
+  background-color: var(--zinc-300) !important;
+}
+
+.bg-zinc-400 {
+  background-color: var(--zinc-400) !important;
+}
+
+.bg-zinc-500 {
+  background-color: var(--zinc-500) !important;
+}
+
+.bg-zinc-600 {
+  background-color: var(--zinc-600) !important;
+}
+
+.bg-zinc-700 {
+  background-color: var(--zinc-700) !important;
+}
+
+.bg-zinc-800 {
+  background-color: var(--zinc-800) !important;
+}
+
+.bg-zinc-900 {
+  background-color: var(--zinc-900) !important;
+}
+
+.bg-light-50 {
+  background-color: var(--light-50) !important;
+}
+
+.bg-light-100 {
+  background-color: var(--light-100) !important;
+}
+
+.bg-light-200 {
+  background-color: var(--light-200) !important;
+}
+
+.bg-light-300 {
+  background-color: var(--light-300) !important;
+}
+
+.bg-light-400 {
+  background-color: var(--light-400) !important;
+}
+
+.bg-light-500 {
+  background-color: var(--light-500) !important;
+}
+
+.bg-light-600 {
+  background-color: var(--light-600) !important;
+}
+
+.bg-light-700 {
+  background-color: var(--light-700) !important;
+}
+
+.bg-light-800 {
+  background-color: var(--light-800) !important;
+}
+
+.bg-light-900 {
+  background-color: var(--light-900) !important;
+}
+
+.bg-white {
+  background-color: var(--white) !important;
+}
+
+.bg-black {
+  background-color: var(--black) !important;
+}
+
+.bg-dark-50 {
+  background-color: var(--dark-50) !important;
+}
+
+.bg-dark-100 {
+  background-color: var(--dark-100) !important;
+}
+
+.bg-dark-200 {
+  background-color: var(--dark-200) !important;
+}
+
+.bg-dark-300 {
+  background-color: var(--dark-300) !important;
+}
+
+.bg-dark-400 {
+  background-color: var(--dark-400) !important;
+}
+
+.bg-dark-500 {
+  background-color: var(--dark-500) !important;
+}
+
+.bg-dark-600 {
+  background-color: var(--dark-600) !important;
+}
+
+.bg-dark-700 {
+  background-color: var(--dark-700) !important;
+}
+
+.bg-dark-800 {
+  background-color: var(--dark-800) !important;
+}
+
+.bg-dark-900 {
+  background-color: var(--dark-900) !important;
 }
 
 .bg-opacity-10 {
@@ -866,51 +1102,7 @@
   background-blend-mode: luminosity !important;
 }
 
-.hover\:bg-black:hover {
-  background-color: var(--black) !important;
-}
-
-.hover\:bg-white:hover {
-  background-color: var(--white) !important;
-}
-
-.hover\:bg-gray-100:hover {
-  background-color: var(--gray-100) !important;
-}
-
-.hover\:bg-gray-200:hover {
-  background-color: var(--gray-200) !important;
-}
-
-.hover\:bg-gray-300:hover {
-  background-color: var(--gray-300) !important;
-}
-
-.hover\:bg-gray-400:hover {
-  background-color: var(--gray-400) !important;
-}
-
-.hover\:bg-gray-500:hover {
-  background-color: var(--gray-400) !important;
-}
-
-.hover\:bg-gray-600:hover {
-  background-color: var(--gray-600) !important;
-}
-
-.hover\:bg-gray-700:hover {
-  background-color: var(--gray-700) !important;
-}
-
-.hover\:bg-gray-800:hover {
-  background-color: var(--gray-800) !important;
-}
-
-.hover\:bg-gray-900:hover {
-  background-color: var(--gray-900) !important;
-}
-
-.hover\:bg-slate:hover {
+hover\:bg-slate:hover {
   background-color: var(--slate) !important;
 }
 
@@ -948,6 +1140,10 @@
 
 .hover\:bg-slate-900:hover {
   background-color: var(--slate-900) !important;
+}
+
+.hover\:bg-blue-50:hover {
+  background-color: var(--blue-50) !important;
 }
 
 .hover\:bg-blue-100:hover {
@@ -990,7 +1186,7 @@
   background-color: var(--light-blue-100) !important;
 }
 
-.hover\:bg-light-blue-200 :hover {
+.hover\:bg-light-blue-200:hover {
   background-color: var(--light-blue-200) !important;
 }
 
@@ -1056,6 +1252,10 @@
 
 .hover\:bg-indigo-700:hover {
   background-color: var(--indigo-900) !important;
+}
+
+.hover\:bg-purple-50:hover {
+  background-color: var(--purple-50) !important;
 }
 
 .hover\:bg-purple-100:hover {
@@ -1126,8 +1326,52 @@
   background-color: var(--deep-purple-800) !important;
 }
 
-.bg-deep-purple-900:hover {
+.hover\:bg-deep-purple-900:hover {
   background-color: var(--deep-purple-900) !important;
+}
+
+.hover\:bg-fuchsia-50:hover {
+  background-color: var(--fuchsia-50) !important;
+}
+
+.hover\:bg-fuchsia-100:hover {
+  background-color: var(--fuchsia-100) !important;
+}
+
+.hover\:bg-fuchsia-200:hover {
+  background-color: var(--fuchsia-200) !important;
+}
+
+.hover\:bg-fuchsia-300:hover {
+  background-color: var(--fuchsia-300) !important;
+}
+
+.hover\:bg-fuchsia-400:hover {
+  background-color: var(--fuchsia-400) !important;
+}
+
+.hover\:bg-fuchsia-500:hover {
+  background-color: var(--fuchsia-500) !important;
+}
+
+.hover\:bg-fuchsia-600:hover {
+  background-color: var(--fuchsia-600) !important;
+}
+
+.hover\:bg-fuchsia-700:hover {
+  background-color: var(--fuchsia-700) !important;
+}
+
+.hover\:bg-fuchsia-800:hover {
+  background-color: var(--fuchsia-800) !important;
+}
+
+.hover\:bg-fuchsia-900:hover {
+  background-color: var(--fuchsia-900) !important;
+}
+
+.hover\:bg-pink-50:hover {
+  background-color: var(--pink-50) !important;
 }
 
 .hover\:bg-pink-100:hover {
@@ -1166,6 +1410,18 @@
   background-color: var(--pink-900) !important;
 }
 
+.hover\:bg-rose-50:hover {
+  background-color: var(--rose-50) !important;
+}
+
+.hover\:bg-rose-100:hover {
+  background-color: var(--rose-100) !important;
+}
+
+.hover\:bg-rose-200:hover {
+  background-color: var(--rose-200) !important;
+}
+
 .hover\:bg-rose-300:hover {
   background-color: var(--rose-300) !important;
 }
@@ -1188,6 +1444,10 @@
 
 .hover\:bg-rose-800:hover {
   background-color: var(--rose-800) !important;
+}
+
+.hover\:bg-red-50:hover {
+  background-color: var(--red-50) !important;
 }
 
 .hover\:bg-red-100:hover {
@@ -1226,6 +1486,10 @@
   background-color: var(--red-900) !important;
 }
 
+.hover\:bg-orange-50:hover {
+  background-color: var(--orange-50) !important;
+}
+
 .hover\:bg-orange-100:hover {
   background-color: var(--orange-100) !important;
 }
@@ -1262,6 +1526,10 @@
   background-color: var(--orange-900) !important;
 }
 
+.hover\:bg-yellow-50:hover {
+  background-color: var(--yellow-50) !important;
+}
+
 .hover\:bg-yellow-100:hover {
   background-color: var(--yellow-100) !important;
 }
@@ -1270,7 +1538,7 @@
   background-color: var(--yellow-200) !important;
 }
 
-.hover\:.bg-yellow-300:hover {
+.hover\:bg-yellow-300:hover {
   background-color: var(--yellow-300) !important;
 }
 
@@ -1286,7 +1554,7 @@
   background-color: var(--yellow-600) !important;
 }
 
-.bg-yellow-700:hover {
+.hover\:bg-yellow-700:hover {
   background-color: var(--yellow-700) !important;
 }
 
@@ -1334,6 +1602,10 @@
   background-color: var(--lime-900) !important;
 }
 
+.hover\:bg-green-50:hover {
+  background-color: var(--green-50) !important;
+}
+
 .hover\:bg-green-100:hover {
   background-color: var(--green-100) !important;
 }
@@ -1370,7 +1642,207 @@
   background-color: var(--green-900) !important;
 }
 
-focus\:bg-fixed:focus {
+.hover\:bg-teal-50:hover {
+  background-color: var(--teal-50) !important;
+}
+
+.hover\:bg-teal-100:hover {
+  background-color: var(--teal-100) !important;
+}
+
+.hover\:bg-teal-200:hover {
+  background-color: var(--teal-200) !important;
+}
+
+.hover\:bg-teal-300:hover {
+  background-color: var(--teal-300) !important;
+}
+
+.hover\:bg-teal-400:hover {
+  background-color: var(--teal-400) !important;
+}
+
+.hover\:bg-teal-500:hover {
+  background-color: var(--teal-500) !important;
+}
+
+.hover\:bg-teal-600:hover {
+  background-color: var(--teal-600) !important;
+}
+
+.hover\:bg-teal-700:hover {
+  background-color: var(--teal-700) !important;
+}
+
+.hover\:bg-teal-800:hover {
+  background-color: var(--teal-800) !important;
+}
+
+.hover\:bg-teal-900:hover {
+  background-color: var(--teal-900) !important;
+}
+
+.hover\:bg-gray-100:hover {
+  background-color: var(--gray-100) !important;
+}
+
+.hover\:bg-gray-200:hover {
+  background-color: var(--gray-200) !important;
+}
+
+.hover\:bg-gray-300:hover {
+  background-color: var(--gray-300) !important;
+}
+
+.hover\:bg-gray-400:hover {
+  background-color: var(--gray-400) !important;
+}
+
+.hover\:bg-gray-600:hover {
+  background-color: var(--gray-600) !important;
+}
+
+.hover\:bg-gray-700:hover {
+  background-color: var(--gray-700) !important;
+}
+
+.hover\:bg-gray-800:hover {
+  background-color: var(--gray-800) !important;
+}
+
+.hover\:bg-gray-900:hover {
+  background-color: var(--gray-900) !important;
+}
+
+.hover\:bg-zinc-50:hover {
+  background-color: var(--zinc-50) !important;
+}
+
+.hover\:bg-zinc-100:hover {
+  background-color: var(--zinc-100) !important;
+}
+
+.hover\:bg-zinc-200:hover {
+  background-color: var(--zinc-200) !important;
+}
+
+.hover\:bg-zinc-300:hover {
+  background-color: var(--zinc-300) !important;
+}
+
+.hover\:bg-zinc-400:hover {
+  background-color: var(--zinc-400) !important;
+}
+
+.hover\:bg-zinc-500:hover {
+  background-color: var(--zinc-500) !important;
+}
+
+.hover\:bg-zinc-600:hover {
+  background-color: var(--zinc-600) !important;
+}
+
+.hover\:bg-zinc-700:hover {
+  background-color: var(--zinc-700) !important;
+}
+
+.hover\:bg-zinc-800:hover {
+  background-color: var(--zinc-800) !important;
+}
+
+.hover\:bg-zinc-900:hover {
+  background-color: var(--zinc-900) !important;
+}
+
+.hover\:bg-light-50:hover {
+  background-color: var(--light-50) !important;
+}
+
+.hover\:bg-light-100:hover {
+  background-color: var(--light-100) !important;
+}
+
+.hover\:bg-light-200:hover {
+  background-color: var(--light-200) !important;
+}
+
+.hover\:bg-light-300:hover {
+  background-color: var(--light-300) !important;
+}
+
+.hover\:bg-light-400:hover {
+  background-color: var(--light-400) !important;
+}
+
+.hover\:bg-light-500:hover {
+  background-color: var(--light-500) !important;
+}
+
+.hover\:bg-light-600:hover {
+  background-color: var(--light-600) !important;
+}
+
+.hover\:bg-light-700:hover {
+  background-color: var(--light-700) !important;
+}
+
+.hover\:bg-light-800:hover {
+  background-color: var(--light-800) !important;
+}
+
+.hover\:bg-light-900:hover {
+  background-color: var(--light-900) !important;
+}
+
+.hover\:bg-white:hover {
+  background-color: var(--white) !important;
+}
+
+.hover\:bg-black:hover {
+  background-color: var(--black) !important;
+}
+
+.hover\:bg-dark-50:hover {
+  background-color: var(--dark-50) !important;
+}
+
+.hover\:bg-dark-100:hover {
+  background-color: var(--dark-100) !important;
+}
+
+.hover\:bg-dark-200:hover {
+  background-color: var(--dark-200) !important;
+}
+
+.hover\:bg-dark-300:hover {
+  background-color: var(--dark-300) !important;
+}
+
+.hover\:bg-dark-400:hover {
+  background-color: var(--dark-400) !important;
+}
+
+.hover\:bg-dark-500:hover {
+  background-color: var(--dark-500) !important;
+}
+
+.hover\:bg-dark-600:hover {
+  background-color: var(--dark-600) !important;
+}
+
+.hover\:bg-dark-700:hover {
+  background-color: var(--dark-700) !important;
+}
+
+.hover\:bg-dark-800:hover {
+  background-color: var(--dark-800) !important;
+}
+
+.hover\:bg-dark-900:hover {
+  background-color: var(--dark-900) !important;
+}
+
+.focus\:bg-fixed:focus {
   background-attachment: fixed !important;
 }
 
@@ -1542,46 +2014,6 @@ focus\:bg-fixed:focus {
   background-blend-mode: luminosity !important;
 }
 
-.focus\:bg-black:focus {
-  background-color: var(--black) !important;
-}
-
-.focus\:bg-white:focus {
-  background-color: var(--white) !important;
-}
-
-.focus\:bg-gray-100:focus {
-  background-color: var(--gray-100) !important;
-}
-
-.focus\:bg-gray-200:focus {
-  background-color: var(--gray-200) !important;
-}
-
-.focus\:bg-gray-300:focus {
-  background-color: var(--gray-300) !important;
-}
-
-.focus\:bg-gray-400:focus {
-  background-color: var(--gray-400) !important;
-}
-
-.focus\:bg-gray-600:focus {
-  background-color: var(--gray-600) !important;
-}
-
-.focus\:bg-gray-700:focus {
-  background-color: var(--gray-700) !important;
-}
-
-.focus\:bg-gray-800:focus {
-  background-color: var(--gray-800) !important;
-}
-
-.focus\:bg-gray-900:focus {
-  background-color: var(--gray-900) !important;
-}
-
 .focus\:bg-slate:focus {
   background-color: var(--slate) !important;
 }
@@ -1620,6 +2052,10 @@ focus\:bg-fixed:focus {
 
 .focus\:bg-slate-900:focus {
   background-color: var(--slate-900) !important;
+}
+
+.focus\:bg-blue-50:focus {
+  background-color: var(--blue-50) !important;
 }
 
 .focus\:bg-blue-100:focus {
@@ -1662,7 +2098,7 @@ focus\:bg-fixed:focus {
   background-color: var(--light-blue-100) !important;
 }
 
-.focus\:bg-light-blue-200 :focus {
+.focus\:bg-light-blue-200:focus {
   background-color: var(--light-blue-200) !important;
 }
 
@@ -1728,6 +2164,10 @@ focus\:bg-fixed:focus {
 
 .focus\:bg-indigo-700:focus {
   background-color: var(--indigo-900) !important;
+}
+
+.focus\:bg-purple-50:focus {
+  background-color: var(--purple-50) !important;
 }
 
 .focus\:bg-purple-100:focus {
@@ -1798,8 +2238,52 @@ focus\:bg-fixed:focus {
   background-color: var(--deep-purple-800) !important;
 }
 
-.bg-deep-purple-900:focus {
+.focus\:bg-deep-purple-900:focus {
   background-color: var(--deep-purple-900) !important;
+}
+
+.focus\:bg-fuchsia-50:focus {
+  background-color: var(--fuchsia-50) !important;
+}
+
+.focus\:bg-fuchsia-100:focus {
+  background-color: var(--fuchsia-100) !important;
+}
+
+.focus\:bg-fuchsia-200:focus {
+  background-color: var(--fuchsia-200) !important;
+}
+
+.focus\:bg-fuchsia-300:focus {
+  background-color: var(--fuchsia-300) !important;
+}
+
+.focus\:bg-fuchsia-400:focus {
+  background-color: var(--fuchsia-400) !important;
+}
+
+.focus\:bg-fuchsia-500:focus {
+  background-color: var(--fuchsia-500) !important;
+}
+
+.focus\:bg-fuchsia-600:focus {
+  background-color: var(--fuchsia-600) !important;
+}
+
+.focus\:bg-fuchsia-700:focus {
+  background-color: var(--fuchsia-700) !important;
+}
+
+.focus\:bg-fuchsia-800:focus {
+  background-color: var(--fuchsia-800) !important;
+}
+
+.focus\:bg-fuchsia-900:focus {
+  background-color: var(--fuchsia-900) !important;
+}
+
+.focus\:bg-pink-50:focus {
+  background-color: var(--pink-50) !important;
 }
 
 .focus\:bg-pink-100:focus {
@@ -1838,6 +2322,18 @@ focus\:bg-fixed:focus {
   background-color: var(--pink-900) !important;
 }
 
+.focus\:bg-rose-50:focus {
+  background-color: var(--rose-50) !important;
+}
+
+.focus\:bg-rose-100:focus {
+  background-color: var(--rose-100) !important;
+}
+
+.focus\:bg-rose-200:focus {
+  background-color: var(--rose-200) !important;
+}
+
 .focus\:bg-rose-300:focus {
   background-color: var(--rose-300) !important;
 }
@@ -1860,6 +2356,10 @@ focus\:bg-fixed:focus {
 
 .focus\:bg-rose-800:focus {
   background-color: var(--rose-800) !important;
+}
+
+.focus\:bg-red-50:focus {
+  background-color: var(--red-50) !important;
 }
 
 .focus\:bg-red-100:focus {
@@ -1898,508 +2398,8 @@ focus\:bg-fixed:focus {
   background-color: var(--red-900) !important;
 }
 
-.focus\:bg-orange-100:focus {
-  background-color: var(--orange-100) !important;
-}
-
-.focus\:bg-orange-200:focus {
-  background-color: var(--orange-200) !important;
-}
-
-.focus\:bg-orange-300:focus {
-  background-color: var(--orange-300) !important;
-}
-
-.focus\:bg-orange-400 {
-  background-color: var(--orange-400) !important;
-}
-
-.focus\:bg-orange-500:focus {
-  background-color: var(--orange-500) !important;
-}
-
-.focus\:bg-orange-600:focus {
-  background-color: var(--orange-600) !important;
-}
-
-.focus\:bg-orange-700:focus {
-  background-color: var(--orange-700) !important;
-}
-
-.focus\:bg-orange-800:focus {
-  background-color: var(--orange-800) !important;
-}
-
-.focus\:bg-orange-900:focus {
-  background-color: var(--orange-900) !important;
-}
-
-.focus\:bg-yellow-100:focus {
-  background-color: var(--yellow-100) !important;
-}
-
-.focus\:bg-yellow-200:focus {
-  background-color: var(--yellow-200) !important;
-}
-
-.focus\:.bg-yellow-300:focus {
-  background-color: var(--yellow-300) !important;
-}
-
-.focus\:bg-yellow-400 {
-  background-color: var(--yellow-400) !important;
-}
-
-.focus\:bg-yellow-500:focus {
-  background-color: var(--yellow-500) !important;
-}
-
-.focus\:bg-yellow-600:focus {
-  background-color: var(--yellow-600) !important;
-}
-
-.bg-yellow-700:focus {
-  background-color: var(--yellow-700) !important;
-}
-
-.focus\:bg-yellow-800:focus {
-  background-color: var(--yellow-800) !important;
-}
-
-.focus\:bg-yellow-900:focus {
-  background-color: var(--yellow-900) !important;
-}
-
-.focus\:bg-lime-100:focus {
-  background-color: var(--lime-100) !important;
-}
-
-.focus\:bg-lime-200:focus {
-  background-color: var(--lime-200) !important;
-}
-
-.focus\:bg-lime-300:focus {
-  background-color: var(--lime-300) !important;
-}
-
-.focus\:bg-lime-400:focus {
-  background-color: var(--lime-400) !important;
-}
-
-.focus\:bg-lime-500:focus {
-  background-color: var(--lime-500) !important;
-}
-
-.focus\:bg-lime-600:focus {
-  background-color: var(--lime-600) !important;
-}
-
-.focus\:bg-lime-700:focus {
-  background-color: var(--lime-700) !important;
-}
-
-.focus\:bg-lime-800:focus {
-  background-color: var(--lime-800) !important;
-}
-
-.focus\:bg-lime-900:focus {
-  background-color: var(--lime-900) !important;
-}
-
-.focus\:bg-green-100:focus {
-  background-color: var(--green-100) !important;
-}
-
-.focus\:bg-green-200:focus {
-  background-color: var(--green-200) !important;
-}
-
-.focus\:bg-green-300:focus {
-  background-color: var(--green-300) !important;
-}
-
-.focus\:bg-green-400:focus {
-  background-color: var(--green-400) !important;
-}
-
-.focus\:bg-green-500:focus {
-  background-color: var(--green-500) !important;
-}
-
-.focus\:bg-green-600:focus {
-  background-color: var(--green-600) !important;
-}
-
-.focus\:bg-green-700:focus {
-  background-color: var(--green-700) !important;
-}
-
-.focus\:bg-green-800:focus {
-  background-color: var(--green-800) !important;
-}
-
-.focus\:bg-green-900:focus {
-  background-color: var(--green-900) !important;
-}
-
-.focus\:bg-black:focus {
-  background-color: var(--black) !important;
-}
-
-.focus\:bg-white:focus {
-  background-color: var(--white) !important;
-}
-
-.focus\:bg-gray-100:focus {
-  background-color: var(--gray-100) !important;
-}
-
-.focus\:bg-gray-200:focus {
-  background-color: var(--gray-200) !important;
-}
-
-.focus\:bg-gray-300:focus {
-  background-color: var(--gray-300) !important;
-}
-
-.focus\:bg-gray-400:focus {
-  background-color: var(--gray-400) !important;
-}
-
-.focus\:bg-gray-500:focus {
-  background-color: var(--gray-500) !important;
-}
-
-.focus\:bg-gray-600:focus {
-  background-color: var(--gray-600) !important;
-}
-
-.focus\:bg-gray-700:focus {
-  background-color: var(--gray-700) !important;
-}
-
-.focus\:bg-gray-800:focus {
-  background-color: var(--gray-800) !important;
-}
-
-.focus\:bg-gray-900:focus {
-  background-color: var(--gray-900) !important;
-}
-
-.focus\:bg-slate:focus {
-  background-color: var(--slate) !important;
-}
-
-.focus\:bg-slate-100:focus {
-  background-color: var(--slate-100) !important;
-}
-
-.focus\:bg-slate-200:focus {
-  background-color: var(--slate-200) !important;
-}
-
-.focus\:bg-slate-300:focus {
-  background-color: var(--slate-300) !important;
-}
-
-.focus\:bg-slate-400:focus {
-  background-color: var(--slate-400) !important;
-}
-
-.focus\:bg-slate-500:focus {
-  background-color: var(--slate-500) !important;
-}
-
-.focus\:bg-slate-600:focus {
-  background-color: var(--slate-600) !important;
-}
-
-.focus\:bg-slate-700:focus {
-  background-color: var(--slate-700) !important;
-}
-
-.focus\:bg-slate-800:focus {
-  background-color: var(--slate-800) !important;
-}
-
-.focus\:bg-slate-900:focus {
-  background-color: var(--slate-900) !important;
-}
-
-.focus\:bg-blue-100:focus {
-  background-color: var(--blue-100) !important;
-}
-
-.focus\:bg-blue-200:focus {
-  background-color: var(--blue-200) !important;
-}
-
-.focus\:bg-blue-300:focus {
-  background-color: var(--blue-300) !important;
-}
-
-.focus\:bg-blue-400:focus {
-  background-color: var(--blue-400) !important;
-}
-
-.focus\:bg-blue-500:focus {
-  background-color: var(--blue-500) !important;
-}
-
-.focus\:bg-blue-600:focus {
-  background-color: var(--blue-600) !important;
-}
-
-.focus\:bg-blue-700:focus {
-  background-color: var(--blue-700) !important;
-}
-
-.focus\:bg-blue-800:focus {
-  background-color: var(--blue-800) !important;
-}
-
-.focus\:bg-blue-900:focus {
-  background-color: var(--blue-900) !important;
-}
-
-.focus\:bg-light-blue-100:focus {
-  background-color: var(--light-blue-100) !important;
-}
-
-.focus\:bg-light-blue-200 :focus {
-  background-color: var(--light-blue-200) !important;
-}
-
-.focus\:bg-light-blue-300:focus {
-  background-color: var(--light-blue-300) !important;
-}
-
-.focus\:bg-light-blue-400:focus {
-  background-color: var(--light-blue-400) !important;
-}
-
-.focus\:bg-light-blue-500:focus {
-  background-color: var(--light-blue-500) !important;
-}
-
-.focus\:bg-light-blue-600:focus {
-  background-color: var(--light-blue-600) !important;
-}
-
-.focus\:bg-light-blue-700:focus {
-  background-color: var(--light-blue-700) !important;
-}
-
-.focus\:bg-light-blue-800:focus {
-  background-color: var(--light-blue-800) !important;
-}
-
-.focus\:bg-light-blue-900:focus {
-  background-color: var(--light-blue-900) !important;
-}
-
-.focus\:bg-indigo-100:focus {
-  background-color: var(--indigo-100) !important;
-}
-
-.focus\:bg-indigo-200:focus {
-  background-color: var(--indigo-200) !important;
-}
-
-.focus\:bg-indigo-300:focus {
-  background-color: var(--indigo-300) !important;
-}
-
-.focus\:bg-indigo-400:focus {
-  background-color: var(--indigo-400) !important;
-}
-
-.focus\:bg-indigo-500:focus {
-  background-color: var(--indigo-500) !important;
-}
-
-.focus\:bg-indigo-600:focus {
-  background-color: var(--indigo-600) !important;
-}
-
-.focus\:bg-indigo-700:focus {
-  background-color: var(--indigo-700) !important;
-}
-
-.focus\:bg-indigo-700:focus {
-  background-color: var(--indigo-800) !important;
-}
-
-.focus\:bg-indigo-700:focus {
-  background-color: var(--indigo-900) !important;
-}
-
-.focus\:bg-purple-100:focus {
-  background-color: var(--purple-100) !important;
-}
-
-.focus\:bg-purple-200:focus {
-  background-color: var(--purple-200) !important;
-}
-
-.focus\:bg-purple-300:focus {
-  background-color: var(--purple-300) !important;
-}
-
-.focus\:bg-purple-400:focus {
-  background-color: var(--purple-400) !important;
-}
-
-.focus\:bg-purple-500:focus {
-  background-color: var(--purple-500) !important;
-}
-
-.focus\:bg-purple-600:focus {
-  background-color: var(--purple-600) !important;
-}
-
-.focus\:bg-purple-700:focus {
-  background-color: var(--purple-700) !important;
-}
-
-.focus\:bg-purple-800:focus {
-  background-color: var(--purple-800) !important;
-}
-
-.focus\:bg-purple-900:focus {
-  background-color: var(--purple-900) !important;
-}
-
-.focus\:bg-deep-purple-100:focus {
-  background-color: var(--deep-purple-100) !important;
-}
-
-.focus\:bg-deep-purple-200:focus {
-  background-color: var(--deep-purple-200) !important;
-}
-
-.focus\:bg-deep-purple-300:focus {
-  background-color: var(--deep-purple-300) !important;
-}
-
-.focus\:bg-deep-purple-400:focus {
-  background-color: var(--deep-purple-400) !important;
-}
-
-.focus\:bg-deep-purple-500:focus {
-  background-color: var(--deep-purple-500) !important;
-}
-
-.focus\:bg-deep-purple-600:focus {
-  background-color: var(--deep-purple-600) !important;
-}
-
-.focus\:bg-deep-purple-700:focus {
-  background-color: var(--deep-purple-700) !important;
-}
-
-.focus\:bg-deep-purple-800:focus {
-  background-color: var(--deep-purple-800) !important;
-}
-
-.bg-deep-purple-900:focus {
-  background-color: var(--deep-purple-900) !important;
-}
-
-.focus\:bg-pink-100:focus {
-  background-color: var(--pink-100) !important;
-}
-
-.focus\:bg-pink-200:focus {
-  background-color: var(--pink-200) !important;
-}
-
-.focus\:bg-pink-300:focus {
-  background-color: var(--pink-300) !important;
-}
-
-.focus\:bg-pink-400:focus {
-  background-color: var(--pink-400) !important;
-}
-
-.focus\:bg-pink-500:focus {
-  background-color: var(--pink-500) !important;
-}
-
-.focus\:bg-pink-600:focus {
-  background-color: var(--pink-600) !important;
-}
-
-.focus\:bg-pink-700:focus {
-  background-color: var(--pink-700) !important;
-}
-
-.focus\:bg-pink-800:focus {
-  background-color: var(--pink-800) !important;
-}
-
-.focus\:bg-pink-900:focus {
-  background-color: var(--pink-900) !important;
-}
-
-.focus\:bg-rose-300:focus {
-  background-color: var(--rose-300) !important;
-}
-
-.focus\:bg-rose-400:focus {
-  background-color: var(--rose-400) !important;
-}
-
-.focus\:bg-rose-500:focus {
-  background-color: var(--rose-500) !important;
-}
-
-.focus\:bg-rose-600:focus {
-  background-color: var(--rose-600) !important;
-}
-
-.focus\:bg-rose-700:focus {
-  background-color: var(--rose-700) !important;
-}
-
-.focus\:bg-rose-800:focus {
-  background-color: var(--rose-800) !important;
-}
-
-.focus\:bg-red-100:focus {
-  background-color: var(--red-100) !important;
-}
-
-.focus\:bg-red-200:focus {
-  background-color: var(--red-200) !important;
-}
-
-.focus\:bg-red-300:focus {
-  background-color: var(--red-300) !important;
-}
-
-.focus\:bg-red-400:focus {
-  background-color: var(--red-400) !important;
-}
-
-.focus\:bg-red-500:focus {
-  background-color: var(--red-500) !important;
-}
-
-.focus\:bg-red-600:focus {
-  background-color: var(--red-600) !important;
-}
-
-.focus\:bg-red-700:focus {
-  background-color: var(--red-700) !important;
-}
-
-.focus\:bg-red-800:focus {
-  background-color: var(--red-800) !important;
-}
-
-.focus\:bg-red-900:focus {
-  background-color: var(--red-900) !important;
+.focus\:bg-orange-50:focus {
+  background-color: var(--orange-50) !important;
 }
 
 .focus\:bg-orange-100:focus {
@@ -2438,6 +2438,10 @@ focus\:bg-fixed:focus {
   background-color: var(--orange-900) !important;
 }
 
+.focus\:bg-yellow-50:focus {
+  background-color: var(--yellow-50) !important;
+}
+
 .focus\:bg-yellow-100:focus {
   background-color: var(--yellow-100) !important;
 }
@@ -2446,7 +2450,7 @@ focus\:bg-fixed:focus {
   background-color: var(--yellow-200) !important;
 }
 
-.focus\:.bg-yellow-300:focus {
+.focus\:bg-yellow-300:focus {
   background-color: var(--yellow-300) !important;
 }
 
@@ -2510,6 +2514,10 @@ focus\:bg-fixed:focus {
   background-color: var(--lime-900) !important;
 }
 
+.focus\:bg-green-50:focus {
+  background-color: var(--green-50) !important;
+}
+
 .focus\:bg-green-100:focus {
   background-color: var(--green-100) !important;
 }
@@ -2544,4 +2552,1115 @@ focus\:bg-fixed:focus {
 
 .focus\:bg-green-900:focus {
   background-color: var(--green-900) !important;
+}
+
+.focus\:bg-teal-50:focus {
+  background-color: var(--teal-50) !important;
+}
+
+.focus\:bg-teal-100:focus {
+  background-color: var(--teal-100) !important;
+}
+
+.focus\:bg-teal-200:focus {
+  background-color: var(--teal-200) !important;
+}
+
+.focus\:bg-teal-300:focus {
+  background-color: var(--teal-300) !important;
+}
+
+.focus\:bg-teal-400:focus {
+  background-color: var(--teal-400) !important;
+}
+
+.focus\:bg-teal-500:focus {
+  background-color: var(--teal-500) !important;
+}
+
+.focus\:bg-teal-600:focus {
+  background-color: var(--teal-600) !important;
+}
+
+.focus\:bg-teal-700:focus {
+  background-color: var(--teal-700) !important;
+}
+
+.focus\:bg-teal-800:focus {
+  background-color: var(--teal-800) !important;
+}
+
+.focus\:bg-teal-900:focus {
+  background-color: var(--teal-900) !important;
+}
+
+.focus\:bg-gray-100:focus {
+  background-color: var(--gray-100) !important;
+}
+
+.focus\:bg-gray-200:focus {
+  background-color: var(--gray-200) !important;
+}
+
+.focus\:bg-gray-300:focus {
+  background-color: var(--gray-300) !important;
+}
+
+.focus\:bg-gray-400:focus {
+  background-color: var(--gray-400) !important;
+}
+
+.focus\:bg-gray-600:focus {
+  background-color: var(--gray-600) !important;
+}
+
+.focus\:bg-gray-700:focus {
+  background-color: var(--gray-700) !important;
+}
+
+.focus\:bg-gray-800:focus {
+  background-color: var(--gray-800) !important;
+}
+
+.focus\:bg-gray-900:focus {
+  background-color: var(--gray-900) !important;
+}
+
+.focus\:bg-zinc-50:focus {
+  background-color: var(--zinc-50) !important;
+}
+
+.focus\:bg-zinc-100:focus {
+  background-color: var(--zinc-100) !important;
+}
+
+.focus\:bg-zinc-200:focus {
+  background-color: var(--zinc-200) !important;
+}
+
+.focus\:bg-zinc-300:focus {
+  background-color: var(--zinc-300) !important;
+}
+
+.focus\:bg-zinc-400:focus {
+  background-color: var(--zinc-400) !important;
+}
+
+.focus\:bg-zinc-500:focus {
+  background-color: var(--zinc-500) !important;
+}
+
+.focus\:bg-zinc-600:focus {
+  background-color: var(--zinc-600) !important;
+}
+
+.focus\:bg-zinc-700:focus {
+  background-color: var(--zinc-700) !important;
+}
+
+.focus\:bg-zinc-800:focus {
+  background-color: var(--zinc-800) !important;
+}
+
+.focus\:bg-zinc-900:focus {
+  background-color: var(--zinc-900) !important;
+}
+
+.focus\:bg-light-50:focus {
+  background-color: var(--light-50) !important;
+}
+
+.focus\:bg-light-100:focus {
+  background-color: var(--light-100) !important;
+}
+
+.focus\:bg-light-200:focus {
+  background-color: var(--light-200) !important;
+}
+
+.focus\:bg-light-300:focus {
+  background-color: var(--light-300) !important;
+}
+
+.focus\:bg-light-400:focus {
+  background-color: var(--light-400) !important;
+}
+
+.focus\:bg-light-500:focus {
+  background-color: var(--light-500) !important;
+}
+
+.focus\:bg-light-600:focus {
+  background-color: var(--light-600) !important;
+}
+
+.focus\:bg-light-700:focus {
+  background-color: var(--light-700) !important;
+}
+
+.focus\:bg-light-800:focus {
+  background-color: var(--light-800) !important;
+}
+
+.focus\:bg-light-900:focus {
+  background-color: var(--light-900) !important;
+}
+
+.focus\:bg-white:focus {
+  background-color: var(--white) !important;
+}
+
+.focus\:bg-black:focus {
+  background-color: var(--black) !important;
+}
+
+.focus\:bg-dark-50:focus {
+  background-color: var(--dark-50) !important;
+}
+
+.focus\:bg-dark-100:focus {
+  background-color: var(--dark-100) !important;
+}
+
+.focus\:bg-dark-200:focus {
+  background-color: var(--dark-200) !important;
+}
+
+.focus\:bg-dark-300:focus {
+  background-color: var(--dark-300) !important;
+}
+
+.focus\:bg-dark-400:focus {
+  background-color: var(--dark-400) !important;
+}
+
+.focus\:bg-dark-500:focus {
+  background-color: var(--dark-500) !important;
+}
+
+.focus\:bg-dark-600:focus {
+  background-color: var(--dark-600) !important;
+}
+
+.focus\:bg-dark-700:focus {
+  background-color: var(--dark-700) !important;
+}
+
+.focus\:bg-dark-800:focus {
+  background-color: var(--dark-800) !important;
+}
+
+.focus\:bg-dark-900:focus {
+  background-color: var(--dark-900) !important;
+}
+.active\:bg-fixed:active {
+  background-attachment: fixed !important;
+}
+
+.active\:bg-local:active {
+  background-attachment: local !important;
+}
+
+.active\:bg-scroll:active {
+  background-attachment: scroll !important;
+}
+
+.active\:bg-clip-border:active {
+  background-clip: border-box !important;
+}
+
+.active\:bg-clip-padding:active {
+  background-clip: padding-box !important;
+}
+
+.active\:bg-clip-content:active {
+  background-clip: content-box !important;
+}
+
+.active\:bg-clip-text:active {
+  background-clip: text !important;
+}
+
+.active\:bg-transparent:active {
+  background-color: transparent !important;
+}
+
+.active\:bg-current:active {
+  background-color: currentColor !important;
+}
+
+.active\:bg-bottom:active {
+  background-position: bottom !important;
+}
+
+.active\:bg-center:active {
+  background-position: center !important;
+}
+
+.active\:bg-left:active {
+  background-position: left !important;
+}
+
+.active\:bg-left-bottom:active {
+  background-position: left bottom !important;
+}
+
+.active\:bg-left-top:active {
+  background-position: left top !important;
+}
+
+.active\:bg-right:active {
+  background-position: right !important;
+}
+
+.active\:bg-right-bottom:active {
+  background-position: right bottom !important;
+}
+
+.active\:bg-right-top:active {
+  background-position: right top !important;
+}
+
+.active\:bg-top:active {
+  background-position: top !important;
+}
+
+.active\:bg-repeat:active {
+  background-repeat: repeat !important;
+}
+
+.active\:bg-no-repeat:active {
+  background-repeat: no-repeat !important;
+}
+
+.active\:bg-repeat-x:active {
+  background-repeat: repeat-x !important;
+}
+
+.active\:bg-repeat-y:active {
+  background-repeat: repeat-y !important;
+}
+
+.active\:bg-repeat-round:active {
+  background-repeat: round !important;
+}
+
+.active\:bg-repeat-space:active {
+  background-repeat: space !important;
+}
+
+.active\:bg-auto:active {
+  background-size: auto !important;
+}
+
+.active\:bg-cover:active {
+  background-size: cover !important;
+}
+
+.active\:bg-contain:active {
+  background-size: contain !important;
+}
+
+.active\:bg-blend-normal:active {
+  background-blend-mode: normal !important;
+}
+
+.active\:bg-blend-multiply:active {
+  background-blend-mode: multiply !important;
+}
+
+.active\:bg-blend-screen:active {
+  background-blend-mode: screen !important;
+}
+
+.active\:bg-blend-overlay:active {
+  background-blend-mode: overlay !important;
+}
+
+.active\:bg-blend-darken:active {
+  background-blend-mode: darken !important;
+}
+
+.active\:bg-blend-lighten:active {
+  background-blend-mode: lighten !important;
+}
+
+.active\:bg-blend-color-dodge:active {
+  background-blend-mode: color-dodge !important;
+}
+
+.active\:bg-blend-color-burn:active {
+  background-blend-mode: color-burn !important;
+}
+
+.active\:bg-blend-hard-light:active {
+  background-blend-mode: hard-light !important;
+}
+
+.active\:bg-blend-soft-light:active {
+  background-blend-mode: soft-light !important;
+}
+
+.active\:bg-blend-difference:active {
+  background-blend-mode: difference !important;
+}
+
+.active\:bg-blend-exclusion:active {
+  background-blend-mode: exclusion !important;
+}
+
+.active\:bg-blend-hue:active {
+  background-blend-mode: hue !important;
+}
+
+.active\:bg-blend-saturation:active {
+  background-blend-mode: saturation !important;
+}
+
+.active\:bg-blend-color:active {
+  background-blend-mode: color !important;
+}
+
+.active\:bg-blend-luminosity:active {
+  background-blend-mode: luminosity !important;
+}
+
+.active\:bg-slate:active {
+  background-color: var(--slate) !important;
+}
+
+.active\:bg-slate-100:active {
+  background-color: var(--slate-100) !important;
+}
+
+.active\:bg-slate-200:active {
+  background-color: var(--slate-200) !important;
+}
+
+.active\:bg-slate-300:active {
+  background-color: var(--slate-300) !important;
+}
+
+.active\:bg-slate-400:active {
+  background-color: var(--slate-400) !important;
+}
+
+.active\:bg-slate-500:active {
+  background-color: var(--slate-500) !important;
+}
+
+.active\:bg-slate-600:active {
+  background-color: var(--slate-600) !important;
+}
+
+.active\:bg-slate-700:active {
+  background-color: var(--slate-700) !important;
+}
+
+.active\:bg-slate-800:active {
+  background-color: var(--slate-800) !important;
+}
+
+.active\:bg-slate-900:active {
+  background-color: var(--slate-900) !important;
+}
+
+.active\:bg-blue-50:active {
+  background-color: var(--blue-50) !important;
+}
+
+.active\:bg-blue-100:active {
+  background-color: var(--blue-100) !important;
+}
+
+.active\:bg-blue-200:active {
+  background-color: var(--blue-200) !important;
+}
+
+.active\:bg-blue-300:active {
+  background-color: var(--blue-300) !important;
+}
+
+.active\:bg-blue-400:active {
+  background-color: var(--blue-400) !important;
+}
+
+.active\:bg-blue-500:active {
+  background-color: var(--blue-500) !important;
+}
+
+.active\:bg-blue-600:active {
+  background-color: var(--blue-600) !important;
+}
+
+.active\:bg-blue-700:active {
+  background-color: var(--blue-700) !important;
+}
+
+.active\:bg-blue-800:active {
+  background-color: var(--blue-800) !important;
+}
+
+.active\:bg-blue-900:active {
+  background-color: var(--blue-900) !important;
+}
+
+.active\:bg-light-blue-100:active {
+  background-color: var(--light-blue-100) !important;
+}
+
+.active\:bg-light-blue-200:active {
+  background-color: var(--light-blue-200) !important;
+}
+
+.active\:bg-light-blue-300:active {
+  background-color: var(--light-blue-300) !important;
+}
+
+.active\:bg-light-blue-400:active {
+  background-color: var(--light-blue-400) !important;
+}
+
+.active\:bg-light-blue-500:active {
+  background-color: var(--light-blue-500) !important;
+}
+
+.active\:bg-light-blue-600:active {
+  background-color: var(--light-blue-600) !important;
+}
+
+.active\:bg-light-blue-700:active {
+  background-color: var(--light-blue-700) !important;
+}
+
+.active\:bg-light-blue-800:active {
+  background-color: var(--light-blue-800) !important;
+}
+
+.active\:bg-light-blue-900:active {
+  background-color: var(--light-blue-900) !important;
+}
+
+.active\:bg-indigo-100:active {
+  background-color: var(--indigo-100) !important;
+}
+
+.active\:bg-indigo-200:active {
+  background-color: var(--indigo-200) !important;
+}
+
+.active\:bg-indigo-300:active {
+  background-color: var(--indigo-300) !important;
+}
+
+.active\:bg-indigo-400:active {
+  background-color: var(--indigo-400) !important;
+}
+
+.active\:bg-indigo-500:active {
+  background-color: var(--indigo-500) !important;
+}
+
+.active\:bg-indigo-600:active {
+  background-color: var(--indigo-600) !important;
+}
+
+.active\:bg-indigo-700:active {
+  background-color: var(--indigo-700) !important;
+}
+
+.active\:bg-indigo-700:active {
+  background-color: var(--indigo-800) !important;
+}
+
+.active\:bg-indigo-700:active {
+  background-color: var(--indigo-900) !important;
+}
+
+.active\:bg-purple-50:active {
+  background-color: var(--purple-50) !important;
+}
+
+.active\:bg-purple-100:active {
+  background-color: var(--purple-100) !important;
+}
+
+.active\:bg-purple-200:active {
+  background-color: var(--purple-200) !important;
+}
+
+.active\:bg-purple-300:active {
+  background-color: var(--purple-300) !important;
+}
+
+.active\:bg-purple-400:active {
+  background-color: var(--purple-400) !important;
+}
+
+.active\:bg-purple-500:active {
+  background-color: var(--purple-500) !important;
+}
+
+.active\:bg-purple-600:active {
+  background-color: var(--purple-600) !important;
+}
+
+.active\:bg-purple-700:active {
+  background-color: var(--purple-700) !important;
+}
+
+.active\:bg-purple-800:active {
+  background-color: var(--purple-800) !important;
+}
+
+.active\:bg-purple-900:active {
+  background-color: var(--purple-900) !important;
+}
+
+.active\:bg-deep-purple-100:active {
+  background-color: var(--deep-purple-100) !important;
+}
+
+.active\:bg-deep-purple-200:active {
+  background-color: var(--deep-purple-200) !important;
+}
+
+.active\:bg-deep-purple-300:active {
+  background-color: var(--deep-purple-300) !important;
+}
+
+.active\:bg-deep-purple-400:active {
+  background-color: var(--deep-purple-400) !important;
+}
+
+.active\:bg-deep-purple-500:active {
+  background-color: var(--deep-purple-500) !important;
+}
+
+.active\:bg-deep-purple-600:active {
+  background-color: var(--deep-purple-600) !important;
+}
+
+.active\:bg-deep-purple-700:active {
+  background-color: var(--deep-purple-700) !important;
+}
+
+.active\:bg-deep-purple-800:active {
+  background-color: var(--deep-purple-800) !important;
+}
+
+.active\:bg-deep-purple-900:active {
+  background-color: var(--deep-purple-900) !important;
+}
+
+.active\:bg-fuchsia-50:active {
+  background-color: var(--fuchsia-50) !important;
+}
+
+.active\:bg-fuchsia-100:active {
+  background-color: var(--fuchsia-100) !important;
+}
+
+.active\:bg-fuchsia-200:active {
+  background-color: var(--fuchsia-200) !important;
+}
+
+.active\:bg-fuchsia-300:active {
+  background-color: var(--fuchsia-300) !important;
+}
+
+.active\:bg-fuchsia-400:active {
+  background-color: var(--fuchsia-400) !important;
+}
+
+.active\:bg-fuchsia-500:active {
+  background-color: var(--fuchsia-500) !important;
+}
+
+.active\:bg-fuchsia-600:active {
+  background-color: var(--fuchsia-600) !important;
+}
+
+.active\:bg-fuchsia-700:active {
+  background-color: var(--fuchsia-700) !important;
+}
+
+.active\:bg-fuchsia-800:active {
+  background-color: var(--fuchsia-800) !important;
+}
+
+.active\:bg-fuchsia-900:active {
+  background-color: var(--fuchsia-900) !important;
+}
+
+.active\:bg-pink-50:active {
+  background-color: var(--pink-50) !important;
+}
+
+.active\:bg-pink-100:active {
+  background-color: var(--pink-100) !important;
+}
+
+.active\:bg-pink-200:active {
+  background-color: var(--pink-200) !important;
+}
+
+.active\:bg-pink-300:active {
+  background-color: var(--pink-300) !important;
+}
+
+.active\:bg-pink-400:active {
+  background-color: var(--pink-400) !important;
+}
+
+.active\:bg-pink-500:active {
+  background-color: var(--pink-500) !important;
+}
+
+.active\:bg-pink-600:active {
+  background-color: var(--pink-600) !important;
+}
+
+.active\:bg-pink-700:active {
+  background-color: var(--pink-700) !important;
+}
+
+.active\:bg-pink-800:active {
+  background-color: var(--pink-800) !important;
+}
+
+.active\:bg-pink-900:active {
+  background-color: var(--pink-900) !important;
+}
+
+.active\:bg-rose-50:active {
+  background-color: var(--rose-50) !important;
+}
+
+.active\:bg-rose-100:active {
+  background-color: var(--rose-100) !important;
+}
+
+.active\:bg-rose-200:active {
+  background-color: var(--rose-200) !important;
+}
+
+.active\:bg-rose-300:active {
+  background-color: var(--rose-300) !important;
+}
+
+.active\:bg-rose-400:active {
+  background-color: var(--rose-400) !important;
+}
+
+.active\:bg-rose-500:active {
+  background-color: var(--rose-500) !important;
+}
+
+.active\:bg-rose-600:active {
+  background-color: var(--rose-600) !important;
+}
+
+.active\:bg-rose-700:active {
+  background-color: var(--rose-700) !important;
+}
+
+.active\:bg-rose-800:active {
+  background-color: var(--rose-800) !important;
+}
+
+.active\:bg-red-50:active {
+  background-color: var(--red-50) !important;
+}
+
+.active\:bg-red-100:active {
+  background-color: var(--red-100) !important;
+}
+
+.active\:bg-red-200:active {
+  background-color: var(--red-200) !important;
+}
+
+.active\:bg-red-300:active {
+  background-color: var(--red-300) !important;
+}
+
+.active\:bg-red-400:active {
+  background-color: var(--red-400) !important;
+}
+
+.active\:bg-red-500:active {
+  background-color: var(--red-500) !important;
+}
+
+.active\:bg-red-600:active {
+  background-color: var(--red-600) !important;
+}
+
+.active\:bg-red-700:active {
+  background-color: var(--red-700) !important;
+}
+
+.active\:bg-red-800:active {
+  background-color: var(--red-800) !important;
+}
+
+.active\:bg-red-900:active {
+  background-color: var(--red-900) !important;
+}
+
+.active\:bg-orange-50:active {
+  background-color: var(--orange-50) !important;
+}
+
+.active\:bg-orange-100:active {
+  background-color: var(--orange-100) !important;
+}
+
+.active\:bg-orange-200:active {
+  background-color: var(--orange-200) !important;
+}
+
+.active\:bg-orange-300:active {
+  background-color: var(--orange-300) !important;
+}
+
+.active\:bg-orange-400:active {
+  background-color: var(--orange-400) !important;
+}
+
+.active\:bg-orange-500:active {
+  background-color: var(--orange-500) !important;
+}
+
+.active\:bg-orange-600:active {
+  background-color: var(--orange-600) !important;
+}
+
+.active\:bg-orange-700:active {
+  background-color: var(--orange-700) !important;
+}
+
+.active\:bg-orange-800:active {
+  background-color: var(--orange-800) !important;
+}
+
+.active\:bg-orange-900:active {
+  background-color: var(--orange-900) !important;
+}
+
+.active\:bg-yellow-50:active {
+  background-color: var(--yellow-50) !important;
+}
+
+.active\:bg-yellow-100:active {
+  background-color: var(--yellow-100) !important;
+}
+
+.active\:bg-yellow-200:active {
+  background-color: var(--yellow-200) !important;
+}
+
+.active\:bg-yellow-300:active {
+  background-color: var(--yellow-300) !important;
+}
+
+.active\:bg-yellow-400:active {
+  background-color: var(--yellow-400) !important;
+}
+
+.active\:bg-yellow-500:active {
+  background-color: var(--yellow-500) !important;
+}
+
+.active\:bg-yellow-600:active {
+  background-color: var(--yellow-600) !important;
+}
+
+.active\:bg-yellow-700:active {
+  background-color: var(--yellow-700) !important;
+}
+
+.active\:bg-yellow-800:active {
+  background-color: var(--yellow-800) !important;
+}
+
+.active\:bg-yellow-900:active {
+  background-color: var(--yellow-900) !important;
+}
+
+.active\:bg-lime-100:active {
+  background-color: var(--lime-100) !important;
+}
+
+.active\:bg-lime-200:active {
+  background-color: var(--lime-200) !important;
+}
+
+.active\:bg-lime-300:active {
+  background-color: var(--lime-300) !important;
+}
+
+.active\:bg-lime-400:active {
+  background-color: var(--lime-400) !important;
+}
+
+.active\:bg-lime-500:active {
+  background-color: var(--lime-500) !important;
+}
+
+.active\:bg-lime-600:active {
+  background-color: var(--lime-600) !important;
+}
+
+.active\:bg-lime-700:active {
+  background-color: var(--lime-700) !important;
+}
+
+.active\:bg-lime-800:active {
+  background-color: var(--lime-800) !important;
+}
+
+.active\:bg-lime-900:active {
+  background-color: var(--lime-900) !important;
+}
+
+.active\:bg-green-50:active {
+  background-color: var(--green-50) !important;
+}
+
+.active\:bg-green-100:active {
+  background-color: var(--green-100) !important;
+}
+
+.active\:bg-green-200:active {
+  background-color: var(--green-200) !important;
+}
+
+.active\:bg-green-300:active {
+  background-color: var(--green-300) !important;
+}
+
+.active\:bg-green-400:active {
+  background-color: var(--green-400) !important;
+}
+
+.active\:bg-green-500:active {
+  background-color: var(--green-500) !important;
+}
+
+.active\:bg-green-600:active {
+  background-color: var(--green-600) !important;
+}
+
+.active\:bg-green-700:active {
+  background-color: var(--green-700) !important;
+}
+
+.active\:bg-green-800:active {
+  background-color: var(--green-800) !important;
+}
+
+.active\:bg-green-900:active {
+  background-color: var(--green-900) !important;
+}
+
+.active\:bg-teal-50:active {
+  background-color: var(--teal-50) !important;
+}
+
+.active\:bg-teal-100:active {
+  background-color: var(--teal-100) !important;
+}
+
+.active\:bg-teal-200:active {
+  background-color: var(--teal-200) !important;
+}
+
+.active\:bg-teal-300:active {
+  background-color: var(--teal-300) !important;
+}
+
+.active\:bg-teal-400:active {
+  background-color: var(--teal-400) !important;
+}
+
+.active\:bg-teal-500:active {
+  background-color: var(--teal-500) !important;
+}
+
+.active\:bg-teal-600:active {
+  background-color: var(--teal-600) !important;
+}
+
+.active\:bg-teal-700:active {
+  background-color: var(--teal-700) !important;
+}
+
+.active\:bg-teal-800:active {
+  background-color: var(--teal-800) !important;
+}
+
+.active\:bg-teal-900:active {
+  background-color: var(--teal-900) !important;
+}
+
+.active\:bg-gray-100:active {
+  background-color: var(--gray-100) !important;
+}
+
+.active\:bg-gray-200:active {
+  background-color: var(--gray-200) !important;
+}
+
+.active\:bg-gray-300:active {
+  background-color: var(--gray-300) !important;
+}
+
+.active\:bg-gray-400:active {
+  background-color: var(--gray-400) !important;
+}
+
+.active\:bg-gray-600:active {
+  background-color: var(--gray-600) !important;
+}
+
+.active\:bg-gray-700:active {
+  background-color: var(--gray-700) !important;
+}
+
+.active\:bg-gray-800:active {
+  background-color: var(--gray-800) !important;
+}
+
+.active\:bg-gray-900:active {
+  background-color: var(--gray-900) !important;
+}
+
+.active\:bg-zinc-50:active {
+  background-color: var(--zinc-50) !important;
+}
+
+.active\:bg-zinc-100:active {
+  background-color: var(--zinc-100) !important;
+}
+
+.active\:bg-zinc-200:active {
+  background-color: var(--zinc-200) !important;
+}
+
+.active\:bg-zinc-300:active {
+  background-color: var(--zinc-300) !important;
+}
+
+.active\:bg-zinc-400:active {
+  background-color: var(--zinc-400) !important;
+}
+
+.active\:bg-zinc-500:active {
+  background-color: var(--zinc-500) !important;
+}
+
+.active\:bg-zinc-600:active {
+  background-color: var(--zinc-600) !important;
+}
+
+.active\:bg-zinc-700:active {
+  background-color: var(--zinc-700) !important;
+}
+
+.active\:bg-zinc-800:active {
+  background-color: var(--zinc-800) !important;
+}
+
+.active\:bg-zinc-900:active {
+  background-color: var(--zinc-900) !important;
+}
+
+.active\:bg-light-50:active {
+  background-color: var(--light-50) !important;
+}
+
+.active\:bg-light-100:active {
+  background-color: var(--light-100) !important;
+}
+
+.active\:bg-light-200:active {
+  background-color: var(--light-200) !important;
+}
+
+.active\:bg-light-300:active {
+  background-color: var(--light-300) !important;
+}
+
+.active\:bg-light-400:active {
+  background-color: var(--light-400) !important;
+}
+
+.active\:bg-light-500:active {
+  background-color: var(--light-500) !important;
+}
+
+.active\:bg-light-600:active {
+  background-color: var(--light-600) !important;
+}
+
+.active\:bg-light-700:active {
+  background-color: var(--light-700) !important;
+}
+
+.active\:bg-light-800:active {
+  background-color: var(--light-800) !important;
+}
+
+.active\:bg-light-900:active {
+  background-color: var(--light-900) !important;
+}
+
+.active\:bg-white:active {
+  background-color: var(--white) !important;
+}
+
+.active\:bg-black:active {
+  background-color: var(--black) !important;
+}
+
+.active\:bg-dark-50:active {
+  background-color: var(--dark-50) !important;
+}
+
+.active\:bg-dark-100:active {
+  background-color: var(--dark-100) !important;
+}
+
+.active\:bg-dark-200:active {
+  background-color: var(--dark-200) !important;
+}
+
+.active\:bg-dark-300:active {
+  background-color: var(--dark-300) !important;
+}
+
+.active\:bg-dark-400:active {
+  background-color: var(--dark-400) !important;
+}
+
+.active\:bg-dark-500:active {
+  background-color: var(--dark-500) !important;
+}
+
+.active\:bg-dark-600:active {
+  background-color: var(--dark-600) !important;
+}
+
+.active\:bg-dark-700:active {
+  background-color: var(--dark-700) !important;
+}
+
+.active\:bg-dark-800:active {
+  background-color: var(--dark-800) !important;
+}
+
+.active\:bg-dark-900:active {
+  background-color: var(--dark-900) !important;
 }

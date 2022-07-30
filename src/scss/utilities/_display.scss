@@ -29,3 +29,207 @@
 .invisible {
   visibility: hidden !important;
 }
+
+@media (min-width: 360px) {
+  .xs\:block {
+    display: block !important;
+  }
+
+  .xs\:inline-block {
+    display: inline-block !important;
+  }
+
+  .xs\:inline {
+    display: inline !important;
+  }
+
+  .xs\:flow-root {
+    display: flow-root !important;
+  }
+
+  .xs\:contents {
+    display: contents !important;
+  }
+
+  .xs\:hidden {
+    display: none !important;
+  }
+
+  .xs\:visible {
+    visibility: visible !important;
+  }
+
+  .xs\:invisible {
+    visibility: hidden !important;
+  }
+}
+
+@media (min-width: 640px) {
+  .sm\:block {
+    display: block !important;
+  }
+
+  .sm\:inline-block {
+    display: inline-block !important;
+  }
+
+  .sm\:inline {
+    display: inline !important;
+  }
+
+  .sm\:flow-root {
+    display: flow-root !important;
+  }
+
+  .sm\:contents {
+    display: contents !important;
+  }
+
+  .sm\:hidden {
+    display: none !important;
+  }
+
+  .sm\:visible {
+    visibility: visible !important;
+  }
+
+  .sm\:invisible {
+    visibility: hidden !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:block {
+    display: block !important;
+  }
+
+  .md\:inline-block {
+    display: inline-block !important;
+  }
+
+  .md\:inline {
+    display: inline !important;
+  }
+
+  .md\:flow-root {
+    display: flow-root !important;
+  }
+
+  .md\:contents {
+    display: contents !important;
+  }
+
+  .md\:hidden {
+    display: none !important;
+  }
+
+  .md\:visible {
+    visibility: visible !important;
+  }
+
+  .md\:invisible {
+    visibility: hidden !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:block {
+    display: block !important;
+  }
+
+  .lg\:inline-block {
+    display: inline-block !important;
+  }
+
+  .lg\:inline {
+    display: inline !important;
+  }
+
+  .lg\:flow-root {
+    display: flow-root !important;
+  }
+
+  .lg\:contents {
+    display: contents !important;
+  }
+
+  .lg\:hidden {
+    display: none !important;
+  }
+
+  .lg\:visible {
+    visibility: visible !important;
+  }
+
+  .lg\:invisible {
+    visibility: hidden !important;
+  }
+}
+
+@media (min-width: 1280px) {
+  .xl\:block {
+    display: block !important;
+  }
+
+  .xl\:inline-block {
+    display: inline-block !important;
+  }
+
+  .xl\:inline {
+    display: inline !important;
+  }
+
+  .xl\:flow-root {
+    display: flow-root !important;
+  }
+
+  .xl\:contents {
+    display: contents !important;
+  }
+
+  .xl\:hidden {
+    display: none !important;
+  }
+
+  .xl\:visible {
+    visibility: visible !important;
+  }
+
+  .xl\:invisible {
+    visibility: hidden !important;
+  }
+}
+
+@media (min-width: 1536px) {
+  .\32xl\:block {
+    display: block !important;
+  }
+
+  .\32xl\:inline-block {
+    display: inline-block !important;
+  }
+
+  .\32xl\:inline {
+    display: inline !important;
+  }
+
+  .\32xl\:flow-root {
+    display: flow-root !important;
+  }
+
+  .\32xl\:contents {
+    display: contents !important;
+  }
+
+  .\32xl\:hidden {
+    display: none !important;
+  }
+
+  .\32xl\:visible {
+    visibility: visible !important;
+  }
+
+  .\32xl\:invisible {
+    visibility: hidden !important;
+  }
+}
