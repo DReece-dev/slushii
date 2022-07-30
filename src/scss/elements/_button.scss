@@ -43,7 +43,7 @@
   }
 
   &:disabled,
-  &disabled,
+  &-disabled,
   fieldset:disabled & {
     pointer-events: none;
     opacity: 0.65;
@@ -119,19 +119,6 @@
     -webkit-transition: none;
     transition: none;
   }
-}
-
-.btn.ghost {
-  background: none;
-  border-color: transparent;
-  color: #485fc7;
-  text-decoration: none;
-}
-
-.btn.ghost:hover,
-.btn.ghost.hovered {
-  color: #485fc7;
-  text-decoration: underline;
 }
 
 .btn-white {

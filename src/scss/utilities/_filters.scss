@@ -170,13 +170,13 @@
   filter: sepia(100%) !important;
 }
 
-.drop-shadow-sm {
-  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.05)) !important;
-}
-
 .drop-shadow {
   filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1))
     drop-shadow(0 1px 1px rgba(0, 0, 0, 0.06)) !important;
+}
+
+.drop-shadow-sm {
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.05)) !important;
 }
 
 .drop-shadow-md {
