@@ -5208,3 +5208,95 @@
   grid-template-columns: subgrid;
   grid-template-rows: subgrid;
 }
+
+.masonry-flow-pack {
+  masonry-auto-flow: pack;
+}
+
+.masonry-flow-next {
+  masonry-auto-flow: next;
+}
+
+.masonry-flow-ordered {
+  masonry-auto-flow: ordered;
+}
+
+.masonry-flow-definite-first {
+  masonry-auto-flow: definite-first;
+}
+
+.masonry-flow-next-ordered {
+  masonry-auto-flow: next ordered;
+}
+
+.align-tracks-start {
+  align-tracks: start;
+}
+
+.align-tracks-end {
+  align-tracks: end;
+}
+
+.align-tracks-center {
+  align-tracks: center;
+}
+
+.align-tracks-normal {
+  align-tracks: normal;
+}
+
+.align-tracks-space-between {
+  align-tracks: space-between;
+}
+
+.align-tracks-space-around {
+  align-tracks: space-around;
+}
+
+.align-tracks-space-evenly {
+  align-tracks: space-evenly;
+}
+
+.align-tracks-stretch {
+  align-tracks: stretch;
+}
+
+.justify-tracks-start {
+  justify-tracks: start;
+}
+
+.justify-tracks-end {
+  justify-tracks: end;
+}
+
+.justify-tracks-center {
+  justify-tracks: center;
+}
+
+.justify-tracks-normal {
+  justify-tracks: normal;
+}
+
+.justify-tracks-space-between {
+  justify-tracks: space-between;
+}
+
+.justify-tracks-space-around {
+  justify-tracks: space-around;
+}
+
+.justify-tracks-space-evenly {
+  justify-tracks: space-evenly;
+}
+
+.justify-tracks-stretch {
+  justify-tracks: stretch;
+}
+
+.justify-tracks-left {
+  justify-tracks: left;
+}
+
+.justify-tracks-right {
+  justify-tracks: right;
+}

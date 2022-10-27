@@ -328,6 +328,16 @@
   text-align: center;
 }
 
+.nav-start {
+  justify-content: flex-start;
+  margin-right: auto;
+}
+
+.nav-end {
+  justify-content: flex-end;
+  margin-left: auto;
+}
+
 .hover-dropdown-button {
   background: transparent;
   border: none;
