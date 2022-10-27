@@ -2,14 +2,22 @@
   resize: none !important;
 }
 
-.resize-y {
-  resize: vertical !important;
+.resize-both {
+  resize: both !important;
 }
 
 .resize-x {
   resize: horizontal !important;
 }
 
-.resize {
-  resize: both !important;
+.resize-y {
+  resize: vertical !important;
+}
+
+.resize-block {
+  resize: block !important;
+}
+
+.resize-inline {
+  resize: inline !important;
 }
