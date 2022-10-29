@@ -57,15 +57,15 @@
   --deep-purple-800: #4527a0;
   --deep-purple-900: #311b92;
   --fuchsia-50: #fdf4ff;
-  --fuchsia-100:#fae8ff;
-  --fuchsia-200:#f5d0fe;
-  --fuchsia-300:#f0abfc;
-  --fuchsia-400:#e879f9;
-  --fuchsia-500:#d946ef;
-  --fuchsia-600:#c026d3;
-  --fuchsia-700:#a21caf;
-  --fuchsia-800:#86198f;
-  --fuchsia-900:#701a75;
+  --fuchsia-100: #fae8ff;
+  --fuchsia-200: #f5d0fe;
+  --fuchsia-300: #f0abfc;
+  --fuchsia-400: #e879f9;
+  --fuchsia-500: #d946ef;
+  --fuchsia-600: #c026d3;
+  --fuchsia-700: #a21caf;
+  --fuchsia-800: #86198f;
+  --fuchsia-900: #701a75;
   --pink-50: #fff5f7;
   --pink-100: #fed7e2;
   --pink-200: #fbb6ce;
@@ -160,11 +160,11 @@
   --zinc-200: #e4e4e7;
   --zinc-300: #d4d4d8;
   --zinc-400: #a1a1aa;
-  --zinc-500: #71717A;
-  --zinc-600: #52525B;
-  --zinc-700: #3F3F46;
-  --zinc-800: #27272A;
-  --zinc-900: #18181B;
+  --zinc-500: #71717a;
+  --zinc-600: #52525b;
+  --zinc-700: #3f3f46;
+  --zinc-800: #27272a;
+  --zinc-900: #18181b;
   --light-50: #fdfdfd;
   --light-100: #fcfcfc;
   --light-200: #fafafa;
@@ -184,7 +184,7 @@
   --whiteAlpha-500: rgba(255, 255, 255, 0.36);
   --whiteAlpha-600: rgba(255, 255, 255, 0.48);
   --whiteAlpha-700: rgba(255, 255, 255, 0.64);
-  --whiteAlpha-800: rgba(255, 255, 255, 0.80);
+  --whiteAlpha-800: rgba(255, 255, 255, 0.8);
   --whiteAlpha-900: rgba(255, 255, 255, 0.92);
   --black: #000000;
   --dark-50: #4a4a4a;
@@ -205,11 +205,11 @@
   --blackAlpha-500: rgba(0, 0, 0, 0.36);
   --blackAlpha-600: rgba(0, 0, 0, 0.48);
   --blackAlpha-700: rgba(0, 0, 0, 0.64);
-  --blackAlpha-800: rgba(0, 0, 0, 0.80);
+  --blackAlpha-800: rgba(0, 0, 0, 0.8);
   --blackAlpha-900: rgba(0, 0, 0, 0.92);
-  --deafult-fonts: "Inter V", system-ui, -apple-system, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --deafult-fonts: 'Inter V', system-ui, -apple-system, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   --breakpoint-xs: 360px;
   --breakpoint-s: 640px;
   --breakpoint-m: 768px;
