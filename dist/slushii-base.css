@@ -228,6 +228,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  background-repeat: no-repeat;
 }
 
 ::before,
@@ -236,11 +237,6 @@
   vertical-align: inherit;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  :root {
-    scroll-behavior: smooth;
-  }
-}
 :where(:root) {
   cursor: default;
   line-height: 1.5;
@@ -254,6 +250,11 @@
        text-size-adjust: 100%;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    scroll-behavior: smooth;
+  }
+}
 body {
   margin: 0;
   font-family: var(--deafult-fonts);
@@ -297,7 +298,7 @@ h1,
 
 @media (min-width: 1200px) {
   h1,
-.h1 {
+  .h1 {
     font-size: 2.5rem;
   }
 }
@@ -308,7 +309,7 @@ h2,
 
 @media (min-width: 1200px) {
   h2,
-.h2 {
+  .h2 {
     font-size: 2rem;
   }
 }
@@ -319,7 +320,7 @@ h3,
 
 @media (min-width: 1200px) {
   h3,
-.h3 {
+  .h3 {
     font-size: 1.75rem;
   }
 }
@@ -330,7 +331,7 @@ h4,
 
 @media (min-width: 1200px) {
   h4,
-.h4 {
+  .h4 {
     font-size: 1.5rem;
   }
 }
@@ -475,7 +476,6 @@ select {
   border: solid;
   color: black;
   height: -moz-fit-content;
-  height: -webkit-fit-content;
   height: fit-content;
   left: 0;
   margin: auto;
@@ -483,7 +483,6 @@ select {
   position: absolute;
   right: 0;
   width: -moz-fit-content;
-  width: -webkit-fit-content;
   width: fit-content;
 }
 
