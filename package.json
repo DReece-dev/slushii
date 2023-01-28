@@ -7,6 +7,7 @@
     "compile": "gulp css",
     "purge": "gulp purgecss",
     "mini": "gulp mini",
+    "build": "gulp css && gulp purgecss && gulp mini",
     "browser-list-update": "npx browserslist@latest --update-db"
   },
   "repository": {
@@ -34,9 +35,11 @@
     "autoprefixer": "^10.4.13",
     "cssnano": "^5.1.14",
     "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
     "gulp-postcss": "^9.0.1",
     "gulp-purgecss": "^5.0.0",
     "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
     "postcss-preset-env": "^7.8.3",
     "sass": "^1.56.1"
   }
