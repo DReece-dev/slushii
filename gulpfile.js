@@ -26,16 +26,6 @@ gulp.task('css', function () {
         .pipe(gulp.dest('./dist'));
 });
 
-gulp.task('purgecss', () => {
-    return gulp.src('./src/**/*.css')
-        .pipe(purgecss({
-            content: ['./src/**/*.html'],
-            safelist: [], // Add any selectors you want to keep here
-            defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
-        }))
-        .pipe(gulp.dest('./dist'));
-});
-
 gulp.task('mini', () => {
     let nano = [
         cssnano
@@ -44,6 +34,16 @@ gulp.task('mini', () => {
         .pipe(gulpif(process.env.NODE_ENV === 'production', postcss(nano)))
         .pipe(rename({ suffix: '.min' }))
         .pipe(gulp.dest('./dist'));
+});
+
+gulp.task('purgecss', () => {
+    return gulp.src('./dist/**/*.css')
+        .pipe(purgecss({
+            safelist: [],
+            content: ['src/**/*.html'],
+            defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
+        }))
+        .pipe(gulp.dest('./dist'))
 });
 
 gulp.task('watch', function () {
