@@ -21,13 +21,18 @@ gulp.task('css', function () {
         .pipe(cached('css'))
         .pipe(sass().on('error', sass.logError))
         .pipe(postcss(processors))
-        .pipe(purgecss({
-            safelist: [],
-            content: ['src/**/*.html'],
-            defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
-        }))
         .pipe(mergeMediaQueries())
         .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest('./dist'));
+});
+
+gulp.task('purgecss', () => {
+    return gulp.src('./src/**/*.css')
+        .pipe(purgecss({
+            content: ['./src/**/*.html'],
+            safelist: [], // Add any selectors you want to keep here
+            defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
+        }))
         .pipe(gulp.dest('./dist'));
 });
 
