@@ -1,78 +1,130 @@
-.hero {
+/* Default values */
+.hero-section {
+  background-color: var(--white);
+  color: var(--black);
   align-items: stretch;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.hero-image {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.hero-section-body {
+  padding: 3rem 1.5rem;
+  flex-grow: 1;
+  flex-shrink: 0;
+}
+
+/* Image background */
+.hero-section-image {
   height: 65vh;
   padding: 1em;
   box-sizing: border-box;
-  color: white;
   background: url() center center no-repeat;
   background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.hero .navbar {
+/* Navbar styles */
+.hero-section .navbar {
   background: none;
 }
 
-.hero.small .hero-body {
+/* Small size */
+.hero-section.small .hero-section-body {
   padding: 1.5rem;
 }
 
+/* Medium size */
 @media screen and (min-width: 768px), print {
-  .hero.medium .hero-body {
+  .hero-section.medium .hero-section-body {
     padding: 9rem 1.5rem;
   }
 }
 
+/* Large size */
 @media screen and (min-width: 1024px), print {
-  .hero.large .hero-body {
+  .hero-section.large .hero-section-body {
     padding: 18rem 1.5rem;
   }
 }
 
+/* XLarge size */
 @media screen and (min-width: 1280px), print {
-  .hero.xlarge .hero-body {
+  .hero-section.xlarge .hero-section-body {
     padding: 24rem 1.5rem;
   }
 }
 
+/* XXLarge size */
 @media screen and (min-width: 1536px), print {
-  .hero.xxlarge .hero-body {
+  .hero-section.xxlarge .hero-section-body {
     padding: 30rem 1.5rem;
   }
 }
 
-.hero.halfheight .hero-body,
-.hero.fullheight .hero-body,
-.hero.fullheight-with-navbar .hero-body {
-  align-items: center;
-  display: flex;
+// SCSS with variables
+$half-height: 50vh;
+$full-height: 100vh;
+
+.hero {
+  &.halfheight {
+    min-height: $half-height;
+
+    .hero-body {
+      align-items: center;
+      display: flex;
+
+      > .container {
+        flex-grow: 1;
+        flex-shrink: 1;
+      }
+    }
+  }
+
+  &.fullheight {
+    min-height: $full-height;
+
+    .hero-body {
+      align-items: center;
+      display: flex;
+
+      > .container {
+        flex-grow: 1;
+        flex-shrink: 1;
+      }
+    }
+  }
+
+  &.fullheight-with-navbar {
+    min-height: $full-height;
+
+    .hero-body {
+      align-items: center;
+      display: flex;
+
+      > .container {
+        flex-grow: 1;
+        flex-shrink: 1;
+      }
+    }
+  }
 }
 
-.hero.halfheight .hero-body > .container,
-.hero.fullheight .hero-body > .container,
-.hero.fullheight-with-navbar .hero-body > .container {
-  flex-grow: 1;
-  flex-shrink: 1;
-}
-
-.hero.halfheight {
-  min-height: 50vh;
-}
-
-.hero.fullheight {
-  min-height: 100vh;
-}
+$transparency: 0.3;
+$breakpoint: 640px;
 
 .hero-video {
   overflow: hidden;
+
+  &.transparent {
+    opacity: $transparency;
+  }
+
+  @media screen and (max-width: $breakpoint) {
+    display: none;
+  }
 }
 
 .hero-video video {
@@ -82,48 +134,35 @@
   position: absolute;
   top: 50%;
   transform: translate3d(-50%, -50%, 0);
-}
 
-.hero-video.transparent {
-  opacity: 0.3;
-}
-
-@media screen and (max-width: 640px) {
-  .hero-video {
-    display: none;
+  &.fullscreen {
+    height: 100%;
+    object-fit: fill;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
   }
-}
-
-.hero-video.fullscreen video {
-  height: 100%;
-  object-fit: fill;
-  position: absolute;
-  width: 100%;
-  z-index: -1;
 }
 
 .hero-btns {
   margin-top: 1.5rem;
-}
 
-@media screen and (max-width: 640px) {
-  .hero-btns .btn {
+  .btn {
     display: flex;
+
+    &:not(:last-child) {
+      margin-bottom: 0.75rem;
+      margin-right: 1.5rem;
+    }
   }
 
-  .hero-btns .btn:not(:last-child) {
-    margin-bottom: 0.75rem;
-  }
-}
-
-@media screen and (min-width: 640px), print {
-  .hero-btns {
+  @media screen and (min-width: $breakpoint), print {
     display: flex;
     justify-content: center;
-  }
 
-  .hero-btns .btn:not(:last-child) {
-    margin-right: 1.5rem;
+    .btn:not(:last-child) {
+      margin-right: 1.5rem;
+    }
   }
 }
 
@@ -139,52 +178,67 @@
   padding: 3rem 1.5rem;
 }
 
-.hero.white {
-  background-color: var(--white);
-  color: var(--black);
-}
+$hero-colors: (
+  white: var(--white),
+  black: var(--black),
+  blue: var(--blue-500),
+  indigo: var(--indigo-500),
+  purple: var(--purple-500),
+  pink: var(--pink-500),
+  red: var(--red-500),
+  orange: var(--orange-500),
+  yellow: var(--yellow-500),
+  green: var(--green-500),
+);
 
-.hero.black {
-  background-color: var(--black);
-  color: var(--white);
-}
+.hero {
+  &.white {
+    background-color: map-get($hero-colors, white);
+    color: map-get($hero-colors, black);
+  }
 
-.hero.blue {
-  background-color: var(--blue-500);
-  color: var(--white);
-}
+  &.black {
+    background-color: map-get($hero-colors, black);
+    color: map-get($hero-colors, white);
+  }
 
-.hero.indigo {
-  background-color: var(--indigo-500);
-  color: var(--white);
-}
+  &.blue {
+    background-color: map-get($hero-colors, blue);
+    color: map-get($hero-colors, white);
+  }
 
-.hero.purple {
-  background-color: var(--purple-500);
-  color: var(--white);
-}
+  &.indigo {
+    background-color: map-get($hero-colors, indigo);
+    color: map-get($hero-colors, white);
+  }
 
-.hero.pink {
-  background-color: var(--pink-500);
-  color: var(--white);
-}
+  &.purple {
+    background-color: map-get($hero-colors, purple);
+    color: map-get($hero-colors, white);
+  }
 
-.hero.red {
-  background-color: var(--red-500);
-  color: var(--white);
-}
+  &.pink {
+    background-color: map-get($hero-colors, pink);
+    color: map-get($hero-colors, white);
+  }
 
-.hero.orange {
-  background-color: var(--orange-500);
-  color: var(--black);
-}
+  &.red {
+    background-color: map-get($hero-colors, red);
+    color: map-get($hero-colors, white);
+  }
 
-.hero.yellow {
-  background-color: var(--yellow-500);
-  color: var(--black);
-}
+  &.orange {
+    background-color: map-get($hero-colors, orange);
+    color: map-get($hero-colors, black);
+  }
 
-.hero.green {
-  background-color: var(--green-500);
-  color: var(--black);
+  &.yellow {
+    background-color: map-get($hero-colors, yellow);
+    color: map-get($hero-colors, black);
+  }
+
+  &.green {
+    background-color: map-get($hero-colors, green);
+    color: map-get($hero-colors, black);
+  }
 }
