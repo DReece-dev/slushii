@@ -1,57 +1,79 @@
+$badge-font-size: 0.75em;
+$badge-padding: 0.45em 0.75em;
+$badge-font-weight: 500;
+$badge-line-height: 1;
+$badge-text-align: center;
+$badge-vertical-align: baseline;
+$badge-border-radius: 0.25rem;
+
 .badge {
   display: inline-block;
-  padding: 0.45em 0.75em;
-  font-size: 0.75em;
-  font-weight: 500;
-  line-height: 1;
+  padding: $badge-padding;
+  font-size: $badge-font-size;
+  font-weight: $badge-font-weight;
+  line-height: $badge-line-height;
   color: #fff;
-  text-align: center;
+  text-align: $badge-text-align;
   white-space: nowrap;
-  vertical-align: baseline;
-  border-radius: 0.25rem;
+  vertical-align: $badge-vertical-align;
+  border-radius: $badge-border-radius;
 
   &:empty {
     display: none;
   }
+  &.rounded {
+    border-radius: 2rem;
+  }
 }
 
+$dark-badge-bg-color: #f3f4f6;
+$dark-badge-color: #333c49;
+$red-badge-bg-color: #fee2e2;
+$red-badge-color: #b24d4d;
+$lightred-badge-bg-color: #fce7f3;
+$lightred-badge-color: #b0416e;
+$yellow-badge-bg-color: #fef3c7;
+$yellow-badge-color: #b37747;
+$green-badge-bg-color: #d1fae5;
+$green-badge-color: #38856c;
+$blue-badge-bg-color: #dbeafe;
+$blue-badge-color: #2547b2;
+$purple-badge-bg-color: #ede9fe;
+$purple-badge-color: #6a36be;
+
 .badge.dark {
-  background-color: #f3f4f6;
-  color: #333c49;
+  background-color: $dark-badge-bg-color;
+  color: $dark-badge-color;
 }
 
 .badge.red {
-  background-color: #fee2e2;
-  color: #b24d4d;
+  background-color: $red-badge-bg-color;
+  color: $red-badge-color;
 }
 
 .badge.lightred {
-  background-color: #fce7f3;
-  color: #b0416e;
+  background-color: $lightred-badge-bg-color;
+  color: $lightred-badge-color;
 }
 
 .badge.yellow {
-  background-color: #fef3c7;
-  color: #b37747;
+  background-color: $yellow-badge-bg-color;
+  color: $yellow-badge-color;
 }
 
 .badge.green {
-  background-color: #d1fae5;
-  color: #38856c;
+  background-color: $green-badge-bg-color;
+  color: $green-badge-color;
 }
 
 .badge.blue {
-  background-color: #dbeafe;
-  color: #2547b2;
+  background-color: $blue-badge-bg-color;
+  color: $blue-badge-color;
 }
 
 .badge.purple {
-  background-color: #ede9fe;
-  color: #6a36be;
-}
-
-.badge.rounded {
-  border-radius: 2rem;
+  background-color: $purple-badge-bg-color;
+  color: $purple-badge-color;
 }
 
 .btn {
