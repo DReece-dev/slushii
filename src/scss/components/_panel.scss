@@ -4,17 +4,17 @@
   display: flex;
   flex-direction: column;
 
-  .panel-header,
-  .panel-footer {
+  &__header,
+  &__footer {
     flex: 0 0 auto;
     padding: 0.8rem;
   }
 
-  .panel-nav {
+  &__nav {
     flex: 0 0 auto;
   }
 
-  .panel-body {
+  &__body {
     flex: 1 1 auto;
     overflow-y: auto;
     padding: 0 0.8rem;

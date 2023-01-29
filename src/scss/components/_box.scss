@@ -1,8 +1,11 @@
+$shadow-color: rgba(10, 10, 10, 0.1);
+$shadow-outline-color: rgba(10, 10, 10, 0.02);
+
 .box {
   background-color: var(--white);
   border-radius: 6px;
-  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
-    0 0px 0 1px rgba(10, 10, 10, 0.02);
+  box-shadow: 0 0.5em 1em -0.125em $shadow-color,
+    0 0px 0 1px $shadow-outline-color;
   display: block;
   padding: 1.25rem;
 }
@@ -23,81 +26,36 @@ a.box {
 
 .box.dark {
   background-color: var(--gray-900);
-  border-radius: 6px;
-  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
-    0 0px 0 1px rgba(10, 10, 10, 0.02);
-  display: block;
-  padding: 1.25rem;
 }
 
 .box.blue {
   background-color: var(--blue-500);
-  border-radius: 6px;
-  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
-    0 0px 0 1px rgba(10, 10, 10, 0.1);
-  display: block;
-  padding: 1.25rem;
 }
 
 .box.indigo {
   background-color: var(--indigo-500);
-  border-radius: 6px;
-  box-shadow: 0 0.5em 1em -0.125em rgba(111, 0, 255, 0.1),
-    0 0px 0 1px (111, 0, 255, 0.1);
-  display: block;
-  padding: 1.25rem;
 }
 
 .box.purple {
   background-color: var(--purple-500);
-  border-radius: 6px;
-  box-shadow: 0 0.5em 1em -0.125em rgba(132, 0, 255, 0.1),
-    0 0px 0 1px rgba(132, 0, 255, 0.1);
-  display: block;
-  padding: 1.25rem;
 }
 
 .box.pink {
   background-color: var(--pink-500);
-  border-radius: 6px;
-  box-shadow: 0 0.5em 1em -0.125em rgba(255, 0, 242, 0.1),
-    0 0px 0 1px rgba(255, 0, 242, 0.1);
-  display: block;
-  padding: 1.25rem;
 }
 
 .box.red {
   background-color: var(--red-500);
-  border-radius: 6px;
-  box-shadow: 0 0.5em 1em -0.125em rgba(255, 0, 0, 0.1),
-    0 0px 0 1px rgba(255, 0, 0, 0.1);
-  display: block;
-  padding: 1.25rem;
 }
 
 .box.orange {
   background-color: var(--orange-500);
-  border-radius: 6px;
-  box-shadow: 0 0.5em 1em -0.125em rgba(255, 145, 0, 0.1),
-    0 0px 0 1px rgba(255, 145, 0, 0.1);
-  display: block;
-  padding: 1.25rem;
 }
 
 .box.yellow {
   background-color: var(--yellow-500);
-  border-radius: 6px;
-  box-shadow: 0 0.5em 1em -0.125em rgba(255, 251, 0, 0.1),
-    0 0px 0 1px rgba(255, 251, 0, 0.1);
-  display: block;
-  padding: 1.25rem;
 }
 
 .box.green {
   background-color: var(--green-500);
-  border-radius: 6px;
-  box-shadow: 0 0.5em 1em -0.125em rgba(0, 255, 34, 0.1),
-    0 0px 0 1px rgba(0, 255, 34, 0.1);
-  display: block;
-  padding: 1.25rem;
 }

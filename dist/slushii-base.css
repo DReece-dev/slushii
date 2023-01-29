@@ -490,6 +490,14 @@ pre {
 	margin: 0;
 }
 
+ol,
+ul,
+li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
 fieldset {
 	margin: 0;
 	padding: 0;
@@ -507,6 +515,20 @@ menu {
 	padding: 0;
 }
 
+table,
+th,
+td,
+thead,
+tbody,
+tfoot {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
 :where(textarea) {
 	margin: 0;
 	resize: vertical;
@@ -519,6 +541,43 @@ button,
 
 :disabled {
 	cursor: default;
+}
+
+input,
+select,
+textarea,
+label,
+button,
+form {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+
+button,
+input,
+select,
+textarea {
+	line-height: normal;
+}
+
+button,
+input[type=button],
+input[type=reset],
+input[type=submit] {
+	cursor: pointer;
+}
+
+button,
+input,
+select,
+textarea {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
 }
 
 img,

@@ -5,16 +5,16 @@
   padding: 3.2rem 1.6rem;
   text-align: center;
 
-  .empty-icon {
+  &__icon {
     margin-bottom: 0.8rem;
   }
 
-  .empty-title,
-  .empty-subtitle {
+  &__title,
+  &__subtitle {
     margin: 0.4rem auto;
   }
 
-  .empty-action {
+  &__action {
     margin-top: 0.8rem;
   }
 }

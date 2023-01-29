@@ -1,22 +1,35 @@
+// Toast SCSS
+
+$toast-width: 350px;
+$toast-font-size: 0.875rem;
+$toast-color: #000;
+$toast-background-color: #fff;
+$toast-border-radius: 5px;
+$toast-padding: 16px;
+$toast-bottom: 30px;
+$toast-opacity: 0.9;
+$toast-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+$toast-left: 50%;
+
 .toast {
   visibility: hidden;
-  width: 350px;
+  width: $toast-width;
   max-width: 100%;
-  font-size: 0.875rem;
+  font-size: $toast-font-size;
   pointer-events: auto;
-  margin-left: -125px;
-  background-color: var(--white);
+  margin-left: calc($toast-width / 2);
+  background-color: $toast-background-color;
   background-clip: padding-box;
-  color: var(--black);
+  color: $toast-color;
   text-align: center;
-  border-radius: 5px;
-  padding: 16px;
+  border-radius: $toast-border-radius;
+  padding: $toast-padding;
   position: fixed;
   z-index: 1;
-  left: 50%;
-  bottom: 30px;
-  opacity: 90%;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  left: $toast-left;
+  bottom: $toast-bottom;
+  opacity: $toast-opacity;
+  box-shadow: $toast-shadow;
 
   &.show {
     visibility: visible;
@@ -34,7 +47,7 @@
     }
 
     to {
-      bottom: 30px;
+      bottom: $toast-bottom;
       opacity: 1;
     }
   }
@@ -46,14 +59,14 @@
     }
 
     to {
-      bottom: 30px;
+      bottom: $toast-bottom;
       opacity: 1;
     }
   }
 
   @-webkit-keyframes fadeout {
     from {
-      bottom: 30px;
+      bottom: $toast-bottom;
       opacity: 1;
     }
 
@@ -65,7 +78,7 @@
 
   @keyframes fadeout {
     from {
-      bottom: 30px;
+      bottom: $toast-bottom;
       opacity: 1;
     }
 
@@ -76,12 +89,15 @@
   }
 }
 
+$--white: #fff;
+$--black: #000;
+
 .toast-container {
   width: max-content;
   max-width: 100%;
   pointer-events: none;
 
-  > :not(:last-child) {
+  :not(:last-child) {
     margin-bottom: 0.75rem;
   }
 }

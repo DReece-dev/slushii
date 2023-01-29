@@ -2,6 +2,7 @@
   align-content: space-between;
   align-items: flex-start;
   display: flex;
+  flex-wrap: wrap; /* add this to allow wrapping of items within the tile */
 
   .title-icon,
   .tile-action {

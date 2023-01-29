@@ -66,25 +66,23 @@
     box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.045);
   }
 
-  .alert.show {
+  &.show {
     right: 0;
-
     transition: right 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   }
 
-  .alert.fade {
+  &.fade {
     visibility: hidden;
     opacity: 0;
-
     transition: visibility 0s 0.4s, opacity 0.4s linear;
   }
 
-  .alert.alert-block {
+  &.alert-block {
     display: block;
-  }
 
-  .alert.alert-block.dispose {
-    display: none;
+    &.dispose {
+      display: none;
+    }
   }
 }
 

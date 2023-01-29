@@ -1,18 +1,22 @@
+$parallax-container-height: 500px;
+$parallax-img-z-index: -1;
+$parallax-opacity: 0;
+
 .parallax-container {
   position: relative;
   overflow: hidden;
-  height: 500px;
+  height: $parallax-container-height;
 
-  .parallax {
+  & .parallax {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: -1;
+    z-index: $parallax-img-z-index;
 
     img {
-      opacity: 0;
+      opacity: $parallax-opacity;
       position: absolute;
       left: 50%;
       bottom: 0;
