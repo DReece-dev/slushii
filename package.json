@@ -4,10 +4,11 @@
   "description": "Slushii CSS Framework",
   "main": "gulpfile.js",
   "scripts": {
-    "compile": "gulp css",
-    "purge": "gulp purgecss",
-    "mini": "gulp mini",
-    "build": "gulp css && gulp purgecss && gulp mini",
+    "build": "gulp",
+    "watch": "gulp watch",
+    "build:prod": "NODE_ENV=production gulp",
+    "build:css": "gulp css",
+    "build:mini": "gulp mini",
     "browser-list-update": "npx browserslist@latest --update-db"
   },
   "repository": {
