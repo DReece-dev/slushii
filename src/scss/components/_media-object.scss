@@ -3,7 +3,7 @@
   margin-bottom: 1rem;
   flex-wrap: nowrap;
 
-  @media (max-width: 39.99875em) {
+  @media (max-width: 40em) {
     flex-wrap: wrap;
   }
 
@@ -20,7 +20,7 @@
     margin-bottom: 0;
   }
 
-  @media (max-width: 39.99875em) {
+  @media (max-width: 40em) {
     padding: 0;
     padding-bottom: 1rem;
     flex-basis: 100%;
@@ -32,6 +32,6 @@
   }
 
   &.main-section {
-    flex: 1 1 0px;
+    flex: 1 0 auto;
   }
 }

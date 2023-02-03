@@ -21,18 +21,18 @@
     &:first-child a {
       padding-left: 0;
     }
-  }
 
-  li.active a {
-    color: #363636;
-    cursor: default;
-    pointer-events: none;
-  }
+    &.active a {
+      color: #363636;
+      cursor: default;
+      pointer-events: none;
+    }
 
-  li + li {
-    &::before {
-      color: #b5b5b5;
-      content: '\0002f';
+    & + li {
+      &::before {
+        color: #b5b5b5;
+        content: '\0002f';
+      }
     }
   }
 
@@ -42,6 +42,14 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
+
+    &.center {
+      justify-content: center;
+    }
+
+    &.right {
+      justify-content: flex-end;
+    }
   }
 
   .icon {
@@ -52,16 +60,6 @@
     &:last-child {
       margin-left: 0.5em;
     }
-  }
-
-  &.centered ol,
-  &.centered ul {
-    justify-content: center;
-  }
-
-  &.right ol,
-  &.right ul {
-    justify-content: flex-end;
   }
 
   &.small {
@@ -76,34 +74,42 @@
     font-size: 1.5rem;
   }
 
-  &.has-arrow-separator {
+  &.has-separator {
     li + li {
       &::before {
         content: '\02192';
       }
     }
-  }
 
-  &.has-bullet-separator {
-    li + li {
-      &::before {
-        content: '\02022';
+    &.arrow {
+      li + li {
+        &::before {
+          content: '\02192';
+        }
       }
     }
-  }
 
-  &.has-dot-separator {
-    li + li {
-      &:before {
-        content: '\000b7';
+    &.bullet {
+      li + li {
+        &::before {
+          content: '\02022';
+        }
       }
     }
-  }
 
-  &.has-succeeds-separator {
-    li + li {
-      &::before {
-        content: '\0227B';
+    &.dot {
+      li + li {
+        &::before {
+          content: '\000b7';
+        }
+      }
+    }
+
+    &.succeeds {
+      li + li {
+        &::before {
+          content: '\0227B';
+        }
       }
     }
   }

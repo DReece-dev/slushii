@@ -1,36 +1,51 @@
+$notification-background-color: whitesmoke;
+$notification-text-color: currentColor;
+$notification-link-color: currentColor;
+$notification-link-decoration: underline;
+$notification-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
+  0 0px 0 1px rgba(10, 10, 10, 0.02);
+$notification-box-radius: 4px;
+$notification-width: 25em;
+$notification-padding: 1rem;
+$notification-delete-position: absolute;
+$notification-delete-top: 0.5rem;
+$notification-delete-right: 0.5rem;
+
 .notification {
   display: inline-flex;
   flex-direction: row;
-  background-color: whitesmoke;
-  border-radius: 4px;
+  background-color: $notification-background-color;
+  border-radius: $notification-box-radius;
   position: relative;
-  padding: 1rem;
-  width: 25em;
+  padding: $notification-padding;
+  width: $notification-width;
   height: max-content;
-  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
-    0 0px 0 1px rgba(10, 10, 10, 0.02);
+  box-shadow: $notification-shadow;
 
-  a:not(.btn):not(.dropdown-item) {
-    color: currentColor;
-    text-decoration: underline;
-  }
-
+  &,
+  a:not(.btn):not(.dropdown-item),
   strong,
   .title,
   .subtitle,
-  .content {
-    color: currentColor;
+  .content,
+  pre,
+  code {
+    color: $notification-text-color;
+  }
+
+  a:not(.btn):not(.dropdown-item) {
+    text-decoration: $notification-link-decoration;
   }
 
   pre,
   code {
-    background: transparent;
+    background-color: transparent;
   }
 
   .delete {
-    right: 0.5rem;
-    top: 0.5rem;
-    position: absolute;
+    top: $notification-delete-top;
+    right: $notification-delete-right;
+    position: $notification-delete-position !important;
   }
 
   &.white {

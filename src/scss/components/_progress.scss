@@ -1,15 +1,18 @@
-@-webkit-keyframes progress-bar-stripes {
-  0% {
-    background-position-x: 1rem;
-  }
-}
-
+// Animations
 @keyframes progress-bar-stripes {
   0% {
     background-position-x: 1rem;
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .progress-bar {
+    transition: none;
+    animation: none;
+  }
+}
+
+// Progress Container
 .progress {
   display: flex;
   height: 1rem;
@@ -18,6 +21,7 @@
   background-color: #e9ecef;
   border-radius: 0.25rem;
 
+  // Indeterminate State
   &:indeterminate {
     animation-duration: 1.5s;
     animation-iteration-count: infinite;
@@ -28,20 +32,24 @@
     background-position: top left;
     background-repeat: no-repeat;
     background-size: 150% 150%;
+
+    // Webkit Progress Bar
+    &::-webkit-progress-bar {
+      background-color: transparent;
+    }
+
+    // Moz Progress Bar
+    &::-moz-progress-bar {
+      background-color: transparent;
+    }
+
+    // MS Fill
+    &::-ms-fill {
+      animation-name: none;
+    }
   }
 
-  &:indeterminate::-webkit-progress-bar {
-    background-color: transparent;
-  }
-
-  &:indeterminate::-moz-progress-bar {
-    background-color: transparent;
-  }
-
-  &:indeterminate::-ms-fill {
-    animation-name: none;
-  }
-
+  // Sizes
   &.small {
     height: 0.75rem;
   }
@@ -55,6 +63,7 @@
   }
 }
 
+// Progress Bar
 .progress-bar {
   display: flex;
   flex-direction: column;
@@ -66,6 +75,7 @@
   background-color: var(--blue-500);
   transition: width 0.6s ease;
 
+  // Striped
   &.striped {
     background-image: linear-gradient(
       45deg,
@@ -80,19 +90,8 @@
     background-size: 1rem 1rem;
   }
 
+  // Animated
   &.animated {
     animation: 1s linear infinite progress-bar-stripes;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .progress-bar {
-    transition: none;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .progress-bar.animated {
-    animation: none;
   }
 }

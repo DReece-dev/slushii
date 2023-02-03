@@ -4843,22 +4843,22 @@ mega-dropdown-content:hover {
 	justify-content: flex-start;
 }
 
+.breadcrumb ul.center,
+.breadcrumb ol.center {
+	justify-content: center;
+}
+
+.breadcrumb ul.right,
+.breadcrumb ol.right {
+	justify-content: flex-end;
+}
+
 .breadcrumb .icon:first-child {
 	margin-right: 0.5em;
 }
 
 .breadcrumb .icon:last-child {
 	margin-left: 0.5em;
-}
-
-.breadcrumb.centered ol,
-.breadcrumb.centered ul {
-	justify-content: center;
-}
-
-.breadcrumb.right ol,
-.breadcrumb.right ul {
-	justify-content: flex-end;
 }
 
 .breadcrumb.small {
@@ -4873,19 +4873,23 @@ mega-dropdown-content:hover {
 	font-size: 1.5rem;
 }
 
-.breadcrumb.has-arrow-separator li + li::before {
+.breadcrumb.has-separator li + li::before {
 	content: "→";
 }
 
-.breadcrumb.has-bullet-separator li + li::before {
+.breadcrumb.has-separator.arrow li + li::before {
+	content: "→";
+}
+
+.breadcrumb.has-separator.bullet li + li::before {
 	content: "•";
 }
 
-.breadcrumb.has-dot-separator li + li:before {
+.breadcrumb.has-separator.dot li + li::before {
 	content: "·";
 }
 
-.breadcrumb.has-succeeds-separator li + li::before {
+.breadcrumb.has-separator.succeeds li + li::before {
 	content: "≻";
 }
 
@@ -5475,27 +5479,30 @@ a.box:active {
 	box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
 }
 
-.notification a:not(.btn):not(.dropdown-item) {
-	color: currentColor;
-	text-decoration: underline;
-}
-
+.notification,
+.notification a:not(.btn):not(.dropdown-item),
 .notification strong,
 .notification .title,
 .notification .subtitle,
-.notification .content {
+.notification .content,
+.notification pre,
+.notification code {
 	color: currentColor;
+}
+
+.notification a:not(.btn):not(.dropdown-item) {
+	text-decoration: underline;
 }
 
 .notification pre,
 .notification code {
-	background: transparent;
+	background-color: transparent;
 }
 
 .notification .delete {
-	right: 0.5rem;
 	top: 0.5rem;
-	position: absolute;
+	right: 0.5rem;
+	position: absolute !important;
 }
 
 .notification.white {
@@ -5580,18 +5587,24 @@ a.box:active {
 
 .panel__header,
 .panel__footer {
-	flex: 0 0 auto;
+	align-items: center;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
 	padding: 0.8rem;
 }
 
 .panel__nav {
-	flex: 0 0 auto;
+	align-items: center;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
 }
 
 .panel__body {
-	flex: 1 1 auto;
+	flex: 1;
 	overflow-y: auto;
-	padding: 0 0.8rem;
+	padding: 0.8rem;
 }
 
 .tile {
@@ -5610,14 +5623,7 @@ a.box:active {
 
 .tile .tile-content {
 	flex: 1 1 auto;
-}
-
-.tile .tile-content:not(:first-child) {
-	padding-left: 0.4rem;
-}
-
-.tile .tile-content:not(:last-child) {
-	padding-right: 0.4rem;
+	padding: 0 0.4rem;
 }
 
 .tile .tile-title,
@@ -5639,6 +5645,24 @@ a.box:active {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
+}
+
+.tile.is-large .tile-content {
+	padding: 0 1rem;
+}
+
+.tile.is-large .tile-title,
+.tile.is-large .tile-subtitle {
+	font-size: 1.25rem;
+}
+
+.tile.is-small .tile-content {
+	padding: 0 0.25rem;
+}
+
+.tile.is-small .tile-title,
+.tile.is-small .tile-subtitle {
+	font-size: 1rem;
 }
 
 .progress {
@@ -6239,7 +6263,7 @@ a.box:active {
 }
 
 .media-object-section.main-section {
-	flex: 1 1 0px;
+	flex: 1 0 auto;
 }
 
 .table-responsive {
@@ -39907,9 +39931,6 @@ hover\:bg-slate:hover {
 
 .progress-bar {
 	transition: none;
-}
-
-.progress-bar.animated {
 	animation: none;
 }
 
@@ -121244,7 +121265,7 @@ p {
 
 }
 
-@media (max-width: 39.99875em) {
+@media (max-width: 40em) {
 
 .media-object {
 	flex-wrap: wrap;

@@ -13,14 +13,7 @@
 
   .tile-content {
     flex: 1 1 auto;
-
-    &:not(:first-child) {
-      padding-left: 0.4rem;
-    }
-
-    &:not(:last-child) {
-      padding-right: 0.4rem;
-    }
+    padding: 0 0.4rem;
   }
 
   .tile-title,
@@ -41,6 +34,28 @@
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
+    }
+  }
+
+  &.is-large {
+    .tile-content {
+      padding: 0 1rem;
+    }
+
+    .tile-title,
+    .tile-subtitle {
+      font-size: 1.25rem;
+    }
+  }
+
+  &.is-small {
+    .tile-content {
+      padding: 0 0.25rem;
+    }
+
+    .tile-title,
+    .tile-subtitle {
+      font-size: 1rem;
     }
   }
 }
