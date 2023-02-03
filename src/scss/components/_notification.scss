@@ -1,33 +1,25 @@
-/* Right Cornor Notification */
 .notification {
   display: inline-flex;
   flex-direction: row;
   background-color: whitesmoke;
   border-radius: 4px;
   position: relative;
-  padding-left: 1rem;
+  padding: 1rem;
   width: 25em;
   height: max-content;
-  padding-bottom: 1.5rem;
   box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
     0 0px 0 1px rgba(10, 10, 10, 0.02);
 
-  a {
-    &:not(.btn) {
-      &:not(.dropdown-item) {
-        color: currentColor;
-        text-decoration: underline;
-      }
-    }
-  }
-
-  strong {
+  a:not(.btn):not(.dropdown-item) {
     color: currentColor;
+    text-decoration: underline;
   }
 
-  code,
-  pre {
-    background: white;
+  strong,
+  .title,
+  .subtitle,
+  .content {
+    color: currentColor;
   }
 
   pre,
@@ -35,16 +27,10 @@
     background: transparent;
   }
 
-  > .delete {
+  .delete {
     right: 0.5rem;
-    position: absolute;
     top: 0.5rem;
-  }
-
-  .title,
-  .subtitle,
-  .content {
-    color: currentColor;
+    position: absolute;
   }
 
   &.white {

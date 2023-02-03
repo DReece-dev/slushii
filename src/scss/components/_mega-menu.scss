@@ -7,17 +7,15 @@
     text-decoration: none;
   }
 
-  a {
-    &:hover {
-      color: var(--blue-500);
-    }
+  &:hover {
+    color: var(--blue-500);
   }
 }
 
 .mega-dropdown {
   float: left;
   overflow: hidden;
-  white-space: none;
+  white-space: nowrap;
 
   .mega-dropbtn {
     font-size: 16px;
@@ -26,18 +24,18 @@
     color: black;
     padding: 14px 16px;
     background-color: inherit;
-    font: inherit;
+    font-family: inherit;
     margin: 0;
+  }
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: transparent;
+    color: var(--blue-500);
   }
 }
 
-.mega-navbar a:hover,
-.mega-dropdown:hover .mega-dropbtn {
-  background-color: transparent;
-  color: var(--blue-500);
-}
-
-.mega-dropdown-content {
+mega-dropdown-content {
   display: none;
   position: absolute;
   background-color: #f9f9f9;
@@ -45,10 +43,10 @@
   left: 0;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
-}
 
-.mega-dropdown:hover .mega-dropdown-content {
-  display: block;
+  &:hover {
+    display: block;
+  }
 }
 
 .mega-column {
@@ -73,16 +71,14 @@
   }
 
   @media screen and (max-width: 600px) {
-    .mega-column {
-      width: 100%;
-      height: auto;
-    }
+    width: 100%;
+    height: auto;
   }
 }
 
 .mega-row {
   &:after {
-    content: "";
+    content: '';
     display: table;
     clear: both;
   }

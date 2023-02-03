@@ -1,12 +1,12 @@
 .label {
   display: inline-block;
   padding: 0.33333rem 0.5rem;
-  border-radius: 0;
   font-size: 0.8rem;
   line-height: 1;
   white-space: nowrap;
   cursor: default;
   color: #000000;
+  border-radius: 5px;
 
   &.blue {
     background: var(--blue-400);
@@ -39,7 +39,6 @@
   }
 
   &.rounded {
-    border: none;
-    border-radius: 5px;
+    border-radius: 20px;
   }
 }

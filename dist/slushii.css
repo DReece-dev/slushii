@@ -1563,57 +1563,104 @@ meter {
 	padding: 3rem 1.5rem;
 }
 
-.hero {
+/* Default values */
+
+.hero-section {
+	background-color: var(--white);
+	color: var(--black);
 	align-items: stretch;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 }
 
-.hero-image {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
+.hero-section-body {
+	padding: 3rem 1.5rem;
+	flex-grow: 1;
+	flex-shrink: 0;
+}
+
+/* Image background */
+
+.hero-section-image {
 	height: 65vh;
 	padding: 1em;
 	box-sizing: border-box;
-	color: white;
 	background: url() center center no-repeat;
 	background-size: cover;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
 
-.hero .navbar {
+/* Navbar styles */
+
+.hero-section .navbar {
 	background: none;
 }
 
-.hero.small .hero-body {
+/* Small size */
+
+.hero-section.small .hero-section-body {
 	padding: 1.5rem;
 }
 
-.hero.halfheight .hero-body,
-.hero.fullheight .hero-body,
-.hero.fullheight-with-navbar .hero-body {
+/* Medium size */
+
+/* Large size */
+
+/* XLarge size */
+
+/* XXLarge size */
+
+.hero.halfheight {
+	min-height: 50vh;
+}
+
+.hero.halfheight .hero-body {
 	align-items: center;
 	display: flex;
 }
 
-.hero.halfheight .hero-body > .container,
-.hero.fullheight .hero-body > .container,
-.hero.fullheight-with-navbar .hero-body > .container {
+.hero.halfheight .hero-body > .container {
 	flex-grow: 1;
 	flex-shrink: 1;
-}
-
-.hero.halfheight {
-	min-height: 50vh;
 }
 
 .hero.fullheight {
 	min-height: 100vh;
 }
 
+.hero.fullheight .hero-body {
+	align-items: center;
+	display: flex;
+}
+
+.hero.fullheight .hero-body > .container {
+	flex-grow: 1;
+	flex-shrink: 1;
+}
+
+.hero.fullheight-with-navbar {
+	min-height: 100vh;
+}
+
+.hero.fullheight-with-navbar .hero-body {
+	align-items: center;
+	display: flex;
+}
+
+.hero.fullheight-with-navbar .hero-body > .container {
+	flex-grow: 1;
+	flex-shrink: 1;
+}
+
 .hero-video {
 	overflow: hidden;
+}
+
+.hero-video.transparent {
+	opacity: 0.3;
 }
 
 .hero-video video {
@@ -1625,11 +1672,7 @@ meter {
 	transform: translate3d(-50%, -50%, 0);
 }
 
-.hero-video.transparent {
-	opacity: 0.3;
-}
-
-.hero-video.fullscreen video {
+.hero-video video.fullscreen {
 	height: 100%;
 	-o-object-fit: fill;
 	object-fit: fill;
@@ -1640,6 +1683,15 @@ meter {
 
 .hero-btns {
 	margin-top: 1.5rem;
+}
+
+.hero-btns .btn {
+	display: flex;
+}
+
+.hero-btns .btn:not(:last-child) {
+	margin-bottom: 0.75rem;
+	margin-right: 1.5rem;
 }
 
 .hero-head,
@@ -3247,7 +3299,7 @@ fieldset[disabled] .btn {
 }
 
 .empty__icon {
-	margin-bottom: 0.8rem;
+	margin-bottom: 1rem;
 }
 
 .empty__title,
@@ -4676,14 +4728,14 @@ a.navbar-item.active,
 	text-decoration: none;
 }
 
-.mega-navbar a:hover {
+.mega-navbar:hover {
 	color: var(--blue-500);
 }
 
 .mega-dropdown {
 	float: left;
 	overflow: hidden;
-	white-space: none;
+	white-space: nowrap;
 }
 
 .mega-dropdown .mega-dropbtn {
@@ -4693,17 +4745,18 @@ a.navbar-item.active,
 	color: black;
 	padding: 14px 16px;
 	background-color: inherit;
-	font: inherit;
+	font-family: inherit;
 	margin: 0;
 }
 
-.mega-navbar a:hover,
-.mega-dropdown:hover .mega-dropbtn {
+.mega-dropdown:hover,
+.mega-dropdown:active,
+.mega-dropdown:focus {
 	background-color: transparent;
 	color: var(--blue-500);
 }
 
-.mega-dropdown-content {
+mega-dropdown-content {
 	display: none;
 	position: absolute;
 	background-color: #f9f9f9;
@@ -4713,7 +4766,7 @@ a.navbar-item.active,
 	z-index: 1;
 }
 
-.mega-dropdown:hover .mega-dropdown-content {
+mega-dropdown-content:hover {
 	display: block;
 }
 
@@ -5035,10 +5088,18 @@ a.box:active {
 	position: relative;
 }
 
-.modal-card-head {
-	border-bottom: 1px solid #dbdbdb;
+.modal-card-head:first-of-type,
+.modal-card-foot:first-of-type {
 	border-top-left-radius: 6px;
 	border-top-right-radius: 6px;
+	border-bottom: 1px solid #dbdbdb;
+}
+
+.modal-card-head:last-of-type,
+.modal-card-foot:last-of-type {
+	border-bottom-left-radius: 6px;
+	border-bottom-right-radius: 6px;
+	border-top: 1px solid #dbdbdb;
 }
 
 .modal-card-title {
@@ -5052,9 +5113,6 @@ a.box:active {
 	display: flex;
 	flex-direction: column;
 	width: 100%;
-	border-bottom-left-radius: 6px;
-	border-bottom-right-radius: 6px;
-	border-top: 1px solid #dbdbdb;
 }
 
 .modal-card-foot .btn:not(:last-child) {
@@ -5229,12 +5287,12 @@ a.box:active {
 .label {
 	display: inline-block;
 	padding: 0.33333rem 0.5rem;
-	border-radius: 0;
 	font-size: 0.8rem;
 	line-height: 1;
 	white-space: nowrap;
 	cursor: default;
 	color: #000000;
+	border-radius: 5px;
 }
 
 .label.blue {
@@ -5268,8 +5326,7 @@ a.box:active {
 }
 
 .label.rounded {
-	border: none;
-	border-radius: 5px;
+	border-radius: 20px;
 }
 
 .alert {
@@ -5405,19 +5462,16 @@ a.box:active {
 	color: var(--white);
 }
 
-/* Right Cornor Notification */
-
 .notification {
 	display: inline-flex;
 	flex-direction: row;
 	background-color: whitesmoke;
 	border-radius: 4px;
 	position: relative;
-	padding-left: 1rem;
+	padding: 1rem;
 	width: 25em;
 	height: -moz-max-content;
 	height: max-content;
-	padding-bottom: 1.5rem;
 	box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
 }
 
@@ -5426,13 +5480,11 @@ a.box:active {
 	text-decoration: underline;
 }
 
-.notification strong {
+.notification strong,
+.notification .title,
+.notification .subtitle,
+.notification .content {
 	color: currentColor;
-}
-
-.notification code,
-.notification pre {
-	background: white;
 }
 
 .notification pre,
@@ -5440,16 +5492,10 @@ a.box:active {
 	background: transparent;
 }
 
-.notification > .delete {
+.notification .delete {
 	right: 0.5rem;
-	position: absolute;
 	top: 0.5rem;
-}
-
-.notification .title,
-.notification .subtitle,
-.notification .content {
-	color: currentColor;
+	position: absolute;
 }
 
 .notification.white {
@@ -5552,7 +5598,9 @@ a.box:active {
 	align-content: space-between;
 	align-items: flex-start;
 	display: flex;
-	flex-wrap: wrap; /* add this to allow wrapping of items within the tile */
+	flex-wrap: wrap;
+	margin: 1rem;
+	padding: 0.5rem;
 }
 
 .tile .title-icon,
@@ -5661,9 +5709,8 @@ a.box:active {
 
 .slider {
 	position: relative;
-	height: 0.5rem;
-	margin-top: 1.25rem;
-	margin-bottom: 2.25rem;
+	height: 0.5em;
+	margin: 1.25em 0 2.25em;
 	background-color: #e6e6e6;
 	cursor: pointer;
 	-webkit-user-select: none;
@@ -5674,9 +5721,9 @@ a.box:active {
 
 .slider.vertical {
 	display: inline-block;
-	width: 0.5rem;
-	height: 12.5rem;
-	margin: 0 1.25rem;
+	width: 0.5em;
+	height: 12.5em;
+	margin: 0 1.25em;
 	transform: scale(1, -1);
 }
 
@@ -5692,7 +5739,7 @@ a.box:active {
 	left: 0;
 	display: inline-block;
 	max-width: 100%;
-	height: 0.5rem;
+	height: 0.5em;
 	background-color: #cacaca;
 	transition: all 0.2s ease-in-out;
 }
@@ -5703,7 +5750,7 @@ a.box:active {
 
 .slider-fill.vertical {
 	top: 0;
-	width: 0.5rem;
+	width: 0.5em;
 	max-height: 100%;
 }
 
@@ -5714,8 +5761,8 @@ a.box:active {
 	left: 0;
 	z-index: 1;
 	display: inline-block;
-	width: 1.4rem;
-	height: 1.4rem;
+	width: 1.4em;
+	height: 1.4em;
 	border-radius: 0;
 	background-color: #007aff;
 	transition: all 0.2s ease-in-out;
@@ -5734,8 +5781,8 @@ a.box:active {
 	position: absolute;
 	top: 0;
 	left: 50%;
-	width: 1.4rem;
-	height: 1.4rem;
+	width: 1.4em;
+	height: 1.4em;
 	transform: translateX(-50%);
 }
 
@@ -6023,13 +6070,6 @@ a.box:active {
 	border-bottom-right-radius: 0;
 }
 
-.collapse-panel[open] .collapse-header:focus {
-	color: rgba(0, 0, 0, 0.85);
-	border-color: rgba(0, 0, 0, 0.2);
-	box-shadow: none;
-	outline: none;
-}
-
 .collapse-header {
 	list-style-type: none;
 }
@@ -6186,22 +6226,15 @@ a.box:active {
 }
 
 .media-object img {
-	max-width: none;
+	max-width: 100%;
 }
 
 .media-object-section {
-	flex: 0 1 auto;
+	padding: 0 1rem;
+	flex: 1 1 auto;
 }
 
-.media-object-section:first-child {
-	padding-right: 1rem;
-}
-
-.media-object-section:last-child:not(:nth-child(2)) {
-	padding-left: 1rem;
-}
-
-.media-object-section > :last-child {
+.media-object-section:last-child > :last-child {
 	margin-bottom: 0;
 }
 
@@ -6523,11 +6556,11 @@ a.box:active {
 	min-height: 1.8em;
 }
 
-.placeholder-glow .placeholder {
+.placeholder.glow {
 	animation: placeholder-glow 2s ease-in-out infinite;
 }
 
-.placeholder-wave {
+.placeholder.wave {
 	-webkit-mask-image: linear-gradient(130deg, #000 55%, rgba(0, 0, 0, 0.8) 75%, #000 95%);
 	mask-image: linear-gradient(130deg, #000 55%, rgba(0, 0, 0, 0.8) 75%, #000 95%);
 	-webkit-mask-size: 200% 100%;
@@ -7603,10 +7636,10 @@ input:checked + label > .switch-inactive {
 	color: #212529;
 	background-color: #fff;
 	background-clip: padding-box;
-	border: 1px solid #ced4da;
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
+	border: 1px solid #ced4da;
 	border-radius: 0.25rem;
 }
 
@@ -79429,7 +79462,7 @@ a.navbar-item.active:not(:focus):not(:hover),
 
 @media screen and (min-width: 768px), print {
 
-.hero.medium .hero-body {
+.hero-section.medium .hero-section-body {
 	padding: 9rem 1.5rem;
 }
 
@@ -93405,10 +93438,6 @@ a.navbar-item.active:not(:focus):not(:hover),
 
 @media screen and (min-width: 1024px) {
 
-.section {
-	padding: 3rem 3rem;
-}
-
 .section.xs-small {
 	padding: 4.5rem 1.5rem;
 }
@@ -93433,7 +93462,7 @@ a.navbar-item.active:not(:focus):not(:hover),
 
 @media screen and (min-width: 1024px), print {
 
-.hero.large .hero-body {
+.hero-section.large .hero-section-body {
 	padding: 18rem 1.5rem;
 }
 
@@ -107016,7 +107045,7 @@ h4,
 
 @media screen and (min-width: 1280px), print {
 
-.hero.xlarge .hero-body {
+.hero-section.xlarge .hero-section-body {
 	padding: 24rem 1.5rem;
 }
 
@@ -120381,7 +120410,7 @@ h4,
 
 @media screen and (min-width: 1536px), print {
 
-.hero.xxlarge .hero-body {
+.hero-section.xxlarge .hero-section-body {
 	padding: 30rem 1.5rem;
 }
 
@@ -121148,14 +121177,6 @@ body.has-navbar-fixed-bottom-touch {
 	display: none;
 }
 
-.hero-btns .btn {
-	display: flex;
-}
-
-.hero-btns .btn:not(:last-child) {
-	margin-bottom: 0.75rem;
-}
-
 }
 
 @media (max-width: 640px) {
@@ -121216,27 +121237,27 @@ p {
 
 @media screen and (max-width: 600px) {
 
-.mega-column .mega-column {
+.mega-column {
 	width: 100%;
 	height: auto;
 }
 
 }
 
-@media print, screen and (max-width: 39.99875em) {
+@media (max-width: 39.99875em) {
 
-.media-object .media-object.stack-for-small {
+.media-object {
 	flex-wrap: wrap;
 }
 
-.media-object-section .stack-for-small .media-object-section {
+.media-object-section {
 	padding: 0;
 	padding-bottom: 1rem;
 	flex-basis: 100%;
 	max-width: 100%;
 }
 
-.media-object-section .stack-for-small .media-object-section img {
+.media-object-section img {
 	width: 100%;
 }
 
