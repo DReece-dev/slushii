@@ -293,6 +293,10 @@ pre {
   margin: 0;
 }
 
+pre {
+  tab-size: var(--tab-size);
+}
+
 ol,
 ul,
 li {
