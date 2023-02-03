@@ -218,6 +218,7 @@
 	--breakpoint-l: 1042px;
 	--breakpoint-xl: 1280px;
 	--breakpoint-xxl: 1536px;
+	--tab-size: 4;
 }
 
 *:where(:not(html,
@@ -488,6 +489,12 @@ figure,
 p,
 pre {
 	margin: 0;
+}
+
+pre {
+	-moz-tab-size: var(--tab-size);
+	-o-tab-size: var(--tab-size);
+	tab-size: var(--tab-size);
 }
 
 ol,
