@@ -7,7 +7,7 @@ const cssnano = require('cssnano');
 const sourcemaps = require('gulp-sourcemaps');
 const gulpif = require('gulp-if');
 const rename = require('gulp-rename');
-const mergeMediaQueries = require('gulp-merge-media-queries');
+// const mergeMediaQueries = require('gulp-merge-media-queries');
 const plumber = require('gulp-plumber');
 const cached = require('gulp-cached');
 
@@ -21,7 +21,7 @@ gulp.task('css', function () {
         .pipe(cached('css'))
         .pipe(sass().on('error', sass.logError))
         .pipe(postcss(processors))
-        .pipe(mergeMediaQueries())
+        // .pipe(mergeMediaQueries())
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('./dist'));
 });
