@@ -1,61 +1,59 @@
 $display-breakpoint: 1200px;
 
-.display-1 {
-  font-size: calc(1.625rem + 4.5vw);
-  font-weight: 300;
-  line-height: 1.2;
+$font-weight: 300;
+$line-height: 1.2;
+$minimum-font-size: 1.6rem;
 
-  @media (min-width: $display-breakpoint) {
-    font-size: 5rem;
+.display-heading {
+  font-weight: $font-weight;
+  line-height: $line-height;
+  font-size: $minimum-font-size;
+
+  &-1 {
+    font-size: calc($minimum-font-size + 4.5em);
+
+    @media (min-width: $display-breakpoint) {
+      font-size: 5rem;
+    }
   }
-}
 
-.display-2 {
-  font-size: calc(1.575rem + 3.9vw);
-  font-weight: 300;
-  line-height: 1.2;
+  &-2 {
+    font-size: calc($minimum-font-size + 3.9em);
 
-  @media (min-width: $display-breakpoint) {
-    font-size: 4.5rem;
+    @media (min-width: $display-breakpoint) {
+      font-size: 4.5rem;
+    }
   }
-}
 
-.display-3 {
-  font-size: calc(1.525rem + 3.3vw);
-  font-weight: 300;
-  line-height: 1.2;
+  &-3 {
+    font-size: calc($minimum-font-size + 3.3em);
 
-  @media (min-width: $display-breakpoint) {
-    font-size: 4rem;
+    @media (min-width: $display-breakpoint) {
+      font-size: 4rem;
+    }
   }
-}
 
-.display-4 {
-  font-size: calc(1.475rem + 2.7vw);
-  font-weight: 300;
-  line-height: 1.2;
+  &-4 {
+    font-size: calc($minimum-font-size + 2.7em);
 
-  @media (min-width: $display-breakpoint) {
-    font-size: 3.5rem;
+    @media (min-width: $display-breakpoint) {
+      font-size: 3.5rem;
+    }
   }
-}
 
-.display-5 {
-  font-size: calc(1.425rem + 2.1vw);
-  font-weight: 300;
-  line-height: 1.2;
+  &-5 {
+    font-size: calc($minimum-font-size + 2.1em);
 
-  @media (min-width: $display-breakpoint) {
-    font-size: 3rem;
+    @media (min-width: $display-breakpoint) {
+      font-size: 3rem;
+    }
   }
-}
 
-.display-6 {
-  font-size: calc(1.375rem + 1.5vw);
-  font-weight: 300;
-  line-height: 1.2;
+  &-6 {
+    font-size: calc($minimum-font-size + 1.5em);
 
-  @media (min-width: $display-breakpoint) {
-    font-size: 2.5rem;
+    @media (min-width: $display-breakpoint) {
+      font-size: 2.5rem;
+    }
   }
 }

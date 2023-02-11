@@ -6,9 +6,9 @@
   z-index: 40;
   border-radius: 0.5rem;
   text-align: center;
-  margin: 20px;
   box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
     0 0px 0 1px rgba(10, 10, 10, 0.02);
+  padding: 2rem;
 
   &.is-active {
     display: flex;
@@ -23,7 +23,6 @@
 .modal-card {
   max-height: calc(100vh - 160px);
   overflow: auto;
-  position: relative;
   width: 100%;
 
   @media screen and (min-width: 769px) {
@@ -36,7 +35,7 @@
 .modal-close {
   background: none;
   height: 40px;
-  position: fixed;
+  position: absolute;
   right: 20px;
   top: 20px;
   width: 40px;
@@ -74,7 +73,6 @@
 
 .modal-card-title {
   color: #363636;
-  flex-grow: 1;
   font-size: 1.5rem;
   line-height: 1;
 }
@@ -86,13 +84,12 @@
 }
 
 .modal-card-foot .btn:not(:last-child) {
-  margin-right: 0.5em;
+  margin-bottom: 1em;
 }
 
 .modal-card-body {
   background-color: white;
   flex-grow: 1;
-  flex-shrink: 1;
   overflow: auto;
   padding: 20px;
 }

@@ -11,6 +11,12 @@
     flex-direction: row;
     justify-content: space-between;
     padding: 0.8rem;
+    font-weight: bold;
+
+    &__title {
+      font-size: 1.25rem;
+      text-transform: uppercase;
+    }
   }
 
   &__nav {
@@ -18,6 +24,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-bottom: 1.5rem;
   }
 
   &__body {

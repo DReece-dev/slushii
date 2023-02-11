@@ -2,11 +2,19 @@
   display: inline-block;
   padding: 0.33333rem 0.5rem;
   font-size: 0.8rem;
+  font-weight: 500;
+  font-family: Arial, sans-serif;
   line-height: 1;
   white-space: nowrap;
   cursor: default;
   color: #000000;
   border-radius: 5px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 1rem;
+
+  &:hover {
+    opacity: 0.8;
+  }
 
   &.blue {
     background: var(--blue-400);
@@ -40,5 +48,9 @@
 
   &.rounded {
     border-radius: 20px;
+  }
+
+  @media (max-width: 576px) {
+    font-size: 0.7rem;
   }
 }

@@ -1,3 +1,5 @@
+$mobile-display: flex;
+
 .level {
   align-items: center;
   justify-content: space-between;
@@ -12,11 +14,11 @@
   }
 
   &.is-mobile {
-    display: flex;
+    display: $mobile-display;
 
     .level-left,
     .level-right {
-      display: flex;
+      display: $mobile-display;
     }
 
     .level-left + .level-right {

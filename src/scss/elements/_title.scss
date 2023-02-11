@@ -1,32 +1,36 @@
+$black: var(--black);
+$gray-400: var(--gray-400);
+$gray-900: var(--gray-900);
+
 .title {
-  color: var(--black);
+  color: $black;
   font-size: 2rem;
   font-weight: 700;
   line-height: 1.125;
-}
 
-.title.is-1 {
-  font-size: clamp(3rem, 2vw + 1rem, 7.5rem);
-}
+  &.is-1 {
+    font-size: clamp(3rem, 2vw + 1rem, 7.5rem);
+  }
 
-.title.is-2 {
-  font-size: clamp(2.5rem, 1.5vw + 1rem, 6rem);
-}
+  &.is-2 {
+    font-size: clamp(2.5rem, 1.5vw + 1rem, 6rem);
+  }
 
-.title.is-3 {
-  font-size: clamp(2rem, 1.3vw + 1rem, 5.5rem);
-}
+  &.is-3 {
+    font-size: clamp(2rem, 1.3vw + 1rem, 5.5rem);
+  }
 
-.title.is-4 {
-  font-size: clamp(1.7rem, 1vw + 1rem, 5rem);
-}
+  &.is-4 {
+    font-size: clamp(1.7rem, 1vw + 1rem, 5rem);
+  }
 
-.title.is-5 {
-  font-size: clamp(1.5rem, 0.75vw + 1rem, 4.5rem);
-}
+  &.is-5 {
+    font-size: clamp(1.5rem, 0.75vw + 1rem, 4.5rem);
+  }
 
-.title.is-6 {
-  font-size: clamp(1.25rem, 0.5vw + 1rem, 4rem);
+  &.is-6 {
+    font-size: clamp(1.25rem, 0.5vw + 1rem, 4rem);
+  }
 }
 
 .subtitle {
@@ -34,38 +38,38 @@
   font-size: 1.25rem;
   font-weight: 400;
   line-height: 1.25;
-}
 
-.subtitle.is-1 {
-  font-size: clamp(1.5rem, 2vw + 1rem, 3rem);
-}
+  &.is-1 {
+    font-size: clamp(1.5rem, 2vw + 1rem, 3rem);
+  }
 
-.subtitle.is-2 {
-  font-size: clamp(1.25rem, 1.5vw + 1rem, 2.75rem);
-}
+  &.is-2 {
+    font-size: clamp(1.25rem, 1.5vw + 1rem, 2.75rem);
+  }
 
-.subtitle.is-3 {
-  font-size: clamp(1rem, 1.3vw + 1rem, 2.5rem);
-}
+  &.is-3 {
+    font-size: clamp(1rem, 1.3vw + 1rem, 2.5rem);
+  }
 
-.subtitle.is-4 {
-  font-size: clamp(0.75rem, 1vw + 1rem, 2.25rem);
-}
+  &.is-4 {
+    font-size: clamp(0.75rem, 1vw + 1rem, 2.25rem);
+  }
 
-.subtitle.is-5 {
-  font-size: clamp(0.5rem, 0.75vw + 1rem, 2rem);
-}
+  &.is-5 {
+    font-size: clamp(0.5rem, 0.75vw + 1rem, 2rem);
+  }
 
-.subtitle.is-6 {
-  font-size: clamp(0.25rem, 0.5vw + 1rem, 1.5rem);
+  &.is-6 {
+    font-size: clamp(0.25rem, 0.5vw + 1rem, 1.5rem);
+  }
 }
 
 .heading-divider {
   padding-bottom: calc(5px + 0.1em);
-  border-bottom: calc(0.2px + 0.05em) solid var(--gray-400);
+  border-bottom: calc(0.2px + 0.05em) solid $gray-400;
 
   &.dark {
     padding-bottom: calc(5px + 0.1em);
-    border-bottom: calc(0.2px + 0.05em) solid var(--gray-900);
+    border-bottom: calc(0.2px + 0.05em) solid $gray-900;
   }
 }

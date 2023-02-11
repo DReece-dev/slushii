@@ -3,8 +3,14 @@
   margin-bottom: 1rem;
   flex-wrap: nowrap;
 
-  @media (max-width: 40em) {
+  @media (max-width: $breakpoint) {
     flex-wrap: wrap;
+  }
+
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
   }
 
   img {
@@ -20,7 +26,7 @@
     margin-bottom: 0;
   }
 
-  @media (max-width: 40em) {
+  @media (max-width: $breakpoint) {
     padding: 0;
     padding-bottom: 1rem;
     flex-basis: 100%;

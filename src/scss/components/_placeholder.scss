@@ -6,13 +6,6 @@
   background-color: currentColor;
   opacity: 0.5;
 
-  &.btn {
-    &::before {
-      display: inline-block;
-      content: '';
-    }
-  }
-
   &.xs {
     min-height: 0.6em;
   }
@@ -27,6 +20,13 @@
 
   &.xl {
     min-height: 1.8em;
+  }
+
+  &.btn {
+    &::before {
+      display: inline-block;
+      content: '';
+    }
   }
 
   &.glow {

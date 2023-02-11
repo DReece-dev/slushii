@@ -1,5 +1,7 @@
 $shadow-color: rgba(10, 10, 10, 0.1);
 $shadow-outline-color: rgba(10, 10, 10, 0.02);
+$box-shadow-hover: 0 0.5em 1em -0.125em $shadow-color, 0 0px 0 1px #3273dc;
+$box-shadow-active: inset 0 1px 2px rgba(10, 10, 10, 0.2), 0 0 0 1px #3273dc;
 
 .box {
   background-color: var(--white);
@@ -49,10 +51,10 @@ $shadow-outline-color: rgba(10, 10, 10, 0.02);
 a.box {
   &:hover,
   &:focus {
-    box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0 0 1px #3273dc;
+    box-shadow: $box-shadow-hover;
   }
 
   &:active {
-    box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.2), 0 0 0 1px #3273dc;
+    box-shadow: $box-shadow-active;
   }
 }

@@ -43,10 +43,6 @@
   object-fit: fill;
 }
 
-.object-contain {
-  object-fit: contain;
-}
-
 .object-scale-down {
   object-fit: scale-down;
 }
@@ -57,54 +53,54 @@
 
 .aspect-ratio {
   aspect-ratio: auto;
-}
 
-.aspect-ratio.is-sqaure {
-  aspect-ratio: 1 / 1;
-}
+  &.is-square {
+    aspect-ratio: 1 / 1;
+  }
 
-.aspect-ratio.is-1by1 {
-  aspect-ratio: 1 / 1;
-}
+  &.is-1by1 {
+    aspect-ratio: 1 / 1;
+  }
 
-.aspect-ratio.is-5by4 {
-  aspect-ratio: 5 / 4;
-}
+  &.is-5by4 {
+    aspect-ratio: 5 / 4;
+  }
 
-.aspect-ratio.is-4by3 {
-  aspect-ratio: 4 / 3;
-}
+  &.is-4by3 {
+    aspect-ratio: 4 / 3;
+  }
 
-.aspect-ratio.is-3by2 {
-  aspect-ratio: 3 / 2;
-}
+  &.is-3by2 {
+    aspect-ratio: 3 / 2;
+  }
 
-.aspect-ratio.is-5by3 {
-  aspect-ratio: 5 / 3;
-}
+  &.is-5by3 {
+    aspect-ratio: 5 / 3;
+  }
 
-.aspect-ratio.is-16by9 {
-  aspect-ratio: 16 / 9;
-}
+  &.is-16by9 {
+    aspect-ratio: 16 / 9;
+  }
 
-.aspect-ratio.is-2by1 {
-  aspect-ratio: 2 / 1;
-}
+  &.is-2by1 {
+    aspect-ratio: 2 / 1;
+  }
 
-.aspect-ratio.is-3by1 {
-  aspect-ratio: 3 / 1;
-}
+  &.is-3by1 {
+    aspect-ratio: 3 / 1;
+  }
 
-.aspect-ratio.is-4by5 {
-  aspect-ratio: 4 / 5;
-}
+  &.is-4by5 {
+    aspect-ratio: 4 / 5;
+  }
 
-.aspect-ratio.is-2by3 {
-  aspect-ratio: 2 / 3;
-}
+  &.is-2by3 {
+    aspect-ratio: 2 / 3;
+  }
 
-.aspect-ratio.is-3by5 {
-  aspect-ratio: 3 / 5;
+  &.is-3by5 {
+    aspect-ratio: 3 / 5;
+  }
 }
 
 .figure {

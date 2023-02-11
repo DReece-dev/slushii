@@ -1,23 +1,36 @@
+$responsive-embed-height: 0;
+$responsive-embed-margin-bottom: 1rem;
+$responsive-embed-padding-bottom: 75%;
+$responsive-embed-overflow: hidden;
+
+$responsive-embed-widescreen-padding-bottom: 56.25%;
+
+$responsive-embed-media-position: absolute;
+$responsive-embed-media-top: 0;
+$responsive-embed-media-left: 0;
+$responsive-embed-media-width: 100%;
+$responsive-embed-media-height: 100%;
+
 .responsive-embed,
 .flex-video {
-  position: relative;
-  height: 0;
-  margin-bottom: 1rem;
-  padding-bottom: 75%;
-  overflow: hidden;
+  position: $responsive-embed-media-position;
+  height: $responsive-embed-height;
+  margin-bottom: $responsive-embed-margin-bottom;
+  padding-bottom: $responsive-embed-padding-bottom;
+  overflow: $responsive-embed-overflow;
 
   iframe,
   object,
   embed,
   video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    position: $responsive-embed-media-position;
+    top: $responsive-embed-media-top;
+    left: $responsive-embed-media-left;
+    width: $responsive-embed-media-width;
+    height: $responsive-embed-media-height;
   }
 
   &.widescreen {
-    padding-bottom: 56.25%;
+    padding-bottom: $responsive-embed-widescreen-padding-bottom;
   }
 }
