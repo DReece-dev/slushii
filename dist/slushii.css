@@ -2,8 +2,8 @@
 /*
 ----------------------------------------------------------------------------
 Slushii CSS Framework
-Version: v0.1.5
-Created: 2021 - 2022
+Version: v0.1.6
+Created: 2021 - 2023
 Copyright, Dylan R Hewitt
 Licensed under MIT (github.com/DReece-dev/slushii)
 ----------------------------------------------------------------------------
@@ -232,7 +232,6 @@ Licensed under MIT (github.com/DReece-dev/slushii)
 
 *:where(:not(html, iframe, canvas, img, svg, video):not(svg *, symbol *)) {
   all: unset;
-  display: revert;
 }
 
 *,
@@ -266,6 +265,11 @@ Licensed under MIT (github.com/DReece-dev/slushii)
     scroll-behavior: smooth;
   }
 }
+html {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   margin: 0;
   font-family: var(--deafult-fonts);
@@ -447,10 +451,6 @@ select {
   text-transform: none;
 }
 
-:where(button, [type=button], [type=reset], [type=submit]) {
-  -webkit-appearance: button;
-}
-
 :-moz-focusring {
   outline: auto;
 }
@@ -466,11 +466,6 @@ select {
 ::-webkit-inner-spin-button,
 ::-webkit-outer-spin-button {
   height: auto;
-}
-
-:where([type=search]) {
-  -webkit-appearance: textfield;
-  outline-offset: -2px;
 }
 
 ::-webkit-search-decoration {
@@ -5075,10 +5070,7 @@ meter {
   padding: 3rem 1.5rem;
 }
 @media screen and (min-width: 1024px) {
-  .section.xs-small {
-    padding: 4.5rem 1.5rem;
-  }
-  .section.small {
+  .section.xs-small, .section.small {
     padding: 4.5rem 1.5rem;
   }
   .section.medium {
@@ -5093,7 +5085,7 @@ meter {
 }
 
 /* Default values */
-.hero-section {
+.hero {
   background-color: var(--white);
   color: var(--black);
   align-items: stretch;
@@ -5101,15 +5093,54 @@ meter {
   flex-direction: column;
   justify-content: space-between;
 }
+.hero.white {
+  background-color: var(--white);
+  color: var(--black);
+}
+.hero.black {
+  background-color: var(--black);
+  color: var(--white);
+}
+.hero.blue {
+  background-color: var(--blue-500);
+  color: var(--white);
+}
+.hero.indigo {
+  background-color: var(--indigo-500);
+  color: var(--white);
+}
+.hero.purple {
+  background-color: var(--purple-500);
+  color: var(--white);
+}
+.hero.pink {
+  background-color: var(--pink-500);
+  color: var(--white);
+}
+.hero.red {
+  background-color: var(--red-500);
+  color: var(--white);
+}
+.hero.orange {
+  background-color: var(--orange-500);
+  color: var(--black);
+}
+.hero.yellow {
+  background-color: var(--yellow-500);
+  color: var(--black);
+}
+.hero.green {
+  background-color: var(--green-500);
+  color: var(--black);
+}
 
-.hero-section-body {
+.hero-body {
   padding: 3rem 1.5rem;
   flex-grow: 1;
   flex-shrink: 0;
 }
 
-/* Image background */
-.hero-section-image {
+.hero-image {
   height: 65vh;
   padding: 1em;
   box-sizing: border-box;
@@ -5120,37 +5151,27 @@ meter {
   justify-content: space-between;
 }
 
-/* Navbar styles */
-.hero-section .navbar {
-  background: none;
-}
-
-/* Small size */
-.hero-section.small .hero-section-body {
+.hero.small .hero-body {
   padding: 1.5rem;
 }
 
-/* Medium size */
-@media screen and (min-width: 768px), print {
-  .hero-section.medium .hero-section-body {
+@media (min-width: 768px) and (max-width: 1023px), print {
+  .hero.medium .hero-body {
     padding: 9rem 1.5rem;
   }
 }
-/* Large size */
-@media screen and (min-width: 1024px), print {
-  .hero-section.large .hero-section-body {
+@media (min-width: 1024px) and (max-width: 1279px), print {
+  .hero.large .hero-body {
     padding: 18rem 1.5rem;
   }
 }
-/* XLarge size */
-@media screen and (min-width: 1280px), print {
-  .hero-section.xlarge .hero-section-body {
+@media (min-width: 1280px) and (max-width: 1535px), print {
+  .hero.xlarge .hero-body {
     padding: 24rem 1.5rem;
   }
 }
-/* XXLarge size */
-@media screen and (min-width: 1536px), print {
-  .hero-section.xxlarge .hero-section-body {
+@media (min-width: 1536px), print {
+  .hero.xxlarge .hero-body {
     padding: 30rem 1.5rem;
   }
 }
@@ -5247,47 +5268,6 @@ meter {
   flex-grow: 1;
   flex-shrink: 0;
   padding: 3rem 1.5rem;
-}
-
-.hero.white {
-  background-color: var(--white);
-  color: var(--black);
-}
-.hero.black {
-  background-color: var(--black);
-  color: var(--white);
-}
-.hero.blue {
-  background-color: var(--blue-500);
-  color: var(--white);
-}
-.hero.indigo {
-  background-color: var(--indigo-500);
-  color: var(--white);
-}
-.hero.purple {
-  background-color: var(--purple-500);
-  color: var(--white);
-}
-.hero.pink {
-  background-color: var(--pink-500);
-  color: var(--white);
-}
-.hero.red {
-  background-color: var(--red-500);
-  color: var(--white);
-}
-.hero.orange {
-  background-color: var(--orange-500);
-  color: var(--black);
-}
-.hero.yellow {
-  background-color: var(--yellow-500);
-  color: var(--black);
-}
-.hero.green {
-  background-color: var(--green-500);
-  color: var(--black);
 }
 
 .footer {
@@ -10246,6 +10226,154 @@ a.box:active {
             mask-position: -200% 0%;
   }
 }
+.tree {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.tree .tree-node {
+  position: relative;
+  padding: 0.5rem;
+  color: #333;
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+.tree .tree-node:hover {
+  background-color: #f7f7f7;
+}
+.tree .tree-node.active {
+  background-color: #e6e6e6;
+}
+.tree .tree-node .tree-node-toggle {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+}
+.tree .tree-node .tree-node-toggle:before {
+  content: "+";
+  display: block;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  text-align: center;
+  color: #333;
+}
+.tree .tree-node .tree-node-toggle.collapsed:before {
+  content: "-";
+}
+.tree .tree-node .tree-node-label {
+  margin-left: 1.5rem;
+}
+.tree .tree-node .tree-node-children {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.tree .tree-node .tree-node-children .tree-node {
+  border-left: 1px solid #ccc;
+  margin-left: 0.5rem;
+  padding-left: 0.5rem;
+}
+.tree .tree-node .tree-node-children .tree-node:first-child {
+  margin-top: 0.5rem;
+  border-top: 1px solid #ccc;
+}
+.tree .tree-node .tree-node-children .tree-node:last-child {
+  margin-bottom: 0.5rem;
+}
+
+.file-input {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
+  padding: 16px;
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  background-color: #f6f8fa;
+  cursor: pointer;
+}
+.file-input:hover {
+  background-color: #0070f3;
+  color: #ffffff;
+  border-color: #0070f3;
+}
+.file-input input[type=file] {
+  display: none;
+}
+.file-input label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #0070f3;
+  margin-bottom: 8px;
+}
+.file-input span {
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+}
+.file-input button {
+  margin-top: 16px;
+  padding: 12px 24px;
+  background-color: #0070f3;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+.file-input button:hover {
+  background-color: #0058c0;
+}
+
+.stepper {
+  display: flex;
+  flex-direction: column;
+}
+.stepper .step {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.stepper .step:last-child {
+  margin-bottom: 0;
+}
+.stepper .step__number {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 9999px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #0070f3;
+  background-color: white;
+  border: 2px solid #0070f3;
+}
+.stepper .step__text {
+  margin-left: 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #0070f3;
+}
+.stepper .step__line {
+  flex: 1;
+  height: 0.25rem;
+  background-color: #eaeaea;
+  margin-left: 1.5rem;
+}
+.stepper .step__line--active {
+  background-color: #0070f3;
+}
+
 .form-label {
   margin-bottom: 0.5rem;
 }
@@ -11688,21 +11816,19 @@ textarea.form-control-lg {
   border: 1px solid #d1d1d1;
   border-radius: 5px;
 }
-
-[type=checkbox] {
+[type=checkbox][type=checkbox],
+[type=radio][type=checkbox] {
   border-radius: 0;
 }
-
-[type=radio] {
+[type=checkbox][type=radio],
+[type=radio][type=radio] {
   border-radius: 100%;
 }
-
 [type=checkbox]:focus,
 [type=radio]:focus {
   outline: 2px solid var(--black);
   outline-offset: 2px;
 }
-
 [type=checkbox]:checked,
 [type=radio]:checked {
   border-color: transparent;
@@ -11711,24 +11837,22 @@ textarea.form-control-lg {
   background-position: center;
   background-repeat: no-repeat;
 }
-
-[type=checkbox]:checked {
+[type=checkbox]:checked[type=checkbox],
+[type=radio]:checked[type=checkbox] {
   background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
 }
-
-[type=radio]:checked {
+[type=checkbox]:checked[type=radio],
+[type=radio]:checked[type=radio] {
   background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e");
 }
-
-[type=checkbox]:checked:focus,
-[type=checkbox]:checked:hover,
+[type=checkbox]:checked:focus, [type=checkbox]:checked:hover,
 [type=radio]:checked:focus,
 [type=radio]:checked:hover {
   border-color: transparent;
   background-color: var(--black);
 }
-
-[type=checkbox]:indeterminate {
+[type=checkbox][type=checkbox]:indeterminate,
+[type=radio][type=checkbox]:indeterminate {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 16 16'%3e%3cpath stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 8h8'/%3e%3c/svg%3e");
   border-color: transparent;
   background-color: var(--black);
@@ -11736,9 +11860,9 @@ textarea.form-control-lg {
   background-position: center;
   background-repeat: no-repeat;
 }
-
-[type=checkbox]:indeterminate:focus,
-[type=checkbox]:indeterminate:hover {
+[type=checkbox][type=checkbox]:indeterminate:focus, [type=checkbox][type=checkbox]:indeterminate:hover,
+[type=radio][type=checkbox]:indeterminate:focus,
+[type=radio][type=checkbox]:indeterminate:hover {
   border-color: transparent;
   background-color: var(--black);
 }

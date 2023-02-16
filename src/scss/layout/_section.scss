@@ -2,10 +2,7 @@
   padding: 3rem 1.5rem;
 
   @media screen and (min-width: 1024px) {
-    &.xs-small {
-      padding: 4.5rem 1.5rem;
-    }
-
+    &.xs-small,
     &.small {
       padding: 4.5rem 1.5rem;
     }

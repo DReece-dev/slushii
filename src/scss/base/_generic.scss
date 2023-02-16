@@ -1,6 +1,5 @@
 *:where(:not(html, iframe, canvas, img, svg, video):not(svg *, symbol *)) {
   all: unset;
-  display: revert;
 }
 
 *,
@@ -31,6 +30,11 @@
   :root {
     scroll-behavior: smooth;
   }
+}
+
+html {
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -218,10 +222,6 @@ select {
   text-transform: none;
 }
 
-:where(button, [type='button'], [type='reset'], [type='submit']) {
-  -webkit-appearance: button;
-}
-
 :-moz-focusring {
   outline: auto;
 }
@@ -237,11 +237,6 @@ select {
 ::-webkit-inner-spin-button,
 ::-webkit-outer-spin-button {
   height: auto;
-}
-
-:where([type='search']) {
-  -webkit-appearance: textfield;
-  outline-offset: -2px;
 }
 
 ::-webkit-search-decoration {

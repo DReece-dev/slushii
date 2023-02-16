@@ -1,0 +1,60 @@
+// Variables
+$primary-color: #0070f3;
+$secondary-color: #ffffff;
+$border-color: #eaeaea;
+$input-bg-color: #f6f8fa;
+$button-bg-color: #0070f3;
+
+// File input component
+.file-input {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
+  padding: 16px;
+  border: 1px solid $border-color;
+  border-radius: 8px;
+  background-color: $input-bg-color;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $primary-color;
+    color: $secondary-color;
+    border-color: $primary-color;
+  }
+
+  input[type='file'] {
+    display: none;
+  }
+
+  label {
+    font-size: 14px;
+    font-weight: 500;
+    color: $primary-color;
+    margin-bottom: 8px;
+  }
+
+  span {
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+  }
+
+  button {
+    margin-top: 16px;
+    padding: 12px 24px;
+    background-color: $button-bg-color;
+    color: $secondary-color;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+
+    &:hover {
+      background-color: darken($button-bg-color, 10%);
+    }
+  }
+}
