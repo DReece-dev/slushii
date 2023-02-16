@@ -889,3 +889,76 @@
 .border-green-900 {
   border-color: var(--green-900) !important;
 }
+
+.border-gradient-red {
+  border-image: linear-gradient(to right, #ff5858, #f857a6) 1;
+}
+.border-gradient-orange {
+  border-image: linear-gradient(to right, #ff9a36, #ff4d4d) 1;
+}
+.border-gradient-yellow {
+  border-image: linear-gradient(to right, #f8de44, #e7e7a6) 1;
+}
+.border-gradient-green {
+  border-image: linear-gradient(to right, #00b712, #00aabb) 1;
+}
+.border-gradient-blue {
+  border-image: linear-gradient(to right, #0276fd, #3c3cff) 1;
+}
+.border-gradient-purple {
+  border-image: linear-gradient(to right, #a900ff, #f20089) 1;
+}
+.border-gradient-pink {
+  border-image: linear-gradient(to right, #ff00b3, #d500f9) 1;
+}
+.border-gradient-teal {
+  border-image: linear-gradient(to right, #4dc0b5, #4d4dff) 1;
+}
+.border-gradient-gray {
+  border-image: linear-gradient(to right, #ccc, #333) 1;
+}
+.border-gradient-cyan {
+  border-image: linear-gradient(to right, #33cccc, #3366ff) 1;
+}
+.border-gradient-yellowgreen {
+  border-image: linear-gradient(to right, #9acd32, #32cd32) 1;
+}
+.border-gradient-springgreen {
+  border-image: linear-gradient(to right, #00ff7f, #00ffcc) 1;
+}
+.border-gradient-lime {
+  border-image: linear-gradient(to right, #00ff00, #80ff00) 1;
+}
+.border-gradient-forestgreen {
+  border-image: linear-gradient(to right, #228b22, #006400) 1;
+}
+.border-gradient-navy {
+  border-image: linear-gradient(to right, #000080, #00008b) 1;
+}
+.border-gradient-indigo {
+  border-image: linear-gradient(to right, #4b0082, #8b008b) 1;
+}
+.border-gradient-goldenrod {
+  border-image: linear-gradient(to right, #daa520, #ffc125) 1;
+}
+.border-gradient-hotpink {
+  border-image: linear-gradient(to right, #ff69b4, #ff1493) 1;
+}
+.border-gradient-royalblue {
+  border-image: linear-gradient(to right, #4169e1, #1e90ff) 1;
+}
+.border-gradient-lavender {
+  border-image: linear-gradient(to right, #6b5b95, #8360c3) 1;
+}
+.border-gradient-skyblue {
+  border-image: linear-gradient(to right, #87ceeb, #0077b6) 1;
+}
+.border-gradient-tomato {
+  border-image: linear-gradient(to right, #ff6347, #ff4500) 1;
+}
+.border-gradient-chocolate {
+  border-image: linear-gradient(to right, #d2691e, #8b0000) 1;
+}
+.border-gradient-peru {
+  border-image: linear-gradient(to right, #cd853f, #8b4513) 1;
+}
