@@ -5141,16 +5141,71 @@ meter {
 }
 
 .hero-image {
-  height: 65vh;
+  height: 60vh;
   padding: 1em;
   box-sizing: border-box;
-  background: url() center center no-repeat;
-  background-size: cover;
+  background: linear-gradient(to bottom, #f2f2f2, #ffffff);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
+.hero-image h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 0 0 0.5em;
+}
+
+.hero-image p {
+  font-size: 1.5rem;
+  margin: 0 0 1.5em;
+}
+
+@media screen and (max-width: 576px) {
+  .hero-image {
+    height: 50vh;
+  }
+  .hero-image h1 {
+    font-size: 4rem;
+  }
+  .hero-image p {
+    font-size: 1.75rem;
+  }
+}
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .hero-image {
+    height: 50vh;
+  }
+  .hero-image h1 {
+    font-size: 4rem;
+  }
+  .hero-image p {
+    font-size: 1.75rem;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .hero-image {
+    height: 60vh;
+  }
+  .hero-image h1 {
+    font-size: 5rem;
+  }
+  .hero-image p {
+    font-size: 2rem;
+  }
+}
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+  .hero-image {
+    height: 70vh;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .hero-image {
+    height: 80vh;
+  }
+}
 .hero.small .hero-body {
   padding: 1.5rem;
 }
@@ -31315,6 +31370,181 @@ textarea.form-control.is-invalid {
 
 .active\:text-dark-900:active {
   color: var(--dark-900) !important;
+}
+
+.text-gradient-blue-purple {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #373b44, #4286f4);
+}
+
+.text-gradient-orange-pink {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #ffa07a, #ff6e7f);
+}
+
+.text-gradient-red-yellow {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #ff4e50, #f9d423);
+}
+
+.text-gradient-green-blue {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #1abc9c, #2ecc71);
+}
+
+.text-gradient-purple-pink {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #9343d8, #ff416c);
+}
+
+.text-gradient-pink-orange {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #ff00cc, #ff8000);
+}
+
+.text-gradient-blue-green {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #2f80ed, #56ccf2);
+}
+
+.text-gradient-red-orange {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #fc4a1a, #f7b733);
+}
+
+.text-gradient-green-yellow {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #3a7bd5, #00d2ff);
+}
+
+.text-gradient-purple-blue {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #3d4e81, #5753c9);
+}
+
+.text-gradient-orange-red {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #ff6b6b, #ee8e1d);
+}
+
+.text-gradient-blue-pink {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #1a2980, #26d0ce);
+}
+
+.text-gradient-green-purple {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #4776e6, #8e54e9);
+}
+
+.text-gradient-orange-blue {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #ffb75e, #ed8f03);
+}
+
+.text-gradient-red-purple {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #ca1d7e, #e35157);
+}
+
+.text-gradient-moonlit-ocean {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background: linear-gradient(to right, #616e8a, #1c2a3e);
+}
+
+.text-gradient-electric-violet {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background: linear-gradient(to right, #4776e6, #8e54e9);
+}
+
+.text-gradient-peachy {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background: linear-gradient(to right, #fdb813, #d9544d);
+}
+
+.text-gradient-candy-cane {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background: linear-gradient(to right, #da4453, #89216b);
+}
+
+.text-gradient-summer-sunset {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background: linear-gradient(to right, #fa709a, #7048e8);
+}
+
+.text-gradient-purple-love {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background: linear-gradient(to right, #7b4397, #dc2430);
+}
+
+.text-gradient-dark-seafoam {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background: linear-gradient(to right, #3e5151, #decba4);
+}
+
+.text-gradient-honeydew {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background: linear-gradient(to right, #f7ff00, #db36a4);
+}
+
+.text-gradient-summer-skies {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background: linear-gradient(to right, #fcee21, #66a6ff);
+}
+
+.text-gradient-fiery-rose {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background: linear-gradient(to right, #ff758c, #ff7eb3);
 }
 
 .link-transparent {
@@ -88442,7 +88672,7 @@ textarea.form-control.is-invalid {
   background-blend-mode: luminosity !important;
 }
 
-hover\:bg-slate:hover {
+.hover\:bg-slate:hover {
   background-color: var(--slate) !important;
 }
 
@@ -91008,6 +91238,82 @@ hover\:bg-slate:hover {
   background-color: var(--dark-900) !important;
 }
 
+.bg-gradient-blue {
+  background: linear-gradient(to bottom, #00416a, #e4e5e6);
+}
+
+.bg-gradient-pink {
+  background: linear-gradient(to bottom, #ff416c, #ff4b2b);
+}
+
+.bg-gradient-orange {
+  background: linear-gradient(to bottom, #ff9400, #ff416c);
+}
+
+.bg-gradient-yellow {
+  background: linear-gradient(to bottom, #ffdd00, #fbb034);
+}
+
+.bg-gradient-green {
+  background: linear-gradient(to bottom, #2bc0e4, #eaecc6);
+}
+
+.bg-gradient-teal {
+  background: linear-gradient(to bottom, #1b998b, #eaf6f6);
+}
+
+.bg-gradient-purple {
+  background: linear-gradient(to bottom, #6f00ff, #e100ff);
+}
+
+.bg-gradient-black {
+  background: linear-gradient(to bottom, #000000, #434343);
+}
+
+.bg-gradient-grey {
+  background: linear-gradient(to bottom, #e0e0e0, #bdbdbd);
+}
+
+.bg-gradient-white {
+  background: linear-gradient(to bottom, #ffffff, #e5e5e5);
+}
+
+.bg-gradient-red {
+  background: linear-gradient(to bottom, #ff512f, #dd2476);
+}
+
+.bg-gradient-blue-grey {
+  background: linear-gradient(to bottom, #485563, #29323c);
+}
+
+.bg-gradient-light-blue {
+  background: linear-gradient(to bottom, #55c9d4, #5b68c4);
+}
+
+.bg-gradient-deep-blue {
+  background: linear-gradient(to bottom, #1f5b8b, #5d5d81);
+}
+
+.bg-gradient-dark-pink {
+  background: linear-gradient(to bottom, #ff416c, #ff4b2b);
+}
+
+.bg-gradient-sky-blue {
+  background: linear-gradient(to bottom, #2bc0e4, #eaecc6);
+}
+
+.bg-gradient-cherry-red {
+  background: linear-gradient(to bottom, #f44336, #e53935);
+}
+
+.bg-gradient-purplish-pink {
+  background: linear-gradient(to bottom, #d5416f, #6e48aa);
+}
+
+.bg-gradient-soft-blue {
+  background: linear-gradient(to bottom, #84ceeb, #b2b2e9);
+}
+
 .backdrop-blur-none {
   -webkit-backdrop-filter: blur(0) !important;
           backdrop-filter: blur(0) !important;
@@ -92353,6 +92659,126 @@ hover\:bg-slate:hover {
 
 .border-green-900 {
   border-color: var(--green-900) !important;
+}
+
+.border-gradient-red {
+  -o-border-image: linear-gradient(to right, #ff5858, #f857a6) 1;
+     border-image: linear-gradient(to right, #ff5858, #f857a6) 1;
+}
+
+.border-gradient-orange {
+  -o-border-image: linear-gradient(to right, #ff9a36, #ff4d4d) 1;
+     border-image: linear-gradient(to right, #ff9a36, #ff4d4d) 1;
+}
+
+.border-gradient-yellow {
+  -o-border-image: linear-gradient(to right, #f8de44, #e7e7a6) 1;
+     border-image: linear-gradient(to right, #f8de44, #e7e7a6) 1;
+}
+
+.border-gradient-green {
+  -o-border-image: linear-gradient(to right, #00b712, #00aabb) 1;
+     border-image: linear-gradient(to right, #00b712, #00aabb) 1;
+}
+
+.border-gradient-blue {
+  -o-border-image: linear-gradient(to right, #0276fd, #3c3cff) 1;
+     border-image: linear-gradient(to right, #0276fd, #3c3cff) 1;
+}
+
+.border-gradient-purple {
+  -o-border-image: linear-gradient(to right, #a900ff, #f20089) 1;
+     border-image: linear-gradient(to right, #a900ff, #f20089) 1;
+}
+
+.border-gradient-pink {
+  -o-border-image: linear-gradient(to right, #ff00b3, #d500f9) 1;
+     border-image: linear-gradient(to right, #ff00b3, #d500f9) 1;
+}
+
+.border-gradient-teal {
+  -o-border-image: linear-gradient(to right, #4dc0b5, #4d4dff) 1;
+     border-image: linear-gradient(to right, #4dc0b5, #4d4dff) 1;
+}
+
+.border-gradient-gray {
+  -o-border-image: linear-gradient(to right, #ccc, #333) 1;
+     border-image: linear-gradient(to right, #ccc, #333) 1;
+}
+
+.border-gradient-cyan {
+  -o-border-image: linear-gradient(to right, #33cccc, #3366ff) 1;
+     border-image: linear-gradient(to right, #33cccc, #3366ff) 1;
+}
+
+.border-gradient-yellowgreen {
+  -o-border-image: linear-gradient(to right, #9acd32, #32cd32) 1;
+     border-image: linear-gradient(to right, #9acd32, #32cd32) 1;
+}
+
+.border-gradient-springgreen {
+  -o-border-image: linear-gradient(to right, #00ff7f, #00ffcc) 1;
+     border-image: linear-gradient(to right, #00ff7f, #00ffcc) 1;
+}
+
+.border-gradient-lime {
+  -o-border-image: linear-gradient(to right, #00ff00, #80ff00) 1;
+     border-image: linear-gradient(to right, #00ff00, #80ff00) 1;
+}
+
+.border-gradient-forestgreen {
+  -o-border-image: linear-gradient(to right, #228b22, #006400) 1;
+     border-image: linear-gradient(to right, #228b22, #006400) 1;
+}
+
+.border-gradient-navy {
+  -o-border-image: linear-gradient(to right, #000080, #00008b) 1;
+     border-image: linear-gradient(to right, #000080, #00008b) 1;
+}
+
+.border-gradient-indigo {
+  -o-border-image: linear-gradient(to right, #4b0082, #8b008b) 1;
+     border-image: linear-gradient(to right, #4b0082, #8b008b) 1;
+}
+
+.border-gradient-goldenrod {
+  -o-border-image: linear-gradient(to right, #daa520, #ffc125) 1;
+     border-image: linear-gradient(to right, #daa520, #ffc125) 1;
+}
+
+.border-gradient-hotpink {
+  -o-border-image: linear-gradient(to right, #ff69b4, #ff1493) 1;
+     border-image: linear-gradient(to right, #ff69b4, #ff1493) 1;
+}
+
+.border-gradient-royalblue {
+  -o-border-image: linear-gradient(to right, #4169e1, #1e90ff) 1;
+     border-image: linear-gradient(to right, #4169e1, #1e90ff) 1;
+}
+
+.border-gradient-lavender {
+  -o-border-image: linear-gradient(to right, #6b5b95, #8360c3) 1;
+     border-image: linear-gradient(to right, #6b5b95, #8360c3) 1;
+}
+
+.border-gradient-skyblue {
+  -o-border-image: linear-gradient(to right, #87ceeb, #0077b6) 1;
+     border-image: linear-gradient(to right, #87ceeb, #0077b6) 1;
+}
+
+.border-gradient-tomato {
+  -o-border-image: linear-gradient(to right, #ff6347, #ff4500) 1;
+     border-image: linear-gradient(to right, #ff6347, #ff4500) 1;
+}
+
+.border-gradient-chocolate {
+  -o-border-image: linear-gradient(to right, #d2691e, #8b0000) 1;
+     border-image: linear-gradient(to right, #d2691e, #8b0000) 1;
+}
+
+.border-gradient-peru {
+  -o-border-image: linear-gradient(to right, #cd853f, #8b4513) 1;
+     border-image: linear-gradient(to right, #cd853f, #8b4513) 1;
 }
 
 .box-border {
