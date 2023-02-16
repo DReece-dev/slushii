@@ -1,0 +1,53 @@
+$drawer-width: 300px;
+$drawer-background-color: #fff;
+$drawer-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+$drawer-transition-duration: 0.3s;
+
+.drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: $drawer-width;
+  background-color: $drawer-background-color;
+  box-shadow: $drawer-shadow;
+  transition: transform $drawer-transition-duration ease-in-out;
+  transform: translateX(-100%);
+  z-index: 10;
+
+  &.is-open {
+    transform: translateX(0);
+  }
+
+  .drawer-header {
+    padding: 1rem;
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .drawer-content {
+    padding: 1rem;
+  }
+
+  .drawer-footer {
+    padding: 1rem;
+    border-top: 1px solid #ccc;
+    text-align: right;
+  }
+
+  .drawer-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9;
+    opacity: 0;
+    transition: opacity $drawer-transition-duration ease-in-out;
+
+    &.is-open {
+      opacity: 1;
+    }
+  }
+}

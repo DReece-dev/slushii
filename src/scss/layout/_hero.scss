@@ -1,21 +1,84 @@
+$hero-colors: (
+  white: var(--white),
+  black: var(--black),
+  blue: var(--blue-500),
+  indigo: var(--indigo-500),
+  purple: var(--purple-500),
+  pink: var(--pink-500),
+  red: var(--red-500),
+  orange: var(--orange-500),
+  yellow: var(--yellow-500),
+  green: var(--green-500),
+);
+
 /* Default values */
-.hero-section {
+
+.hero {
   background-color: var(--white);
   color: var(--black);
   align-items: stretch;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  &.white {
+    background-color: map-get($hero-colors, white);
+    color: map-get($hero-colors, black);
+  }
+
+  &.black {
+    background-color: map-get($hero-colors, black);
+    color: map-get($hero-colors, white);
+  }
+
+  &.blue {
+    background-color: map-get($hero-colors, blue);
+    color: map-get($hero-colors, white);
+  }
+
+  &.indigo {
+    background-color: map-get($hero-colors, indigo);
+    color: map-get($hero-colors, white);
+  }
+
+  &.purple {
+    background-color: map-get($hero-colors, purple);
+    color: map-get($hero-colors, white);
+  }
+
+  &.pink {
+    background-color: map-get($hero-colors, pink);
+    color: map-get($hero-colors, white);
+  }
+
+  &.red {
+    background-color: map-get($hero-colors, red);
+    color: map-get($hero-colors, white);
+  }
+
+  &.orange {
+    background-color: map-get($hero-colors, orange);
+    color: map-get($hero-colors, black);
+  }
+
+  &.yellow {
+    background-color: map-get($hero-colors, yellow);
+    color: map-get($hero-colors, black);
+  }
+
+  &.green {
+    background-color: map-get($hero-colors, green);
+    color: map-get($hero-colors, black);
+  }
 }
 
-.hero-section-body {
+.hero-body {
   padding: 3rem 1.5rem;
   flex-grow: 1;
   flex-shrink: 0;
 }
 
-/* Image background */
-.hero-section-image {
+.hero-image {
   height: 65vh;
   padding: 1em;
   box-sizing: border-box;
@@ -26,45 +89,34 @@
   justify-content: space-between;
 }
 
-/* Navbar styles */
-.hero-section .navbar {
-  background: none;
-}
-
-/* Small size */
-.hero-section.small .hero-section-body {
+.hero.small .hero-body {
   padding: 1.5rem;
 }
 
-/* Medium size */
-@media screen and (min-width: 768px), print {
-  .hero-section.medium .hero-section-body {
+@media (min-width: 768px) and (max-width: 1023px), print {
+  .hero.medium .hero-body {
     padding: 9rem 1.5rem;
   }
 }
 
-/* Large size */
-@media screen and (min-width: 1024px), print {
-  .hero-section.large .hero-section-body {
+@media (min-width: 1024px) and (max-width: 1279px), print {
+  .hero.large .hero-body {
     padding: 18rem 1.5rem;
   }
 }
 
-/* XLarge size */
-@media screen and (min-width: 1280px), print {
-  .hero-section.xlarge .hero-section-body {
+@media (min-width: 1280px) and (max-width: 1535px), print {
+  .hero.xlarge .hero-body {
     padding: 24rem 1.5rem;
   }
 }
 
-/* XXLarge size */
-@media screen and (min-width: 1536px), print {
-  .hero-section.xxlarge .hero-section-body {
+@media (min-width: 1536px), print {
+  .hero.xxlarge .hero-body {
     padding: 30rem 1.5rem;
   }
 }
 
-// SCSS with variables
 $half-height: 50vh;
 $full-height: 100vh;
 
@@ -176,69 +228,4 @@ $breakpoint: 640px;
   flex-grow: 1;
   flex-shrink: 0;
   padding: 3rem 1.5rem;
-}
-
-$hero-colors: (
-  white: var(--white),
-  black: var(--black),
-  blue: var(--blue-500),
-  indigo: var(--indigo-500),
-  purple: var(--purple-500),
-  pink: var(--pink-500),
-  red: var(--red-500),
-  orange: var(--orange-500),
-  yellow: var(--yellow-500),
-  green: var(--green-500),
-);
-
-.hero {
-  &.white {
-    background-color: map-get($hero-colors, white);
-    color: map-get($hero-colors, black);
-  }
-
-  &.black {
-    background-color: map-get($hero-colors, black);
-    color: map-get($hero-colors, white);
-  }
-
-  &.blue {
-    background-color: map-get($hero-colors, blue);
-    color: map-get($hero-colors, white);
-  }
-
-  &.indigo {
-    background-color: map-get($hero-colors, indigo);
-    color: map-get($hero-colors, white);
-  }
-
-  &.purple {
-    background-color: map-get($hero-colors, purple);
-    color: map-get($hero-colors, white);
-  }
-
-  &.pink {
-    background-color: map-get($hero-colors, pink);
-    color: map-get($hero-colors, white);
-  }
-
-  &.red {
-    background-color: map-get($hero-colors, red);
-    color: map-get($hero-colors, white);
-  }
-
-  &.orange {
-    background-color: map-get($hero-colors, orange);
-    color: map-get($hero-colors, black);
-  }
-
-  &.yellow {
-    background-color: map-get($hero-colors, yellow);
-    color: map-get($hero-colors, black);
-  }
-
-  &.green {
-    background-color: map-get($hero-colors, green);
-    color: map-get($hero-colors, black);
-  }
 }

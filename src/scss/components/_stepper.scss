@@ -1,0 +1,52 @@
+// Colors
+$primary-color: #0070f3;
+$secondary-color: #eaeaea;
+
+// Stepper component
+.stepper {
+  display: flex;
+  flex-direction: column;
+
+  .step {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &__number {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      height: 2.5rem;
+      width: 2.5rem;
+      border-radius: 9999px;
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: $primary-color;
+      background-color: white;
+      border: 2px solid $primary-color;
+    }
+
+    &__text {
+      margin-left: 1.5rem;
+      font-size: 1rem;
+      font-weight: 500;
+      color: $primary-color;
+    }
+
+    &__line {
+      flex: 1;
+      height: 0.25rem;
+      background-color: $secondary-color;
+      margin-left: 1.5rem;
+
+      &--active {
+        background-color: $primary-color;
+      }
+    }
+  }
+}
