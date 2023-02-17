@@ -5,34 +5,49 @@
   width: auto;
 }
 
-@media (min-width: 360px) {
+@media screen and (max-width: 359px) {
   .container {
     max-width: 360px;
   }
 }
-@media (min-width: 640px) {
+@media screen and (min-width: 360px) and (max-width: 639px) {
   .container {
     max-width: 640px;
   }
 }
-@media (min-width: 768px) {
+@media screen and (min-width: 640px) and (max-width: 767px) {
   .container {
     max-width: 768px;
   }
 }
-@media (min-width: 1042px) {
+@media screen and (min-width: 768px) and (max-width: 1041px) {
   .container {
     max-width: 1042px;
   }
 }
-@media (min-width: 1280px) {
+@media screen and (min-width: 1042px) and (max-width: 1279px) {
   .container {
     max-width: 1280px;
   }
 }
-@media (min-width: 1536px) {
+@media screen and (min-width: 1280px) and (max-width: 1535px) {
   .container {
     max-width: 1536px;
+  }
+}
+@media screen and (min-width: 1536px) and (max-width: 3840px) {
+  .container {
+    max-width: 1920px;
+  }
+}
+@media screen and (min-width: 3841px) and (max-width: 7680px) {
+  .container {
+    max-width: 2560px;
+  }
+}
+@media screen and (min-width: 7681px) {
+  .container {
+    max-width: 3840px;
   }
 }
 .container.fluid {
@@ -4256,17 +4271,46 @@
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
 }
-.grid-columns-subgrid {
+.subgrid-cols {
   grid-template-columns: subgrid;
 }
 
-.grid-rows-subgrid {
+.subgrid-rows {
   grid-template-rows: subgrid;
 }
 
-.grid-subgrid-both {
+.subgrid {
   grid-template-columns: subgrid;
   grid-template-rows: subgrid;
+}
+
+.subgrid-cols-n {
+  grid-template-columns: repeat(var(--n), subgrid);
+}
+
+.subgrid-rows-n {
+  grid-template-rows: repeat(var(--n), subgrid);
+}
+
+.subgrid-both-n {
+  grid-template-columns: repeat(var(--n), subgrid);
+  grid-template-rows: repeat(var(--n), subgrid);
+}
+
+.subgrid-col-start-n {
+  grid-column-start: span var(--n, auto);
+}
+
+.subgrid-col-end-n {
+  grid-column-end: span var(--n, auto);
+}
+
+.subgrid-row-start-n {
+  grid-row-start: span var(--n, auto);
+}
+
+.subgrid-row-end-n {
+  grid-row-end: span var(--n, auto);
 }
 
 .masonry-flow-pack {

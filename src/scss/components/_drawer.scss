@@ -1,53 +1,80 @@
 $drawer-width: 300px;
-$drawer-background-color: #fff;
-$drawer-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-$drawer-transition-duration: 0.3s;
+$drawer-bg-color: #fff;
+$drawer-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+$drawer-transition-time: 0.2s;
+$drawer-slide-distance: 300px;
+
+.drawer-container {
+  position: relative;
+
+  &.left .drawer {
+    right: auto;
+    left: -#{$drawer-width};
+  }
+
+  &.dark .drawer {
+    background-color: #333;
+    color: #fff;
+  }
+}
+
+.drawer-toggle {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
 
 .drawer {
-  position: fixed;
+  position: absolute;
   top: 0;
-  left: 0;
-  height: 100%;
+  right: -#{$drawer-width};
   width: $drawer-width;
-  background-color: $drawer-background-color;
-  box-shadow: $drawer-shadow;
-  transition: transform $drawer-transition-duration ease-in-out;
-  transform: translateX(-100%);
-  z-index: 10;
+  height: 100vh;
+  background-color: $drawer-bg-color;
+  box-shadow: $drawer-box-shadow;
+  transition: right $drawer-transition-time ease-in-out,
+    left $drawer-transition-time ease-in-out,
+    transform $drawer-transition-time ease-in-out,
+    background-color $drawer-transition-time ease-in-out;
+  z-index: 999;
+  overflow-y: auto;
 
-  &.is-open {
+  &.open {
+    right: 0;
+
+    &.left {
+      left: 0;
+    }
+  }
+
+  &.left {
+    right: auto;
+    left: -#{$drawer-width};
+  }
+
+  &.slide {
+    transform: translateX($drawer-slide-distance);
+  }
+
+  &.fade {
+    opacity: 0;
+  }
+
+  &.slide.open {
     transform: translateX(0);
   }
 
-  .drawer-header {
-    padding: 1rem;
-    font-weight: bold;
-    border-bottom: 1px solid #ccc;
+  &.fade.open {
+    opacity: 1;
   }
 
-  .drawer-content {
-    padding: 1rem;
-  }
+  &.dark {
+    background-color: #333;
+    color: #fff;
 
-  .drawer-footer {
-    padding: 1rem;
-    border-top: 1px solid #ccc;
-    text-align: right;
-  }
-
-  .drawer-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 9;
-    opacity: 0;
-    transition: opacity $drawer-transition-duration ease-in-out;
-
-    &.is-open {
-      opacity: 1;
+    &.open {
+      background-color: $drawer-bg-color;
     }
   }
 }

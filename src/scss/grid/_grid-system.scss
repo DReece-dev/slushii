@@ -3106,17 +3106,46 @@
   }
 }
 
-.grid-columns-subgrid {
+.subgrid-cols {
   grid-template-columns: subgrid;
 }
 
-.grid-rows-subgrid {
+.subgrid-rows {
   grid-template-rows: subgrid;
 }
 
-.grid-subgrid-both {
+.subgrid {
   grid-template-columns: subgrid;
   grid-template-rows: subgrid;
+}
+
+.subgrid-cols-n {
+  grid-template-columns: repeat(var(--n), subgrid);
+}
+
+.subgrid-rows-n {
+  grid-template-rows: repeat(var(--n), subgrid);
+}
+
+.subgrid-both-n {
+  grid-template-columns: repeat(var(--n), subgrid);
+  grid-template-rows: repeat(var(--n), subgrid);
+}
+
+.subgrid-col-start-n {
+  grid-column-start: span var(--n, auto);
+}
+
+.subgrid-col-end-n {
+  grid-column-end: span var(--n, auto);
+}
+
+.subgrid-row-start-n {
+  grid-row-start: span var(--n, auto);
+}
+
+.subgrid-row-end-n {
+  grid-row-end: span var(--n, auto);
 }
 
 // experimental technology check Browser compatibility

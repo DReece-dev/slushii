@@ -12,6 +12,8 @@ $secondary-color: #eaeaea;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1.5rem;
+    position: relative;
+    cursor: pointer;
 
     &:last-child {
       margin-bottom: 0;
@@ -29,6 +31,12 @@ $secondary-color: #eaeaea;
       color: $primary-color;
       background-color: white;
       border: 2px solid $primary-color;
+      transition: all 0.2s ease;
+
+      &--active {
+        color: white;
+        background-color: $primary-color;
+      }
     }
 
     &__text {
@@ -36,6 +44,11 @@ $secondary-color: #eaeaea;
       font-size: 1rem;
       font-weight: 500;
       color: $primary-color;
+      transition: all 0.2s ease;
+
+      &--active {
+        color: $primary-color;
+      }
     }
 
     &__line {
@@ -43,9 +56,73 @@ $secondary-color: #eaeaea;
       height: 0.25rem;
       background-color: $secondary-color;
       margin-left: 1.5rem;
+      position: absolute;
+      left: 1.25rem;
+      top: 1.25rem;
+      transition: all 0.2s ease;
 
       &--active {
         background-color: $primary-color;
+      }
+    }
+  }
+
+  &--blue {
+    .step {
+      &__number {
+        color: white;
+        background-color: $primary-color;
+
+        &--active {
+          background-color: white;
+          color: $primary-color;
+        }
+      }
+
+      &__text {
+        color: white;
+
+        &--active {
+          color: $primary-color;
+        }
+      }
+
+      &__line {
+        background-color: $primary-color;
+
+        &--active {
+          background-color: $secondary-color;
+        }
+      }
+    }
+  }
+
+  &--green {
+    .step {
+      &__number {
+        color: white;
+        background-color: green;
+
+        &--active {
+          background-color: white;
+          color: green;
+        }
+      }
+
+      &__text {
+        color: green;
+
+        &--active {
+          color: $primary-color;
+        }
+      }
+
+      &__line {
+        background-color: green;
+
+        &--active {
+          background-color: $secondary-color;
+        }
       }
     }
   }

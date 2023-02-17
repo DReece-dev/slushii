@@ -171,3 +171,28 @@ $card-border-radius: 10px;
     margin: 50px;
   }
 }
+
+@media only screen and (max-width: 768px) {
+  .card-heading-container.custom-width {
+    width: 100%;
+    padding: 1rem;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .card {
+    &__media {
+      &:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+    }
+
+    &.rounded {
+      border-radius: 5px;
+    }
+  }
+
+  .card-heading-container.custom {
+    margin: 1rem;
+  }
+}
