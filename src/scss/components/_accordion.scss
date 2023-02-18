@@ -1,0 +1,118 @@
+$primary-color: #4c51bf;
+$secondary-color: #a0aec0;
+$dark-color: #1a202c;
+
+$animation-duration: 0.3s;
+$animation-function: ease-in-out;
+
+.accordion {
+  border: none;
+  margin-bottom: 20px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  border-radius: 10px;
+
+  &.flush {
+    border-radius: 0;
+
+    > .accordion-header {
+      border: none;
+      border-bottom: 1px solid #ccc;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &.always-open {
+    > .accordion-content {
+      max-height: none !important;
+      opacity: 1 !important;
+      padding: 20px;
+    }
+  }
+}
+
+.accordion-header {
+  background-color: $secondary-color;
+  color: $dark-color;
+  cursor: pointer;
+  padding: 20px;
+  font-weight: 600;
+  transition: background-color $animation-duration $animation-function;
+
+  &:hover {
+    background-color: $primary-color;
+    color: #fff;
+  }
+
+  &.active {
+    background-color: $primary-color;
+    color: #fff;
+  }
+}
+
+.accordion-content {
+  padding: 20px;
+  color: $dark-color;
+  transition: max-height $animation-duration $animation-function,
+    opacity $animation-duration $animation-function,
+    padding $animation-duration $animation-function;
+
+  &.active {
+    max-height: 1000px;
+    opacity: 1;
+    padding: 20px;
+  }
+
+  &.dark-mode {
+    background-color: $dark-color;
+    color: #fff;
+  }
+}
+
+.dark-mode {
+  background-color: $dark-color;
+  color: #fff;
+
+  .accordion-header {
+    background-color: $dark-color;
+    color: #fff;
+
+    &:hover,
+    &.active {
+      background-color: lighten($dark-color, 10%);
+    }
+  }
+
+  .accordion-content {
+    background-color: darken($dark-color, 5%);
+    color: #fff;
+
+    &.active {
+      background-color: darken($dark-color, 5%);
+    }
+  }
+}
+
+// Animation options
+$animation-type-1: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+$animation-type-2: ease-in-out;
+$animation-type-3: steps(5, end);
+
+.accordion {
+  transition: all $animation-duration $animation-function;
+}
+
+.accordion-header {
+  transition: background-color $animation-duration $animation-type-1;
+}
+
+.accordion-content {
+  transition-property: max-height, opacity, padding;
+  transition-duration: 0s, $animation-duration, $animation-duration;
+  transition-timing-function: $animation-type-2, $animation-type-2,
+    $animation-type-3;
+}
