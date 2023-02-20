@@ -1,22 +1,64 @@
 .section {
   padding: 3rem 1.5rem;
 
-  @media screen and (min-width: 1024px) {
-    &.xs-small,
-    &.small {
-      padding: 4.5rem 1.5rem;
+  &.xs-small {
+    padding: 2rem 1.5rem;
+  }
+
+  &.small {
+    padding: 4.5rem 1.5rem;
+  }
+
+  &.medium {
+    padding: 9rem 1.5rem;
+  }
+
+  &.large {
+    padding: 18rem 1.5rem;
+  }
+
+  &.xl-large {
+    padding: 24rem 1.5rem;
+  }
+
+  @media screen and (min-width: 640px) {
+    &.small,
+    &.xs-small {
+      padding: 3rem 2rem;
     }
 
     &.medium {
-      padding: 9rem 1.5rem;
+      padding: 6rem 2rem;
     }
 
     &.large {
-      padding: 18rem 1.5rem;
+      padding: 12rem 2rem;
     }
 
     &.xl-large {
-      padding: 24rem 1.5rem;
+      padding: 16rem 2rem;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    &.xs-small {
+      padding: 3rem 4rem;
+    }
+
+    &.small {
+      padding: 4.5rem 4rem;
+    }
+
+    &.medium {
+      padding: 9rem 4rem;
+    }
+
+    &.large {
+      padding: 18rem 4rem;
+    }
+
+    &.xl-large {
+      padding: 24rem 4rem;
     }
   }
 }
