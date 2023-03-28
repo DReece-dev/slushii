@@ -5560,6 +5560,9 @@ meter {
   padding: 3rem 1.5rem 6rem;
   margin-top: 5rem;
   width: 100%;
+  position: absolute;
+  bottom: bottom;
+  margin-bottom: 0;
 }
 .footer.fixed {
   bottom: 0;
