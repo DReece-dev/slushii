@@ -5557,12 +5557,12 @@ meter {
 
 .footer {
   background-color: #fafafa;
-  padding: 3rem 1.5rem 6rem;
-  margin-top: 5rem;
+  box-sizing: border-box;
+  min-height: 100px;
   width: 100%;
-  position: absolute;
-  bottom: bottom;
-  margin-bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .footer.fixed {
   bottom: 0;

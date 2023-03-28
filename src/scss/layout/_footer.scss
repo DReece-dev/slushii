@@ -1,25 +1,18 @@
-$footer-background-color: #fafafa;
-$footer-padding: 3rem 1.5rem 6rem;
-$footer-margin-top: 5rem;
-$footer-width: 100%;
-$footer-bottom: bottom;
 $footer-fixed-bottom: 0;
 $footer-fixed-position: fixed;
-$footer-position: absolute;
-$footer-margin-bottom: 0;
 $footer-dark-background-color: var(--dark-800);
 $footer-dark-color: var(--white);
 $footer-grey-background-color: var(--grey-500);
 $footer-grey-color: var(--black);
 
 .footer {
-  background-color: $footer-background-color;
-  padding: $footer-padding;
-  margin-top: $footer-margin-top;
-  width: $footer-width;
-  position: $footer-position;
-  bottom: $footer-bottom;
-  margin-bottom: $footer-margin-bottom;
+  background-color: #fafafa;
+  box-sizing: border-box;
+  min-height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   &.fixed {
     bottom: $footer-fixed-bottom;
