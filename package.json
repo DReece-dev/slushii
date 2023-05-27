@@ -12,7 +12,7 @@
     "purge": "gulp purgecss",
     "lint:sass": "sass-lint -v -q -f stylish",
     "lint:css": "stylelint 'src/**/*.scss'",
-    "browser-list-update": "npx browserslist@latest --update-db"
+    "browser-list-update": "npx update-browserslist-db@latest"
   },
   "repository": {
     "type": "git",
