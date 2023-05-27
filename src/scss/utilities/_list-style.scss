@@ -35,3 +35,11 @@
 .list-decimal {
   list-style-type: decimal !important;
 }
+
+.list-style-image-none {
+  list-style-image: none !important;
+}
+
+.list-style-image-url {
+  list-style-image: url('') !important;
+}

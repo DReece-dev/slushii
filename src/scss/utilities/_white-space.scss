@@ -18,6 +18,36 @@
   white-space: pre-wrap !important;
 }
 
+.whitespace-break-spaces {
+  white-space: break-spaces !important;
+}
+
+@media (min-width: 360px) {
+  .xs\:whitespace-normal {
+    white-space: normal !important;
+  }
+
+  .xs\:whitespace-nowrap {
+    white-space: nowrap !important;
+  }
+
+  .xs\:whitespace-pre {
+    white-space: pre !important;
+  }
+
+  .xs\:whitespace-pre-line {
+    white-space: pre-line !important;
+  }
+
+  .xs\:whitespace-pre-wrap {
+    white-space: pre-wrap !important;
+  }
+
+  .xs\:whitespace-break-spaces {
+    white-space: break-spaces !important;
+  }
+}
+
 @media (min-width: 640px) {
   .sm\:whitespace-normal {
     white-space: normal !important;
@@ -37,6 +67,10 @@
 
   .sm\:whitespace-pre-wrap {
     white-space: pre-wrap !important;
+  }
+
+  .sm\:whitespace-break-spaces {
+    white-space: break-spaces !important;
   }
 }
 
@@ -60,6 +94,9 @@
   .md\:whitespace-pre-wrap {
     white-space: pre-wrap !important;
   }
+  .md\:whitespace-break-spaces {
+    white-space: break-spaces !important;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -81,6 +118,9 @@
 
   .lg\:whitespace-pre-wrap {
     white-space: pre-wrap !important;
+  }
+  .lg\:whitespace-break-spaces {
+    white-space: break-spaces !important;
   }
 }
 
@@ -104,6 +144,9 @@
   .xl\:whitespace-pre-wrap {
     white-space: pre-wrap !important;
   }
+  .xl\:whitespace-break-spaces {
+    white-space: break-spaces !important;
+  }
 }
 
 @media (min-width: 1536px) {
@@ -125,5 +168,8 @@
 
   .\32xl\:whitespace-pre-wrap {
     white-space: pre-wrap !important;
+  }
+  .\32xl\:whitespace-break-spaces {
+    white-space: break-spaces !important;
   }
 }

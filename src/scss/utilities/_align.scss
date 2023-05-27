@@ -74,6 +74,10 @@
   justify-content: center !important;
 }
 
+.content-normal {
+  align-content: normal !important;
+}
+
 .content-center {
   align-content: center !important;
 }
@@ -96,6 +100,10 @@
 
 .content-evenly {
   align-content: space-evenly !important;
+}
+
+.content-stretch {
+  align-content: stretch !important;
 }
 
 .self-auto {
@@ -257,6 +265,10 @@
     align-content: center !important;
   }
 
+  .xs\:content-normal {
+    align-content: normal !important;
+  }
+
   .xs\:content-start {
     align-content: flex-start !important;
   }
@@ -275,6 +287,10 @@
 
   .xs\:content-evenly {
     align-content: space-evenly !important;
+  }
+
+  .xs\:content-stretch {
+    align-content: stretch !important;
   }
 
   .xs\:items-start {
@@ -429,6 +445,10 @@
     justify-content: center !important;
   }
 
+  .sm\:content-normal {
+    align-content: normal !important;
+  }
+
   .sm\:content-center {
     align-content: center !important;
   }
@@ -451,6 +471,10 @@
 
   .sm\:content-evenly {
     align-content: space-evenly !important;
+  }
+
+  .sm\:content-stretch {
+    align-content: stretch !important;
   }
 
   .sm\:items-start {
@@ -605,6 +629,10 @@
     justify-content: center !important;
   }
 
+  .md\:content-normal {
+    align-content: normal !important;
+  }
+
   .md\:content-center {
     align-content: center !important;
   }
@@ -627,6 +655,10 @@
 
   .md\:content-evenly {
     align-content: space-evenly !important;
+  }
+
+  .md\:content-stretch {
+    align-content: stretch !important;
   }
 
   .md\:items-start {
@@ -781,6 +813,10 @@
     justify-content: center !important;
   }
 
+  .lg\:content-normal {
+    align-content: normal !important;
+  }
+
   .lg\:content-center {
     align-content: center !important;
   }
@@ -803,6 +839,10 @@
 
   .lg\:content-evenly {
     align-content: space-evenly !important;
+  }
+
+  .lg\:content-stretch {
+    align-content: stretch !important;
   }
 
   .lg\:items-start {
@@ -961,6 +1001,10 @@
     align-content: center !important;
   }
 
+  .xl\:content-normal {
+    align-content: normal !important;
+  }
+
   .xl\:content-start {
     align-content: flex-start !important;
   }
@@ -979,6 +1023,10 @@
 
   .xl\:content-evenly {
     align-content: space-evenly !important;
+  }
+
+  .xl\:content-stretch {
+    align-content: stretch !important;
   }
 
   .xl\:items-start {
@@ -1133,6 +1181,10 @@
     justify-content: center !important;
   }
 
+  .\32xl\:content-normal {
+    align-content: normal !important;
+  }
+
   .\32xl\:content-center {
     align-content: center !important;
   }
@@ -1155,6 +1207,10 @@
 
   .\32xl\:content-evenly {
     align-content: space-evenly !important;
+  }
+
+  .\32xl\:content-stretch {
+    align-content: stretch !important;
   }
 
   .\32xl\:items-start {
