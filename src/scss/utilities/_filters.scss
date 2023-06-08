@@ -1,203 +1,203 @@
 .blur-none {
-  filter: blur(0) !important;
+  filter: blur(0);
 }
 
 .blur-sm {
-  filter: blur(4px) !important;
+  filter: blur(4px);
 }
 
 .blur {
-  filter: blur(8px) !important;
+  filter: blur(8px);
 }
 
 .blur-md {
-  filter: blur(12px) !important;
+  filter: blur(12px);
 }
 
 .blur-lg {
-  filter: blur(16px) !important;
+  filter: blur(16px);
 }
 
 .blur-xl {
-  filter: blur(24px) !important;
+  filter: blur(24px);
 }
 
 .blur-2xl {
-  filter: blur(40px) !important;
+  filter: blur(40px);
 }
 
 .blur-3xl {
-  filter: blur(64px) !important;
+  filter: blur(64px);
 }
 
 .brightness-0 {
-  filter: brightness(0) !important;
+  filter: brightness(0);
 }
 
 .brightness-50 {
-  filter: brightness(0.5) !important;
+  filter: brightness(0.5);
 }
 
 .brightness-75 {
-  filter: brightness(0.75) !important;
+  filter: brightness(0.75);
 }
 
 .brightness-90 {
-  filter: brightness(0.9) !important;
+  filter: brightness(0.9);
 }
 
 .brightness-95 {
-  filter: brightness(0.95) !important;
+  filter: brightness(0.95);
 }
 
 .brightness-100 {
-  filter: brightness(1) !important;
+  filter: brightness(1);
 }
 
 .brightness-105 {
-  filter: brightness(1.05) !important;
+  filter: brightness(1.05);
 }
 
 .brightness-110 {
-  filter: brightness(1.1) !important;
+  filter: brightness(1.1);
 }
 
 .brightness-125 {
-  filter: brightness(1.25) !important;
+  filter: brightness(1.25);
 }
 
 .brightness-150 {
-  filter: brightness(1.5) !important;
+  filter: brightness(1.5);
 }
 
 .brightness-200 {
-  filter: brightness(2) !important;
+  filter: brightness(2);
 }
 
 .contrast-0 {
-  filter: contrast(0) !important;
+  filter: contrast(0);
 }
 
 .contrast-50 {
-  filter: contrast(0.5) !important;
+  filter: contrast(0.5);
 }
 
 .contrast-75 {
-  filter: contrast(0.75) !important;
+  filter: contrast(0.75);
 }
 
 .contrast-100 {
-  filter: contrast(1) !important;
+  filter: contrast(1);
 }
 
 .contrast-125 {
-  filter: contrast(1.25) !important;
+  filter: contrast(1.25);
 }
 
 .contrast-150 {
-  filter: contrast(1.5) !important;
+  filter: contrast(1.5);
 }
 
 .contrast-200 {
-  filter: contrast(2) !important;
+  filter: contrast(2);
 }
 
 .grayscale-0 {
-  filter: grayscale(0) !important;
+  filter: grayscale(0);
 }
 
 .grayscale {
-  filter: grayscale(100%) !important;
+  filter: grayscale(100%);
 }
 
 .hue-rotate-0 {
-  filter: hue-rotate(0deg) !important;
+  filter: hue-rotate(0deg);
 }
 
 .hue-rotate-15 {
-  filter: hue-rotate(15deg) !important;
+  filter: hue-rotate(15deg);
 }
 
 .hue-rotate-30 {
-  filter: hue-rotate(30deg) !important;
+  filter: hue-rotate(30deg);
 }
 
 .hue-rotate-60 {
-  filter: hue-rotate(60deg) !important;
+  filter: hue-rotate(60deg);
 }
 
 .hue-rotate-90 {
-  filter: hue-rotate(90deg) !important;
+  filter: hue-rotate(90deg);
 }
 
 .hue-rotate-180 {
-  filter: hue-rotate(180deg) !important;
+  filter: hue-rotate(180deg);
 }
 
 .invert-0 {
-  filter: invert(0) !important;
+  filter: invert(0);
 }
 
 .invert {
-  filter: invert(100%) !important;
+  filter: invert(100%);
 }
 
 .saturate-0 {
-  filter: saturate(0) !important;
+  filter: saturate(0);
 }
 
 .saturate-50 {
-  filter: saturate(0.5) !important;
+  filter: saturate(0.5);
 }
 
 .saturate-100 {
-  filter: saturate(1) !important;
+  filter: saturate(1);
 }
 
 .saturate-150 {
-  filter: saturate(1.5) !important;
+  filter: saturate(1.5);
 }
 
 .saturate-200 {
-  filter: saturate(2) !important;
+  filter: saturate(2);
 }
 
 .sepia-0 {
-  filter: sepia(0) !important;
+  filter: sepia(0);
 }
 
 .sepia {
-  filter: sepia(100%) !important;
+  filter: sepia(100%);
 }
 
 .drop-shadow {
   filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1))
-    drop-shadow(0 1px 1px rgba(0, 0, 0, 0.06)) !important;
+    drop-shadow(0 1px 1px rgba(0, 0, 0, 0.06));
 }
 
 .drop-shadow-sm {
-  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.05)) !important;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.05));
 }
 
 .drop-shadow-md {
   filter: drop-shadow(0 4px 3px rgba(0, 0, 0, 0.07))
-    drop-shadow(0 2px 2px rgba(0, 0, 0, 0.06)) !important;
+    drop-shadow(0 2px 2px rgba(0, 0, 0, 0.06));
 }
 
 .drop-shadow-lg {
   filter: drop-shadow(0 10px 8px rgba(0, 0, 0, 0.04))
-    drop-shadow(0 4px 3px rgba(0, 0, 0, 0.1)) !important;
+    drop-shadow(0 4px 3px rgba(0, 0, 0, 0.1));
 }
 
 .drop-shadow-xl {
   filter: drop-shadow(0 20px 13px rgba(0, 0, 0, 0.03))
-    drop-shadow(0 8px 5px rgba(0, 0, 0, 0.08)) !important;
+    drop-shadow(0 8px 5px rgba(0, 0, 0, 0.08));
 }
 
 .drop-shadow-2xl {
-  filter: drop-shadow(0 25px 25px rgba(0, 0, 0, 0.15)) !important;
+  filter: drop-shadow(0 25px 25px rgba(0, 0, 0, 0.15));
 }
 
 .drop-shadow-none {
-  filter: drop-shadow(0, 0, #0000) !important;
+  filter: drop-shadow(0, 0, #0000);
 }

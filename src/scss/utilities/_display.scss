@@ -1,235 +1,235 @@
 .block {
-  display: block !important;
+  display: block;
 }
 
 .inline-block {
-  display: inline-block !important;
+  display: inline-block;
 }
 
 .inline {
-  display: inline !important;
+  display: inline;
 }
 
 .flow-root {
-  display: flow-root !important;
+  display: flow-root;
 }
 
 .contents {
-  display: contents !important;
+  display: contents;
 }
 
 .hidden {
-  display: none !important;
+  display: none;
 }
 
 .visible {
-  visibility: visible !important;
+  visibility: visible;
 }
 
 .invisible {
-  visibility: hidden !important;
+  visibility: hidden;
 }
 
 @media (min-width: 360px) {
   .xs\:block {
-    display: block !important;
+    display: block;
   }
 
   .xs\:inline-block {
-    display: inline-block !important;
+    display: inline-block;
   }
 
   .xs\:inline {
-    display: inline !important;
+    display: inline;
   }
 
   .xs\:flow-root {
-    display: flow-root !important;
+    display: flow-root;
   }
 
   .xs\:contents {
-    display: contents !important;
+    display: contents;
   }
 
   .xs\:hidden {
-    display: none !important;
+    display: none;
   }
 
   .xs\:visible {
-    visibility: visible !important;
+    visibility: visible;
   }
 
   .xs\:invisible {
-    visibility: hidden !important;
+    visibility: hidden;
   }
 }
 
 @media (min-width: 640px) {
   .sm\:block {
-    display: block !important;
+    display: block;
   }
 
   .sm\:inline-block {
-    display: inline-block !important;
+    display: inline-block;
   }
 
   .sm\:inline {
-    display: inline !important;
+    display: inline;
   }
 
   .sm\:flow-root {
-    display: flow-root !important;
+    display: flow-root;
   }
 
   .sm\:contents {
-    display: contents !important;
+    display: contents;
   }
 
   .sm\:hidden {
-    display: none !important;
+    display: none;
   }
 
   .sm\:visible {
-    visibility: visible !important;
+    visibility: visible;
   }
 
   .sm\:invisible {
-    visibility: hidden !important;
+    visibility: hidden;
   }
 }
 
 @media (min-width: 768px) {
   .md\:block {
-    display: block !important;
+    display: block;
   }
 
   .md\:inline-block {
-    display: inline-block !important;
+    display: inline-block;
   }
 
   .md\:inline {
-    display: inline !important;
+    display: inline;
   }
 
   .md\:flow-root {
-    display: flow-root !important;
+    display: flow-root;
   }
 
   .md\:contents {
-    display: contents !important;
+    display: contents;
   }
 
   .md\:hidden {
-    display: none !important;
+    display: none;
   }
 
   .md\:visible {
-    visibility: visible !important;
+    visibility: visible;
   }
 
   .md\:invisible {
-    visibility: hidden !important;
+    visibility: hidden;
   }
 }
 
 @media (min-width: 1024px) {
   .lg\:block {
-    display: block !important;
+    display: block;
   }
 
   .lg\:inline-block {
-    display: inline-block !important;
+    display: inline-block;
   }
 
   .lg\:inline {
-    display: inline !important;
+    display: inline;
   }
 
   .lg\:flow-root {
-    display: flow-root !important;
+    display: flow-root;
   }
 
   .lg\:contents {
-    display: contents !important;
+    display: contents;
   }
 
   .lg\:hidden {
-    display: none !important;
+    display: none;
   }
 
   .lg\:visible {
-    visibility: visible !important;
+    visibility: visible;
   }
 
   .lg\:invisible {
-    visibility: hidden !important;
+    visibility: hidden;
   }
 }
 
 @media (min-width: 1280px) {
   .xl\:block {
-    display: block !important;
+    display: block;
   }
 
   .xl\:inline-block {
-    display: inline-block !important;
+    display: inline-block;
   }
 
   .xl\:inline {
-    display: inline !important;
+    display: inline;
   }
 
   .xl\:flow-root {
-    display: flow-root !important;
+    display: flow-root;
   }
 
   .xl\:contents {
-    display: contents !important;
+    display: contents;
   }
 
   .xl\:hidden {
-    display: none !important;
+    display: none;
   }
 
   .xl\:visible {
-    visibility: visible !important;
+    visibility: visible;
   }
 
   .xl\:invisible {
-    visibility: hidden !important;
+    visibility: hidden;
   }
 }
 
 @media (min-width: 1536px) {
   .\32xl\:block {
-    display: block !important;
+    display: block;
   }
 
   .\32xl\:inline-block {
-    display: inline-block !important;
+    display: inline-block;
   }
 
   .\32xl\:inline {
-    display: inline !important;
+    display: inline;
   }
 
   .\32xl\:flow-root {
-    display: flow-root !important;
+    display: flow-root;
   }
 
   .\32xl\:contents {
-    display: contents !important;
+    display: contents;
   }
 
   .\32xl\:hidden {
-    display: none !important;
+    display: none;
   }
 
   .\32xl\:visible {
-    visibility: visible !important;
+    visibility: visible;
   }
 
   .\32xl\:invisible {
-    visibility: hidden !important;
+    visibility: hidden;
   }
 }

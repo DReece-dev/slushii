@@ -1,298 +1,298 @@
 .font-sans {
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+    'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
 .font-serif {
-  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif !important;
+  font-family: ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
 }
 
 .font-mono {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-    "Liberation Mono", "Courier New", monospace !important;
+    'Liberation Mono', 'Courier New', monospace;
 }
 
 .font-thin {
-  font-weight: 100 !important;
+  font-weight: 100;
 }
 
 .font-extralight {
-  font-weight: 200 !important;
+  font-weight: 200;
 }
 
 .font-light {
-  font-weight: 300 !important;
+  font-weight: 300;
 }
 
 .font-normal {
-  font-weight: 400 !important;
+  font-weight: 400;
 }
 
 .font-medium {
-  font-weight: 500 !important;
+  font-weight: 500;
 }
 
 .font-semibold {
-  font-weight: 600 !important;
+  font-weight: 600;
 }
 
 .font-bold {
-  font-weight: 700 !important;
+  font-weight: 700;
 }
 
 .font-extrabold {
-  font-weight: 800 !important;
+  font-weight: 800;
 }
 
 .font-black {
-  font-weight: 900 !important;
+  font-weight: 900;
 }
 
 .is-none {
-  text-transform: none !important;
+  text-transform: none;
 }
 
 .is-capitalized {
-  text-transform: capitalize !important;
+  text-transform: capitalize;
 }
 
 .is-lowercase {
-  text-transform: lowercase !important;
+  text-transform: lowercase;
 }
 
 .is-uppercase {
-  text-transform: uppercase !important;
+  text-transform: uppercase;
 }
 
 .is-italic {
-  font-style: italic !important;
+  font-style: italic;
 }
 
 .is-underlined {
-  text-decoration: underline !important;
+  text-decoration: underline;
 }
 
 .is-full-width {
-  text-transform: full-width !important;
+  text-transform: full-width;
 }
 
 .is-inherit {
-  text-transform: inherit !important;
+  text-transform: inherit;
 }
 
 .is-initial {
-  text-transform: initial !important;
+  text-transform: initial;
 }
 
 .is-unset {
-  text-transform: unset !important;
+  text-transform: unset;
 }
 
 .is-size-1 {
-  font-size: 3rem !important;
+  font-size: 3rem;
 }
 
 .is-size-2 {
-  font-size: 2.5rem !important;
+  font-size: 2.5rem;
 }
 
 .is-size-3 {
-  font-size: 2rem !important;
+  font-size: 2rem;
 }
 
 .is-size-4 {
-  font-size: 1.5rem !important;
+  font-size: 1.5rem;
 }
 
 .is-size-5 {
-  font-size: 1.25rem !important;
+  font-size: 1.25rem;
 }
 
 .is-size-6 {
-  font-size: 1rem !important;
+  font-size: 1rem;
 }
 
 .is-size-7 {
-  font-size: 0.75rem !important;
+  font-size: 0.75rem;
 }
 
 @media (min-width: 360px) {
   .xs\:is-size-1 {
-    font-size: 3rem !important;
+    font-size: 3rem;
   }
 
   .xs\:is-size-2 {
-    font-size: 2.5rem !important;
+    font-size: 2.5rem;
   }
 
   .xs\:is-size-3 {
-    font-size: 2rem !important;
+    font-size: 2rem;
   }
 
   .xs\:is-size-4 {
-    font-size: 1.5rem !important;
+    font-size: 1.5rem;
   }
 
   .xs\:is-size-5 {
-    font-size: 1.25rem !important;
+    font-size: 1.25rem;
   }
 
   .xs\:is-size-6 {
-    font-size: 1rem !important;
+    font-size: 1rem;
   }
 
   .xs\:is-size-7 {
-    font-size: 0.75rem !important;
+    font-size: 0.75rem;
   }
 }
 
 @media (min-width: 640px) {
   .sm\:is-size-1 {
-    font-size: 3rem !important;
+    font-size: 3rem;
   }
 
   .sm\:is-size-2 {
-    font-size: 2.5rem !important;
+    font-size: 2.5rem;
   }
 
   .sm\:is-size-3 {
-    font-size: 2rem !important;
+    font-size: 2rem;
   }
 
   .sm\:is-size-4 {
-    font-size: 1.5rem !important;
+    font-size: 1.5rem;
   }
 
   .sm\:is-size-5 {
-    font-size: 1.25rem !important;
+    font-size: 1.25rem;
   }
 
   .sm\:is-size-6 {
-    font-size: 1rem !important;
+    font-size: 1rem;
   }
 
   .sm\:is-size-7 {
-    font-size: 0.75rem !important;
+    font-size: 0.75rem;
   }
 }
 
 @media (min-width: 768px) {
   .md\:is-size-1 {
-    font-size: 3rem !important;
+    font-size: 3rem;
   }
 
   .md\:is-size-2 {
-    font-size: 2.5rem !important;
+    font-size: 2.5rem;
   }
 
   .md\:is-size-3 {
-    font-size: 2rem !important;
+    font-size: 2rem;
   }
 
   .md\:is-size-4 {
-    font-size: 1.5rem !important;
+    font-size: 1.5rem;
   }
 
   .md\:is-size-5 {
-    font-size: 1.25rem !important;
+    font-size: 1.25rem;
   }
 
   .md\:is-size-6 {
-    font-size: 1rem !important;
+    font-size: 1rem;
   }
 
   .md\:is-size-7 {
-    font-size: 0.75rem !important;
+    font-size: 0.75rem;
   }
 }
 
 @media (min-width: 1024px) {
   .lg\:is-size-1 {
-    font-size: 3rem !important;
+    font-size: 3rem;
   }
 
   .lg\:is-size-2 {
-    font-size: 2.5rem !important;
+    font-size: 2.5rem;
   }
 
   .lg\:is-size-3 {
-    font-size: 2rem !important;
+    font-size: 2rem;
   }
 
   .lg\:is-size-4 {
-    font-size: 1.5rem !important;
+    font-size: 1.5rem;
   }
 
   .lg\:is-size-5 {
-    font-size: 1.25rem !important;
+    font-size: 1.25rem;
   }
 
   .lg\:is-size-6 {
-    font-size: 1rem !important;
+    font-size: 1rem;
   }
 
   .lg\:is-size-7 {
-    font-size: 0.75rem !important;
+    font-size: 0.75rem;
   }
 }
 
 @media (min-width: 1280px) {
   .xl\:is-size-1 {
-    font-size: 3rem !important;
+    font-size: 3rem;
   }
 
   .xl\:is-size-2 {
-    font-size: 2.5rem !important;
+    font-size: 2.5rem;
   }
 
   .xl\:is-size-3 {
-    font-size: 2rem !important;
+    font-size: 2rem;
   }
 
   .xl\:is-size-4 {
-    font-size: 1.5rem !important;
+    font-size: 1.5rem;
   }
 
   .xl\:is-size-5 {
-    font-size: 1.25rem !important;
+    font-size: 1.25rem;
   }
 
   .xl\:is-size-6 {
-    font-size: 1rem !important;
+    font-size: 1rem;
   }
 
   .xl\:is-size-7 {
-    font-size: 0.75rem !important;
+    font-size: 0.75rem;
   }
 }
 
 @media (min-width: 1536px) {
   .\32xl\:is-size-1 {
-    font-size: 3rem !important;
+    font-size: 3rem;
   }
 
   .\32xl\:is-size-2 {
-    font-size: 2.5rem !important;
+    font-size: 2.5rem;
   }
 
   .\32xl\:is-size-3 {
-    font-size: 2rem !important;
+    font-size: 2rem;
   }
 
   .\32xl\:is-size-4 {
-    font-size: 1.5rem !important;
+    font-size: 1.5rem;
   }
 
   .\32xl\:is-size-5 {
-    font-size: 1.25rem !important;
+    font-size: 1.25rem;
   }
 
   .\32xl\:is-size-6 {
-    font-size: 1rem !important;
+    font-size: 1rem;
   }
 
   .\32xl\:is-size-7 {
-    font-size: 0.75rem !important;
+    font-size: 0.75rem;
   }
 }
