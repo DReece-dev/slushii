@@ -1,7 +1,13 @@
+// Variables
 $black: var(--black);
-$gray-400: var(--gray-400);
-$gray-900: var(--gray-900);
+$gray_400: var(--gray-400);
+$gray_900: var(--gray-900);
+$title_divider_padding_bottom: calc(5px + 0.1em);
+$title_divider_border: calc(0.2px + 0.05em);
+$dark_title_divider_padding_bottom: calc(5px + 0.1em);
+$dark_title_divider_border: calc(0.2px + 0.05em);
 
+// Styles
 .title {
   color: $black;
   font-size: 2rem;
@@ -65,11 +71,11 @@ $gray-900: var(--gray-900);
 }
 
 .heading-divider {
-  padding-bottom: calc(5px + 0.1em);
-  border-bottom: calc(0.2px + 0.05em) solid $gray-400;
+  padding-bottom: $title_divider_padding_bottom;
+  border-bottom: $title_divider_border solid $gray_400;
 
   &.dark {
-    padding-bottom: calc(5px + 0.1em);
-    border-bottom: calc(0.2px + 0.05em) solid $gray-900;
+    padding-bottom: $dark_title_divider_padding_bottom;
+    border-bottom: $dark_title_divider_border solid $gray_900;
   }
 }

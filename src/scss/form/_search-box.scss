@@ -1,19 +1,57 @@
 .search-box {
   display: flex;
-  flex-direction: row-reverse;
-  padding: 0.375rem 0.75rem;
+  flex-direction: row;
+  padding: 0.5rem;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
   color: #212529;
   background-color: #fff;
   background-clip: padding-box;
-  appearance: none;
   border: 1px solid #ced4da;
   border-radius: 0.25rem;
 
   & .input {
-    border-color: transparent;
+    border: none;
     flex: 1;
+    text-align: right;
+
+    &::placeholder {
+      color: #999;
+    }
+  }
+
+  &.rounded {
+    border-radius: 2rem;
+  }
+
+  &.with-shadow {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  &.with-button {
+    & .input {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    button {
+      border: none;
+      background-color: #007bff;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border-top-right-radius: 0.25rem;
+      border-bottom-right-radius: 0.25rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #0056b3;
+      }
+    }
+  }
+
+  &.colored-border {
+    border-color: #007bff;
   }
 }

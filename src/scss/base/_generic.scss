@@ -1,3 +1,4 @@
+/* Reset styles for elements excluding specific tags */
 *:where(
     :not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)
   ) {
@@ -5,6 +6,7 @@
   display: revert;
 }
 
+/* Global box-sizing and background-repeat */
 *,
 *::before,
 *::after {
@@ -12,40 +14,38 @@
   background-repeat: no-repeat;
 }
 
+/* Inherit text-decoration and vertical-align for ::before and ::after pseudo-elements */
 ::before,
 ::after {
   text-decoration: inherit;
   vertical-align: inherit;
 }
 
+/* Styles for the root element */
 :where(:root) {
   cursor: default;
   line-height: 1.5;
   overflow-wrap: break-word;
-  -moz-tab-size: 4;
   tab-size: 4;
-  -webkit-tap-highlight-color: transparent;
-  -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
 }
 
+/* Styles for the root element when prefers-reduced-motion is not set */
 @media (prefers-reduced-motion: no-preference) {
   :root {
     scroll-behavior: smooth;
   }
 }
 
-html {
-  margin: 0;
-  padding: 0;
-}
-
+/* Reset margin, padding, and font-family for html and body */
+html,
 body {
   margin: 0;
-  font-family: var(--deafult-fonts);
-  -webkit-font-smoothing: antialiased;
+  padding: 0;
+  font-family: var(--default-fonts);
 }
 
+/* Styles for horizontal rule (hr) */
 hr {
   margin: 1rem 0;
   color: inherit;
@@ -54,90 +54,66 @@ hr {
   opacity: 0.25;
 }
 
-hr:not([size]) {
-  height: 1px;
-}
-
-h6,
-.h6,
-h5,
-.h5,
-h4,
-.h4,
-h3,
-.h3,
+/* Styles for heading elements (h1-h6) */
+h1,
+.h1,
 h2,
 .h2,
-h1,
-.h1 {
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
   margin-top: 0;
   margin-bottom: 0.5rem;
   font-weight: 500;
   line-height: 1.2;
 }
 
+/* Styles for h1 (and .h1) with responsive font size */
 h1,
 .h1 {
-  font-size: calc(1.375rem + 1.5vw);
+  font-size: clamp(1.375rem, 2.5rem + 1.5vw, 4rem);
 }
 
-@media (min-width: 1200px) {
-  h1,
-  .h1 {
-    font-size: 2.5rem;
-  }
-}
-
+/* Styles for h2 (and .h2) with responsive font size */
 h2,
 .h2 {
-  font-size: calc(1.325rem + 0.9vw);
+  font-size: clamp(1.325rem, 2rem + 0.9vw, 3.5rem);
 }
 
-@media (min-width: 1200px) {
-  h2,
-  .h2 {
-    font-size: 2rem;
-  }
-}
-
+/* Styles for h3 (and .h3) with responsive font size */
 h3,
 .h3 {
-  font-size: calc(1.3rem + 0.6vw);
+  font-size: clamp(1.3rem, 1.75rem + 0.6vw, 3rem);
 }
 
-@media (min-width: 1200px) {
-  h3,
-  .h3 {
-    font-size: 1.75rem;
-  }
-}
-
+/* Styles for h4 (and .h4) with responsive font size */
 h4,
 .h4 {
-  font-size: calc(1.275rem + 0.3vw);
+  font-size: clamp(1.275rem, 1.5rem + 0.3vw, 2.5rem);
 }
 
-@media (min-width: 1200px) {
-  h4,
-  .h4 {
-    font-size: 1.5rem;
-  }
-}
-
+/* Styles for h5 (and .h5) */
 h5,
 .h5 {
-  font-size: 1.25rem;
+  font-size: clamp(1rem, 1.25rem + 0.3vw, 2rem);
 }
 
+/* Styles for h6 (and .h6) */
 h6,
 .h6 {
-  font-size: 1rem;
+  font-size: clamp(0.875rem, 1rem + 0.2vw, 1.5rem);
 }
 
+/* Styles for paragraphs (p) */
 p {
   margin-top: 0;
   margin-bottom: 1rem;
-  font-size: 15px;
+  font-size: clamp(13px, 0.64vw + 12px, 14px);
 }
 
 @media (max-width: 612px) {
@@ -146,44 +122,50 @@ p {
   }
 }
 
+/* Styles for abbreviation elements with a title attribute */
 :where(abbr[title]) {
-  text-decoration: underline;
   text-decoration: underline dotted;
   cursor: help;
-  -webkit-text-decoration-skip-ink: none;
   text-decoration-skip-ink: none;
 }
 
+/* Styles for address element */
 address {
   margin-bottom: 1rem;
   font-style: normal;
   line-height: inherit;
 }
 
+/* Styles for anchor (link) elements */
 a {
   color: inherit;
   text-decoration: inherit;
 }
 
+/* Styles for anchor elements without href or class */
 a:not([href]):not([class]),
 a:not([href]):not([class]):hover {
   color: inherit;
   text-decoration: none;
 }
 
+/* Styles for bold (b) and strong elements */
 :where(b, strong) {
   font-weight: bolder;
 }
 
+/* Styles for code, kbd, and samp elements */
 :where(code, kbd, samp) {
   font-family: monospace, monospace;
   font-size: 1em;
 }
 
+/* Styles for small elements */
 small {
   font-size: 0.875em;
 }
 
+/* Styles for subscript and superscript elements */
 sub,
 sup {
   font-size: 75%;
@@ -192,20 +174,24 @@ sup {
   vertical-align: baseline;
 }
 
+/* Styles for subscript elements */
 sub {
   bottom: -0.25em;
 }
 
+/* Styles for superscript elements */
 sup {
   top: -0.5em;
 }
 
+/* Styles for table elements */
 :where(table) {
   border-collapse: collapse;
   border-color: inherit;
   text-indent: 0;
 }
 
+/* Styles for form elements (button, input, optgroup, select, textarea) */
 button,
 input,
 optgroup,
@@ -220,37 +206,18 @@ textarea {
   padding: 0;
 }
 
+/* Styles for button and select elements with text-transform none */
 button,
 select {
   text-transform: none;
 }
 
-:-moz-focusring {
-  outline: auto;
-}
-
-:-moz-ui-invalid {
-  box-shadow: none;
-}
-
+/* Styles for progress elements */
 :where(progress) {
   vertical-align: baseline;
 }
 
-::-webkit-inner-spin-button,
-::-webkit-outer-spin-button {
-  height: auto;
-}
-
-::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  font: inherit;
-}
-
+/* Styles for dialog elements */
 :where(dialog) {
   background-color: white;
   border: solid;
@@ -266,35 +233,31 @@ select {
   width: fit-content;
 }
 
+/* Hide closed dialog elements */
 :where(dialog:not([open])) {
   display: none;
 }
 
+/* Styles for summary elements */
 summary {
   display: list-item;
-  cursor: pointer;
 }
 
+/* Reset margin for blockquote, dl, dd, figure, and pre elements */
 blockquote,
 dl,
 dd,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-hr,
 figure,
-p,
 pre {
   margin: 0;
 }
 
+/* Styles for pre element with variable tab size */
 pre {
   tab-size: var(--tab-size);
 }
 
+/* Reset margin, padding, and list-style for list-related elements */
 ol,
 ul,
 li {
@@ -303,15 +266,18 @@ li {
   list-style: none;
 }
 
+/* Reset margin and padding for fieldset element */
 fieldset {
   margin: 0;
   padding: 0;
 }
 
+/* Reset padding for legend element */
 legend {
   padding: 0;
 }
 
+/* Reset margin, padding, and list-style for list-related elements (again) */
 ol,
 ul,
 menu {
@@ -320,6 +286,7 @@ menu {
   padding: 0;
 }
 
+/* Reset margin, padding, border, font-size, and vertical-align for table-related elements */
 table,
 th,
 td,
@@ -334,20 +301,24 @@ tfoot {
   vertical-align: baseline;
 }
 
+/* Reset margin, resize, and vertical-align for textarea element */
 :where(textarea) {
   margin: 0;
   resize: vertical;
 }
 
+/* Styles for button and elements with role 'button' */
 button,
 [role='button'] {
   cursor: pointer;
 }
 
+/* Styles for disabled elements */
 :disabled {
   cursor: default;
 }
 
+/* Reset margin, padding, border, font-size, font-family, and vertical-align for form-related elements */
 input,
 select,
 textarea,
@@ -362,6 +333,7 @@ form {
   vertical-align: baseline;
 }
 
+/* Reset line-height for input, select, textarea */
 button,
 input,
 select,
@@ -369,6 +341,7 @@ textarea {
   line-height: normal;
 }
 
+/* Styles for button and input types 'button', 'reset', 'submit' */
 button,
 input[type='button'],
 input[type='reset'],
@@ -376,15 +349,15 @@ input[type='submit'] {
   cursor: pointer;
 }
 
+/* Reset appearance for form controls */
 button,
 input,
 select,
 textarea {
-  -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
 }
 
+/* Set display block for media elements */
 img,
 svg,
 video,
@@ -396,25 +369,29 @@ object {
   display: block;
 }
 
+/* Set max-width to 100% and height auto for images and videos */
 img,
 video {
   max-width: 100%;
   height: auto;
 }
 
+/* Revert appearance for meter element */
 meter {
-  -webkit-appearance: revert;
   appearance: revert;
 }
 
+/* Hide elements with hidden attribute */
 :where([hidden]) {
   display: none;
 }
 
+/* Set -webkit-user-drag to element for draggable elements */
 :where([draggable='true']) {
   -webkit-user-drag: element;
 }
 
+/* Styles for lead class */
 .lead {
   font-size: 1.25rem;
   font-weight: 300;

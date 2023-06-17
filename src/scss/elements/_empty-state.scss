@@ -9,12 +9,67 @@
     margin-bottom: 1rem;
   }
 
-  &__title,
+  &__title {
+    margin: 0.4rem auto;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #333;
+  }
+
   &__subtitle {
     margin: 0.4rem auto;
+    font-size: 1.2rem;
+    color: #555;
   }
 
   &__action {
     margin-top: 0.8rem;
+
+    button {
+      padding: 0.6rem 1.2rem;
+      border-radius: 0.2rem;
+      background-color: #4caf50;
+      color: #fff;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #45a049;
+      }
+    }
+  }
+
+  &.bordered {
+    border: 1px solid #ccc;
+  }
+
+  &.large {
+    padding: 6.4rem 3.2rem;
+
+    &__icon {
+      margin-bottom: 2rem;
+    }
+
+    &__title {
+      font-size: 2.4rem;
+    }
+
+    &__subtitle {
+      font-size: 1.6rem;
+    }
+
+    &__action {
+      margin-top: 1.6rem;
+
+      button {
+        padding: 0.8rem 1.6rem;
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+  &.center-aligned {
+    text-align: center;
   }
 }
