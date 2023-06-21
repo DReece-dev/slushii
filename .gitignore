@@ -3,7 +3,7 @@ src/scss/helpers
 /.vscode/
 
 # Testing files
-index.html
+test-file.html
 
 # Dependency caches
 /node_modules
