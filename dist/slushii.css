@@ -11993,21 +11993,16 @@ legend {
   flex-wrap: wrap;
   margin-bottom: 2rem;
 }
-
 .form-row.row-eq-spacing > [class^=col] {
   padding-left: 1rem;
   padding-right: 1rem;
 }
-
 .form-row.row-eq-spacing > [class^=col]:first-child {
   padding-left: 0;
 }
-
 .form-row.row-eq-spacing > [class^=col]:last-child {
   padding-right: 0;
 }
-
-/* Adjustments for small screens and up (> 576px) */
 @media (min-width: 640px) {
   .form-row.row-eq-spacing-sm:not(.row-eq-spacing) > [class^=col] {
     padding-left: 1rem;
@@ -12076,6 +12071,7 @@ legend {
     margin-bottom: 2rem;
   }
 }
+
 .form-text {
   margin-top: 0.25rem;
   font-size: 0.875em;
