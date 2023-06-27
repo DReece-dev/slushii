@@ -8120,16 +8120,6 @@ meter {
   color: var(--black);
 }
 
-.navbar-brand > a.navbar-item:focus,
-.navbar-brand > a.navbar-item:hover,
-.navbar-brand > a.navbar-item.active,
-.navbar-brand .navbar-link:focus,
-.navbar-brand .navbar-link:hover,
-.navbar-brand .navbar-link.active {
-  background-color: #f2f2f2;
-  color: var(--black);
-}
-
 .navbar-brand .navbar-link::after {
   border-color: var(--black);
 }
@@ -8139,36 +8129,9 @@ meter {
 }
 
 @media screen and (min-width: 768px) {
-  .navbar-start > .navbar-item,
-  .navbar-start .navbar-link,
-  .navbar-end > .navbar-item,
-  .navbar-end .navbar-link {
-    color: var(--black);
-  }
-  .navbar-start > a.navbar-item:focus,
-  .navbar-start > a.navbar-item:hover,
-  .navbar-start > a.navbar-item.active,
-  .navbar-start .navbar-link:focus,
-  .navbar-start .navbar-link:hover,
-  .navbar-start .navbar-link.active,
-  .navbar-end > a.navbar-item:focus,
-  .navbar-end > a.navbar-item:hover,
-  .navbar-end > a.navbar-item.active,
-  .navbar-end .navbar-link:focus,
-  .navbar-end .navbar-link:hover,
-  .navbar-end .navbar-link.active {
-    background-color: #f2f2f2;
-    color: var(--black);
-  }
   .navbar-start .navbar-link::after,
   .navbar-end .navbar-link::after {
     border-color: var(--black);
-  }
-  .navbar-item.has-dropdown:focus .navbar-link,
-  .navbar-item.has-dropdown:hover .navbar-link,
-  .navbar-item.has-dropdown.active .navbar-link {
-    background-color: #f2f2f2;
-    color: var(--black);
   }
   .navbar-dropdown a.navbar-item.active {
     background-color: white;
@@ -8311,25 +8274,13 @@ a.navbar-item,
   cursor: pointer;
 }
 
-a.navbar-item:focus,
-a.navbar-item:focus-within,
-a.navbar-item:hover,
-a.navbar-item.active,
-.navbar-link:focus,
-.navbar-link:focus-within,
-.navbar-link:hover,
-.navbar-link.active {
-  background-color: #fafafa;
-  color: #3273dc;
-}
-
 .navbar-item {
   flex-grow: 0;
   flex-shrink: 0;
 }
 
 .navbar-item img {
-  max-height: 1.75rem;
+  max-height: 2.75rem;
 }
 
 .navbar-item.has-dropdown {
@@ -8350,15 +8301,12 @@ a.navbar-item.active,
 .navbar-item.tab:focus,
 .navbar-item.tab:hover {
   background-color: transparent;
-  border-bottom-color: #3273dc;
 }
 
 .navbar-item.tab.active {
   background-color: transparent;
-  border-bottom-color: #3273dc;
   border-bottom-style: solid;
   border-bottom-width: 3px;
-  color: #3273dc;
   padding-bottom: calc(0.5rem - 3px);
 }
 
@@ -8372,7 +8320,6 @@ a.navbar-item.active,
 }
 
 .navbar-link:not(.arrowless)::after {
-  border-color: #3273dc;
   margin-top: -0.375em;
   right: 1.125em;
 }
