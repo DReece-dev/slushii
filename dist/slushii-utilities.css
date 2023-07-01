@@ -90592,7 +90592,7 @@
 }
 
 .caption-side-block-end {
-  caption-side: block-start;
+  caption-side: block-end;
 }
 
 .caption-side-inline-start {
@@ -90617,6 +90617,21 @@
 
 .caption-side-unset {
   caption-side: unset;
+}
+
+.hyphens-none {
+  -webkit-hyphens: none;
+          hyphens: none;
+}
+
+.hyphens-manual {
+  -webkit-hyphens: manual;
+          hyphens: manual;
+}
+
+.hyphens-auto {
+  -webkit-hyphens: auto;
+          hyphens: auto;
 }
 
 .contain-none {
@@ -90824,5 +90839,33 @@
 
 .pointer-events-none {
   pointer-events: none;
+}
+
+.color-scheme-normal {
+  color-scheme: normal;
+}
+
+.color-scheme-light {
+  color-scheme: light;
+}
+
+.color-scheme-dark {
+  color-scheme: dark;
+}
+
+.color-scheme-light-dark {
+  color-scheme: light dark;
+}
+
+.color-scheme-dark-light {
+  color-scheme: dark light;
+}
+
+.color-scheme-only-light {
+  color-scheme: only light;
+}
+
+.color-scheme-only-dark {
+  color-scheme: only dark;
 }
 /*# sourceMappingURL=slushii-utilities.css.map */

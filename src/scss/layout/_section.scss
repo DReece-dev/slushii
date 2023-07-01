@@ -1,64 +1,113 @@
 .section {
   padding: 3rem 1.5rem;
+}
 
-  &.xs-small {
-    padding: 2rem 1.5rem;
+/* Mobile Phones */
+@media screen and (min-width: 321px) and (max-width: 480px) {
+  .section {
+    padding: 3rem 2rem;
   }
+}
 
-  &.small {
-    padding: 4.5rem 1.5rem;
+/* Tablets */
+@media screen and (min-width: 768px) {
+  .section {
+    padding: 3rem 3rem;
   }
+}
 
-  &.medium {
-    padding: 9rem 1.5rem;
+/* Desktops/Laptops */
+@media screen and (min-width: 1024px) {
+  .section {
+    padding: 3rem 4rem;
   }
+}
 
-  &.large {
-    padding: 18rem 1.5rem;
+/* Large (L) */
+@media screen and (min-width: 1025px) {
+  .section.medium {
+    padding: 9rem 6rem;
   }
-
-  &.xl-large {
-    padding: 24rem 1.5rem;
+  .section.large {
+    padding: 18rem 8rem;
   }
-
-  @media screen and (min-width: 640px) {
-    &.small,
-    &.xs-small {
-      padding: 3rem 2rem;
-    }
-
-    &.medium {
-      padding: 6rem 2rem;
-    }
-
-    &.large {
-      padding: 12rem 2rem;
-    }
-
-    &.xl-large {
-      padding: 16rem 2rem;
-    }
+  .section.xlarge {
+    padding: 27rem 10rem;
   }
+  .section.xxlarge {
+    padding: 36rem 12rem;
+  }
+}
 
-  @media screen and (min-width: 1024px) {
-    &.xs-small {
-      padding: 3rem 4rem;
-    }
+/* High-Resolution Displays */
+@media screen and (min-width: 1440px) {
+  .section {
+    padding: 3rem 5rem;
+  }
+  .section.medium {
+    padding: 9rem 7.5rem;
+  }
+  .section.large {
+    padding: 18rem 10rem;
+  }
+  .section.xlarge {
+    padding: 27rem 12.5rem;
+  }
+  .section.xxlarge {
+    padding: 36rem 15rem;
+  }
+}
 
-    &.small {
-      padding: 4.5rem 4rem;
-    }
+@media screen and (min-width: 1920px) {
+  .section {
+    padding: 3rem 6rem;
+  }
+  .section.medium {
+    padding: 9rem 9rem;
+  }
+  .section.large {
+    padding: 18rem 12rem;
+  }
+  .section.xlarge {
+    padding: 27rem 15rem;
+  }
+  .section.xxlarge {
+    padding: 36rem 18rem;
+  }
+}
 
-    &.medium {
-      padding: 9rem 4rem;
-    }
+@media screen and (min-width: 2560px) {
+  .section {
+    padding: 3rem 8rem;
+  }
+  .section.medium {
+    padding: 9rem 12rem;
+  }
+  .section.large {
+    padding: 18rem 16rem;
+  }
+  .section.xlarge {
+    padding: 27rem 20rem;
+  }
+  .section.xxlarge {
+    padding: 36rem 24rem;
+  }
+}
 
-    &.large {
-      padding: 18rem 4rem;
-    }
-
-    &.xl-large {
-      padding: 24rem 4rem;
-    }
+@media screen and (min-width: 3840px) {
+  .section {
+    padding: 3rem 12rem;
+  }
+  .section.medium {
+    padding: 9rem 18rem;
+  }
+  .section.large {
+    padding: 18rem 24rem;
+  }
+  .section.xlarge {
+    padding: 27rem 30rem;
+  }
+  .section.xxlarge {
+    padding: 36rem 36rem;
   }
 }

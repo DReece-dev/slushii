@@ -257,6 +257,9 @@ Licensed under MIT (github.com/DReece-dev/slushii)
   --breakpoint-l: 1042px;
   --breakpoint-xl: 1280px;
   --breakpoint-xxl: 1536px;
+  --breakpoint-xxxl: 1920px;
+  --breakpoint-xxxxl: 2560px;
+  --breakpoint-xxxxxl: 3840px;
   --tab-size: 4;
 }
 
@@ -787,7 +790,7 @@ meter {
 }
 
 .text.container {
-  font-size: 1.14285714rem;
+  font-size: 1rem;
 }
 
 .column {
@@ -5130,53 +5133,109 @@ meter {
 .section {
   padding: 3rem 1.5rem;
 }
-.section.xs-small {
-  padding: 2rem 1.5rem;
-}
-.section.small {
-  padding: 4.5rem 1.5rem;
-}
-.section.medium {
-  padding: 9rem 1.5rem;
-}
-.section.large {
-  padding: 18rem 1.5rem;
-}
-.section.xl-large {
-  padding: 24rem 1.5rem;
-}
-@media screen and (min-width: 640px) {
-  .section.small, .section.xs-small {
+
+/* Mobile Phones */
+@media screen and (min-width: 321px) and (max-width: 480px) {
+  .section {
     padding: 3rem 2rem;
   }
-  .section.medium {
-    padding: 6rem 2rem;
-  }
-  .section.large {
-    padding: 12rem 2rem;
-  }
-  .section.xl-large {
-    padding: 16rem 2rem;
+}
+/* Tablets */
+@media screen and (min-width: 768px) {
+  .section {
+    padding: 3rem 3rem;
   }
 }
+/* Desktops/Laptops */
 @media screen and (min-width: 1024px) {
-  .section.xs-small {
+  .section {
     padding: 3rem 4rem;
   }
-  .section.small {
-    padding: 4.5rem 4rem;
-  }
+}
+/* Large (L) */
+@media screen and (min-width: 1025px) {
   .section.medium {
-    padding: 9rem 4rem;
+    padding: 9rem 6rem;
   }
   .section.large {
-    padding: 18rem 4rem;
+    padding: 18rem 8rem;
   }
-  .section.xl-large {
-    padding: 24rem 4rem;
+  .section.xlarge {
+    padding: 27rem 10rem;
+  }
+  .section.xxlarge {
+    padding: 36rem 12rem;
   }
 }
-
+/* High-Resolution Displays */
+@media screen and (min-width: 1440px) {
+  .section {
+    padding: 3rem 5rem;
+  }
+  .section.medium {
+    padding: 9rem 7.5rem;
+  }
+  .section.large {
+    padding: 18rem 10rem;
+  }
+  .section.xlarge {
+    padding: 27rem 12.5rem;
+  }
+  .section.xxlarge {
+    padding: 36rem 15rem;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .section {
+    padding: 3rem 6rem;
+  }
+  .section.medium {
+    padding: 9rem 9rem;
+  }
+  .section.large {
+    padding: 18rem 12rem;
+  }
+  .section.xlarge {
+    padding: 27rem 15rem;
+  }
+  .section.xxlarge {
+    padding: 36rem 18rem;
+  }
+}
+@media screen and (min-width: 2560px) {
+  .section {
+    padding: 3rem 8rem;
+  }
+  .section.medium {
+    padding: 9rem 12rem;
+  }
+  .section.large {
+    padding: 18rem 16rem;
+  }
+  .section.xlarge {
+    padding: 27rem 20rem;
+  }
+  .section.xxlarge {
+    padding: 36rem 24rem;
+  }
+}
+@media screen and (min-width: 3840px) {
+  .section {
+    padding: 3rem 12rem;
+  }
+  .section.medium {
+    padding: 9rem 18rem;
+  }
+  .section.large {
+    padding: 18rem 24rem;
+  }
+  .section.xlarge {
+    padding: 27rem 30rem;
+  }
+  .section.xxlarge {
+    padding: 36rem 36rem;
+  }
+}
 /* Default values */
 .simple-hero {
   height: 100vh;
@@ -104443,7 +104502,7 @@ textarea.form-control.is-invalid {
 }
 
 .caption-side-block-end {
-  caption-side: block-start;
+  caption-side: block-end;
 }
 
 .caption-side-inline-start {
@@ -104468,6 +104527,21 @@ textarea.form-control.is-invalid {
 
 .caption-side-unset {
   caption-side: unset;
+}
+
+.hyphens-none {
+  -webkit-hyphens: none;
+          hyphens: none;
+}
+
+.hyphens-manual {
+  -webkit-hyphens: manual;
+          hyphens: manual;
+}
+
+.hyphens-auto {
+  -webkit-hyphens: auto;
+          hyphens: auto;
 }
 
 .contain-none {
@@ -104675,5 +104749,33 @@ textarea.form-control.is-invalid {
 
 .pointer-events-none {
   pointer-events: none;
+}
+
+.color-scheme-normal {
+  color-scheme: normal;
+}
+
+.color-scheme-light {
+  color-scheme: light;
+}
+
+.color-scheme-dark {
+  color-scheme: dark;
+}
+
+.color-scheme-light-dark {
+  color-scheme: light dark;
+}
+
+.color-scheme-dark-light {
+  color-scheme: dark light;
+}
+
+.color-scheme-only-light {
+  color-scheme: only light;
+}
+
+.color-scheme-only-dark {
+  color-scheme: only dark;
 }
 /*# sourceMappingURL=slushii.css.map */
