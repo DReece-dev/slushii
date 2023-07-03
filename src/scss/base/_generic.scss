@@ -116,7 +116,7 @@ p {
   font-size: clamp(13px, 0.64vw + 12px, 14px);
 }
 
-@media (max-width: 612px) {
+@media (max-width: 640px) {
   p {
     font-size: 13px;
   }
