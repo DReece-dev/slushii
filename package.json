@@ -8,7 +8,6 @@
     "watch": "gulp watch",
     "build:prod": "NODE_ENV=production gulp",
     "build:css": "gulp css",
-    "build:mini": "gulp mini",
     "purge": "gulp purgecss",
     "lint:sass": "sass-lint -v -q -f stylish",
     "lint:css": "stylelint 'src/**/*.scss'",

@@ -21,7 +21,6 @@ gulp.task('css', function () {
         .pipe(cached('css'))
         .pipe(sass().on('error', sass.logError))
         .pipe(postcss(processors))
-        // .pipe(mergeMediaQueries())
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('./dist'));
 });
