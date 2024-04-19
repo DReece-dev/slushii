@@ -1,6 +1,6 @@
 {
   "name": "slushii",
-  "version": "0.1.6",
+  "version": "1.0.0",
   "description": "Slushii CSS Framework",
   "main": "gulpfile.js",
   "scripts": {
