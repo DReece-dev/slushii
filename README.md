@@ -1,7 +1,7 @@
 # Slushii
 
 <h2 align="center">Slushii CSS Framework</h2>
-<h4 align="center">Current Version: v0.1.6</h4>
+<h4 align="center">Current Version: v1.0.0</h4>
 
 <div align="center">
 
