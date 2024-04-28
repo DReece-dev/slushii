@@ -1,212 +1,189 @@
 /* Global box-sizing and background-repeat */
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 /* Styles for the root element */
 :root {
-  text-size-adjust: 100%;
+    font-family: system-ui, sans-serif;
 }
 
 /* Reset margin, padding, and font-family for html and body */
 html,
 body {
-  margin: 0;
-  padding: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    font-family: inherit;
+    line-height: 1.5;
 }
-/* Styles for abbreviation elements with a title attribute */
+
+/* Reset styles for abbreviation elements with a title attribute */
 abbr[title] {
-  text-decoration: underline dotted;
-  cursor: help;
-  text-decoration-skip-ink: none;
+    text-decoration: underline dotted;
+    cursor: help;
+    text-decoration-skip-ink: none;
 }
 
-/* Styles for address element */
+/* Reset styles for address element */
 address {
-  margin-bottom: 1rem;
-  font-style: normal;
-  line-height: inherit;
+    margin-bottom: 1rem;
+    font-style: normal;
+    line-height: inherit;
 }
 
-/* Styles for anchor (link) elements */
+/* Reset styles for anchor elements */
 a {
-  color: inherit;
-  text-decoration: inherit;
+    color: inherit;
+    text-decoration: inherit;
 }
 
-/* Styles for anchor elements without href or class */
+/* Reset styles for anchor elements without href or class */
 a:not([href]):not([class]),
 a:not([href]):not([class]):hover {
-  color: inherit;
-  text-decoration: none;
+    color: inherit;
+    text-decoration: none;
 }
 
-/* Styles for bold (b) and strong elements */
+/* Reset styles for bold (b) and strong elements */
 b,
 strong {
-  font-weight: bolder;
+    font-weight: bolder;
 }
 
-/* Styles for code, kbd, and samp elements */
+/* Reset styles for code, kbd, and samp elements */
 code,
 kbd,
 samp {
-  font-family: monospace, monospace;
-  font-size: 1em;
+    font-family: monospace, monospace;
+    font-size: 1em;
 }
 
-/* Styles for small elements */
+/* Reset styles for small elements */
 small {
-  font-size: 0.875em;
+    font-size: 0.875em;
 }
 
-/* Styles for subscript and superscript elements */
+/* Reset styles for subscript and superscript elements */
 sub,
 sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
 }
 
-/* Styles for subscript elements */
+/* Reset styles for subscript elements */
 sub {
-  bottom: -0.25em;
+    bottom: -0.25em;
 }
 
-/* Styles for superscript elements */
+/* Reset styles for superscript elements */
 sup {
-  top: -0.5em;
+    top: -0.5em;
 }
 
-/* Styles for table elements */
+/* Reset styles for table elements */
 table {
-  border-collapse: collapse;
-  text-indent: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
+    text-indent: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
 }
 
-/* Styles for form elements (button, input, optgroup, select, textarea) */
+/* Reset styles for form elements (button, input, optgroup, select, textarea) */
 button,
 input,
 optgroup,
 select,
-textarea {
-  font-family: inherit;
-  font-size: 100%;
-  font-weight: inherit;
-  line-height: inherit;
-  color: inherit;
-  margin: 0;
-  padding: 0;
+textarea,
+fieldset {
+    font-family: inherit;
+    font-size: 100%;
+    font-weight: inherit;
+    line-height: inherit;
+    color: inherit;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-shadow: none;
+    outline: none;
 }
 
-/* Styles for button and select elements with text-transform none */
+/* Reset styles for button and select elements with text-transform none */
 button,
 select {
-  text-transform: none;
+    text-transform: none;
 }
 
-/* Styles for progress elements */
+/* Reset styles for progress elements */
 progress {
-  vertical-align: baseline;
+    vertical-align: baseline;
 }
 
-/* Styles for summary elements */
+/* Reset styles for summary elements */
 summary {
-  display: list-item;
+    display: list-item;
 }
 
-/* Reset margin for blockquote, dl, dd, figure, and pre elements */
+/* Reset margin for blockquote, dl, dd, figure, hr, and pre elements */
 blockquote,
 dl,
 dd,
 figure,
+hr,
 pre {
-  margin: 0;
+    margin: 0;
 }
 
-/* Reset margin, padding, and list-style for list-related elements */
+/* Reset styles for list-related elements */
 ol,
 ul,
 li {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
+
 /* Reset padding for legend element */
 legend {
-  padding: 0;
+    padding: 0;
 }
 
-/* Reset margin, padding, and list-style for list-related elements (again) */
-ol,
-ul,
-menu {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+/* Reset styles for details and summary elements */
+details,
+summary {
+    margin: 0;
+    padding: 0;
 }
 
-/* Reset margin, padding, border, font-size, and vertical-align for table-related elements */
-table,
-th,
-td,
-thead,
-tbody,
-tfoot {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
+/* Reset styles for figure and figcaption elements */
+figure,
+figcaption {
+    margin: 0;
+    padding: 0;
 }
 
-/* Reset margin, resize, and vertical-align for textarea element */
+/* Reset styles for textarea element */
 textarea {
-  margin: 0;
-  resize: vertical;
+    margin: 0;
+    resize: vertical;
 }
 
-/* Styles for disabled elements */
-:disabled {
-  cursor: default;
-}
-
-/* Reset margin, padding, border, font-size, font-family, and vertical-align for form-related elements */
-input,
-select,
-textarea,
-label,
-button,
-form {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font-family: inherit;
-  vertical-align: baseline;
-}
-
-/* Reset line-height for input, select, textarea */
-button,
-input,
-select,
-textarea {
-  line-height: normal;
+/* Reset styles for disabled elements */
+[disabled] {
+    opacity: 0.5;
 }
 
 /* Set max-width to 100% and height auto for images and videos */
 img,
 video {
-  max-width: 100%;
-  height: auto;
+    max-width: 100%;
+    height: auto;
 }
 
 /* Hide elements with hidden attribute */
 [hidden] {
-  display: none;
+    display: none;
 }

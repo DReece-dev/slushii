@@ -109384,6 +109384,108 @@
   caret-color: var(--dark-900);
 }
 
+/* Forced Color Adjust Utilities */
+.fc-auto {
+  forced-color-adjust: auto;
+}
+
+.fc-none {
+  forced-color-adjust: none;
+}
+
+.fc-dark {
+  forced-color-adjust: dark;
+}
+
+.fc-light {
+  forced-color-adjust: light;
+}
+
+/* Responsive Utilities */
+@media (max-width: 360px) {
+  .xs\:fc-auto {
+    forced-color-adjust: auto;
+  }
+  .xs\:fc-none {
+    forced-color-adjust: none;
+  }
+  .xs\:fc-dark {
+    forced-color-adjust: dark;
+  }
+  .xs\:fc-light {
+    forced-color-adjust: light;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:fc-auto {
+    forced-color-adjust: auto;
+  }
+  .sm\:fc-none {
+    forced-color-adjust: none;
+  }
+  .sm\:fc-dark {
+    forced-color-adjust: dark;
+  }
+  .sm\:fc-light {
+    forced-color-adjust: light;
+  }
+}
+@media (min-width: 768px) {
+  .md\:fc-auto {
+    forced-color-adjust: auto;
+  }
+  .md\:fc-none {
+    forced-color-adjust: none;
+  }
+  .md\:fc-dark {
+    forced-color-adjust: dark;
+  }
+  .md\:fc-light {
+    forced-color-adjust: light;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:fc-auto {
+    forced-color-adjust: auto;
+  }
+  .lg\:fc-none {
+    forced-color-adjust: none;
+  }
+  .lg\:fc-dark {
+    forced-color-adjust: dark;
+  }
+  .lg\:fc-light {
+    forced-color-adjust: light;
+  }
+}
+@media (min-width: 1280px) {
+  .xl\:fc-auto {
+    forced-color-adjust: auto;
+  }
+  .xl\:fc-none {
+    forced-color-adjust: none;
+  }
+  .xl\:fc-dark {
+    forced-color-adjust: dark;
+  }
+  .xl\:fc-light {
+    forced-color-adjust: light;
+  }
+}
+@media (min-width: 1536px) {
+  .\32 xl\:fc-auto {
+    forced-color-adjust: auto;
+  }
+  .\32 xl\:fc-none {
+    forced-color-adjust: none;
+  }
+  .\32 xl\:fc-dark {
+    forced-color-adjust: dark;
+  }
+  .\32 xl\:fc-light {
+    forced-color-adjust: light;
+  }
+}
 .will-change-auto {
   will-change: auto;
 }
