@@ -1,50 +1,79 @@
+// Variables
+$light-gray: #f7f7f7;
+$primary-color: #4267b2;
+$white: #ffffff;
+$border-radius: 5px;
+$box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+$margin-bottom: 20px;
+$padding: 10px;
+$font-size-lg: 1.5rem;
+$font-size-md: 1rem;
+$line-height: 1.5;
+$margin-top: 10px;
+$padding-sm: 5px 10px;
+
+// Mixins
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// Event Container
 .event-container {
-  display: flex;
-  flex-direction: column;
-  background-color: #f8f8f8;
-  border-radius: 5px;
-  overflow: hidden;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-  margin-bottom: 20px;
-
-  .event-header {
-    background-color: #4267b2;
-    color: #fff;
-    padding: 10px;
-
-    .event-title {
-      margin: 0;
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-
-    .event-date {
-      margin: 0;
-      font-size: 1rem;
-    }
-  }
-
-  .event-description {
-    padding: 10px;
-    line-height: 1.5;
-  }
-
-  .register-link {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 5px 10px;
-    background-color: #4267b2;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-  }
-
-  .event-image {
+    @include flex-center;
+    flex-direction: column;
+    background-color: $light-gray;
+    border-radius: $border-radius;
     overflow: hidden;
+    box-shadow: $box-shadow;
+    margin-bottom: $margin-bottom;
 
-    img {
-      width: 100%;
-      height: auto;
+    // Event Header
+    &__header {
+        background-color: $primary-color;
+        color: $white;
+        padding: $padding;
+
+        // Event Title
+        &__title {
+            margin: 0;
+            font-size: $font-size-lg;
+            font-weight: bold;
+        }
+
+        // Event Date
+        &__date {
+            margin: 0;
+            font-size: $font-size-md;
+        }
     }
-  }
+
+    // Event Description
+    &__description {
+        padding: $padding;
+        line-height: $line-height;
+    }
+
+    // Register Link
+    &__register-link {
+        display: inline-block;
+        margin-top: $margin-top;
+        padding: $padding-sm;
+        background-color: $primary-color;
+        color: $white;
+        text-decoration: none;
+        border-radius: $border-radius;
+    }
+
+    // Event Image
+    &__image {
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+    }
 }

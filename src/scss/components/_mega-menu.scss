@@ -1,85 +1,101 @@
 .mega-navbar {
-  a {
-    float: left;
-    font-size: 16px;
-    color: black;
-    text-align: center;
-    text-decoration: none;
-  }
+    /* Use flexbox to layout the navbar items */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
 
-  &:hover {
-    color: var(--blue-500);
-  }
+    a {
+        font-size: 16px;
+        color: black;
+        text-align: center;
+        text-decoration: none;
+        transition: color 0.2s; /* add transition for hover effect */
+
+        &:hover {
+            color: var(--blue-500);
+        }
+    }
 }
 
 .mega-dropdown {
-  float: left;
-  overflow: hidden;
-  white-space: nowrap;
+    position: relative; /* add position relative to contain the dropdown content */
+    float: left;
+    overflow: hidden;
+    white-space: nowrap;
 
-  .mega-dropbtn {
-    font-size: 16px;
-    border: none;
-    outline: none;
-    color: black;
-    padding: 14px 16px;
-    background-color: inherit;
-    font-family: inherit;
-    margin: 0;
-  }
-  &:hover,
-  &:active,
-  &:focus {
-    background-color: transparent;
-    color: var(--blue-500);
-  }
+    .mega-dropbtn {
+        font-size: 16px;
+        border: none;
+        outline: none;
+        color: black;
+        padding: 14px 16px;
+        background-color: inherit;
+        font-family: inherit;
+        margin: 0;
+        cursor: pointer; /* add cursor pointer to indicate it's a button */
+
+        &:hover,
+        &:active,
+        &:focus {
+            background-color: transparent;
+            color: var(--blue-500);
+        }
+    }
 }
 
 .mega-dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  width: 100%;
-  left: 0;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #f9f9f9;
+    width: 100%;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    display: none; /* hide the dropdown content by default */
 
-  &:hover {
-    display: block;
-  }
+    /* show the dropdown content on hover */
+    .mega-dropdown:hover & {
+        display: block;
+    }
 }
 
 .mega-column {
-  float: left;
-  width: 33.33%;
-  padding: 10px;
-  background-color: white;
-  height: 350px;
+    float: left;
+    width: calc(33.33% - 20px); /* adjust the width to account for padding */
+    padding: 10px;
+    background-color: white;
+    height: 350px;
 
-  a {
-    float: none;
-    color: black;
-    padding: 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
+    a {
+        display: block;
+        padding: 16px;
+        text-decoration: none;
+        text-align: left;
+        color: black;
 
-    &:hover {
-      background-color: rgba(221, 221, 221, 0.151);
-      color: var(--blue-500);
+        &:hover {
+            background-color: rgba(221, 221, 221, 0.151);
+            color: var(--blue-500);
+        }
     }
-  }
 
-  @media screen and (max-width: 600px) {
-    width: 100%;
-    height: auto;
-  }
+    @media screen and (max-width: 600px) {
+        width: 100%;
+        height: auto;
+    }
 }
 
 .mega-row {
-  &:after {
-    content: '';
-    display: table;
-    clear: both;
-  }
+    /* use flexbox to layout the row */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    &:after {
+        content: '';
+        display: table;
+        clear: both;
+    }
 }
