@@ -1,0 +1,33 @@
+.draggable {
+    position: relative;
+    cursor: grab;
+    user-select: none;
+    touch-action: none;
+}
+
+.draggable:active {
+    cursor: grabbing;
+}
+
+.draggable::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.draggable.dragging {
+    transform: translate3d(0, 0, 0);
+    transition: transform 0.2s ease-out;
+}
+
+.draggable.dragging::before {
+    background-color: rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}

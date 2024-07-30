@@ -1,12 +1,20 @@
+// Variables
+$spacer-quarter: 0.25rem;
+$font-size-sm: 0.875em;
+$gray-600: #6c757d;
+$danger: #ff4d4f;
+$spacer-half: 0.8rem;
+$spacer-zero: 0;
+
+// Styles
 .form-text {
-  margin-top: 0.25rem;
-  font-size: 0.875em;
-  color: #6c757d;
+    margin-top: $spacer-quarter;
+    font-size: $font-size-sm;
+    color: $gray-600;
 }
 
 .invalid-feedback {
-  color: #ff4d4f;
-  font-size: 1.4rem;
-  padding-top: 0.8rem;
-  padding-bottom: 0.8rem;
+    color: $danger;
+    font-size: 1.4rem;
+    padding: $spacer-half $spacer-zero;
 }

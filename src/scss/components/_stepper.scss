@@ -4,126 +4,126 @@ $secondary-color: #eaeaea;
 
 // Stepper component
 .stepper {
-  display: flex;
-  flex-direction: column;
-
-  .step {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1.5rem;
-    position: relative;
-    cursor: pointer;
+    flex-direction: column;
 
-    &:last-child {
-      margin-bottom: 0;
-    }
-
-    &__number {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      height: 2.5rem;
-      width: 2.5rem;
-      border-radius: 9999px;
-      font-size: 1.5rem;
-      font-weight: 500;
-      color: $primary-color;
-      background-color: white;
-      border: 2px solid $primary-color;
-      transition: all 0.2s ease;
-
-      &--active {
-        color: white;
-        background-color: $primary-color;
-      }
-    }
-
-    &__text {
-      margin-left: 1.5rem;
-      font-size: 1rem;
-      font-weight: 500;
-      color: $primary-color;
-      transition: all 0.2s ease;
-
-      &--active {
-        color: $primary-color;
-      }
-    }
-
-    &__line {
-      flex: 1;
-      height: 0.25rem;
-      background-color: $secondary-color;
-      margin-left: 1.5rem;
-      position: absolute;
-      left: 1.25rem;
-      top: 1.25rem;
-      transition: all 0.2s ease;
-
-      &--active {
-        background-color: $primary-color;
-      }
-    }
-  }
-
-  &--blue {
     .step {
-      &__number {
-        color: white;
-        background-color: $primary-color;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.5rem;
+        position: relative;
+        cursor: pointer;
 
-        &--active {
-          background-color: white;
-          color: $primary-color;
+        &:last-child {
+            margin-bottom: 0;
         }
-      }
 
-      &__text {
-        color: white;
+        &__number {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            height: 2.5rem;
+            width: 2.5rem;
+            border-radius: 9999px;
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: $primary-color;
+            background-color: white;
+            border: 2px solid $primary-color;
+            transition: all 0.2s ease;
 
-        &--active {
-          color: $primary-color;
+            &--active {
+                color: white;
+                background-color: $primary-color;
+            }
         }
-      }
 
-      &__line {
-        background-color: $primary-color;
+        &__text {
+            margin-left: 1.5rem;
+            font-size: 1rem;
+            font-weight: 500;
+            color: $primary-color;
+            transition: all 0.2s ease;
 
-        &--active {
-          background-color: $secondary-color;
+            &--active {
+                color: $primary-color;
+            }
         }
-      }
+
+        &__line {
+            flex: 1;
+            height: 0.25rem;
+            background-color: $secondary-color;
+            margin-left: 1.5rem;
+            position: absolute;
+            left: 1.25rem;
+            top: 1.25rem;
+            transition: all 0.2s ease;
+
+            &--active {
+                background-color: $primary-color;
+            }
+        }
     }
-  }
 
-  &--green {
-    .step {
-      &__number {
-        color: white;
-        background-color: green;
+    &--blue {
+        .step {
+            &__number {
+                color: white;
+                background-color: $primary-color;
 
-        &--active {
-          background-color: white;
-          color: green;
+                &--active {
+                    background-color: white;
+                    color: $primary-color;
+                }
+            }
+
+            &__text {
+                color: white;
+
+                &--active {
+                    color: $primary-color;
+                }
+            }
+
+            &__line {
+                background-color: $primary-color;
+
+                &--active {
+                    background-color: $secondary-color;
+                }
+            }
         }
-      }
-
-      &__text {
-        color: green;
-
-        &--active {
-          color: $primary-color;
-        }
-      }
-
-      &__line {
-        background-color: green;
-
-        &--active {
-          background-color: $secondary-color;
-        }
-      }
     }
-  }
+
+    &--green {
+        .step {
+            &__number {
+                color: white;
+                background-color: green;
+
+                &--active {
+                    background-color: white;
+                    color: green;
+                }
+            }
+
+            &__text {
+                color: green;
+
+                &--active {
+                    color: $primary-color;
+                }
+            }
+
+            &__line {
+                background-color: green;
+
+                &--active {
+                    background-color: $secondary-color;
+                }
+            }
+        }
+    }
 }

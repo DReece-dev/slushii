@@ -1,91 +1,12 @@
-$switch-active-left: 8%;
-$switch-inactive-right: 15%;
+$padding: 0.25rem;
+$border-radius: 30px;
 
-.switch {
-  height: 2rem;
-  position: relative;
-  margin-bottom: 1rem;
-  outline: 0;
-  font-size: 0.875rem;
-  font-weight: bold;
-  color: #fefefe;
-  user-select: none;
-
-  &.tiny {
-    height: 1.5rem;
-
-    .switch-paddle {
-      width: 3rem;
-      height: 1.5rem;
-      font-size: 0.625rem;
-
-      &::after {
-        top: 0.25rem;
-        left: 0.25rem;
-        width: 1rem;
-        height: 1rem;
-      }
-    }
-
-    input:checked ~ .switch-paddle::after {
-      left: 1.75rem;
-    }
-  }
-
-  &.small {
-    height: 1.75rem;
-
-    .switch-paddle {
-      width: 3.5rem;
-      height: 1.75rem;
-      font-size: 0.75rem;
-
-      &::after {
-        top: 0.25rem;
-        left: 0.25rem;
-        width: 1.25rem;
-        height: 1.25rem;
-      }
-    }
-
-    input:checked ~ .switch-paddle::after {
-      left: 2rem;
-    }
-  }
-
-  &.large {
-    height: 2.5rem;
-
-    .switch-paddle {
-      width: 5rem;
-      height: 2.5rem;
-      font-size: 1rem;
-
-      &::after {
-        top: 0.25rem;
-        left: 0.25rem;
-        width: 2rem;
-        height: 2rem;
-      }
-    }
-
-    input:checked ~ .switch-paddle::after {
-      left: 2.75rem;
-    }
-  }
-
-  .switch-input {
-    position: absolute;
-    margin-bottom: 0;
-    opacity: 0;
-  }
-
-  .switch-paddle {
+@mixin switch-paddle($width, $height, $font-size, $after-width, $after-height) {
     position: relative;
     display: block;
-    width: 4rem;
-    height: 2rem;
-    border-radius: 30px;
+    width: $width;
+    height: $height;
+    border-radius: $border-radius;
     background: #cacaca;
     transition: all 0.25s ease-out;
     font-weight: inherit;
@@ -93,127 +14,108 @@ $switch-inactive-right: 15%;
     cursor: pointer;
 
     &::after {
-      position: absolute;
-      top: 0.25rem;
-      left: 0.25rem;
-      display: block;
-      width: 1.5rem;
-      height: 1.5rem;
-      transform: translate3d(0, 0, 0);
-      border-radius: 30px;
-      background: #fefefe;
-      transition: all 0.25s ease-out;
-      content: '';
+        position: absolute;
+        top: $padding;
+        left: $padding;
+        display: block;
+        width: $after-width;
+        height: $after-height;
+        border-radius: $border-radius;
+        background: #fefefe;
+        transition: all 0.25s ease-out;
+        content: '';
     }
-  }
-
-  input + .switch-paddle {
-    margin: 0;
-  }
-
-  input:checked ~ .switch-paddle {
-    background: #4338ca;
-  }
-
-  input:checked ~ .switch-paddle::after {
-    left: 2.25rem;
-  }
-
-  input:disabled ~ .switch-paddle {
-    cursor: not-allowed;
-    opacity: 0.5;
-  }
-
-  [data-whatinput='mouse'] input:focus ~ .switch-paddle {
-    outline: 0;
-  }
-
-  &.switch-active,
-  &.switch-inactive {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-}
-
-.switch-active {
-  left: 8%;
-  display: none;
-
-  input:checked + label > & {
-    display: block;
-  }
-}
-
-.switch-inactive {
-  right: 15%;
-
-  input:checked + label > & {
-    display: none;
-  }
 }
 
 .switch {
-  &.tiny {
-    height: 1.5rem;
+    height: 2rem;
+    position: relative;
+    margin-bottom: 1rem;
+    outline: 0;
+    font-size: 0.875rem;
+    font-weight: bold;
+    color: #fefefe;
+    user-select: none;
+
+    &.tiny {
+        height: 1.5rem;
+        @include switch-paddle(3rem, 1.5rem, 0.625rem, 1rem, 1rem);
+
+        input:checked ~ .switch-paddle::after {
+            left: 1.75rem;
+        }
+    }
+
+    &.small {
+        height: 1.75rem;
+        @include switch-paddle(3.5rem, 1.75rem, 0.75rem, 1.25rem, 1.25rem);
+
+        input:checked ~ .switch-paddle::after {
+            left: 2rem;
+        }
+    }
+
+    &.large {
+        height: 2.5rem;
+        @include switch-paddle(5rem, 2.5rem, 1rem, 2rem, 2rem);
+
+        input:checked ~ .switch-paddle::after {
+            left: 2.75rem;
+        }
+    }
+
+    .switch-input {
+        position: absolute;
+        margin-bottom: 0;
+        opacity: 0;
+    }
 
     .switch-paddle {
-      width: 3rem;
-      height: 1.5rem;
-      font-size: 0.625rem;
+        @include switch-paddle(4rem, 2rem, 0.875rem, 1.5rem, 1.5rem);
+    }
 
-      &::after {
-        top: 0.25rem;
-        left: 0.25rem;
-        width: 1rem;
-        height: 1rem;
-      }
+    input + .switch-paddle {
+        margin: 0;
+    }
+
+    input:checked ~ .switch-paddle {
+        background: #4338ca;
     }
 
     input:checked ~ .switch-paddle::after {
-      left: 1.75rem;
-    }
-  }
-
-  &.small {
-    height: 1.75rem;
-
-    .switch-paddle {
-      width: 3.5rem;
-      height: 1.75rem;
-      font-size: 0.75rem;
-
-      &::after {
-        top: 0.25rem;
-        left: 0.25rem;
-        width: 1.25rem;
-        height: 1.25rem;
-      }
+        left: 2.25rem;
     }
 
-    input:checked ~ .switch-paddle::after {
-      left: 2rem;
-    }
-  }
-
-  &.large {
-    height: 2.5rem;
-
-    .switch-paddle {
-      width: 5rem;
-      height: 2.5rem;
-      font-size: 1rem;
-
-      &::after {
-        top: 0.25rem;
-        left: 0.25rem;
-        width: 2rem;
-        height: 2rem;
-      }
+    input:disabled ~ .switch-paddle {
+        cursor: not-allowed;
+        opacity: 0.5;
     }
 
-    input:checked ~ .switch-paddle::after {
-      left: 2.75rem;
+    [data-whatinput='mouse'] input:focus ~ .switch-paddle {
+        outline: 0;
     }
-  }
+}
+
+.switch-active,
+.switch-inactive {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.switch-active {
+    left: 8%;
+    display: none;
+
+    input:checked + label > & {
+        display: block;
+    }
+}
+
+.switch-inactive {
+    right: 15%;
+
+    input:checked + label > & {
+        display: none;
+    }
 }

@@ -1,53 +1,9 @@
 .popover {
-  display: inline-block;
-  position: relative;
+    display: inline-block;
+    position: relative;
+}
 
-  &.popover-right {
-    .popover-container {
-      left: 100%;
-      top: 50%;
-      transform: translate(-100%, -50%);
-      transition: all 0.2s;
-
-      &:focus,
-      &:hover {
-        transform: translate(-100%, -50%) scale(1);
-        opacity: 1;
-      }
-    }
-  }
-
-  &.popover-bottom {
-    .popover-container {
-      left: 50%;
-      top: 100%;
-      transform: translate(-50%, -100%);
-      transition: all 0.2s;
-
-      &:focus,
-      &:hover {
-        transform: translate(-50%, -100%) scale(1);
-        opacity: 1;
-      }
-    }
-  }
-
-  &.popover-left {
-    .popover-container {
-      left: 0;
-      top: 50%;
-      transform: translate(0, -50%);
-      transition: all 0.2s;
-
-      &:focus,
-      &:hover {
-        transform: translate(0, -50%) scale(1);
-        opacity: 1;
-      }
-    }
-  }
-
-  .popover-container {
+.popover-container {
     background-color: #fff;
     border-radius: 0.3rem;
     box-shadow: 0 0.2rem 0.5rem rgba(48, 55, 66, 0.3);
@@ -58,9 +14,30 @@
     opacity: 0;
     transform: scale(0);
     transition: all 0.2s;
-  }
+}
 
-  .card {
-    border: 0;
-  }
+.popover-[direction] {
+    $direction: right, bottom, left;
+
+    .popover-container {
+        @if $direction == right {
+            left: 100%;
+            top: 50%;
+            transform: translate(-100%, -50%);
+        } @else if $direction == bottom {
+            left: 50%;
+            top: 100%;
+            transform: translate(-50%, -100%);
+        } @else if $direction == left {
+            left: 0;
+            top: 50%;
+            transform: translate(0, -50%);
+        }
+
+        &:focus,
+        &:hover {
+            transform: translate(0, 0) scale(1);
+            opacity: 1;
+        }
+    }
 }

@@ -7,70 +7,70 @@ $tile-font-size: 1.25rem;
 
 // Styles for the tile card
 .card {
-  align-content: space-between;
-  align-items: flex-start;
-  display: flex;
-  flex-wrap: wrap;
-  margin: $tile-margin;
-  padding: $tile-padding;
+    align-content: space-between;
+    align-items: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    margin: $tile-margin;
+    padding: $tile-padding;
 
-  // Styles for the title icon and tile action
-  .title-icon,
-  .tile-action {
-    flex: 0 0 auto;
-  }
-
-  // Styles for the tile content
-  .tile-content {
-    flex: 1 1 auto;
-    padding: 0 $tile-content-padding;
-  }
-
-  // Styles for the tile title and subtitle
-  .tile-title,
-  .tile-subtitle {
-    line-height: $tile-title-line-height;
-  }
-
-  &.tile-centered {
-    align-items: center;
-
-    // Overflow for the tile content
-    .tile-content {
-      overflow: hidden;
+    // Styles for the title icon and tile action
+    .title-icon,
+    .tile-action {
+        flex: 0 0 auto;
     }
 
-    // Overflow for the tile title and subtitle
+    // Styles for the tile content
+    .tile-content {
+        flex: 1 1 auto;
+        padding: 0 $tile-content-padding;
+    }
+
+    // Styles for the tile title and subtitle
     .tile-title,
     .tile-subtitle {
-      margin-bottom: 0;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-  }
-
-  &.is-large {
-    // Styles for large tiles
-    .tile-content {
-      padding: 0 1rem;
+        line-height: $tile-title-line-height;
     }
 
-    .tile-title,
-    .tile-subtitle {
-      font-size: $tile-font-size;
-    }
-  }
+    &.tile-centered {
+        align-items: center;
 
-  &.is-small {
-    // Styles for small tiles
-    .tile-content {
-      padding: 0 0.25rem;
+        // Overflow for the tile content
+        .tile-content {
+            overflow: hidden;
+        }
+
+        // Overflow for the tile title and subtitle
+        .tile-title,
+        .tile-subtitle {
+            margin-bottom: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
     }
 
-    .tile-title,
-    .tile-subtitle {
-      font-size: 1rem;
+    &.is-large {
+        // Styles for large tiles
+        .tile-content {
+            padding: 0 1rem;
+        }
+
+        .tile-title,
+        .tile-subtitle {
+            font-size: $tile-font-size;
+        }
     }
-  }
+
+    &.is-small {
+        // Styles for small tiles
+        .tile-content {
+            padding: 0 0.25rem;
+        }
+
+        .tile-title,
+        .tile-subtitle {
+            font-size: 1rem;
+        }
+    }
 }

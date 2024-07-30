@@ -1,138 +1,183 @@
 .alert {
-  position: relative;
-  padding: 1rem 2rem;
-  color: #fff;
-  background-color: var(--blue-500);
-  background-image: none;
-  border-color: var(--blue-500);
+    position: relative;
+    padding: 1rem 2rem;
+    color: #fff;
+    background-color: var(--blue-500);
+    background-image: none;
+    border-color: var(--blue-500);
 
-  &-heading {
-    color: inherit;
-    font-size: 1.6rem;
-    font-weight: 500;
-    margin: 0 0 0.5rem 0;
-  }
-
-  &-link {
-    cursor: pointer;
-    color: inherit;
-    text-decoration: underline;
-
-    &:hover {
-      color: inherit;
-      opacity: 0.75;
-    }
-  }
-
-  &.close {
-    position: absolute;
-    top: 0;
-    right: 0;
-    cursor: pointer;
-    color: inherit;
-    padding: 0.4rem 0.6rem;
-    line-height: 1;
-    font-size: 1.6rem;
-    background-color: transparent;
-    border-color: transparent;
-
-    &:focus {
-      outline: 2px solid rgba(0, 0, 0, 0.5);
-      outline-offset: 0.2rem;
-    }
-  }
-
-  &.dispose {
-    display: none;
-  }
-}
-
-.sticky-alerts {
-  position: fixed;
-  top: 0;
-  right: 2.4rem;
-  z-index: 100;
-
-  .alert {
-    display: none;
-    width: 27rem;
-    margin-top: 1rem;
-    right: -50rem;
-
-    box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.045);
-
-    &.show {
-      display: block;
-      right: 0;
-      transition: right 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    &-heading {
+        color: inherit;
+        font-size: 1.6rem;
+        font-weight: 500;
+        margin: 0 0 0.5rem 0;
     }
 
-    &.fade {
-      visibility: hidden;
-      opacity: 0;
-      transition: visibility 0s 0.4s, opacity 0.4s linear;
-    }
-  }
+    &-link {
+        cursor: pointer;
+        color: inherit;
+        text-decoration: underline;
 
-  &.alert-block {
-    .alert {
-      display: block;
+        &:hover {
+            color: inherit;
+            opacity: 0.75;
+        }
+    }
+
+    &.close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        cursor: pointer;
+        color: inherit;
+        padding: 0.4rem 0.6rem;
+        line-height: 1;
+        font-size: 1.6rem;
+        background-color: transparent;
+        border-color: transparent;
+
+        &:focus {
+            outline: 2px solid rgba(0, 0, 0, 0.5);
+            outline-offset: 0.2rem;
+        }
     }
 
     &.dispose {
-      display: none;
+        display: none;
     }
-  }
+}
+
+.sticky-alerts {
+    position: fixed;
+    top: 0;
+    right: 2.4rem;
+    z-index: 100;
+
+    .alert {
+        display: none;
+        width: 27rem;
+        margin-top: 1rem;
+        right: -50rem;
+
+        box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.045);
+
+        &.show {
+            display: block;
+            right: 0;
+            transition: right 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        &.fade {
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0s 0.4s, opacity 0.4s linear;
+        }
+    }
+
+    &.alert-block {
+        .alert {
+            display: block;
+        }
+
+        &.dispose {
+            display: none;
+        }
+    }
 }
 
 .alert {
-  &.blue {
-    background-color: var(--blue-500);
-    color: var(--white);
-  }
+    &.slate {
+        background-color: var(--slate-500);
+        color: var(--white);
+    }
 
-  &.indigo {
-    background-color: var(--indigo-500);
-    color: var(--white);
-  }
+    &.blue {
+        background-color: var(--blue-500);
+        color: var(--white);
+    }
 
-  &.pink {
-    background-color: var(--pink-500);
-    color: var(--white);
-  }
+    &.light-blue {
+        background-color: var(--light-blue-500);
+        color: var(--white);
+    }
 
-  &.red {
-    background-color: var(--red-500);
-    color: var(--white);
-  }
+    &.indigo {
+        background-color: var(--indigo-500);
+        color: var(--white);
+    }
 
-  &.orange {
-    background-color: var(--orange-500);
-    color: var(--white);
-  }
+    &.purple {
+        background-color: var(--purple-500);
+        color: var(--white);
+    }
 
-  &.green {
-    background-color: var(--green-500);
-    color: var(--white);
-  }
+    &.deep-purple {
+        background-color: var(--deep-purple-500);
+        color: var(--white);
+    }
 
-  &.rose {
-    background-color: var(--rose-500);
-    color: var(--black);
-  }
+    &.fuchsia {
+        background-color: var(--fuchsia-500);
+        color: var(--black);
+    }
 
-  &.danger {
-    background-color: var(--red-700);
-    color: var(--black);
-  }
+    &.pink {
+        background-color: var(--pink-500);
+        color: var(--white);
+    }
 
-  &.light {
-    background-color: var(--gray-200);
-    color: var(--black);
-  }
+    &.rose {
+        background-color: var(--rose-500);
+        color: var(--black);
+    }
 
-  &.dark {
-    background: var(--gray-900);
-    color: var(--white);
-  }
+    &.red {
+        background-color: var(--red-500);
+        color: var(--white);
+    }
+
+    &.orange {
+        background-color: var(--orange-500);
+        color: var(--white);
+    }
+
+    &.yellow {
+        background-color: var(--yellow-500);
+        color: var(--black);
+    }
+
+    &.lime {
+        background-color: var(--lime-500);
+        color: var(--black);
+    }
+
+    &.green {
+        background-color: var(--green-500);
+        color: var(--white);
+    }
+
+    &.teal {
+        background-color: var(--teal-500);
+        color: var(--black);
+    }
+
+    &.gray {
+        background-color: var(--gray-500);
+        color: var(--white);
+    }
+
+    &.zinc {
+        background-color: var(--zinc-500);
+        color: var(--white);
+    }
+
+    &.light {
+        background-color: var(--light-500);
+        color: var(--black);
+    }
+
+    &.dark {
+        background: var(--dark-500);
+        color: var(--white);
+    }
 }
