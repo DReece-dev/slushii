@@ -9403,17 +9403,41 @@ a.box:active {
   display: none;
 }
 
+.alert.slate {
+  background-color: var(--slate-500);
+  color: var(--white);
+}
 .alert.blue {
   background-color: var(--blue-500);
+  color: var(--white);
+}
+.alert.light-blue {
+  background-color: var(--light-blue-500);
   color: var(--white);
 }
 .alert.indigo {
   background-color: var(--indigo-500);
   color: var(--white);
 }
+.alert.purple {
+  background-color: var(--purple-500);
+  color: var(--white);
+}
+.alert.deep-purple {
+  background-color: var(--deep-purple-500);
+  color: var(--white);
+}
+.alert.fuchsia {
+  background-color: var(--fuchsia-500);
+  color: var(--black);
+}
 .alert.pink {
   background-color: var(--pink-500);
   color: var(--white);
+}
+.alert.rose {
+  background-color: var(--rose-500);
+  color: var(--black);
 }
 .alert.red {
   background-color: var(--red-500);
@@ -9423,24 +9447,36 @@ a.box:active {
   background-color: var(--orange-500);
   color: var(--white);
 }
+.alert.yellow {
+  background-color: var(--yellow-500);
+  color: var(--black);
+}
+.alert.lime {
+  background-color: var(--lime-500);
+  color: var(--black);
+}
 .alert.green {
   background-color: var(--green-500);
   color: var(--white);
 }
-.alert.rose {
-  background-color: var(--rose-500);
+.alert.teal {
+  background-color: var(--teal-500);
   color: var(--black);
 }
-.alert.danger {
-  background-color: var(--red-700);
-  color: var(--black);
+.alert.gray {
+  background-color: var(--gray-500);
+  color: var(--white);
+}
+.alert.zinc {
+  background-color: var(--zinc-500);
+  color: var(--white);
 }
 .alert.light {
-  background-color: var(--gray-200);
+  background-color: var(--light-500);
   color: var(--black);
 }
 .alert.dark {
-  background: var(--gray-900);
+  background: var(--dark-500);
   color: var(--white);
 }
 
