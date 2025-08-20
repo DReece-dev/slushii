@@ -13,24 +13,24 @@ $responsive-embed-media-height: 100%;
 
 .responsive-embed,
 .flex-video {
-  position: $responsive-embed-media-position;
-  height: $responsive-embed-height;
-  margin-bottom: $responsive-embed-margin-bottom;
-  padding-bottom: $responsive-embed-padding-bottom;
-  overflow: $responsive-embed-overflow;
-
-  iframe,
-  object,
-  embed,
-  video {
     position: $responsive-embed-media-position;
-    top: $responsive-embed-media-top;
-    left: $responsive-embed-media-left;
-    width: $responsive-embed-media-width;
-    height: $responsive-embed-media-height;
-  }
+    height: $responsive-embed-height;
+    margin-bottom: $responsive-embed-margin-bottom;
+    padding-bottom: $responsive-embed-padding-bottom;
+    overflow: $responsive-embed-overflow;
 
-  &.widescreen {
-    padding-bottom: $responsive-embed-widescreen-padding-bottom;
-  }
+    iframe,
+    object,
+    embed,
+    video {
+        position: $responsive-embed-media-position;
+        top: $responsive-embed-media-top;
+        left: $responsive-embed-media-left;
+        width: $responsive-embed-media-width;
+        height: $responsive-embed-media-height;
+    }
+
+    &.widescreen {
+        padding-bottom: $responsive-embed-widescreen-padding-bottom;
+    }
 }

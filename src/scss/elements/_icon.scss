@@ -1,44 +1,44 @@
 $size: 1.5rem;
 
 .icon {
-  align-items: center;
-  display: inline-flex;
-  justify-content: center;
-  height: $size;
-  width: $size;
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    height: $size;
+    width: $size;
 
-  &.small {
-    height: calc($size / 1.5) * 1;
-    width: calc($size / 1.5) * 1;
-  }
+    &.small {
+        height: calc($size / 1.5) * 1;
+        width: calc($size / 1.5) * 1;
+    }
 
-  &.medium {
-    height: calc($size / 1.5) * 2;
-    width: calc($size / 1.5) * 2;
-  }
+    &.medium {
+        height: calc($size / 1.5) * 2;
+        width: calc($size / 1.5) * 2;
+    }
 
-  &.large {
-    height: calc($size / 1.5) * 3;
-    width: calc($size / 1.5) * 3;
-  }
+    &.large {
+        height: calc($size / 1.5) * 3;
+        width: calc($size / 1.5) * 3;
+    }
 }
 
 $spacing: 0.25em;
 
 .icon-text {
-  align-items: flex-start;
-  color: inherit;
-  display: flex;
-  flex-wrap: wrap;
-  line-height: 1.5rem;
+    align-items: flex-start;
+    color: inherit;
+    display: flex;
+    flex-wrap: wrap;
+    line-height: 1.5rem;
 
-  .icon {
-    flex-grow: 0;
-    flex-shrink: 0;
-    margin-right: $spacing;
+    .icon {
+        flex-grow: 0;
+        flex-shrink: 0;
+        margin-right: $spacing;
 
-    &:not(:first-child) {
-      margin-left: $spacing;
+        &:not(:first-child) {
+            margin-left: $spacing;
+        }
     }
-  }
 }

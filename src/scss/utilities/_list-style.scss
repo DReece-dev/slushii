@@ -1,45 +1,45 @@
 .list-unstyled {
-  padding-left: 0;
-  list-style: none;
+    padding-left: 0;
+    list-style: none;
 }
 
 .list-inline {
-  padding-left: 0;
-  list-style: none;
+    padding-left: 0;
+    list-style: none;
 }
 
 .list-inline-item {
-  display: inline-block;
+    display: inline-block;
 }
 
 .list-inline-item:not(:last-child) {
-  margin-right: 0.5rem;
+    margin-right: 0.5rem;
 }
 
 .list-inside {
-  list-style-position: inside;
+    list-style-position: inside;
 }
 
 .list-outside {
-  list-style-position: outside;
+    list-style-position: outside;
 }
 
 .list-none {
-  list-style-type: none;
+    list-style-type: none;
 }
 
 .list-disc {
-  list-style-type: disc;
+    list-style-type: disc;
 }
 
 .list-decimal {
-  list-style-type: decimal;
+    list-style-type: decimal;
 }
 
 .list-style-image-none {
-  list-style-image: none;
+    list-style-image: none;
 }
 
 .list-style-image-url {
-  list-style-image: url('');
+    list-style-image: url("");
 }

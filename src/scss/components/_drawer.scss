@@ -5,76 +5,77 @@ $drawer-transition-time: 0.2s;
 $drawer-slide-distance: 300px;
 
 .drawer-container {
-  position: relative;
+    position: relative;
 
-  &.left .drawer {
-    right: auto;
-    left: -#{$drawer-width};
-  }
+    &.left .drawer {
+        right: auto;
+        left: -#{$drawer-width};
+    }
 
-  &.dark .drawer {
-    background-color: #333;
-    color: #fff;
-  }
+    &.dark .drawer {
+        background-color: #333;
+        color: #fff;
+    }
 }
 
 .drawer-toggle {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
 }
 
 .drawer {
-  position: absolute;
-  top: 0;
-  right: -#{$drawer-width};
-  width: $drawer-width;
-  height: 100vh;
-  background-color: $drawer-bg-color;
-  box-shadow: $drawer-box-shadow;
-  transition: right $drawer-transition-time ease-in-out,
-    left $drawer-transition-time ease-in-out,
-    transform $drawer-transition-time ease-in-out,
-    background-color $drawer-transition-time ease-in-out;
-  z-index: 999;
-  overflow-y: auto;
-
-  &.open {
-    right: 0;
-
-    &.left {
-      left: 0;
-    }
-  }
-
-  &.left {
-    right: auto;
-    left: -#{$drawer-width};
-  }
-
-  &.slide {
-    transform: translateX($drawer-slide-distance);
-  }
-
-  &.fade {
-    opacity: 0;
-  }
-
-  &.slide.open {
-    transform: translateX(0);
-  }
-
-  &.fade.open {
-    opacity: 1;
-  }
-
-  &.dark {
-    background-color: #333;
-    color: #fff;
+    position: absolute;
+    top: 0;
+    right: -#{$drawer-width};
+    width: $drawer-width;
+    height: 100vh;
+    background-color: $drawer-bg-color;
+    box-shadow: $drawer-box-shadow;
+    transition:
+        right $drawer-transition-time ease-in-out,
+        left $drawer-transition-time ease-in-out,
+        transform $drawer-transition-time ease-in-out,
+        background-color $drawer-transition-time ease-in-out;
+    z-index: 999;
+    overflow-y: auto;
 
     &.open {
-      background-color: $drawer-bg-color;
+        right: 0;
+
+        &.left {
+            left: 0;
+        }
     }
-  }
+
+    &.left {
+        right: auto;
+        left: -#{$drawer-width};
+    }
+
+    &.slide {
+        transform: translateX($drawer-slide-distance);
+    }
+
+    &.fade {
+        opacity: 0;
+    }
+
+    &.slide.open {
+        transform: translateX(0);
+    }
+
+    &.fade.open {
+        opacity: 1;
+    }
+
+    &.dark {
+        background-color: #333;
+        color: #fff;
+
+        &.open {
+            background-color: $drawer-bg-color;
+        }
+    }
 }

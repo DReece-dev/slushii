@@ -1,118 +1,118 @@
 .img-fluid {
-  max-width: 100%;
-  height: auto;
+    max-width: 100%;
+    height: auto;
 }
 
 .img-cover {
-  object-fit: cover;
+    object-fit: cover;
 }
 
 .img-contain {
-  object-fit: contain;
+    object-fit: contain;
 }
 
 .img-centered {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
 
 .img-thumbnail {
-  padding: 0.25rem;
-  background-color: #fff;
-  border: 1px solid #dee2e6;
-  border-radius: 0.25rem;
-  max-width: 100%;
-  height: auto;
+    padding: 0.25rem;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+    max-width: 100%;
+    height: auto;
 }
 
 .img-rounded {
-  border-radius: 5px;
+    border-radius: 5px;
 }
 
 .object-cover {
-  object-fit: cover;
+    object-fit: cover;
 }
 
 .object-contain {
-  object-fit: contain;
+    object-fit: contain;
 }
 
 .object-fill {
-  object-fit: fill;
+    object-fit: fill;
 }
 
 .object-scale-down {
-  object-fit: scale-down;
+    object-fit: scale-down;
 }
 
 .object-none {
-  object-fit: none;
+    object-fit: none;
 }
 
 .aspect-ratio {
-  aspect-ratio: auto;
+    aspect-ratio: auto;
 
-  &.is-square {
-    aspect-ratio: 1 / 1;
-  }
+    &.is-square {
+        aspect-ratio: 1 / 1;
+    }
 
-  &.is-1by1 {
-    aspect-ratio: 1 / 1;
-  }
+    &.is-1by1 {
+        aspect-ratio: 1 / 1;
+    }
 
-  &.is-5by4 {
-    aspect-ratio: 5 / 4;
-  }
+    &.is-5by4 {
+        aspect-ratio: 5 / 4;
+    }
 
-  &.is-4by3 {
-    aspect-ratio: 4 / 3;
-  }
+    &.is-4by3 {
+        aspect-ratio: 4 / 3;
+    }
 
-  &.is-3by2 {
-    aspect-ratio: 3 / 2;
-  }
+    &.is-3by2 {
+        aspect-ratio: 3 / 2;
+    }
 
-  &.is-5by3 {
-    aspect-ratio: 5 / 3;
-  }
+    &.is-5by3 {
+        aspect-ratio: 5 / 3;
+    }
 
-  &.is-16by9 {
-    aspect-ratio: 16 / 9;
-  }
+    &.is-16by9 {
+        aspect-ratio: 16 / 9;
+    }
 
-  &.is-2by1 {
-    aspect-ratio: 2 / 1;
-  }
+    &.is-2by1 {
+        aspect-ratio: 2 / 1;
+    }
 
-  &.is-3by1 {
-    aspect-ratio: 3 / 1;
-  }
+    &.is-3by1 {
+        aspect-ratio: 3 / 1;
+    }
 
-  &.is-4by5 {
-    aspect-ratio: 4 / 5;
-  }
+    &.is-4by5 {
+        aspect-ratio: 4 / 5;
+    }
 
-  &.is-2by3 {
-    aspect-ratio: 2 / 3;
-  }
+    &.is-2by3 {
+        aspect-ratio: 2 / 3;
+    }
 
-  &.is-3by5 {
-    aspect-ratio: 3 / 5;
-  }
+    &.is-3by5 {
+        aspect-ratio: 3 / 5;
+    }
 }
 
 .figure {
-  display: inline-block;
+    display: inline-block;
 }
 
 .figure-img {
-  margin-bottom: 0.5rem;
-  line-height: 1;
+    margin-bottom: 0.5rem;
+    line-height: 1;
 }
 
 .figure-caption {
-  font-size: 0.875em;
-  color: #6c757d;
+    font-size: 0.875em;
+    color: #6c757d;
 }

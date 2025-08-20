@@ -1,17 +1,18 @@
 /*
 ----------------------------------------------------------------------------
 Slushii CSS Framework
-Version: v1.0.0
-Created: 2021 - 2024
+Version: v1.0.1
+Created: 2021 - 2025
 Copyright, Dylan R Hewitt
 Licensed under MIT (github.com/DReece-dev/slushii)
 ----------------------------------------------------------------------------
 */
-@import 'scss/base/all';
-@import 'scss/flex-system/all';
-@import 'scss/grid/all';
-@import 'scss/layout/all';
-@import 'scss/elements/all';
-@import 'scss/components/all';
-@import 'scss/form/all';
-@import 'scss/utilities/all';
+
+@use "scss/base/all" as base;
+@use "scss/flex-system/all" as flex;
+@use "scss/grid/all" as grid;
+@use "scss/layout/all" as layout;
+@use "scss/elements/all" as elements;
+@use "scss/components/all" as components;
+@use "scss/form/all" as form;
+@use "scss/utilities/all" as utils;

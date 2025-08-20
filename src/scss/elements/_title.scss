@@ -9,73 +9,73 @@ $dark_title_divider_border: calc(0.2px + 0.05em);
 
 // Styles
 .title {
-  color: $black;
-  font-size: 2rem;
-  font-weight: 700;
-  line-height: 1.125;
+    color: $black;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.125;
 
-  &.is-1 {
-    font-size: clamp(3rem, 2vw + 1rem, 7.5rem);
-  }
+    &.is-1 {
+        font-size: clamp(3rem, 2vw + 1rem, 7.5rem);
+    }
 
-  &.is-2 {
-    font-size: clamp(2.5rem, 1.5vw + 1rem, 6rem);
-  }
+    &.is-2 {
+        font-size: clamp(2.5rem, 1.5vw + 1rem, 6rem);
+    }
 
-  &.is-3 {
-    font-size: clamp(2rem, 1.3vw + 1rem, 5.5rem);
-  }
+    &.is-3 {
+        font-size: clamp(2rem, 1.3vw + 1rem, 5.5rem);
+    }
 
-  &.is-4 {
-    font-size: clamp(1.7rem, 1vw + 1rem, 5rem);
-  }
+    &.is-4 {
+        font-size: clamp(1.7rem, 1vw + 1rem, 5rem);
+    }
 
-  &.is-5 {
-    font-size: clamp(1.5rem, 0.75vw + 1rem, 4.5rem);
-  }
+    &.is-5 {
+        font-size: clamp(1.5rem, 0.75vw + 1rem, 4.5rem);
+    }
 
-  &.is-6 {
-    font-size: clamp(1.25rem, 0.5vw + 1rem, 4rem);
-  }
+    &.is-6 {
+        font-size: clamp(1.25rem, 0.5vw + 1rem, 4rem);
+    }
 }
 
 .subtitle {
-  color: #4a4a4a;
-  font-size: 1.25rem;
-  font-weight: 400;
-  line-height: 1.25;
+    color: #4a4a4a;
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.25;
 
-  &.is-1 {
-    font-size: clamp(1.5rem, 2vw + 1rem, 3rem);
-  }
+    &.is-1 {
+        font-size: clamp(1.5rem, 2vw + 1rem, 3rem);
+    }
 
-  &.is-2 {
-    font-size: clamp(1.25rem, 1.5vw + 1rem, 2.75rem);
-  }
+    &.is-2 {
+        font-size: clamp(1.25rem, 1.5vw + 1rem, 2.75rem);
+    }
 
-  &.is-3 {
-    font-size: clamp(1rem, 1.3vw + 1rem, 2.5rem);
-  }
+    &.is-3 {
+        font-size: clamp(1rem, 1.3vw + 1rem, 2.5rem);
+    }
 
-  &.is-4 {
-    font-size: clamp(0.75rem, 1vw + 1rem, 2.25rem);
-  }
+    &.is-4 {
+        font-size: clamp(0.75rem, 1vw + 1rem, 2.25rem);
+    }
 
-  &.is-5 {
-    font-size: clamp(0.5rem, 0.75vw + 1rem, 2rem);
-  }
+    &.is-5 {
+        font-size: clamp(0.5rem, 0.75vw + 1rem, 2rem);
+    }
 
-  &.is-6 {
-    font-size: clamp(0.25rem, 0.5vw + 1rem, 1.5rem);
-  }
+    &.is-6 {
+        font-size: clamp(0.25rem, 0.5vw + 1rem, 1.5rem);
+    }
 }
 
 .heading-divider {
-  padding-bottom: $title_divider_padding_bottom;
-  border-bottom: $title_divider_border solid $gray_400;
+    padding-bottom: $title_divider_padding_bottom;
+    border-bottom: $title_divider_border solid $gray_400;
 
-  &.dark {
-    padding-bottom: $dark_title_divider_padding_bottom;
-    border-bottom: $dark_title_divider_border solid $gray_900;
-  }
+    &.dark {
+        padding-bottom: $dark_title_divider_padding_bottom;
+        border-bottom: $dark_title_divider_border solid $gray_900;
+    }
 }

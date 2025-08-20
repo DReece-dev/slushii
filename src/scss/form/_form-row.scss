@@ -1,153 +1,153 @@
 fieldset {
-  padding: 0;
-  border-width: 0;
+    padding: 0;
+    border-width: 0;
 }
 
 label {
-  display: inline-block;
-  margin-bottom: 0.6rem;
+    display: inline-block;
+    margin-bottom: 0.6rem;
 }
 
 label.required:after {
-  content: '*';
-  color: #ff4d4f;
-  margin-left: 0.3rem;
+    content: "*";
+    color: #ff4d4f;
+    margin-left: 0.3rem;
 }
 
 legend {
-  display: block;
-  margin-bottom: 0.6rem;
+    display: block;
+    margin-bottom: 0.6rem;
 }
 
 .form-group {
-  margin-bottom: 2rem;
+    margin-bottom: 2rem;
 }
 
 .form-row {
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
 
-  &.row-eq-spacing {
-    > [class^='col'] {
-      padding-left: 1rem;
-      padding-right: 1rem;
+    &.row-eq-spacing {
+        > [class^="col"] {
+            padding-left: 1rem;
+            padding-right: 1rem;
 
-      &:first-child {
-        padding-left: 0;
-      }
+            &:first-child {
+                padding-left: 0;
+            }
 
-      &:last-child {
-        padding-right: 0;
-      }
-    }
-  }
-
-  @media (min-width: 640px) {
-    &.row-eq-spacing-sm:not(.row-eq-spacing) {
-      > [class^='col'] {
-        padding-left: 1rem;
-        padding-right: 1rem;
-
-        &:first-child {
-          padding-left: 0;
+            &:last-child {
+                padding-right: 0;
+            }
         }
+    }
 
-        &:last-child {
-          padding-right: 0;
+    @media (min-width: 640px) {
+        &.row-eq-spacing-sm:not(.row-eq-spacing) {
+            > [class^="col"] {
+                padding-left: 1rem;
+                padding-right: 1rem;
+
+                &:first-child {
+                    padding-left: 0;
+                }
+
+                &:last-child {
+                    padding-right: 0;
+                }
+            }
         }
-      }
     }
-  }
 
-  @media (max-width: 640px) {
-    &.row-eq-spacing-sm:not(.row-eq-spacing) {
-      > [class^='col']:not(:last-child) {
-        margin-bottom: 2rem;
-      }
-    }
-  }
-
-  @media (min-width: 768px) {
-    &.row-eq-spacing-md:not(.row-eq-spacing-sm):not(.row-eq-spacing) {
-      > [class^='col'] {
-        padding-left: 1rem;
-        padding-right: 1rem;
-
-        &:first-child {
-          padding-left: 0;
+    @media (max-width: 640px) {
+        &.row-eq-spacing-sm:not(.row-eq-spacing) {
+            > [class^="col"]:not(:last-child) {
+                margin-bottom: 2rem;
+            }
         }
+    }
 
-        &:last-child {
-          padding-right: 0;
+    @media (min-width: 768px) {
+        &.row-eq-spacing-md:not(.row-eq-spacing-sm):not(.row-eq-spacing) {
+            > [class^="col"] {
+                padding-left: 1rem;
+                padding-right: 1rem;
+
+                &:first-child {
+                    padding-left: 0;
+                }
+
+                &:last-child {
+                    padding-right: 0;
+                }
+            }
         }
-      }
     }
-  }
 
-  @media (max-width: 768px) {
-    &.row-eq-spacing-md:not(.row-eq-spacing-sm):not(.row-eq-spacing) {
-      > [class^='col']:not(:last-child) {
-        margin-bottom: 2rem;
-      }
-    }
-  }
-
-  @media (min-width: 1024px) {
-    &.row-eq-spacing-lg:not(.row-eq-spacing-md):not(.row-eq-spacing-sm):not(
-        .row-eq-spacing
-      ) {
-      > [class^='col'] {
-        padding-left: 1rem;
-        padding-right: 1rem;
-
-        &:first-child {
-          padding-left: 0;
+    @media (max-width: 768px) {
+        &.row-eq-spacing-md:not(.row-eq-spacing-sm):not(.row-eq-spacing) {
+            > [class^="col"]:not(:last-child) {
+                margin-bottom: 2rem;
+            }
         }
+    }
 
-        &:last-child {
-          padding-right: 0;
+    @media (min-width: 1024px) {
+        &.row-eq-spacing-lg:not(.row-eq-spacing-md):not(.row-eq-spacing-sm):not(
+                .row-eq-spacing
+            ) {
+            > [class^="col"] {
+                padding-left: 1rem;
+                padding-right: 1rem;
+
+                &:first-child {
+                    padding-left: 0;
+                }
+
+                &:last-child {
+                    padding-right: 0;
+                }
+            }
         }
-      }
     }
-  }
 
-  @media (max-width: 1024px) {
-    &.row-eq-spacing-lg:not(.row-eq-spacing-md):not(.row-eq-spacing-sm):not(
-        .row-eq-spacing
-      ) {
-      > [class^='col']:not(:last-child) {
-        margin-bottom: 2rem;
-      }
-    }
-  }
-
-  @media (min-width: 1280px) {
-    &.row-eq-spacing-xl:not(.row-eq-spacing-lg):not(.row-eq-spacing-md):not(
-        .row-eq-spacing-sm
-      ):not(.row-eq-spacing) {
-      > [class^='col'] {
-        padding-left: 1rem;
-        padding-right: 1rem;
-
-        &:first-child {
-          padding-left: 0;
+    @media (max-width: 1024px) {
+        &.row-eq-spacing-lg:not(.row-eq-spacing-md):not(.row-eq-spacing-sm):not(
+                .row-eq-spacing
+            ) {
+            > [class^="col"]:not(:last-child) {
+                margin-bottom: 2rem;
+            }
         }
+    }
 
-        &:last-child {
-          padding-right: 0;
+    @media (min-width: 1280px) {
+        &.row-eq-spacing-xl:not(.row-eq-spacing-lg):not(.row-eq-spacing-md):not(
+                .row-eq-spacing-sm
+            ):not(.row-eq-spacing) {
+            > [class^="col"] {
+                padding-left: 1rem;
+                padding-right: 1rem;
+
+                &:first-child {
+                    padding-left: 0;
+                }
+
+                &:last-child {
+                    padding-right: 0;
+                }
+            }
         }
-      }
     }
-  }
 
-  @media (max-width: 1280px) {
-    &.row-eq-spacing-xl:not(.row-eq-spacing-lg):not(.row-eq-spacing-md):not(
-        .row-eq-spacing-sm
-      ):not(.row-eq-spacing) {
-      > [class^='col']:not(:last-child) {
-        margin-bottom: 2rem;
-      }
+    @media (max-width: 1280px) {
+        &.row-eq-spacing-xl:not(.row-eq-spacing-lg):not(.row-eq-spacing-md):not(
+                .row-eq-spacing-sm
+            ):not(.row-eq-spacing) {
+            > [class^="col"]:not(:last-child) {
+                margin-bottom: 2rem;
+            }
+        }
     }
-  }
 }

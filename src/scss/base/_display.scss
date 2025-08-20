@@ -5,55 +5,55 @@ $line-height: 1.2;
 $minimum-font-size: 1.6rem;
 
 .display-heading {
-  font-weight: $font-weight;
-  line-height: $line-height;
-  font-size: $minimum-font-size;
+    font-weight: $font-weight;
+    line-height: $line-height;
+    font-size: $minimum-font-size;
 
-  &-1 {
-    font-size: calc($minimum-font-size + 4.5em);
+    &-1 {
+        font-size: calc($minimum-font-size + 4.5em);
 
-    @media (min-width: $display-breakpoint) {
-      font-size: 5rem;
+        @media (min-width: $display-breakpoint) {
+            font-size: 5rem;
+        }
     }
-  }
 
-  &-2 {
-    font-size: calc($minimum-font-size + 3.9em);
+    &-2 {
+        font-size: calc($minimum-font-size + 3.9em);
 
-    @media (min-width: $display-breakpoint) {
-      font-size: 4.5rem;
+        @media (min-width: $display-breakpoint) {
+            font-size: 4.5rem;
+        }
     }
-  }
 
-  &-3 {
-    font-size: calc($minimum-font-size + 3.3em);
+    &-3 {
+        font-size: calc($minimum-font-size + 3.3em);
 
-    @media (min-width: $display-breakpoint) {
-      font-size: 4rem;
+        @media (min-width: $display-breakpoint) {
+            font-size: 4rem;
+        }
     }
-  }
 
-  &-4 {
-    font-size: calc($minimum-font-size + 2.7em);
+    &-4 {
+        font-size: calc($minimum-font-size + 2.7em);
 
-    @media (min-width: $display-breakpoint) {
-      font-size: 3.5rem;
+        @media (min-width: $display-breakpoint) {
+            font-size: 3.5rem;
+        }
     }
-  }
 
-  &-5 {
-    font-size: calc($minimum-font-size + 2.1em);
+    &-5 {
+        font-size: calc($minimum-font-size + 2.1em);
 
-    @media (min-width: $display-breakpoint) {
-      font-size: 3rem;
+        @media (min-width: $display-breakpoint) {
+            font-size: 3rem;
+        }
     }
-  }
 
-  &-6 {
-    font-size: calc($minimum-font-size + 1.5em);
+    &-6 {
+        font-size: calc($minimum-font-size + 1.5em);
 
-    @media (min-width: $display-breakpoint) {
-      font-size: 2.5rem;
+        @media (min-width: $display-breakpoint) {
+            font-size: 2.5rem;
+        }
     }
-  }
 }

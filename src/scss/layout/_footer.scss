@@ -6,117 +6,117 @@ $footer-grey-background-color: var(--grey-500);
 $footer-grey-color: var(--black);
 
 .footer {
-  background-color: #fafafa;
-  box-sizing: border-box;
-  min-height: 100px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    background-color: #fafafa;
+    box-sizing: border-box;
+    min-height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-  &.fixed {
-    bottom: $footer-fixed-bottom;
-    position: $footer-fixed-position;
-  }
+    &.fixed {
+        bottom: $footer-fixed-bottom;
+        position: $footer-fixed-position;
+    }
 
-  &.dark {
-    background-color: $footer-dark-background-color;
-    color: $footer-dark-color;
-  }
+    &.dark {
+        background-color: $footer-dark-background-color;
+        color: $footer-dark-color;
+    }
 
-  &.grey {
-    background-color: $footer-grey-background-color;
-    color: $footer-grey-color;
-  }
+    &.grey {
+        background-color: $footer-grey-background-color;
+        color: $footer-grey-color;
+    }
 }
 
 // Simple Footer
 .simple-footer {
-  background-color: #222;
-  color: #fff;
-  padding: 20px;
-  text-align: center;
+    background-color: #222;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
 }
 
 // Column Footer
 .column-footer {
-  background-color: #f2f2f2;
-  color: #666;
-  padding: 40px 0;
+    background-color: #f2f2f2;
+    color: #666;
+    padding: 40px 0;
 
-  .container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .column {
-    flex: 0 0 calc(33.33% - 20px);
-    margin-bottom: 20px;
-
-    h3 {
-      font-size: 1.5rem;
-      margin-bottom: 10px;
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        max-width: 1200px;
+        margin: 0 auto;
     }
 
-    ul {
-      list-style: none;
-      padding-left: 0;
+    .column {
+        flex: 0 0 calc(33.33% - 20px);
+        margin-bottom: 20px;
 
-      li {
-        margin-bottom: 5px;
-
-        a {
-          color: #666;
-          text-decoration: none;
-
-          &:hover {
-            text-decoration: underline;
-          }
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
         }
-      }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+
+            li {
+                margin-bottom: 5px;
+
+                a {
+                    color: #666;
+                    text-decoration: none;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
     }
-  }
 }
 
 // Footer with Social Icons
 .social-footer {
-  background-color: #222;
-  color: #fff;
-  padding: 40px 0;
+    background-color: #222;
+    color: #fff;
+    padding: 40px 0;
 
-  .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
 
-    .logo {
-      font-size: 2rem;
-      font-weight: bold;
-    }
-
-    .social-links {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      li {
-        margin-right: 10px;
-
-        a {
-          color: #fff;
-          font-size: 1.5rem;
-
-          &:hover {
-            color: #ccc;
-          }
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
         }
-      }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            li {
+                margin-right: 10px;
+
+                a {
+                    color: #fff;
+                    font-size: 1.5rem;
+
+                    &:hover {
+                        color: #ccc;
+                    }
+                }
+            }
+        }
     }
-  }
 }

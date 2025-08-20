@@ -25,11 +25,11 @@ $form-switch-padding: 2.5em;
         appearance: none;
         print-color-adjust: exact;
 
-        &[type='checkbox'] {
+        &[type="checkbox"] {
             border-radius: $form-check-border-radius;
         }
 
-        &[type='radio'] {
+        &[type="radio"] {
             border-radius: 50%;
         }
 
@@ -47,16 +47,16 @@ $form-switch-padding: 2.5em;
             background-color: $form-check-color;
             border-color: $form-check-color;
 
-            &[type='checkbox'] {
+            &[type="checkbox"] {
                 background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
             }
 
-            &[type='radio'] {
+            &[type="radio"] {
                 background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23fff'/%3e%3c/svg%3e");
             }
         }
 
-        &[type='checkbox']:indeterminate {
+        &[type="checkbox"]:indeterminate {
             background-color: $form-check-color;
             border-color: $form-check-color;
             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10h8'/%3e%3c/svg%3e");

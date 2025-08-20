@@ -23,7 +23,7 @@ $border-radius: 30px;
         border-radius: $border-radius;
         background: #fefefe;
         transition: all 0.25s ease-out;
-        content: '';
+        content: "";
     }
 }
 
@@ -91,7 +91,7 @@ $border-radius: 30px;
         opacity: 0.5;
     }
 
-    [data-whatinput='mouse'] input:focus ~ .switch-paddle {
+    [data-whatinput="mouse"] input:focus ~ .switch-paddle {
         outline: 0;
     }
 }

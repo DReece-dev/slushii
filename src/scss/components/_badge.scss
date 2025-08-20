@@ -7,23 +7,23 @@ $badge-vertical-align: baseline;
 $badge-border-radius: 0.25rem;
 
 .badge {
-  display: inline-block;
-  padding: $badge-padding;
-  font-size: $badge-font-size;
-  font-weight: $badge-font-weight;
-  line-height: $badge-line-height;
-  color: #fff;
-  text-align: $badge-text-align;
-  white-space: nowrap;
-  vertical-align: $badge-vertical-align;
-  border-radius: $badge-border-radius;
+    display: inline-block;
+    padding: $badge-padding;
+    font-size: $badge-font-size;
+    font-weight: $badge-font-weight;
+    line-height: $badge-line-height;
+    color: #fff;
+    text-align: $badge-text-align;
+    white-space: nowrap;
+    vertical-align: $badge-vertical-align;
+    border-radius: $badge-border-radius;
 
-  &:empty {
-    display: none;
-  }
-  &.rounded {
-    border-radius: 2rem;
-  }
+    &:empty {
+        display: none;
+    }
+    &.rounded {
+        border-radius: 2rem;
+    }
 }
 
 $dark-badge-bg-color: #f3f4f6;
@@ -42,43 +42,43 @@ $purple-badge-bg-color: #ede9fe;
 $purple-badge-color: #6a36be;
 
 .badge.dark {
-  background-color: $dark-badge-bg-color;
-  color: $dark-badge-color;
+    background-color: $dark-badge-bg-color;
+    color: $dark-badge-color;
 }
 
 .badge.red {
-  background-color: $red-badge-bg-color;
-  color: $red-badge-color;
+    background-color: $red-badge-bg-color;
+    color: $red-badge-color;
 }
 
 .badge.lightred {
-  background-color: $lightred-badge-bg-color;
-  color: $lightred-badge-color;
+    background-color: $lightred-badge-bg-color;
+    color: $lightred-badge-color;
 }
 
 .badge.yellow {
-  background-color: $yellow-badge-bg-color;
-  color: $yellow-badge-color;
+    background-color: $yellow-badge-bg-color;
+    color: $yellow-badge-color;
 }
 
 .badge.green {
-  background-color: $green-badge-bg-color;
-  color: $green-badge-color;
+    background-color: $green-badge-bg-color;
+    color: $green-badge-color;
 }
 
 .badge.blue {
-  background-color: $blue-badge-bg-color;
-  color: $blue-badge-color;
+    background-color: $blue-badge-bg-color;
+    color: $blue-badge-color;
 }
 
 .badge.purple {
-  background-color: $purple-badge-bg-color;
-  color: $purple-badge-color;
+    background-color: $purple-badge-bg-color;
+    color: $purple-badge-color;
 }
 
 .btn {
-  & .badge {
-    position: relative;
-    top: -1px;
-  }
+    & .badge {
+        position: relative;
+        top: -1px;
+    }
 }

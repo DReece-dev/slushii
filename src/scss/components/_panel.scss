@@ -1,72 +1,72 @@
 .panel {
-  border: 0.05rem solid #dadee4;
-  border-radius: 0.1rem;
-  display: flex;
-  flex-direction: column;
-
-  &__header,
-  &__footer {
-    align-items: center;
+    border: 0.05rem solid #dadee4;
+    border-radius: 0.1rem;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 0.8rem;
-    font-weight: bold;
+    flex-direction: column;
 
-    &__title {
-      font-size: 1.25rem;
-      text-transform: uppercase;
-    }
-  }
+    &__header,
+    &__footer {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0.8rem;
+        font-weight: bold;
 
-  &__nav {
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-bottom: 1.5rem;
-
-    &__link {
-      color: #4d4d4d;
-      font-weight: bold;
-      text-decoration: none;
-      margin-right: 1rem;
-
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-  }
-
-  &__body {
-    flex: 1;
-    overflow-y: auto;
-    padding: 0.8rem;
-
-    &__content {
-      line-height: 1.5;
-    }
-  }
-
-  &.panel-primary {
-    border-color: var(--blue-500);
-
-    &__header {
-      background-color: var(--blue-500);
-      color: #fff;
-
-      &__title {
-        color: #fff;
-      }
+        &__title {
+            font-size: 1.25rem;
+            text-transform: uppercase;
+        }
     }
 
-    &__nav__link {
-      color: var(--blue-500);
+    &__nav {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 1.5rem;
 
-      &:hover {
-        color: var(--blue-700);
-        text-decoration: underline;
-      }
+        &__link {
+            color: #4d4d4d;
+            font-weight: bold;
+            text-decoration: none;
+            margin-right: 1rem;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
     }
-  }
+
+    &__body {
+        flex: 1;
+        overflow-y: auto;
+        padding: 0.8rem;
+
+        &__content {
+            line-height: 1.5;
+        }
+    }
+
+    &.panel-primary {
+        border-color: var(--blue-500);
+
+        &__header {
+            background-color: var(--blue-500);
+            color: #fff;
+
+            &__title {
+                color: #fff;
+            }
+        }
+
+        &__nav__link {
+            color: var(--blue-500);
+
+            &:hover {
+                color: var(--blue-700);
+                text-decoration: underline;
+            }
+        }
+    }
 }

@@ -1,4 +1,3 @@
-/* Slushii Base */
 :root {
   --slate: #f1f5f9;
   --slate-100: #cfd8dc;
@@ -238,9 +237,11 @@
   --blackAlpha-700: rgba(0, 0, 0, 0.64);
   --blackAlpha-800: rgba(0, 0, 0, 0.8);
   --blackAlpha-900: rgba(0, 0, 0, 0.92);
-  --default-fonts: "Inter V", system-ui, -apple-system, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --default-fonts:
+      "Inter V", system-ui, -apple-system, "Segoe UI", Roboto,
+      "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+      "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+      "Noto Color Emoji";
   --tab-size: 4;
 }
 

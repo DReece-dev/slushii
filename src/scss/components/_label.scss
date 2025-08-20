@@ -1,56 +1,56 @@
 .label {
-  display: inline-block;
-  padding: 0.33333rem 0.5rem;
-  font-size: 0.8rem;
-  font-weight: 500;
-  font-family: Arial, sans-serif;
-  line-height: 1;
-  white-space: nowrap;
-  cursor: default;
-  color: #000000;
-  border-radius: 5px;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
-  padding: 0.5rem 1rem;
+    display: inline-block;
+    padding: 0.33333rem 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    font-family: Arial, sans-serif;
+    line-height: 1;
+    white-space: nowrap;
+    cursor: default;
+    color: #000000;
+    border-radius: 5px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem 1rem;
 
-  &:hover {
-    opacity: 0.8;
-  }
+    &:hover {
+        opacity: 0.8;
+    }
 
-  &.blue {
-    background: var(--blue-400);
-    color: #fefefe;
-  }
+    &.blue {
+        background: var(--blue-400);
+        color: #fefefe;
+    }
 
-  &.indigo {
-    background: var(--indigo-400);
-    color: #fefefe;
-  }
+    &.indigo {
+        background: var(--indigo-400);
+        color: #fefefe;
+    }
 
-  &.red {
-    background: var(--red-500);
-    color: #ffffff;
-  }
+    &.red {
+        background: var(--red-500);
+        color: #ffffff;
+    }
 
-  &.orange {
-    background: var(--orange-500);
-    color: #0a0a0a;
-  }
+    &.orange {
+        background: var(--orange-500);
+        color: #0a0a0a;
+    }
 
-  &.green {
-    background: var(--green-500);
-    color: #fefefe;
-  }
+    &.green {
+        background: var(--green-500);
+        color: #fefefe;
+    }
 
-  &.dark {
-    background: var(--gray-900);
-    color: #fefefe;
-  }
+    &.dark {
+        background: var(--gray-900);
+        color: #fefefe;
+    }
 
-  &.rounded {
-    border-radius: 20px;
-  }
+    &.rounded {
+        border-radius: 20px;
+    }
 
-  @media (max-width: 576px) {
-    font-size: 0.7rem;
-  }
+    @media (max-width: 576px) {
+        font-size: 0.7rem;
+    }
 }

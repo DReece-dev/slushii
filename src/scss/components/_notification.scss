@@ -2,8 +2,9 @@ $notification-background-color: whitesmoke;
 $notification-text-color: currentColor;
 $notification-link-color: currentColor;
 $notification-link-decoration: underline;
-$notification-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
-  0 0px 0 1px rgba(10, 10, 10, 0.02);
+$notification-shadow:
+    0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
+    0 0px 0 1px rgba(10, 10, 10, 0.02);
 $notification-box-radius: 4px;
 $notification-width: 25em;
 $notification-padding: 1rem;
@@ -12,54 +13,54 @@ $notification-delete-top: 0.5rem;
 $notification-delete-right: 0.5rem;
 
 .notification {
-  display: inline-flex;
-  flex-direction: row;
-  background-color: $notification-background-color;
-  border-radius: $notification-box-radius;
-  position: relative;
-  padding: $notification-padding;
-  width: $notification-width;
-  height: max-content;
-  box-shadow: $notification-shadow;
+    display: inline-flex;
+    flex-direction: row;
+    background-color: $notification-background-color;
+    border-radius: $notification-box-radius;
+    position: relative;
+    padding: $notification-padding;
+    width: $notification-width;
+    height: max-content;
+    box-shadow: $notification-shadow;
 
-  &,
-  a:not(.btn):not(.dropdown-item),
-  strong,
-  .title,
-  .subtitle,
-  .content,
-  pre,
-  code {
-    color: $notification-text-color;
-  }
+    &,
+    a:not(.btn):not(.dropdown-item),
+    strong,
+    .title,
+    .subtitle,
+    .content,
+    pre,
+    code {
+        color: $notification-text-color;
+    }
 
-  a:not(.btn):not(.dropdown-item) {
-    text-decoration: $notification-link-decoration;
-  }
+    a:not(.btn):not(.dropdown-item) {
+        text-decoration: $notification-link-decoration;
+    }
 
-  pre,
-  code {
-    background-color: transparent;
-  }
+    pre,
+    code {
+        background-color: transparent;
+    }
 
-  .delete {
-    top: $notification-delete-top;
-    right: $notification-delete-right;
-    position: $notification-delete-position !important;
-  }
+    .delete {
+        top: $notification-delete-top;
+        right: $notification-delete-right;
+        position: $notification-delete-position !important;
+    }
 
-  &.white {
-    background-color: var(--white);
-    color: black;
-  }
+    &.white {
+        background-color: var(--white);
+        color: black;
+    }
 
-  &.black {
-    background-color: black;
-    color: var(--white);
-  }
+    &.black {
+        background-color: black;
+        color: var(--white);
+    }
 
-  &.blue {
-    background-color: var(--blue-500);
-    color: var(--white);
-  }
+    &.blue {
+        background-color: var(--blue-500);
+        color: var(--white);
+    }
 }

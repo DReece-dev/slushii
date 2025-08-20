@@ -1,43 +1,46 @@
+// Define the breakpoint variable
+$breakpoint: 768px;
+
 .media-object {
-  display: flex;
-  margin-bottom: 1rem;
-  flex-wrap: nowrap;
+    display: flex;
+    margin-bottom: 1rem;
+    flex-wrap: nowrap;
 
-  @media (max-width: $breakpoint) {
-    flex-wrap: wrap;
-  }
+    @media (max-width: $breakpoint) {
+        flex-wrap: wrap;
+    }
 
-  &::after {
-    content: '';
-    display: table;
-    clear: both;
-  }
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
 
-  img {
-    max-width: 100%;
-  }
+    img {
+        max-width: 100%;
+    }
 }
 
 .media-object-section {
-  padding: 0 1rem;
-  flex: 1 1 auto;
+    padding: 0 1rem;
+    flex: 1 1 auto;
 
-  &:last-child > :last-child {
-    margin-bottom: 0;
-  }
-
-  @media (max-width: $breakpoint) {
-    padding: 0;
-    padding-bottom: 1rem;
-    flex-basis: 100%;
-    max-width: 100%;
-
-    img {
-      width: 100%;
+    &:last-child > :last-child {
+        margin-bottom: 0;
     }
-  }
 
-  &.main-section {
-    flex: 1 0 auto;
-  }
+    @media (max-width: $breakpoint) {
+        padding: 0;
+        padding-bottom: 1rem;
+        flex-basis: 100%;
+        max-width: 100%;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &.main-section {
+        flex: 1 0 auto;
+    }
 }

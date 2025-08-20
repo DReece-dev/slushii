@@ -1,2 +1,2 @@
-@import "scss/flex-system/all";
-@import "scss/grid/all";
+@use "scss/flex-system/all" as flex;
+@use "scss/grid/all" as grid;

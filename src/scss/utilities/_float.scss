@@ -1,137 +1,137 @@
 .float-left {
-  float: left;
+    float: left;
 }
 
 .float-right {
-  float: right;
+    float: right;
 }
 
 .float-center {
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .float-none {
-  float: none;
+    float: none;
 }
 
 @media (min-width: 360px) {
-  .xs\:float-left {
-    float: left;
-  }
+    .xs\:float-left {
+        float: left;
+    }
 
-  .xs\:float-right {
-    float: right;
-  }
+    .xs\:float-right {
+        float: right;
+    }
 
-  .xs\:float-center {
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
-  }
+    .xs\:float-center {
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+    }
 
-  .xs\:float-none {
-    float: none;
-  }
+    .xs\:float-none {
+        float: none;
+    }
 }
 
 @media (min-width: 640px) {
-  .sm\:float-left {
-    float: left;
-  }
+    .sm\:float-left {
+        float: left;
+    }
 
-  .sm\:float-right {
-    float: right;
-  }
+    .sm\:float-right {
+        float: right;
+    }
 
-  .sm\:float-center {
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
-  }
+    .sm\:float-center {
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+    }
 
-  .sm\:float-none {
-    float: none;
-  }
+    .sm\:float-none {
+        float: none;
+    }
 }
 
 @media (min-width: 768px) {
-  .md\:float-left {
-    float: left;
-  }
+    .md\:float-left {
+        float: left;
+    }
 
-  .md\:float-right {
-    float: right;
-  }
+    .md\:float-right {
+        float: right;
+    }
 
-  .md\:float-center {
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
-  }
+    .md\:float-center {
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+    }
 
-  .md\:float-none {
-    float: none;
-  }
+    .md\:float-none {
+        float: none;
+    }
 }
 
 @media (min-width: 1024px) {
-  .lg\:float-left {
-    float: left;
-  }
+    .lg\:float-left {
+        float: left;
+    }
 
-  .lg\:float-right {
-    float: right;
-  }
+    .lg\:float-right {
+        float: right;
+    }
 
-  .lg\:float-center {
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
-  }
+    .lg\:float-center {
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+    }
 
-  .lg\:float-none {
-    float: none;
-  }
+    .lg\:float-none {
+        float: none;
+    }
 }
 
 @media (min-width: 1280px) {
-  .xl\:float-left {
-    float: left;
-  }
+    .xl\:float-left {
+        float: left;
+    }
 
-  .xl\:float-right {
-    float: right;
-  }
+    .xl\:float-right {
+        float: right;
+    }
 
-  .xl\:float-center {
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
-  }
+    .xl\:float-center {
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+    }
 
-  .xl\:float-none {
-    float: none;
-  }
+    .xl\:float-none {
+        float: none;
+    }
 }
 
 @media (min-width: 1536px) {
-  .\32xl\:float-left {
-    float: left;
-  }
+    .\32xl\:float-left {
+        float: left;
+    }
 
-  .\32xl\:float-right {
-    float: right;
-  }
+    .\32xl\:float-right {
+        float: right;
+    }
 
-  .\32xl\:float-center {
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
-  }
+    .\32xl\:float-center {
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+    }
 
-  .\32xl\:float-none {
-    float: none;
-  }
+    .\32xl\:float-none {
+        float: none;
+    }
 }

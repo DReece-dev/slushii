@@ -1,103 +1,103 @@
 .star-rating {
-  display: inline-block;
-  vertical-align: middle;
-
-  label {
     display: inline-block;
-    margin: 0;
-    padding: 0.25rem;
-    font-size: 1.5rem;
-    line-height: 1;
-    color: #ccc;
-    cursor: pointer;
-    transition: color 0.2s;
+    vertical-align: middle;
 
-    &:hover,
-    &:hover ~ label {
-      color: #ffd700;
-    }
+    label {
+        display: inline-block;
+        margin: 0;
+        padding: 0.25rem;
+        font-size: 1.5rem;
+        line-height: 1;
+        color: #ccc;
+        cursor: pointer;
+        transition: color 0.2s;
 
-    &::before {
-      content: '\2606';
-    }
+        &:hover,
+        &:hover ~ label {
+            color: #ffd700;
+        }
 
-    &.selected,
-    &:checked ~ label {
-      color: #ffd700;
-    }
+        &::before {
+            content: "\2606";
+        }
 
-    &:checked ~ label {
-      color: #ffd700;
-    }
+        &.selected,
+        &:checked ~ label {
+            color: #ffd700;
+        }
 
-    &:checked ~ label ~ label {
-      color: #ccc;
-    }
+        &:checked ~ label {
+            color: #ffd700;
+        }
 
-    &.selected ~ label {
-      color: #ffd700;
+        &:checked ~ label ~ label {
+            color: #ccc;
+        }
+
+        &.selected ~ label {
+            color: #ffd700;
+        }
     }
-  }
 }
 
 .percentage-rating {
-  display: inline-block;
-  vertical-align: middle;
-  width: 100px;
-  height: 20px;
-  background-color: #ccc;
-  border-radius: 10px;
-  position: relative;
-
-  .percentage-bar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    background-color: #ffd700;
+    display: inline-block;
+    vertical-align: middle;
+    width: 100px;
+    height: 20px;
+    background-color: #ccc;
     border-radius: 10px;
-    transition: width 0.2s;
-  }
+    position: relative;
+
+    .percentage-bar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        background-color: #ffd700;
+        border-radius: 10px;
+        transition: width 0.2s;
+    }
 }
 
 .heart-rating {
-  display: inline-block;
-  vertical-align: middle;
-
-  label {
     display: inline-block;
-    margin: 0;
-    padding: 0.25rem;
-    font-size: 1.5rem;
-    line-height: 1;
-    color: #ccc;
-    cursor: pointer;
-    transition: color 0.2s;
+    vertical-align: middle;
 
-    &:hover,
-    &:hover ~ label {
-      color: #ff6b6b;
-    }
+    label {
+        display: inline-block;
+        margin: 0;
+        padding: 0.25rem;
+        font-size: 1.5rem;
+        line-height: 1;
+        color: #ccc;
+        cursor: pointer;
+        transition: color 0.2s;
 
-    &::before {
-      content: '\2661';
-    }
+        &:hover,
+        &:hover ~ label {
+            color: #ff6b6b;
+        }
 
-    &.selected,
-    &:checked ~ label {
-      color: #ff6b6b;
-    }
+        &::before {
+            content: "\2661";
+        }
 
-    &:checked ~ label {
-      color: #ff6b6b;
-    }
+        &.selected,
+        &:checked ~ label {
+            color: #ff6b6b;
+        }
 
-    &:checked ~ label ~ label {
-      color: #ccc;
-    }
+        &:checked ~ label {
+            color: #ff6b6b;
+        }
 
-    &.selected ~ label {
-      color: #ff6b6b;
+        &:checked ~ label ~ label {
+            color: #ccc;
+        }
+
+        &.selected ~ label {
+            color: #ff6b6b;
+        }
     }
-  }
 }

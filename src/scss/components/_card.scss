@@ -1,24 +1,25 @@
 .card-base {
-  background-color: white;
-  border-radius: 0.25rem;
-  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
-    0 0px 0 1px rgba(10, 10, 10, 0.02);
-  color: #4a4a4a;
-  max-width: 100%;
-  position: relative;
+    background-color: white;
+    border-radius: 0.25rem;
+    box-shadow:
+        0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
+        0 0px 0 1px rgba(10, 10, 10, 0.02);
+    color: #4a4a4a;
+    max-width: 100%;
+    position: relative;
 }
 
 .card {
-  &__media {
-    &:not(:last-child) {
-      margin-bottom: 1.5rem;
+    &__media {
+        &:not(:last-child) {
+            margin-bottom: 1.5rem;
+        }
     }
-  }
 
-  &.rounded {
-    border-radius: 10px;
-    @extend .card-base;
-  }
+    &.rounded {
+        border-radius: 10px;
+        @extend .card-base;
+    }
 }
 
 $card-header-background-color: transparent;
@@ -36,70 +37,70 @@ $card-image-position: relative;
 $card-image-border-radius: 0.25rem;
 
 .card-header {
-  background-color: $card-header-background-color;
-  align-items: stretch;
-  box-shadow: $card-header-box-shadow;
-  display: flex;
+    background-color: $card-header-background-color;
+    align-items: stretch;
+    box-shadow: $card-header-box-shadow;
+    display: flex;
 
-  &:first-child {
-    border-top-left-radius: $card-header-border-radius;
-    border-top-right-radius: $card-header-border-radius;
-  }
+    &:first-child {
+        border-top-left-radius: $card-header-border-radius;
+        border-top-right-radius: $card-header-border-radius;
+    }
 }
 
 .card-header-title {
-  align-items: center;
-  color: $card-header-text-color;
-  display: flex;
-  flex-grow: 1;
-  font-weight: $card-header-font-weight;
-  padding: $card-header-padding;
+    align-items: center;
+    color: $card-header-text-color;
+    display: flex;
+    flex-grow: 1;
+    font-weight: $card-header-font-weight;
+    padding: $card-header-padding;
 
-  &.is-centered {
-    justify-content: center;
-  }
+    &.is-centered {
+        justify-content: center;
+    }
 }
 
 .card-header-icon {
-  align-items: center;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  padding: $card-header-padding;
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    padding: $card-header-padding;
 }
 
 .card-image {
-  display: block;
-  position: $card-image-position;
+    display: block;
+    position: $card-image-position;
 
-  &:first-child {
-    img {
-      border-top-left-radius: $card-image-border-radius;
-      border-top-right-radius: $card-image-border-radius;
+    &:first-child {
+        img {
+            border-top-left-radius: $card-image-border-radius;
+            border-top-right-radius: $card-image-border-radius;
+        }
     }
-  }
 
-  &:last-child {
-    img {
-      border-bottom-left-radius: $card-image-border-radius;
-      border-bottom-right-radius: $card-image-border-radius;
+    &:last-child {
+        img {
+            border-bottom-left-radius: $card-image-border-radius;
+            border-bottom-right-radius: $card-image-border-radius;
+        }
     }
-  }
 }
 
 .card-content {
-  background-color: $card-content-background-color;
-  padding: $card-content-padding;
+    background-color: $card-content-background-color;
+    padding: $card-content-padding;
 
-  &:first-child {
-    border-top-left-radius: $card-content-border-radius;
-    border-top-right-radius: $card-content-border-radius;
-  }
+    &:first-child {
+        border-top-left-radius: $card-content-border-radius;
+        border-top-right-radius: $card-content-border-radius;
+    }
 
-  &:last-child {
-    border-bottom-left-radius: $card-content-border-radius;
-    border-bottom-right-radius: $card-content-border-radius;
-  }
+    &:last-child {
+        border-bottom-left-radius: $card-content-border-radius;
+        border-bottom-right-radius: $card-content-border-radius;
+    }
 }
 
 $card-footer-bg-color: transparent;
@@ -107,36 +108,36 @@ $card-footer-border-color: #ededed;
 $card-footer-radius: 0.25rem;
 
 .card-footer {
-  background-color: $card-footer-bg-color;
-  border-top: 1px solid $card-footer-border-color;
-  align-items: stretch;
-  display: flex;
+    background-color: $card-footer-bg-color;
+    border-top: 1px solid $card-footer-border-color;
+    align-items: stretch;
+    display: flex;
 
-  &:first-child {
-    border-top-left-radius: $card-footer-radius;
-    border-top-right-radius: $card-footer-radius;
-  }
+    &:first-child {
+        border-top-left-radius: $card-footer-radius;
+        border-top-right-radius: $card-footer-radius;
+    }
 
-  &:last-child {
-    border-bottom-left-radius: $card-footer-radius;
-    border-bottom-right-radius: $card-footer-radius;
-  }
+    &:last-child {
+        border-bottom-left-radius: $card-footer-radius;
+        border-bottom-right-radius: $card-footer-radius;
+    }
 }
 
 $card-footer-item-padding: 0.75rem;
 
 .card-footer-item {
-  align-items: center;
-  display: flex;
-  flex-basis: 0;
-  flex-grow: 1;
-  flex-shrink: 0;
-  justify-content: center;
-  padding: $card-footer-item-padding;
+    align-items: center;
+    display: flex;
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 0;
+    justify-content: center;
+    padding: $card-footer-item-padding;
 
-  &:not(:last-child) {
-    border-right: 1px solid $card-footer-border-color;
-  }
+    &:not(:last-child) {
+        border-right: 1px solid $card-footer-border-color;
+    }
 }
 
 $card-background-color: var(--white);
@@ -146,53 +147,53 @@ $card-border-style: solid;
 $card-border-radius: 10px;
 
 .card-heading-container {
-  background-color: $card-background-color;
-  border: $card-border-width $card-border-style $card-border-color;
-  border-radius: $card-border-radius;
+    background-color: $card-background-color;
+    border: $card-border-width $card-border-style $card-border-color;
+    border-radius: $card-border-radius;
 
-  &.custom-width {
-    width: 300px;
-    padding: 10px;
-  }
+    &.custom-width {
+        width: 300px;
+        padding: 10px;
+    }
 
-  &.small {
-    height: 950px;
-    margin: 50px;
-  }
+    &.small {
+        height: 950px;
+        margin: 50px;
+    }
 
-  &.custom {
-    margin-top: 2em;
-    margin-left: 2em;
-    width: 90%;
-  }
+    &.custom {
+        margin-top: 2em;
+        margin-left: 2em;
+        width: 90%;
+    }
 
-  &.large {
-    height: 950px;
-    margin: 50px;
-  }
+    &.large {
+        height: 950px;
+        margin: 50px;
+    }
 }
 
 @media only screen and (max-width: 768px) {
-  .card-heading-container.custom-width {
-    width: 100%;
-    padding: 1rem;
-  }
+    .card-heading-container.custom-width {
+        width: 100%;
+        padding: 1rem;
+    }
 }
 
 @media only screen and (max-width: 576px) {
-  .card {
-    &__media {
-      &:not(:last-child) {
-        margin-bottom: 1rem;
-      }
+    .card {
+        &__media {
+            &:not(:last-child) {
+                margin-bottom: 1rem;
+            }
+        }
+
+        &.rounded {
+            border-radius: 5px;
+        }
     }
 
-    &.rounded {
-      border-radius: 5px;
+    .card-heading-container.custom {
+        margin: 1rem;
     }
-  }
-
-  .card-heading-container.custom {
-    margin: 1rem;
-  }
 }

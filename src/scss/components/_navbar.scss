@@ -1,545 +1,1274 @@
+@use "sass:color"; // Added to use modern color functions
+
+// Modern Navbar Variables
+$navbar-height: 4rem;
+$navbar-padding-x: 1.5rem;
+$navbar-padding-y: 0.75rem;
+$navbar-item-padding: 0.75rem 1rem;
+$navbar-border-radius: 0.75rem;
+$navbar-gap: 0.5rem;
+$navbar-z-index: 50;
+
+// Colors
+$navbar-bg: rgba(255, 255, 255, 0.85);
+$navbar-bg-solid: #ffffff;
+$navbar-text: #1f2937;
+$navbar-text-muted: #6b7280;
+$navbar-accent: #3b82f6;
+$navbar-hover-bg: rgba(59, 130, 246, 0.08);
+$navbar-active-bg: rgba(59, 130, 246, 0.12);
+$navbar-border-color: rgba(0, 0, 0, 0.08);
+
+// Shadows
+$navbar-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.1),
+    0 1px 2px rgba(0, 0, 0, 0.06);
+$navbar-shadow-lg:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+// Transitions
+$navbar-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+$navbar-bounce-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+// Breakpoints
+$tablet: 768px;
+$desktop: 1024px;
+
+// Modern Mixins
+@mixin glass-effect {
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+}
+
+@mixin modern-shadow($level: 1) {
+    @if $level == 1 {
+        box-shadow: $navbar-shadow;
+    } @else {
+        box-shadow: $navbar-shadow-lg;
+    }
+}
+
+@mixin modern-button {
+    position: relative;
+    overflow: hidden;
+    border-radius: $navbar-border-radius * 0.6;
+    transition: $navbar-transition;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.4),
+            transparent
+        );
+        transition: left 0.5s;
+    }
+
+    &:hover::before {
+        left: 100%;
+    }
+}
+
+@mixin floating-dropdown {
+    border-radius: $navbar-border-radius;
+    @include modern-shadow(2);
+    border: 1px solid $navbar-border-color;
+    transform: translateY(-8px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+    &.active,
+    &.show {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+// Base navbar component
 .navbar {
-  background-color: white;
-  min-height: 3.25rem;
-  position: relative;
-  z-index: 30;
+    background: $navbar-bg;
+    min-height: $navbar-height;
+    position: relative;
+    z-index: $navbar-z-index;
+    transition: $navbar-transition;
+    @include glass-effect;
+    border-bottom: 1px solid $navbar-border-color;
+
+    // Modern scrolled state
+    &.scrolled {
+        background: $navbar-bg-solid;
+        @include modern-shadow(2);
+        transform: translateY(-1px);
+    }
+
+    // Container with modern spacing
+    > .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: $navbar-height;
+        width: 100%;
+        padding: 0 $navbar-padding-x;
+        gap: $navbar-gap * 2;
+    }
+
+    // Fixed positioning with modern styling
+    &.fixed-top {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: $navbar-z-index;
+    }
+
+    &.fixed-bottom {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: $navbar-z-index;
+        border-top: 1px solid $navbar-border-color;
+        border-bottom: none;
+    }
+
+    // Floating navbar variant
+    &.floating {
+        margin: 1rem $navbar-padding-x;
+        border-radius: $navbar-border-radius;
+        border: 1px solid $navbar-border-color;
+        @include modern-shadow(2);
+
+        @media (min-width: $tablet) {
+            margin: 1.5rem 2rem;
+        }
+    }
+
+    // Transparent variant
+    &.transparent {
+        background: transparent;
+        border-bottom: none;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+    }
 }
 
-.navbar-brand > .navbar-item,
-.navbar-brand .navbar-link {
-  color: var(--black);
+// Modern brand styling
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: $navbar-gap;
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: $navbar-text;
+    text-decoration: none;
+    transition: $navbar-transition;
+
+    &:hover {
+        color: $navbar-accent;
+        transform: translateY(-1px);
+    }
+
+    .logo {
+        height: 2rem;
+        width: auto;
+        transition: $navbar-transition;
+    }
+
+    &:hover .logo {
+        transform: scale(1.05);
+    }
 }
 
-.navbar-brand .navbar-link::after {
-  border-color: var(--black);
-}
-
+// Modern burger menu
 .navbar-burger {
-  color: var(--black);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: $navbar-border-radius * 0.6;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: $navbar-transition;
+    position: relative;
+
+    &:hover {
+        background: $navbar-hover-bg;
+        transform: scale(1.05);
+    }
+
+    &:active {
+        transform: scale(0.95);
+    }
+
+    // Modern burger lines
+    span {
+        display: block;
+        width: 1.25rem;
+        height: 2px;
+        background: $navbar-text;
+        border-radius: 1px;
+        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        transform-origin: center;
+
+        &:nth-child(1) {
+            transform: translateY(-4px);
+        }
+
+        &:nth-child(3) {
+            transform: translateY(4px);
+        }
+    }
+
+    // Active animation
+    &.active {
+        span {
+            &:nth-child(1) {
+                transform: rotate(45deg);
+            }
+
+            &:nth-child(2) {
+                opacity: 0;
+                transform: scaleX(0);
+            }
+
+            &:nth-child(3) {
+                transform: rotate(-45deg);
+            }
+        }
+    }
 }
 
-@media screen and (min-width: 768px) {
-  .navbar-start .navbar-link::after,
-  .navbar-end .navbar-link::after {
-    border-color: var(--black);
-  }
-
-  .navbar-dropdown a.navbar-item.active {
-    background-color: white;
-    color: var(--black);
-  }
-}
-
-.navbar > .container {
-  align-items: stretch;
-  display: flex;
-  min-height: 3.25rem;
-  width: 100%;
-}
-
-.navbar.has-shadow {
-  box-shadow: 0 2px 0 0 whitesmoke;
-}
-
-.navbar.fixed-bottom,
-.navbar.fixed-top {
-  left: 0;
-  position: fixed;
-  right: 0;
-  z-index: 30;
-}
-
-.navbar.fixed-bottom {
-  bottom: 0;
-}
-
-.navbar.fixed-bottom.has-shadow {
-  box-shadow: 0 -2px 0 0 whitesmoke;
-}
-
-.navbar.fixed-top {
-  top: 0;
-}
-
-html.has-navbar-fixed-top,
-body.has-navbar-fixed-top {
-  padding-top: 3.25rem;
-}
-
-html.has-navbar-fixed-bottom,
-body.has-navbar-fixed-bottom {
-  padding-bottom: 3.25rem;
-}
-
-.navbar-brand,
-.navbar-tabs {
-  align-items: stretch;
-  display: flex;
-  flex-shrink: 0;
-  min-height: 3.25rem;
-}
-
-.navbar-brand a.navbar-item:focus,
-.navbar-brand a.navbar-item:hover {
-  background-color: transparent;
-}
-
-.navbar-tabs {
-  -webkit-overflow-scrolling: touch;
-  max-width: 100vw;
-  overflow-x: auto;
-  overflow-y: hidden;
-}
-
-.navbar-burger {
-  color: var(--black);
-  cursor: pointer;
-  display: block;
-  height: 3.25rem;
-  position: relative;
-  width: 3.25rem;
-  margin-left: auto;
-}
-
-.navbar-burger span {
-  background-color: currentColor;
-  display: block;
-  height: 2px;
-  left: calc(50% - 8px);
-  position: absolute;
-  transform-origin: center;
-  transition-duration: 86ms;
-  transition-property: background-color, opacity, transform;
-  transition-timing-function: ease-out;
-  width: 17px;
-}
-
-.navbar-burger span:nth-child(1) {
-  top: calc(50% - 6px);
-}
-
-.navbar-burger span:nth-child(2) {
-  top: calc(50% - 1px);
-}
-
-.navbar-burger span:nth-child(3) {
-  top: calc(50% + 4px);
-}
-
-.navbar-burger:hover {
-  background-color: rgba(0, 0, 0, 0.05);
-}
-
-.navbar-burger.active span:nth-child(1) {
-  transform: translateY(5px) rotate(45deg);
-}
-
-.navbar-burger.active span:nth-child(2) {
-  opacity: 0;
-}
-
-.navbar-burger.active span:nth-child(3) {
-  transform: translateY(-5px) rotate(-45deg);
-}
-
+// Modern navigation menu
 .navbar-menu {
-  display: none;
+    display: none;
+
+    &.active {
+        display: block;
+    }
 }
 
-.navbar-item,
-.navbar-link {
-  color: #4a4a4a;
-  display: block;
-  line-height: 1.5;
-  padding: 0.5rem 0.75rem;
-  position: relative;
-}
-
-.navbar-item .icon:only-child,
-.navbar-link .icon:only-child {
-  margin-left: -0.25rem;
-  margin-right: -0.25rem;
-}
-
-a.navbar-item,
-.navbar-link {
-  cursor: pointer;
+// Navigation items with modern styling
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    gap: $navbar-gap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .navbar-item {
-  flex-grow: 0;
-  flex-shrink: 0;
+    position: relative;
+
+    a {
+        display: flex;
+        align-items: center;
+        padding: $navbar-item-padding;
+        color: $navbar-text;
+        text-decoration: none;
+        font-weight: 500;
+        border-radius: $navbar-border-radius * 0.6;
+        transition: $navbar-transition;
+        gap: $navbar-gap * 0.5;
+        @include modern-button;
+
+        &:hover {
+            color: $navbar-accent;
+            background: $navbar-hover-bg;
+            transform: translateY(-1px);
+        }
+
+        &.active {
+            color: $navbar-accent;
+            background: $navbar-active-bg;
+            font-weight: 600;
+
+            // Active indicator
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: -2px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 80%;
+                height: 2px;
+                background: $navbar-accent;
+                border-radius: 1px;
+            }
+        }
+    }
+
+    // Icon styling
+    .icon {
+        width: 1rem;
+        height: 1rem;
+        opacity: 0.8;
+        transition: $navbar-transition;
+    }
+
+    &:hover .icon {
+        opacity: 1;
+        transform: scale(1.1);
+    }
 }
 
-.navbar-item img {
-  max-height: 2.75rem;
+// Modern dropdown
+.navbar-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 12rem;
+    background: $navbar-bg-solid;
+    @include floating-dropdown;
+    padding: $navbar-gap;
+    margin-top: $navbar-gap;
+
+    .navbar-item {
+        width: 100%;
+
+        a {
+            width: 100%;
+            justify-content: flex-start;
+            border-radius: $navbar-border-radius * 0.5;
+
+            &:hover {
+                background: $navbar-hover-bg;
+                padding-left: calc(1rem + 0.25rem);
+            }
+        }
+    }
+
+    // Dropdown arrow
+    &::before {
+        content: "";
+        position: absolute;
+        top: -6px;
+        left: 1rem;
+        width: 0;
+        height: 0;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-bottom: 6px solid $navbar-bg-solid;
+    }
+
+    // Right-aligned dropdown
+    &.right {
+        left: auto;
+        right: 0;
+
+        &::before {
+            left: auto;
+            right: 1rem;
+        }
+    }
 }
 
 .navbar-item.has-dropdown {
-  padding: 0;
+    position: relative;
+
+    &:hover .navbar-dropdown,
+    &.active .navbar-dropdown {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    > a::after {
+        content: "";
+        width: 0;
+        height: 0;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-top: 4px solid currentColor;
+        margin-left: $navbar-gap * 0.5;
+        transition: $navbar-transition;
+    }
+
+    &:hover > a::after {
+        transform: rotate(180deg);
+    }
 }
 
-.navbar-item.expanded {
-  -webkit-box-flex: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
+// CTA Button styling
+.navbar-cta {
+    .btn {
+        padding: 0.625rem 1.25rem;
+        background: $navbar-accent;
+        color: white;
+        border: none;
+        border-radius: $navbar-border-radius * 0.6;
+        font-weight: 600;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: $navbar-gap * 0.5;
+        transition: $navbar-bounce-transition;
+        @include modern-shadow(1);
+
+        &:hover {
+            // CORRECTED LINE: Replaced darken() with color.adjust()
+            background: color.adjust($navbar-accent, $lightness: -8%);
+            transform: translateY(-2px) scale(1.02);
+            @include modern-shadow(2);
+        }
+
+        &:active {
+            transform: translateY(0) scale(0.98);
+        }
+    }
 }
 
-.navbar-item.tab {
-  border-bottom: 1px solid transparent;
-  min-height: 3.25rem;
-  padding-bottom: calc(0.5rem - 1px);
+// Mobile styles
+@media (max-width: #{$tablet - 1px}) {
+    .navbar {
+        .navbar-nav {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: $navbar-bg-solid;
+            flex-direction: column;
+            padding: $navbar-padding-y;
+            border-top: 1px solid $navbar-border-color;
+            @include modern-shadow(2);
+            gap: 0;
+
+            &.active {
+                display: flex;
+            }
+        }
+
+        .navbar-item {
+            width: 100%;
+
+            a {
+                border-radius: $navbar-border-radius * 0.5;
+                margin: 0 $navbar-padding-x * 0.5;
+            }
+        }
+
+        .navbar-burger {
+            display: flex;
+
+            @media (min-width: $tablet) {
+                display: none;
+            }
+        }
+
+        .navbar-dropdown {
+            position: static;
+            box-shadow: none;
+            border: 1px solid $navbar-border-color;
+            border-radius: $navbar-border-radius * 0.5;
+            margin: $navbar-gap $navbar-padding-x * 0.5;
+            transform: none;
+            opacity: 1;
+            visibility: visible;
+
+            &::before {
+                display: none;
+            }
+        }
+    }
 }
 
-.navbar-item.tab:focus,
-.navbar-item.tab:hover {
-  background-color: transparent;
+// Desktop styles
+@media (min-width: $tablet) {
+    .navbar {
+        .navbar-burger {
+            display: none;
+        }
+
+        .navbar-nav {
+            display: flex;
+        }
+
+        .navbar-menu {
+            display: flex;
+            align-items: center;
+            gap: $navbar-gap * 2;
+            flex: 1;
+            justify-content: space-between;
+        }
+    }
+
+    // Fixed navbar body padding
+    html.has-navbar-fixed-top,
+    body.has-navbar-fixed-top {
+        padding-top: $navbar-height;
+    }
+
+    html.has-navbar-fixed-bottom,
+    body.has-navbar-fixed-bottom {
+        padding-bottom: $navbar-height;
+    }
 }
 
-.navbar-item.tab.active {
-  background-color: transparent;
-  border-bottom-style: solid;
-  border-bottom-width: 3px;
-  padding-bottom: calc(0.5rem - 3px);
+// Scroll behavior
+.navbar-scroll-trigger {
+    // Add this class to trigger scroll-based styles
+    .navbar.scrolled {
+        transform: translateY(-2px);
+
+        .navbar-brand .logo {
+            transform: scale(0.9);
+        }
+    }
 }
 
-.navbar-content {
-  flex-grow: 1;
-  flex-shrink: 1;
+// Dark mode support (if using a toggle)
+.dark-mode {
+    .navbar {
+        background: rgba(17, 24, 39, 0.85);
+        border-bottom-color: rgba(255, 255, 255, 0.1);
+
+        &.scrolled {
+            background: #111827;
+        }
+    }
+
+    .navbar-brand,
+    .navbar-item a {
+        color: #f9fafb;
+    }
+
+    .navbar-item a {
+        &:hover {
+            background: rgba(75, 85, 99, 0.3);
+        }
+
+        &.active {
+            background: rgba(75, 85, 99, 0.4);
+        }
+    }
+
+    .navbar-burger span {
+        background: #f9fafb;
+    }
+
+    .navbar-dropdown {
+        background: #111827;
+        border-color: rgba(255, 255, 255, 0.1);
+
+        &::before {
+            border-bottom-color: #111827;
+        }
+    }
 }
 
-.navbar-link:not(.arrowless) {
-  padding-right: 2.5em;
+// Animation utilities
+.navbar-fade-in {
+    animation: navbar-fade-in 0.6s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
 }
 
-.navbar-link:not(.arrowless)::after {
-  margin-top: -0.375em;
-  right: 1.125em;
+@keyframes navbar-fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.navbar-dropdown {
-  font-size: 0.875rem;
-  padding-bottom: 0.5rem;
-  padding-top: 0.5rem;
+// 1. Gradient Navbar
+@mixin navbar-gradient {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+
+    .navbar-brand,
+    .navbar-item a {
+        color: white;
+
+        &:hover {
+            color: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.1);
+        }
+    }
+
+    .navbar-burger span {
+        background: white;
+    }
 }
 
-.navbar-dropdown .navbar-item {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+// 2. Neon Glow Navbar
+@mixin navbar-neon {
+    background: #0a0a0a;
+    border-bottom: 2px solid #00ffff;
+    box-shadow: 0 0 10px #00ffff;
+
+    .navbar-brand,
+    .navbar-item a {
+        color: #00ffff;
+        text-shadow: 0 0 5px #00ffff;
+
+        &:hover {
+            color: #ff00ff;
+            text-shadow: 0 0 10px #ff00ff;
+            box-shadow: 0 0 15px rgba(255, 0, 255, 0.3);
+        }
+    }
 }
 
-.navbar-divider {
-  background-color: whitesmoke;
-  border: none;
-  display: none;
-  height: 2px;
-  margin: 0.5rem 0;
+// 3. Minimal Border Navbar
+@mixin navbar-minimal {
+    background: transparent;
+    border: 1px solid #e5e7eb;
+    border-radius: 0;
+    box-shadow: none;
+
+    .navbar-item a {
+        border-radius: 0;
+        border-bottom: 2px solid transparent;
+        transition: border-color 0.3s ease;
+
+        &:hover,
+        &.active {
+            border-bottom-color: $navbar-accent;
+            background: transparent;
+        }
+    }
 }
 
-@media screen and (max-width: 767px) {
-  .navbar > .container {
-    display: block;
-  }
+// 4. Neumorphism Navbar
+@mixin navbar-neumorphism {
+    background: #f0f0f3;
+    box-shadow:
+        9px 9px 16px #a3a3a3,
+        -9px -9px 16px #ffffff;
+    border: none;
 
-  .navbar-brand .navbar-item,
-  .navbar-tabs .navbar-item {
-    align-items: center;
-    display: flex;
-  }
+    .navbar-item a {
+        background: #f0f0f3;
+        box-shadow:
+            5px 5px 10px #a3a3a3,
+            -5px -5px 10px #ffffff;
+        border: none;
 
-  .navbar-link::after {
-    display: none;
-  }
-
-  .navbar-menu {
-    background-color: white;
-    box-shadow: 0 8px 16px rgba(10, 10, 10, 0.1);
-    padding: 0.5rem 0;
-  }
-
-  .navbar-menu.active {
-    display: block;
-  }
-
-  .navbar.fixed-bottom-touch,
-  .navbar.fixed-top-touch {
-    left: 0;
-    position: fixed;
-    right: 0;
-    z-index: 30;
-  }
-
-  .navbar.fixed-bottom-touch {
-    bottom: 0;
-  }
-
-  .navbar.fixed-bottom-touch.has-shadow {
-    box-shadow: 0 -2px 3px rgba(10, 10, 10, 0.1);
-  }
-
-  .navbar.fixed-top-touch {
-    top: 0;
-  }
-
-  .navbar.fixed-top .navbar-menu,
-  .navbar.fixed-top-touch .navbar-menu {
-    -webkit-overflow-scrolling: touch;
-    max-height: calc(100vh - 3.25rem);
-    overflow: auto;
-  }
-
-  html.has-navbar-fixed-top-touch,
-  body.has-navbar-fixed-top-touch {
-    padding-top: 3.25rem;
-  }
-
-  html.has-navbar-fixed-bottom-touch,
-  body.has-navbar-fixed-bottom-touch {
-    padding-bottom: 3.25rem;
-  }
+        &:hover {
+            box-shadow:
+                inset 5px 5px 10px #a3a3a3,
+                inset -5px -5px 10px #ffffff;
+        }
+    }
 }
 
-@media screen and (min-width: 768px) {
-  .navbar,
-  .navbar-menu,
-  .navbar-start,
-  .navbar-end {
-    align-items: stretch;
-    display: flex;
-  }
+// 5. Split Color Navbar
+@mixin navbar-split {
+    background: linear-gradient(90deg, #1a1a1a 50%, #ffffff 50%);
 
-  .navbar {
-    min-height: 3.25rem;
-  }
+    .navbar-brand {
+        color: white;
+    }
 
-  .navbar.spaced {
-    padding: 1rem 2rem;
-  }
+    .navbar-item {
+        &:nth-child(odd) a {
+            color: white;
+            &:hover {
+                background: rgba(255, 255, 255, 0.1);
+            }
+        }
 
-  .navbar.spaced .navbar-start,
-  .navbar.spaced .navbar-end {
-    align-items: center;
-  }
+        &:nth-child(even) a {
+            color: #1a1a1a;
+            &:hover {
+                background: rgba(0, 0, 0, 0.1);
+            }
+        }
+    }
+}
 
-  .navbar.spaced a.navbar-item,
-  .navbar.spaced .navbar-link {
-    border-radius: 4px;
-  }
+// 6. Bordered Sections Navbar
+@mixin navbar-bordered {
+    .navbar-item {
+        border-right: 1px solid #e5e7eb;
 
-  .navbar.transparent a.navbar-item:focus,
-  .navbar.transparent a.navbar-item:hover,
-  .navbar.transparent a.navbar-item.active,
-  .navbar.transparent .navbar-link:focus,
-  .navbar.transparent .navbar-link:hover,
-  .navbar.transparent .navbar-link.active {
-    background-color: transparent !important;
-  }
+        &:last-child {
+            border-right: none;
+        }
 
-  .navbar.transparent .navbar-item.has-dropdown.active .navbar-link,
-  .navbar.transparent .navbar-item.has-dropdown.hoverable:focus .navbar-link,
-  .navbar.transparent
-    .navbar-item.has-dropdown.hoverable:focus-within
-    .navbar-link,
-  .navbar.transparent .navbar-item.has-dropdown.hoverable:hover .navbar-link {
-    background-color: transparent !important;
-  }
+        a {
+            border-radius: 0;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+    }
+}
 
-  .navbar.transparent .navbar-dropdown a.navbar-item:focus,
-  .navbar.transparent .navbar-dropdown a.navbar-item:hover {
-    background-color: whitesmoke;
-    color: var(--black);
-  }
+// 7. Rounded Pills Navbar
+@mixin navbar-pills {
+    background: #f8fafc;
 
-  .navbar.transparent .navbar-dropdown a.navbar-item.active {
-    background-color: whitesmoke;
-    color: #3273dc;
-  }
+    .navbar-item a {
+        border-radius: 50px;
+        background: white;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin: 0 0.25rem;
 
-  .navbar-burger {
-    display: none;
-  }
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
 
-  .navbar-item,
-  .navbar-link {
-    align-items: center;
-    display: flex;
-  }
+        &.active {
+            background: $navbar-accent;
+            color: white;
+        }
+    }
+}
 
-  .navbar-item.has-dropdown {
-    align-items: stretch;
-  }
+// 8. Retro Terminal Navbar
+@mixin navbar-terminal {
+    background: #000000;
+    border: 2px solid #00ff00;
+    font-family: "Courier New", monospace;
 
-  .navbar-item.has-dropdown-up .navbar-link::after {
-    transform: rotate(135deg) translate(0.25em, -0.25em);
-  }
+    .navbar-brand,
+    .navbar-item a {
+        color: #00ff00;
 
-  .navbar-item.has-dropdown-up .navbar-dropdown {
-    border-bottom: 2px solid #dbdbdb;
-    border-radius: 6px 6px 0 0;
-    border-top: none;
-    bottom: 100%;
-    box-shadow: 0 -8px 8px rgba(10, 10, 10, 0.1);
-    top: auto;
-  }
+        &::before {
+            content: "> ";
+        }
 
-  .navbar-item.active .navbar-dropdown,
-  .navbar-item.hoverable:focus .navbar-dropdown,
-  .navbar-item.hoverable:focus-within .navbar-dropdown,
-  .navbar-item.hoverable:hover .navbar-dropdown {
-    display: block;
-  }
+        &:hover {
+            background: #00ff00;
+            color: #000000;
+        }
+    }
+}
 
-  .navbar.spaced .navbar-item.active .navbar-dropdown,
-  .navbar-item.active .navbar-dropdown.boxed,
-  .navbar.spaced .navbar-item.hoverable:focus .navbar-dropdown,
-  .navbar-item.hoverable:focus .navbar-dropdown.boxed,
-  .navbar.spaced .navbar-item.hoverable:focus-within .navbar-dropdown,
-  .navbar-item.hoverable:focus-within .navbar-dropdown.boxed,
-  .navbar.spaced .navbar-item.hoverable:hover .navbar-dropdown,
-  .navbar-item.hoverable:hover .navbar-dropdown.boxed {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateY(0);
-  }
+// 9. Floating Cards Navbar
+@mixin navbar-cards {
+    background: transparent;
+    padding: 1rem;
 
-  .navbar-menu {
-    flex-grow: 1;
-    flex-shrink: 0;
-  }
+    .navbar-item {
+        a {
+            background: white;
+            border-radius: $navbar-border-radius;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 0 0.25rem;
+            border: 1px solid #e5e7eb;
 
-  .navbar-start {
-    justify-content: flex-start;
-    margin-right: auto;
-  }
+            &:hover {
+                transform: translateY(-4px) rotate(1deg);
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            }
+        }
+    }
+}
 
-  .navbar-end {
-    justify-content: flex-end;
-    margin-left: auto;
-  }
+// 10. Diagonal Stripe Navbar
+@mixin navbar-diagonal {
+    background: repeating-linear-gradient(
+        45deg,
+        #667eea,
+        #667eea 10px,
+        #764ba2 10px,
+        #764ba2 20px
+    );
 
-  .navbar-dropdown {
-    background-color: white;
-    border-bottom-left-radius: 6px;
-    border-bottom-right-radius: 6px;
-    border-top: 2px solid #dbdbdb;
-    box-shadow: 0 8px 8px rgba(10, 10, 10, 0.1);
-    display: none;
-    font-size: 0.875rem;
-    left: 0;
-    min-width: 100%;
-    position: absolute;
-    top: 100%;
-    z-index: 20;
-  }
+    .navbar-brand,
+    .navbar-item a {
+        color: white;
+        background: rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(5px);
+    }
+}
 
-  .navbar-dropdown .navbar-item {
-    padding: 0.375rem 1rem;
-    white-space: nowrap;
-  }
+// 11. Holographic Navbar
+@mixin navbar-holographic {
+    background: linear-gradient(
+        45deg,
+        #ff6b6b,
+        #4ecdc4,
+        #45b7d1,
+        #96ceb4,
+        #feca57
+    );
+    background-size: 400% 400%;
+    animation: holographic-shift 10s ease infinite;
 
-  .navbar-dropdown a.navbar-item {
-    padding-right: 3rem;
-  }
+    .navbar-brand,
+    .navbar-item a {
+        color: white;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+}
 
-  .navbar-dropdown a.navbar-item:focus,
-  .navbar-dropdown a.navbar-item:hover {
-    background-color: whitesmoke;
-    color: var(--black);
-  }
+@keyframes holographic-shift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
 
-  .navbar-dropdown a.navbar-item.active {
-    background-color: whitesmoke;
-    color: #3273dc;
-  }
+// 12. Paper Fold Navbar
+@mixin navbar-paper {
+    background: #fefefe;
+    position: relative;
 
-  .navbar.spaced .navbar-dropdown,
-  .navbar-dropdown.boxed {
-    border-radius: 6px;
-    border-top: none;
-    box-shadow: 0 8px 8px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
-    display: block;
-    opacity: 0;
-    pointer-events: none;
-    top: calc(100% + (-4px));
-    transform: translateY(-5px);
-    transition-duration: 86ms;
-    transition-property: opacity, transform;
-  }
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 20px;
+        height: 20px;
+        background: linear-gradient(
+            -45deg,
+            transparent 46%,
+            #e5e5e5 50%,
+            #fafafa 56%
+        );
+    }
 
-  .navbar-dropdown.right {
-    left: auto;
-    right: 0;
-  }
+    &::after {
+        content: "";
+        position: absolute;
+        top: 20px;
+        right: 0;
+        width: 20px;
+        height: 20px;
+        background: linear-gradient(-45deg, #fafafa 46%, transparent 50%);
+        box-shadow: -2px -2px 5px rgba(0, 0, 0, 0.1);
+    }
+}
 
-  .navbar-divider {
-    display: block;
-  }
+// 13. Circuit Board Navbar
+@mixin navbar-circuit {
+    background: #1a1a2e;
+    border-bottom: 2px solid #16213e;
+    position: relative;
 
-  .navbar > .container .navbar-brand,
-  .container > .navbar .navbar-brand {
-    margin-left: -0.75rem;
-  }
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image:
+            linear-gradient(90deg, transparent 98%, #0f3460 100%),
+            linear-gradient(180deg, transparent 98%, #0f3460 100%);
+        background-size: 20px 20px;
+        opacity: 0.3;
+    }
 
-  .navbar > .container .navbar-menu,
-  .container > .navbar .navbar-menu {
-    margin-right: -0.75rem;
-  }
+    .navbar-brand,
+    .navbar-item a {
+        color: #00d4aa;
+        position: relative;
+        z-index: 1;
+    }
+}
 
-  .navbar.fixed-bottom-desktop,
-  .navbar.fixed-top-desktop {
-    left: 0;
-    position: fixed;
-    right: 0;
-    z-index: 30;
-  }
+// 14. Watercolor Navbar
+@mixin navbar-watercolor {
+    background:
+        radial-gradient(
+            circle at 20% 50%,
+            rgba(120, 119, 198, 0.3) 0%,
+            transparent 50%
+        ),
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(255, 119, 198, 0.3) 0%,
+            transparent 50%
+        ),
+        radial-gradient(
+            circle at 40% 80%,
+            rgba(120, 219, 255, 0.3) 0%,
+            transparent 50%
+        ),
+        white;
 
-  .navbar.fixed-bottom-desktop {
-    bottom: 0;
-  }
+    .navbar-item a {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(10px);
+    }
+}
 
-  .navbar.fixed-bottom-desktop.has-shadow {
-    box-shadow: 0 -2px 3px rgba(10, 10, 10, 0.1);
-  }
+// 15. Origami Navbar
+@mixin navbar-origami {
+    background: #f8f9fa;
+    position: relative;
 
-  .navbar.fixed-top-desktop {
-    top: 0;
-  }
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(
+            90deg,
+            #ff6b6b 0%,
+            #4ecdc4 25%,
+            #45b7d1 50%,
+            #96ceb4 75%,
+            #feca57 100%
+        );
+    }
 
-  html.has-navbar-fixed-top-desktop,
-  body.has-navbar-fixed-top-desktop {
-    padding-top: 3.25rem;
-  }
+    .navbar-item a {
+        position: relative;
+        overflow: hidden;
 
-  html.has-navbar-fixed-bottom-desktop,
-  body.has-navbar-fixed-bottom-desktop {
-    padding-bottom: 3.25rem;
-  }
+        &::before {
+            content: "";
+            position: absolute;
+            top: -100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.4),
+                transparent
+            );
+            transition: top 0.3s ease;
+        }
 
-  html.has-spaced-navbar-fixed-top,
-  body.has-spaced-navbar-fixed-top {
-    padding-top: 5.25rem;
-  }
+        &:hover::before {
+            top: 100%;
+        }
+    }
+}
 
-  html.has-spaced-navbar-fixed-bottom,
-  body.has-spaced-navbar-fixed-bottom {
-    padding-bottom: 5.25rem;
-  }
+// 16. Vintage Stamp Navbar
+@mixin navbar-vintage {
+    background: #f4f1e8;
+    border: 8px solid #8b4513;
+    border-image: repeating-linear-gradient(
+            45deg,
+            #8b4513 0,
+            #8b4513 1px,
+            transparent 1px,
+            transparent 8px
+        )
+        8;
+    font-family: "Times New Roman", serif;
 
-  a.navbar-item.active,
-  .navbar-link.active {
-    color: var(--black);
-  }
+    .navbar-brand,
+    .navbar-item a {
+        color: #8b4513;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+}
 
-  a.navbar-item.active:not(:focus):not(:hover),
-  .navbar-link.active:not(:focus):not(:hover) {
-    background-color: transparent;
-  }
+// 17. Liquid Metal Navbar
+@mixin navbar-liquid {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    position: relative;
+    overflow: hidden;
 
-  .navbar-item.has-dropdown:focus .navbar-link,
-  .navbar-item.has-dropdown:hover .navbar-link,
-  .navbar-item.has-dropdown.active .navbar-link {
-    background-color: #fafafa;
-  }
+    &::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(
+            circle,
+            rgba(255, 255, 255, 0.1) 1px,
+            transparent 1px
+        );
+        background-size: 50px 50px;
+        animation: liquid-flow 20s linear infinite;
+    }
+
+    .navbar-brand,
+    .navbar-item a {
+        color: white;
+        position: relative;
+        z-index: 1;
+    }
+}
+
+@keyframes liquid-flow {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+// 18. Geometric Navbar
+@mixin navbar-geometric {
+    background: white;
+    border-bottom: 4px solid #f8f9fa;
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background:
+            linear-gradient(45deg, #ff6b6b 25%, transparent 25%),
+            linear-gradient(-45deg, #4ecdc4 25%, transparent 25%),
+            linear-gradient(45deg, transparent 75%, #45b7d1 75%),
+            linear-gradient(-45deg, transparent 75%, #96ceb4 75%);
+        background-size: 20px 4px;
+        background-position:
+            0 0,
+            0 0,
+            10px 0,
+            10px 0;
+    }
+
+    .navbar-item a {
+        clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
+        transition: all 0.3s ease;
+
+        &:hover {
+            clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 10% 100%);
+        }
+    }
+}
+
+// 19. Glitch Effect Navbar
+@mixin navbar-glitch {
+    background: #000;
+    position: relative;
+
+    .navbar-brand,
+    .navbar-item a {
+        color: #00ff41;
+        font-family: "Courier New", monospace;
+        position: relative;
+
+        &:hover {
+            animation: glitch 0.3s ease-in-out;
+        }
+    }
+}
+
+@keyframes glitch {
+    0%,
+    100% {
+        transform: translate(0);
+    }
+    10% {
+        transform: translate(-2px, 2px);
+    }
+    20% {
+        transform: translate(2px, -2px);
+    }
+    30% {
+        transform: translate(-2px, -2px);
+    }
+    40% {
+        transform: translate(2px, 2px);
+    }
+    50% {
+        transform: translate(-2px, 2px);
+    }
+    60% {
+        transform: translate(2px, -2px);
+    }
+    70% {
+        transform: translate(-2px, -2px);
+    }
+    80% {
+        transform: translate(2px, 2px);
+    }
+    90% {
+        transform: translate(-2px, -2px);
+    }
+}
+
+// 20. Aurora Navbar
+@mixin navbar-aurora {
+    background: linear-gradient(45deg, #12c2e9, #c471ed, #f64f59);
+    background-size: 400% 400%;
+    animation: aurora-flow 15s ease infinite;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.2),
+            transparent
+        );
+        animation: aurora-wave 3s ease-in-out infinite;
+    }
+
+    .navbar-brand,
+    .navbar-item a {
+        color: white;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        position: relative;
+        z-index: 1;
+    }
+}
+
+@keyframes aurora-flow {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes aurora-wave {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+// 21. Frosted Glass Ultra
+@mixin navbar-frosted-ultra {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+
+    .navbar-item a {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+    }
+}
+
+// Mobile adjustments for all variants
+@media (max-width: #{$tablet - 1px}) {
+    [class*="navbar-"] {
+        .navbar-nav {
+            background: inherit;
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: inherit;
+                backdrop-filter: inherit;
+                -webkit-backdrop-filter: inherit;
+                z-index: -1;
+            }
+        }
+    }
+}
+
+// Variant class combinations
+.navbar {
+    &.gradient {
+        @include navbar-gradient;
+    }
+    &.neon {
+        @include navbar-neon;
+    }
+    &.minimal {
+        @include navbar-minimal;
+    }
+    &.neumorphism {
+        @include navbar-neumorphism;
+    }
+    &.split {
+        @include navbar-split;
+    }
+    &.bordered {
+        @include navbar-bordered;
+    }
+    &.pills {
+        @include navbar-pills;
+    }
+    &.terminal {
+        @include navbar-terminal;
+    }
+    &.cards {
+        @include navbar-cards;
+    }
+    &.diagonal {
+        @include navbar-diagonal;
+    }
+    &.holographic {
+        @include navbar-holographic;
+    }
+    &.paper {
+        @include navbar-paper;
+    }
+    &.circuit {
+        @include navbar-circuit;
+    }
+    &.watercolor {
+        @include navbar-watercolor;
+    }
+    &.origami {
+        @include navbar-origami;
+    }
+    &.vintage {
+        @include navbar-vintage;
+    }
+    &.liquid {
+        @include navbar-liquid;
+    }
+    &.geometric {
+        @include navbar-geometric;
+    }
+    &.glitch {
+        @include navbar-glitch;
+    }
+    &.aurora {
+        @include navbar-aurora;
+    }
+    &.frosted-ultra {
+        @include navbar-frosted-ultra;
+    }
 }

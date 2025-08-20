@@ -8,71 +8,71 @@ $tree-node-border: 1px solid #ccc;
 
 // Define styles for the tree view component
 .tree {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 
-  .tree-node {
-    position: relative;
-    padding: $tree-node-padding;
-    color: $tree-node-color;
-    background-color: $tree-node-background;
-    border: $tree-node-border;
-
-    &:hover {
-      background-color: $tree-node-hover-background;
-    }
-
-    &.active {
-      background-color: $tree-node-active-background;
-    }
-
-    .tree-node-toggle {
-      position: absolute;
-      left: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 1.5rem;
-      height: 1.5rem;
-      cursor: pointer;
-
-      &:before {
-        content: '+';
-        display: block;
-        font-size: 1.5rem;
-        line-height: 1.5rem;
-        text-align: center;
+    .tree-node {
+        position: relative;
+        padding: $tree-node-padding;
         color: $tree-node-color;
-      }
+        background-color: $tree-node-background;
+        border: $tree-node-border;
 
-      &.collapsed:before {
-        content: '-';
-      }
-    }
-
-    .tree-node-label {
-      margin-left: 1.5rem;
-    }
-
-    .tree-node-children {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-
-      .tree-node {
-        border-left: $tree-node-border;
-        margin-left: $tree-node-padding;
-        padding-left: $tree-node-padding;
-
-        &:first-child {
-          margin-top: $tree-node-padding;
-          border-top: $tree-node-border;
+        &:hover {
+            background-color: $tree-node-hover-background;
         }
 
-        &:last-child {
-          margin-bottom: $tree-node-padding;
+        &.active {
+            background-color: $tree-node-active-background;
         }
-      }
+
+        .tree-node-toggle {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1.5rem;
+            height: 1.5rem;
+            cursor: pointer;
+
+            &:before {
+                content: "+";
+                display: block;
+                font-size: 1.5rem;
+                line-height: 1.5rem;
+                text-align: center;
+                color: $tree-node-color;
+            }
+
+            &.collapsed:before {
+                content: "-";
+            }
+        }
+
+        .tree-node-label {
+            margin-left: 1.5rem;
+        }
+
+        .tree-node-children {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+
+            .tree-node {
+                border-left: $tree-node-border;
+                margin-left: $tree-node-padding;
+                padding-left: $tree-node-padding;
+
+                &:first-child {
+                    margin-top: $tree-node-padding;
+                    border-top: $tree-node-border;
+                }
+
+                &:last-child {
+                    margin-bottom: $tree-node-padding;
+                }
+            }
+        }
     }
-  }
 }

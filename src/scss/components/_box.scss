@@ -1,60 +1,65 @@
 $shadow-color: rgba(10, 10, 10, 0.1);
 $shadow-outline-color: rgba(10, 10, 10, 0.02);
-$box-shadow-hover: 0 0.5em 1em -0.125em $shadow-color, 0 0px 0 1px #3273dc;
-$box-shadow-active: inset 0 1px 2px rgba(10, 10, 10, 0.2), 0 0 0 1px #3273dc;
+$box-shadow-hover:
+    0 0.5em 1em -0.125em $shadow-color,
+    0 0px 0 1px #3273dc;
+$box-shadow-active:
+    inset 0 1px 2px rgba(10, 10, 10, 0.2),
+    0 0 0 1px #3273dc;
 
 .box {
-  background-color: var(--white);
-  border-radius: 6px;
-  box-shadow: 0 0.5em 1em -0.125em $shadow-color,
-    0 0px 0 1px $shadow-outline-color;
-  display: block;
-  padding: 1.25rem;
+    background-color: var(--white);
+    border-radius: 6px;
+    box-shadow:
+        0 0.5em 1em -0.125em $shadow-color,
+        0 0px 0 1px $shadow-outline-color;
+    display: block;
+    padding: 1.25rem;
 
-  &.dark {
-    background-color: var(--gray-900);
-  }
+    &.dark {
+        background-color: var(--gray-900);
+    }
 
-  &.blue {
-    background-color: var(--blue-500);
-  }
+    &.blue {
+        background-color: var(--blue-500);
+    }
 
-  &.indigo {
-    background-color: var(--indigo-500);
-  }
+    &.indigo {
+        background-color: var(--indigo-500);
+    }
 
-  &.purple {
-    background-color: var(--purple-500);
-  }
+    &.purple {
+        background-color: var(--purple-500);
+    }
 
-  &.pink {
-    background-color: var(--pink-500);
-  }
+    &.pink {
+        background-color: var(--pink-500);
+    }
 
-  &.red {
-    background-color: var(--red-500);
-  }
+    &.red {
+        background-color: var(--red-500);
+    }
 
-  &.orange {
-    background-color: var(--orange-500);
-  }
+    &.orange {
+        background-color: var(--orange-500);
+    }
 
-  &.yellow {
-    background-color: var(--yellow-500);
-  }
+    &.yellow {
+        background-color: var(--yellow-500);
+    }
 
-  &.green {
-    background-color: var(--green-500);
-  }
+    &.green {
+        background-color: var(--green-500);
+    }
 }
 
 a.box {
-  &:hover,
-  &:focus {
-    box-shadow: $box-shadow-hover;
-  }
+    &:hover,
+    &:focus {
+        box-shadow: $box-shadow-hover;
+    }
 
-  &:active {
-    box-shadow: $box-shadow-active;
-  }
+    &:active {
+        box-shadow: $box-shadow-active;
+    }
 }

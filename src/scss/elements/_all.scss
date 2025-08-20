@@ -1,12 +1,9 @@
-// Slushii Elements
-@charset "utf-8";
-
-@import "content";
-@import "image";
-@import "button";
-@import "title";
-@import "video";
-@import "icon";
-@import "parallax";
-@import "empty-state";
-@import "delete";
+@use "content";
+@use "image";
+@use "button";
+@use "title";
+@use "video";
+@use "icon";
+@use "parallax";
+@use "empty-state";
+@use "delete";

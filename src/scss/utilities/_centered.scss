@@ -1,151 +1,151 @@
 .centered {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-  flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    flex-wrap: wrap;
 }
 
 .centered-alt,
 .centered-alt:hover,
 .centered-alt:active {
-  overflow: hidden;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @media (min-width: 360px) {
-  .xs\:centered {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    flex-wrap: wrap;
-  }
+    .xs\:centered {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        flex-wrap: wrap;
+    }
 
-  .xs\:centered-alt,
-  .xs\:centered-alt:hover,
-  .xs\:centered-alt:active {
-    overflow: hidden;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+    .xs\:centered-alt,
+    .xs\:centered-alt:hover,
+    .xs\:centered-alt:active {
+        overflow: hidden;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 @media (min-width: 640px) {
-  .sm\:centered {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    flex-wrap: wrap;
-  }
+    .sm\:centered {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        flex-wrap: wrap;
+    }
 
-  .sm\:centered-alt,
-  .sm\:centered-alt:hover,
-  .sm\:centered-alt:active {
-    overflow: hidden;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+    .sm\:centered-alt,
+    .sm\:centered-alt:hover,
+    .sm\:centered-alt:active {
+        overflow: hidden;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 @media (min-width: 768px) {
-  .md\:centered {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    flex-wrap: wrap;
-  }
+    .md\:centered {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        flex-wrap: wrap;
+    }
 
-  .md\:centered-alt,
-  .md\:centered-alt:hover,
-  .md\:centered-alt:active {
-    overflow: hidden;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+    .md\:centered-alt,
+    .md\:centered-alt:hover,
+    .md\:centered-alt:active {
+        overflow: hidden;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 @media (min-width: 1024px) {
-  .lg\:centered {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    flex-wrap: wrap;
-  }
+    .lg\:centered {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        flex-wrap: wrap;
+    }
 
-  .lg\:centered-alt,
-  .lg\:centered-alt:hover,
-  .lg\:centered-alt:active {
-    overflow: hidden;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+    .lg\:centered-alt,
+    .lg\:centered-alt:hover,
+    .lg\:centered-alt:active {
+        overflow: hidden;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 @media (min-width: 1280px) {
-  .xl\:centered {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    flex-wrap: wrap;
-  }
+    .xl\:centered {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        flex-wrap: wrap;
+    }
 
-  .xl\:centered-alt,
-  .xl\:centered-alt:hover,
-  .xl\:centered-alt:active {
-    overflow: hidden;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+    .xl\:centered-alt,
+    .xl\:centered-alt:hover,
+    .xl\:centered-alt:active {
+        overflow: hidden;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 @media (min-width: 1536px) {
-  .\32xl\:centered {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    flex-wrap: wrap;
-  }
+    .\32xl\:centered {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        flex-wrap: wrap;
+    }
 
-  .\32xl\:centered-alt,
-  .\32xl\:centered-alt:hover,
-  .\32xl\:centered-alt:active {
-    overflow: hidden;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+    .\32xl\:centered-alt,
+    .\32xl\:centered-alt:hover,
+    .\32xl\:centered-alt:active {
+        overflow: hidden;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }

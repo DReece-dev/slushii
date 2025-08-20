@@ -1,1289 +1,1289 @@
 .justify-start {
-  justify-content: flex-start;
+    justify-content: flex-start;
 }
 
 .justify-end {
-  justify-content: flex-end;
+    justify-content: flex-end;
 }
 
 .justify-center {
-  justify-content: center;
+    justify-content: center;
 }
 
 .justify-between {
-  justify-content: space-between;
+    justify-content: space-between;
 }
 
 .justify-around {
-  justify-content: space-around;
+    justify-content: space-around;
 }
 
 .justify-evenly {
-  justify-content: space-evenly;
+    justify-content: space-evenly;
 }
 
 .justify-items-auto {
-  justify-items: auto;
+    justify-items: auto;
 }
 
 .justify-items-start {
-  justify-items: start;
+    justify-items: start;
 }
 
 .justify-items-end {
-  justify-items: end;
+    justify-items: end;
 }
 
 .justify-items-center {
-  justify-items: center;
+    justify-items: center;
 }
 
 .justify-items-stretch {
-  justify-items: stretch;
+    justify-items: stretch;
 }
 
 .justify-self-auto {
-  justify-self: auto;
+    justify-self: auto;
 }
 
 .justify-self-start {
-  justify-self: start;
+    justify-self: start;
 }
 
 .justify-self-end {
-  justify-self: end;
+    justify-self: end;
 }
 
 .justify-self-center {
-  justify-self: center;
+    justify-self: center;
 }
 
 .justify-self-stretch {
-  justify-self: stretch;
+    justify-self: stretch;
 }
 
 .justify-start.vertical.menu > li > a {
-  justify-content: flex-start;
+    justify-content: flex-start;
 }
 
 .justify-end.vertical.menu > li > a {
-  justify-content: flex-end;
+    justify-content: flex-end;
 }
 
 .justify-center.vertical.menu > li > a {
-  justify-content: center;
+    justify-content: center;
 }
 
 .content-normal {
-  align-content: normal;
+    align-content: normal;
 }
 
 .content-center {
-  align-content: center;
+    align-content: center;
 }
 
 .content-start {
-  align-content: flex-start;
+    align-content: flex-start;
 }
 
 .content-end {
-  align-content: flex-end;
+    align-content: flex-end;
 }
 
 .content-between {
-  align-content: space-between;
+    align-content: space-between;
 }
 
 .content-around {
-  align-content: space-around;
+    align-content: space-around;
 }
 
 .content-evenly {
-  align-content: space-evenly;
+    align-content: space-evenly;
 }
 
 .content-stretch {
-  align-content: stretch;
+    align-content: stretch;
 }
 
 .self-auto {
-  align-self: auto;
+    align-self: auto;
 }
 
 .items-start {
-  align-items: flex-start;
+    align-items: flex-start;
 }
 
 .self-start {
-  align-self: flex-start;
+    align-self: flex-start;
 }
 
 .items-end {
-  align-items: flex-end;
+    align-items: flex-end;
 }
 
 .self-end {
-  align-self: flex-end;
+    align-self: flex-end;
 }
 
 .items-baseline {
-  align-items: baseline;
+    align-items: baseline;
 }
 
 .items-center {
-  align-items: center;
+    align-items: center;
 }
 
 .self-center {
-  align-self: center;
+    align-self: center;
 }
 
 .items-stretch {
-  align-items: stretch;
+    align-items: stretch;
 }
 
 .self-stretch {
-  align-self: stretch;
+    align-self: stretch;
 }
 
 .justify-center-middle {
-  justify-content: center;
-  align-items: center;
-  align-content: center;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
 }
 
 .vertical-align-baseline {
-  vertical-align: baseline;
+    vertical-align: baseline;
 }
 
 .vertical-items-start {
-  vertical-align: top;
+    vertical-align: top;
 }
 
 .vertical-items-center {
-  vertical-align: middle;
+    vertical-align: middle;
 }
 
 .vertical-items-end {
-  vertical-align: bottom;
+    vertical-align: bottom;
 }
 
 .vertical-align-text-top {
-  vertical-align: text-top;
+    vertical-align: text-top;
 }
 
 .vertical-align-text-bottom {
-  vertical-align: text-bottom;
+    vertical-align: text-bottom;
 }
 
 .vertical-align-sub {
-  vertical-align: sub;
+    vertical-align: sub;
 }
 
 .vertical-align-super {
-  vertical-align: super;
+    vertical-align: super;
 }
 
 @media (min-width: 360px) {
-  .xs\:justify-start {
-    justify-content: flex-start;
-  }
+    .xs\:justify-start {
+        justify-content: flex-start;
+    }
 
-  .xs\:justify-end {
-    justify-content: flex-end;
-  }
+    .xs\:justify-end {
+        justify-content: flex-end;
+    }
 
-  .xs\:justify-center {
-    justify-content: center;
-  }
+    .xs\:justify-center {
+        justify-content: center;
+    }
 
-  .xs\:justify-between {
-    justify-content: space-between;
-  }
+    .xs\:justify-between {
+        justify-content: space-between;
+    }
 
-  .xs\:justify-around {
-    justify-content: space-around;
-  }
+    .xs\:justify-around {
+        justify-content: space-around;
+    }
 
-  .xs\:justify-evenly {
-    justify-content: space-evenly;
-  }
+    .xs\:justify-evenly {
+        justify-content: space-evenly;
+    }
 
-  .xs\:justify-items-auto {
-    justify-items: auto;
-  }
+    .xs\:justify-items-auto {
+        justify-items: auto;
+    }
 
-  .xs\:justify-items-start {
-    justify-items: start;
-  }
+    .xs\:justify-items-start {
+        justify-items: start;
+    }
 
-  .xs\:justify-items-end {
-    justify-items: end;
-  }
+    .xs\:justify-items-end {
+        justify-items: end;
+    }
 
-  .xs\:justify-items-center {
-    justify-items: center;
-  }
+    .xs\:justify-items-center {
+        justify-items: center;
+    }
 
-  .xs\:justify-items-stretch {
-    justify-items: stretch;
-  }
+    .xs\:justify-items-stretch {
+        justify-items: stretch;
+    }
 
-  .xs\:justify-self-auto {
-    justify-self: auto;
-  }
+    .xs\:justify-self-auto {
+        justify-self: auto;
+    }
 
-  .xs\:justify-self-start {
-    justify-self: start;
-  }
+    .xs\:justify-self-start {
+        justify-self: start;
+    }
 
-  .xs\:justify-self-end {
-    justify-self: end;
-  }
+    .xs\:justify-self-end {
+        justify-self: end;
+    }
 
-  .xs\:justify-self-center {
-    justify-self: center;
-  }
+    .xs\:justify-self-center {
+        justify-self: center;
+    }
 
-  .xs\:justify-self-stretch {
-    justify-self: stretch;
-  }
+    .xs\:justify-self-stretch {
+        justify-self: stretch;
+    }
 
-  .xs\:justify-start.vertical.menu > li > a {
-    justify-content: flex-start;
-  }
+    .xs\:justify-start.vertical.menu > li > a {
+        justify-content: flex-start;
+    }
 
-  .xs\:justify-end.vertical.menu > li > a {
-    justify-content: flex-end;
-  }
+    .xs\:justify-end.vertical.menu > li > a {
+        justify-content: flex-end;
+    }
 
-  .xs\:justify-center.vertical.menu > li > a {
-    justify-content: center;
-  }
+    .xs\:justify-center.vertical.menu > li > a {
+        justify-content: center;
+    }
 
-  .xs\:content-center {
-    align-content: center;
-  }
+    .xs\:content-center {
+        align-content: center;
+    }
 
-  .xs\:content-normal {
-    align-content: normal;
-  }
+    .xs\:content-normal {
+        align-content: normal;
+    }
 
-  .xs\:content-start {
-    align-content: flex-start;
-  }
+    .xs\:content-start {
+        align-content: flex-start;
+    }
 
-  .xs\:content-end {
-    align-content: flex-end;
-  }
+    .xs\:content-end {
+        align-content: flex-end;
+    }
 
-  .xs\:content-between {
-    align-content: space-between;
-  }
+    .xs\:content-between {
+        align-content: space-between;
+    }
 
-  .xs\:content-around {
-    align-content: space-around;
-  }
+    .xs\:content-around {
+        align-content: space-around;
+    }
 
-  .xs\:content-evenly {
-    align-content: space-evenly;
-  }
+    .xs\:content-evenly {
+        align-content: space-evenly;
+    }
 
-  .xs\:content-stretch {
-    align-content: stretch;
-  }
+    .xs\:content-stretch {
+        align-content: stretch;
+    }
 
-  .xs\:items-start {
-    align-items: flex-start;
-  }
+    .xs\:items-start {
+        align-items: flex-start;
+    }
 
-  .xs\:self-start {
-    align-self: flex-start;
-  }
+    .xs\:self-start {
+        align-self: flex-start;
+    }
 
-  .xs\:items-end {
-    align-items: flex-end;
-  }
+    .xs\:items-end {
+        align-items: flex-end;
+    }
 
-  .xs\:self-end {
-    align-self: flex-end;
-  }
+    .xs\:self-end {
+        align-self: flex-end;
+    }
 
-  .xs\:items-baseline {
-    align-items: baseline;
-  }
+    .xs\:items-baseline {
+        align-items: baseline;
+    }
 
-  .xs\:items-center {
-    align-items: center;
-  }
+    .xs\:items-center {
+        align-items: center;
+    }
 
-  .xs\:self-center {
-    align-self: center;
-  }
+    .xs\:self-center {
+        align-self: center;
+    }
 
-  .xs\:items-stretch {
-    align-items: stretch;
-  }
+    .xs\:items-stretch {
+        align-items: stretch;
+    }
 
-  .xs\:self-stretch {
-    align-self: stretch;
-  }
+    .xs\:self-stretch {
+        align-self: stretch;
+    }
 
-  .xs\:justify-center-middle {
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-  }
+    .xs\:justify-center-middle {
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+    }
 
-  .xs\:vertical-align-baseline {
-    vertical-align: baseline;
-  }
+    .xs\:vertical-align-baseline {
+        vertical-align: baseline;
+    }
 
-  .xs\:vertical-items-start {
-    vertical-align: top;
-  }
+    .xs\:vertical-items-start {
+        vertical-align: top;
+    }
 
-  .xs\:vertical-items-center {
-    vertical-align: middle;
-  }
+    .xs\:vertical-items-center {
+        vertical-align: middle;
+    }
 
-  .xs\:vertical-items-end {
-    vertical-align: bottom;
-  }
+    .xs\:vertical-items-end {
+        vertical-align: bottom;
+    }
 
-  .xs\:vertical-align-text-top {
-    vertical-align: text-top;
-  }
+    .xs\:vertical-align-text-top {
+        vertical-align: text-top;
+    }
 
-  .xs\:vertical-align-text-bottom {
-    vertical-align: text-bottom;
-  }
+    .xs\:vertical-align-text-bottom {
+        vertical-align: text-bottom;
+    }
 
-  .xs\:vertical-align-sub {
-    vertical-align: sub;
-  }
+    .xs\:vertical-align-sub {
+        vertical-align: sub;
+    }
 
-  .xs\:vertical-align-super {
-    vertical-align: super;
-  }
+    .xs\:vertical-align-super {
+        vertical-align: super;
+    }
 }
 
 @media (min-width: 640px) {
-  .sm\:justify-start {
-    justify-content: flex-start;
-  }
+    .sm\:justify-start {
+        justify-content: flex-start;
+    }
 
-  .sm\:justify-end {
-    justify-content: flex-end;
-  }
+    .sm\:justify-end {
+        justify-content: flex-end;
+    }
 
-  .sm\:justify-center {
-    justify-content: center;
-  }
+    .sm\:justify-center {
+        justify-content: center;
+    }
 
-  .sm\:justify-between {
-    justify-content: space-between;
-  }
+    .sm\:justify-between {
+        justify-content: space-between;
+    }
 
-  .sm\:justify-around {
-    justify-content: space-around;
-  }
+    .sm\:justify-around {
+        justify-content: space-around;
+    }
 
-  .sm\:justify-evenly {
-    justify-content: space-evenly;
-  }
+    .sm\:justify-evenly {
+        justify-content: space-evenly;
+    }
 
-  .sm\:justify-items-auto {
-    justify-items: auto;
-  }
+    .sm\:justify-items-auto {
+        justify-items: auto;
+    }
 
-  .sm\:justify-items-start {
-    justify-items: start;
-  }
+    .sm\:justify-items-start {
+        justify-items: start;
+    }
 
-  .sm\:justify-items-end {
-    justify-items: end;
-  }
+    .sm\:justify-items-end {
+        justify-items: end;
+    }
 
-  .sm\:justify-items-center {
-    justify-items: center;
-  }
+    .sm\:justify-items-center {
+        justify-items: center;
+    }
 
-  .sm\:justify-items-stretch {
-    justify-items: stretch;
-  }
+    .sm\:justify-items-stretch {
+        justify-items: stretch;
+    }
 
-  .sm\:justify-self-auto {
-    justify-self: auto;
-  }
+    .sm\:justify-self-auto {
+        justify-self: auto;
+    }
 
-  .sm\:justify-self-start {
-    justify-self: start;
-  }
+    .sm\:justify-self-start {
+        justify-self: start;
+    }
 
-  .sm\:justify-self-end {
-    justify-self: end;
-  }
+    .sm\:justify-self-end {
+        justify-self: end;
+    }
 
-  .sm\:justify-self-center {
-    justify-self: center;
-  }
+    .sm\:justify-self-center {
+        justify-self: center;
+    }
 
-  .sm\:justify-self-stretch {
-    justify-self: stretch;
-  }
+    .sm\:justify-self-stretch {
+        justify-self: stretch;
+    }
 
-  .sm\:justify-start.vertical.menu > li > a {
-    justify-content: flex-start;
-  }
+    .sm\:justify-start.vertical.menu > li > a {
+        justify-content: flex-start;
+    }
 
-  .sm\:justify-end.vertical.menu > li > a {
-    justify-content: flex-end;
-  }
+    .sm\:justify-end.vertical.menu > li > a {
+        justify-content: flex-end;
+    }
 
-  .sm\:justify-center.vertical.menu > li > a {
-    justify-content: center;
-  }
+    .sm\:justify-center.vertical.menu > li > a {
+        justify-content: center;
+    }
 
-  .sm\:content-normal {
-    align-content: normal;
-  }
+    .sm\:content-normal {
+        align-content: normal;
+    }
 
-  .sm\:content-center {
-    align-content: center;
-  }
+    .sm\:content-center {
+        align-content: center;
+    }
 
-  .sm\:content-start {
-    align-content: flex-start;
-  }
+    .sm\:content-start {
+        align-content: flex-start;
+    }
 
-  .sm\:content-end {
-    align-content: flex-end;
-  }
+    .sm\:content-end {
+        align-content: flex-end;
+    }
 
-  .sm\:content-between {
-    align-content: space-between;
-  }
+    .sm\:content-between {
+        align-content: space-between;
+    }
 
-  .sm\:content-around {
-    align-content: space-around;
-  }
+    .sm\:content-around {
+        align-content: space-around;
+    }
 
-  .sm\:content-evenly {
-    align-content: space-evenly;
-  }
+    .sm\:content-evenly {
+        align-content: space-evenly;
+    }
 
-  .sm\:content-stretch {
-    align-content: stretch;
-  }
+    .sm\:content-stretch {
+        align-content: stretch;
+    }
 
-  .sm\:items-start {
-    align-items: flex-start;
-  }
+    .sm\:items-start {
+        align-items: flex-start;
+    }
 
-  .sm\:self-start {
-    align-self: flex-start;
-  }
+    .sm\:self-start {
+        align-self: flex-start;
+    }
 
-  .sm\:items-end {
-    align-items: flex-end;
-  }
+    .sm\:items-end {
+        align-items: flex-end;
+    }
 
-  .sm\:self-end {
-    align-self: flex-end;
-  }
+    .sm\:self-end {
+        align-self: flex-end;
+    }
 
-  .sm\:items-baseline {
-    align-items: baseline;
-  }
+    .sm\:items-baseline {
+        align-items: baseline;
+    }
 
-  .sm\:items-center {
-    align-items: center;
-  }
+    .sm\:items-center {
+        align-items: center;
+    }
 
-  .sm\:self-center {
-    align-self: center;
-  }
+    .sm\:self-center {
+        align-self: center;
+    }
 
-  .sm\:items-stretch {
-    align-items: stretch;
-  }
+    .sm\:items-stretch {
+        align-items: stretch;
+    }
 
-  .sm\:self-stretch {
-    align-self: stretch;
-  }
+    .sm\:self-stretch {
+        align-self: stretch;
+    }
 
-  .sm\:justify-center-middle {
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-  }
+    .sm\:justify-center-middle {
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+    }
 
-  .sm\:vertical-align-baseline {
-    vertical-align: baseline;
-  }
+    .sm\:vertical-align-baseline {
+        vertical-align: baseline;
+    }
 
-  .sm\:vertical-items-start {
-    vertical-align: top;
-  }
+    .sm\:vertical-items-start {
+        vertical-align: top;
+    }
 
-  .sm\:vertical-items-center {
-    vertical-align: middle;
-  }
+    .sm\:vertical-items-center {
+        vertical-align: middle;
+    }
 
-  .sm\:vertical-items-end {
-    vertical-align: bottom;
-  }
+    .sm\:vertical-items-end {
+        vertical-align: bottom;
+    }
 
-  .sm\:vertical-align-text-top {
-    vertical-align: text-top;
-  }
+    .sm\:vertical-align-text-top {
+        vertical-align: text-top;
+    }
 
-  .sm\:vertical-align-text-bottom {
-    vertical-align: text-bottom;
-  }
+    .sm\:vertical-align-text-bottom {
+        vertical-align: text-bottom;
+    }
 
-  .sm\:vertical-align-sub {
-    vertical-align: sub;
-  }
+    .sm\:vertical-align-sub {
+        vertical-align: sub;
+    }
 
-  .sm\:vertical-align-super {
-    vertical-align: super;
-  }
+    .sm\:vertical-align-super {
+        vertical-align: super;
+    }
 }
 
 @media (min-width: 768px) {
-  .md\:justify-start {
-    justify-content: flex-start;
-  }
+    .md\:justify-start {
+        justify-content: flex-start;
+    }
 
-  .md\:justify-end {
-    justify-content: flex-end;
-  }
+    .md\:justify-end {
+        justify-content: flex-end;
+    }
 
-  .md\:justify-center {
-    justify-content: center;
-  }
+    .md\:justify-center {
+        justify-content: center;
+    }
 
-  .md\:justify-between {
-    justify-content: space-between;
-  }
+    .md\:justify-between {
+        justify-content: space-between;
+    }
 
-  .md\:justify-around {
-    justify-content: space-around;
-  }
+    .md\:justify-around {
+        justify-content: space-around;
+    }
 
-  .md\:justify-evenly {
-    justify-content: space-evenly;
-  }
+    .md\:justify-evenly {
+        justify-content: space-evenly;
+    }
 
-  .md\:justify-items-auto {
-    justify-items: auto;
-  }
+    .md\:justify-items-auto {
+        justify-items: auto;
+    }
 
-  .md\:justify-items-start {
-    justify-items: start;
-  }
+    .md\:justify-items-start {
+        justify-items: start;
+    }
 
-  .md\:justify-items-end {
-    justify-items: end;
-  }
+    .md\:justify-items-end {
+        justify-items: end;
+    }
 
-  .md\:justify-items-center {
-    justify-items: center;
-  }
+    .md\:justify-items-center {
+        justify-items: center;
+    }
 
-  .md\:justify-items-stretch {
-    justify-items: stretch;
-  }
+    .md\:justify-items-stretch {
+        justify-items: stretch;
+    }
 
-  .md\:justify-self-auto {
-    justify-self: auto;
-  }
+    .md\:justify-self-auto {
+        justify-self: auto;
+    }
 
-  .md\:justify-self-start {
-    justify-self: start;
-  }
+    .md\:justify-self-start {
+        justify-self: start;
+    }
 
-  .md\:justify-self-end {
-    justify-self: end;
-  }
+    .md\:justify-self-end {
+        justify-self: end;
+    }
 
-  .md\:justify-self-center {
-    justify-self: center;
-  }
+    .md\:justify-self-center {
+        justify-self: center;
+    }
 
-  .md\:justify-self-stretch {
-    justify-self: stretch;
-  }
+    .md\:justify-self-stretch {
+        justify-self: stretch;
+    }
 
-  .md\:justify-start.vertical.menu > li > a {
-    justify-content: flex-start;
-  }
+    .md\:justify-start.vertical.menu > li > a {
+        justify-content: flex-start;
+    }
 
-  .md\:justify-end.vertical.menu > li > a {
-    justify-content: flex-end;
-  }
+    .md\:justify-end.vertical.menu > li > a {
+        justify-content: flex-end;
+    }
 
-  .md\:justify-center.vertical.menu > li > a {
-    justify-content: center;
-  }
+    .md\:justify-center.vertical.menu > li > a {
+        justify-content: center;
+    }
 
-  .md\:content-normal {
-    align-content: normal;
-  }
+    .md\:content-normal {
+        align-content: normal;
+    }
 
-  .md\:content-center {
-    align-content: center;
-  }
+    .md\:content-center {
+        align-content: center;
+    }
 
-  .md\:content-start {
-    align-content: flex-start;
-  }
+    .md\:content-start {
+        align-content: flex-start;
+    }
 
-  .md\:content-end {
-    align-content: flex-end;
-  }
+    .md\:content-end {
+        align-content: flex-end;
+    }
 
-  .md\:content-between {
-    align-content: space-between;
-  }
+    .md\:content-between {
+        align-content: space-between;
+    }
 
-  .md\:content-around {
-    align-content: space-around;
-  }
+    .md\:content-around {
+        align-content: space-around;
+    }
 
-  .md\:content-evenly {
-    align-content: space-evenly;
-  }
+    .md\:content-evenly {
+        align-content: space-evenly;
+    }
 
-  .md\:content-stretch {
-    align-content: stretch;
-  }
+    .md\:content-stretch {
+        align-content: stretch;
+    }
 
-  .md\:items-start {
-    align-items: flex-start;
-  }
+    .md\:items-start {
+        align-items: flex-start;
+    }
 
-  .md\:self-start {
-    align-self: flex-start;
-  }
+    .md\:self-start {
+        align-self: flex-start;
+    }
 
-  .md\:items-end {
-    align-items: flex-end;
-  }
+    .md\:items-end {
+        align-items: flex-end;
+    }
 
-  .md\:self-end {
-    align-self: flex-end;
-  }
+    .md\:self-end {
+        align-self: flex-end;
+    }
 
-  .md\:items-baseline {
-    align-items: baseline;
-  }
+    .md\:items-baseline {
+        align-items: baseline;
+    }
 
-  .md\:items-center {
-    align-items: center;
-  }
+    .md\:items-center {
+        align-items: center;
+    }
 
-  .md\:self-center {
-    align-self: center;
-  }
+    .md\:self-center {
+        align-self: center;
+    }
 
-  .md\:items-stretch {
-    align-items: stretch;
-  }
+    .md\:items-stretch {
+        align-items: stretch;
+    }
 
-  .md\:self-stretch {
-    align-self: stretch;
-  }
+    .md\:self-stretch {
+        align-self: stretch;
+    }
 
-  .md\:justify-center-middle {
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-  }
+    .md\:justify-center-middle {
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+    }
 
-  .md\:vertical-align-baseline {
-    vertical-align: baseline;
-  }
+    .md\:vertical-align-baseline {
+        vertical-align: baseline;
+    }
 
-  .md\:vertical-items-start {
-    vertical-align: top;
-  }
+    .md\:vertical-items-start {
+        vertical-align: top;
+    }
 
-  .md\:vertical-items-center {
-    vertical-align: middle;
-  }
+    .md\:vertical-items-center {
+        vertical-align: middle;
+    }
 
-  .md\:vertical-items-end {
-    vertical-align: bottom;
-  }
+    .md\:vertical-items-end {
+        vertical-align: bottom;
+    }
 
-  .md\:vertical-align-text-top {
-    vertical-align: text-top;
-  }
+    .md\:vertical-align-text-top {
+        vertical-align: text-top;
+    }
 
-  .md\:vertical-align-text-bottom {
-    vertical-align: text-bottom;
-  }
+    .md\:vertical-align-text-bottom {
+        vertical-align: text-bottom;
+    }
 
-  .md\:vertical-align-sub {
-    vertical-align: sub;
-  }
+    .md\:vertical-align-sub {
+        vertical-align: sub;
+    }
 
-  .md\:vertical-align-super {
-    vertical-align: super;
-  }
+    .md\:vertical-align-super {
+        vertical-align: super;
+    }
 }
 
 @media (min-width: 1024px) {
-  .lg\:justify-start {
-    justify-content: flex-start;
-  }
+    .lg\:justify-start {
+        justify-content: flex-start;
+    }
 
-  .lg\:justify-end {
-    justify-content: flex-end;
-  }
+    .lg\:justify-end {
+        justify-content: flex-end;
+    }
 
-  .lg\:justify-center {
-    justify-content: center;
-  }
+    .lg\:justify-center {
+        justify-content: center;
+    }
 
-  .lg\:justify-between {
-    justify-content: space-between;
-  }
+    .lg\:justify-between {
+        justify-content: space-between;
+    }
 
-  .lg\:justify-around {
-    justify-content: space-around;
-  }
+    .lg\:justify-around {
+        justify-content: space-around;
+    }
 
-  .lg\:justify-evenly {
-    justify-content: space-evenly;
-  }
+    .lg\:justify-evenly {
+        justify-content: space-evenly;
+    }
 
-  .lg\:justify-items-auto {
-    justify-items: auto;
-  }
+    .lg\:justify-items-auto {
+        justify-items: auto;
+    }
 
-  .lg\:justify-items-start {
-    justify-items: start;
-  }
+    .lg\:justify-items-start {
+        justify-items: start;
+    }
 
-  .lg\:justify-items-end {
-    justify-items: end;
-  }
+    .lg\:justify-items-end {
+        justify-items: end;
+    }
 
-  .lg\:justify-items-center {
-    justify-items: center;
-  }
+    .lg\:justify-items-center {
+        justify-items: center;
+    }
 
-  .lg\:justify-items-stretch {
-    justify-items: stretch;
-  }
+    .lg\:justify-items-stretch {
+        justify-items: stretch;
+    }
 
-  .lg\:justify-self-auto {
-    justify-self: auto;
-  }
+    .lg\:justify-self-auto {
+        justify-self: auto;
+    }
 
-  .lg\:justify-self-start {
-    justify-self: start;
-  }
+    .lg\:justify-self-start {
+        justify-self: start;
+    }
 
-  .lg\:justify-self-end {
-    justify-self: end;
-  }
+    .lg\:justify-self-end {
+        justify-self: end;
+    }
 
-  .lg\:justify-self-center {
-    justify-self: center;
-  }
+    .lg\:justify-self-center {
+        justify-self: center;
+    }
 
-  .lg\:justify-self-stretch {
-    justify-self: stretch;
-  }
+    .lg\:justify-self-stretch {
+        justify-self: stretch;
+    }
 
-  .lg\:justify-start.vertical.menu > li > a {
-    justify-content: flex-start;
-  }
+    .lg\:justify-start.vertical.menu > li > a {
+        justify-content: flex-start;
+    }
 
-  .lg\:justify-end.vertical.menu > li > a {
-    justify-content: flex-end;
-  }
+    .lg\:justify-end.vertical.menu > li > a {
+        justify-content: flex-end;
+    }
 
-  .lg\:justify-center.vertical.menu > li > a {
-    justify-content: center;
-  }
+    .lg\:justify-center.vertical.menu > li > a {
+        justify-content: center;
+    }
 
-  .lg\:content-normal {
-    align-content: normal;
-  }
+    .lg\:content-normal {
+        align-content: normal;
+    }
 
-  .lg\:content-center {
-    align-content: center;
-  }
+    .lg\:content-center {
+        align-content: center;
+    }
 
-  .lg\:content-start {
-    align-content: flex-start;
-  }
+    .lg\:content-start {
+        align-content: flex-start;
+    }
 
-  .lg\:content-end {
-    align-content: flex-end;
-  }
+    .lg\:content-end {
+        align-content: flex-end;
+    }
 
-  .lg\:content-between {
-    align-content: space-between;
-  }
+    .lg\:content-between {
+        align-content: space-between;
+    }
 
-  .lg\:content-around {
-    align-content: space-around;
-  }
+    .lg\:content-around {
+        align-content: space-around;
+    }
 
-  .lg\:content-evenly {
-    align-content: space-evenly;
-  }
+    .lg\:content-evenly {
+        align-content: space-evenly;
+    }
 
-  .lg\:content-stretch {
-    align-content: stretch;
-  }
+    .lg\:content-stretch {
+        align-content: stretch;
+    }
 
-  .lg\:items-start {
-    align-items: flex-start;
-  }
+    .lg\:items-start {
+        align-items: flex-start;
+    }
 
-  .lg\:self-start {
-    align-self: flex-start;
-  }
+    .lg\:self-start {
+        align-self: flex-start;
+    }
 
-  .lg\:items-end {
-    align-items: flex-end;
-  }
+    .lg\:items-end {
+        align-items: flex-end;
+    }
 
-  .lg\:self-end {
-    align-self: flex-end;
-  }
+    .lg\:self-end {
+        align-self: flex-end;
+    }
 
-  .lg\:items-baseline {
-    align-items: baseline;
-  }
+    .lg\:items-baseline {
+        align-items: baseline;
+    }
 
-  .lg\:items-center {
-    align-items: center;
-  }
+    .lg\:items-center {
+        align-items: center;
+    }
 
-  .lg\:self-center {
-    align-self: center;
-  }
+    .lg\:self-center {
+        align-self: center;
+    }
 
-  .lg\:items-stretch {
-    align-items: stretch;
-  }
+    .lg\:items-stretch {
+        align-items: stretch;
+    }
 
-  .lg\:self-stretch {
-    align-self: stretch;
-  }
+    .lg\:self-stretch {
+        align-self: stretch;
+    }
 
-  .lg\:justify-center-middle {
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-  }
+    .lg\:justify-center-middle {
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+    }
 
-  .lg\:vertical-align-baseline {
-    vertical-align: baseline;
-  }
+    .lg\:vertical-align-baseline {
+        vertical-align: baseline;
+    }
 
-  .lg\:vertical-items-start {
-    vertical-align: top;
-  }
+    .lg\:vertical-items-start {
+        vertical-align: top;
+    }
 
-  .lg\:vertical-items-center {
-    vertical-align: middle;
-  }
+    .lg\:vertical-items-center {
+        vertical-align: middle;
+    }
 
-  .lg\:vertical-items-end {
-    vertical-align: bottom;
-  }
+    .lg\:vertical-items-end {
+        vertical-align: bottom;
+    }
 
-  .lg\:vertical-align-text-top {
-    vertical-align: text-top;
-  }
+    .lg\:vertical-align-text-top {
+        vertical-align: text-top;
+    }
 
-  .lg\:vertical-align-text-bottom {
-    vertical-align: text-bottom;
-  }
+    .lg\:vertical-align-text-bottom {
+        vertical-align: text-bottom;
+    }
 
-  .lg\:vertical-align-sub {
-    vertical-align: sub;
-  }
+    .lg\:vertical-align-sub {
+        vertical-align: sub;
+    }
 
-  .lg\:vertical-align-super {
-    vertical-align: super;
-  }
+    .lg\:vertical-align-super {
+        vertical-align: super;
+    }
 }
 
 @media (min-width: 1280px) {
-  .xl\:justify-start {
-    justify-content: flex-start;
-  }
+    .xl\:justify-start {
+        justify-content: flex-start;
+    }
 
-  .xl\:justify-end {
-    justify-content: flex-end;
-  }
+    .xl\:justify-end {
+        justify-content: flex-end;
+    }
 
-  .xl\:justify-center {
-    justify-content: center;
-  }
+    .xl\:justify-center {
+        justify-content: center;
+    }
 
-  .xl\:justify-between {
-    justify-content: space-between;
-  }
+    .xl\:justify-between {
+        justify-content: space-between;
+    }
 
-  .xl\:justify-around {
-    justify-content: space-around;
-  }
+    .xl\:justify-around {
+        justify-content: space-around;
+    }
 
-  .xl\:justify-evenly {
-    justify-content: space-evenly;
-  }
+    .xl\:justify-evenly {
+        justify-content: space-evenly;
+    }
 
-  .xl\:justify-items-auto {
-    justify-items: auto;
-  }
+    .xl\:justify-items-auto {
+        justify-items: auto;
+    }
 
-  .xl\:justify-items-start {
-    justify-items: start;
-  }
+    .xl\:justify-items-start {
+        justify-items: start;
+    }
 
-  .xl\:justify-items-end {
-    justify-items: end;
-  }
+    .xl\:justify-items-end {
+        justify-items: end;
+    }
 
-  .xl\:justify-items-center {
-    justify-items: center;
-  }
+    .xl\:justify-items-center {
+        justify-items: center;
+    }
 
-  .xl\:justify-items-stretch {
-    justify-items: stretch;
-  }
+    .xl\:justify-items-stretch {
+        justify-items: stretch;
+    }
 
-  .xl\:justify-self-auto {
-    justify-self: auto;
-  }
+    .xl\:justify-self-auto {
+        justify-self: auto;
+    }
 
-  .xl\:justify-self-start {
-    justify-self: start;
-  }
+    .xl\:justify-self-start {
+        justify-self: start;
+    }
 
-  .xl\:justify-self-end {
-    justify-self: end;
-  }
+    .xl\:justify-self-end {
+        justify-self: end;
+    }
 
-  .xl\:justify-self-center {
-    justify-self: center;
-  }
+    .xl\:justify-self-center {
+        justify-self: center;
+    }
 
-  .xl\:justify-self-stretch {
-    justify-self: stretch;
-  }
+    .xl\:justify-self-stretch {
+        justify-self: stretch;
+    }
 
-  .xl\:justify-start.vertical.menu > li > a {
-    justify-content: flex-start;
-  }
+    .xl\:justify-start.vertical.menu > li > a {
+        justify-content: flex-start;
+    }
 
-  .xl\:justify-end.vertical.menu > li > a {
-    justify-content: flex-end;
-  }
+    .xl\:justify-end.vertical.menu > li > a {
+        justify-content: flex-end;
+    }
 
-  .xl\:justify-center.vertical.menu > li > a {
-    justify-content: center;
-  }
+    .xl\:justify-center.vertical.menu > li > a {
+        justify-content: center;
+    }
 
-  .xl\:content-center {
-    align-content: center;
-  }
+    .xl\:content-center {
+        align-content: center;
+    }
 
-  .xl\:content-normal {
-    align-content: normal;
-  }
+    .xl\:content-normal {
+        align-content: normal;
+    }
 
-  .xl\:content-start {
-    align-content: flex-start;
-  }
+    .xl\:content-start {
+        align-content: flex-start;
+    }
 
-  .xl\:content-end {
-    align-content: flex-end;
-  }
+    .xl\:content-end {
+        align-content: flex-end;
+    }
 
-  .xl\:content-between {
-    align-content: space-between;
-  }
+    .xl\:content-between {
+        align-content: space-between;
+    }
 
-  .xl\:content-around {
-    align-content: space-around;
-  }
+    .xl\:content-around {
+        align-content: space-around;
+    }
 
-  .xl\:content-evenly {
-    align-content: space-evenly;
-  }
+    .xl\:content-evenly {
+        align-content: space-evenly;
+    }
 
-  .xl\:content-stretch {
-    align-content: stretch;
-  }
+    .xl\:content-stretch {
+        align-content: stretch;
+    }
 
-  .xl\:items-start {
-    align-items: flex-start;
-  }
+    .xl\:items-start {
+        align-items: flex-start;
+    }
 
-  .xl\:self-start {
-    align-self: flex-start;
-  }
+    .xl\:self-start {
+        align-self: flex-start;
+    }
 
-  .xl\:items-end {
-    align-items: flex-end;
-  }
+    .xl\:items-end {
+        align-items: flex-end;
+    }
 
-  .xl\:self-end {
-    align-self: flex-end;
-  }
+    .xl\:self-end {
+        align-self: flex-end;
+    }
 
-  .xl\:items-baseline {
-    align-items: baseline;
-  }
+    .xl\:items-baseline {
+        align-items: baseline;
+    }
 
-  .xl\:items-center {
-    align-items: center;
-  }
+    .xl\:items-center {
+        align-items: center;
+    }
 
-  .xl\:self-center {
-    align-self: center;
-  }
+    .xl\:self-center {
+        align-self: center;
+    }
 
-  .xl\:items-stretch {
-    align-items: stretch;
-  }
+    .xl\:items-stretch {
+        align-items: stretch;
+    }
 
-  .xl\:self-stretch {
-    align-self: stretch;
-  }
+    .xl\:self-stretch {
+        align-self: stretch;
+    }
 
-  .xl\:justify-center-middle {
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-  }
+    .xl\:justify-center-middle {
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+    }
 
-  .xl\:vertical-align-baseline {
-    vertical-align: baseline;
-  }
+    .xl\:vertical-align-baseline {
+        vertical-align: baseline;
+    }
 
-  .xl\:vertical-items-start {
-    vertical-align: top;
-  }
+    .xl\:vertical-items-start {
+        vertical-align: top;
+    }
 
-  .xl\:vertical-items-center {
-    vertical-align: middle;
-  }
+    .xl\:vertical-items-center {
+        vertical-align: middle;
+    }
 
-  .xl\:vertical-items-end {
-    vertical-align: bottom;
-  }
+    .xl\:vertical-items-end {
+        vertical-align: bottom;
+    }
 
-  .xl\:vertical-align-text-top {
-    vertical-align: text-top;
-  }
+    .xl\:vertical-align-text-top {
+        vertical-align: text-top;
+    }
 
-  .xl\:vertical-align-text-bottom {
-    vertical-align: text-bottom;
-  }
+    .xl\:vertical-align-text-bottom {
+        vertical-align: text-bottom;
+    }
 
-  .xl\:vertical-align-sub {
-    vertical-align: sub;
-  }
+    .xl\:vertical-align-sub {
+        vertical-align: sub;
+    }
 
-  .xl\:vertical-align-super {
-    vertical-align: super;
-  }
+    .xl\:vertical-align-super {
+        vertical-align: super;
+    }
 }
 
 @media (min-width: 1536px) {
-  .\32xl\:justify-start {
-    justify-content: flex-start;
-  }
+    .\32xl\:justify-start {
+        justify-content: flex-start;
+    }
 
-  .\32xl\:justify-end {
-    justify-content: flex-end;
-  }
+    .\32xl\:justify-end {
+        justify-content: flex-end;
+    }
 
-  .\32xl\:justify-center {
-    justify-content: center;
-  }
+    .\32xl\:justify-center {
+        justify-content: center;
+    }
 
-  .\32xl\:justify-between {
-    justify-content: space-between;
-  }
+    .\32xl\:justify-between {
+        justify-content: space-between;
+    }
 
-  .\32xl\:justify-around {
-    justify-content: space-around;
-  }
+    .\32xl\:justify-around {
+        justify-content: space-around;
+    }
 
-  .\32xl\:justify-evenly {
-    justify-content: space-evenly;
-  }
+    .\32xl\:justify-evenly {
+        justify-content: space-evenly;
+    }
 
-  .\32xl\:justify-items-auto {
-    justify-items: auto;
-  }
+    .\32xl\:justify-items-auto {
+        justify-items: auto;
+    }
 
-  .\32xl\:justify-items-start {
-    justify-items: start;
-  }
+    .\32xl\:justify-items-start {
+        justify-items: start;
+    }
 
-  .\32xl\:justify-items-end {
-    justify-items: end;
-  }
+    .\32xl\:justify-items-end {
+        justify-items: end;
+    }
 
-  .\32xl\:justify-items-center {
-    justify-items: center;
-  }
+    .\32xl\:justify-items-center {
+        justify-items: center;
+    }
 
-  .\32xl\:justify-items-stretch {
-    justify-items: stretch;
-  }
+    .\32xl\:justify-items-stretch {
+        justify-items: stretch;
+    }
 
-  .\32xl\:justify-self-auto {
-    justify-self: auto;
-  }
+    .\32xl\:justify-self-auto {
+        justify-self: auto;
+    }
 
-  .\32xl\:justify-self-start {
-    justify-self: start;
-  }
+    .\32xl\:justify-self-start {
+        justify-self: start;
+    }
 
-  .\32xl\:justify-self-end {
-    justify-self: end;
-  }
+    .\32xl\:justify-self-end {
+        justify-self: end;
+    }
 
-  .\32xl\:justify-self-center {
-    justify-self: center;
-  }
+    .\32xl\:justify-self-center {
+        justify-self: center;
+    }
 
-  .\32xl\:justify-self-stretch {
-    justify-self: stretch;
-  }
+    .\32xl\:justify-self-stretch {
+        justify-self: stretch;
+    }
 
-  .\32xl\:justify-start.vertical.menu > li > a {
-    justify-content: flex-start;
-  }
+    .\32xl\:justify-start.vertical.menu > li > a {
+        justify-content: flex-start;
+    }
 
-  .\32xl\:justify-end.vertical.menu > li > a {
-    justify-content: flex-end;
-  }
+    .\32xl\:justify-end.vertical.menu > li > a {
+        justify-content: flex-end;
+    }
 
-  .\32xl\:justify-center.vertical.menu > li > a {
-    justify-content: center;
-  }
+    .\32xl\:justify-center.vertical.menu > li > a {
+        justify-content: center;
+    }
 
-  .\32xl\:content-normal {
-    align-content: normal;
-  }
+    .\32xl\:content-normal {
+        align-content: normal;
+    }
 
-  .\32xl\:content-center {
-    align-content: center;
-  }
+    .\32xl\:content-center {
+        align-content: center;
+    }
 
-  .\32xl\:content-start {
-    align-content: flex-start;
-  }
+    .\32xl\:content-start {
+        align-content: flex-start;
+    }
 
-  .\32xl\:content-end {
-    align-content: flex-end;
-  }
+    .\32xl\:content-end {
+        align-content: flex-end;
+    }
 
-  .\32xl\:content-between {
-    align-content: space-between;
-  }
+    .\32xl\:content-between {
+        align-content: space-between;
+    }
 
-  .\32xl\:content-around {
-    align-content: space-around;
-  }
+    .\32xl\:content-around {
+        align-content: space-around;
+    }
 
-  .\32xl\:content-evenly {
-    align-content: space-evenly;
-  }
+    .\32xl\:content-evenly {
+        align-content: space-evenly;
+    }
 
-  .\32xl\:content-stretch {
-    align-content: stretch;
-  }
+    .\32xl\:content-stretch {
+        align-content: stretch;
+    }
 
-  .\32xl\:items-start {
-    align-items: flex-start;
-  }
+    .\32xl\:items-start {
+        align-items: flex-start;
+    }
 
-  .\32xl\:self-start {
-    align-self: flex-start;
-  }
+    .\32xl\:self-start {
+        align-self: flex-start;
+    }
 
-  .\32xl\:items-end {
-    align-items: flex-end;
-  }
+    .\32xl\:items-end {
+        align-items: flex-end;
+    }
 
-  .\32xl\:self-end {
-    align-self: flex-end;
-  }
+    .\32xl\:self-end {
+        align-self: flex-end;
+    }
 
-  .\32xl\:items-baseline {
-    align-items: baseline;
-  }
+    .\32xl\:items-baseline {
+        align-items: baseline;
+    }
 
-  .\32xl\:items-center {
-    align-items: center;
-  }
+    .\32xl\:items-center {
+        align-items: center;
+    }
 
-  .\32xl\:self-center {
-    align-self: center;
-  }
+    .\32xl\:self-center {
+        align-self: center;
+    }
 
-  .\32xl\:items-stretch {
-    align-items: stretch;
-  }
+    .\32xl\:items-stretch {
+        align-items: stretch;
+    }
 
-  .\32xl\:self-stretch {
-    align-self: stretch;
-  }
+    .\32xl\:self-stretch {
+        align-self: stretch;
+    }
 
-  .\32xl\:justify-center-middle {
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-  }
+    .\32xl\:justify-center-middle {
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+    }
 
-  .\32xl\:vertical-align-baseline {
-    vertical-align: baseline;
-  }
+    .\32xl\:vertical-align-baseline {
+        vertical-align: baseline;
+    }
 
-  .\32xl\:vertical-items-start {
-    vertical-align: top;
-  }
+    .\32xl\:vertical-items-start {
+        vertical-align: top;
+    }
 
-  .\32xl\:vertical-items-center {
-    vertical-align: middle;
-  }
+    .\32xl\:vertical-items-center {
+        vertical-align: middle;
+    }
 
-  .\32xl\:vertical-items-end {
-    vertical-align: bottom;
-  }
+    .\32xl\:vertical-items-end {
+        vertical-align: bottom;
+    }
 
-  .\32xl\:vertical-align-text-top {
-    vertical-align: text-top;
-  }
+    .\32xl\:vertical-align-text-top {
+        vertical-align: text-top;
+    }
 
-  .\32xl\:vertical-align-text-bottom {
-    vertical-align: text-bottom;
-  }
+    .\32xl\:vertical-align-text-bottom {
+        vertical-align: text-bottom;
+    }
 
-  .\32xl\:vertical-align-sub {
-    vertical-align: sub;
-  }
+    .\32xl\:vertical-align-sub {
+        vertical-align: sub;
+    }
 
-  .\32xl\:vertical-align-super {
-    vertical-align: super;
-  }
+    .\32xl\:vertical-align-super {
+        vertical-align: super;
+    }
 }

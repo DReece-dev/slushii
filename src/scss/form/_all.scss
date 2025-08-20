@@ -1,16 +1,13 @@
-// Slushii Form
-@charset "utf-8";
-
-@import "form-label";
-@import "form-row";
-@import "form-text";
-@import "form-inline";
-@import "form-control";
-@import "form-select";
-@import "form-check";
-@import "form-range";
-@import "form-floating";
-@import "checkbox-radio";
-@import "switch";
-@import "search-box";
-@import "input-groups";
+@use "form-label";
+@use "form-row";
+@use "form-text";
+@use "form-inline";
+@use "form-control";
+@use "form-select";
+@use "form-check";
+@use "form-range";
+@use "form-floating";
+@use "checkbox-radio";
+@use "switch";
+@use "search-box";
+@use "input-groups";
