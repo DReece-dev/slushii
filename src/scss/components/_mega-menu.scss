@@ -1,101 +1,445 @@
-.mega-navbar {
-    /* Use flexbox to layout the navbar items */
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
+@use "sass:map";
 
-    a {
-        font-size: 16px;
-        color: black;
-        text-align: center;
-        text-decoration: none;
-        transition: color 0.2s; /* add transition for hover effect */
+$mega-menu-prefix: "mega-menu" !default;
 
-        &:hover {
-            color: var(--blue-500);
-        }
-    }
-}
+// Enhanced color palette for more theming options
+$colors: (
+    "background": #ffffff,
+    "foreground": #0f172a,
+    "primary": #3b82f6,
+    "primary-foreground": #ffffff,
+    "card": #ffffff,
+    "card-foreground": #0f172a,
+    "secondary": #f1f5f9,
+    "secondary-foreground": #0f172a,
+    "muted": #64748b,
+    "border": #e2e8f0,
+    "input": #e2e8f0,
+    "ring": #93c5fd,
+    // Dark theme colors
+    "dark-background": #020817,
+    "dark-foreground": #f8fafc,
+    "dark-border": #1e293b,
+    "dark-secondary": #1e293b,
+    "dark-secondary-foreground": #f8fafc,
+) !default;
 
-.mega-dropdown {
-    position: relative; /* add position relative to contain the dropdown content */
-    float: left;
-    overflow: hidden;
-    white-space: nowrap;
+// Radii for rounded corners
+$radii: (
+    "none": 0,
+    "sm": 0.375rem,
+    // 6px
+    "md": 0.5rem,
+    // 8px
+    "lg": 0.75rem,
+    // 12px
+    "full": 9999px,
+) !default;
 
-    .mega-dropbtn {
-        font-size: 16px;
+// Box shadows for depth
+$shadows: (
+    "none": "none",
+    "sm": "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
+    "md": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1)",
+    "lg":
+        "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1)",
+    "xl":
+        "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)",
+) !default;
+
+// =============================================================================
+// Base Component Styles
+// =============================================================================
+
+.#{$mega-menu-prefix} {
+    // CSS variables for extensive customization
+    --menu-bg: var(--background, #{map.get($colors, "background")});
+    --menu-fg: var(--foreground, #{map.get($colors, "foreground")});
+    --menu-border: 1px solid var(--border, #{map.get($colors, "border")});
+    --menu-radius: #{map.get($radii, "lg")};
+    --menu-shadow: #{map.get($shadows, "lg")};
+    --menu-link-hover-bg: var(--secondary, #{map.get($colors, "secondary")});
+    --menu-link-hover-fg: var(
+        --secondary-foreground,
+        #{map.get($colors, "secondary-foreground")}
+    );
+    --menu-primary-fg: var(--primary, #{map.get($colors, "primary")});
+
+    position: relative;
+    display: inline-block;
+
+    &__trigger {
+        background: transparent;
         border: none;
-        outline: none;
-        color: black;
-        padding: 14px 16px;
-        background-color: inherit;
-        font-family: inherit;
-        margin: 0;
-        cursor: pointer; /* add cursor pointer to indicate it's a button */
-
-        &:hover,
-        &:active,
-        &:focus {
-            background-color: transparent;
-            color: var(--blue-500);
-        }
-    }
-}
-
-.mega-dropdown-content {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #f9f9f9;
-    width: 100%;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    display: none; /* hide the dropdown content by default */
-
-    /* show the dropdown content on hover */
-    .mega-dropdown:hover & {
-        display: block;
-    }
-}
-
-.mega-column {
-    float: left;
-    width: calc(33.33% - 20px); /* adjust the width to account for padding */
-    padding: 10px;
-    background-color: white;
-    height: 350px;
-
-    a {
-        display: block;
-        padding: 16px;
-        text-decoration: none;
-        text-align: left;
-        color: black;
+        color: inherit;
+        padding: 0.75rem 1rem;
+        font-size: 1rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition:
+            color 0.2s ease,
+            background-color 0.2s ease;
+        border-radius: #{map.get($radii, "md")};
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
 
         &:hover {
-            background-color: rgba(221, 221, 221, 0.151);
-            color: var(--blue-500);
+            background-color: var(--menu-link-hover-bg);
+            color: var(--menu-link-hover-fg);
+        }
+
+        &:focus-visible {
+            outline: 2px solid var(--ring, #{map.get($colors, "ring")});
+            outline-offset: 2px;
         }
     }
 
-    @media screen and (max-width: 600px) {
-        width: 100%;
-        height: auto;
+    &__content {
+        display: none;
+        position: absolute;
+        top: calc(100% + 0.5rem); // Spacing between trigger and panel
+        left: 0;
+        z-index: 50;
+        min-width: 450px;
+        background-color: var(--menu-bg);
+        border: var(--menu-border);
+        border-radius: var(--menu-radius);
+        box-shadow: var(--menu-shadow);
+        padding: 1.5rem;
+        animation: fadeIn 0.2s ease-out;
+    }
+
+    // Interaction: Show content on hover or focus
+    &:hover > &__content,
+    &__trigger:focus + &__content,
+    &__content:hover {
+        display: block;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+    }
+
+    &__column {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    &__heading {
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: var(--menu-fg);
+        padding: 0 0.75rem;
+        margin-bottom: 0.25rem;
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.625rem 0.75rem;
+        text-decoration: none;
+        color: var(--menu-fg);
+        border-radius: #{map.get($radii, "md")};
+        transition:
+            background-color 0.2s ease,
+            color 0.2s ease;
+
+        &:hover {
+            background-color: var(--menu-link-hover-bg);
+            color: var(--menu-primary-fg);
+        }
+    }
+
+    &__link-icon {
+        width: 1.25rem;
+        height: 1.25rem;
+        flex-shrink: 0;
+    }
+
+    &__link-text {
+        font-weight: 500;
+    }
+
+    &__link-description {
+        font-size: 0.875rem;
+        color: var(--muted, #{map.get($colors, "muted")});
+        margin-top: 2px;
     }
 }
 
-.mega-row {
-    /* use flexbox to layout the row */
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
+// Keyframes for animations
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
 
-    &:after {
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleUp {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+// --- Layout & Sizing Variants (7) ---
+
+// 1. Full-Width
+.#{$mega-menu-prefix}--full-width {
+    position: static;
+    & > .#{$mega-menu-prefix}__content {
+        width: 100vw;
+        left: 0;
+        right: 0;
+    }
+}
+
+// 2. Contained (for use with full-width)
+.#{$mega-menu-prefix}--contained {
+    & > .#{$mega-menu-prefix}__content {
+        width: 100%;
+        max-width: 1280px;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+    }
+}
+
+// 3. Match Trigger Width
+.#{$mega-menu-prefix}--trigger-width {
+    & > .#{$mega-menu-prefix}__content {
+        width: 100%;
+        min-width: 0;
+    }
+}
+
+// 4. Compact
+.#{$mega-menu-prefix}--compact {
+    & > .#{$mega-menu-prefix}__content {
+        padding: 1rem;
+    }
+    .#{$mega-menu-prefix}__grid {
+        gap: 1rem;
+    }
+    .#{$mega-menu-prefix}__link {
+        padding: 0.5rem;
+        gap: 0.5rem;
+    }
+}
+
+// 5. Spacious
+.#{$mega-menu-prefix}--spacious {
+    & > .#{$mega-menu-prefix}__content {
+        padding: 2rem;
+    }
+    .#{$mega-menu-prefix}__grid {
+        gap: 2.5rem;
+    }
+}
+
+// 6. Two-Column Layout
+.#{$mega-menu-prefix}--two-column .#{$mega-menu-prefix}__grid {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+// 7. Three-Column Layout
+.#{$mega-menu-prefix}--three-column .#{$mega-menu-prefix}__grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+// --- Styling & Theming Variants (10) ---
+
+// 8. Dark Theme
+.#{$mega-menu-prefix}--dark {
+    --menu-bg: var(--dark-background, #{map.get($colors, "dark-background")});
+    --menu-fg: var(--dark-foreground, #{map.get($colors, "dark-foreground")});
+    --menu-border: 1px solid
+        var(--dark-border, #{map.get($colors, "dark-border")});
+    --menu-link-hover-bg: var(
+        --dark-secondary,
+        #{map.get($colors, "dark-secondary")}
+    );
+    --menu-link-hover-fg: var(
+        --dark-secondary-foreground,
+        #{map.get($colors, "dark-secondary-foreground")}
+    );
+}
+
+// 9. Primary Accent
+.#{$mega-menu-prefix}--primary-accent {
+    --menu-link-hover-bg: var(--primary, #{map.get($colors, "primary")});
+    --menu-link-hover-fg: var(
+        --primary-foreground,
+        #{map.get($colors, "primary-foreground")}
+    );
+    .#{$mega-menu-prefix}__link:hover .#{$mega-menu-prefix}__link-description {
+        color: var(
+            --primary-foreground,
+            #{map.get($colors, "primary-foreground")}
+        );
+    }
+}
+
+// 10. Borderless
+.#{$mega-menu-prefix}--borderless {
+    --menu-border: none;
+}
+
+// 11. Shadow Variants
+.#{$mega-menu-prefix}--shadow-sm {
+    --menu-shadow: #{map.get($shadows, "sm")};
+}
+.#{$mega-menu-prefix}--shadow-xl {
+    --menu-shadow: #{map.get($shadows, "xl")};
+}
+
+// 12. Radius Variants
+.#{$mega-menu-prefix}--radius-sm {
+    --menu-radius: #{map.get($radii, "sm")};
+}
+.#{$mega-menu-prefix}--radius-full {
+    .#{$mega-menu-prefix}__trigger {
+        border-radius: #{map.get($radii, "full")};
+    }
+}
+
+// 13. With Dividers
+.#{$mega-menu-prefix}--with-dividers {
+    .#{$mega-menu-prefix}__grid {
+        gap: 0;
+    }
+    .#{$mega-menu-prefix}__column {
+        padding: 0 1.5rem;
+        &:not(:last-child) {
+            border-right: 1px solid var(--border, #{map.get($colors, "border")});
+        }
+    }
+}
+
+// 14. Striped Links
+.#{$mega-menu-prefix}--striped-links {
+    .#{$mega-menu-prefix}__link:nth-child(odd) {
+        background-color: var(--menu-link-hover-bg);
+    }
+    .#{$mega-menu-prefix}__link:hover {
+        filter: brightness(95%);
+    }
+}
+
+// 15. Inset Panel
+.#{$mega-menu-prefix}--inset {
+    --menu-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+}
+
+// 16. Centered Trigger
+.#{$mega-menu-prefix}--centered-trigger {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+// 17. Underline Trigger
+.#{$mega-menu-prefix}--underline-trigger .#{$mega-menu-prefix}__trigger {
+    position: relative;
+    &::after {
         content: "";
-        display: table;
-        clear: both;
+        position: absolute;
+        bottom: 0.25rem;
+        left: 1rem;
+        right: 1rem;
+        height: 2px;
+        background-color: var(--menu-primary-fg);
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+    }
+    &:hover::after {
+        transform: scaleX(1);
+    }
+}
+
+// --- Behavior & Animation Variants (4) ---
+
+// 18. Animated Slide-Down
+.#{$mega-menu-prefix}--animated-slide-down .#{$mega-menu-prefix}__content {
+    animation: slideDown 0.3s ease-out;
+}
+
+// 19. Animated Scale-Up
+.#{$mega-menu-prefix}--animated-scale-up .#{$mega-menu-prefix}__content {
+    animation: scaleUp 0.2s ease-out;
+    transform-origin: top center;
+}
+
+// 20. Click-to-Open (Requires JavaScript)
+// Add .is-active class with JS to the .mega-menu container
+.#{$mega-menu-prefix}.is-active > .#{$mega-menu-prefix}__content {
+    display: block;
+}
+
+// 21. Arrow Indicator
+.#{$mega-menu-prefix}--with-arrow .#{$mega-menu-prefix}__trigger::after {
+    content: "▼";
+    font-size: 0.625rem;
+    margin-left: 0.5rem;
+    transition: transform 0.2s ease;
+}
+.#{$mega-menu-prefix}--with-arrow:hover .#{$mega-menu-prefix}__trigger::after {
+    transform: rotate(180deg);
+}
+
+// --- Content & Structure Variants (4) ---
+
+// 22. With Header
+.#{$mega-menu-prefix}--with-header .#{$mega-menu-prefix}__content {
+    padding-top: 0;
+    & > .#{$mega-menu-prefix}__header {
+        padding: 1rem 1.5rem;
+        border-bottom: var(--menu-border);
+        margin-bottom: 1.5rem;
+    }
+}
+
+// 23. With Footer
+.#{$mega-menu-prefix}--with-footer .#{$mega-menu-prefix}__content {
+    padding-bottom: 0;
+    & > .#{$mega-menu-prefix}__footer {
+        padding: 1rem 1.5rem;
+        border-top: var(--menu-border);
+        margin-top: 1.5rem;
+    }
+}
+
+// 24. Sidebar Layout
+.#{$mega-menu-prefix}--with-sidebar .#{$mega-menu-prefix}__grid {
+    grid-template-columns: 1fr 2fr; // Sidebar on the left
+}
+
+// 25. Featured Item
+.#{$mega-menu-prefix}--with-featured {
+    .#{$mega-menu-prefix}__column--featured {
+        background-color: var(--menu-link-hover-bg);
+        border-radius: var(--menu-radius);
+        padding: 1.5rem;
     }
 }

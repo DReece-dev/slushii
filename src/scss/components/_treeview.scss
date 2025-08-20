@@ -1,78 +1,165 @@
-// Define some variables for colors and spacing
-$tree-node-padding: 0.5rem;
-$tree-node-color: #333;
-$tree-node-background: #fff;
-$tree-node-hover-background: #f7f7f7;
-$tree-node-active-background: #e6e6e6;
-$tree-node-border: 1px solid #ccc;
+@use "sass:map";
 
-// Define styles for the tree view component
-.tree {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+$prefix: "treeview" !default;
 
-    .tree-node {
-        position: relative;
-        padding: $tree-node-padding;
-        color: $tree-node-color;
-        background-color: $tree-node-background;
-        border: $tree-node-border;
+// A map to hold all default CSS variables for easy setup and theming.
+$config: (
+    // Sizing & Spacing
+    "indent-size": 1.25rem,
+    "item-padding-y": 0.375rem,
+    "item-padding-x": 0.5rem,
+    "icon-size": 1rem,
+    "chevron-size": 1.25rem,
 
-        &:hover {
-            background-color: $tree-node-hover-background;
-        }
+    // Theming
+    "bg": transparent,
+    "fg": #374151,
+    // gray-700
+    "hover-bg": #f3f4f6,
+    // gray-100
+    "selected-bg": #eef2ff,
+    // indigo-50
+    "selected-fg": #4338ca,
+    // indigo-700
+    "line-color": #e5e7eb,
+    // gray-200
+    "radius": 0.375rem,
 
-        &.active {
-            background-color: $tree-node-active-background;
-        }
+    // Dark Theme
+    "dark-bg": transparent,
+    "dark-fg": #d1d5db,
+    // gray-300
+    "dark-hover-bg": #374151,
+    // gray-700
+    "dark-selected-bg": #3730a3,
+    // indigo-800
+    "dark-selected-fg": #eef2ff,
+    // indigo-50
+    "dark-line-color": #4b5563,
 
-        .tree-node-toggle {
-            position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 1.5rem;
-            height: 1.5rem;
-            cursor: pointer;
+    // gray-600
+    // Animation
+    "transition": "background-color 0.15s ease, color 0.15s ease"
+) !default;
 
-            &:before {
-                content: "+";
-                display: block;
-                font-size: 1.5rem;
-                line-height: 1.5rem;
-                text-align: center;
-                color: $tree-node-color;
-            }
-
-            &.collapsed:before {
-                content: "-";
-            }
-        }
-
-        .tree-node-label {
-            margin-left: 1.5rem;
-        }
-
-        .tree-node-children {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-
-            .tree-node {
-                border-left: $tree-node-border;
-                margin-left: $tree-node-padding;
-                padding-left: $tree-node-padding;
-
-                &:first-child {
-                    margin-top: $tree-node-padding;
-                    border-top: $tree-node-border;
-                }
-
-                &:last-child {
-                    margin-bottom: $tree-node-padding;
-                }
-            }
-        }
+// The root container for the entire tree
+.#{$prefix} {
+    // Generate CSS custom properties from the $config map
+    @each $key, $value in $config {
+        --tree-#{$key}: #{$value};
     }
+
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    background-color: var(--tree-bg);
+    color: var(--tree-fg);
+}
+
+// The nested list that contains child items.
+.#{$prefix}__group {
+    position: relative;
+    padding: 0 0 0 var(--tree-indent-size);
+    margin: 0;
+    list-style: none;
+
+    // The vertical indentation guide line
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: calc(var(--tree-indent-size) / 2);
+        width: 1px;
+        background-color: var(--tree-line-color);
+    }
+}
+
+// A single item (<li>) in the tree
+.#{$prefix}__item {
+    position: relative;
+    padding: 0;
+    margin: 0;
+
+    // The horizontal part of the guide line
+    &::before {
+        content: "";
+        position: absolute;
+        top: calc(var(--tree-chevron-size) / 2 + var(--tree-item-padding-y));
+        left: calc(var(--tree-indent-size) / 2);
+        width: calc(var(--tree-indent-size) / 2);
+        height: 1px;
+        background-color: var(--tree-line-color);
+    }
+}
+
+// The clickable/focusable content (<a> or <span>) inside an item
+.#{$prefix}__link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: var(--tree-item-padding-y) var(--tree-item-padding-x);
+    border-radius: var(--tree-radius);
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    transition: var(--tree-transition);
+
+    &:hover {
+        background-color: var(--tree-hover-bg);
+    }
+}
+
+// The expand/collapse button
+.#{$prefix}__chevron {
+    flex-shrink: 0;
+    width: var(--tree-chevron-size);
+    height: var(--tree-chevron-size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.8;
+    transition: transform 0.2s ease-out;
+}
+
+// Icon for the file/folder
+.#{$prefix}__icon {
+    flex-shrink: 0;
+    width: var(--tree-icon-size);
+    height: var(--tree-icon-size);
+}
+
+// --- State Modifiers ---
+
+// State for an open/expanded item
+.#{$prefix}__item.is-open {
+    > .#{$prefix}__link .#{$prefix}__chevron {
+        transform: rotate(90deg);
+    }
+}
+
+// State for the currently selected/active item
+.#{$prefix}__item.is-selected {
+    > .#{$prefix}__link {
+        background-color: var(--tree-selected-bg);
+        color: var(--tree-selected-fg);
+        font-weight: 600;
+    }
+}
+
+// Hide children by default if the parent is not .is-open
+.#{$prefix}__item:not(.is-open) > .#{$prefix}__group {
+    display: none;
+}
+
+// --- Style Variants ---
+
+// Dark Mode
+.#{$prefix}--dark {
+    --tree-bg: var(--tree-dark-bg);
+    --tree-fg: var(--tree-dark-fg);
+    --tree-hover-bg: var(--tree-dark-hover-bg);
+    --tree-selected-bg: var(--tree-dark-selected-bg);
+    --tree-selected-fg: var(--tree-dark-selected-fg);
+    --tree-line-color: var(--tree-dark-line-color);
 }

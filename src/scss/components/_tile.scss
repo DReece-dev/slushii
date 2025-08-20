@@ -1,76 +1,174 @@
-// Define variables for common values
-$tile-margin: 1rem;
-$tile-padding: 0.5rem;
-$tile-content-padding: 0.4rem;
-$tile-title-line-height: 1.2rem;
-$tile-font-size: 1.25rem;
+@use "sass:map";
 
-// Styles for the tile card
-.card {
-    align-content: space-between;
-    align-items: flex-start;
+$prefix: "tile" !default;
+
+// A map to hold all default CSS variables for easy setup and theming.
+$config: (
+    // Sizing & Spacing
+    "padding": 1.25rem,
+    "gap": 1rem,
+    "radius": 0.75rem,
+
+    // Theming
+    "bg": #ffffff,
+    "fg": #1f2937,
+    // gray-800
+    "subtitle-fg": #6b7280,
+    // gray-500
+    "icon-fg": #9ca3af,
+    // gray-400
+    "border-color": #e5e7eb,
+    // gray-200
+    // FIXED: Wrapped multi-part shadow values in parentheses
+    "shadow": (
+            0 1px 3px 0 rgba(0, 0, 0, 0.1),
+            0 1px 2px -1px rgba(0, 0, 0, 0.1)
+        ),
+    "shadow-hover": (
+        0 4px 6px -1px rgba(0, 0, 0, 0.1),
+        0 2px 4px -2px rgba(0, 0, 0, 0.1)
+    ),
+    // Dark Theme
+    "dark-bg": #1f2937,
+    // gray-800
+    "dark-fg": #f9fafb,
+    // gray-50
+    "dark-subtitle-fg": #9ca3af,
+    // gray-400
+    "dark-icon-fg": #6b7280,
+    // gray-500
+    "dark-border-color": #374151,
+
+    // gray-700
+    // Animation
+    "transition":
+        "transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease"
+) !default;
+
+// The main tile component (the "block")
+.#{$prefix} {
+    // Generate CSS custom properties from the $config map
+    @each $key, $value in $config {
+        --tile-#{$key}: #{$value};
+    }
+
     display: flex;
-    flex-wrap: wrap;
-    margin: $tile-margin;
-    padding: $tile-padding;
+    align-items: flex-start; // Default to top alignment
+    gap: var(--tile-gap);
+    padding: var(--tile-padding);
+    background-color: var(--tile-bg);
+    border-radius: var(--tile-radius);
+    box-shadow: var(--tile-shadow);
+    color: var(--tile-fg);
+    transition: var(--tile-transition);
 
-    // Styles for the title icon and tile action
-    .title-icon,
-    .tile-action {
-        flex: 0 0 auto;
+    // Modern hover effect
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--tile-shadow-hover);
     }
 
-    // Styles for the tile content
-    .tile-content {
-        flex: 1 1 auto;
-        padding: 0 $tile-content-padding;
+    // --- Elements within the tile ---
+
+    // Generic container for an icon or avatar
+    &__media {
+        flex-shrink: 0; // Prevent the icon/avatar from shrinking
+        color: var(--tile-icon-fg);
     }
 
-    // Styles for the tile title and subtitle
-    .tile-title,
-    .tile-subtitle {
-        line-height: $tile-title-line-height;
+    // Main content area that grows
+    &__content {
+        flex-grow: 1;
+        // Fix for flexbox overflow issues
+        min-width: 0;
     }
 
-    &.tile-centered {
-        align-items: center;
-
-        // Overflow for the tile content
-        .tile-content {
-            overflow: hidden;
-        }
-
-        // Overflow for the tile title and subtitle
-        .tile-title,
-        .tile-subtitle {
-            margin-bottom: 0;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-        }
+    // A container for actions like buttons or dropdowns
+    &__action {
+        flex-shrink: 0;
     }
 
-    &.is-large {
-        // Styles for large tiles
-        .tile-content {
-            padding: 0 1rem;
-        }
-
-        .tile-title,
-        .tile-subtitle {
-            font-size: $tile-font-size;
-        }
+    &__title {
+        font-size: 1rem;
+        font-weight: 600;
+        line-height: 1.5;
+        color: var(--tile-fg);
+        margin: 0;
     }
 
-    &.is-small {
-        // Styles for small tiles
-        .tile-content {
-            padding: 0 0.25rem;
-        }
+    &__subtitle {
+        font-size: 0.875rem;
+        line-height: 1.5;
+        color: var(--tile-subtitle-fg);
+        margin: 0;
+    }
+}
 
-        .tile-title,
-        .tile-subtitle {
-            font-size: 1rem;
+// --- Modifier Variants ---
+
+// 1. Centered Alignment
+.#{$prefix}--centered {
+    align-items: center;
+
+    .#{$prefix}__title,
+    .#{$prefix}__subtitle {
+        // Prevent long text from breaking the layout
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+
+// 2. Small Sizing
+.#{$prefix}--sm {
+    --tile-padding: 0.75rem;
+    --tile-gap: 0.75rem;
+
+    .#{$prefix}__title {
+        font-size: 0.875rem;
+    }
+    .#{$prefix}__subtitle {
+        font-size: 0.75rem;
+    }
+}
+
+// 3. Large Sizing
+.#{$prefix}--lg {
+    --tile-padding: 1.75rem;
+    --tile-gap: 1.25rem;
+
+    .#{$prefix}__title {
+        font-size: 1.25rem;
+    }
+    .#{$prefix}__subtitle {
+        font-size: 1rem;
+    }
+}
+
+// 4. Dark Mode
+.#{$prefix}--dark {
+    --tile-bg: var(--tile-dark-bg);
+    --tile-fg: var(--tile-dark-fg);
+    --tile-subtitle-fg: var(--tile-dark-subtitle-fg);
+    --tile-icon-fg: var(--tile-dark-icon-fg);
+}
+
+// 5. Bordered Style (removes shadow)
+.#{$prefix}--bordered {
+    border: 1px solid var(--tile-border-color);
+    box-shadow: none;
+
+    &:hover {
+        border-color: var(
+            --tile-subtitle-fg
+        ); // A slightly darker border on hover
+    }
+
+    // Dark mode compatibility for bordered style
+    &.#{$prefix}--dark {
+        border-color: var(--tile-dark-border-color);
+        &:hover {
+            border-color: var(--tile-dark-subtitle-fg);
         }
     }
 }

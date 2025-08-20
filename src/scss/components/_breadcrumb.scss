@@ -1,116 +1,137 @@
-.breadcrumb {
-    font-size: 1rem;
+@use "sass:map";
+
+$breadcrumb-prefix: "breadcrumb" !default;
+
+$breadcrumb-sizes: (
+    "sm": 0.8rem,
+    "md": 1rem,
+    // Default
+    "lg": 1.15rem,
+) !default;
+
+// A map of separator styles. Using CSS variables allows for easy overrides.
+$breadcrumb-separators: (
+    "slash": "'/'",
+    "chevron": "'>'",
+    "arrow": "'→'",
+    "bullet": "'•'",
+) !default;
+
+.#{$breadcrumb-prefix} {
+    // CSS variables drive the entire component's appearance
+    --breadcrumb-font-size: #{map.get($breadcrumb-sizes, "md")};
+    --breadcrumb-item-spacing: 0.75em;
+    --breadcrumb-link-color: var(--blue-600, #2563eb);
+    --breadcrumb-link-hover-color: var(--gray-900, #111827);
+    --breadcrumb-current-color: var(--gray-600, #4b5563);
+    --breadcrumb-separator-color: var(--gray-400, #9ca3af);
+    --breadcrumb-separator-content: #{map.get($breadcrumb-separators, "slash")};
+    --breadcrumb-bg: transparent; // For solid variants
+
+    font-size: var(--breadcrumb-font-size);
     white-space: nowrap;
 
-    a {
-        align-items: center;
-        color: var(--blue);
-        display: flex;
-        justify-content: center;
-        padding: 0 0.75em;
-
-        &:hover {
-            color: #363636;
-        }
-    }
-
-    li {
-        align-items: center;
-        display: flex;
-
-        &:first-child a {
-            padding-left: 0;
-        }
-
-        &.active a {
-            color: #363636;
-            cursor: default;
-            pointer-events: none;
-        }
-
-        & + li {
-            &::before {
-                color: #b5b5b5;
-                content: "\0002f";
-            }
-        }
-    }
-
-    ul,
-    ol {
-        align-items: flex-start;
+    // BEM: List Element
+    &__list {
         display: flex;
         flex-wrap: wrap;
-        justify-content: flex-start;
+        align-items: center;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
 
-        &.center {
-            justify-content: center;
-        }
+    // BEM: Item Element
+    &__item {
+        display: inline-flex;
+        align-items: center;
+    }
 
-        &.right {
-            justify-content: flex-end;
+    // BEM: Link Element (also applies to the current page span)
+    &__link,
+    &__current {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5em; // For icons
+        transition: color 0.2s ease-in-out;
+    }
+
+    &__link {
+        padding: 0 var(--breadcrumb-item-spacing);
+        color: var(--breadcrumb-link-color);
+        text-decoration: none;
+
+        &:hover {
+            color: var(--breadcrumb-link-hover-color);
         }
     }
 
-    .icon {
-        &:first-child {
-            margin-right: 0.5em;
-        }
-
-        &:last-child {
-            margin-left: 0.5em;
-        }
+    // Current page text (not a link)
+    &__current {
+        padding: 0 var(--breadcrumb-item-spacing);
+        color: var(--breadcrumb-current-color);
+        font-weight: 500;
     }
 
-    &.small {
-        font-size: 0.75rem;
+    // Handle the first item's padding
+    &__item:first-child &__link,
+    &__item:first-child &__current {
+        padding-left: 0;
     }
 
-    &.medium {
-        font-size: 1.25rem;
+    // BEM: Separator Element
+    &__separator {
+        color: var(--breadcrumb-separator-color);
+        user-select: none;
+
+        &::before {
+            content: var(--breadcrumb-separator-content);
+        }
     }
+}
 
-    &.large {
-        font-size: 1.5rem;
+// Generate size variants
+@each $name, $size in $breadcrumb-sizes {
+    .#{$breadcrumb-prefix}--#{$name} {
+        --breadcrumb-font-size: #{$size};
     }
+}
 
-    &.has-separator {
-        li + li {
-            &::before {
-                content: "\02192";
-            }
-        }
+// Generate separator variants
+@each $name, $content in $breadcrumb-separators {
+    .#{$breadcrumb-prefix}--separator-#{$name} {
+        --breadcrumb-separator-content: #{$content};
+    }
+}
 
-        &.arrow {
-            li + li {
-                &::before {
-                    content: "\02192";
-                }
-            }
-        }
+// Alignment modifiers
+.#{$breadcrumb-prefix}--center {
+    .#{$breadcrumb-prefix}__list {
+        justify-content: center;
+    }
+}
 
-        &.bullet {
-            li + li {
-                &::before {
-                    content: "\02022";
-                }
-            }
-        }
+.#{$breadcrumb-prefix}--right {
+    .#{$breadcrumb-prefix}__list {
+        justify-content: flex-end;
+    }
+}
 
-        &.dot {
-            li + li {
-                &::before {
-                    content: "\000b7";
-                }
-            }
-        }
+// Style modifier for a solid background
+.#{$breadcrumb-prefix}--solid {
+    --breadcrumb-bg: var(--gray-100, #f3f4f6);
+    --breadcrumb-link-color: var(--gray-700, #374151);
+    --breadcrumb-link-hover-color: var(--blue-600, #2563eb);
+    --breadcrumb-current-color: var(--gray-900, #111827);
 
-        &.succeeds {
-            li + li {
-                &::before {
-                    content: "\0227B";
-                }
-            }
-        }
+    padding: 0.75em 1.25em;
+    border-radius: 0.5rem;
+    background-color: var(--breadcrumb-bg);
+}
+
+// Style modifier to remove separators for a minimal look
+.#{$breadcrumb-prefix}--minimal {
+    .#{$breadcrumb-prefix}__separator {
+        display: none;
     }
 }

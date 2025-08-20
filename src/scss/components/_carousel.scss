@@ -1,113 +1,362 @@
-$carousel-bg-color: #f5f5f7;
-$carousel-arrow-color: #000;
-$carousel-dot-color: #9e9e9e;
-$carousel-active-dot-color: #000;
-$mobile-max: 767px;
+@use "sass:map";
 
-.carousel {
+$prefix: "carousel" !default;
+
+$config: (
+    // --- Sizing & Spacing ---
+    "height": 500px,
+    "mobile-height": 300px,
+    "radius": 0.5rem,
+    "full-bleed-offset": 2rem,
+
+    // How much it bleeds out from the container
+    // --- Controls (Arrows) ---
+    "control-size": 3rem,
+    "control-offset": 1rem,
+    "control-radius": 50%,
+    "control-square-radius": 0.25rem,
+
+    // --- Pagination (Dots, Bars, etc.) ---
+    "pagination-offset": 1.5rem,
+    "pagination-dot-size": 0.6rem,
+    "pagination-bar-width": 2rem,
+    "pagination-bar-height": 0.25rem,
+    "progress-bar-height": 0.375rem,
+
+    // --- Thumbnails ---
+    "thumb-nav-height": 100px,
+    "thumb-size": 80px,
+    "thumb-gap": 0.5rem,
+    "thumb-active-border-width": 3px,
+
+    // --- Transitions & Animations ---
+    "transition-duration": 0.6s,
+    "transition-timing": "cubic-bezier(0.25, 0.8, 0.25, 1)",
+
+    "bg": #f3f4f6,
+    "control-bg": rgba(255, 255, 255, 0.7),
+    "control-hover-bg": rgba(255, 255, 255, 0.9),
+    "control-fg": #1f2937,
+    "pagination-color": rgba(0, 0, 0, 0.2),
+    "pagination-active-color": #1f2937,
+    "thumb-active-border-color": #007bff,
+
+    "dark-bg": #1f2937,
+    "dark-control-bg": rgba(0, 0, 0, 0.4),
+    "dark-control-hover-bg": rgba(0, 0, 0, 0.6),
+    "dark-control-fg": #ffffff,
+    "dark-pagination-color": rgba(255, 255, 255, 0.3),
+    "dark-pagination-active-color": #ffffff,
+    "dark-thumb-active-border-color": #339dff
+) !default;
+
+.#{$prefix} {
+    @each $key, $value in $config {
+        --#{$prefix}-#{$key}: #{$value};
+    }
+    --#{$prefix}-current-radius: var(--#{$prefix}-radius);
+
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 500px;
-    background-color: $carousel-bg-color;
+    display: flex; // Use flex for vertical layout option
+    flex-direction: column;
+    background-color: var(--#{$prefix}-bg);
+    border-radius: var(--#{$prefix}-current-radius);
 
-    &__arrow {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 60px;
-        height: 60px;
-        background-color: rgba(255, 255, 255, 0.5);
-        color: $carousel-arrow-color;
-        font-size: 28px;
-        cursor: pointer;
-
-        &:hover {
-            background-color: rgba(255, 255, 255, 0.8);
-        }
+    &__main {
+        position: relative;
+        height: var(--#{$prefix}-height);
+        overflow: hidden;
+        border-radius: var(--#{$prefix}-current-radius);
     }
 
-    &__arrow--left {
-        left: 0;
-        border-top-right-radius: 30px;
-        border-bottom-right-radius: 30px;
+    &__viewport {
+        width: 100%;
+        height: 100%;
     }
 
-    &__arrow--right {
-        right: 0;
-        border-top-left-radius: 30px;
-        border-bottom-left-radius: 30px;
+    &__container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d; // For 3D transitions
     }
 
-    &__image {
+    &__slide {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        object-fit: cover;
-        opacity: 0;
-        transition: opacity 0.5s ease;
-
-        &--active {
-            opacity: 1;
-        }
-    }
-
-    &__dots {
-        position: absolute;
-        bottom: 30px;
         display: flex;
         align-items: center;
         justify-content: center;
+        overflow: hidden;
+        background-size: cover;
+        background-position: center;
+        // Default transition is fade
+        opacity: 0;
+        transition: opacity var(--#{$prefix}-transition-duration)
+            var(--#{$prefix}-transition-timing);
+        &.is-active {
+            opacity: 1;
+            z-index: 1;
+        }
+    }
+
+    &__controls {
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        pointer-events: none;
+        z-index: 3;
+    }
 
-        &-dot {
-            width: 10px;
-            height: 10px;
-            margin: 0 10px;
-            border-radius: 50%;
-            background-color: $carousel-dot-color;
+    &__arrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: var(--#{$prefix}-control-size);
+        height: var(--#{$prefix}-control-size);
+        background-color: var(--#{$prefix}-control-bg);
+        color: var(--#{$prefix}-control-fg);
+        border: none;
+        border-radius: var(--#{$prefix}-control-radius);
+        cursor: pointer;
+        pointer-events: auto;
+        transition: all 0.2s ease;
+        padding: 0;
+        &:hover {
+            background-color: var(--#{$prefix}-control-hover-bg);
+            transform: scale(1.1);
+        }
+        &--left {
+            margin-left: var(--#{$prefix}-control-offset);
+        }
+        &--right {
+            margin-right: var(--#{$prefix}-control-offset);
+        }
+    }
+
+    &__pagination {
+        position: absolute;
+        bottom: var(--#{$prefix}-pagination-offset);
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 0.75rem;
+        z-index: 3;
+    }
+
+    &__dot {
+        width: var(--#{$prefix}-pagination-dot-size);
+        height: var(--#{$prefix}-pagination-dot-size);
+        padding: 0;
+        border: none;
+        border-radius: 50%;
+        background-color: var(--#{$prefix}-pagination-color);
+        cursor: pointer;
+        transition: all 0.2s ease;
+        &:hover {
+            transform: scale(1.2);
+        }
+        &.is-active {
+            background-color: var(--#{$prefix}-pagination-active-color);
+        }
+    }
+}
+
+.#{$prefix} {
+    &.has-transition-slide {
+        .#{$prefix}__main,
+        .#{$prefix}__viewport {
+            overflow: hidden;
+        }
+        .#{$prefix}__container {
+            display: flex;
+        }
+        .#{$prefix}__slide {
+            position: relative;
+            opacity: 1;
+            flex-shrink: 0;
+            transition: transform var(--#{$prefix}-transition-duration)
+                var(--#{$prefix}-transition-timing);
+        }
+    }
+    &.has-transition-cube {
+        .#{$prefix}__viewport {
+            perspective: 1500px;
+        }
+        .#{$prefix}__slide {
+            backface-visibility: hidden;
+            transition: transform var(--#{$prefix}-transition-duration)
+                var(--#{$prefix}-transition-timing);
+        }
+    }
+    // (JS required to apply inline transforms for slide, cube, coverflow, flip)
+}
+
+.#{$prefix} {
+    &.is-full-bleed {
+        --#{$prefix}-current-radius: 0;
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+    }
+    &.is-vertical {
+        .#{$prefix}__controls {
+            flex-direction: column;
+        }
+        .#{$prefix}__arrow--left {
+            margin-left: 0;
+            margin-top: var(--#{$prefix}-control-offset);
+            transform: rotate(90deg);
+        }
+        .#{$prefix}__arrow--right {
+            margin-right: 0;
+            margin-bottom: var(--#{$prefix}-control-offset);
+            transform: rotate(90deg);
+        }
+        .#{$prefix}__pagination {
+            bottom: 50%;
+            left: auto;
+            right: var(--#{$prefix}-pagination-offset);
+            transform: translateY(50%);
+            flex-direction: column;
+        }
+    }
+    &.is-peek {
+        .#{$prefix}__main {
+            overflow: visible;
+        }
+        .#{$prefix}__slide {
+            /* JS needs to set width to < 100% */
+        }
+    }
+    &.has-content-overlay .#{$prefix}__slide {
+        &::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to top,
+                rgba(0, 0, 0, 0.7) 0%,
+                transparent 50%
+            );
+        }
+        .#{$prefix}__content {
+            position: relative;
+            z-index: 2;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: auto; // Push content to the bottom
+        }
+    }
+    &.has-thumbnails {
+        .#{$prefix}__thumb-nav {
+            height: var(--#{$prefix}-thumb-nav-height);
+            padding: var(--#{$prefix}-thumb-gap);
+            overflow-x: auto;
+            display: flex;
+            gap: var(--#{$prefix}-thumb-gap);
+        }
+        .#{$prefix}__thumb {
+            height: var(--#{$prefix}-thumb-size);
+            width: var(--#{$prefix}-thumb-size);
+            flex-shrink: 0;
+            background-size: cover;
+            background-position: center;
+            border-radius: 0.25rem;
             cursor: pointer;
-            transition: background-color 0.5s ease;
-
-            &:hover {
-                background-color: $carousel-active-dot-color;
+            opacity: 0.6;
+            border: var(--#{$prefix}-thumb-active-border-width) solid
+                transparent;
+            transition: all 0.2s ease;
+            &.is-active {
+                opacity: 1;
+                border-color: var(--#{$prefix}-thumb-active-border-color);
             }
         }
+    }
+}
 
-        &-dot--active {
-            background-color: $carousel-active-dot-color;
+.#{$prefix} {
+    &.has-controls-square {
+        --#{$prefix}-control-radius: var(--#{$prefix}-control-square-radius);
+    }
+    &.has-controls-ghost {
+        --#{$prefix}-control-bg: transparent;
+        --#{$prefix}-control-hover-bg: rgba(0, 0, 0, 0.1);
+    }
+    &.has-controls-outside {
+        --#{$prefix}-control-offset: calc(
+            var(--#{$prefix}-control-size) * -0.5 - 1rem
+        );
+    }
+    &.has-controls-inset {
+        --#{$prefix}-control-offset: 2rem;
+    }
+
+    &.has-pagination-bars .#{$prefix}__dot {
+        width: var(--#{$prefix}-pagination-bar-width);
+        height: var(--#{$prefix}-pagination-bar-height);
+        border-radius: 99px;
+    }
+    &.has-pagination-numbers {
+        .#{$prefix}__pagination {
+            /* Requires a __fraction BEM element */
+        }
+    }
+    &.has-progress-bar {
+        .#{$prefix}__pagination {
+            display: none;
+        } // Hide dots
+        .#{$prefix}__progress {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: var(--#{$prefix}-progress-bar-height);
+            background-color: var(--#{$prefix}-pagination-color);
+            z-index: 3;
+        }
+        .#{$prefix}__progress-bar {
+            width: 0; // JS drives this width
+            height: 100%;
+            background-color: var(--#{$prefix}-pagination-active-color);
+            transition: width 0.1s linear;
         }
     }
 }
 
-@media only screen and (max-width: $mobile-max) {
-    .carousel {
-        height: 300px;
-    }
+.dark .#{$prefix},
+.#{$prefix}.is-dark {
+    --#{$prefix}-bg: var(--#{$prefix}-dark-bg);
+    --#{$prefix}-control-bg: var(--#{$prefix}-dark-control-bg);
+    --#{$prefix}-control-hover-bg: var(--#{$prefix}-dark-control-hover-bg);
+    --#{$prefix}-control-fg: var(--#{$prefix}-dark-control-fg);
+    --#{$prefix}-pagination-color: var(--#{$prefix}-dark-pagination-color);
+    --#{$prefix}-pagination-active-color: var(
+        --#{$prefix}-dark-pagination-active-color
+    );
+    --#{$prefix}-thumb-active-border-color: var(
+        --#{$prefix}-dark-thumb-active-border-color
+    );
 }
 
-@media only screen and (max-width: $mobile-max) {
-    .carousel__arrow {
-        width: 40px;
-        height: 40px;
-        font-size: 20px;
+@media (max-width: 768px) {
+    .#{$prefix}__main {
+        --#{$prefix}-height: var(--#{$prefix}-mobile-height);
     }
-}
-
-@media only screen and (max-width: $mobile-max) {
-    .carousel__dots {
-        bottom: 20px;
-
-        &-dot {
-            width: 8px;
-            height: 8px;
-            margin: 0 5px;
-        }
-    }
+    .#{$prefix}.has-controls-outside {
+        --#{$prefix}-control-offset: 0.5rem;
+    } // Bring controls back inside
 }

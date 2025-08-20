@@ -1,84 +1,183 @@
-$badge-font-size: 0.75em;
-$badge-padding: 0.45em 0.75em;
-$badge-font-weight: 500;
-$badge-line-height: 1;
-$badge-text-align: center;
-$badge-vertical-align: baseline;
-$badge-border-radius: 0.25rem;
+@use "sass:map";
 
-.badge {
-    display: inline-block;
-    padding: $badge-padding;
-    font-size: $badge-font-size;
-    font-weight: $badge-font-weight;
-    line-height: $badge-line-height;
-    color: #fff;
-    text-align: $badge-text-align;
+$badge-prefix: "badge" !default;
+
+// Expanded color map with 'subtle' and 'solid' variants for composability.
+$badge-variants: (
+    "secondary": (
+        "subtle-bg": #f1f5f9,
+        // slate-100
+        "subtle-fg": #475569,
+        // slate-600
+        "solid-bg": #64748b,
+        // slate-500
+        "solid-fg": #ffffff,
+        // white
+    ),
+    "primary": (
+        "subtle-bg": #e0e7ff,
+        // indigo-100
+        "subtle-fg": #4338ca,
+        // indigo-700
+        "solid-bg": #4f46e5,
+        // indigo-600
+        "solid-fg": #ffffff,
+    ),
+    "destructive": (
+        "subtle-bg": #fee2e2,
+        // red-100
+        "subtle-fg": #b91c1c,
+        // red-700
+        "solid-bg": #dc2626,
+        // red-600
+        "solid-fg": #ffffff,
+    ),
+    "success": (
+        "subtle-bg": #dcfce7,
+        // green-100
+        "subtle-fg": #166534,
+        // green-700
+        "solid-bg": #16a34a,
+        // green-600
+        "solid-fg": #ffffff,
+    ),
+    "warning": (
+        "subtle-bg": #fef3c7,
+        // amber-100
+        "subtle-fg": #b45309,
+        // amber-700
+        "solid-bg": #f59e0b,
+        // amber-500
+        "solid-fg": #ffffff,
+    ),
+) !default;
+
+$badge-sizes: (
+    "sm": (
+        "font-size": 0.7rem,
+        "padding": 0.25em 0.5em,
+    ),
+    "md": (
+        "font-size": 0.75rem,
+        "padding": 0.35em 0.65em,
+    ),
+    "lg": (
+        "font-size": 0.875rem,
+        "padding": 0.45em 0.75em,
+    ),
+) !default;
+
+.#{$badge-prefix} {
+    // Default to the 'secondary' subtle style using CSS variables
+    --badge-bg: #{map.get($badge-variants, "secondary", "subtle-bg")};
+    --badge-fg: #{map.get($badge-variants, "secondary", "subtle-fg")};
+    --badge-border-radius: 0.25rem;
+    --badge-font-size: #{map.get($badge-sizes, "md", "font-size")};
+    --badge-padding: #{map.get($badge-sizes, "md", "padding")};
+    --badge-border-color: transparent;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35em; // For spacing between icons and text
+    padding: var(--badge-padding);
+    font-size: var(--badge-font-size);
+    font-weight: 500;
+    line-height: 1;
     white-space: nowrap;
-    vertical-align: $badge-vertical-align;
-    border-radius: $badge-border-radius;
+    vertical-align: middle;
+    border: 1px solid var(--badge-border-color);
+    border-radius: var(--badge-border-radius);
+    background-color: var(--badge-bg);
+    color: var(--badge-fg);
+    text-decoration: none;
 
     &:empty {
         display: none;
     }
-    &.rounded {
-        border-radius: 2rem;
+}
+
+// Generate subtle color variants (the default style)
+@each $name, $colors in $badge-variants {
+    .#{$badge-prefix}--#{$name} {
+        --badge-bg: #{map.get($colors, "subtle-bg")};
+        --badge-fg: #{map.get($colors, "subtle-fg")};
     }
 }
 
-$dark-badge-bg-color: #f3f4f6;
-$dark-badge-color: #333c49;
-$red-badge-bg-color: #fee2e2;
-$red-badge-color: #b24d4d;
-$lightred-badge-bg-color: #fce7f3;
-$lightred-badge-color: #b0416e;
-$yellow-badge-bg-color: #fef3c7;
-$yellow-badge-color: #b37747;
-$green-badge-bg-color: #d1fae5;
-$green-badge-color: #38856c;
-$blue-badge-bg-color: #dbeafe;
-$blue-badge-color: #2547b2;
-$purple-badge-bg-color: #ede9fe;
-$purple-badge-color: #6a36be;
-
-.badge.dark {
-    background-color: $dark-badge-bg-color;
-    color: $dark-badge-color;
-}
-
-.badge.red {
-    background-color: $red-badge-bg-color;
-    color: $red-badge-color;
-}
-
-.badge.lightred {
-    background-color: $lightred-badge-bg-color;
-    color: $lightred-badge-color;
-}
-
-.badge.yellow {
-    background-color: $yellow-badge-bg-color;
-    color: $yellow-badge-color;
-}
-
-.badge.green {
-    background-color: $green-badge-bg-color;
-    color: $green-badge-color;
-}
-
-.badge.blue {
-    background-color: $blue-badge-bg-color;
-    color: $blue-badge-color;
-}
-
-.badge.purple {
-    background-color: $purple-badge-bg-color;
-    color: $purple-badge-color;
-}
-
-.btn {
-    & .badge {
-        position: relative;
-        top: -1px;
+// Generate size variants
+@each $name, $props in $badge-sizes {
+    .#{$badge-prefix}--#{$name} {
+        --badge-font-size: #{map.get($props, "font-size")};
+        --badge-padding: #{map.get($props, "padding")};
     }
+}
+
+// Style modifier: Outline
+.#{$badge-prefix}--outline {
+    --badge-bg: transparent;
+    --badge-border-color: var(--badge-fg);
+}
+
+// Style modifier: Solid
+.#{$badge-prefix}--solid {
+    // Set the default solid colors (secondary)
+    --badge-bg: #{map.get($badge-variants, "secondary", "solid-bg")};
+    --badge-fg: #{map.get($badge-variants, "secondary", "solid-fg")};
+
+    // Override colors when combined with a semantic variant
+    @each $name, $colors in $badge-variants {
+        &.#{$badge-prefix}--#{$name} {
+            --badge-bg: #{map.get($colors, "solid-bg")};
+            --badge-fg: #{map.get($colors, "solid-fg")};
+        }
+    }
+}
+
+// Shape modifiers
+.#{$badge-prefix}--pill {
+    --badge-border-radius: 9999px;
+}
+.#{$badge-prefix}--square {
+    --badge-border-radius: 0;
+}
+.#{$badge-prefix}--dot {
+    --badge-padding: 0;
+    width: 0.65rem;
+    height: 0.65rem;
+    font-size: 0.65rem; // Use font-size to scale the dot if needed
+    border-radius: 50%;
+}
+
+// Animation modifier
+.#{$badge-prefix}--pulse {
+    animation: pulse 1.5s infinite;
+}
+@keyframes pulse {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.6;
+    }
+}
+
+// Icon-only badges
+.#{$badge-prefix}--icon-only {
+    gap: 0;
+    padding: 0.5em; // Equal padding for a square/circle shape
+}
+
+// Placement helper for positioning a badge on a container
+.badge-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.#{$badge-prefix}--floating {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+    z-index: 1;
 }

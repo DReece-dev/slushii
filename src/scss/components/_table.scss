@@ -1,292 +1,155 @@
-.table-responsive {
+@use "sass:map";
+
+$prefix: "table" !default;
+
+// A map to hold all default CSS variables for easy setup and theming.
+$config: (
+    "bg": transparent,
+    "fg": #1f2937,
+    "border-color": #e5e7eb,
+    "header-bg": #f9fafb,
+    "header-fg": #374151,
+    "striped-bg": #f9fafb,
+    "hover-bg": #f3f4f6,
+    "padding-y": 1rem,
+    "padding-x": 1.5rem,
+) !default;
+
+// The single source of truth for all semantic row states.
+// Adding a new map here will auto-generate a new variant.
+$states: (
+    "primary": (
+        "bg": #cfe7fd,
+        "fg": #0a3d6e,
+        "border": #45a3fb,
+    ),
+    "success": (
+        "bg": #d1fae5,
+        "fg": #065f46,
+        "border": #6ee7b7,
+    ),
+    "danger": (
+        "bg": #fee2e2,
+        "fg": #991b1b,
+        "border": #fca5a5,
+    ),
+    "warning": (
+        "bg": #fef3c7,
+        "fg": #92400e,
+        "border": #fcd34d,
+    ),
+) !default;
+
+.#{$prefix} {
+    @each $key, $value in $config {
+        --table-#{$key}: #{$value};
+    }
+
+    width: 100%;
+    background-color: var(--table-bg);
+    color: var(--table-fg);
+    border-collapse: collapse;
+    text-align: left;
+
+    // Set default row colors, which can be overridden by state classes
+    --table-row-bg: inherit;
+    --table-row-fg: inherit;
+    --table-row-border: var(--table-border-color);
+
+    th,
+    td {
+        padding: var(--table-padding-y) var(--table-padding-x);
+        vertical-align: top;
+    }
+
+    thead th {
+        background-color: var(--table-header-bg);
+        color: var(--table-header-fg);
+        font-weight: 600;
+    }
+
+    caption {
+        padding: var(--table-padding-y) 0;
+        caption-side: bottom;
+        text-align: left;
+        color: #6b7280;
+    }
+}
+
+.#{$prefix}--striped tbody tr:nth-child(odd) {
+    --table-row-bg: var(--table-striped-bg);
+}
+.#{$prefix}--hover tbody tr:hover {
+    --table-row-bg: var(--table-hover-bg);
+}
+
+// --- Border Variants ---
+.#{$prefix}--horizontal-borders {
+    thead {
+        border-bottom: 2px solid var(--table-row-border);
+    }
+    tbody tr {
+        border-bottom: 1px solid var(--table-row-border);
+    }
+    tfoot {
+        border-top: 2px solid var(--table-row-border);
+    }
+}
+.#{$prefix}--vertical-borders {
+    th,
+    td {
+        &:not(:last-child) {
+            border-right: 1px solid var(--table-row-border);
+        }
+    }
+}
+.#{$prefix}--bordered {
+    @extend .#{$prefix}--horizontal-borders;
+    @extend .#{$prefix}--vertical-borders;
+    border: 1px solid var(--table-row-border);
+}
+
+// --- Sizing & Alignment Variants ---
+.#{$prefix}--sm {
+    --table-padding-y: 0.5rem;
+    --table-padding-x: 0.75rem;
+}
+.#{$prefix}--lg {
+    --table-padding-y: 1.25rem;
+    --table-padding-x: 2rem;
+}
+.#{$prefix}--v-align-middle th,
+.#{$prefix}--v-align-middle td {
+    vertical-align: middle;
+}
+
+@each $name, $props in $states {
+    .#{$prefix} tr.is-#{$name} {
+        --table-row-bg: #{map.get($props, "bg")};
+        --table-row-fg: #{map.get($props, "fg")};
+        // Only apply border color if the table has borders
+        .#{$prefix}--bordered &,
+        .#{$prefix}--horizontal-borders & {
+            --table-row-border: #{map.get($props, "border")};
+        }
+    }
+}
+
+// Apply the row background color to the actual cells
+.#{$prefix} tbody td,
+.#{$prefix} tbody th {
+    background-color: var(--table-row-bg);
+    color: var(--table-row-fg);
+}
+
+.#{$prefix}-container {
     overflow-x: auto;
-}
+    // Recommended for better scrolling on touch devices
+    -webkit-overflow-scrolling: touch;
 
-.table-responsive .table th,
-.table-responsive .table td {
-    white-space: nowrap;
-}
-
-.table-responsive {
-    overflow-x: auto;
-
-    .table {
-        width: 100%;
-
-        th,
-        td {
-            white-space: nowrap;
-        }
-
-        thead tr {
-            border-bottom: 2px solid #dadfe1;
-        }
-
-        tfoot tr {
-            border-top: 2px solid #dadfe1;
-        }
-
-        tbody tr:not(:last-child) {
-            border-bottom: 1px solid #dadfe1;
-        }
-
-        th {
-            font-weight: 700;
-            text-align: left;
-            padding: 1.2rem 1.5rem;
-        }
-
-        td {
-            text-align: left;
-            padding: 1.2rem 1.5rem;
-        }
+    // Ensure table inside doesn't collapse on small screens
+    .#{$prefix} th,
+    .#{$prefix} td {
+        white-space: nowrap;
     }
-}
-
-.table-no-outer-padding {
-    th:first-child,
-    td:first-child {
-        padding-left: 0;
-    }
-
-    th:last-child,
-    td:last-child {
-        padding-right: 0;
-    }
-}
-
-.table-bordered {
-    border: 1px solid #dadfe1;
-
-    th:not(:last-child) {
-        border-right: 1px solid #dadfe1;
-    }
-
-    td:not(:last-child) {
-        border-right: 1px solid #dadfe1;
-    }
-}
-
-.table-outer-bordered {
-    border: 1px solid #dadfe1;
-}
-
-.table-inner-bordered {
-    th:not(:last-child) {
-        border-right: 1px solid #dadfe1;
-    }
-
-    td:not(:last-child) {
-        border-right: 1px solid #dadfe1;
-    }
-}
-
-.table-hover {
-    tbody tr:hover {
-        th {
-            background-color: rgba(0, 0, 0, 0.05);
-        }
-
-        td {
-            background-color: rgba(0, 0, 0, 0.05);
-        }
-    }
-}
-
-.table-striped {
-    tbody tr:nth-child(odd) {
-        background-color: #ecf0f1;
-    }
-}
-
-.table tbody tr.table-primary {
-    color: rgba(0, 0, 0, 0.85);
-    background-color: #cfe7fd;
-    border-color: #45a3fb;
-}
-
-.table-striped tbody tr.table-primary {
-    color: rgba(0, 0, 0, 0.85);
-    background-color: #cfe7fd;
-    border-color: #45a3fb;
-}
-
-.table-bordered tbody tr.table-primary {
-    color: rgba(0, 0, 0, 0.85);
-    background-color: #cfe7fd;
-    border-color: #45a3fb;
-}
-
-.table-inner-bordered tbody tr.table-primary {
-    color: rgba(0, 0, 0, 0.85);
-    background-color: #cfe7fd;
-    border-color: #45a3fb;
-}
-
-.table tbody tr.table-primary th {
-    border-color: #bababc;
-}
-
-.table tbody tr.table-primary td {
-    border-color: #bababc;
-}
-
-.table-bordered tbody tr.table-primary th {
-    border-color: #bababc;
-}
-
-.table-bordered tbody tr.table-primary td {
-    border-color: #bababc;
-}
-
-.table-inner-bordered tbody tr.table-primary th {
-    border-color: #bababc;
-}
-
-.table-inner-bordered tbody tr.table-primary td {
-    border-color: #bababc;
-}
-
-.table tbody tr.table-success {
-    color: rgba(0, 0, 0, 0.85);
-    background-color: #d5f9e5;
-    border-color: #0be881;
-}
-
-.table-striped tbody tr.table-success {
-    color: rgba(0, 0, 0, 0.85);
-    background-color: #d5f9e5;
-    border-color: #0be881;
-}
-
-.table-bordered tbody tr.table-success {
-    color: rgba(0, 0, 0, 0.85);
-    background-color: #d5f9e5;
-    border-color: #0be881;
-}
-
-.table-inner-bordered tbody tr.table-success {
-    color: rgba(0, 0, 0, 0.85);
-    background-color: #d5f9e5;
-    border-color: #0be881;
-}
-
-.table tbody tr.table-success th {
-    border-color: #bababc;
-}
-
-.table tbody tr.table-success td {
-    border-color: #bababc;
-}
-
-.table-bordered tbody tr.table-success th {
-    border-color: #bababc;
-}
-
-.table-bordered tbody tr.table-success td {
-    border-color: #bababc;
-}
-
-.table-inner-bordered tbody tr.table-success th {
-    border-color: #bababc;
-}
-
-.table-inner-bordered tbody tr.table-success td {
-    border-color: #bababc;
-}
-
-.table tbody tr.table-secondary {
-    color: rgba(0, 0, 0, 0.85);
-    background-color: #fff6cc;
-    border-color: #ffcf00;
-}
-
-.table-striped tbody tr.table-secondary {
-    color: rgba(0, 0, 0, 0.85);
-    background-color: #fff6cc;
-    border-color: #ffcf00;
-}
-
-.table-bordered tbody tr.table-secondary {
-    color: rgba(0, 0, 0, 0.85);
-    background-color: #fff6cc;
-    border-color: #ffcf00;
-}
-
-.table-inner-bordered tbody tr.table-secondary {
-    color: rgba(0, 0, 0, 0.85);
-    background-color: #fff6cc;
-    border-color: #ffcf00;
-}
-
-.table tbody tr.table-secondary th {
-    border-color: #bababc;
-}
-
-.table tbody tr.table-secondary td {
-    border-color: #bababc;
-}
-
-.table-bordered tbody tr.table-secondary th {
-    border-color: #bababc;
-}
-
-.table-bordered tbody tr.table-secondary td {
-    border-color: #bababc;
-}
-
-.table-inner-bordered tbody tr.table-secondary th {
-    border-color: #bababc;
-}
-
-.table-inner-bordered tbody tr.table-secondary td {
-    border-color: #bababc;
-}
-
-.table tbody tr.table-danger {
-    color: rgba(0, 0, 0, 0.85);
-    background-color: #f8d0d9;
-    border-color: #ed586c;
-}
-
-.table-striped tbody tr.table-danger {
-    color: rgba(0, 0, 0, 0.85);
-    background-color: #f8d0d9;
-    border-color: #ed586c;
-}
-
-.table-bordered tbody tr.table-danger {
-    color: rgba(0, 0, 0, 0.85);
-    background-color: #f8d0d9;
-    border-color: #ed586c;
-}
-
-.table-inner-bordered tbody tr.table-danger {
-    color: rgba(0, 0, 0, 0.85);
-    background-color: #f8d0d9;
-    border-color: #ed586c;
-}
-
-.table tbody tr.table-danger th {
-    border-color: #bababc;
-}
-
-.table tbody tr.table-danger td {
-    border-color: #bababc;
-}
-
-.table-bordered tbody tr.table-danger th {
-    border-color: #bababc;
-}
-
-.table-bordered tbody tr.table-danger td {
-    border-color: #bababc;
-}
-
-.table-inner-bordered tbody tr.table-danger th {
-    border-color: #bababc;
-}
-
-.table-inner-bordered tbody tr.table-danger td {
-    border-color: #bababc;
 }

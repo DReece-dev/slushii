@@ -1,212 +1,184 @@
-$gray-900: var(--gray-900);
+@use "sass:map";
 
-.page-wrapper {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
+$prefix: "sidebar" !default;
+$layout-prefix: "page-layout" !default;
+
+// A map to hold all default CSS variables for easy setup and theming.
+$config: (
+    // Layout Dimensions
+    "width": 280px,
+    "navbar-height": 60px,
+    // Theming (Dark is default)
+    "bg": #111827,
+    // gray-900
+    "fg": #d1d5db,
+    // gray-300
+    "border": #374151,
+    // gray-700
+    "link-hover-bg": #374151,
+    "link-hover-fg": #ffffff,
+    "link-active-bg": #4f46e5,
+    // indigo-600
+    "link-active-fg": #ffffff,
+    "title-fg": #9ca3af,
+    // gray-400
+    // Light Theme
+    "light-bg": #ffffff,
+    "light-fg": #374151,
+    "light-border": #e5e7eb,
+    "light-link-hover-bg": #f3f4f6,
+    "light-link-hover-fg": #111827,
+    // Animation
+    "transition": "transform 0.3s ease-in-out, left 0.3s ease-in-out"
+) !default;
+
+// Breakpoint at which the sidebar switches from overlay to push mode
+$desktop-breakpoint: 992px;
+
+.#{$layout-prefix} {
+    // Generate CSS variables from the config map
+    @each $key, $value in $config {
+        --sidebar-#{$key}: #{$value};
+    }
+
+    --layout-navbar-height: var(--sidebar-navbar-height); // Allow override
+
+    // DESKTOP-FIRST: PUSH LAYOUT (using CSS Grid)
+    display: grid;
+    // The magic: one column for the sidebar, one for everything else
+    grid-template-columns: var(--sidebar-width) 1fr;
+    grid-template-rows: var(--layout-navbar-height) 1fr;
+    grid-template-areas:
+        "sidebar navbar"
+        "sidebar main";
+    height: 100vh;
+    transition: grid-template-columns 0.3s ease-in-out;
+
+    // State: Collapsed sidebar on desktop
+    &.is-collapsed {
+        grid-template-columns: 0 1fr;
+        .#{$prefix} {
+            // Hide the sidebar itself
+            transform: translateX(-100%);
+        }
+    }
+
+    // MOBILE-FIRST: OVERLAY LAYOUT
+    @media (max-width: ($desktop-breakpoint - 1)) {
+        // Reset to a standard single-column layout
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "navbar"
+            "main";
+
+        // State: Open sidebar on mobile
+        &.is-open {
+            .#{$prefix} {
+                transform: translateX(0);
+            }
+            .#{$prefix}-overlay {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
 }
 
-.sidebar {
-    margin-top: 52px;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    width: 26rem;
-    max-width: 100%;
+.#{$prefix} {
+    grid-area: sidebar;
+    display: flex;
+    flex-direction: column;
     height: 100%;
-    overflow-x: hidden;
+    background-color: var(--sidebar-bg);
+    border-right: 1px solid var(--sidebar-border);
+    color: var(--sidebar-fg);
     overflow-y: auto;
-    z-index: 20;
-    background-color: $gray-900;
-    border-right: 1px solid rgba(0, 0, 0, 0.2);
-    box-shadow: none;
+    transition: var(--sidebar-transition);
 
-    &-title {
-        padding: 0;
-        margin-top: 30px;
-        margin-left: 10px;
-        font-size: 16px;
-        font-weight: 500;
-        color: rgba(255, 255, 255, 0.8);
+    &__header,
+    &__footer {
+        flex-shrink: 0;
+        padding: 1rem 1.5rem;
     }
 
-    &-link {
+    &__header {
+        border-bottom: 1px solid var(--sidebar-border);
+    }
+    &__footer {
+        border-top: 1px solid var(--sidebar-border);
+    }
+
+    &__nav {
+        flex-grow: 1;
+        padding: 1rem 0;
+    }
+
+    &__title {
+        padding: 0 1.5rem 0.5rem;
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--sidebar-title-fg);
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 0.75rem 1.5rem;
+        color: var(--sidebar-fg);
+        text-decoration: none;
+        border-left: 3px solid transparent; // Active indicator
+        transition:
+            color 0.2s ease,
+            background-color 0.2s ease,
+            border-color 0.2s ease;
+
+        &:hover {
+            background-color: var(--sidebar-link-hover-bg);
+            color: var(--sidebar-link-hover-fg);
+        }
+
+        // Active state
+        &.is-active {
+            background-color: var(--sidebar-link-active-bg);
+            color: var(--sidebar-link-active-fg);
+            border-left-color: var(--sidebar-link-active-fg);
+        }
+    }
+
+    // --- Mobile (Overlay) Specific Styles ---
+    @media (max-width: ($desktop-breakpoint - 1)) {
+        position: fixed;
+        z-index: 1000;
+        width: var(--sidebar-width);
+        transform: translateX(-100%);
+    }
+}
+
+// The overlay that appears on mobile when the sidebar is open
+.#{$prefix}-overlay {
+    display: none; // Hidden on desktop
+    @media (max-width: ($desktop-breakpoint - 1)) {
         display: block;
-        padding: 0.5rem 2.5rem;
-        margin: 0;
-        min-height: 3rem;
-        height: auto;
-        color: rgba(0, 0, 0, 0.7);
-        background-color: transparent;
-        border: 0 solid transparent;
-        border-top-color: transparent;
-        border-right-color: transparent;
-        border-bottom-color: transparent;
-        border-left-color: transparent;
-        border-radius: 0;
+        position: fixed;
+        inset: 0;
+        z-index: 999;
+        background-color: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        visibility: hidden;
+        transition:
+            opacity 0.3s ease,
+            visibility 0s 0.3s linear;
     }
 }
 
-.page-wrapper > .sidebar {
-    display: none;
-}
-
-.page-wrapper.with-sidebar > .sidebar {
-    display: block;
-}
-
-.page-wrapper.with-navbar > .sticky-alerts {
-    top: 5rem;
-}
-
-.page-wrapper.with-navbar > .content-wrapper {
-    top: 5rem;
-    height: calc(100% - 5rem);
-}
-
-.page-wrapper.with-navbar > .sidebar {
-    top: 5rem;
-    height: calc(100% - 5rem);
-}
-
-.page-wrapper.with-sidebar > .content-wrapper {
-    left: 26rem;
-    width: calc(100% - 26rem);
-}
-
-@media (max-width: 768px) {
-    .page-wrapper.with-sidebar > .content-wrapper {
-        width: 100%;
-    }
-}
-
-.page-wrapper.with-sidebar[data-sidebar-hidden] > .sidebar {
-    left: -100%;
-}
-
-.page-wrapper.with-sidebar[data-sidebar-hidden] > .content-wrapper {
-    width: 100%;
-    left: 0;
-}
-
-.page-wrapper.with-sidebar[data-sidebar-type~="full-height"] > .sidebar {
-    height: 100%;
-    top: 0;
-}
-
-.page-wrapper.with-sidebar[data-sidebar-type~="full-height"]
-    > .navbar:not(.navbar-fixed-bottom) {
-    left: 26rem;
-    width: calc(100% - 26rem);
-}
-
-.page-wrapper.with-sidebar[data-sidebar-type~="full-height"]
-    > .navbar.navbar-fixed-bottom {
-    left: 26rem;
-    width: calc(100% - 26rem);
-}
-
-@media (max-width: 768px) {
-    .page-wrapper.with-sidebar[data-sidebar-type~="full-height"]
-        > .navbar:not(.navbar-fixed-bottom),
-    .page-wrapper.with-sidebar[data-sidebar-type~="full-height"]
-        > .navbar.navbar-fixed-bottom {
-        width: 100%;
-    }
-}
-
-.page-wrapper.with-sidebar[data-sidebar-type~="full-height"][data-sidebar-hidden]
-    > .navbar:not(.navbar-fixed-bottom),
-.page-wrapper.with-sidebar[data-sidebar-type~="full-height"][data-sidebar-hidden]
-    > .navbar.navbar-fixed-bottom {
-    left: 0;
-    width: 100%;
-}
-
-.page-wrapper.with-sidebar[data-sidebar-type~="overlayed-all"]
-    > .navbar:not(.navbar-fixed-bottom),
-.page-wrapper.with-sidebar[data-sidebar-type~="overlayed-all"]
-    > .content-wrapper,
-.page-wrapper.with-sidebar[data-sidebar-type~="overlayed-all"]
-    > .navbar.navbar-fixed-bottom {
-    left: 0;
-    width: 100%;
-}
-
-.page-wrapper.with-sidebar[data-sidebar-type~="overlayed-all"] > .sidebar {
-    height: 100%;
-    top: 0;
-    z-index: 50;
-}
-
-.page-wrapper.with-sidebar[data-sidebar-type~="overlayed-all"]
-    > .sidebar-overlay {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    z-index: 45;
-    background-color: rgba(0, 0, 0, 0.75);
-}
-
-.page-wrapper.with-sidebar[data-sidebar-type~="overlayed-all"][data-sidebar-hidden]
-    > .sidebar-overlay {
-    display: none;
-}
-
-@media (max-width: 768px) {
-    .page-wrapper.with-sidebar[data-sidebar-type~="overlayed-sm-and-down"]
-        > .navbar:not(.navbar-fixed-bottom),
-    .page-wrapper.with-sidebar[data-sidebar-type~="overlayed-sm-and-down"]
-        > .content-wrapper,
-    .page-wrapper.with-sidebar[data-sidebar-type~="overlayed-sm-and-down"]
-        > .navbar.navbar-fixed-bottom {
-        left: 0;
-        width: 100%;
-    }
-
-    .page-wrapper.with-sidebar[data-sidebar-type~="overlayed-sm-and-down"]
-        > .sidebar {
-        height: 100%;
-        top: 0;
-        z-index: 50;
-    }
-
-    .page-wrapper.with-sidebar[data-sidebar-type~="overlayed-sm-and-down"]
-        > .sidebar-overlay {
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        z-index: 45;
-        background-color: rgba(0, 0, 0, 0.75);
-    }
-
-    .page-wrapper.with-sidebar[data-sidebar-type~="overlayed-sm-and-down"][data-sidebar-hidden]
-        > .sidebar-overlay {
-        display: none;
-    }
-}
-
-.page-wrapper.with-transitions.with-sidebar > .sidebar {
-    -webkit-transition: left 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-    transition: left 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-.page-wrapper.with-transitions.with-sidebar .content-wrapper,
-.page-wrapper.with-transitions.with-sidebar[data-sidebar-type~="full-height"]
-    > .navbar:not(.navbar-fixed-bottom),
-.page-wrapper.with-transitions.with-sidebar[data-sidebar-type~="full-height"]
-    > .navbar.navbar-fixed-bottom {
-    -webkit-transition:
-        width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
-        left 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-    transition:
-        width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
-        left 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-.content-wrapper,
-.sidebar {
-    -webkit-overflow-scrolling: touch;
+.#{$prefix}--light {
+    --sidebar-bg: var(--sidebar-light-bg);
+    --sidebar-fg: var(--sidebar-light-fg);
+    --sidebar-border: var(--sidebar-light-border);
+    --sidebar-link-hover-bg: var(--sidebar-light-link-hover-bg);
+    --sidebar-link-hover-fg: var(--sidebar-light-link-hover-fg);
+    --sidebar-title-fg: var(--sidebar-fg);
 }

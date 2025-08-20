@@ -1,122 +1,300 @@
-$footer-fixed-bottom: 0;
-$footer-fixed-position: fixed;
-$footer-dark-background-color: var(--dark-800);
-$footer-dark-color: var(--white);
-$footer-grey-background-color: var(--grey-500);
-$footer-grey-color: var(--black);
+@use "sass:map";
 
-.footer {
-    background-color: #fafafa;
+$prefix: "footer" !default;
+
+$config: (
+    // --- Sizing & Spacing ---
+    "padding-y": 3rem,
+    "padding-x": 1.5rem,
+    "compact-padding-y": 1.5rem,
+    "spacious-padding-y": 5rem,
+    "container-max-width": 1200px,
+    "column-gap": 2rem,
+
+    // --- Typography ---
+    "base-font-size": 1rem,
+    "title-font-size": 1.25rem,
+    "title-font-weight": 600,
+
+    // --- Borders, Dividers & Shadows ---
+    "border-width": 1px,
+    "shadow":
+        "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)",
+
+    "bg": #fafafa,
+    "fg": #666,
+    "title-fg": #363636,
+    "link-fg": #555,
+    "link-hover-fg": #111,
+    "border-color": #eaeaea,
+    "divider-color": #e0e0e0,
+    "inverted-bg": #111,
+    "inverted-fg": #eee,
+
+    "dark-bg": #111,
+    "dark-fg": #a0a0a0,
+    "dark-title-fg": #fff,
+    "dark-link-fg": #ccc,
+    "dark-link-hover-fg": #fff,
+    "dark-border-color": #333,
+    "dark-divider-color": #444,
+    "dark-inverted-bg": #f0f0f0,
+    "dark-inverted-fg": #111,
+
+    "primary-bg": hsl(222.2, 47.4%, 11.2%),
+    "primary-fg": hsl(210, 40%, 80%),
+    "primary-title-fg": hsl(210, 40%, 98%),
+    "primary-link-fg": hsl(210, 40%, 90%),
+    "primary-link-hover-fg": hsl(210, 40%, 98%),
+    "primary-border-color": hsl(222.2, 47.4%, 21.2%),
+    "primary-divider-color": hsl(222.2, 47.4%, 21.2%),
+    "secondary-bg": #f0f0f0,
+    "secondary-fg": #666,
+    "secondary-title-fg": #363636,
+    "secondary-link-fg": #555,
+    "secondary-link-hover-fg": #111,
+    "secondary-border-color": #ddd,
+    "secondary-divider-color": #ccc
+) !default;
+
+.#{$prefix} {
+    // --- Generate CSS custom properties from the $config map ---
+    @each $key, $value in $config {
+        --#{$prefix}-#{$key}: #{$value};
+    }
+
+    // --- Set contextual variables that can be overridden by modifiers ---
+    --#{$prefix}-current-padding-y: var(--#{$prefix}-padding-y);
+
+    // --- Core Layout & Appearance ---
     box-sizing: border-box;
-    min-height: 100px;
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-size: var(--#{$prefix}-base-font-size);
+    padding: var(--#{$prefix}-current-padding-y) var(--#{$prefix}-padding-x);
+    background-color: var(--#{$prefix}-bg);
+    color: var(--#{$prefix}-fg);
 
-    &.fixed {
-        bottom: $footer-fixed-bottom;
-        position: $footer-fixed-position;
-    }
-
-    &.dark {
-        background-color: $footer-dark-background-color;
-        color: $footer-dark-color;
-    }
-
-    &.grey {
-        background-color: $footer-grey-background-color;
-        color: $footer-grey-color;
-    }
-}
-
-// Simple Footer
-.simple-footer {
-    background-color: #222;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-}
-
-// Column Footer
-.column-footer {
-    background-color: #f2f2f2;
-    color: #666;
-    padding: 40px 0;
-
-    .container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: flex-start;
-        max-width: 1200px;
+    // --- BEM Elements ---
+    &__container {
+        width: 100%;
         margin: 0 auto;
+        max-width: var(--#{$prefix}-container-max-width);
     }
 
-    .column {
-        flex: 0 0 calc(33.33% - 20px);
-        margin-bottom: 20px;
-
-        h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
+    &__section {
+        &:not(:last-child) {
+            margin-bottom: 2rem;
         }
+        // A utility to create a high-contrast section within any footer
+        &--inverted {
+            background-color: var(--#{$prefix}-inverted-bg);
+            color: var(--#{$prefix}-inverted-fg);
+            padding: 2rem;
+            // Bleed out to the edges of the parent padding
+            margin: 2rem calc(var(--#{$prefix}-padding-x) * -1);
+            border-radius: 0.5rem;
+        }
+    }
 
-        ul {
-            list-style: none;
-            padding-left: 0;
+    &__title {
+        font-size: var(--#{$prefix}-title-font-size);
+        font-weight: var(--#{$prefix}-title-font-weight);
+        color: var(--#{$prefix}-title-fg);
+        margin: 0 0 1rem 0;
+    }
 
-            li {
-                margin-bottom: 5px;
+    &__list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        li {
+            margin-bottom: 0.5rem;
+        }
+    }
 
-                a {
-                    color: #666;
-                    text-decoration: none;
-
-                    &:hover {
-                        text-decoration: underline;
-                    }
-                }
-            }
+    &__link {
+        color: var(--#{$prefix}-link-fg);
+        text-decoration: none;
+        transition: color 0.2s ease;
+        &:hover {
+            color: var(--#{$prefix}-link-hover-fg);
+            text-decoration: underline;
         }
     }
 }
 
-// Footer with Social Icons
-.social-footer {
-    background-color: #222;
-    color: #fff;
-    padding: 40px 0;
-
-    .container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        max-width: 1200px;
-        margin: 0 auto;
-
-        .logo {
-            font-size: 2rem;
-            font-weight: bold;
-        }
-
-        .social-links {
+.#{$prefix} {
+    // --- Simple centered layout ---
+    &--simple {
+        .#{$prefix}__container {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+    }
 
-            li {
-                margin-right: 10px;
+    // --- Split layout (e.g., logo left, links right) ---
+    &--split {
+        .#{$prefix}__container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+    }
 
-                a {
-                    color: #fff;
-                    font-size: 1.5rem;
+    // --- Multi-column flexbox layout ---
+    &--columns {
+        .#{$prefix}__container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: var(--#{$prefix}-column-gap);
+        }
+        .#{$prefix}__column {
+            flex: 1 1 12rem; // Grow, shrink, and base width
+        }
+    }
 
-                    &:hover {
-                        color: #ccc;
-                    }
+    // --- Tiered Layout ---
+    &--tiered {
+        .#{$prefix}__container {
+            display: flex;
+            flex-direction: column;
+        }
+        .#{$prefix}__main {
+            padding-bottom: 2rem;
+            margin-bottom: 2rem;
+            border-bottom: var(--#{$prefix}-border-width) solid
+                var(--#{$prefix}-border-color);
+        }
+        .#{$prefix}__sub {
+            font-size: 0.875rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+    }
+
+    // --- Grid Layout ---
+    &--grid {
+        .#{$prefix}__container {
+            --#{$prefix}-grid-columns: repeat(auto-fit, minmax(12rem, 1fr));
+            display: grid;
+            grid-template-columns: var(--#{$prefix}-grid-columns);
+            gap: var(--#{$prefix}-column-gap);
+        }
+    }
+
+    // --- Aside Layout ---
+    &--aside {
+        .#{$prefix}__container {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: var(--#{$prefix}-column-gap);
+            align-items: start;
+        }
+        // Stack on smaller screens
+        @media (max-width: 768px) {
+            & {
+                .#{$prefix}__container {
+                    grid-template-columns: 1fr;
                 }
             }
         }
     }
+}
+
+.#{$prefix} {
+    // --- Positional ---
+    &.is-fixed {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+    }
+
+    // --- Spacing ---
+    &.is-compact {
+        --#{$prefix}-current-padding-y: var(--#{$prefix}-compact-padding-y);
+    }
+    &.is-spacious {
+        --#{$prefix}-current-padding-y: var(--#{$prefix}-spacious-padding-y);
+    }
+
+    // --- Decorative Borders ---
+    &.has-top-border {
+        border-top: var(--#{$prefix}-border-width) solid
+            var(--#{$prefix}-border-color);
+    }
+
+    // --- Decorative Dividers ---
+    &.has-column-dividers {
+        // Works with --columns, --grid, and --aside layouts
+        .#{$prefix}__column:not(:first-child),
+        .#{$prefix}__aside {
+            padding-left: var(--#{$prefix}-column-gap);
+            border-left: var(--#{$prefix}-border-width) solid
+                var(--#{$prefix}-divider-color);
+        }
+    }
+
+    // --- Floating Card Style ---
+    &.is-floating {
+        background-color: transparent; // The main container is a backdrop
+        padding-bottom: 2rem; // Space for the shadow
+
+        .#{$prefix}__container {
+            background-color: var(--#{$prefix}-bg);
+            border-radius: 0.75rem;
+            box-shadow: var(--#{$prefix}-shadow);
+            // Re-apply padding to the inner container
+            padding: var(--#{$prefix}-current-padding-y)
+                var(--#{$prefix}-padding-x);
+        }
+    }
+}
+
+.#{$prefix} {
+    // --- Primary Color Theme ---
+    &.is-primary {
+        --#{$prefix}-bg: var(--#{$prefix}-primary-bg);
+        --#{$prefix}-fg: var(--#{$prefix}-primary-fg);
+        --#{$prefix}-title-fg: var(--#{$prefix}-primary-title-fg);
+        --#{$prefix}-link-fg: var(--#{$prefix}-primary-link-fg);
+        --#{$prefix}-link-hover-fg: var(--#{$prefix}-primary-link-hover-fg);
+        --#{$prefix}-border-color: var(--#{$prefix}-primary-border-color);
+        --#{$prefix}-divider-color: var(--#{$prefix}-primary-divider-color);
+    }
+
+    // --- Secondary/Grey Color Theme ---
+    &.is-secondary {
+        --#{$prefix}-bg: var(--#{$prefix}-secondary-bg);
+        --#{$prefix}-fg: var(--#{$prefix}-secondary-fg);
+        --#{$prefix}-title-fg: var(--#{$prefix}-secondary-title-fg);
+        --#{$prefix}-link-fg: var(--#{$prefix}-secondary-link-fg);
+        --#{$prefix}-link-hover-fg: var(--#{$prefix}-secondary-link-hover-fg);
+        --#{$prefix}-border-color: var(--#{$prefix}-secondary-border-color);
+        --#{$prefix}-divider-color: var(--#{$prefix}-secondary-divider-color);
+    }
+}
+
+// --- Dark Mode ---
+// Automatically themes any footer when a parent has the `.dark` class.
+.dark .#{$prefix} {
+    --#{$prefix}-bg: var(--#{$prefix}-dark-bg);
+    --#{$prefix}-fg: var(--#{$prefix}-dark-fg);
+    --#{$prefix}-title-fg: var(--#{$prefix}-dark-title-fg);
+    --#{$prefix}-link-fg: var(--#{$prefix}-dark-link-fg);
+    --#{$prefix}-link-hover-fg: var(--#{$prefix}-dark-link-hover-fg);
+    --#{$prefix}-border-color: var(--#{$prefix}-dark-border-color);
+    --#{$prefix}-divider-color: var(--#{$prefix}-dark-divider-color);
+    --#{$prefix}-inverted-bg: var(--#{$prefix}-dark-inverted-bg);
+    --#{$prefix}-inverted-fg: var(--#{$prefix}-dark-inverted-fg);
 }

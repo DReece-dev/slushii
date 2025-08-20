@@ -1,65 +1,152 @@
-.lightbox {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 9999;
-    display: none;
+@use "sass:map";
 
-    &.dark-mode {
-        .lightbox__overlay {
-            background-color: rgba(0, 0, 0, 0.8);
+$lightbox-prefix: "lightbox" !default;
+
+// Map for generating size variants
+$lightbox-sizes: (
+    "sm": 400px,
+    "md": 600px,
+    // Default
+    "lg": 800px,
+    "xl": 1140px,
+) !default;
+
+.#{$lightbox-prefix} {
+    // CSS variables for complete control and theming.
+    --lightbox-max-width: #{map.get($lightbox-sizes, "md")};
+    --lightbox-bg: var(--white, #ffffff);
+    --lightbox-fg: var(--gray-800, #1f2937);
+    --lightbox-radius: 1rem; // 16px
+    --lightbox-shadow: var(--shadow-xl, 0 20px 25px -5px rgba(0, 0, 0, 0.1));
+    --lightbox-transition-duration: 0.3s;
+    --lightbox-transition-timing: cubic-bezier(0.4, 0, 0.2, 1);
+    --overlay-bg: rgba(15, 23, 42, 0.5); // slate-900 with alpha
+
+    position: fixed;
+    inset: 0; // Shorthand for top, right, bottom, left = 0
+    z-index: 1000;
+    // Use display: grid for easy, robust centering of the content
+    display: grid;
+    place-items: center;
+    // Control visibility with opacity and visibility for smooth transitions
+    visibility: hidden;
+    opacity: 0;
+    transition:
+        visibility 0s var(--lightbox-transition-duration),
+        opacity var(--lightbox-transition-duration)
+            var(--lightbox-transition-timing);
+
+    // BEM: Overlay / Backdrop
+    &__overlay {
+        position: absolute;
+        inset: 0;
+        background-color: var(--overlay-bg);
+
+        // Progressive enhancement for a modern blur effect
+        @supports (backdrop-filter: blur(4px)) {
+            backdrop-filter: blur(0);
+            transition: backdrop-filter var(--lightbox-transition-duration)
+                var(--lightbox-transition-timing);
         }
     }
 
-    &__overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(255, 255, 255, 0.8);
-        transition: background-color 0.3s ease;
-    }
-
+    // BEM: Content (the actual modal panel)
     &__content {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        max-width: 800px;
-        width: 90%;
-        background-color: #fff;
-        border-radius: 20px;
-        overflow: hidden;
-    }
-
-    &__header {
-        background-color: #f2f2f2;
-        padding: 20px;
+        position: relative; // Stacking context for header/body
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 1px solid #d9d9d9;
+        flex-direction: column;
+        width: 90%;
+        max-width: var(--lightbox-max-width);
+        max-height: 90vh; // Prevent modal from being taller than the viewport
+        background-color: var(--lightbox-bg);
+        color: var(--lightbox-fg);
+        border-radius: var(--lightbox-radius);
+        box-shadow: var(--lightbox-shadow);
+        // Entrance animation
+        transform: scale(0.95);
+        transition: transform var(--lightbox-transition-duration)
+            var(--lightbox-transition-timing);
     }
 
+    // BEM: Header, Body, Footer for consistent internal structure
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 1.5rem;
+        border-bottom: 1px solid var(--gray-200, #e5e7eb);
+        flex-shrink: 0;
+    }
     &__title {
+        font-size: 1.25rem;
+        font-weight: 600;
         margin: 0;
     }
-
     &__close {
-        background: none;
-        border: none;
-        font-size: 24px;
-        cursor: pointer;
+        /* Style your close button as needed */
     }
 
     &__body {
-        padding: 20px;
+        padding: 1.5rem;
+        flex-grow: 1;
+        overflow-y: auto; // Crucial for long content
+    }
+}
 
-        img {
-            max-width: 100%;
+// STATE: When the lightbox is open
+.#{$lightbox-prefix}.is-open {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s;
+
+    .#{$lightbox-prefix}__content {
+        transform: scale(1);
+    }
+    .#{$lightbox-prefix}__overlay {
+        @supports (backdrop-filter: blur(4px)) {
+            backdrop-filter: blur(4px);
         }
     }
+}
+
+// Generate size variants
+@each $name, $size in $lightbox-sizes {
+    .#{$lightbox-prefix}--#{$name} {
+        --lightbox-max-width: #{$size};
+    }
+}
+
+// Dark theme variant
+.#{$lightbox-prefix}--dark {
+    --lightbox-bg: #1f2937;
+    --lightbox-fg: #d1d5db;
+    --overlay-bg: rgba(0, 0, 0, 0.8);
+    .#{$lightbox-prefix}__header {
+        border-color: #374151;
+    }
+}
+
+// Style variant for image-only lightboxes
+.#{$lightbox-prefix}--full-bleed {
+    .#{$lightbox-prefix}__body {
+        padding: 0;
+    }
+    // Optional: make the whole content area dark for better image contrast
+    .#{$lightbox-prefix}__content {
+        background: none;
+        box-shadow: none;
+    }
+    .#{$lightbox-prefix}__close {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        z-index: 1;
+        // Style for high contrast against any image
+        background: rgba(0, 0, 0, 0.3);
+        color: white;
+    }
+}
+
+body.lightbox-is-open {
+    overflow: hidden;
 }

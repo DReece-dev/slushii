@@ -1,54 +1,162 @@
-.testimonials-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 50px;
+@use "sass:map";
 
-    .testimonials {
+$prefix: "testimonial" !default;
+
+// A map to hold all default CSS variables for easy setup and theming.
+$config: (
+    // Sizing & Spacing
+    "card-padding": 2rem,
+    "card-gap": 2rem,
+    "avatar-size": 56px,
+    "quote-icon-size": 48px,
+
+    // Theming
+    "bg": #ffffff,
+    "fg": #1f2937,
+    // gray-800
+    "secondary-fg": #6b7280,
+    // gray-500
+    "border-color": #e5e7eb,
+    // gray-200
+    "radius": 0.75rem,
+    // FIXED: Wrapped multi-part shadow value in parentheses
+    "shadow": (
+            0 4px 6px -1px rgba(0, 0, 0, 0.1),
+            0 2px 4px -2px rgba(0, 0, 0, 0.1)
+        ),
+    // Dark Theme
+    "dark-bg": #1f2937,
+    // gray-800
+    "dark-fg": #f9fafb,
+    // gray-50
+    "dark-secondary-fg": #9ca3af,
+    // gray-400
+    "dark-border-color": #374151,
+
+    // gray-700
+    // Animation
+    "transition": "transform 0.2s ease, box-shadow 0.2s ease"
+) !default;
+
+// Main container for a section of testimonials
+.#{$prefix}-grid {
+    // Generate CSS custom properties from the $config map
+    @each $key, $value in $config {
+        --testimonial-#{$key}: #{$value};
+    }
+
+    display: grid;
+    gap: var(--testimonial-card-gap);
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: 1.5rem; // Responsive padding
+
+    // Default to a single column, stack testimonials
+    grid-template-columns: 1fr;
+
+    // Use multiple columns on larger screens
+    @media (min-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @media (min-width: 1024px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+// The individual testimonial card (the "block")
+.#{$prefix}-card {
+    display: flex;
+    flex-direction: column;
+    padding: var(--testimonial-card-padding);
+    background-color: var(--testimonial-bg);
+    border: 1px solid var(--testimonial-border-color);
+    border-radius: var(--testimonial-radius);
+    box-shadow: var(--testimonial-shadow);
+    text-align: left;
+    transition: var(--testimonial-transition);
+
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow:
+            0 10px 15px -3px rgba(0, 0, 0, 0.1),
+            0 4px 6px -4px rgba(0, 0, 0, 0.1);
+    }
+
+    // Header containing author info
+    &__header {
         display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1.25rem;
+    }
 
-        .testimonial {
-            width: 31%;
-            padding: 30px;
-            background-color: #f8f8f8;
-            border-radius: 5px;
-            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-            margin-bottom: 50px;
-            position: relative;
+    // Author's avatar image
+    &__avatar {
+        width: var(--testimonial-avatar-size);
+        height: var(--testimonial-avatar-size);
+        border-radius: 50%;
+        object-fit: cover; // Prevents image stretching
+    }
 
-            &::after {
-                content: "";
-                display: block;
-                width: 0;
-                height: 0;
-                border-top: 15px solid #f8f8f8;
-                border-left: 15px solid transparent;
-                border-right: 15px solid transparent;
-                position: absolute;
-                bottom: -15px;
-                left: 50%;
-                transform: translateX(-50%);
-            }
+    // Container for author's name and title
+    &__author-info {
+        display: flex;
+        flex-direction: column;
+    }
 
-            .testimonial-author {
-                width: 80px;
-                height: 80px;
-                border-radius: 50%;
-                margin-bottom: 20px;
-            }
+    &__name {
+        font-weight: 600;
+        color: var(--testimonial-fg);
+    }
 
-            .testimonial-text {
-                font-size: 16px;
-                line-height: 1.5;
-                margin-bottom: 20px;
-            }
+    &__title {
+        font-size: 0.875rem;
+        color: var(--testimonial-secondary-fg);
+    }
 
-            .testimonial-author-name {
-                font-weight: bold;
-                font-size: 16px;
-                text-align: center;
-            }
-        }
+    // Main testimonial content/quote
+    &__body {
+        flex-grow: 1; // Ensures footer stays at the bottom
+        font-size: 1rem;
+        line-height: 1.6;
+        color: var(--testimonial-secondary-fg);
+        margin: 0;
+    }
+
+    // An optional quote icon for styling
+    &__quote-icon {
+        width: var(--testimonial-quote-icon-size);
+        height: var(--testimonial-quote-icon-size);
+        color: var(--testimonial-border-color);
+        margin-bottom: 1rem;
+    }
+}
+
+// --- Style Variants ---
+
+// Dark Mode Variant
+.#{$prefix}-grid--dark {
+    .#{$prefix}-card {
+        --testimonial-bg: var(--testimonial-dark-bg);
+        --testimonial-fg: var(--testimonial-dark-fg);
+        --testimonial-secondary-fg: var(--testimonial-dark-secondary-fg);
+        --testimonial-border-color: var(--testimonial-dark-border-color);
+    }
+
+    .#{$prefix}-card__quote-icon {
+        color: var(--testimonial-dark-border-color);
+    }
+}
+
+// Centered Variant
+.#{$prefix}-card--centered {
+    text-align: center;
+
+    .#{$prefix}-card__header {
+        flex-direction: column;
+    }
+
+    .#{$prefix}-card__body {
+        margin-bottom: 1.5rem;
     }
 }

@@ -1,125 +1,201 @@
-$toast-width: 350px;
-$toast-font-size: 0.875rem;
-$toast-color: #000;
-$toast-background-color: #fff;
-$toast-border-radius: 5px;
-$toast-padding: 16px;
-$toast-bottom: 30px;
-$toast-opacity: 0.9;
-$toast-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-$toast-left: 50%;
+@use "sass:map";
 
-.toast {
-    visibility: hidden;
-    width: $toast-width;
-    max-width: 100%;
-    font-size: $toast-font-size;
-    pointer-events: auto;
-    margin-left: calc($toast-width / 2);
-    background-color: $toast-background-color;
-    background-clip: padding-box;
-    color: $toast-color;
-    text-align: center;
-    border-radius: $toast-border-radius;
-    padding: $toast-padding;
+$prefix: "toast" !default;
+
+// A map to hold all default CSS variables for easy setup and theming.
+$config: (
+    // Sizing & Spacing
+    "width": 360px,
+    "padding": 1rem,
+    "header-padding": 0.75rem 1rem,
+    "radius": 0.75rem,
+    "container-offset": 1.5rem,
+
+    // Theming
+    "bg": #ffffff,
+    "fg": #1f2937,
+    // gray-800
+    "secondary-fg": #6b7280,
+    // gray-500
+    "border-color": #e5e7eb,
+    // gray-200
+    // FIXED: Wrapped multi-part shadow value in parentheses
+    "shadow": (
+            0 10px 15px -3px rgba(0, 0, 0, 0.1),
+            0 4px 6px -4px rgba(0, 0, 0, 0.1)
+        ),
+    // State Colors
+    "success-color": #22c55e,
+    // green-500
+    "error-color": #ef4444,
+    // red-500
+    "warning-color": #f97316,
+    // orange-500
+    "info-color": #3b82f6,
+
+    // blue-500
+    // Dark Theme
+    "dark-bg": #1f2937,
+    // gray-800
+    "dark-fg": #f9fafb,
+    // gray-50
+    "dark-secondary-fg": #9ca3af,
+    // gray-400
+    "dark-border-color": #374151 // gray-700
+) !default;
+
+// Keyframes for the animation. Using transform and opacity for performance.
+@keyframes toast-enter {
+    from {
+        opacity: 0;
+        transform: scale(0.95) translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes toast-leave {
+    from {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.95) translateY(10px);
+    }
+}
+
+// The container that positions the toasts on the screen
+.#{$prefix}-container {
     position: fixed;
-    z-index: 1;
-    left: $toast-left;
-    bottom: $toast-bottom;
-    opacity: $toast-opacity;
-    box-shadow: $toast-shadow;
-
-    &.show {
-        visibility: visible;
-        animation:
-            fadein 0.5s,
-            fadeout 0.5s 2.5s;
-    }
-
-    &.hide {
-        display: none;
-    }
-
-    @-webkit-keyframes fadein {
-        from {
-            bottom: 0;
-            opacity: 0;
-        }
-
-        to {
-            bottom: $toast-bottom;
-            opacity: 1;
-        }
-    }
-
-    @keyframes fadein {
-        from {
-            bottom: 0;
-            opacity: 0;
-        }
-
-        to {
-            bottom: $toast-bottom;
-            opacity: 1;
-        }
-    }
-
-    @-webkit-keyframes fadeout {
-        from {
-            bottom: $toast-bottom;
-            opacity: 1;
-        }
-
-        to {
-            bottom: 0;
-            opacity: 0;
-        }
-    }
-
-    @keyframes fadeout {
-        from {
-            bottom: $toast-bottom;
-            opacity: 1;
-        }
-
-        to {
-            bottom: 0;
-            opacity: 0;
-        }
-    }
-}
-
-$--white: #fff;
-$--black: #000;
-
-.toast-container {
-    width: max-content;
-    max-width: 100%;
-    pointer-events: none;
-
-    :not(:last-child) {
-        margin-bottom: 0.75rem;
-    }
-}
-
-.toast-header {
+    z-index: 9999;
     display: flex;
-    align-items: center;
-    padding: 0.5rem 0.75rem;
-    color: #6c757d;
-    background-color: rgba(255, 255, 255, 0.85);
-    background-clip: padding-box;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    border-top-left-radius: calc(0.25rem - 1px);
-    border-top-right-radius: calc(0.25rem - 1px);
+    flex-direction: column;
+    gap: 0.75rem;
+    width: var(--toast-width, map.get($config, "width"));
+    max-width: calc(100% - #{map.get($config, "container-offset") * 2});
+    pointer-events: none; // Allows clicking through the container
 
-    .btn-close {
-        margin-right: -0.375rem;
-        margin-left: 0.75rem;
+    // --- Positional Variants ---
+    &--top-right {
+        top: map.get($config, "container-offset");
+        right: map.get($config, "container-offset");
+        align-items: flex-end;
+    }
+    &--top-left {
+        top: map.get($config, "container-offset");
+        left: map.get($config, "container-offset");
+        align-items: flex-start;
+    }
+    &--bottom-right {
+        bottom: map.get($config, "container-offset");
+        right: map.get($config, "container-offset");
+        align-items: flex-end;
+    }
+    &--bottom-left {
+        bottom: map.get($config, "container-offset");
+        left: map.get($config, "container-offset");
+        align-items: flex-start;
     }
 }
 
-.toast-body {
-    padding: 0.75rem;
-    word-wrap: break-word;
+// The individual toast notification (the "block")
+.#{$prefix} {
+    // Generate CSS custom properties from the $config map
+    @each $key, $value in $config {
+        --toast-#{$key}: #{$value};
+    }
+
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    gap: 0.75rem;
+    padding: var(--toast-padding);
+    background-color: var(--toast-bg);
+    border: 1px solid var(--toast-border-color);
+    border-radius: var(--toast-radius);
+    box-shadow: var(--toast-shadow);
+    color: var(--toast-fg);
+    pointer-events: auto; // Toasts themselves are clickable
+    animation: toast-enter 0.3s ease-out forwards;
+
+    &.is-leaving {
+        animation: toast-leave 0.3s ease-in forwards;
+    }
+
+    // --- Elements within the toast ---
+
+    // A colored icon indicating the toast type
+    &__icon {
+        flex-shrink: 0;
+        width: 1.25rem;
+        height: 1.25rem;
+        margin-top: 0.125rem; // Slight alignment adjustment
+    }
+
+    // Main content area
+    &__content {
+        flex-grow: 1;
+        min-width: 0; // Fix for flexbox text overflow
+    }
+
+    &__title {
+        font-weight: 600;
+        margin: 0 0 0.25rem;
+    }
+
+    &__body {
+        font-size: 0.875rem;
+        color: var(--toast-secondary-fg);
+        margin: 0;
+        line-height: 1.5;
+    }
+
+    // Close button
+    &__close {
+        flex-shrink: 0;
+        padding: 0;
+        border: none;
+        background: none;
+        color: var(--toast-secondary-fg);
+        cursor: pointer;
+        opacity: 0.6;
+        transition: opacity 0.2s ease;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+// --- Style & State Variants ---
+
+// 1. Dark Mode
+.#{$prefix}--dark {
+    --toast-bg: var(--toast-dark-bg);
+    --toast-fg: var(--toast-dark-fg);
+    --toast-secondary-fg: var(--toast-dark-secondary-fg);
+    --toast-border-color: var(--toast-dark-border-color);
+}
+
+// Generates state variants (success, error, etc.)
+@each $state,
+    $color-var
+        in (
+            "success": "success-color",
+            "error": "error-color",
+            "warning": "warning-color",
+            "info": "info-color"
+        )
+{
+    .#{$prefix}--#{$state} {
+        // Use a more subtle left border for the state color
+        border-left: 4px solid var(--toast-#{$color-var});
+
+        .#{$prefix}__icon {
+            color: var(--toast-#{$color-var});
+        }
+    }
 }

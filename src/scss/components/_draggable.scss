@@ -1,33 +1,136 @@
-.draggable {
+@use "sass:map";
+
+$draggable-prefix: "draggable" !default;
+$dropzone-prefix: "dropzone" !default;
+
+.#{$draggable-prefix} {
+    --draggable-shadow: var(--shadow-sm, 0 1px 2px 0 rgba(0, 0, 0, 0.05));
+    --draggable-shadow-lifted: var(
+        --shadow-lg,
+        0 10px 15px -3px rgba(0, 0, 0, 0.1)
+    );
+    --draggable-scale-lifted: 1.05;
+    --draggable-transition: all 0.2s cubic-bezier(0.2, 0, 0, 1); // Changed to 'all' for bg color
+    --draggable-bg-valid: var(--green-100, #dcfce7);
+    --draggable-bg-invalid: var(--red-100, #fee2e2);
+    --draggable-outline-keyboard: 2px solid var(--blue-500, #3b82f6);
+
     position: relative;
     cursor: grab;
     user-select: none;
     touch-action: none;
+    box-shadow: var(--draggable-shadow);
+    transition: var(--draggable-transition);
+
+    &__handle {
+        cursor: grab;
+    }
+
+    &:active {
+        cursor: grabbing;
+    }
+    &:active &__handle {
+        cursor: grabbing;
+    }
+
+    &.is-dragging {
+        cursor: grabbing;
+        transform: scale(var(--draggable-scale-lifted));
+        box-shadow: var(--draggable-shadow-lifted);
+        transition: none; // CRITICAL: Still no transition while tracking cursor
+        z-index: 999;
+    }
+
+    // ... (is-over-valid/invalid-dropzone states are unchanged)
+    &.is-over-valid-dropzone {
+        background-color: var(--draggable-bg-valid);
+    }
+    &.is-over-invalid-dropzone {
+        background-color: var(--draggable-bg-invalid);
+    }
 }
 
-.draggable:active {
-    cursor: grabbing;
+.#{$dropzone-prefix} {
+    --dropzone-bg: var(--gray-50, #f9fafb);
+    --dropzone-border-color: var(--gray-300, #d1d5db);
+    --dropzone-border-style: 2px dashed;
+    --dropzone-radius: 0.5rem;
+    --dropzone-bg-active: var(--blue-50, #eff6ff);
+    --dropzone-border-color-active: var(--blue-500, #3b82f6);
+
+    background-color: var(--dropzone-bg);
+    border: var(--dropzone-border-style) var(--dropzone-border-color);
+    border-radius: var(--dropzone-radius);
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease;
+
+    &.is-active {
+        background-color: var(--dropzone-bg-active);
+        border-color: var(--dropzone-border-color-active);
+    }
 }
 
-.draggable::before {
-    content: "";
+.draggable-ghost {
+    opacity: 0.5;
+    background: var(--gray-200, #e5e7eb);
+    cursor: grabbing !important;
+    box-shadow: var(--shadow-md) !important;
+    transform: scale(1) !important;
+}
+
+// MODIFIER: Smooth Reordering Animation
+// Apply to the container the items are being dragged FROM.
+.draggable-source--is-dragging-from {
+    // Animate the other items as they move out of the way.
+    > .#{$draggable-prefix}:not(.is-dragging) {
+        transition: transform 0.25s cubic-bezier(0.2, 0, 0, 1);
+    }
+}
+
+// MODIFIER: Drop Animation
+// JS should add this class to the element when it's dropped, then remove it.
+.#{$draggable-prefix}--drop-animating {
+    // Reuse the main transition to animate back to its final scale and shadow.
+    transition: var(--draggable-transition);
+}
+
+// MODIFIER: Destructive Dropzone
+.#{$dropzone-prefix}--destructive.is-active {
+    --dropzone-bg-active: var(--red-50, #fef2f2);
+    --dropzone-border-color-active: var(--red-500, #ef4444);
+}
+
+// MODIFIER: Disabled Dropzone
+.#{$dropzone-prefix}--disabled {
+    background-color: var(--gray-100, #f3f4f6);
+    border-color: var(--gray-200, #e5e7eb);
+    cursor: not-allowed;
+
+    // Never highlight when disabled
+    &.is-active {
+        background-color: var(--gray-100, #f3f4f6);
+        border-color: var(--gray-200, #e5e7eb);
+    }
+}
+
+// STATE: When an item is "picked up" via keyboard
+// The element doesn't move, so we use a prominent outline instead of a lift.
+.#{$draggable-prefix}.is-keyboard-dragging {
+    outline: var(--draggable-outline-keyboard);
+    outline-offset: 2px;
+    box-shadow: var(--draggable-shadow-lifted);
+    // Do NOT scale or change cursor, as it's a keyboard interaction
+}
+
+.draggable-sr-only {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    background-color: rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-.draggable.dragging {
-    transform: translate3d(0, 0, 0);
-    transition: transform 0.2s ease-out;
-}
-
-.draggable.dragging::before {
-    background-color: rgba(0, 0, 0, 0.4);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
 }

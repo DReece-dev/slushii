@@ -1,667 +1,354 @@
-@use "sass:color";
+@use "sass:map";
 
-// Modern Accordion Variables
-$accordion-primary: #3b82f6;
-$accordion-secondary: #f1f5f9;
-$accordion-text: #1e293b;
-$accordion-text-light: #64748b;
-$accordion-white: #ffffff;
-$accordion-border: #e2e8f0;
-$accordion-shadow:
-    0 1px 3px rgba(0, 0, 0, 0.1),
-    0 1px 2px rgba(0, 0, 0, 0.06);
-$accordion-shadow-lg:
-    0 10px 15px -3px rgba(0, 0, 0, 0.1),
-    0 4px 6px -2px rgba(0, 0, 0, 0.05);
-$accordion-radius: 0.75rem;
-$accordion-gap: 1rem;
-$accordion-padding: 1.25rem;
+$prefix: "accordion" !default;
 
-// Animation variables
-$accordion-duration: 0.3s;
-$accordion-easing: cubic-bezier(0.4, 0, 0.2, 1);
-$accordion-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-$accordion-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+// A map to hold all default CSS variables for easy setup and theming.
+$config: (
+    // Sizing & Spacing
+    "padding": 1.25rem,
+    "gap": 0.5rem,
+    // Space between items
+    "radius": 0.75rem,
 
-// Dark mode colors
-$accordion-dark-bg: #0f172a;
-$accordion-dark-surface: #1e293b;
-$accordion-dark-text: #f8fafc;
-$accordion-dark-border: #334155;
+    // Theming
+    "bg": #ffffff,
+    "header-bg": #f9fafb,
+    // gray-50
+    "fg": #1f2937,
+    // gray-800
+    "secondary-fg": #6b7280,
+    // gray-500
+    "border-color": #e5e7eb,
+    // gray-200
+    "shadow": 0 1px 2px 0 rgba(0, 0, 0, 0.05),
+    // State Colors
+    "primary-color": #4f46e5,
+    // indigo-600
+    "hover-bg": #f3f4f6,
+    // gray-100
+    "open-fg": #4f46e5,
 
-// Modern mixins
-@mixin glass-effect($opacity: 0.85) {
-    background: rgba(255, 255, 255, $opacity);
-    backdrop-filter: blur(12px) saturate(180%);
-    -webkit-backdrop-filter: blur(12px) saturate(180%);
-}
+    // indigo-600
+    // Dark Theme
+    "dark-bg": #1f2937,
+    // gray-800
+    "dark-header-bg": #374151,
+    // gray-700
+    "dark-fg": #f9fafb,
+    // gray-50
+    "dark-secondary-fg": #9ca3af,
+    // gray-400
+    "dark-border-color": #4b5563,
+    // gray-600
+    "dark-hover-bg": #4b5563,
 
-@mixin modern-shadow($level: 1) {
-    @if $level == 1 {
-        box-shadow: $accordion-shadow;
-    } @else if $level == 2 {
-        box-shadow: $accordion-shadow-lg;
-    } @else if $level == 3 {
-        box-shadow:
-            0 20px 25px -5px rgba(0, 0, 0, 0.1),
-            0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    // gray-600
+    // Animation
+    "transition-duration": "0.2s",
+    "transition-timing": "ease-in-out"
+) !default;
+
+// The root container for the accordion group
+.#{$prefix} {
+    // Generate CSS custom properties from the $config map
+    @each $key, $value in $config {
+        --accordion-#{$key}: #{$value};
     }
-}
 
-@mixin hover-lift {
-    transition:
-        transform $accordion-duration $accordion-easing,
-        box-shadow $accordion-duration $accordion-easing;
-
-    &:hover {
-        transform: translateY(-2px);
-        @include modern-shadow(2);
-    }
-}
-
-@mixin icon-rotation($deg: 180deg) {
-    .accordion-icon {
-        transform: rotate($deg);
-    }
-}
-
-// Base accordion component
-.accordion {
     display: flex;
     flex-direction: column;
-    gap: $accordion-gap;
-    margin-bottom: $accordion-gap * 2;
+    gap: var(--accordion-gap);
+}
 
-    // Individual accordion item
-    &-item {
-        background: $accordion-white;
-        border-radius: $accordion-radius;
-        @include modern-shadow(1);
-        overflow: hidden;
-        transition: all $accordion-duration $accordion-easing;
-        border: 1px solid $accordion-border;
-        @include hover-lift;
+// A single accordion item
+.#{$prefix}__item {
+    background-color: var(--accordion-bg);
+    border: 1px solid var(--accordion-border-color);
+    border-radius: var(--accordion-radius);
+    box-shadow: var(--accordion-shadow);
+    overflow: hidden; // Important for child border-radius
+    transition: border-color var(--accordion-transition-duration);
 
-        &.active {
-            @include modern-shadow(2);
-            border-color: $accordion-primary;
-        }
-    }
-
-    // Header styling
-    &-header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: $accordion-padding;
-        background: $accordion-secondary;
-        cursor: pointer;
-        transition: all $accordion-duration $accordion-easing;
-        font-weight: 600;
-        color: $accordion-text;
-        position: relative;
-        overflow: hidden;
-
-        // Modern ripple effect
-        &::before {
-            content: "";
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            border-radius: 50%;
-            background: rgba($accordion-primary, 0.1);
-            transition:
-                width 0.6s,
-                height 0.6s,
-                top 0.6s,
-                left 0.6s;
-            transform: translate(-50%, -50%);
-        }
-
-        &:active::before {
-            width: 300px;
-            height: 300px;
-            top: 50%;
-            left: 50%;
-        }
-
-        &:hover {
-            // FIXED: Replaced lighten() with color.adjust()
-            background: color.adjust($accordion-secondary, $lightness: 3%);
-            color: $accordion-primary;
-            transform: translateX(4px);
-        }
-
-        &.active {
-            background: $accordion-primary;
-            color: $accordion-white;
-            @include icon-rotation();
-        }
-
-        // Title
-        &-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin: 0;
-            flex: 1;
-        }
-
-        // Subtitle support
-        &-subtitle {
-            font-size: 0.875rem;
-            color: $accordion-text-light;
-            margin-top: 0.25rem;
-        }
-    }
-
-    // Icon styling
-    &-icon {
-        width: 1.25rem;
-        height: 1.25rem;
-        transition: transform $accordion-duration $accordion-spring;
-        color: currentColor;
-        flex-shrink: 0;
-        margin-left: 1rem;
-
-        // Default chevron if no icon provided
-        &:empty::before {
-            content: "";
-            display: block;
-            width: 0.5rem;
-            height: 0.5rem;
-            border-right: 2px solid currentColor;
-            border-bottom: 2px solid currentColor;
-            transform: rotate(45deg);
-            margin: auto;
-        }
-    }
-
-    // Content styling
-    &-content {
-        max-height: 0;
-        opacity: 0;
-        overflow: hidden;
-        padding: 0 $accordion-padding;
-        background: $accordion-white;
-        color: $accordion-text;
-        transition:
-            max-height $accordion-duration $accordion-easing,
-            opacity $accordion-duration $accordion-easing,
-            padding $accordion-duration $accordion-easing;
-
-        &.active {
-            max-height: 500px;
-            opacity: 1;
-            padding: $accordion-padding;
-        }
-
-        // Content typography
-        p {
-            margin-bottom: 1rem;
-            line-height: 1.6;
-
-            &:last-child {
-                margin-bottom: 0;
-            }
-        }
-
-        ul,
-        ol {
-            margin-bottom: 1rem;
-            padding-left: 1.5rem;
-        }
-
-        li {
-            margin-bottom: 0.5rem;
-        }
+    // Give the open item a primary-colored ring/border
+    &.is-open {
+        border-color: var(--accordion-primary-color);
     }
 }
 
-// 1. Minimal variant
-.accordion-minimal {
-    .accordion-item {
-        background: transparent;
-        border: none;
-        border-bottom: 1px solid $accordion-border;
-        border-radius: 0;
-        box-shadow: none;
+// The header, which acts as the trigger button
+.#{$prefix}__header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: var(--accordion-padding);
+    background-color: var(--accordion-header-bg);
+    border: none;
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: left;
+    color: var(--accordion-fg);
+    cursor: pointer;
+    transition: background-color var(--accordion-transition-duration);
 
-        &:hover {
-            transform: none;
-            box-shadow: none;
-        }
-    }
-
-    .accordion-header {
-        background: transparent;
-        padding: 1rem 0;
-
-        &:hover {
-            background: transparent;
-            transform: none;
-        }
-
-        &.active {
-            background: transparent;
-            color: $accordion-primary;
-        }
-    }
-
-    .accordion-content {
-        background: transparent;
-        padding: 0 0 1rem 0;
-
-        &.active {
-            padding: 1rem 0;
-        }
+    &:hover {
+        background-color: var(--accordion-hover-bg);
     }
 }
 
-// 2. Card variant
-.accordion-card {
-    gap: $accordion-gap * 1.5;
-
-    .accordion-item {
-        @include modern-shadow(2);
-
-        &:hover {
-            transform: translateY(-4px) scale(1.01);
-        }
-    }
-
-    .accordion-header {
-        background: linear-gradient(
-            135deg,
-            $accordion-white 0%,
-            $accordion-secondary 100%
-        );
-    }
+// When the item is open, the header text becomes primary color
+.#{$prefix}__item.is-open > .#{$prefix}__header {
+    color: var(--accordion-open-fg);
 }
 
-// 3. Gradient variant
-.accordion-gradient {
-    .accordion-header {
-        background: linear-gradient(
-            135deg,
-            $accordion-primary 0%,
-            #6366f1 100%
-        );
-        color: $accordion-white;
-
-        &:hover {
-            // FIXED: Replaced darken() with color.adjust()
-            background: linear-gradient(
-                135deg,
-                color.adjust($accordion-primary, $lightness: -5%) 0%,
-                color.adjust(#6366f1, $lightness: -5%) 100%
-            );
-        }
-    }
+// The chevron icon
+.#{$prefix}__icon {
+    flex-shrink: 0;
+    width: 1.25rem;
+    height: 1.25rem;
+    color: var(--accordion-secondary-fg);
+    transition: transform var(--accordion-transition-duration)
+        var(--accordion-transition-timing);
 }
 
-// 4. Neumorphism variant
-.accordion-neumorphism {
-    .accordion-item {
-        background: #f0f0f3;
-        border: none;
-        box-shadow:
-            9px 9px 16px #a3a3a3,
-            -9px -9px 16px #ffffff;
-
-        &:hover {
-            box-shadow:
-                inset 2px 2px 4px #a3a3a3,
-                inset -2px -2px 4px #ffffff;
-        }
-    }
-
-    .accordion-header {
-        background: #f0f0f3;
-
-        &.active {
-            box-shadow:
-                inset 5px 5px 10px #a3a3a3,
-                inset -5px -5px 10px #ffffff;
-        }
-    }
+.#{$prefix}__item.is-open .#{$prefix}__icon {
+    transform: rotate(180deg);
 }
 
-// 5. Glass variant
-.accordion-glass {
-    .accordion-item {
-        @include glass-effect(0.9);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-
-    .accordion-header {
-        @include glass-effect(0.7);
-
-        &.active {
-            @include glass-effect(0.95);
-        }
-    }
-
-    .accordion-content {
-        @include glass-effect(0.95);
-    }
+// The collapsible panel for the content
+.#{$prefix}__panel {
+    display: grid;
+    // Modern animation technique: animates grid rows from 0fr to 1fr
+    grid-template-rows: 0fr;
+    transition: grid-template-rows var(--accordion-transition-duration)
+        var(--accordion-transition-timing);
 }
 
-// 6. Neon variant
-.accordion-neon {
-    .accordion-item {
-        background: #0a0a0a;
-        border: 1px solid #00ffff;
-        box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
-
-        &.active {
-            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
-        }
-    }
-
-    .accordion-header {
-        background: #0a0a0a;
-        color: #00ffff;
-        text-shadow: 0 0 5px #00ffff;
-
-        &:hover {
-            color: #ff00ff;
-            text-shadow: 0 0 10px #ff00ff;
-        }
-
-        &.active {
-            color: #ff00ff;
-            text-shadow: 0 0 15px #ff00ff;
-        }
-    }
-
-    .accordion-content {
-        background: #0a0a0a;
-        color: #00ffff;
-    }
+.#{$prefix}__item.is-open > .#{$prefix}__panel {
+    grid-template-rows: 1fr;
 }
 
-// 7. Bordered variant
-.accordion-bordered {
-    .accordion-item {
-        border: 2px solid $accordion-border;
-        border-radius: $accordion-radius;
-
-        &.active {
-            border-color: $accordion-primary;
-            border-width: 2px;
-        }
-    }
-
-    .accordion-header {
-        border-bottom: 1px solid $accordion-border;
-
-        &.active {
-            border-bottom-color: $accordion-primary;
-        }
-    }
+// The content wrapper inside the panel, for padding and overflow
+.#{$prefix}__content {
+    padding-inline: var(--accordion-padding);
+    color: var(--accordion-secondary-fg);
+    line-height: 1.6;
+    overflow: hidden;
+    // The content itself is not part of the animation, only its container
 }
 
-// 8. Floating variant
-.accordion-floating {
-    .accordion-item {
-        margin: $accordion-gap 0;
-        @include modern-shadow(2);
-        transform: translateY(0);
-
-        &:hover {
-            transform: translateY(-8px) scale(1.02);
-            @include modern-shadow(3);
-        }
-    }
-}
-
-// Always open variant
-.accordion-always-open {
-    .accordion-content {
-        max-height: none !important;
-        opacity: 1 !important;
-        padding: $accordion-padding !important;
-    }
-}
-
-// Flush variant (no spacing)
-.accordion-flush {
+// Flush Variant (removes all spacing and borders)
+.#{$prefix}--flush {
     gap: 0;
 
-    .accordion-item {
+    .#{$prefix}__item {
         border-radius: 0;
-        border: none;
-        border-bottom: 1px solid $accordion-border;
         box-shadow: none;
+        border-left: none;
+        border-right: none;
+        border-top: none;
 
         &:first-child {
-            border-top: 1px solid $accordion-border;
+            border-top: 1px solid var(--accordion-border-color);
         }
-
-        &:hover {
-            transform: none;
-            box-shadow: none;
-        }
-    }
-
-    .accordion-header {
-        border-radius: 0;
     }
 }
 
-// Small size variant
-.accordion-sm {
-    .accordion-header {
+// Contained Variant (adds a colored background behind the group)
+.#{$prefix}--contained {
+    padding: var(--accordion-gap);
+    background-color: var(--accordion-header-bg);
+    border-radius: var(--accordion-radius);
+
+    .#{$prefix}__item {
+        border: none; // Contained items don't need their own border
+    }
+}
+
+// Dark Mode Variant
+.#{$prefix}--dark {
+    --accordion-bg: var(--accordion-dark-bg);
+    --accordion-header-bg: var(--accordion-dark-header-bg);
+    --accordion-fg: var(--accordion-dark-fg);
+    --accordion-secondary-fg: var(--accordion-dark-secondary-fg);
+    --accordion-border-color: var(--accordion-dark-border-color);
+    --accordion-hover-bg: var(--accordion-dark-hover-bg);
+
+    &.#{$prefix}--contained {
+        background-color: #0f172a; // A slightly darker bg for dark contained
+    }
+}
+
+//==========================================================================
+// 3. ADDITIONAL 20 VARIANTS
+//==========================================================================
+
+// --- Stylistic Variants (Color, Borders, Effects) ---
+
+// 1. Separated Variant (removes card look, uses lines between items)
+.#{$prefix}--separated {
+    gap: 0;
+
+    .#{$prefix}__item {
+        background-color: transparent;
+        border-radius: 0;
+        box-shadow: none;
+        border: none;
+        border-bottom: 1px solid var(--accordion-border-color);
+
+        &:first-child {
+            border-top: 1px solid var(--accordion-border-color);
+        }
+    }
+}
+
+// 2. Lifted Variant (stronger shadow for a "floating" effect)
+.#{$prefix}--lifted {
+    --accordion-shadow:
+        0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+
+    .#{$prefix}__item {
+        border: none; // Shadow is enough
+    }
+}
+
+// 3. Striped Variant (alternating header background colors)
+.#{$prefix}--striped {
+    .#{$prefix}__item:nth-of-type(even) .#{$prefix}__header {
+        background-color: var(--accordion-bg);
+    }
+}
+
+// 4. Filled Header Variant (header background changes color when open)
+.#{$prefix}--filled-header {
+    .#{$prefix}__item.is-open > .#{$prefix}__header {
+        background-color: var(--accordion-primary-color);
+        color: var(--accordion-dark-fg); // Assumes primary color is dark
+    }
+}
+
+// 5. Content Highlight Variant (content area gets a background when open)
+.#{$prefix}--content-highlight {
+    .#{$prefix}__panel {
+        background-color: var(--accordion-bg);
+    }
+    .#{$prefix}__item.is-open > .#{$prefix}__panel {
+        background-color: var(--accordion-header-bg);
+    }
+}
+
+// 6. Dashed Border Variant
+.#{$prefix}--dashed {
+    .#{$prefix}__item {
+        border-style: dashed;
+    }
+}
+
+// State Color Variants (Success, Warning, Error, Info)
+@each $state,
+    $color
+        in (
+            "success": #22c55e,
+            // green-500
+            "warning": #f97316,
+            // orange-500
+            "error": #ef4444,
+            // red-500
+            "info": #3b82f6 // blue-500
+        )
+{
+    // 7, 8, 9, 10. State Variants
+    .#{$prefix}--#{$state} {
+        --accordion-primary-color: #{$color};
+        --accordion-open-fg: #{$color};
+    }
+}
+
+// 11. Gradient Header Variant
+.#{$prefix}--gradient {
+    .#{$prefix}__item.is-open > .#{$prefix}__header {
+        background-image: linear-gradient(
+            to right,
+            var(--accordion-primary-color),
+            #818cf8
+        );
+        color: var(--accordion-dark-fg);
+    }
+}
+
+// --- Structural & Layout Variants ---
+
+// 12. Icon Left Variant
+.#{$prefix}--icon-left {
+    .#{$prefix}__header {
+        flex-direction: row-reverse;
+    }
+}
+
+// 13. Compact Variant
+.#{$prefix}--compact {
+    --accordion-padding: 0.75rem 1rem;
+    --accordion-gap: 0.25rem;
+}
+
+// 14. Spacious Variant
+.#{$prefix}--spacious {
+    --accordion-padding: 1.75rem;
+    --accordion-gap: 1rem;
+}
+
+// 15. Rounded Variant (fully rounded corners)
+.#{$prefix}--rounded {
+    --accordion-radius: 9999px;
+}
+
+// --- Sizing Variants ---
+
+// 16. Small Variant (for smaller text and tighter UI)
+.#{$prefix}--sm {
+    .#{$prefix}__header {
         padding: 0.75rem 1rem;
         font-size: 0.875rem;
     }
-
-    .accordion-content {
-        padding: 0 1rem;
+    .#{$prefix}__panel {
         font-size: 0.875rem;
-
-        &.active {
-            padding: 0.75rem 1rem;
-        }
     }
-
-    .accordion-icon {
-        width: 1rem;
-        height: 1rem;
+    .#{$prefix}__content {
+        padding-inline: 1rem;
     }
 }
 
-// Large size variant
-.accordion-lg {
-    .accordion-header {
-        padding: 1.5rem 2rem;
+// 17. Large Variant (for emphasis and larger displays)
+.#{$prefix}--lg {
+    .#{$prefix}__header {
+        padding: 1.5rem 1.75rem;
         font-size: 1.25rem;
     }
-
-    .accordion-content {
-        padding: 0 2rem;
-        font-size: 1rem;
-
-        &.active {
-            padding: 1.5rem 2rem;
-        }
+    .#{$prefix}__panel {
+        font-size: 1.125rem;
     }
-
-    .accordion-icon {
-        width: 1.5rem;
-        height: 1.5rem;
+    .#{$prefix}__content {
+        padding-inline: 1.75rem;
     }
 }
 
-.dark-mode,
-[data-theme="dark"] {
-    .accordion {
-        &-item {
-            background: $accordion-dark-surface;
-            border-color: $accordion-dark-border;
-        }
+// --- Behavioral & Animation Variants ---
 
-        &-header {
-            background: $accordion-dark-bg;
-            color: $accordion-dark-text;
-
-            &:hover {
-                // FIXED: Replaced lighten() with color.adjust()
-                background: color.adjust($accordion-dark-bg, $lightness: 5%);
-                color: $accordion-primary;
-            }
-
-            &.active {
-                background: $accordion-primary;
-                color: $accordion-white;
-            }
-        }
-
-        &-content {
-            background: $accordion-dark-surface;
-            color: $accordion-dark-text;
-        }
-    }
-
-    // Variant adjustments for dark mode
-    .accordion-glass {
-        .accordion-item {
-            @include glass-effect(0.1);
-            background: rgba($accordion-dark-surface, 0.8);
-            border-color: rgba(255, 255, 255, 0.1);
-        }
-    }
-
-    .accordion-neumorphism {
-        .accordion-item {
-            background: #2a2a2a;
-            box-shadow:
-                9px 9px 16px #1a1a1a,
-                -9px -9px 16px #3a3a3a;
-        }
-    }
+// 18. Slow Animation
+.#{$prefix}--slow-animation {
+    --accordion-transition-duration: 0.5s;
 }
 
-// Smooth animation
-.accordion-smooth {
-    .accordion-content {
-        transition-duration: 0.5s;
-        transition-timing-function: $accordion-spring;
-    }
+// 19. Fast Animation
+.#{$prefix}--fast-animation {
+    --accordion-transition-duration: 0.1s;
 }
 
-// Bounce animation
-.accordion-bounce {
-    .accordion-header {
-        &:active {
-            transform: scale(0.98);
-        }
-    }
-
-    .accordion-icon {
-        transition-timing-function: $accordion-bounce;
-    }
-}
-
-// Slide animation
-.accordion-slide {
-    .accordion-content {
-        transform: translateX(-20px);
-        transition:
-            transform $accordion-duration $accordion-easing,
-            max-height $accordion-duration $accordion-easing,
-            opacity $accordion-duration $accordion-easing;
-
-        &.active {
-            transform: translateX(0);
-        }
-    }
-}
-
-// Fade animation
-.accordion-fade {
-    .accordion-content {
-        transition:
-            opacity $accordion-duration * 1.5 $accordion-easing,
-            max-height $accordion-duration $accordion-easing;
-    }
-}
-
-@media (max-width: 768px) {
-    .accordion {
-        margin-bottom: $accordion-gap;
-
-        &-header {
-            padding: 1rem;
-            font-size: 1rem;
-
-            &-title {
-                font-size: 1rem;
-            }
-        }
-
-        &-content {
-            padding: 0 1rem;
-
-            &.active {
-                padding: 1rem;
-            }
-        }
-
-        &-icon {
-            width: 1rem;
-            height: 1rem;
-        }
-    }
-
-    // Adjust floating effect on mobile
-    .accordion-floating {
-        .accordion-item:hover {
-            transform: translateY(-2px) scale(1.01);
-        }
-    }
-}
-
-.accordion {
-    &-header {
-        &:focus {
-            outline: 2px solid $accordion-primary;
-            outline-offset: 2px;
-        }
-
-        &[aria-expanded="true"] {
-            .accordion-icon {
-                transform: rotate(180deg);
-            }
-        }
-    }
-
-    // High contrast mode support
-    @media (prefers-contrast: high) {
-        &-item {
-            border: 2px solid $accordion-text;
-        }
-
-        &-header {
-            &:focus {
-                outline: 3px solid $accordion-primary;
-                outline-offset: 3px;
-            }
-        }
-    }
-
-    // Reduced motion support
-    @media (prefers-reduced-motion: reduce) {
-        &-header,
-        &-content,
-        &-icon {
-            transition: none;
-        }
-
-        &-item:hover {
-            transform: none;
-        }
+// 20. No Animation (for performance or preference)
+.#{$prefix}--no-animation {
+    .#{$prefix}__icon,
+    .#{$prefix}__panel {
+        transition: none;
     }
 }

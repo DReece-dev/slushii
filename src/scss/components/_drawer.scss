@@ -1,81 +1,228 @@
-$drawer-width: 300px;
-$drawer-bg-color: #fff;
-$drawer-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-$drawer-transition-time: 0.2s;
-$drawer-slide-distance: 300px;
+@use "sass:map";
 
-.drawer-container {
-    position: relative;
+$drawer-prefix: "drawer" !default;
 
-    &.left .drawer {
-        right: auto;
-        left: -#{$drawer-width};
-    }
+$drawer-sizes: (
+    "sm": 280px,
+    "md": 350px,
+    // Default
+    "lg": 500px,
+) !default;
 
-    &.dark .drawer {
-        background-color: #333;
-        color: #fff;
-    }
-}
+.#{$drawer-prefix} {
+    // CSS variables for complete control and theming.
+    --drawer-size: #{map.get($drawer-sizes, "md")};
+    --drawer-bg: var(--white, #ffffff);
+    --drawer-fg: var(--gray-800, #1f2937);
+    --drawer-shadow: var(--shadow-lg, 0 10px 15px -3px rgba(0, 0, 0, 0.1));
+    --drawer-transition-duration: 0.3s;
+    --drawer-transition-timing: cubic-bezier(0.4, 0, 0.2, 1);
+    --drawer-content-transition-delay: 0.05s; // For staggered animation
+    --overlay-bg: rgba(0, 0, 0, 0.5);
 
-.drawer-toggle {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-.drawer {
-    position: absolute;
+    position: fixed;
     top: 0;
-    right: -#{$drawer-width};
-    width: $drawer-width;
-    height: 100vh;
-    background-color: $drawer-bg-color;
-    box-shadow: $drawer-box-shadow;
-    transition:
-        right $drawer-transition-time ease-in-out,
-        left $drawer-transition-time ease-in-out,
-        transform $drawer-transition-time ease-in-out,
-        background-color $drawer-transition-time ease-in-out;
-    z-index: 999;
-    overflow-y: auto;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    // Hide the component completely when not open for performance and accessibility
+    visibility: hidden;
+    pointer-events: none;
 
-    &.open {
-        right: 0;
-
-        &.left {
-            left: 0;
-        }
-    }
-
-    &.left {
-        right: auto;
-        left: -#{$drawer-width};
-    }
-
-    &.slide {
-        transform: translateX($drawer-slide-distance);
-    }
-
-    &.fade {
+    // BEM: Overlay / Backdrop
+    &__overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--overlay-bg);
         opacity: 0;
-    }
+        transition: opacity var(--drawer-transition-duration)
+            var(--drawer-transition-timing);
 
-    &.slide.open {
-        transform: translateX(0);
-    }
-
-    &.fade.open {
-        opacity: 1;
-    }
-
-    &.dark {
-        background-color: #333;
-        color: #fff;
-
-        &.open {
-            background-color: $drawer-bg-color;
+        // Progressive enhancement for a modern blur effect
+        @supports (backdrop-filter: blur(4px)) {
+            backdrop-filter: blur(0);
+            transition:
+                opacity var(--drawer-transition-duration)
+                    var(--drawer-transition-timing),
+                backdrop-filter var(--drawer-transition-duration)
+                    var(--drawer-transition-timing);
         }
     }
+
+    // BEM: Content (the actual sliding panel)
+    &__content {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: var(--drawer-size);
+        max-width: 100vw;
+        background-color: var(--drawer-bg);
+        color: var(--drawer-fg);
+        box-shadow: var(--drawer-shadow);
+        transition: transform var(--drawer-transition-duration)
+            var(--drawer-transition-timing)
+            var(--drawer-content-transition-delay);
+    }
+
+    // BEM: Header, Body, Footer for consistent internal structure
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 1.5rem;
+        border-bottom: 1px solid var(--gray-200, #e5e7eb);
+        flex-shrink: 0;
+    }
+    &__title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin: 0;
+    }
+    &__close {
+        /* Style your close button as needed, e.g., using a .btn class */
+    }
+
+    &__body {
+        padding: 1.5rem;
+        flex-grow: 1;
+        overflow-y: auto;
+    }
+
+    &__footer {
+        padding: 1rem 1.5rem;
+        border-top: 1px solid var(--gray-200, #e5e7eb);
+        flex-shrink: 0;
+    }
+}
+
+// STATE: When the drawer is open
+.#{$drawer-prefix}.is-open {
+    visibility: visible;
+    pointer-events: auto;
+
+    .#{$drawer-prefix}__overlay {
+        opacity: 1;
+        @supports (backdrop-filter: blur(4px)) {
+            backdrop-filter: blur(4px);
+        }
+    }
+    .#{$drawer-prefix}__content {
+        transform: translate(0, 0);
+    }
+
+    // Animate internal content when drawer opens
+    .#{$drawer-prefix}__body > * {
+        animation: fadeInFromBottom 0.4s var(--drawer-transition-timing) 0.15s
+            both;
+    }
+}
+
+@keyframes fadeInFromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// MODIFIER: Position Right (Default)
+.#{$drawer-prefix}--right .#{$drawer-prefix}__content {
+    top: 0;
+    right: 0;
+    transform: translateX(100%);
+}
+
+// MODIFIER: Position Left
+.#{$drawer-prefix}--left .#{$drawer-prefix}__content {
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+}
+
+// MODIFIER: Position Top
+.#{$drawer-prefix}--top .#{$drawer-prefix}__content {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    max-height: 100vh;
+    transform: translateY(-100%);
+}
+
+// MODIFIER: Position Bottom
+.#{$drawer-prefix}--bottom .#{$drawer-prefix}__content {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    max-height: 100vh;
+    transform: translateY(100%);
+}
+
+// Generate size variants
+@each $name, $size in $drawer-sizes {
+    .#{$drawer-prefix}--#{$name} {
+        --drawer-size: #{$size};
+    }
+}
+
+// Dark theme variant
+.#{$drawer-prefix}--dark {
+    --drawer-bg: #1f2937;
+    --drawer-fg: #d1d5db;
+    --overlay-bg: rgba(0, 0, 0, 0.7);
+    .#{$drawer-prefix}__header,
+    .#{$drawer-prefix}__footer {
+        border-color: #374151;
+    }
+}
+
+// Contained Mode Modifier
+.#{$drawer-prefix}--contained {
+    position: absolute; // Overrides 'fixed' for in-container use
+}
+
+// Push Content Modifier
+.#{$drawer-prefix}--push {
+    &.is-open {
+        .#{$drawer-prefix}__overlay {
+            background-color: transparent;
+            backdrop-filter: none;
+        }
+    }
+    &.is-open + * {
+        transition: transform var(--drawer-transition-duration)
+            var(--drawer-transition-timing);
+    }
+    &--right.is-open + * {
+        transform: translateX(calc(-1 * var(--drawer-size)));
+    }
+    &--left.is-open + * {
+        transform: translateX(var(--drawer-size));
+    }
+}
+
+// Nested Drawer State
+.#{$drawer-prefix}.is-nested-under {
+    .#{$drawer-prefix}__content {
+        // Move it back slightly to create a stacked effect
+        transform: translateX(calc(var(--drawer-size) * -0.1)) scale(0.98);
+    }
+    &--left .#{$drawer-prefix}__content {
+        transform: translateX(calc(var(--drawer-size) * 0.1)) scale(0.98);
+    }
+}
+
+body.drawer-is-open {
+    overflow: hidden;
 }

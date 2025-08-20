@@ -1,62 +1,124 @@
-.skeleton {
-    /* Base styles */
-    display: inline-block;
-    width: 100%;
-    height: 100%;
-    background-color: #ebebeb;
-    border-radius: 4px;
-    animation: skeleton-loading 1.5s infinite;
+@use "sass:map";
+
+$prefix: "skeleton" !default;
+
+// A map to hold all default CSS variables for easy setup and theming.
+$config: (
+    "base-color": #e5e7eb,
+    // gray-200
+    "highlight-color": #f9fafb,
+    // gray-50
+    "radius": 0.25rem,
+    "animation-duration": 1.5s,
+    // Dark theme colors
+    "dark-base-color": #374151,
+    // gray-700
+    "dark-highlight-color": #4b5563, // gray-600
+) !default;
+
+@keyframes skeleton-shine {
+    100% {
+        // Animate the background position from off-screen left to off-screen right
+        background-position: 200% 0;
+    }
 }
 
-.skeleton::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
+@keyframes skeleton-glow {
+    50% {
+        opacity: 0.6;
+    }
+}
+
+// The core skeleton element. This is the building block.
+.#{$prefix} {
+    // Generate CSS custom properties from the $config map
+    @each $key, $value in $config {
+        --skeleton-#{$key}: #{$value};
+    }
+
+    // Set default animation to the modern "shine"
+    --skeleton-animation-name: skeleton-shine;
+
+    display: block; // More predictable than inline-block
     width: 100%;
-    height: 100%;
+    height: 1.2em; // Default height suitable for a line of text
+    background-color: var(--skeleton-base-color);
+    border-radius: var(--skeleton-radius);
+    cursor: wait;
+
+    // The "shine" animation setup. No pseudo-element needed.
+    // The gradient is wide and starts off-screen to the left.
     background-image: linear-gradient(
-        to right,
-        #ebebeb 30%,
-        #f7f7f7 50%,
-        #ebebeb 70%
+        90deg,
+        var(--skeleton-base-color) 0%,
+        var(--skeleton-highlight-color) 50%,
+        var(--skeleton-base-color) 100%
     );
-    background-size: 200px 100%;
-    animation: skeleton-gradient 1.5s infinite;
+    background-size: 200% 100%;
+    background-position: -200% 0;
+    animation: var(--skeleton-animation-name) var(--skeleton-animation-duration)
+        linear infinite;
 }
 
-.skeleton.text {
+.#{$prefix}--text {
     height: 1em;
-    line-height: 1em;
-    font-size: 16px;
-}
-
-.skeleton.avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-}
-
-.skeleton.button {
-    padding: 12px 24px;
-    border-radius: 4px;
-    font-size: 16px;
-}
-
-@keyframes skeleton-loading {
-    0% {
-        transform: translateX(-100%);
-    }
-    100% {
-        transform: translateX(100%);
+    // Shorter last line for realism when multiple text skeletons are stacked
+    &:last-of-type {
+        width: 75%;
     }
 }
 
-@keyframes skeleton-gradient {
-    0% {
-        transform: translateX(-100%);
-    }
-    100% {
-        transform: translateX(100%);
+.#{$prefix}--title {
+    height: 1.5em;
+    margin-bottom: 0.75rem;
+}
+
+.#{$prefix}--avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%; // Make it a circle
+}
+
+.#{$prefix}--thumbnail {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9; // Common for images/videos
+}
+
+.#{$prefix}--button {
+    width: 100px;
+    height: 36px;
+    display: inline-block; // Buttons are often inline
+}
+
+// 1. Glow Animation
+.#{$prefix}--glow {
+    --skeleton-animation-name: skeleton-glow;
+    // Remove the gradient background needed for the shine animation
+    background-image: none;
+}
+
+// 2. Dark Theme
+.#{$prefix}--dark {
+    --skeleton-base-color: var(--skeleton-dark-base-color);
+    --skeleton-highlight-color: var(--skeleton-dark-highlight-color);
+}
+
+// 3. No Animation
+.#{$prefix}--no-animation {
+    animation: none;
+    background-image: none;
+}
+
+// Use this wrapper to group skeleton elements together.
+.#{$prefix}-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem; // Default spacing between skeleton elements
+
+    // Modifier to create row-based layouts
+    &--row {
+        flex-direction: row;
+        align-items: center;
     }
 }

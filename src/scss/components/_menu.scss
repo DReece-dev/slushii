@@ -1,242 +1,334 @@
-.menu {
-    background-color: #fff;
-    border-radius: 0.1rem;
-    box-shadow: 0 0.05rem 0.2rem rgba(48, 55, 66, 0.3);
-    list-style: none;
-    margin: 0;
-    min-width: 18rem; // using rem instead of px for better scalability
-    padding: 0.4rem;
-    transform: translateY(0.2rem);
-    z-index: 300;
+@use "sass:map";
 
-    // variant for navigation menu
-    &.menu-nav {
-        background-color: transparent;
-        box-shadow: none;
-    }
+$prefix: "dropdown-menu" !default;
 
-    // menu item
-    &__item {
-        margin-top: 0;
-        padding: 0 0.4rem;
-        position: relative;
-        text-decoration: none;
+// A comprehensive color palette for theming
+$colors: (
+    "background": #ffffff,
+    "foreground": #0f172a,
+    "muted-foreground": #64748b,
+    "primary": #3b82f6,
+    "primary-foreground": #ffffff,
+    "secondary": #f1f5f9,
+    "secondary-foreground": #0f172a,
+    "border": #e2e8f0,
+    "ring": #93c5fd,
+    // Dark theme colors
+    "dark-background": #020817,
+    "dark-foreground": #f8fafc,
+    "dark-border": #1e293b,
+    "dark-secondary": #1e293b,
+) !default;
 
-        // link styles
-        > a {
-            @extend .menu__item; // inherit styles from parent
-            border-radius: 0.1rem;
-            color: inherit;
-            display: block;
-            margin: 0 -0.4rem;
-            padding: 0.2rem 0.4rem;
-            text-decoration: none;
+// A scale for border-radius
+$radii: (
+    "none": 0,
+    "sm": 0.25rem,
+    // 4px
+    "md": 0.5rem,
+    // 8px
+    "lg": 0.75rem,
+    // 12px
+    "full": 9999px,
+) !default;
 
-            // hover and focus styles
-            &:hover,
-            &:focus {
-                background-color: #f1f1fc;
-                color: #5755d9;
-            }
+// A scale for shadows
+$shadows: (
+    "none": "none",
+    "sm": "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
+    "md": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1)",
+    "lg":
+        "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1)",
+    "xl":
+        "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)",
+) !default;
 
-            // active style
-            &:active {
-                @extend :hover; // inherit styles from hover
-            }
-        }
-    }
+.#{$prefix} {
+    // CSS variables for ultimate control over appearance
+    --menu-bg: var(--background, #{map.get($colors, "background")});
+    --menu-fg: var(--foreground, #{map.get($colors, "foreground")});
+    --menu-border: 1px solid var(--border, #{map.get($colors, "border")});
+    --menu-radius: #{map.get($radii, "md")};
+    --menu-shadow: #{map.get($shadows, "lg")};
+    --menu-padding: 0.5rem;
+    --menu-item-hover-bg: var(--secondary, #{map.get($colors, "secondary")});
+    --menu-item-hover-fg: var(
+        --secondary-foreground,
+        #{map.get($colors, "secondary-foreground")}
+    );
+    --menu-primary-fg: var(--primary, #{map.get($colors, "primary")});
+    --menu-ring-color: var(--ring, #{map.get($colors, "ring")});
 
-    // form elements
-    .form-checkbox,
-    .form-radio,
-    .form-switch {
-        margin: 0.1rem 0;
-    }
-
-    // menu item separator
-    &__item + &__item {
-        margin-top: 0.2rem;
-    }
-
-    // badge styles
-    .menu-badge {
-        align-items: center;
-        display: flex;
-        height: 100%;
-        position: absolute;
-        right: 0;
-        top: 0;
-
-        .label {
-            margin-right: 0.4rem;
-        }
-    }
-}
-.flyout-dropbutton {
-    background-color: var(--blue-500);
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    border-radius: 7px;
-    cursor: pointer;
-    margin-bottom: 10px;
-
-    &::after {
-        content: "";
-        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='24' height='24' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cdefs%3E%3Cpath id='a' d='M18.59 16.41L20 15l-8-8-8 8 1.41 1.41L12 9.83'/%3E%3C/defs%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cmask id='b' fill='%23fff'%3E%3Cuse xlink:href='%23a'/%3E%3C/mask%3E%3Cg mask='url(%23b)' fill='%235f6368'%3E%3Cpath d='M0 0h24v24H0z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-        transform: rotate(180deg);
-        transform-origin: center center;
-        display: inline-block;
-        width: 12px;
-        margin-left: 4px;
-        height: 12px;
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center center;
-        vertical-align: middle;
-        transition: transform 350ms ease;
-    }
-
-    &.transparent {
-        background-color: transparent;
-        color: black;
-    }
-
-    &:hover {
-        /* background-color: var(--blue-500); */
-        color: #4f46e5;
-    }
-
-    &:focus {
-        /* background-color: var(--blue-500); */
-        color: #4f46e5;
-    }
-}
-
-.flyout-dropdown {
     position: relative;
     display: inline-block;
-}
+    text-align: left;
 
-.flyout-dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: var(--white);
-    width: max-content;
-    height: fit-content;
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.158);
-    z-index: 1;
-
-    a {
-        color: rgb(0, 0, 0);
-        padding: 12px 16px;
-        text-decoration: none;
-        display: flex;
+    // The button that triggers the dropdown
+    &__trigger {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        white-space: nowrap;
+        border-radius: var(--menu-radius);
+        font-size: 1rem;
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        background-color: transparent;
+        color: var(--menu-fg);
+        border: 1px solid var(--border, #{map.get($colors, "border")});
+        transition:
+            background-color 0.2s ease,
+            color 0.2s ease,
+            box-shadow 0.2s ease;
 
         &:hover {
-            background-color: rgba(221, 221, 221, 0.26);
+            background-color: var(--menu-item-hover-bg);
+            color: var(--menu-item-hover-fg);
+        }
+
+        &:focus-visible {
+            outline: 2px solid transparent;
+            outline-offset: 2px;
+            box-shadow: 0 0 0 2px var(--menu-ring-color);
         }
     }
 
-    &.small {
-        min-width: 160px;
-    }
-
-    &.normal {
-        min-width: 200px;
-    }
-
-    &.medium {
-        min-width: 300px;
-    }
-
-    &.large {
-        min-width: 600px;
-    }
-}
-
-.flyout-dropdown-show {
-    display: block;
-}
-
-.hover-grey:hover {
-    background-color: rgba(221, 221, 221, 0.151);
-}
-
-.flyout-menu {
-    a {
-        float: left;
-        font-size: 16px;
-        color: black;
-        text-align: center;
-        text-decoration: none;
-
-        &:hover {
-            color: var(--blue-500);
-        }
-    }
-}
-
-.flyout-dropdown-menu {
-    float: left;
-    overflow: hidden;
-    white-space: none;
-
-    .flyout-dropbtn-menu {
-        font-size: 16px;
-        border: none;
-        outline: none;
-        color: black;
-        padding: 14px 16px;
-        background-color: inherit;
-        font: inherit;
+    // The dropdown panel itself
+    &__content {
+        display: none;
+        position: absolute;
+        z-index: 50;
+        top: calc(100% + 0.25rem);
+        left: 0;
+        min-width: 12rem;
+        padding: var(--menu-padding);
+        background-color: var(--menu-bg);
+        border: var(--menu-border);
+        border-radius: var(--menu-radius);
+        box-shadow: var(--menu-shadow);
+        list-style: none;
         margin: 0;
+        animation: fadeIn 0.15s ease-out;
+    }
+
+    // Interaction logic (can be JS-driven by adding/removing .is-active)
+    &:hover > &__content,
+    &.is-active > &__content {
+        display: block;
+    }
+
+    // A single item in the dropdown
+    &__item {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: 0.5rem 0.75rem;
+        border-radius: #{map.get($radii, "sm")};
+        color: var(--menu-fg);
+        text-decoration: none;
+        cursor: pointer;
+        user-select: none;
+        outline: none;
+        transition:
+            background-color 0.15s ease,
+            color 0.15s ease;
+
+        &:hover,
+        &:focus {
+            background-color: var(--menu-item-hover-bg);
+            color: var(--menu-item-hover-fg);
+        }
+    }
+
+    // A non-interactive heading within the menu
+    &__label {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: var(--muted-foreground, #{map.get($colors, "muted-foreground")});
+    }
+
+    // A visual separator
+    &__separator {
+        height: 1px;
+        background-color: var(--border, #{map.get($colors, "border")});
+        margin: 0.5rem -0.5rem; // Negative margin to span the full width
+    }
+
+    // For adding icons or badges
+    &__icon {
+        margin-right: 0.75rem;
+        width: 1rem;
+        height: 1rem;
     }
 }
 
-.flyout-menu a:hover,
-.flyout-dropdown-menu:hover .flyout-dropbtn-menu {
-    background-color: transparent;
-    color: #6366f1;
+// Keyframes for animations
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-0.25rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.flyout-dropdown-content-menu {
-    display: none;
-    position: absolute;
-    background-color: var(--white);
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(0.5rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// --- Sizing Variants (5) ---
+.#{$prefix}--size-sm {
+    .#{$prefix}__content {
+        min-width: 10rem;
+    }
+    .#{$prefix}__item,
+    .#{$prefix}__label {
+        padding: 0.375rem 0.5rem;
+        font-size: 0.875rem;
+    }
+}
+.#{$prefix}--size-md {
+    // Default size
+    .#{$prefix}__content {
+        min-width: 14rem;
+    }
+}
+.#{$prefix}--size-lg {
+    .#{$prefix}__content {
+        min-width: 18rem;
+    }
+    .#{$prefix}__item,
+    .#{$prefix}__label {
+        padding: 0.75rem 1rem;
+        font-size: 1.125rem;
+    }
+}
+.#{$prefix}--full-width .#{$prefix}__content {
     width: 100%;
-    height: max-content;
+}
+.#{$prefix}--content-width .#{$prefix}__content {
+    width: max-content;
+}
+
+// --- Styling & Theming Variants (10) ---
+.#{$prefix}--dark {
+    --menu-bg: #{map.get($colors, "dark-background")};
+    --menu-fg: #{map.get($colors, "dark-foreground")};
+    --menu-border: 1px solid #{map.get($colors, "dark-border")};
+    --menu-item-hover-bg: #{map.get($colors, "dark-secondary")};
+}
+.#{$prefix}--primary-accent {
+    .#{$prefix}__item:hover,
+    .#{$prefix}__item:focus {
+        background-color: var(--menu-primary-fg);
+        color: var(
+            --primary-foreground,
+            #{map.get($colors, "primary-foreground")}
+        );
+    }
+}
+.#{$prefix}--borderless {
+    --menu-border: none;
+}
+.#{$prefix}--transparent-trigger .#{$prefix}__trigger {
+    background-color: transparent;
+    border-color: transparent;
+    &:hover {
+        background-color: var(--menu-item-hover-bg);
+    }
+}
+.#{$prefix}--shadow-sm {
+    --menu-shadow: #{map.get($shadows, "sm")};
+}
+.#{$prefix}--shadow-xl {
+    --menu-shadow: #{map.get($shadows, "xl")};
+}
+.#{$prefix}--radius-lg {
+    --menu-radius: #{map.get($radii, "lg")};
+}
+.#{$prefix}--radius-full .#{$prefix}__trigger {
+    border-radius: #{map.get($radii, "full")};
+}
+.#{$prefix}--no-padding .#{$prefix}__content {
+    --menu-padding: 0;
+}
+.#{$prefix}--inset .#{$prefix}__content {
+    --menu-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+}
+
+// --- Positioning Variants (5) ---
+.#{$prefix}--align-right .#{$prefix}__content {
+    left: auto;
+    right: 0;
+}
+.#{$prefix}--align-center .#{$prefix}__content {
+    left: 50%;
+    transform: translateX(-50%);
+}
+.#{$prefix}--top .#{$prefix}__content {
+    top: auto;
+    bottom: calc(100% + 0.25rem);
+}
+.#{$prefix}--inset-x .#{$prefix}__content {
     left: 0;
-    -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
+    right: 0;
+    width: auto;
+}
+.#{$prefix}--offset-lg .#{$prefix}__content {
+    margin-top: 1rem;
 }
 
-.flyout-dropdown-menu:hover .flyout-dropdown-content-menu {
-    display: block;
+// --- Animation & Behavior Variants (5) ---
+.#{$prefix}--animated-slide-up .#{$prefix}__content {
+    animation: slideUp 0.2s ease-out;
 }
-
-.flyout-row-menu:after {
-    content: "";
-    display: table;
-    clear: both;
+.#{$prefix}--no-animation .#{$prefix}__content {
+    animation: none;
 }
-
-.flyout-dropbtn-menu::after {
-    content: "";
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='24' height='24' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cdefs%3E%3Cpath id='a' d='M18.59 16.41L20 15l-8-8-8 8 1.41 1.41L12 9.83'/%3E%3C/defs%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cmask id='b' fill='%23fff'%3E%3Cuse xlink:href='%23a'/%3E%3C/mask%3E%3Cg mask='url(%23b)' fill='%235f6368'%3E%3Cpath d='M0 0h24v24H0z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+.#{$prefix}--with-arrow .#{$prefix}__trigger::after {
+    content: "▼";
+    font-size: 0.625rem;
+    margin-left: 0.5rem;
+    transition: transform 0.2s ease;
+}
+.#{$prefix}--with-arrow.is-active .#{$prefix}__trigger::after,
+.#{$prefix}--with-arrow:hover .#{$prefix}__trigger::after {
     transform: rotate(180deg);
-    transform-origin: center center;
-    display: inline-block;
-    width: 12px;
-    margin-left: 4px;
-    height: 12px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center center;
-    vertical-align: middle;
-    transition: transform 350ms ease;
+}
+.#{$prefix}--dense {
+    --menu-padding: 0.25rem;
+    .#{$prefix}__item {
+        padding: 0.25rem 0.5rem;
+    }
+    .#{$prefix}__separator {
+        margin: 0.25rem -0.25rem;
+    }
+}
+.#{$prefix}--checkbox-items .#{$prefix}__item::before {
+    content: "";
+    width: 1rem;
+    height: 1rem;
+    border: 1px solid var(--border, #{map.get($colors, "border")});
+    border-radius: #{map.get($radii, "sm")};
+    margin-right: 0.75rem;
+}
+.#{$prefix}--checkbox-items .#{$prefix}__item.is-selected::before {
+    content: "✔";
+    background-color: var(--menu-primary-fg);
+    border-color: var(--menu-primary-fg);
+    color: var(--primary-foreground, #{map.get($colors, "primary-foreground")});
+    text-align: center;
+    line-height: 1;
 }

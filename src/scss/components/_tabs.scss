@@ -1,245 +1,228 @@
-.tabs {
-    -webkit-overflow-scrolling: touch;
-    align-items: stretch;
-    display: flex;
-    font-size: 1rem;
-    justify-content: space-between;
-    overflow: hidden;
-    overflow-x: auto;
-    white-space: nowrap;
+@use "sass:map";
 
-    a {
-        align-items: center;
-        border-bottom-color: #dbdbdb;
-        border-bottom-style: solid;
-        border-bottom-width: 1px;
-        color: #4a4a4a;
+$prefix: "tabs" !default;
+
+// A map to hold all default CSS variables for easy setup and theming.
+$config: (
+    // Sizing
+    "font-size": 1rem,
+    "padding-y": 0.5rem,
+    "padding-x": 1rem,
+    "radius": 0.5rem,
+
+    // Theming
+    "bg": transparent,
+    "fg": #6b7280,
+    // gray-500
+    "border-color": #d1d5db,
+    // gray-300
+    "hover-fg": #1f2937,
+    // gray-800
+    "active-fg": #111827,
+    // gray-900
+    "indicator-color": #111827,
+    // gray-900
+    "indicator-height": 2px,
+
+    // Dark Theme
+    "dark-bg": transparent,
+    "dark-fg": #9ca3af,
+    // gray-400
+    "dark-border-color": #374151,
+    // gray-700
+    "dark-hover-fg": #f9fafb,
+    // gray-50
+    "dark-active-fg": #ffffff,
+    // white
+    "dark-indicator-color": #ffffff,
+
+    // white
+    // Animation
+    "transition":
+        "color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease"
+) !default;
+
+// The main tabs container (the block)
+.#{$prefix} {
+    // Generate CSS custom properties from the $config map
+    @each $key, $value in $config {
+        --tabs-#{$key}: #{$value};
+    }
+
+    display: flex;
+    border-bottom: 1px solid var(--tabs-border-color);
+    width: 100%;
+
+    // The list of tab items
+    &__list {
         display: flex;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    // A single list item wrapper
+    &__item {
+        display: block;
+    }
+
+    // The clickable link/button for a tab
+    &__link {
+        display: inline-flex;
+        align-items: center;
         justify-content: center;
-        margin-bottom: -1px;
-        padding: 0.5em 1em;
-        vertical-align: top;
+        gap: 0.5rem;
+        padding-block: var(--tabs-padding-y);
+        padding-inline: var(--tabs-padding-x);
+        margin-bottom: -1px; // Aligns with the container's bottom border
+        font-size: var(--tabs-font-size);
+        color: var(--tabs-fg);
+        background-color: var(--tabs-bg);
+        border: 0 solid transparent;
+        border-bottom-width: var(--tabs-indicator-height);
+        white-space: nowrap;
         text-decoration: none;
+        cursor: pointer;
+        transition: var(--tabs-transition);
 
         &:hover {
-            border-bottom-color: #363636;
-            color: #363636;
+            color: var(--tabs-hover-fg);
+        }
+
+        &[disabled] {
+            opacity: 0.5;
+            cursor: not-allowed;
         }
     }
 
-    li {
-        display: block;
-
-        &.active {
-            a {
-                border-bottom-color: var(--blue-600);
-                color: var(--blue-600);
-            }
-        }
+    // Active state is applied to the item
+    &__item.is-active &__link {
+        color: var(--tabs-active-fg);
+        border-bottom-color: var(--tabs-indicator-color);
     }
 
-    ul {
-        align-items: center;
-        border-bottom-color: #dbdbdb;
-        border-bottom-style: solid;
-        border-bottom-width: 1px;
-        display: flex;
-        flex-grow: 1;
-        flex-shrink: 0;
-        justify-content: flex-start;
-
-        &.left {
-            padding-right: 0.75em;
-        }
-
-        &.center {
-            flex: none;
-            justify-content: center;
-            padding-left: 0.75em;
-            padding-right: 0.75em;
-        }
-
-        &.right {
-            justify-content: flex-end;
-            padding-left: 0.75em;
-        }
-    }
-
-    .icon {
-        &:first-child {
-            margin-right: 0.5em;
-        }
-
-        &:last-child {
-            margin-left: 0.5em;
-        }
-    }
-
-    &.centered ul {
-        justify-content: center;
-    }
-
-    &.right ul {
-        justify-content: center;
-    }
-
-    &.boxed a {
-        justify-content: center;
-
-        &:hover {
-            background-color: whitesmoke;
-            border-bottom-color: #dbdbdb;
-        }
-    }
-
-    &.boxed {
-        li {
-            &.active a {
-                background-color: var(--white);
-                border-color: #dbdbdb;
-                border-bottom-color: transparent !important;
-            }
-        }
-    }
-
-    &.fullwidth {
-        li {
-            flex-grow: 1;
-            flex-shrink: 0;
-        }
-    }
-
-    &.toggle {
-        a {
-            border-color: #dbdbdb;
-            border-style: solid;
-            border-width: 1px;
-            margin-bottom: 0;
-            position: relative;
-
-            &:hover {
-                background-color: whitesmoke;
-                border-color: #b5b5b5;
-                z-index: 2;
-            }
-        }
-
-        li + li {
-            margin-left: -1px;
-        }
-
-        li {
-            &:first-child a {
-                border-top-left-radius: 4px;
-                border-bottom-left-radius: 4px;
-            }
-        }
-
-        li {
-            &:last-child a {
-                border-top-right-radius: 4px;
-                border-bottom-right-radius: 4px;
-            }
-        }
-
-        li {
-            &.active a {
-                background-color: var(--blue-600);
-                border-color: var(--blue-600);
-                color: var(--white);
-                z-index: 1;
-            }
-        }
-
-        ul {
-            border-bottom: none;
-        }
-
-        &.toggle-rounded {
-            li {
-                &:first-child a {
-                    border-bottom-left-radius: 290486px;
-                    border-top-left-radius: 290486px;
-                    padding-left: 1.25em;
-                }
-            }
-        }
-
-        &.toggle-rounded {
-            li {
-                &:last-child a {
-                    border-bottom-right-radius: 290486px;
-                    border-top-right-radius: 290486px;
-                    padding-right: 1.25em;
-                }
-            }
-        }
-    }
-
-    &.small {
-        font-size: 0.75rem;
-    }
-
-    &.medium {
-        font-size: 1.25rem;
-    }
-
-    &.large {
-        font-size: 1.5rem;
+    &__icon {
+        width: 1.125em;
+        height: 1.125em;
     }
 }
 
-.tabs-pilled {
-    -webkit-overflow-scrolling: touch;
-    align-items: stretch;
-    display: flex;
-    font-size: 1rem;
-    justify-content: space-between;
-    overflow: hidden;
-    overflow-x: auto;
-    white-space: nowrap;
+// --- Layout Variants ---
 
-    a {
-        align-items: center;
-        color: #777d8a;
-        display: flex;
+// 1. Centered Tabs
+.#{$prefix}--centered {
+    .#{$prefix}__list {
         justify-content: center;
-        margin-bottom: -1px;
-        padding: 0.5em 1em;
-        vertical-align: top;
-
-        &:hover {
-            color: #363636;
-            background-color: #f3f4f6;
-            border-radius: 5px;
-        }
-    }
-
-    li {
-        display: block;
-
-        &.active a {
-            border-bottom-color: var(--blue-600);
-            color: var(--blue-600);
-        }
-    }
-
-    ul {
-        align-items: center;
-        display: flex;
-        flex-grow: 1;
-        flex-shrink: 0;
-        justify-content: flex-start;
-    }
-
-    &.fullwidth {
-        li {
-            flex-grow: 1;
-            flex-shrink: 0;
-        }
     }
 }
 
+// 2. Right-Aligned Tabs
+.#{$prefix}--right {
+    .#{$prefix}__list {
+        justify-content: flex-end;
+    }
+}
+
+// 3. Full Width Tabs
+.#{$prefix}--fullwidth {
+    .#{$prefix}__item {
+        flex-grow: 1;
+        text-align: center;
+    }
+}
+
+// 4. Vertical Tabs
+.#{$prefix}--vertical {
+    flex-direction: column;
+    border-bottom: none;
+    border-right: 1px solid var(--tabs-border-color);
+
+    .#{$prefix}__list {
+        flex-direction: column;
+    }
+
+    .#{$prefix}__link {
+        border-bottom-width: 0;
+        border-right-width: var(--tabs-indicator-height);
+        margin-bottom: 0;
+        margin-right: -1px;
+    }
+
+    &.#{$prefix}--dark {
+        border-right-color: var(--tabs-dark-border-color);
+    }
+}
+
+// --- Sizing Variants ---
+
+// 5. Small Tabs
+.#{$prefix}--sm {
+    --tabs-font-size: 0.875rem;
+    --tabs-padding-y: 0.375rem;
+    --tabs-padding-x: 0.75rem;
+}
+
+// 6. Large Tabs
+.#{$prefix}--lg {
+    --tabs-font-size: 1.125rem;
+    --tabs-padding-y: 0.625rem;
+    --tabs-padding-x: 1.25rem;
+}
+
+// --- Style Variants ---
+
+// 7. Dark Mode
+.#{$prefix}--dark {
+    --tabs-bg: var(--tabs-dark-bg);
+    --tabs-fg: var(--tabs-dark-fg);
+    --tabs-border-color: var(--tabs-dark-border-color);
+    --tabs-hover-fg: var(--tabs-dark-hover-fg);
+    --tabs-active-fg: var(--tabs-dark-active-fg);
+    --tabs-indicator-color: var(--tabs-dark-indicator-color);
+}
+
+// 8. Pills Style
+.#{$prefix}--pills {
+    border-bottom: none; // No main border for pills
+
+    .#{$prefix}__link {
+        border-radius: var(--tabs-radius);
+        border-bottom-width: 0; // Pills don't use the underline indicator
+    }
+
+    .#{$prefix}__item.is-active &__link {
+        background-color: var(--tabs-indicator-color);
+        color: var(
+            --tabs-dark-active-fg
+        ); // Assumes a dark indicator color has light text
+    }
+
+    // Dark mode compatibility for pills
+    &.#{$prefix}--dark .#{$prefix}__item.is-active &__link {
+        background-color: var(--tabs-dark-indicator-color);
+        color: var(
+            --tabs-active-fg
+        ); // Assumes a light indicator color has dark text
+    }
+}
+
+// 9. Rounded Pills
+.#{$prefix}--rounded {
+    --tabs-radius: 9999px;
+}
+
+// 10. Boxed Style
+.#{$prefix}--boxed {
+    border: 1px solid var(--tabs-border-color);
+    border-radius: var(--tabs-radius);
+
+    .#{$prefix}__link {
+        border-bottom: none;
+    }
+}
+
+// --- Tab Content ---
 .tab-content > .tab-pane {
     display: none;
 }

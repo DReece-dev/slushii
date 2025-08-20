@@ -1,66 +1,308 @@
-$notification-background-color: whitesmoke;
-$notification-text-color: currentColor;
-$notification-link-color: currentColor;
-$notification-link-decoration: underline;
-$notification-shadow:
-    0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
-    0 0px 0 1px rgba(10, 10, 10, 0.02);
-$notification-box-radius: 4px;
-$notification-width: 25em;
-$notification-padding: 1rem;
-$notification-delete-position: absolute;
-$notification-delete-top: 0.5rem;
-$notification-delete-right: 0.5rem;
+@use "sass:map";
 
-.notification {
-    display: inline-flex;
-    flex-direction: row;
-    background-color: $notification-background-color;
-    border-radius: $notification-box-radius;
+$prefix: "notification" !default;
+
+$config: (
+    "base-bg": #ffffff,
+    "base-fg": #1f2937,
+    "padding": 1rem,
+    "radius": 0.5rem,
+    "shadow":
+        "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
+    "shadow-lg":
+        "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)",
+    "max-width": 24rem,
+    "border-width": 4px,
+    "transition-duration": 0.3s,
+) !default;
+
+$states: (
+    "success": (
+        "rgb": "34, 197, 94",
+        "fg": #ffffff,
+    ),
+    "info": (
+        "rgb": "59, 130, 246",
+        "fg": #ffffff,
+    ),
+    "warning": (
+        "rgb": "249, 115, 22",
+        "fg": #ffffff,
+    ),
+    "danger": (
+        "rgb": "239, 68, 68",
+        "fg": #ffffff,
+    ),
+    "dark": (
+        "rgb": "17, 24, 39",
+        "fg": #f9fafb,
+    ),
+) !default;
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(1rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-1rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(1rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.#{$prefix} {
+    @each $key, $value in $config {
+        --notification-#{$key}: #{$value};
+    }
+    --notification-bg: var(--notification-base-bg);
+    --notification-fg: var(--notification-base-fg);
+    --notification-icon-fg: var(--notification-fg);
+    --notification-raw-rgb: 0, 0, 0;
+
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
     position: relative;
-    padding: $notification-padding;
-    width: $notification-width;
-    height: max-content;
-    box-shadow: $notification-shadow;
+    padding: var(--notification-padding);
+    max-width: var(--notification-max-width);
+    background-color: var(--notification-bg);
+    color: var(--notification-fg);
+    border-radius: var(--notification-radius);
+    box-shadow: var(--notification-shadow);
+    animation:
+        fadeIn var(--notification-transition-duration) ease-out,
+        slideInUp var(--notification-transition-duration) ease-out;
 
-    &,
-    a:not(.btn):not(.dropdown-item),
-    strong,
-    .title,
-    .subtitle,
-    .content,
-    pre,
-    code {
-        color: $notification-text-color;
+    &__icon {
+        flex-shrink: 0;
+        color: var(--notification-icon-fg);
     }
+    &__content {
+        flex-grow: 1;
+    }
+    &__title {
+        margin: 0 0 0.25rem;
+        font-weight: 600;
+    }
+    &__body {
+        margin: 0;
+        line-height: 1.5;
+        a {
+            color: inherit;
+            text-decoration: underline;
+        }
+    }
+    &__close {
+        flex-shrink: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 1.75rem;
+        height: 1.75rem;
+        margin: -0.5rem;
+        padding: 0;
+        border: none;
+        background: none;
+        border-radius: 99px;
+        color: inherit;
+        cursor: pointer;
+        opacity: 0.7;
+        transition:
+            opacity 0.2s ease,
+            background-color 0.2s ease;
+        &:hover {
+            opacity: 1;
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+    }
+}
 
-    a:not(.btn):not(.dropdown-item) {
-        text-decoration: $notification-link-decoration;
+@each $name, $props in $states {
+    .#{$prefix}--#{$name} {
+        --notification-raw-rgb: #{map.get($props, "rgb")};
+        --notification-bg: rgb(var(--notification-raw-rgb));
+        --notification-fg: #{map.get($props, "fg")};
+        --notification-icon-fg: #{map.get($props, "fg")};
     }
+}
 
-    pre,
-    code {
-        background-color: transparent;
-    }
+// --- Style Variants (7) ---
+// 6. Subtle Style
+.#{$prefix}--subtle {
+    --notification-bg: rgba(var(--notification-raw-rgb), 0.1);
+    --notification-fg: rgb(var(--notification-raw-rgb));
+    --notification-icon-fg: rgb(var(--notification-raw-rgb));
+}
+// 7. Bordered Style
+.#{$prefix}--bordered {
+    --notification-bg: var(--notification-base-bg);
+    --notification-fg: var(--notification-base-fg);
+    border-left: var(--notification-border-width) solid
+        rgb(var(--notification-raw-rgb));
+    --notification-icon-fg: rgb(var(--notification-raw-rgb));
+}
+// 8. Glow Style
+.#{$prefix}--glow {
+    --notification-shadow: 0 0 20px -5px rgba(var(--notification-raw-rgb), 0.75);
+}
+// 9. Centered Content
+.#{$prefix}--centered {
+    align-items: center;
+    text-align: center;
+}
+// 10. No Shadow
+.#{$prefix}--shadow-none {
+    --notification-shadow: none;
+}
+// 11. Large Shadow
+.#{$prefix}--shadow-lg {
+    --notification-shadow: var(--notification-shadow-lg);
+}
+// 12. Icon with Background
+.#{$prefix}--icon-bg .#{$prefix}__icon {
+    background-color: rgba(var(--notification-raw-rgb), 0.15);
+    padding: 0.5rem;
+    border-radius: 99px;
+    color: rgb(var(--notification-raw-rgb));
+}
 
-    .delete {
-        top: $notification-delete-top;
-        right: $notification-delete-right;
-        position: $notification-delete-position !important;
-    }
+// --- Sizing & Spacing Variants (4) ---
+// 13. Small
+.#{$prefix}--sm {
+    --notification-padding: 0.75rem;
+    gap: 0.75rem;
+    font-size: 0.875rem;
+}
+// 14. Large
+.#{$prefix}--lg {
+    --notification-padding: 1.5rem;
+    gap: 1.5rem;
+    font-size: 1.125rem;
+}
+// 15. Full Width
+.#{$prefix}--full-width {
+    max-width: none;
+    width: 100%;
+}
+// 16. Rounded (Pill)
+.#{$prefix}--rounded-full {
+    --notification-radius: 9999px;
+}
 
-    &.white {
-        background-color: var(--white);
-        color: black;
+// --- Layout & Structure Variants (5) ---
+// 17. With Actions
+.#{$prefix}--with-actions .#{$prefix}__content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    // Placeholder for an __actions BEM element
+    .#{$prefix}__actions {
+        display: flex;
+        gap: 0.5rem;
     }
+}
+// 18. With Avatar
+.#{$prefix}--with-avatar {
+    // Placeholder for an __avatar BEM element
+    .#{$prefix}__avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 99px;
+    }
+}
+// 19. With Progress
+.#{$prefix}--with-progress {
+    padding-bottom: calc(var(--notification-padding) + 4px);
+    // Placeholder for a __progress BEM element
+    .#{$prefix}__progress {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 4px;
+        width: 100%;
+        background-color: rgba(var(--notification-raw-rgb), 0.2);
+        span {
+            display: block;
+            height: 100%;
+            background-color: rgb(var(--notification-raw-rgb));
+        }
+    }
+}
+// 20. Icon Top
+.#{$prefix}--icon-top {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+// 21. Close on Left
+.#{$prefix}--close-on-left {
+    flex-direction: row-reverse;
+    .#{$prefix}__close {
+        margin: -0.5rem auto -0.5rem -0.5rem;
+    }
+}
 
-    &.black {
-        background-color: black;
-        color: var(--white);
+// --- Positioning Variants (1) ---
+// 22. Toast
+.#{$prefix}--toast {
+    position: fixed;
+    z-index: 2000;
+    &.is-top-right {
+        top: 1rem;
+        right: 1rem;
     }
+    &.is-top-left {
+        top: 1rem;
+        left: 1rem;
+    }
+    &.is-bottom-right {
+        bottom: 1rem;
+        right: 1rem;
+    }
+    &.is-bottom-left {
+        bottom: 1rem;
+        left: 1rem;
+    }
+}
 
-    &.blue {
-        background-color: var(--blue-500);
-        color: var(--white);
-    }
+// --- Animation Variants (3) ---
+// 23. No Animation
+.#{$prefix}--no-animation {
+    animation: none;
+}
+// 24. Slide from Left
+.#{$prefix}--slide-from-left {
+    animation-name: fadeIn, slideInLeft;
+}
+// 25. Slide from Right
+.#{$prefix}--slide-from-right {
+    animation-name: fadeIn, slideInRight;
 }

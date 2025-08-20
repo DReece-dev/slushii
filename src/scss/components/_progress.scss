@@ -1,82 +1,117 @@
-// Animations
-@keyframes progress-bar-stripes {
-    0% {
+@use "sass:map";
+
+$prefix: "progress" !default;
+
+// A map to hold all default CSS variables for easy setup and theming.
+$config: (
+    "height": 1rem,
+    "bg": #e9ecef,
+    // gray-200
+    "radius": 0.25rem,
+    "bar-bg": #3b82f6,
+    // blue-500
+    "label-fg": #ffffff,
+    "label-font-size": 0.75rem,
+    "transition": "width 0.6s ease",
+    "animation-duration": "1s",
+) !default;
+
+// The single source of truth for all semantic color states.
+// Adding a new map here will auto-generate a new variant.
+$states: (
+    "success": #22c55e,
+    // green-500
+    "info": #06b6d4,
+    // cyan-500
+    "warning": #f97316,
+    // orange-500
+    "danger": #ef4444,
+    // red-500
+    "dark": #1f2937, // gray-800
+) !default;
+
+@keyframes progress-stripes {
+    from {
         background-position-x: 1rem;
     }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .progress-bar {
-        transition: none;
-        animation: none;
+    to {
+        background-position-x: 0;
     }
 }
 
-// Progress Container
-.progress {
+@keyframes progress-indeterminate {
+    from {
+        background-position: 200% 0;
+    }
+    to {
+        background-position: -200% 0;
+    }
+}
+
+.#{$prefix} {
+    // Generate CSS custom properties from the $config map
+    @each $key, $value in $config {
+        --progress-#{$key}: #{$value};
+    }
+
     display: flex;
-    height: 1rem;
+    position: relative; // For positioning the label
+    width: 100%;
+    height: var(--progress-height);
+    background-color: var(--progress-bg);
+    border-radius: var(--progress-radius);
     overflow: hidden;
-    font-size: 0.75rem;
-    background-color: #e9ecef;
-    border-radius: 0.25rem;
 
-    // Indeterminate State
-    &:indeterminate {
-        animation-duration: 1.5s;
-        animation-iteration-count: infinite;
-        animation-name: moveIndeterminate;
-        animation-timing-function: linear;
-        background-color: #ededed;
-        background-image: linear-gradient(to right, #4a4a4a 30%, #ededed 30%);
-        background-position: top left;
-        background-repeat: no-repeat;
-        background-size: 150% 150%;
-
-        // Webkit Progress Bar
-        &::-webkit-progress-bar {
-            background-color: transparent;
-        }
-
-        // Moz Progress Bar
-        &::-moz-progress-bar {
-            background-color: transparent;
-        }
-
-        // MS Fill
-        &::-ms-fill {
-            animation-name: none;
-        }
+    &__bar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        background-color: var(--progress-bar-bg);
+        transition: var(--progress-transition);
     }
 
-    // Sizes
-    &.small {
-        height: 0.75rem;
-    }
-
-    &.medium {
-        height: 1.25rem;
-    }
-
-    &.large {
-        height: 1.5rem;
+    &__label {
+        position: absolute;
+        // Center the label within the entire progress bar container
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: var(--progress-label-fg);
+        font-size: var(--progress-label-font-size);
+        font-weight: 600;
+        white-space: nowrap;
     }
 }
 
-// Progress Bar
-.progress-bar {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    overflow: hidden;
-    color: var(--white);
-    text-align: center;
-    white-space: nowrap;
-    background-color: var(--blue-500);
-    transition: width 0.6s ease;
+// --- Color Variants (Auto-Generated) ---
+@each $name, $color in $states {
+    .#{$prefix}--#{$name} {
+        --progress-bar-bg: #{$color};
+    }
+}
 
-    // Striped
-    &.striped {
+// --- Sizing Variants ---
+.#{$prefix}--sm {
+    --progress-height: 0.5rem;
+    --progress-label-font-size: 0.625rem;
+}
+.#{$prefix}--lg {
+    --progress-height: 1.5rem;
+    --progress-label-font-size: 0.875rem;
+}
+
+// --- Style Variants ---
+.#{$prefix}--rounded {
+    --progress-radius: 9999px;
+}
+.#{$prefix}--squared {
+    --progress-radius: 0;
+}
+
+// --- Behavior Variants ---
+.#{$prefix}--striped {
+    .#{$prefix}__bar {
         background-image: linear-gradient(
             45deg,
             rgba(255, 255, 255, 0.15) 25%,
@@ -88,10 +123,31 @@
             transparent
         );
         background-size: 1rem 1rem;
+        animation: progress-stripes var(--progress-animation-duration) linear
+            infinite;
     }
+}
 
-    // Animated
-    &.animated {
-        animation: 1s linear infinite progress-bar-stripes;
+.#{$prefix}--indeterminate {
+    .#{$prefix}__bar {
+        width: 100% !important; // Indeterminate is always "full"
+        background-image: linear-gradient(
+            90deg,
+            var(--progress-bar-bg) 0%,
+            #{rgba(#fff, 0.5)} 50%,
+            var(--progress-bar-bg) 100%
+        );
+        background-size: 200% 100%;
+        animation: progress-indeterminate
+            calc(var(--progress-animation-duration) * 2) ease-in-out infinite;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .#{$prefix} {
+        .#{$prefix}__bar {
+            transition: none;
+            animation: none !important; // Override striped and indeterminate
+        }
     }
 }

@@ -1,734 +1,304 @@
-@use "sass:map"; // Added to use modern map functions
+@use "sass:map";
 
-// Modern Alert Variables
-$alert-border-radius: 0.75rem;
-$alert-padding: 1rem 1.25rem;
-$alert-margin: 1rem 0;
-$alert-font-size: 0.875rem;
-$alert-line-height: 1.5;
-$alert-shadow:
-    0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
-$alert-shadow-lg:
-    0 10px 15px -3px rgba(0, 0, 0, 0.1),
-    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+$prefix: "alert" !default;
 
-// Animation variables
-$alert-duration: 0.3s;
-$alert-easing: cubic-bezier(0.4, 0, 0.2, 1);
-$alert-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-$alert-slide-duration: 0.4s;
+// A map to hold all default CSS variables for easy setup and theming.
+$config: (
+    // Sizing & Spacing
+    "padding": 1rem 1.25rem,
+    "radius": 0.75rem,
+    "border-width": 1px,
+    "accent-width": 4px,
 
-// Modern color system
-$alert-colors: (
-    primary: (
-        bg: #3b82f6,
-        text: #ffffff,
-        border: #2563eb,
-        icon: #ffffff,
-    ),
-    secondary: (
-        bg: #6b7280,
-        text: #ffffff,
-        border: #4b5563,
-        icon: #ffffff,
-    ),
-    success: (
-        bg: #10b981,
-        text: #ffffff,
-        border: #059669,
-        icon: #ffffff,
-    ),
-    warning: (
-        bg: #f59e0b,
-        text: #1f2937,
-        border: #d97706,
-        icon: #1f2937,
-    ),
-    error: (
-        bg: #ef4444,
-        text: #ffffff,
-        border: #dc2626,
-        icon: #ffffff,
-    ),
-    info: (
-        bg: #06b6d4,
-        text: #ffffff,
-        border: #0891b2,
-        icon: #ffffff,
-    ),
-    light: (
-        bg: #f8fafc,
-        text: #1e293b,
-        border: #e2e8f0,
-        icon: #64748b,
-    ),
-    dark: (
-        bg: #1e293b,
-        text: #f8fafc,
-        border: #0f172a,
-        icon: #f8fafc,
-    ),
-);
+    // Theming
+    // FIXED: Wrapped multi-part shadow value in parentheses
+    "shadow": (
+            0 4px 6px -1px rgba(0, 0, 0, 0.1),
+            0 2px 4px -2px rgba(0, 0, 0, 0.1)
+        ),
+    // State Colors (Backgrounds)
+    "info-bg": #eff6ff,
+    // blue-50
+    "success-bg": #f0fdf4,
+    // green-50
+    "warning-bg": #fffbeb,
+    // yellow-50
+    "error-bg": #fef2f2,
 
-// Modern mixins
-@mixin alert-variant($bg, $text, $border, $icon) {
-    background-color: $bg;
-    color: $text;
-    border-color: $border;
+    // red-50
+    // State Colors (Foregrounds / Accents)
+    "info-fg": #3b82f6,
+    // blue-500
+    "success-fg": #22c55e,
+    // green-500
+    "warning-fg": #f59e0b,
+    // yellow-500
+    "error-fg": #ef4444,
 
-    .alert-icon {
-        color: $icon;
+    // red-500
+    // Dark Theme State Colors (Backgrounds)
+    "dark-info-bg": #1e293b,
+    // slate-800
+    "dark-success-bg": #166534,
+    // green-800 (adjusted for better contrast)
+    "dark-warning-bg": #854d0e,
+    // amber-800 (adjusted for better contrast)
+    "dark-error-bg": #991b1b,
+
+    // red-800 (adjusted for better contrast)
+    // Dark Theme State Colors (Foregrounds / Accents)
+    "dark-info-fg": #60a5fa,
+    // blue-400
+    "dark-success-fg": #4ade80,
+    // green-400
+    "dark-warning-fg": #facc15,
+    // yellow-400
+    "dark-error-fg": #f87171,
+
+    // red-400
+    // Animation
+    "transition-duration": "0.2s"
+) !default;
+
+//==========================================================================
+// 1. KEYFRAMES
+//==========================================================================
+@keyframes alert-fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
     }
-
-    .alert-close {
-        color: $text;
-
-        &:hover {
-            background-color: rgba($text, 0.1);
-        }
-    }
-
-    .alert-link {
-        color: $text;
-
-        &:hover {
-            color: rgba($text, 0.8);
-        }
-    }
-
-    // Progress bar
-    .alert-progress {
-        background-color: rgba($text, 0.3);
-
-        &::after {
-            background-color: $text;
-        }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
-@mixin glass-effect($opacity: 0.9) {
-    background: rgba(255, 255, 255, $opacity);
-    backdrop-filter: blur(12px) saturate(180%);
-    -webkit-backdrop-filter: blur(12px) saturate(180%);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-@mixin modern-shadow($level: 1) {
-    @if $level == 1 {
-        box-shadow: $alert-shadow;
-    } @else {
-        box-shadow: $alert-shadow-lg;
+@keyframes alert-fade-out {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
     }
 }
 
-@mixin slide-in-animation {
-    @keyframes slideInRight {
-        from {
-            transform: translateX(100%);
-            opacity: 0;
-        }
-        to {
-            transform: translateX(0);
-            opacity: 1;
-        }
+//==========================================================================
+// 2. BASE COMPONENT
+//==========================================================================
+.#{$prefix} {
+    // Generate CSS custom properties from the $config map
+    @each $key, $value in $config {
+        --alert-#{$key}: #{$value};
     }
 
-    @keyframes slideOutRight {
-        from {
-            transform: translateX(0);
-            opacity: 1;
-        }
-        to {
-            transform: translateX(100%);
-            opacity: 0;
-        }
-    }
+    // Default to the 'info' state
+    --alert-bg-color: var(--alert-info-bg);
+    --alert-accent-color: var(--alert-info-fg);
+    --alert-fg-color: #1e3a8a; // blue-900
 
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-            transform: translateY(-10px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    @keyframes fadeOut {
-        from {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        to {
-            opacity: 0;
-            transform: translateY(-10px);
-        }
-    }
-}
-
-// Include animations
-@include slide-in-animation;
-
-// Base alert component
-.alert {
-    position: relative;
     display: flex;
-    align-items: flex-start;
     gap: 0.75rem;
-    padding: $alert-padding;
-    margin: $alert-margin;
-    border-radius: $alert-border-radius;
-    border: 1px solid transparent;
-    font-size: $alert-font-size;
-    line-height: $alert-line-height;
-    @include modern-shadow(1);
-    transition: all $alert-duration $alert-easing;
+    padding: var(--alert-padding);
+    border-radius: var(--alert-radius);
+    background-color: var(--alert-bg-color);
+    color: var(--alert-fg-color);
+    box-shadow: var(--alert-shadow);
+    animation: alert-fade-in var(--alert-transition-duration) ease-out;
 
-    // Default primary styling (Corrected with map.get)
-    @include alert-variant(
-        map.get(map.get($alert-colors, primary), bg),
-        map.get(map.get($alert-colors, primary), text),
-        map.get(map.get($alert-colors, primary), border),
-        map.get(map.get($alert-colors, primary), icon)
-    );
+    &.is-dismissing {
+        animation: alert-fade-out var(--alert-transition-duration) ease-in
+            forwards;
+    }
 
-    // Icon container
-    &-icon {
+    // --- Elements ---
+    &__icon {
         flex-shrink: 0;
         width: 1.25rem;
         height: 1.25rem;
         margin-top: 0.125rem;
-        transition: transform $alert-duration $alert-bounce;
-
-        &:hover {
-            transform: scale(1.1);
-        }
-
-        // Default icons for different types
-        &.icon-info::before {
-            content: "ℹ";
-            font-style: normal;
-            font-weight: bold;
-        }
-        &.icon-success::before {
-            content: "✓";
-            font-style: normal;
-            font-weight: bold;
-        }
-        &.icon-warning::before {
-            content: "⚠";
-            font-style: normal;
-            font-weight: bold;
-        }
-        &.icon-error::before {
-            content: "✕";
-            font-style: normal;
-            font-weight: bold;
-        }
+        color: var(--alert-accent-color);
     }
 
-    // Content container
-    &-content {
-        flex: 1;
+    &__content {
+        flex-grow: 1;
         min-width: 0;
     }
 
-    // Alert heading
-    &-heading {
-        font-size: 1rem;
+    &__title {
+        margin: 0 0 0.25rem;
         font-weight: 600;
-        margin: 0 0 0.25rem 0;
-        color: inherit;
+        font-size: 1rem;
+        color: var(--alert-fg-color);
     }
 
-    // Alert body text
-    &-body {
+    &__body {
         margin: 0;
-
-        p {
-            margin: 0 0 0.5rem 0;
-            &:last-child {
-                margin-bottom: 0;
-            }
-        }
+        font-size: 0.875rem;
+        line-height: 1.5;
+        color: var(--alert-accent-color);
     }
 
-    // Alert links
-    &-link {
-        color: inherit;
-        text-decoration: underline;
-        font-weight: 500;
+    &__close {
+        flex-shrink: 0;
+        margin-left: auto;
+        padding: 0.25rem;
+        border: none;
+        background-color: transparent;
+        border-radius: 0.375rem;
+        color: var(--alert-accent-color);
         cursor: pointer;
-        transition: all $alert-duration $alert-easing;
+        transition: background-color var(--alert-transition-duration);
 
         &:hover {
-            text-decoration: none;
-            opacity: 0.8;
+            background-color: rgba(0, 0, 0, 0.1);
         }
     }
+}
 
-    // Close button
-    &-close {
+//==========================================================================
+// 3. CORE VARIANTS
+//==========================================================================
+
+// --- State Variants ---
+.#{$prefix}--success {
+    --alert-bg-color: var(--alert-success-bg);
+    --alert-accent-color: var(--alert-success-fg);
+    --alert-fg-color: #14532d; // green-900
+}
+.#{$prefix}--warning {
+    --alert-bg-color: var(--alert-warning-bg);
+    --alert-accent-color: var(--alert-warning-fg);
+    --alert-fg-color: #78350f; // amber-900
+}
+.#{$prefix}--error {
+    --alert-bg-color: var(--alert-error-bg);
+    --alert-accent-color: var(--alert-error-fg);
+    --alert-fg-color: #7f1d1d; // red-900
+}
+
+// --- Style Variants ---
+
+// Outlined: Transparent background with a colored border
+.#{$prefix}--outlined {
+    --alert-bg-color: transparent;
+    border: var(--alert-border-width) solid var(--alert-accent-color);
+    box-shadow: none;
+
+    .#{$prefix}__title {
+        color: var(--alert-accent-color);
+    }
+}
+
+// Solid: A solid, deep color background
+.#{$prefix}--solid {
+    --alert-bg-color: var(--alert-accent-color);
+    --alert-fg-color: white; // Text is always light on a solid background
+    --alert-accent-color: white; // Icons and close buttons are also light
+}
+
+// Left Accent: A border only on the left side
+.#{$prefix}--left-accent {
+    border-left: var(--alert-accent-width) solid var(--alert-accent-color);
+}
+
+// Top Accent: A border only on the top side
+.#{$prefix}--top-accent {
+    border-top: var(--alert-accent-width) solid var(--alert-accent-color);
+    // Remove other borders for a clean look
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+}
+
+// Minimal: No background or borders, just colored text
+.#{$prefix}--minimal {
+    --alert-bg-color: transparent;
+    padding-left: 0;
+    padding-right: 0;
+    box-shadow: none;
+
+    .#{$prefix}__title {
+        color: var(--alert-accent-color);
+    }
+}
+
+// --- Dark Mode ---
+.#{$prefix}--dark {
+    // Override the state colors with their dark theme equivalents
+    --alert-info-bg: var(--dark-info-bg);
+    --alert-success-bg: var(--dark-success-bg);
+    --alert-warning-bg: var(--dark-warning-bg);
+    --alert-error-bg: var(--dark-error-bg);
+
+    --alert-info-fg: var(--dark-info-fg);
+    --alert-success-fg: var(--dark-success-fg);
+    --alert-warning-fg: var(--dark-warning-fg);
+    --alert-error-fg: var(--dark-error-fg);
+
+    // Dark text colors are usually the lighter accent colors
+    &.#{$prefix}--success {
+        --alert-fg-color: var(--dark-success-fg);
+    }
+    &.#{$prefix}--warning {
+        --alert-fg-color: var(--dark-warning-fg);
+    }
+    &.#{$prefix}--error {
+        --alert-fg-color: var(--dark-error-fg);
+    }
+    &.#{$prefix}--info,
+    &:not(.#{$prefix}--success):not(.#{$prefix}--warning):not(
+            .#{$prefix}--error
+        ) {
+        --alert-fg-color: var(--dark-info-fg);
+    }
+}
+
+//==========================================================================
+// 4. ADDITIONAL VARIANTS (Mostly by composition)
+//==========================================================================
+
+// Centered Layout
+.#{$prefix}--centered {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    .#{$prefix}__icon {
+        margin-bottom: 0.5rem;
+    }
+    .#{$prefix}__close {
         position: absolute;
         top: 0.5rem;
         right: 0.5rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 2rem;
-        height: 2rem;
-        border: none;
-        background: transparent;
-        color: inherit;
-        cursor: pointer;
-        border-radius: 0.375rem;
-        font-size: 1.125rem;
-        line-height: 1;
-        transition: all $alert-duration $alert-easing;
-
-        &:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-            transform: scale(1.1);
-        }
-
-        &:focus {
-            outline: 2px solid currentColor;
-            outline-offset: 2px;
-        }
-
-        &::before {
-            content: "×";
-            font-weight: bold;
-        }
-    }
-
-    // Actions container
-    &-actions {
-        display: flex;
-        gap: 0.5rem;
-        margin-top: 0.75rem;
-
-        .btn {
-            padding: 0.375rem 0.75rem;
-            border-radius: 0.375rem;
-            border: 1px solid currentColor;
-            background: transparent;
-            color: inherit;
-            font-size: 0.75rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all $alert-duration $alert-easing;
-
-            &:hover {
-                background: currentColor;
-                color: var(--alert-bg, #3b82f6);
-            }
-
-            &.btn-primary {
-                background: currentColor;
-                color: var(--alert-bg, #3b82f6);
-
-                &:hover {
-                    background: transparent;
-                    color: inherit;
-                }
-            }
-        }
-    }
-
-    // Progress bar for timed alerts
-    &-progress {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        height: 3px;
-        background-color: rgba(255, 255, 255, 0.3);
-        border-radius: 0 0 $alert-border-radius $alert-border-radius;
-        overflow: hidden;
-
-        &::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            background-color: currentColor;
-            animation: progress-countdown var(--duration, 5s) linear forwards;
-        }
-    }
-
-    // Dismiss animation
-    &.disposing {
-        animation: fadeOut $alert-duration $alert-easing forwards;
-    }
-    &.disposed {
-        display: none;
-    }
-    &.show {
-        animation: fadeIn $alert-duration $alert-easing;
     }
 }
-
-// Progress countdown animation
-@keyframes progress-countdown {
-    from {
-        width: 100%;
-    }
-    to {
-        width: 0%;
-    }
-}
-
-// Generate color variants (Corrected with map.get)
-@each $name, $colors in $alert-colors {
-    .alert-#{$name} {
-        @include alert-variant(
-            map.get($colors, bg),
-            map.get($colors, text),
-            map.get($colors, border),
-            map.get($colors, icon)
-        );
-        --alert-bg: #{map.get($colors, bg)};
-    }
-}
-
-// 1. Outlined variant (Corrected with map.get)
-.alert-outlined {
-    background: transparent;
-    border-width: 2px;
-
-    @each $name, $colors in $alert-colors {
-        &.alert-#{$name} {
-            color: map.get($colors, bg);
-            border-color: map.get($colors, bg);
-            background: rgba(map.get($colors, bg), 0.05);
-
-            .alert-icon {
-                color: map.get($colors, bg);
-            }
-            .alert-close {
-                color: map.get($colors, bg);
-                &:hover {
-                    background-color: rgba(map.get($colors, bg), 0.1);
-                }
-            }
-        }
-    }
-}
-
-// 2. Soft variant (Corrected with map.get)
-.alert-soft {
-    @each $name, $colors in $alert-colors {
-        &.alert-#{$name} {
-            background: rgba(map.get($colors, bg), 0.1);
-            color: map.get($colors, bg);
-            border-color: rgba(map.get($colors, bg), 0.2);
-
-            .alert-icon,
-            .alert-close {
-                color: map.get($colors, bg);
-            }
-        }
-    }
-}
-
-// 3. Minimal variant (Corrected with map.get)
-.alert-minimal {
-    background: transparent;
-    border: none;
+// No Shadow
+.#{$prefix}--flat {
     box-shadow: none;
-    border-left: 4px solid;
-    border-radius: 0;
-
-    @each $name, $colors in $alert-colors {
-        &.alert-#{$name} {
-            border-left-color: map.get($colors, bg);
-            color: map.get($colors, bg);
-        }
+}
+// Large Sizing
+.#{$prefix}--lg {
+    --alert-padding: 1.5rem;
+    font-size: 1rem;
+    .#{$prefix}__title {
+        font-size: 1.25rem;
+    }
+    .#{$prefix}__icon {
+        width: 1.5rem;
+        height: 1.5rem;
     }
 }
-
-// 4. Modern card variant
-.alert-modern {
-    border-radius: 1rem;
-    @include modern-shadow(2);
-    border: none;
-    padding: 1.5rem;
-
-    &:hover {
-        transform: translateY(-2px);
-        @include modern-shadow(2);
-    }
-}
-
-// 5. Glass morphism variant
-.alert-glass {
-    @include glass-effect(0.9);
-
-    &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: inherit;
-        border-radius: inherit;
-        z-index: -1;
-    }
-}
-
-// 6. Gradient variant
-.alert-gradient {
-    background: linear-gradient(
-        135deg,
-        var(--alert-bg, #3b82f6),
-        var(--alert-bg-secondary, #1d4ed8)
-    );
-    border: none;
-
-    &.alert-success {
-        background: linear-gradient(135deg, #10b981, #059669);
-    }
-    &.alert-warning {
-        background: linear-gradient(135deg, #f59e0b, #d97706);
-    }
-    &.alert-error {
-        background: linear-gradient(135deg, #ef4444, #dc2626);
-    }
-}
-
-// 7. Neumorphism variant
-.alert-neumorphism {
-    background: #f0f0f3;
-    border: none;
-    box-shadow:
-        8px 8px 16px #bebebe,
-        -8px -8px 16px #ffffff;
-    color: #4a5568;
-
-    .alert-close:hover {
-        box-shadow:
-            inset 2px 2px 4px #bebebe,
-            inset -2px -2px 4px #ffffff;
-    }
-}
-
-// 8. Neon variant
-.alert-neon {
-    background: #000;
-    border: 1px solid;
-    color: var(--neon-color, #00ff41);
-    border-color: var(--neon-color, #00ff41);
-    box-shadow:
-        0 0 10px var(--neon-color, #00ff41),
-        inset 0 0 10px rgba(0, 255, 65, 0.1);
-
-    .alert-icon,
-    .alert-close {
-        color: var(--neon-color, #00ff41);
-        text-shadow: 0 0 5px var(--neon-color, #00ff41);
-    }
-
-    &.alert-error {
-        --neon-color: #ff0040;
-    }
-    &.alert-warning {
-        --neon-color: #ffff00;
-    }
-    &.alert-info {
-        --neon-color: #00ffff;
-    }
-}
-
-// Toast container
-.alert-container {
-    position: fixed;
-    z-index: 1050;
-    max-width: 24rem;
-
-    &.top-right {
-        top: 1rem;
-        right: 1rem;
-    }
-    &.top-left {
-        top: 1rem;
-        left: 1rem;
-    }
-    &.top-center {
-        top: 1rem;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-    &.bottom-right {
-        bottom: 1rem;
-        right: 1rem;
-    }
-    &.bottom-left {
-        bottom: 1rem;
-        left: 1rem;
-    }
-    &.bottom-center {
-        bottom: 1rem;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    .alert {
-        margin-bottom: 0.75rem;
-        animation: slideInRight $alert-slide-duration $alert-easing;
-        &.disposing {
-            animation: slideOutRight $alert-slide-duration $alert-easing
-                forwards;
-        }
-    }
-}
-
-// Sticky alerts (legacy support)
-.sticky-alerts {
-    position: fixed;
-    top: 1rem;
-    right: 1rem;
-    z-index: 1050;
-    max-width: 24rem;
-
-    .alert {
-        width: 100%;
-        margin-bottom: 0.75rem;
-        transform: translateX(100%);
-        opacity: 0;
-
-        &.show {
-            transform: translateX(0);
-            opacity: 1;
-            animation: slideInRight $alert-slide-duration $alert-easing;
-        }
-        &.fade {
-            animation: slideOutRight $alert-slide-duration $alert-easing
-                forwards;
-        }
-    }
-}
-
-// Size variants
-.alert-sm {
-    padding: 0.75rem 1rem;
-    font-size: 0.75rem;
-    .alert-heading {
+// Small Sizing
+.#{$prefix}--sm {
+    --alert-padding: 0.75rem 1rem;
+    .#{$prefix}__title {
         font-size: 0.875rem;
-        margin-bottom: 0.125rem;
     }
-    .alert-icon {
+    .#{$prefix}__body {
+        font-size: 0.75rem;
+    }
+    .#{$prefix}__icon {
         width: 1rem;
         height: 1rem;
-    }
-    .alert-close {
-        width: 1.5rem;
-        height: 1.5rem;
-        top: 0.375rem;
-        right: 0.375rem;
-    }
-}
-
-.alert-lg {
-    padding: 1.5rem 2rem;
-    font-size: 1rem;
-    .alert-heading {
-        font-size: 1.25rem;
-        margin-bottom: 0.5rem;
-    }
-    .alert-icon {
-        width: 1.5rem;
-        height: 1.5rem;
-    }
-    .alert-close {
-        width: 2.5rem;
-        height: 2.5rem;
-        top: 0.75rem;
-        right: 0.75rem;
-    }
-}
-
-@media (max-width: 640px) {
-    .alert-container,
-    .sticky-alerts {
-        left: 1rem;
-        right: 1rem;
-        max-width: none;
-        &.top-center,
-        &.bottom-center {
-            transform: none;
-        }
-    }
-    .alert {
-        flex-direction: column;
-        text-align: center;
-        &-icon {
-            align-self: center;
-            margin-bottom: 0.5rem;
-        }
-        &-close {
-            position: absolute;
-            top: 0.5rem;
-            right: 0.5rem;
-        }
-        &-actions {
-            justify-content: center;
-        }
-    }
-}
-
-// Accessibility features
-@media (prefers-reduced-motion: reduce) {
-    .alert,
-    .alert *,
-    .alert::before,
-    .alert::after {
-        animation: none !important;
-        transition: none !important;
-    }
-}
-@media (prefers-contrast: high) {
-    .alert {
-        border-width: 2px;
-        &-close:focus {
-            outline: 3px solid currentColor;
-            outline-offset: 3px;
-        }
-    }
-}
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-}
-
-// Dark Mode Overrides
-.dark-mode,
-[data-theme="dark"] {
-    .alert-light {
-        background: #374151;
-        color: #f3f4f6;
-        border-color: #4b5563;
-    }
-    .alert-glass {
-        @include glass-effect(0.1);
-        background: rgba(31, 41, 55, 0.8);
-        border-color: rgba(255, 255, 255, 0.1);
-    }
-    .alert-neumorphism {
-        background: #2a2a2a;
-        color: #f3f4f6;
-        box-shadow:
-            8px 8px 16px #1a1a1a,
-            -8px -8px 16px #3a3a3a;
     }
 }

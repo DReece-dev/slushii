@@ -1,79 +1,180 @@
-// Variables
-$light-gray: #f7f7f7;
-$primary-color: #4267b2;
-$white: #ffffff;
-$border-radius: 5px;
-$box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-$margin-bottom: 20px;
-$padding: 10px;
-$font-size-lg: 1.5rem;
-$font-size-md: 1rem;
-$line-height: 1.5;
-$margin-top: 10px;
-$padding-sm: 5px 10px;
+@use "sass:map";
 
-// Mixins
-@mixin flex-center {
+$prefix: "event-card" !default;
+
+// A map to hold all default CSS variables for easy setup and theming.
+$config: (
+    // Sizing & Spacing
+    "padding": 1.5rem,
+    "footer-padding-y": 1rem,
+    "content-gap": 1rem,
+    "radius": 0.75rem,
+    "image-height": "200px",
+
+    // Theming
+    "bg": #ffffff,
+    "fg": #1f2937,
+    // gray-800
+    "secondary-fg": #6b7280,
+    // gray-500
+    "border-color": #e5e7eb,
+    // gray-200
+    // FIXED: Wrapped multi-part shadow values in parentheses
+    "shadow": (
+            0 4px 6px -1px rgba(0, 0, 0, 0.1),
+            0 2px 4px -2px rgba(0, 0, 0, 0.1)
+        ),
+    "shadow-hover": (
+        0 10px 15px -3px rgba(0, 0, 0, 0.1),
+        0 4px 6px -4px rgba(0, 0, 0, 0.1)
+    ),
+    // Primary/Action Colors
+    "primary-bg": #4f46e5,
+    // indigo-600
+    "primary-fg": #ffffff,
+
+    // Dark Theme
+    "dark-bg": #1f2937,
+    // gray-800
+    "dark-fg": #f9fafb,
+    // gray-50
+    "dark-secondary-fg": #9ca3af,
+    // gray-400
+    "dark-border-color": #374151,
+
+    // gray-700
+    // Animation
+    "transition": "transform 0.2s ease, box-shadow 0.2s ease"
+) !default;
+
+// The main event card component (the "block")
+.#{$prefix} {
+    // Generate CSS custom properties from the $config map
+    @each $key, $value in $config {
+        --event-#{$key}: #{$value};
+    }
+
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    background-color: var(--event-bg);
+    border: 1px solid var(--event-border-color);
+    border-radius: var(--event-radius);
+    box-shadow: var(--event-shadow);
+    overflow: hidden; // Ensures image corners are rounded
+    transition: var(--event-transition);
+    text-decoration: none; // If the whole card is a link
+
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--event-shadow-hover);
+    }
+
+    // --- Elements within the card ---
+
+    // The event's banner image
+    &__image {
+        width: 100%;
+        height: var(--event-image-height);
+        object-fit: cover; // Prevents image distortion
+    }
+
+    // Wrapper for all text content and actions
+    &__content {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1; // Allows footer to stick to the bottom
+        gap: var(--event-content-gap);
+        padding: var(--event-padding);
+    }
+
+    // Header section for title and date
+    &__header {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    &__title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--event-fg);
+        margin: 0;
+    }
+
+    &__date {
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: var(--event-secondary-fg);
+        margin: 0;
+    }
+
+    // The main description text
+    &__description {
+        flex-grow: 1; // Pushes footer down
+        font-size: 1rem;
+        line-height: 1.6;
+        color: var(--event-secondary-fg);
+        margin: 0;
+    }
+
+    // The call-to-action button
+    &__button {
+        display: inline-block;
+        padding: 0.625rem 1.25rem;
+        background-color: var(--event-primary-bg);
+        color: var(--event-primary-fg);
+        border-radius: var(--event-radius);
+        text-align: center;
+        text-decoration: none;
+        font-weight: 500;
+        align-self: flex-start; // Button doesn't stretch to full width
+        transition: opacity 0.2s ease;
+
+        &:hover {
+            opacity: 0.9;
+        }
+    }
 }
 
-// Event Container
-.event-container {
-    @include flex-center;
-    flex-direction: column;
-    background-color: $light-gray;
-    border-radius: $border-radius;
-    overflow: hidden;
-    box-shadow: $box-shadow;
-    margin-bottom: $margin-bottom;
+// --- Modifier Variants ---
 
-    // Event Header
-    &__header {
-        background-color: $primary-color;
-        color: $white;
-        padding: $padding;
+// 1. Dark Mode
+.#{$prefix}--dark {
+    --event-bg: var(--event-dark-bg);
+    --event-fg: var(--event-dark-fg);
+    --event-secondary-fg: var(--event-dark-secondary-fg);
+    --event-border-color: var(--event-dark-border-color);
+}
 
-        // Event Title
-        &__title {
-            margin: 0;
-            font-size: $font-size-lg;
-            font-weight: bold;
-        }
+// 2. Horizontal Layout
+.#{$prefix}--horizontal {
+    flex-direction: row;
 
-        // Event Date
-        &__date {
-            margin: 0;
-            font-size: $font-size-md;
-        }
+    @media (max-width: 768px) {
+        flex-direction: column; // Stack on smaller screens
     }
 
-    // Event Description
-    &__description {
-        padding: $padding;
-        line-height: $line-height;
+    .#{$prefix}__image {
+        width: 40%; // Or a fixed width like 300px
+        height: auto;
+        object-fit: cover;
     }
 
-    // Register Link
-    &__register-link {
-        display: inline-block;
-        margin-top: $margin-top;
-        padding: $padding-sm;
-        background-color: $primary-color;
-        color: $white;
-        text-decoration: none;
-        border-radius: $border-radius;
+    .#{$prefix}__content {
+        width: 60%;
     }
+}
 
-    // Event Image
-    &__image {
-        overflow: hidden;
+// 3. Compact version
+.#{$prefix}--compact {
+    --event-padding: 1rem;
+    --event-content-gap: 0.75rem;
 
-        img {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-        }
+    .#{$prefix}__title {
+        font-size: 1rem;
+    }
+    .#{$prefix}__date,
+    .#{$prefix}__description {
+        font-size: 0.875rem;
     }
 }

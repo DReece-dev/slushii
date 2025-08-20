@@ -1,56 +1,147 @@
-.label {
-    display: inline-block;
-    padding: 0.33333rem 0.5rem;
-    font-size: 0.8rem;
+@use "sass:map";
+
+$label-prefix: "label" !default;
+
+// A single map to define all color variants for multiple styles.
+$label-variants: (
+    "secondary": (
+        "subtle-bg": #f1f5f9,
+        // slate-100
+        "subtle-fg": #475569,
+        // slate-600
+        "solid-bg": #64748b,
+        // slate-500
+        "solid-fg": #ffffff,
+        // white
+    ),
+    "primary": (
+        "subtle-bg": #e0e7ff,
+        // indigo-100
+        "subtle-fg": #4338ca,
+        // indigo-700
+        "solid-bg": #4f46e5,
+        // indigo-600
+        "solid-fg": #ffffff,
+    ),
+    "destructive": (
+        "subtle-bg": #fee2e2,
+        // red-100
+        "subtle-fg": #b91c1c,
+        // red-700
+        "solid-bg": #dc2626,
+        // red-600
+        "solid-fg": #ffffff,
+    ),
+    "success": (
+        "subtle-bg": #dcfce7,
+        // green-100
+        "subtle-fg": #166534,
+        // green-700
+        "solid-bg": #16a34a,
+        // green-600
+        "solid-fg": #ffffff,
+    ),
+    "warning": (
+        "subtle-bg": #fef3c7,
+        // amber-100
+        "subtle-fg": #b45309,
+        // amber-700
+        "solid-bg": #f59e0b,
+        // amber-500
+        "solid-fg": #ffffff,
+    ),
+) !default;
+
+$label-sizes: (
+    "sm": (
+        "font-size": 0.75rem,
+        "padding": 0.2em 0.6em,
+    ),
+    "md": (
+        "font-size": 0.875rem,
+        "padding": 0.25em 0.75em,
+    ),
+    "lg": (
+        "font-size": 1rem,
+        "padding": 0.3em 0.85em,
+    ),
+) !default;
+
+.#{$label-prefix} {
+    // CSS variables for complete control. Default to 'md' size, 'secondary' color.
+    --label-font-size: #{map.get($label-sizes, "md", "font-size")};
+    --label-padding: #{map.get($label-sizes, "md", "padding")};
+    --label-bg: #{map.get($label-variants, "secondary", "subtle-bg")};
+    --label-fg: #{map.get($label-variants, "secondary", "subtle-fg")};
+    --label-radius: 0.375rem; // 6px
+    --label-border-color: transparent;
+
+    display: inline-flex; // Use Flexbox for better alignment with icons
+    align-items: center;
+    gap: 0.4em;
+    padding: var(--label-padding);
+    font-size: var(--label-font-size);
     font-weight: 500;
-    font-family: Arial, sans-serif;
-    line-height: 1;
+    font-family: inherit; // Inherit font for consistency
+    line-height: 1.2;
     white-space: nowrap;
-    cursor: default;
-    color: #000000;
-    border-radius: 5px;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
-    padding: 0.5rem 1rem;
+    vertical-align: middle;
+    border-radius: var(--label-radius);
+    background-color: var(--label-bg);
+    color: var(--label-fg);
+    border: 1px solid var(--label-border-color);
+    text-decoration: none;
+    transition:
+        background-color 0.2s ease,
+        filter 0.2s ease;
+}
 
+// Generate semantic color variants (defaulting to the 'subtle' style)
+@each $name, $colors in $label-variants {
+    .#{$label-prefix}--#{$name} {
+        --label-bg: #{map.get($colors, "subtle-bg")};
+        --label-fg: #{map.get($colors, "subtle-fg")};
+    }
+}
+
+// Generate size variants
+@each $name, $props in $label-sizes {
+    .#{$label-prefix}--#{$name} {
+        --label-font-size: #{map.get($props, "font-size")};
+        --label-padding: #{map.get($props, "padding")};
+    }
+}
+
+// Style Modifier: Outline
+.#{$label-prefix}--outline {
+    --label-bg: transparent;
+    --label-border-color: currentColor; // Uses the text color for the border
+}
+
+// Style Modifier: Solid
+.#{$label-prefix}--solid {
+    // Set default solid colors (secondary)
+    --label-bg: #{map.get($label-variants, "secondary", "solid-bg")};
+    --label-fg: #{map.get($label-variants, "secondary", "solid-fg")};
+
+    // Override when combined with a semantic color
+    @each $name, $colors in $label-variants {
+        &.#{$label-prefix}--#{$name} {
+            --label-bg: #{map.get($colors, "solid-bg")};
+            --label-fg: #{map.get($colors, "solid-fg")};
+        }
+    }
+}
+
+// Shape Modifier: Pill
+.#{$label-prefix}--pill {
+    --label-radius: 9999px;
+}
+
+// State Modifier: Interactive
+.#{$label-prefix}--interactive {
+    cursor: pointer;
     &:hover {
-        opacity: 0.8;
-    }
-
-    &.blue {
-        background: var(--blue-400);
-        color: #fefefe;
-    }
-
-    &.indigo {
-        background: var(--indigo-400);
-        color: #fefefe;
-    }
-
-    &.red {
-        background: var(--red-500);
-        color: #ffffff;
-    }
-
-    &.orange {
-        background: var(--orange-500);
-        color: #0a0a0a;
-    }
-
-    &.green {
-        background: var(--green-500);
-        color: #fefefe;
-    }
-
-    &.dark {
-        background: var(--gray-900);
-        color: #fefefe;
-    }
-
-    &.rounded {
-        border-radius: 20px;
-    }
-
-    @media (max-width: 576px) {
-        font-size: 0.7rem;
+        filter: brightness(0.95);
     }
 }

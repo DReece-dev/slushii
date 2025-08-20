@@ -1,248 +1,456 @@
-@use "sass:color"; // Added to use modern color functions
+@use "sass:map";
 
-// Modern Navbar Variables
-$navbar-height: 4rem;
-$navbar-padding-x: 1.5rem;
-$navbar-padding-y: 0.75rem;
-$navbar-item-padding: 0.75rem 1rem;
-$navbar-border-radius: 0.75rem;
-$navbar-gap: 0.5rem;
-$navbar-z-index: 50;
+$prefix: "navbar" !default;
 
-// Colors
-$navbar-bg: rgba(255, 255, 255, 0.85);
-$navbar-bg-solid: #ffffff;
-$navbar-text: #1f2937;
-$navbar-text-muted: #6b7280;
-$navbar-accent: #3b82f6;
-$navbar-hover-bg: rgba(59, 130, 246, 0.08);
-$navbar-active-bg: rgba(59, 130, 246, 0.12);
-$navbar-border-color: rgba(0, 0, 0, 0.08);
+// A map to hold all default CSS variables for easy setup and theming.
+$config: (
+    // Sizing & Spacing
+    "height": 4rem,
+    "padding-x": 1.5rem,
+    "radius": 0.75rem,
+    "container-width": "1280px",
+    "z-index": 1000,
 
-// Shadows
-$navbar-shadow:
-    0 1px 3px rgba(0, 0, 0, 0.1),
-    0 1px 2px rgba(0, 0, 0, 0.06);
-$navbar-shadow-lg:
-    0 10px 15px -3px rgba(0, 0, 0, 0.1),
-    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    // Theming
+    "bg": #ffffff,
+    "fg": #020817,
+    // slate-950
+    "muted-fg": #64748b,
+    // slate-500
+    "border": #e2e8f0,
+    // slate-200
+    "card-bg": #ffffff,
+    "hover-bg": #f1f5f9,
+    // slate-100
+    "shadow": 0 1px 2px 0 rgba(0, 0, 0, 0.05),
+    "shadow-lg": (
+        0 4px 6px -1px rgba(0, 0, 0, 0.1),
+        0 2px 4px -2px rgba(0, 0, 0, 0.1)
+    ),
+    // Primary/Action Colors
+    "primary": #2563eb,
+    // blue-600
+    "primary-fg": #ffffff,
 
-// Transitions
-$navbar-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-$navbar-bounce-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    // Dark Theme
+    "dark-bg": #020817,
+    // slate-950
+    "dark-fg": #f8fafc,
+    // slate-50
+    "dark-muted-fg": #94a3b8,
+    // slate-400
+    "dark-border": #1e293b,
+    // slate-800
+    "dark-card-bg": #0f172a,
+    // slate-900
+    "dark-hover-bg": #1e293b,
+    // slate-800
+    "dark-primary": #3b82f6,
+    // blue-500
+    // Animation
+    "transition": "all 0.2s ease-in-out",
+    "breakpoint-lg": "1024px"
+) !default;
 
-// Breakpoints
-$tablet: 768px;
-$desktop: 1024px;
-
-// Modern Mixins
-@mixin glass-effect {
-    backdrop-filter: blur(12px) saturate(180%);
-    -webkit-backdrop-filter: blur(12px) saturate(180%);
-}
-
-@mixin modern-shadow($level: 1) {
-    @if $level == 1 {
-        box-shadow: $navbar-shadow;
-    } @else {
-        box-shadow: $navbar-shadow-lg;
+.#{$prefix} {
+    // Generate CSS custom properties from the $config map
+    @each $key, $value in $config {
+        --navbar-#{$key}: #{$value};
     }
-}
 
-@mixin modern-button {
+    height: var(--navbar-height);
+    width: 100%;
+    background-color: var(--navbar-bg);
+    border-bottom: 1px solid var(--navbar-border);
+    transition: var(--navbar-transition);
+    z-index: var(--navbar-z-index);
     position: relative;
-    overflow: hidden;
-    border-radius: $navbar-border-radius * 0.6;
-    transition: $navbar-transition;
 
-    &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
+    // --- Elements ---
+    &__container {
         height: 100%;
-        background: linear-gradient(
-            90deg,
-            transparent,
-            rgba(255, 255, 255, 0.4),
-            transparent
-        );
-        transition: left 0.5s;
-    }
-
-    &:hover::before {
-        left: 100%;
-    }
-}
-
-@mixin floating-dropdown {
-    border-radius: $navbar-border-radius;
-    @include modern-shadow(2);
-    border: 1px solid $navbar-border-color;
-    transform: translateY(-8px);
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-
-    &.active,
-    &.show {
-        transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
-    }
-}
-
-// Base navbar component
-.navbar {
-    background: $navbar-bg;
-    min-height: $navbar-height;
-    position: relative;
-    z-index: $navbar-z-index;
-    transition: $navbar-transition;
-    @include glass-effect;
-    border-bottom: 1px solid $navbar-border-color;
-
-    // Modern scrolled state
-    &.scrolled {
-        background: $navbar-bg-solid;
-        @include modern-shadow(2);
-        transform: translateY(-1px);
-    }
-
-    // Container with modern spacing
-    > .container {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        min-height: $navbar-height;
-        width: 100%;
-        padding: 0 $navbar-padding-x;
-        gap: $navbar-gap * 2;
+        padding-inline: var(--navbar-padding-x);
+        gap: 1rem;
     }
 
-    // Fixed positioning with modern styling
-    &.fixed-top {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: $navbar-z-index;
+    &__brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 1.125rem;
+        font-weight: 600;
+        color: var(--navbar-fg);
+        text-decoration: none;
+        flex-shrink: 0; // Prevent brand from shrinking on small screens
     }
 
-    &.fixed-bottom {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        z-index: $navbar-z-index;
-        border-top: 1px solid $navbar-border-color;
-        border-bottom: none;
-    }
-
-    // Floating navbar variant
-    &.floating {
-        margin: 1rem $navbar-padding-x;
-        border-radius: $navbar-border-radius;
-        border: 1px solid $navbar-border-color;
-        @include modern-shadow(2);
-
-        @media (min-width: $tablet) {
-            margin: 1.5rem 2rem;
+    &__menu {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        // Hide on mobile by default
+        @media (max-width: map.get($config, "breakpoint-lg")) {
+            display: none;
         }
     }
 
-    // Transparent variant
-    &.transparent {
+    &__nav {
+        display: flex;
+        gap: 0.25rem;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    &__item {
+        > a {
+            display: flex;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            border-radius: calc(var(--navbar-radius) * 0.75);
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--navbar-muted-fg);
+            text-decoration: none;
+            transition: var(--navbar-transition);
+
+            &:hover {
+                color: var(--navbar-fg);
+                background-color: var(--navbar-hover-bg);
+            }
+            &.is-active {
+                color: var(--navbar-fg);
+                font-weight: 600;
+            }
+        }
+    }
+
+    &__actions {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        @media (max-width: map.get($config, "breakpoint-lg")) {
+            display: none;
+        }
+    }
+
+    &__burger {
+        display: none; // Hidden by default
+        width: 2.5rem;
+        height: 2.5rem;
+        border: none;
+        border-radius: calc(var(--navbar-radius) * 0.75);
         background: transparent;
-        border-bottom: none;
-        backdrop-filter: none;
-        -webkit-backdrop-filter: none;
-    }
-}
+        cursor: pointer;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.2s ease;
 
-// Modern brand styling
-.navbar-brand {
-    display: flex;
-    align-items: center;
-    gap: $navbar-gap;
-    font-weight: 600;
-    font-size: 1.25rem;
-    color: $navbar-text;
-    text-decoration: none;
-    transition: $navbar-transition;
+        &:hover {
+            background-color: var(--navbar-hover-bg);
+        }
 
-    &:hover {
-        color: $navbar-accent;
-        transform: translateY(-1px);
-    }
+        span {
+            display: block;
+            width: 1.25rem;
+            height: 2px;
+            background: var(--navbar-fg);
+            border-radius: 1px;
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            position: absolute;
+            &:nth-child(1) {
+                transform: translateY(-5px);
+            }
+            &:nth-child(3) {
+                transform: translateY(5px);
+            }
+        }
 
-    .logo {
-        height: 2rem;
-        width: auto;
-        transition: $navbar-transition;
-    }
-
-    &:hover .logo {
-        transform: scale(1.05);
-    }
-}
-
-// Modern burger menu
-.navbar-burger {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: $navbar-border-radius * 0.6;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    transition: $navbar-transition;
-    position: relative;
-
-    &:hover {
-        background: $navbar-hover-bg;
-        transform: scale(1.05);
+        @media (max-width: map.get($config, "breakpoint-lg")) {
+            display: inline-flex;
+        }
     }
 
-    &:active {
-        transform: scale(0.95);
-    }
-
-    // Modern burger lines
-    span {
-        display: block;
-        width: 1.25rem;
-        height: 2px;
-        background: $navbar-text;
-        border-radius: 1px;
-        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        transform-origin: center;
-
+    &.is-mobile-menu-open .#{$prefix}__burger span {
         &:nth-child(1) {
-            transform: translateY(-4px);
+            transform: rotate(45deg);
         }
-
+        &:nth-child(2) {
+            opacity: 0;
+        }
         &:nth-child(3) {
-            transform: translateY(4px);
+            transform: rotate(-45deg);
         }
     }
 
-    // Active animation
-    &.active {
+    // --- Mobile Menu Container ---
+    &__mobile-menu {
+        position: absolute;
+        top: var(--navbar-height);
+        left: 0;
+        width: 100%;
+        padding: 1rem;
+        background-color: var(--navbar-bg);
+        border-bottom: 1px solid var(--navbar-border);
+        box-shadow: var(--navbar-shadow);
+        // Hidden state
+        opacity: 0;
+        transform: translateY(-10px);
+        visibility: hidden;
+        pointer-events: none;
+        transition:
+            opacity 0.2s ease,
+            transform 0.2s ease,
+            visibility 0.2s;
+
+        .#{$prefix}__nav {
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .#{$prefix}__actions {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-top: 1rem;
+            align-items: stretch;
+        }
+        .#{$prefix}__actions .btn {
+            width: 100%;
+            text-align: center;
+            justify-content: center;
+        }
+    }
+
+    &.is-mobile-menu-open .#{$prefix}__mobile-menu {
+        opacity: 1;
+        transform: translateY(0);
+        visibility: visible;
+        pointer-events: auto;
+    }
+}
+
+// --- Theming ---
+.#{$prefix}--dark {
+    // Redefine variables for the dark theme
+    --navbar-bg: var(--navbar-dark-bg);
+    --navbar-fg: var(--navbar-dark-fg);
+    --navbar-muted-fg: var(--navbar-dark-muted-fg);
+    --navbar-border: var(--navbar-dark-border);
+    --navbar-card-bg: var(--navbar-dark-card-bg);
+    --navbar-hover-bg: var(--navbar-dark-hover-bg);
+    --navbar-primary: var(--navbar-dark-primary);
+    --navbar-primary-fg: var(--navbar-fg);
+}
+
+.#{$prefix}--primary-accent {
+    border-top: 3px solid var(--navbar-primary);
+    border-bottom: none;
+}
+
+.#{$prefix}--gradient {
+    background: linear-gradient(
+        to right,
+        var(--navbar-primary),
+        var(--navbar-dark-primary)
+    );
+    --navbar-fg: var(--navbar-primary-fg);
+    --navbar-muted-fg: rgba(255, 255, 255, 0.8);
+    --navbar-hover-bg: rgba(255, 255, 255, 0.1);
+    --navbar-border: transparent;
+}
+
+// --- Structural & Positional ---
+.#{$prefix}--fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.#{$prefix}--sticky {
+    position: sticky;
+    top: 0;
+}
+
+.#{$prefix}--contained .#{$prefix}__container {
+    max-width: var(--navbar-container-width);
+    margin-inline: auto;
+}
+
+.#{$prefix}--floating {
+    border: 1px solid var(--navbar-border);
+    border-radius: var(--navbar-radius);
+    box-shadow: var(--navbar-shadow-lg);
+    margin: 1rem var(--navbar-padding-x);
+    width: calc(100% - (var(--navbar-padding-x) * 2));
+}
+
+// --- Stylistic Indicators ---
+.#{$prefix}--underline {
+    .#{$prefix}__item > a {
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0.5rem;
+            right: 0.5rem;
+            height: 2px;
+            background-color: var(--navbar-primary);
+            transform: scaleX(0);
+            transition: transform 0.2s ease-in-out;
+        }
+        &:hover {
+            background: transparent;
+        }
+        &.is-active::after {
+            transform: scaleX(1);
+        }
+    }
+}
+
+.#{$prefix}--pills {
+    .#{$prefix}__item > a.is-active {
+        background-color: var(--navbar-primary);
+        color: var(--navbar-primary-fg);
+    }
+}
+
+.#{$prefix}--dot-indicator {
+    .#{$prefix}__item > a {
+        position: relative;
+        &.is-active::after {
+            content: "";
+            position: absolute;
+            bottom: 4px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background-color: var(--navbar-primary);
+        }
+    }
+}
+
+// --- Behavior ---
+// Add this class with JS when user scrolls
+.#{$prefix}.is-scrolled {
+    box-shadow: var(--navbar-shadow);
+    // For transparent/glass navbars to get a solid background on scroll
+    background-color: var(--navbar-bg);
+}
+
+// Transparent variant that becomes solid on scroll
+.#{$prefix}--transparent {
+    background-color: transparent;
+    border-bottom-color: transparent;
+    box-shadow: none;
+}
+
+.#{$prefix}--glass {
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: saturate(180%) blur(10px);
+    border-bottom: 1px solid rgba(226, 232, 240, 0.5); // slate-200 with alpha
+
+    &.#{$prefix}--dark {
+        background-color: rgba(2, 8, 23, 0.6); // slate-950 with alpha
+        border-bottom: 1px solid rgba(30, 41, 59, 0.6); // slate-800 with alpha
+    }
+}
+
+.#{$prefix}--autohide {
+    transition:
+        transform 0.3s ease-in-out,
+        var(--navbar-transition);
+    &.is-hidden {
+        transform: translateY(-100%);
+    }
+}
+
+// Note: Right alignment is the default behavior.
+
+// --- Links on the Left ---
+.#{$prefix}--links-left {
+    .#{$prefix}__menu {
+        margin-right: auto;
+    }
+}
+
+// --- Links in the Center ---
+.#{$prefix}--links-center {
+    .#{$prefix}__menu {
+        flex-grow: 1;
+    }
+
+    .#{$prefix}__nav {
+        // Since the parent .navbar__menu is a flex container, we can't just center
+        // the nav list itself. We need to make the nav a flex container too
+        // and center its items (the links).
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+// To use, add one of the following classes to the main `.navbar` element.
+// Example: `<nav class="navbar navbar--b-squeeze">`
+
+// Base styles for all spans to ensure smooth transitions
+.#{$prefix}__burger {
+    span {
+        // Ensure transform-origin is centered by default for rotation
+        transform-origin: center;
+    }
+}
+
+//--- 1. Squeeze ---
+// Lines transform into an X without vertical movement.
+.#{$prefix}--b-squeeze {
+    &.is-mobile-menu-open .#{$prefix}__burger span {
+        &:nth-child(1) {
+            transform: translateY(0) rotate(45deg);
+        }
+        &:nth-child(3) {
+            transform: translateY(0) rotate(-45deg);
+        }
+    }
+}
+
+//--- 2. Arrow Left ---
+// Forms a chevron/arrow pointing left.
+.#{$prefix}--b-arrow-left {
+    &.is-mobile-menu-open .#{$prefix}__burger span {
+        width: 0.8rem; // Make lines shorter for the arrow head
+        &:nth-child(1) {
+            transform: translateY(3.5px) rotate(45deg);
+            transform-origin: left;
+        }
+        &:nth-child(2) {
+            opacity: 0;
+        }
+        &:nth-child(3) {
+            transform: translateY(-3.5px) rotate(-45deg);
+            transform-origin: left;
+        }
+    }
+}
+
+//--- 3. Spin Right ---
+// The entire icon spins 180 degrees clockwise during transformation.
+.#{$prefix}--b-spin-right {
+    .#{$prefix}__burger {
+        transition: transform 0.3s ease;
+    }
+    &.is-mobile-menu-open .#{$prefix}__burger {
+        transform: rotate(180deg);
         span {
             &:nth-child(1) {
                 transform: rotate(45deg);
             }
-
-            &:nth-child(2) {
-                opacity: 0;
-                transform: scaleX(0);
-            }
-
             &:nth-child(3) {
                 transform: rotate(-45deg);
             }
@@ -250,1025 +458,115 @@ $desktop: 1024px;
     }
 }
 
-// Modern navigation menu
-.navbar-menu {
-    display: none;
-
-    &.active {
-        display: block;
+//--- 4. Spin Left ---
+// The entire icon spins 180 degrees counter-clockwise.
+.#{$prefix}--b-spin-left {
+    .#{$prefix}__burger {
+        transition: transform 0.3s ease;
     }
-}
-
-// Navigation items with modern styling
-.navbar-nav {
-    display: flex;
-    align-items: center;
-    gap: $navbar-gap;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.navbar-item {
-    position: relative;
-
-    a {
-        display: flex;
-        align-items: center;
-        padding: $navbar-item-padding;
-        color: $navbar-text;
-        text-decoration: none;
-        font-weight: 500;
-        border-radius: $navbar-border-radius * 0.6;
-        transition: $navbar-transition;
-        gap: $navbar-gap * 0.5;
-        @include modern-button;
-
-        &:hover {
-            color: $navbar-accent;
-            background: $navbar-hover-bg;
-            transform: translateY(-1px);
-        }
-
-        &.active {
-            color: $navbar-accent;
-            background: $navbar-active-bg;
-            font-weight: 600;
-
-            // Active indicator
-            &::after {
-                content: "";
-                position: absolute;
-                bottom: -2px;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 80%;
-                height: 2px;
-                background: $navbar-accent;
-                border-radius: 1px;
+    &.is-mobile-menu-open .#{$prefix}__burger {
+        transform: rotate(-180deg);
+        span {
+            &:nth-child(1) {
+                transform: rotate(45deg);
             }
-        }
-    }
-
-    // Icon styling
-    .icon {
-        width: 1rem;
-        height: 1rem;
-        opacity: 0.8;
-        transition: $navbar-transition;
-    }
-
-    &:hover .icon {
-        opacity: 1;
-        transform: scale(1.1);
-    }
-}
-
-// Modern dropdown
-.navbar-dropdown {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    min-width: 12rem;
-    background: $navbar-bg-solid;
-    @include floating-dropdown;
-    padding: $navbar-gap;
-    margin-top: $navbar-gap;
-
-    .navbar-item {
-        width: 100%;
-
-        a {
-            width: 100%;
-            justify-content: flex-start;
-            border-radius: $navbar-border-radius * 0.5;
-
-            &:hover {
-                background: $navbar-hover-bg;
-                padding-left: calc(1rem + 0.25rem);
-            }
-        }
-    }
-
-    // Dropdown arrow
-    &::before {
-        content: "";
-        position: absolute;
-        top: -6px;
-        left: 1rem;
-        width: 0;
-        height: 0;
-        border-left: 6px solid transparent;
-        border-right: 6px solid transparent;
-        border-bottom: 6px solid $navbar-bg-solid;
-    }
-
-    // Right-aligned dropdown
-    &.right {
-        left: auto;
-        right: 0;
-
-        &::before {
-            left: auto;
-            right: 1rem;
-        }
-    }
-}
-
-.navbar-item.has-dropdown {
-    position: relative;
-
-    &:hover .navbar-dropdown,
-    &.active .navbar-dropdown {
-        transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
-    }
-
-    > a::after {
-        content: "";
-        width: 0;
-        height: 0;
-        border-left: 4px solid transparent;
-        border-right: 4px solid transparent;
-        border-top: 4px solid currentColor;
-        margin-left: $navbar-gap * 0.5;
-        transition: $navbar-transition;
-    }
-
-    &:hover > a::after {
-        transform: rotate(180deg);
-    }
-}
-
-// CTA Button styling
-.navbar-cta {
-    .btn {
-        padding: 0.625rem 1.25rem;
-        background: $navbar-accent;
-        color: white;
-        border: none;
-        border-radius: $navbar-border-radius * 0.6;
-        font-weight: 600;
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        gap: $navbar-gap * 0.5;
-        transition: $navbar-bounce-transition;
-        @include modern-shadow(1);
-
-        &:hover {
-            // CORRECTED LINE: Replaced darken() with color.adjust()
-            background: color.adjust($navbar-accent, $lightness: -8%);
-            transform: translateY(-2px) scale(1.02);
-            @include modern-shadow(2);
-        }
-
-        &:active {
-            transform: translateY(0) scale(0.98);
-        }
-    }
-}
-
-// Mobile styles
-@media (max-width: #{$tablet - 1px}) {
-    .navbar {
-        .navbar-nav {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            background: $navbar-bg-solid;
-            flex-direction: column;
-            padding: $navbar-padding-y;
-            border-top: 1px solid $navbar-border-color;
-            @include modern-shadow(2);
-            gap: 0;
-
-            &.active {
-                display: flex;
-            }
-        }
-
-        .navbar-item {
-            width: 100%;
-
-            a {
-                border-radius: $navbar-border-radius * 0.5;
-                margin: 0 $navbar-padding-x * 0.5;
-            }
-        }
-
-        .navbar-burger {
-            display: flex;
-
-            @media (min-width: $tablet) {
-                display: none;
-            }
-        }
-
-        .navbar-dropdown {
-            position: static;
-            box-shadow: none;
-            border: 1px solid $navbar-border-color;
-            border-radius: $navbar-border-radius * 0.5;
-            margin: $navbar-gap $navbar-padding-x * 0.5;
-            transform: none;
-            opacity: 1;
-            visibility: visible;
-
-            &::before {
-                display: none;
+            &:nth-child(3) {
+                transform: rotate(-45deg);
             }
         }
     }
 }
 
-// Desktop styles
-@media (min-width: $tablet) {
-    .navbar {
-        .navbar-burger {
-            display: none;
+//--- 5. Plus to X ---
+// Forms a plus sign, which then rotates to become an X.
+.#{$prefix}--b-plus-x {
+    &.is-mobile-menu-open .#{$prefix}__burger span {
+        &:nth-child(1) {
+            transform: translateY(0) rotate(90deg);
         }
-
-        .navbar-nav {
-            display: flex;
+        &:nth-child(2) {
+            opacity: 0;
         }
-
-        .navbar-menu {
-            display: flex;
-            align-items: center;
-            gap: $navbar-gap * 2;
-            flex: 1;
-            justify-content: space-between;
+        &:nth-child(3) {
+            transform: translateY(0) rotate(90deg);
         }
     }
-
-    // Fixed navbar body padding
-    html.has-navbar-fixed-top,
-    body.has-navbar-fixed-top {
-        padding-top: $navbar-height;
-    }
-
-    html.has-navbar-fixed-bottom,
-    body.has-navbar-fixed-bottom {
-        padding-bottom: $navbar-height;
+    &.is-mobile-menu-open .#{$prefix}__burger {
+        transform: rotate(45deg);
     }
 }
 
-// Scroll behavior
-.navbar-scroll-trigger {
-    // Add this class to trigger scroll-based styles
-    .navbar.scrolled {
-        transform: translateY(-2px);
-
-        .navbar-brand .logo {
-            transform: scale(0.9);
+//--- 6. Gate Right ---
+// Lines pivot open from the right side like a gate.
+.#{$prefix}--b-gate-right {
+    &.is-mobile-menu-open .#{$prefix}__burger span {
+        transform-origin: right;
+        &:nth-child(1) {
+            transform: translateY(2px) rotate(-45deg);
+            width: 1.4rem;
+        }
+        &:nth-child(2) {
+            opacity: 0;
+        }
+        &:nth-child(3) {
+            transform: translateY(-2px) rotate(45deg);
+            width: 1.4rem;
         }
     }
 }
 
-// Dark mode support (if using a toggle)
-.dark-mode {
-    .navbar {
-        background: rgba(17, 24, 39, 0.85);
-        border-bottom-color: rgba(255, 255, 255, 0.1);
-
-        &.scrolled {
-            background: #111827;
+//--- 7. Slide Over ---
+// Top bar slides right, bottom bar slides left before transforming.
+.#{$prefix}--b-slide-over {
+    &.is-mobile-menu-open .#{$prefix}__burger span {
+        &:nth-child(1) {
+            transform: translateX(5px) rotate(45deg);
         }
-    }
-
-    .navbar-brand,
-    .navbar-item a {
-        color: #f9fafb;
-    }
-
-    .navbar-item a {
-        &:hover {
-            background: rgba(75, 85, 99, 0.3);
+        &:nth-child(2) {
+            opacity: 0;
         }
-
-        &.active {
-            background: rgba(75, 85, 99, 0.4);
-        }
-    }
-
-    .navbar-burger span {
-        background: #f9fafb;
-    }
-
-    .navbar-dropdown {
-        background: #111827;
-        border-color: rgba(255, 255, 255, 0.1);
-
-        &::before {
-            border-bottom-color: #111827;
+        &:nth-child(3) {
+            transform: translateX(-5px) rotate(-45deg);
         }
     }
 }
 
-// Animation utilities
-.navbar-fade-in {
-    animation: navbar-fade-in 0.6s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
-}
-
-@keyframes navbar-fade-in {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+//--- 8. Rebound ---
+// A bouncy, elastic animation effect.
+.#{$prefix}--b-rebound {
+    .#{$prefix}__burger span {
+        transition: all 0.4s cubic-bezier(0.68, -0.6, 0.265, 1.6);
     }
 }
 
-// 1. Gradient Navbar
-@mixin navbar-gradient {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border: none;
-
-    .navbar-brand,
-    .navbar-item a {
-        color: white;
-
-        &:hover {
-            color: rgba(255, 255, 255, 0.8);
-            background: rgba(255, 255, 255, 0.1);
+//--- 9. Double Slash ---
+// Transforms into two diagonal parallel lines.
+.#{$prefix}--b-double-slash {
+    &.is-mobile-menu-open .#{$prefix}__burger span {
+        &:nth-child(1) {
+            transform: translateY(0) rotate(60deg);
         }
-    }
-
-    .navbar-burger span {
-        background: white;
-    }
-}
-
-// 2. Neon Glow Navbar
-@mixin navbar-neon {
-    background: #0a0a0a;
-    border-bottom: 2px solid #00ffff;
-    box-shadow: 0 0 10px #00ffff;
-
-    .navbar-brand,
-    .navbar-item a {
-        color: #00ffff;
-        text-shadow: 0 0 5px #00ffff;
-
-        &:hover {
-            color: #ff00ff;
-            text-shadow: 0 0 10px #ff00ff;
-            box-shadow: 0 0 15px rgba(255, 0, 255, 0.3);
+        &:nth-child(2) {
+            opacity: 0;
+        }
+        &:nth-child(3) {
+            transform: translateY(0) rotate(60deg);
         }
     }
 }
 
-// 3. Minimal Border Navbar
-@mixin navbar-minimal {
-    background: transparent;
-    border: 1px solid #e5e7eb;
-    border-radius: 0;
-    box-shadow: none;
-
-    .navbar-item a {
-        border-radius: 0;
-        border-bottom: 2px solid transparent;
-        transition: border-color 0.3s ease;
-
-        &:hover,
-        &.active {
-            border-bottom-color: $navbar-accent;
-            background: transparent;
+//--- 10. To Minus ---
+// The three lines collapse into a single horizontal minus sign.
+.#{$prefix}--b-to-minus {
+    &.is-mobile-menu-open .#{$prefix}__burger span {
+        &:nth-child(1) {
+            transform: translateY(0);
         }
-    }
-}
-
-// 4. Neumorphism Navbar
-@mixin navbar-neumorphism {
-    background: #f0f0f3;
-    box-shadow:
-        9px 9px 16px #a3a3a3,
-        -9px -9px 16px #ffffff;
-    border: none;
-
-    .navbar-item a {
-        background: #f0f0f3;
-        box-shadow:
-            5px 5px 10px #a3a3a3,
-            -5px -5px 10px #ffffff;
-        border: none;
-
-        &:hover {
-            box-shadow:
-                inset 5px 5px 10px #a3a3a3,
-                inset -5px -5px 10px #ffffff;
+        &:nth-child(2) {
+            opacity: 0;
         }
-    }
-}
-
-// 5. Split Color Navbar
-@mixin navbar-split {
-    background: linear-gradient(90deg, #1a1a1a 50%, #ffffff 50%);
-
-    .navbar-brand {
-        color: white;
-    }
-
-    .navbar-item {
-        &:nth-child(odd) a {
-            color: white;
-            &:hover {
-                background: rgba(255, 255, 255, 0.1);
-            }
+        &:nth-child(3) {
+            transform: translateY(0);
         }
-
-        &:nth-child(even) a {
-            color: #1a1a1a;
-            &:hover {
-                background: rgba(0, 0, 0, 0.1);
-            }
-        }
-    }
-}
-
-// 6. Bordered Sections Navbar
-@mixin navbar-bordered {
-    .navbar-item {
-        border-right: 1px solid #e5e7eb;
-
-        &:last-child {
-            border-right: none;
-        }
-
-        a {
-            border-radius: 0;
-            height: 100%;
-            display: flex;
-            align-items: center;
-        }
-    }
-}
-
-// 7. Rounded Pills Navbar
-@mixin navbar-pills {
-    background: #f8fafc;
-
-    .navbar-item a {
-        border-radius: 50px;
-        background: white;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        margin: 0 0.25rem;
-
-        &:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        }
-
-        &.active {
-            background: $navbar-accent;
-            color: white;
-        }
-    }
-}
-
-// 8. Retro Terminal Navbar
-@mixin navbar-terminal {
-    background: #000000;
-    border: 2px solid #00ff00;
-    font-family: "Courier New", monospace;
-
-    .navbar-brand,
-    .navbar-item a {
-        color: #00ff00;
-
-        &::before {
-            content: "> ";
-        }
-
-        &:hover {
-            background: #00ff00;
-            color: #000000;
-        }
-    }
-}
-
-// 9. Floating Cards Navbar
-@mixin navbar-cards {
-    background: transparent;
-    padding: 1rem;
-
-    .navbar-item {
-        a {
-            background: white;
-            border-radius: $navbar-border-radius;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            margin: 0 0.25rem;
-            border: 1px solid #e5e7eb;
-
-            &:hover {
-                transform: translateY(-4px) rotate(1deg);
-                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-            }
-        }
-    }
-}
-
-// 10. Diagonal Stripe Navbar
-@mixin navbar-diagonal {
-    background: repeating-linear-gradient(
-        45deg,
-        #667eea,
-        #667eea 10px,
-        #764ba2 10px,
-        #764ba2 20px
-    );
-
-    .navbar-brand,
-    .navbar-item a {
-        color: white;
-        background: rgba(0, 0, 0, 0.2);
-        backdrop-filter: blur(5px);
-    }
-}
-
-// 11. Holographic Navbar
-@mixin navbar-holographic {
-    background: linear-gradient(
-        45deg,
-        #ff6b6b,
-        #4ecdc4,
-        #45b7d1,
-        #96ceb4,
-        #feca57
-    );
-    background-size: 400% 400%;
-    animation: holographic-shift 10s ease infinite;
-
-    .navbar-brand,
-    .navbar-item a {
-        color: white;
-        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-    }
-}
-
-@keyframes holographic-shift {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-// 12. Paper Fold Navbar
-@mixin navbar-paper {
-    background: #fefefe;
-    position: relative;
-
-    &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 20px;
-        height: 20px;
-        background: linear-gradient(
-            -45deg,
-            transparent 46%,
-            #e5e5e5 50%,
-            #fafafa 56%
-        );
-    }
-
-    &::after {
-        content: "";
-        position: absolute;
-        top: 20px;
-        right: 0;
-        width: 20px;
-        height: 20px;
-        background: linear-gradient(-45deg, #fafafa 46%, transparent 50%);
-        box-shadow: -2px -2px 5px rgba(0, 0, 0, 0.1);
-    }
-}
-
-// 13. Circuit Board Navbar
-@mixin navbar-circuit {
-    background: #1a1a2e;
-    border-bottom: 2px solid #16213e;
-    position: relative;
-
-    &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-image:
-            linear-gradient(90deg, transparent 98%, #0f3460 100%),
-            linear-gradient(180deg, transparent 98%, #0f3460 100%);
-        background-size: 20px 20px;
-        opacity: 0.3;
-    }
-
-    .navbar-brand,
-    .navbar-item a {
-        color: #00d4aa;
-        position: relative;
-        z-index: 1;
-    }
-}
-
-// 14. Watercolor Navbar
-@mixin navbar-watercolor {
-    background:
-        radial-gradient(
-            circle at 20% 50%,
-            rgba(120, 119, 198, 0.3) 0%,
-            transparent 50%
-        ),
-        radial-gradient(
-            circle at 80% 20%,
-            rgba(255, 119, 198, 0.3) 0%,
-            transparent 50%
-        ),
-        radial-gradient(
-            circle at 40% 80%,
-            rgba(120, 219, 255, 0.3) 0%,
-            transparent 50%
-        ),
-        white;
-
-    .navbar-item a {
-        background: rgba(255, 255, 255, 0.8);
-        backdrop-filter: blur(10px);
-    }
-}
-
-// 15. Origami Navbar
-@mixin navbar-origami {
-    background: #f8f9fa;
-    position: relative;
-
-    &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 4px;
-        background: linear-gradient(
-            90deg,
-            #ff6b6b 0%,
-            #4ecdc4 25%,
-            #45b7d1 50%,
-            #96ceb4 75%,
-            #feca57 100%
-        );
-    }
-
-    .navbar-item a {
-        position: relative;
-        overflow: hidden;
-
-        &::before {
-            content: "";
-            position: absolute;
-            top: -100%;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(
-                90deg,
-                transparent,
-                rgba(255, 255, 255, 0.4),
-                transparent
-            );
-            transition: top 0.3s ease;
-        }
-
-        &:hover::before {
-            top: 100%;
-        }
-    }
-}
-
-// 16. Vintage Stamp Navbar
-@mixin navbar-vintage {
-    background: #f4f1e8;
-    border: 8px solid #8b4513;
-    border-image: repeating-linear-gradient(
-            45deg,
-            #8b4513 0,
-            #8b4513 1px,
-            transparent 1px,
-            transparent 8px
-        )
-        8;
-    font-family: "Times New Roman", serif;
-
-    .navbar-brand,
-    .navbar-item a {
-        color: #8b4513;
-        font-weight: bold;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
-}
-
-// 17. Liquid Metal Navbar
-@mixin navbar-liquid {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    position: relative;
-    overflow: hidden;
-
-    &::before {
-        content: "";
-        position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background: radial-gradient(
-            circle,
-            rgba(255, 255, 255, 0.1) 1px,
-            transparent 1px
-        );
-        background-size: 50px 50px;
-        animation: liquid-flow 20s linear infinite;
-    }
-
-    .navbar-brand,
-    .navbar-item a {
-        color: white;
-        position: relative;
-        z-index: 1;
-    }
-}
-
-@keyframes liquid-flow {
-    0% {
-        transform: translate(-50%, -50%) rotate(0deg);
-    }
-    100% {
-        transform: translate(-50%, -50%) rotate(360deg);
-    }
-}
-
-// 18. Geometric Navbar
-@mixin navbar-geometric {
-    background: white;
-    border-bottom: 4px solid #f8f9fa;
-    position: relative;
-
-    &::before {
-        content: "";
-        position: absolute;
-        bottom: -4px;
-        left: 0;
-        width: 100%;
-        height: 4px;
-        background:
-            linear-gradient(45deg, #ff6b6b 25%, transparent 25%),
-            linear-gradient(-45deg, #4ecdc4 25%, transparent 25%),
-            linear-gradient(45deg, transparent 75%, #45b7d1 75%),
-            linear-gradient(-45deg, transparent 75%, #96ceb4 75%);
-        background-size: 20px 4px;
-        background-position:
-            0 0,
-            0 0,
-            10px 0,
-            10px 0;
-    }
-
-    .navbar-item a {
-        clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
-        transition: all 0.3s ease;
-
-        &:hover {
-            clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 10% 100%);
-        }
-    }
-}
-
-// 19. Glitch Effect Navbar
-@mixin navbar-glitch {
-    background: #000;
-    position: relative;
-
-    .navbar-brand,
-    .navbar-item a {
-        color: #00ff41;
-        font-family: "Courier New", monospace;
-        position: relative;
-
-        &:hover {
-            animation: glitch 0.3s ease-in-out;
-        }
-    }
-}
-
-@keyframes glitch {
-    0%,
-    100% {
-        transform: translate(0);
-    }
-    10% {
-        transform: translate(-2px, 2px);
-    }
-    20% {
-        transform: translate(2px, -2px);
-    }
-    30% {
-        transform: translate(-2px, -2px);
-    }
-    40% {
-        transform: translate(2px, 2px);
-    }
-    50% {
-        transform: translate(-2px, 2px);
-    }
-    60% {
-        transform: translate(2px, -2px);
-    }
-    70% {
-        transform: translate(-2px, -2px);
-    }
-    80% {
-        transform: translate(2px, 2px);
-    }
-    90% {
-        transform: translate(-2px, -2px);
-    }
-}
-
-// 20. Aurora Navbar
-@mixin navbar-aurora {
-    background: linear-gradient(45deg, #12c2e9, #c471ed, #f64f59);
-    background-size: 400% 400%;
-    animation: aurora-flow 15s ease infinite;
-    position: relative;
-    overflow: hidden;
-
-    &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-            90deg,
-            transparent,
-            rgba(255, 255, 255, 0.2),
-            transparent
-        );
-        animation: aurora-wave 3s ease-in-out infinite;
-    }
-
-    .navbar-brand,
-    .navbar-item a {
-        color: white;
-        text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-        position: relative;
-        z-index: 1;
-    }
-}
-
-@keyframes aurora-flow {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-@keyframes aurora-wave {
-    0% {
-        left: -100%;
-    }
-    100% {
-        left: 100%;
-    }
-}
-
-// 21. Frosted Glass Ultra
-@mixin navbar-frosted-ultra {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow:
-        0 8px 32px rgba(0, 0, 0, 0.1),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2);
-
-    .navbar-item a {
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.15);
-
-        &:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-    }
-}
-
-// Mobile adjustments for all variants
-@media (max-width: #{$tablet - 1px}) {
-    [class*="navbar-"] {
-        .navbar-nav {
-            background: inherit;
-
-            &::before {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background: inherit;
-                backdrop-filter: inherit;
-                -webkit-backdrop-filter: inherit;
-                z-index: -1;
-            }
-        }
-    }
-}
-
-// Variant class combinations
-.navbar {
-    &.gradient {
-        @include navbar-gradient;
-    }
-    &.neon {
-        @include navbar-neon;
-    }
-    &.minimal {
-        @include navbar-minimal;
-    }
-    &.neumorphism {
-        @include navbar-neumorphism;
-    }
-    &.split {
-        @include navbar-split;
-    }
-    &.bordered {
-        @include navbar-bordered;
-    }
-    &.pills {
-        @include navbar-pills;
-    }
-    &.terminal {
-        @include navbar-terminal;
-    }
-    &.cards {
-        @include navbar-cards;
-    }
-    &.diagonal {
-        @include navbar-diagonal;
-    }
-    &.holographic {
-        @include navbar-holographic;
-    }
-    &.paper {
-        @include navbar-paper;
-    }
-    &.circuit {
-        @include navbar-circuit;
-    }
-    &.watercolor {
-        @include navbar-watercolor;
-    }
-    &.origami {
-        @include navbar-origami;
-    }
-    &.vintage {
-        @include navbar-vintage;
-    }
-    &.liquid {
-        @include navbar-liquid;
-    }
-    &.geometric {
-        @include navbar-geometric;
-    }
-    &.glitch {
-        @include navbar-glitch;
-    }
-    &.aurora {
-        @include navbar-aurora;
-    }
-    &.frosted-ultra {
-        @include navbar-frosted-ultra;
     }
 }

@@ -1,46 +1,69 @@
-// Define the breakpoint variable
-$breakpoint: 768px;
+@use "sass:map";
 
-.media-object {
+$media-prefix: "media" !default;
+
+// A map to generate different size (gap) variants.
+$media-gaps: (
+    "sm": 0.75rem,
+    "md": 1.5rem,
+    // Default
+    "lg": 2rem,
+) !default;
+
+.#{$media-prefix} {
+    // CSS variables for complete control.
+    --media-gap: #{map.get($media-gaps, "md")};
+    --media-align-items: flex-start; // Default to top-aligned
+
     display: flex;
-    margin-bottom: 1rem;
-    flex-wrap: nowrap;
+    align-items: var(--media-align-items);
+    gap: var(--media-gap); // KEY IMPROVEMENT: Use gap for clean spacing.
+    width: 100%;
 
-    @media (max-width: $breakpoint) {
-        flex-wrap: wrap;
+    // Mobile-first: Stack by default on smaller screens.
+    @media (max-width: 768px) {
+        flex-direction: column;
     }
 
-    &::after {
-        content: "";
-        display: table;
-        clear: both;
+    // BEM: Figure (for the image, icon, avatar, etc.)
+    &__figure {
+        flex-shrink: 0; // Prevent the figure from being squashed.
     }
 
-    img {
-        max-width: 100%;
+    // BEM: Body (for the main content)
+    &__body {
+        flex-grow: 1; // Allow the body to fill the remaining space.
+        min-width: 0; // Prevent overflow issues with long text/content.
     }
 }
 
-.media-object-section {
-    padding: 0 1rem;
-    flex: 1 1 auto;
-
-    &:last-child > :last-child {
-        margin-bottom: 0;
+// Generate size variants for different gaps.
+@each $name, $gap in $media-gaps {
+    .#{$media-prefix}--#{$name} {
+        --media-gap: #{$gap};
     }
+}
 
-    @media (max-width: $breakpoint) {
-        padding: 0;
-        padding-bottom: 1rem;
-        flex-basis: 100%;
-        max-width: 100%;
+// Modifiers for vertical alignment.
+.#{$media-prefix}--align-center {
+    --media-align-items: center;
+}
+.#{$media-prefix}--align-end {
+    --media-align-items: flex-end;
+}
 
-        img {
-            width: 100%;
-        }
+// Modifier to reverse the order of figure and body.
+.#{$media-prefix}--reverse {
+    flex-direction: row-reverse;
+    // Ensure it still stacks correctly on mobile
+    @media (max-width: 768px) {
+        flex-direction: column;
     }
+}
 
-    &.main-section {
-        flex: 1 0 auto;
+// Modifier to prevent stacking on mobile.
+.#{$media-prefix}--no-stack {
+    @media (max-width: 768px) {
+        flex-direction: row;
     }
 }

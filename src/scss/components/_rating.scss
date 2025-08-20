@@ -1,103 +1,169 @@
-.star-rating {
-    display: inline-block;
+@use "sass:map";
+@use "sass:string";
+
+$prefix: "rating" !default;
+
+// A map to hold all default CSS variables for easy setup and theming.
+$config: (
+    "gap": 0.25rem,
+    "font-size": 1.5rem,
+    "inactive-color": "#d1d5db",
+    // gray-300
+    "transition": "color 0.2s ease-in-out, transform 0.1s ease",
+    // Default SVG icon (star)
+    "icon":
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'%3E%3Cpath fill-rule='evenodd' d='M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.007z' clip-rule='evenodd' /%3E%3C/svg%3E"),
+) !default;
+
+// Single source of truth for semantic color states.
+$states: (
+    "warning": #f59e0b,
+    // amber-500
+    "danger": #ef4444,
+    // red-500
+    "success": #22c55e,
+    // green-500
+    "info": #3b82f6, // blue-500
+) !default;
+
+// Map of available icons. Add new icons here.
+$icons: (
+    "star":
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'%3E%3Cpath fill-rule='evenodd' d='M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.007z' clip-rule='evenodd' /%3E%3C/svg%3E"),
+    "heart":
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'%3E%3Cpath d='M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-1.344-.688 15.247 15.247 0 01-1.344-.688c-.012-.007-.022-.012-.033-.018a7.294 7.294 0 01-2.9-4.83c0-1.841.67-3.58 1.8-4.83a7.294 7.294 0 014.83-1.8 7.294 7.294 0 014.83 1.8c1.13 1.25 1.8 2.99 1.8 4.83 0 1.841-.67 3.58-1.8 4.83a7.294 7.294 0 01-2.9 4.83c-.01.006-.02.012-.03.018a15.247 15.247 0 01-1.344.688 15.247 15.247 0 01-1.344.688l-.022.012-.007.003z' /%3E%3C/svg%3E"),
+) !default;
+
+.#{$prefix} {
+    @each $key, $value in $config {
+        --rating-#{$key}: #{$value};
+    }
+    // Default active color is the "warning" state
+    --rating-active-color: #{map.get($states, "warning")};
+    // The percentage value for the read-only mode fill
+    --rating-value-percent: 100%;
+
+    display: inline-flex;
+    gap: var(--rating-gap);
+    font-size: var(--rating-font-size);
+    line-height: 1;
+    position: relative;
     vertical-align: middle;
 
-    label {
-        display: inline-block;
-        margin: 0;
-        padding: 0.25rem;
-        font-size: 1.5rem;
-        line-height: 1;
-        color: #ccc;
-        cursor: pointer;
-        transition: color 0.2s;
+    // READ-ONLY MODE: Two layers of icons, with the top one clipped
+    // The background layer (inactive icons)
+    &__background,
+    &__foreground {
+        display: flex;
+        gap: var(--rating-gap);
 
-        &:hover,
-        &:hover ~ label {
-            color: #ffd700;
-        }
-
+        // Common styles for the icons in both layers
         &::before {
-            content: "\2606";
-        }
-
-        &.selected,
-        &:checked ~ label {
-            color: #ffd700;
-        }
-
-        &:checked ~ label {
-            color: #ffd700;
-        }
-
-        &:checked ~ label ~ label {
-            color: #ccc;
-        }
-
-        &.selected ~ label {
-            color: #ffd700;
+            content: "";
+            display: block;
+            width: 1em;
+            height: 1em;
+            background-color: currentColor; // Set the color of the SVG
+            mask-image: var(--rating-icon);
+            mask-repeat: no-repeat;
+            mask-size: 100%;
         }
     }
-}
 
-.percentage-rating {
-    display: inline-block;
-    vertical-align: middle;
-    width: 100px;
-    height: 20px;
-    background-color: #ccc;
-    border-radius: 10px;
-    position: relative;
+    &__background {
+        color: var(--rating-inactive-color);
+    }
 
-    .percentage-bar {
+    &__foreground {
         position: absolute;
         top: 0;
         left: 0;
-        bottom: 0;
-        background-color: #ffd700;
-        border-radius: 10px;
-        transition: width 0.2s;
+        width: var(--rating-value-percent);
+        color: var(--rating-active-color);
+        overflow: hidden; // This clips the active icons
     }
 }
 
-.heart-rating {
-    display: inline-block;
-    vertical-align: middle;
+.#{$prefix}--interactive {
+    flex-direction: row-reverse; // Key for the sibling selector trick
+    justify-content: flex-end;
 
-    label {
-        display: inline-block;
-        margin: 0;
-        padding: 0.25rem;
-        font-size: 1.5rem;
-        line-height: 1;
-        color: #ccc;
+    // Hide the read-only layers in interactive mode
+    .#{$prefix}__background,
+    .#{$prefix}__foreground {
+        display: none;
+    }
+
+    // The actual radio input
+    &__input {
+        // Visually hide the input but keep it accessible
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+    }
+
+    // The visible label (styled as an icon)
+    &__item {
+        color: var(--rating-inactive-color);
         cursor: pointer;
-        transition: color 0.2s;
-
-        &:hover,
-        &:hover ~ label {
-            color: #ff6b6b;
-        }
+        transition: var(--rating-transition);
 
         &::before {
-            content: "\2661";
+            content: "";
+            display: block;
+            width: 1em;
+            height: 1em;
+            background-color: currentColor;
+            mask-image: var(--rating-icon);
+            mask-repeat: no-repeat;
+            mask-size: 100%;
         }
 
-        &.selected,
-        &:checked ~ label {
-            color: #ff6b6b;
+        // Add a subtle scale effect on hover for better feedback
+        &:hover {
+            transform: scale(1.15);
         }
+    }
 
-        &:checked ~ label {
-            color: #ff6b6b;
-        }
+    // Hover effect: Color the hovered item and all items "before" it (due to row-reverse)
+    &:hover &__item {
+        color: var(--rating-active-color);
+    }
 
-        &:checked ~ label ~ label {
-            color: #ccc;
-        }
+    // Keep all items "after" the hovered one inactive
+    &__item:hover ~ &__item {
+        color: var(--rating-inactive-color);
+    }
 
-        &.selected ~ label {
-            color: #ff6b6b;
-        }
+    // Checked effect: Permanently color the checked item and all items "before" it
+    &__input:checked ~ &__item {
+        color: var(--rating-active-color);
+    }
+}
+
+// --- Icon Variants ---
+@each $name, $svg in $icons {
+    .#{$prefix}--#{$name} {
+        --rating-icon: #{$svg};
+    }
+}
+// --- Sizing Variants ---
+.#{$prefix}--sm {
+    --rating-font-size: 1rem;
+}
+.#{$prefix}--lg {
+    --rating-font-size: 2.25rem;
+}
+
+// --- Color Variants (Auto-Generated) ---
+@each $name, $color in $states {
+    .#{$prefix}--#{$name} {
+        --rating-active-color: #{$color};
     }
 }

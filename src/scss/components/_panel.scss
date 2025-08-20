@@ -1,37 +1,93 @@
-.panel {
-    border: 0.05rem solid #dadee4;
-    border-radius: 0.1rem;
+@use "sass:map";
+
+$prefix: "panel" !default;
+
+// A map to hold all default CSS variables for easy setup and theming.
+$config: (
+    "bg": #ffffff,
+    "fg": #1f2937,
+    "border-color": #e5e7eb,
+    "header-bg": #f9fafb,
+    "header-fg": #111827,
+    "footer-bg": #f9fafb,
+    "padding": 1rem,
+    "radius": 0.5rem,
+    "shadow":
+        "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1)",
+) !default;
+
+// The single source of truth for all semantic color states.
+// Adding a new map here will auto-generate a new variant.
+$states: (
+    "primary": (
+        "rgb": "59, 130, 246",
+        "fg": #ffffff,
+    ),
+    "success": (
+        "rgb": "34, 197, 94",
+        "fg": #ffffff,
+    ),
+    "danger": (
+        "rgb": "239, 68, 68",
+        "fg": #ffffff,
+    ),
+    "warning": (
+        "rgb": "249, 115, 22",
+        "fg": #ffffff,
+    ),
+) !default;
+
+.#{$prefix} {
+    // Generate CSS custom properties from the $config map
+    @each $key, $value in $config {
+        --panel-#{$key}: #{$value};
+    }
+
+    // Default state colors (overridden by variants)
+    --panel-raw-rgb: 0, 0, 0; // Fallback
+
     display: flex;
     flex-direction: column;
+    background-color: var(--panel-bg);
+    color: var(--panel-fg);
+    border: 1px solid var(--panel-border-color);
+    border-radius: var(--panel-radius);
+    box-shadow: var(--panel-shadow);
+    overflow: hidden; // Ensures children conform to border-radius
 
     &__header,
     &__footer {
-        align-items: center;
         display: flex;
-        flex-direction: row;
+        align-items: center;
         justify-content: space-between;
-        padding: 0.8rem;
-        font-weight: bold;
+        gap: 1rem;
+        padding: var(--panel-padding);
+        flex-shrink: 0;
+    }
 
-        &__title {
-            font-size: 1.25rem;
-            text-transform: uppercase;
-        }
+    &__header {
+        background-color: var(--panel-header-bg);
+        color: var(--panel-header-fg);
+    }
+
+    &__footer {
+        background-color: var(--panel-footer-bg);
+    }
+
+    &__title {
+        font-size: 1.125rem;
+        font-weight: 600;
+        margin: 0;
     }
 
     &__nav {
-        align-items: center;
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        margin-bottom: 1.5rem;
-
-        &__link {
-            color: #4d4d4d;
-            font-weight: bold;
+        align-items: center;
+        gap: 1rem;
+        // Style for nav links if needed
+        a {
+            color: var(--panel-header-fg);
             text-decoration: none;
-            margin-right: 1rem;
-
             &:hover {
                 text-decoration: underline;
             }
@@ -39,34 +95,57 @@
     }
 
     &__body {
-        flex: 1;
+        padding: var(--panel-padding);
+        flex-grow: 1;
+        line-height: 1.6;
+        // Allow for scrolling if content overflows
         overflow-y: auto;
-        padding: 0.8rem;
-
-        &__content {
-            line-height: 1.5;
-        }
     }
+}
 
-    &.panel-primary {
-        border-color: var(--blue-500);
-
-        &__header {
-            background-color: var(--blue-500);
-            color: #fff;
-
-            &__title {
-                color: #fff;
-            }
-        }
-
-        &__nav__link {
-            color: var(--blue-500);
-
-            &:hover {
-                color: var(--blue-700);
-                text-decoration: underline;
-            }
-        }
+@each $name, $props in $states {
+    .#{$prefix}--#{$name} {
+        --panel-raw-rgb: #{map.get($props, "rgb")};
+        // Default solid style
+        --panel-border-color: rgb(var(--panel-raw-rgb));
+        --panel-header-bg: rgb(var(--panel-raw-rgb));
+        --panel-header-fg: #{map.get($props, "fg")};
     }
+}
+
+// 1. Subtle: Light background with colored text/header
+.#{$prefix}--subtle {
+    --panel-bg: rgba(var(--panel-raw-rgb), 0.05);
+    --panel-border-color: rgba(var(--panel-raw-rgb), 0.2);
+    --panel-header-bg: transparent;
+    --panel-header-fg: rgb(var(--panel-raw-rgb));
+}
+
+// 2. Bordered: Clean look with a colored top border
+.#{$prefix}--bordered {
+    // Reset header to base style
+    --panel-header-bg: var(--panel-bg);
+    --panel-header-fg: var(--panel-fg);
+    // Apply a thick top border with the state color
+    border-top: 4px solid rgb(var(--panel-raw-rgb));
+}
+
+// 1. Divided: Adds lines between sections
+.#{$prefix}--divided {
+    // Use the lobotomized owl selector to add a border between direct children
+    > * + * {
+        border-top: 1px solid var(--panel-border-color);
+    }
+}
+// 2. No Body Padding
+.#{$prefix}--no-padding .#{$prefix}__body {
+    padding: 0;
+}
+// 3. Small Padding
+.#{$prefix}--sm {
+    --panel-padding: 0.75rem;
+}
+// 4. Large Padding
+.#{$prefix}--lg {
+    --panel-padding: 1.5rem;
 }

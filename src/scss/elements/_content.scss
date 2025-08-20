@@ -1,118 +1,160 @@
-.content {
-    li + li {
-        margin-top: 0.25em;
+@use "sass:map";
+
+$prefix: "content" !default;
+
+$config: (
+    // --- Base Typography & Color ---
+    "base-font-size": 1rem,
+    "fg": #4a4a4a,
+    "heading-fg": #363636,
+    "heading-font-weight": 600,
+    "heading-line-height": 1.125,
+    "link-fg": #3273dc,
+    "link-hover-fg": #363636,
+
+    // --- Sizing & Spacing ---
+    "base-margin-block": 1em,
+    "h1-font-size": 2em,
+    "h2-font-size": 1.75em,
+    "h3-font-size": 1.5em,
+    "h4-font-size": 1.25em,
+    "h5-font-size": 1.125em,
+    "h6-font-size": 1em,
+
+    // --- Blockquote ---
+    "blockquote-bg": #f5f5f5,
+    "blockquote-border-color": #dbdbdb,
+    "blockquote-border-width": 5px,
+    "blockquote-padding-y": 1.25em,
+    "blockquote-padding-x": 1.5em,
+
+    // --- Lists ---
+    "list-margin-left": 2em,
+    "list-item-spacing": 0.25em,
+
+    // --- Table ---
+    "table-border-color": #dbdbdb,
+    "table-cell-padding-y": 0.5em,
+    "table-cell-padding-x": 0.75em,
+    "table-head-fg": #363636,
+    "table-head-border-width": 2px,
+
+    "dark-fg": #d1d5db,
+    "dark-heading-fg": #f3f4f6,
+    "dark-link-fg": #60a5fa,
+    "dark-link-hover-fg": #d1d5db,
+    "dark-blockquote-bg": #374151,
+    "dark-blockquote-border-color": #4b5563,
+    "dark-table-border-color": #4b5563,
+    "dark-table-head-fg": #f3f4f6
+) !default;
+
+.#{$prefix} {
+    // --- Generate CSS custom properties from the $config map ---
+    @each $key, $value in $config {
+        --#{$prefix}-#{$key}: #{$value};
     }
 
-    p:not(:last-child),
-    dl:not(:last-child),
-    ol:not(:last-child),
-    ul:not(:last-child),
-    blockquote:not(:last-child),
-    pre:not(:last-child),
-    table:not(:last-child) {
-        margin-bottom: 1em;
+    font-size: var(--#{$prefix}-base-font-size);
+    color: var(--#{$prefix}-fg);
+
+    // --- Block Element Spacing ---
+    p,
+    dl,
+    ol,
+    ul,
+    blockquote,
+    pre,
+    table {
+        &:not(:last-child) {
+            margin-bottom: var(--#{$prefix}-base-margin-block);
+        }
     }
 
+    // --- Headings ---
     h1,
     h2,
     h3,
     h4,
     h5,
     h6 {
-        color: #363636;
-        font-weight: 600;
-        line-height: 1.125;
+        color: var(--#{$prefix}-heading-fg);
+        font-weight: var(--#{$prefix}-heading-font-weight);
+        line-height: var(--#{$prefix}-heading-line-height);
 
         &:not(:first-child) {
-            margin-top: 1em;
+            margin-top: 1.5em; // Give headings a bit more space
         }
     }
 
     h1 {
-        font-size: 2em;
+        font-size: var(--#{$prefix}-h1-font-size);
         margin-bottom: 0.5em;
-
-        &:not(:first-child) {
-            margin-top: 1em;
-        }
     }
-
     h2 {
-        font-size: 1.75em;
+        font-size: var(--#{$prefix}-h2-font-size);
         margin-bottom: 0.5714em;
-
-        &:not(:first-child) {
-            margin-top: 1.1428em;
-        }
     }
-
     h3 {
-        font-size: 1.5em;
+        font-size: var(--#{$prefix}-h3-font-size);
         margin-bottom: 0.6666em;
-
-        &:not(:first-child) {
-            margin-top: 1.3333em;
-        }
     }
-
     h4 {
-        font-size: 1.25em;
+        font-size: var(--#{$prefix}-h4-font-size);
         margin-bottom: 0.8em;
     }
-
     h5 {
-        font-size: 1.125em;
+        font-size: var(--#{$prefix}-h5-font-size);
         margin-bottom: 0.8888em;
     }
-
     h6 {
-        font-size: 1em;
+        font-size: var(--#{$prefix}-h6-font-size);
         margin-bottom: 1em;
     }
-}
 
-.content {
+    // --- Other Elements ---
     blockquote {
-        background-color: whitesmoke;
-        border-left: 5px solid #dbdbdb;
-        padding: 1.25em 1.5em;
+        background-color: var(--#{$prefix}-blockquote-bg);
+        border-left: var(--#{$prefix}-blockquote-border-width) solid
+            var(--#{$prefix}-blockquote-border-color);
+        padding: var(--#{$prefix}-blockquote-padding-y)
+            var(--#{$prefix}-blockquote-padding-x);
+    }
+
+    ol,
+    ul {
+        margin-left: var(--#{$prefix}-list-margin-left);
+        margin-top: var(--#{$prefix}-base-margin-block);
+
+        li + li {
+            margin-top: var(--#{$prefix}-list-item-spacing);
+        }
     }
 
     ol {
         list-style-position: outside;
-        margin-left: 2em;
-        margin-top: 1em;
-
         &:not([type]) {
             list-style-type: decimal;
         }
-
-        &:not([type]).is-lower-alpha {
+        &.is-lower-alpha {
             list-style-type: lower-alpha;
         }
-
-        &:not([type]).is-lower-roman {
+        &.is-lower-roman {
             list-style-type: lower-roman;
         }
-
-        &:not([type]).is-upper-alpha {
+        &.is-upper-alpha {
             list-style-type: upper-alpha;
         }
-
-        &:not([type]).is-upper-roman {
+        &.is-upper-roman {
             list-style-type: upper-roman;
         }
     }
 
     ul {
         list-style: disc outside;
-        margin-left: 2em;
-        margin-top: 1em;
-
         ul {
             list-style-type: circle;
-            margin-top: 0.5em;
-
+            margin-top: calc(var(--#{$prefix}-list-item-spacing) * 2);
             ul {
                 list-style-type: square;
             }
@@ -120,39 +162,29 @@
     }
 
     dd {
-        margin-left: 2em;
+        margin-left: var(--#{$prefix}-list-margin-left);
     }
-}
 
-.content {
     figure {
-        margin-left: 2em;
-        margin-right: 2em;
-        text-align: center;
-
+        margin: 0; // Reset default figure margins
         &:not(:first-child) {
             margin-top: 2em;
         }
-
         &:not(:last-child) {
             margin-bottom: 2em;
-        }
-
-        img {
-            display: inline-block;
-        }
-
-        figcaption {
-            font-style: italic;
         }
     }
 
     pre {
-        -webkit-overflow-scrolling: touch;
         overflow-x: auto;
-        padding: 1.25em 1.5em;
         white-space: pre;
         word-wrap: normal;
+        background-color: var(
+            --#{$prefix}-blockquote-bg
+        ); // Re-use for consistency
+        padding: var(--#{$prefix}-blockquote-padding-y)
+            var(--#{$prefix}-blockquote-padding-x);
+        border-radius: 6px;
     }
 
     sup,
@@ -165,30 +197,27 @@
 
         td,
         th {
-            border: 1px solid #dbdbdb;
-            border-width: 0 0 1px;
-            padding: 0.5em 0.75em;
+            border-bottom: 1px solid var(--#{$prefix}-table-border-color);
+            padding: var(--#{$prefix}-table-cell-padding-y)
+                var(--#{$prefix}-table-cell-padding-x);
             vertical-align: top;
         }
 
         th {
-            color: #363636;
-
-            &:not([align]) {
-                text-align: inherit;
-            }
+            color: var(--#{$prefix}-table-head-fg);
+            text-align: inherit;
         }
 
         thead td,
         thead th {
-            border-width: 0 0 2px;
-            color: #363636;
+            border-bottom-width: var(--#{$prefix}-table-head-border-width);
         }
 
         tfoot td,
         tfoot th {
-            border-width: 2px 0 0;
-            color: #363636;
+            border-top: var(--#{$prefix}-table-head-border-width) solid
+                var(--#{$prefix}-table-border-color);
+            border-bottom-width: 0;
         }
 
         tbody tr:last-child td,
@@ -196,24 +225,27 @@
             border-bottom-width: 0;
         }
     }
+}
 
-    .tabs li + li {
-        margin-top: 0;
-    }
+.#{$prefix}.is-small {
+    --#{$prefix}-base-font-size: 0.875rem;
+}
+.#{$prefix}.is-medium {
+    --#{$prefix}-base-font-size: 1.25rem;
+}
+.#{$prefix}.is-large {
+    --#{$prefix}-base-font-size: 1.5rem;
+}
 
-    &.small {
-        font-size: 0.75rem;
-    }
-
-    &.normal {
-        font-size: 1rem;
-    }
-
-    &.medium {
-        font-size: 1.25rem;
-    }
-
-    &.large {
-        font-size: 1.5rem;
-    }
+.dark .#{$prefix} {
+    --#{$prefix}-fg: var(--#{$prefix}-dark-fg);
+    --#{$prefix}-heading-fg: var(--#{$prefix}-dark-heading-fg);
+    --#{$prefix}-link-fg: var(--#{$prefix}-dark-link-fg);
+    --#{$prefix}-link-hover-fg: var(--#{$prefix}-dark-link-hover-fg);
+    --#{$prefix}-blockquote-bg: var(--#{$prefix}-dark-blockquote-bg);
+    --#{$prefix}-blockquote-border-color: var(
+        --#{$prefix}-dark-blockquote-border-color
+    );
+    --#{$prefix}-table-border-color: var(--#{$prefix}-dark-table-border-color);
+    --#{$prefix}-table-head-fg: var(--#{$prefix}-dark-table-head-fg);
 }

@@ -1,90 +1,147 @@
-// Variables
-$border-color: #dfe1e5;
-$focus-color: #337ab7;
-$hover-color: #23527c;
-$active-color: #1a1d23;
+@use "sass:map";
 
-.search-bar {
-    display: flex;
-    align-items: center;
-    height: 48px;
-    border: 1px solid $border-color;
-    border-radius: 24px;
-    padding: 0 16px;
-    transition: border-color 0.2s; // add transition effect
+$prefix: "search-bar" !default;
 
-    input {
-        flex: 1;
-        height: 100%;
-        border: none;
-        outline: none;
-        padding: 0;
-        margin: 0;
-        font-size: 16px;
-        background: none;
+// A map to hold all default CSS variables for easy setup and theming.
+$config: (
+    // Sizing
+    "height": 48px,
+    "padding-x": 1rem,
+    "font-size": 1rem,
+    "radius": 0.5rem,
+    // Theming
+    "bg": #ffffff,
+    "fg": #1f2937,
+    "border": #d1d5db,
+    "border-hover": #9ca3af,
+    "border-focus": #4f46e5,
+    // Indigo-600
+    "ring-focus": rgba(79, 70, 229, 0.25),
+    // Indigo-600 with alpha
+    // Dark Theme
+    "dark-bg": #1f2937,
+    "dark-fg": #f9fafb,
+    "dark-border": #4b5563,
+    "dark-border-hover": #6b7280,
+    // Animation
+    "transition": "border-color 0.2s ease, box-shadow 0.2s ease"
+) !default;
 
-        &:focus {
-            box-shadow: 0 0 0 2px $focus-color; // add focus style
-        }
-    }
-
-    button {
-        height: 100%;
-        margin-left: 16px;
-        background: none;
-        border: none;
-        cursor: pointer;
-
-        &:hover {
-            background-color: $hover-color; // add hover effect
-        }
-
-        &:active {
-            background-color: $active-color; // add active state
-        }
-
-        svg {
-            width: 24px;
-            height: 24px;
-        }
-    }
-
-    // add clear button
-    .clear-button {
-        margin-left: 8px;
-        cursor: pointer;
-
-        &:hover {
-            color: $hover-color;
-        }
-    }
-
-    // add loading state
-    &.loading {
-        input {
-            pointer-events: none;
-        }
-
-        button {
-            pointer-events: none;
-            opacity: 0.5;
-        }
-
-        .loading-icon {
-            display: inline-block;
-            width: 24px;
-            height: 24px;
-            animation: spin 1s linear infinite;
-        }
+@keyframes search-bar-spin {
+    to {
+        transform: rotate(360deg);
     }
 }
 
-// Add animation for loading icon
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
+.#{$prefix} {
+    // Generate CSS custom properties from the $config map
+    @each $key, $value in $config {
+        --search-#{$key}: #{$value};
     }
-    100% {
-        transform: rotate(360deg);
+
+    display: flex;
+    align-items: center;
+    position: relative; // For positioning internal elements like the loader
+    height: var(--search-height);
+    padding-inline: var(--search-padding-x);
+    gap: 0.75rem;
+    background-color: var(--search-bg);
+    border: 1px solid var(--search-border);
+    border-radius: var(--search-radius);
+    transition: var(--search-transition);
+
+    &:hover {
+        border-color: var(--search-border-hover);
     }
+
+    // Modern focus state on the entire container
+    &:focus-within {
+        border-color: var(--search-border-focus);
+        box-shadow: 0 0 0 3px var(--search-ring-focus);
+    }
+
+    &__input {
+        flex-grow: 1;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        border: none;
+        outline: none;
+        background: none;
+        font-size: var(--search-font-size);
+        color: var(--search-fg);
+    }
+
+    // A generic button for actions like search or clear
+    &__button {
+        flex-shrink: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        border: none;
+        background: none;
+        color: var(--search-fg);
+        opacity: 0.6;
+        cursor: pointer;
+        transition: opacity 0.2s ease;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    &__icon {
+        width: 1.25em;
+        height: 1.25em;
+    }
+
+    // Specific loader element
+    &__loader {
+        display: none; // Hidden by default
+        color: var(--search-border-focus);
+        animation: search-bar-spin 1s linear infinite;
+    }
+}
+
+// --- State Variants ---
+.#{$prefix}.is-loading {
+    cursor: wait;
+
+    .#{$prefix}__input,
+    .#{$prefix}__button {
+        pointer-events: none;
+        opacity: 0.5;
+    }
+
+    // Hide search/clear icons and show the loader
+    .#{$prefix}__button {
+        display: none;
+    }
+    .#{$prefix}__loader {
+        display: block;
+    }
+}
+
+// --- Sizing Variants ---
+.#{$prefix}--sm {
+    --search-height: 36px;
+    --search-font-size: 0.875rem;
+    --search-padding-x: 0.75rem;
+}
+.#{$prefix}--lg {
+    --search-height: 56px;
+    --search-font-size: 1.125rem;
+    --search-padding-x: 1.25rem;
+}
+
+// --- Style Variants ---
+.#{$prefix}--rounded {
+    --search-radius: 9999px; // Pill shape
+}
+.#{$prefix}--dark {
+    --search-bg: var(--search-dark-bg);
+    --search-fg: var(--search-dark-fg);
+    --search-border: var(--search-dark-border);
+    --search-border-hover: var(--search-dark-border-hover);
 }

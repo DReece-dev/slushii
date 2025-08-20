@@ -1,48 +1,156 @@
-.avatar {
-    display: inline-block;
-    border-radius: 50%; /* default border radius */
-    overflow: hidden;
-}
+@use "sass:map";
 
-.avatar img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: inherit;
-}
+$avatar-prefix: "avatar" !default;
 
-.avatar-placeholder {
-    display: flex;
-    justify-content: center;
+$avatar-sizes: (
+    "xs": 1.5rem,
+    // 24px
+    "sm": 2.5rem,
+    // 40px
+    "md": 4rem,
+    // 64px
+    "lg": 6rem, // 96px
+) !default;
+
+$avatar-shapes: (
+    "circle": 50%,
+    "rounded": 0.5rem,
+    // 8px
+    "square": 0,
+) !default;
+
+$avatar-status-colors: (
+    "online": #22c55e,
+    // Tailwind green-500
+    "away": #f59e0b,
+    // Tailwind amber-500
+    "busy": #ef4444,
+    // Tailwind red-500
+    "offline": #64748b, // Tailwind slate-500
+) !default;
+
+.#{$avatar-prefix} {
+    // CSS Custom Properties for runtime customization and theming.
+    --avatar-size: #{map.get($avatar-sizes, "md")};
+    --avatar-bg: #e2e8f0; // Tailwind slate-200
+    --avatar-fg: #1e293b; // Tailwind slate-800
+    --avatar-radius: #{map.get($avatar-shapes, "circle")};
+    --avatar-font-size: calc(var(--avatar-size) / 2.5);
+    --avatar-ring-color: #6366f1; // Tailwind indigo-500
+    --avatar-ring-width: 0.125rem; // 2px
+
+    display: inline-flex;
     align-items: center;
-    width: 100%;
-    height: 100%;
-    background-color: #eee;
-    border-radius: inherit;
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
+    justify-content: center;
+    vertical-align: middle;
+    flex-shrink: 0;
+    position: relative;
+    user-select: none;
+    overflow: hidden;
+
+    width: var(--avatar-size);
+    height: var(--avatar-size);
+    border-radius: var(--avatar-radius);
+    background-color: var(--avatar-bg);
+    color: var(--avatar-fg);
+    font-size: var(--avatar-font-size);
+    font-weight: 600;
+    font-family: inherit; // Inherits font from parent for consistency.
+
+    // BEM element for the image
+    &__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: inherit;
+    }
+
+    // BEM element for the fallback text (initials)
+    &__fallback {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        text-transform: uppercase;
+    }
 }
 
-.avatar.small {
-    width: 24px;
-    height: 24px;
+@each $name, $size in $avatar-sizes {
+    .#{$avatar-prefix}--#{$name} {
+        --avatar-size: #{$size};
+    }
 }
 
-.avatar.medium {
-    width: 40px;
-    height: 40px;
+@each $name, $radius in $avatar-shapes {
+    .#{$avatar-prefix}--#{$name} {
+        --avatar-radius: #{$radius};
+    }
 }
 
-.avatar.large {
-    width: 64px;
-    height: 64px;
+.#{$avatar-prefix}--status {
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 5%;
+        right: 5%;
+        width: calc(var(--avatar-size) * 0.25);
+        height: calc(var(--avatar-size) * 0.25);
+        border-radius: 50%;
+        border: 0.125em solid #fff; // Scales with the font-size context
+        background-color: map.get(
+            $avatar-status-colors,
+            "offline"
+        ); // Default status
+    }
+
+    // Status colors applied via data-attributes for clean HTML
+    @each $status, $color in $avatar-status-colors {
+        &[data-status="#{$status}"]::after {
+            background-color: #{$color};
+        }
+    }
 }
 
-.avatar.circle {
-    border-radius: 50%;
+.#{$avatar-prefix}--ring {
+    box-shadow: 0 0 0 var(--avatar-ring-width) var(--avatar-ring-color);
 }
 
-.avatar.square {
-    border-radius: 0;
+.#{$avatar-prefix}--interactive {
+    cursor: pointer;
+    transition:
+        opacity 0.2s ease-in-out,
+        transform 0.2s ease-in-out;
+
+    &:hover {
+        opacity: 0.9;
+        transform: scale(1.04);
+    }
+}
+
+.#{$avatar-prefix}--skeleton {
+    background-color: #e2e8f0; // Tailwind slate-200
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+    @keyframes pulse {
+        50% {
+            opacity: 0.5;
+        }
+    }
+}
+
+.avatar-group {
+    display: flex;
+    padding-left: 1rem; // Provides space for the first avatar's negative margin
+
+    .avatar {
+        margin-left: -1rem; // The amount of overlap
+        border: 2px solid #fff; // Creates visual separation between avatars
+        transition: transform 0.2s ease;
+
+        &:hover {
+            transform: translateY(-4px);
+            z-index: 1;
+        }
+    }
 }

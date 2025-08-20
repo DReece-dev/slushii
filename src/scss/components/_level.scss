@@ -1,117 +1,91 @@
-$mobile-display: flex;
+@use "sass:map";
 
-.level {
-    align-items: center;
+$level-prefix: "level" !default;
+
+// A map to generate different size (gap) variants.
+$level-gaps: (
+    "sm": 0.5rem,
+    "md": 1rem,
+    // Default
+    "lg": 2rem,
+) !default;
+
+.#{$level-prefix} {
+    // CSS variables for complete control.
+    --level-gap: #{map.get($level-gaps, "md")};
+    --level-block-spacing: 1.5rem; // The vertical gap when items stack on mobile.
+    --level-align-items: center;
+
+    display: flex;
+    align-items: var(--level-align-items);
     justify-content: space-between;
 
-    code {
-        border-radius: 4px;
+    // Mobile-first approach: Stack vertically by default.
+    flex-direction: column;
+    gap: var(--level-block-spacing);
+
+    // Switch to horizontal layout on desktop.
+    @media (min-width: 768px) {
+        flex-direction: row;
+        gap: var(--level-gap);
     }
 
-    img {
-        display: inline-block;
-        vertical-align: top;
-    }
-
-    &.is-mobile {
-        display: $mobile-display;
-
-        .level-left,
-        .level-right {
-            display: $mobile-display;
-        }
-
-        .level-left + .level-right {
-            margin-top: 0;
-        }
-
-        .level-item {
-            &:not(:last-child) {
-                margin-bottom: 0;
-                margin-right: 0.75rem;
-            }
-
-            &:not(.is-narrow) {
-                flex-grow: 1;
-            }
-        }
-    }
-}
-
-@media screen and (min-width: 769px), print {
-    .level {
+    // BEM: Left & Right Sections
+    &__left,
+    &__right {
         display: flex;
+        align-items: inherit; // Inherit vertical alignment from the parent
+        flex-shrink: 0;
+        gap: var(
+            --level-gap
+        ); // Consistent spacing for items inside the section.
+    }
 
-        > .level-item {
-            &:not(.is-narrow) {
-                flex-grow: 1;
-            }
+    &__left {
+        justify-content: flex-start;
+    }
+    &__right {
+        justify-content: flex-end;
+    }
+
+    // BEM: Individual Item
+    &__item {
+        display: flex;
+        align-items: inherit;
+        justify-content: center;
+
+        // Modifier for items that should expand to fill space
+        &--grow {
+            flex-grow: 1;
         }
     }
 }
 
-.level-item {
-    align-items: center;
-    display: flex;
-    flex-basis: auto;
-    flex-grow: 0;
-    flex-shrink: 0;
-    justify-content: center;
-
-    .title,
-    .subtitle {
-        margin-bottom: 0;
+// Generate size variants for different gaps.
+@each $name, $gap in $level-gaps {
+    .#{$level-prefix}--#{$name} {
+        --level-gap: #{$gap};
+        --level-block-spacing: #{$gap * 1.5};
     }
 }
 
-@media screen and (max-width: 768px) {
-    .level-item:not(:last-child) {
-        margin-bottom: 0.75rem;
-    }
+// Modifier to force horizontal layout on mobile.
+.#{$level-prefix}--no-stack {
+    flex-direction: row;
+    gap: var(--level-gap);
 }
 
-.level-left,
-.level-right {
-    flex-basis: auto;
-    flex-grow: 0;
-    flex-shrink: 0;
-
-    .level-item.is-flexible {
-        flex-grow: 1;
-    }
+// Modifiers for vertical alignment.
+.#{$level-prefix}--align-start {
+    --level-align-items: flex-start;
+}
+.#{$level-prefix}--align-end {
+    --level-align-items: flex-end;
 }
 
-@media screen and (min-width: 769px), print {
-    .level-left .level-item:not(:last-child),
-    .level-right .level-item:not(:last-child) {
-        margin-right: 0.75rem;
-    }
-}
-
-.level-left {
-    align-items: center;
-    justify-content: flex-start;
-}
-
-@media screen and (max-width: 768px) {
-    .level-left + .level-right {
-        margin-top: 1.5rem;
-    }
-}
-
-@media screen and (min-width: 769px), print {
-    .level-left {
-        display: flex;
-    }
-}
-
-.level-right {
-    align-items: center;
-    justify-content: flex-end;
-}
-
-@media screen and (min-width: 769px), print {
-    .level-right {
-        display: flex;
-    }
+// Modifier to force a vertical layout on all screen sizes.
+.#{$level-prefix}--vertical {
+    flex-direction: column;
+    gap: var(--level-block-spacing);
+    align-items: flex-start; // A sensible default for vertical layouts.
 }

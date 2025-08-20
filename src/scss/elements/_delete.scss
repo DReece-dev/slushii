@@ -1,87 +1,142 @@
-.delete {
-    user-select: none;
-    background-color: rgba(10, 10, 10, 0.2);
-    /* background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat; */
+@use "sass:map";
+
+$prefix: "delete" !default;
+
+$config: (
+    // --- Sizing ---
+    "size": 1.25rem,
+    // 20px
+    "sm-size": 1rem,
+    // 16px
+    "md-size": 1.5rem,
+    // 24px
+    "lg-size": 2rem,
+
+    // 32px
+    // --- Appearance ---
+    "cross-thickness": 2px,
+    "radius": 9999px,
+
+    // --- Animation ---
+    "transition":
+        "background-color 0.15s ease, opacity 0.15s ease, transform 0.15s ease",
+
+    "bg": rgba(10, 10, 10, 0.2),
+    "fg": white,
+    "hover-bg": rgba(10, 10, 10, 0.3),
+    "active-bg": rgba(10, 10, 10, 0.4),
+    "focus-ring-color": rgba(10, 10, 10, 0.4),
+    "dark-bg": rgba(255, 255, 255, 0.2),
+    "dark-fg": #1f2937,
+    // gray-800
+    "dark-hover-bg": rgba(255, 255, 255, 0.3),
+    "dark-active-bg": rgba(255, 255, 255, 0.4),
+    "dark-focus-ring-color": rgba(255, 255, 255, 0.4)
+) !default;
+
+// Use a more semantic selector for a button
+button.#{$prefix} {
+    // --- Generate CSS custom properties from the $config map ---
+    @each $key, $value in $config {
+        --#{$prefix}-#{$key}: #{$value};
+    }
+
+    // Set a contextual size variable that can be overridden by modifiers
+    --#{$prefix}-current-size: var(--#{$prefix}-size);
+
+    // --- Reset & Base Styles ---
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     border: none;
-    border-radius: 9999px;
     cursor: pointer;
-    pointer-events: auto;
     display: inline-block;
     flex-grow: 0;
     flex-shrink: 0;
-    font-size: 0;
-    height: 20px;
-    max-height: 20px;
-    max-width: 20px;
-    min-height: 20px;
-    min-width: 20px;
+    font-size: 0; // Hides any text/font rendering issues
     outline: none;
+    padding: 0;
     position: relative;
     vertical-align: top;
-    width: 20px;
+    user-select: none;
 
-    &::before {
-        height: 2px;
-        width: 50%;
-        background-color: white;
+    // --- Core Appearance (uses variables) ---
+    background-color: var(--#{$prefix}-bg);
+    border-radius: var(--#{$prefix}-radius);
+    transition: var(--#{$prefix}-transition);
+
+    // --- Sizing (uses contextual variable) ---
+    width: var(--#{$prefix}-current-size);
+    height: var(--#{$prefix}-current-size);
+
+    // --- The "X" cross mark ---
+    &::before,
+    &::after {
+        background-color: var(--#{$prefix}-fg);
         content: "";
         display: block;
         left: 50%;
         position: absolute;
         top: 50%;
-        transform: translateX(-50%) translateY(-50%) rotate(45deg);
-        transform-origin: center center;
+        transform-origin: center;
+        height: var(--#{$prefix}-cross-thickness);
+        width: 50%; // Make the cross proportional to the button size
+    }
+
+    &::before {
+        transform: translate(-50%, -50%) rotate(45deg);
     }
 
     &::after {
-        background-color: white;
-        content: "";
-        display: block;
-        left: 50%;
-        position: absolute;
-        top: 50%;
-        transform: translateX(-50%) translateY(-50%) rotate(45deg);
-        transform-origin: center center;
-        height: 50%;
-        width: 2px;
+        transform: translate(-50%, -50%) rotate(-45deg);
     }
 
-    &:hover {
-        background-color: rgba(10, 10, 10, 0.3);
-    }
-
+    // --- States ---
+    &:hover,
     &:focus {
-        background-color: rgba(10, 10, 10, 0.3);
+        background-color: var(--#{$prefix}-hover-bg);
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--#{$prefix}-focus-ring-color);
+        outline-offset: 2px;
     }
 
     &:active {
-        background-color: rgba(10, 10, 10, 0.4);
+        background-color: var(--#{$prefix}-active-bg);
+        transform: scale(0.95);
     }
 
-    &.small {
-        height: 16px;
-        max-height: 16px;
-        max-width: 16px;
-        min-height: 16px;
-        min-width: 16px;
-        width: 16px;
+    // Disabled state
+    &[disabled] {
+        opacity: 0.5;
+        pointer-events: none;
     }
+}
 
-    &.medium {
-        height: 24px;
-        max-height: 24px;
-        max-width: 24px;
-        min-height: 24px;
-        min-width: 24px;
-        width: 24px;
-    }
+// =============================================================================
+// 3. SIZE MODIFIERS
+// =============================================================================
 
-    &.large {
-        height: 32px;
-        max-height: 32px;
-        max-width: 32px;
-        min-height: 32px;
-        min-width: 32px;
-        width: 32px;
+button.#{$prefix} {
+    &.is-small {
+        --#{$prefix}-current-size: var(--#{$prefix}-sm-size);
     }
+    &.is-medium {
+        --#{$prefix}-current-size: var(--#{$prefix}-md-size);
+    }
+    &.is-large {
+        --#{$prefix}-current-size: var(--#{$prefix}-lg-size);
+    }
+}
+
+// =============================================================================
+// 4. DARK MODE THEME
+// =============================================================================
+.dark button.#{$prefix} {
+    --#{$prefix}-bg: var(--#{$prefix}-dark-bg);
+    --#{$prefix}-fg: var(--#{$prefix}-dark-fg);
+    --#{$prefix}-hover-bg: var(--#{$prefix}-dark-hover-bg);
+    --#{$prefix}-active-bg: var(--#{$prefix}-dark-active-bg);
+    --#{$prefix}-focus-ring-color: var(--#{$prefix}-dark-focus-ring-color);
 }

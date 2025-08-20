@@ -1,75 +1,132 @@
-.empty {
-    background: #f7f8f9;
-    border-radius: 0.1rem;
-    color: #66758c;
-    padding: 3.2rem 1.6rem;
-    text-align: center;
+@use "sass:map";
 
+$prefix: "empty" !default;
+
+$config: (
+    // --- Sizing & Spacing ---
+    "padding-y": 3.2rem,
+    "padding-x": 1.6rem,
+    "icon-margin-bottom": 1rem,
+    "title-margin-y": 0.4rem,
+    "subtitle-margin-y": 0.4rem,
+    "action-margin-top": 1.2rem,
+    "radius": 0.25rem,
+
+    // --- Typography ---
+    "title-font-size": 1.4rem,
+    "title-font-weight": 600,
+    "subtitle-font-size": 1.2rem,
+
+    // --- Large Variant Sizing ---
+    "lg-padding-y": 6.4rem,
+    "lg-padding-x": 3.2rem,
+    "lg-icon-margin-bottom": 2rem,
+    "lg-title-font-size": 2.4rem,
+    "lg-subtitle-font-size": 1.6rem,
+    "lg-action-margin-top": 1.6rem,
+
+    "bg": #f7f8f9,
+    "fg": #66758c,
+    "title-fg": #333,
+    "subtitle-fg": #555,
+    "border-color": #e5e7eb,
+
+    "dark-bg": #1f2937,
+    // gray-800
+    "dark-fg": #9ca3af,
+    // gray-400
+    "dark-title-fg": #f3f4f6,
+    // gray-100
+    "dark-subtitle-fg": #d1d5db,
+    // gray-300
+    "dark-border-color": #4b5563 // gray-600
+) !default;
+
+.#{$prefix} {
+    // --- Generate CSS custom properties from the $config map ---
+    @each $key, $value in $config {
+        --#{$prefix}-#{$key}: #{$value};
+    }
+
+    // --- Set contextual variables that can be overridden by modifiers ---
+    --#{$prefix}-current-padding-y: var(--#{$prefix}-padding-y);
+    --#{$prefix}-current-padding-x: var(--#{$prefix}-padding-x);
+    --#{$prefix}-current-icon-margin-bottom: var(
+        --#{$prefix}-icon-margin-bottom
+    );
+    --#{$prefix}-current-title-font-size: var(--#{$prefix}-title-font-size);
+    --#{$prefix}-current-subtitle-font-size: var(
+        --#{$prefix}-subtitle-font-size
+    );
+    --#{$prefix}-current-action-margin-top: var(--#{$prefix}-action-margin-top);
+
+    // --- Core Layout & Appearance ---
+    text-align: center;
+    background: var(--#{$prefix}-bg);
+    color: var(--#{$prefix}-fg);
+    border-radius: var(--#{$prefix}-radius);
+    padding: var(--#{$prefix}-current-padding-y)
+        var(--#{$prefix}-current-padding-x);
+
+    // --- BEM Elements ---
     &__icon {
-        margin-bottom: 1rem;
+        margin: 0 auto var(--#{$prefix}-current-icon-margin-bottom);
+        // Suggestion: use an inline-block or block element for the icon
+        display: block;
+        // You can also set a default icon size if needed
+        // line-height: 1;
+        // font-size: 3rem;
     }
 
     &__title {
-        margin: 0.4rem auto;
-        font-size: 1.4rem;
-        font-weight: bold;
-        color: #333;
+        margin: var(--#{$prefix}-title-margin-y) auto;
+        font-size: var(--#{$prefix}-current-title-font-size);
+        font-weight: var(--#{$prefix}-title-font-weight);
+        color: var(--#{$prefix}-title-fg);
+        line-height: 1.2;
     }
 
     &__subtitle {
-        margin: 0.4rem auto;
-        font-size: 1.2rem;
-        color: #555;
+        margin: var(--#{$prefix}-subtitle-margin-y) auto;
+        font-size: var(--#{$prefix}-current-subtitle-font-size);
+        color: var(--#{$prefix}-subtitle-fg);
+        line-height: 1.4;
     }
 
     &__action {
-        margin-top: 0.8rem;
+        margin-top: var(--#{$prefix}-current-action-margin-top);
+        // This container expects a button component, e.g. <button class="btn btn--primary">
+    }
+}
 
-        button {
-            padding: 0.6rem 1.2rem;
-            border-radius: 0.2rem;
-            background-color: #4caf50;
-            color: #fff;
-            font-size: 1.2rem;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-
-            &:hover {
-                background-color: #45a049;
-            }
-        }
+.#{$prefix} {
+    &.is-bordered {
+        border: 1px solid var(--#{$prefix}-border-color);
     }
 
-    &.bordered {
-        border: 1px solid #ccc;
+    &.is-large {
+        // Override the contextual variables with the large variant values
+        --#{$prefix}-current-padding-y: var(--#{$prefix}-lg-padding-y);
+        --#{$prefix}-current-padding-x: var(--#{$prefix}-lg-padding-x);
+        --#{$prefix}-current-icon-margin-bottom: var(
+            --#{$prefix}-lg-icon-margin-bottom
+        );
+        --#{$prefix}-current-title-font-size: var(
+            --#{$prefix}-lg-title-font-size
+        );
+        --#{$prefix}-current-subtitle-font-size: var(
+            --#{$prefix}-lg-subtitle-font-size
+        );
+        --#{$prefix}-current-action-margin-top: var(
+            --#{$prefix}-lg-action-margin-top
+        );
     }
+}
 
-    &.large {
-        padding: 6.4rem 3.2rem;
-
-        &__icon {
-            margin-bottom: 2rem;
-        }
-
-        &__title {
-            font-size: 2.4rem;
-        }
-
-        &__subtitle {
-            font-size: 1.6rem;
-        }
-
-        &__action {
-            margin-top: 1.6rem;
-
-            button {
-                padding: 0.8rem 1.6rem;
-                font-size: 1.4rem;
-            }
-        }
-    }
-
-    &.center-aligned {
-        text-align: center;
-    }
+.dark .#{$prefix} {
+    --#{$prefix}-bg: var(--#{$prefix}-dark-bg);
+    --#{$prefix}-fg: var(--#{$prefix}-dark-fg);
+    --#{$prefix}-title-fg: var(--#{$prefix}-dark-title-fg);
+    --#{$prefix}-subtitle-fg: var(--#{$prefix}-dark-subtitle-fg);
+    --#{$prefix}-border-color: var(--#{$prefix}-dark-border-color);
 }

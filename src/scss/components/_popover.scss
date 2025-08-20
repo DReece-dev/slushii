@@ -1,43 +1,173 @@
-.popover {
-    display: inline-block;
-    position: relative;
-}
+@use "sass:map";
 
-.popover-container {
-    background-color: #fff;
-    border-radius: 0.3rem;
-    box-shadow: 0 0.2rem 0.5rem rgba(48, 55, 66, 0.3);
-    padding: 1.2rem;
-    position: absolute;
-    width: 320px;
-    z-index: 300;
-    opacity: 0;
-    transform: scale(0);
-    transition: all 0.2s;
-}
+$prefix: "popover" !default;
 
-.popover-[direction] {
-    $direction: right, bottom, left;
+// A map to hold all default CSS variables for easy setup and theming.
+$config: (
+    // Sizing & Spacing
+    "width": 300px,
+    "padding": 1rem,
+    "radius": 0.5rem,
+    "arrow-size": 10px,
+    "distance": 8px,
+    // Gap between trigger and popover
+    // Theming
+    "bg": #ffffff,
+    "fg": #1f2937,
+    "shadow":
+        "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
+    "border": #e5e7eb,
+    // Dark Theme
+    "dark-bg": #1f2937,
+    "dark-fg": #f9fafb,
+    "dark-border": #374151,
+    // Animation
+    "transition-duration": 0.2s,
+    "transition-timing": cubic-bezier(0.4, 0, 0.2, 1)
+) !default;
 
-    .popover-container {
-        @if $direction == right {
-            left: 100%;
-            top: 50%;
-            transform: translate(-100%, -50%);
-        } @else if $direction == bottom {
-            left: 50%;
-            top: 100%;
-            transform: translate(-50%, -100%);
-        } @else if $direction == left {
-            left: 0;
-            top: 50%;
-            transform: translate(0, -50%);
-        }
-
-        &:focus,
-        &:hover {
-            transform: translate(0, 0) scale(1);
-            opacity: 1;
-        }
+.#{$prefix} {
+    // Generate CSS custom properties from the $config map
+    @each $key, $value in $config {
+        --popover-#{$key}: #{$value};
     }
+
+    position: relative;
+    display: inline-block;
+
+    // The content box of the popover
+    &__content {
+        position: absolute;
+        z-index: 50;
+        width: var(--popover-width);
+        padding: var(--popover-padding);
+        background-color: var(--popover-bg);
+        color: var(--popover-fg);
+        border: 1px solid var(--popover-border);
+        border-radius: var(--popover-radius);
+        box-shadow: var(--popover-shadow);
+
+        // Hidden by default, ready for animation
+        opacity: 0;
+        visibility: hidden;
+        transform: scale(0.95);
+        transition:
+            opacity var(--popover-transition-duration)
+                var(--popover-transition-timing),
+            transform var(--popover-transition-duration)
+                var(--popover-transition-timing),
+            visibility 0s var(--popover-transition-duration) linear;
+    }
+
+    // The arrow/caret pointing to the trigger
+    &__arrow {
+        position: absolute;
+        width: var(--popover-arrow-size);
+        height: var(--popover-arrow-size);
+        background-color: var(--popover-bg);
+        // The border color should match the content's border
+        border: 1px solid var(--popover-border);
+        transform: rotate(45deg);
+    }
+}
+
+.#{$prefix}.is-open {
+    .#{$prefix}__content {
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1);
+        transition-delay: 0s; // Reset delay for showing
+    }
+}
+
+// Popover appears above the trigger
+.#{$prefix}--top {
+    .#{$prefix}__content {
+        bottom: calc(100% + var(--popover-distance));
+        left: 50%;
+        transform-origin: bottom center;
+        // Animate from slightly higher
+        &.is-open {
+            transform: translateX(-50%) scale(1);
+        }
+        transform: translateX(-50%) scale(0.95) translateY(4px);
+    }
+    .#{$prefix}__arrow {
+        bottom: calc((var(--popover-arrow-size) / 2) * -1);
+        left: calc(50% - (var(--popover-arrow-size) / 2));
+        border-top: none;
+        border-left: none;
+    }
+}
+
+// Popover appears below the trigger
+.#{$prefix}--bottom {
+    .#{$prefix}__content {
+        top: calc(100% + var(--popover-distance));
+        left: 50%;
+        transform-origin: top center;
+        &.is-open {
+            transform: translateX(-50%) scale(1);
+        }
+        transform: translateX(-50%) scale(0.95) translateY(-4px);
+    }
+    .#{$prefix}__arrow {
+        top: calc((var(--popover-arrow-size) / 2) * -1);
+        left: calc(50% - (var(--popover-arrow-size) / 2));
+        border-bottom: none;
+        border-right: none;
+    }
+}
+
+// Popover appears to the left of the trigger
+.#{$prefix}--left {
+    .#{$prefix}__content {
+        right: calc(100% + var(--popover-distance));
+        top: 50%;
+        transform-origin: center right;
+        &.is-open {
+            transform: translateY(-50%) scale(1);
+        }
+        transform: translateY(-50%) scale(0.95) translateX(4px);
+    }
+    .#{$prefix}__arrow {
+        right: calc((var(--popover-arrow-size) / 2) * -1);
+        top: calc(50% - (var(--popover-arrow-size) / 2));
+        border-top: none;
+        border-right: none;
+    }
+}
+
+// Popover appears to the right of the trigger
+.#{$prefix}--right {
+    .#{$prefix}__content {
+        left: calc(100% + var(--popover-distance));
+        top: 50%;
+        transform-origin: center left;
+        &.is-open {
+            transform: translateY(-50%) scale(1);
+        }
+        transform: translateY(-50%) scale(0.95) translateX(-4px);
+    }
+    .#{$prefix}__arrow {
+        left: calc((var(--popover-arrow-size) / 2) * -1);
+        top: calc(50% - (var(--popover-arrow-size) / 2));
+        border-bottom: none;
+        border-left: none;
+    }
+}
+
+.#{$prefix}--dark {
+    --popover-bg: var(--popover-dark-bg);
+    --popover-fg: var(--popover-dark-fg);
+    --popover-border: var(--popover-dark-border);
+}
+
+.#{$prefix}--sm {
+    --popover-width: 200px;
+    --popover-padding: 0.75rem;
+}
+.#{$prefix}--lg {
+    --popover-width: 400px;
+    --popover-padding: 1.25rem;
 }

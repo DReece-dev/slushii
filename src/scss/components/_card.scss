@@ -1,199 +1,140 @@
-.card-base {
-    background-color: white;
-    border-radius: 0.25rem;
-    box-shadow:
-        0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
-        0 0px 0 1px rgba(10, 10, 10, 0.02);
-    color: #4a4a4a;
-    max-width: 100%;
+@use "sass:map";
+@use "sass:math"; // IMPORT THE MATH MODULE TO USE math.div()
+
+$card-prefix: "card" !default;
+
+// Maps for generating composable utility classes.
+$card-shadows: (
+    "sm": "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
+    "md": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1)",
+    "lg":
+        "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1)",
+    "none": "none",
+) !default;
+
+$card-radii: (
+    "sm": 0.25rem,
+    // 4px
+    "md": 0.5rem,
+    // 8px
+    "lg": 1rem, // 16px
+) !default;
+
+$card-paddings: (
+    "sm": 1rem,
+    "md": 1.5rem,
+    "lg": 2rem,
+) !default;
+
+.#{$card-prefix} {
+    // CSS variables for complete control over the card's appearance.
+    --card-bg: var(--white, #ffffff);
+    --card-fg: var(--gray-800, #1f2937);
+    --card-radius: #{map.get($card-radii, "md")};
+    --card-shadow: #{map.get($card-shadows, "md")};
+    --card-border-color: var(--gray-200, #e5e7eb);
+    --card-header-padding: 1rem #{map.get($card-paddings, "md")};
+    --card-content-padding: #{map.get($card-paddings, "md")};
+    --card-footer-padding: 1rem #{map.get($card-paddings, "md")};
+
+    display: flex;
+    flex-direction: column;
     position: relative;
-}
+    background-color: var(--card-bg);
+    color: var(--card-fg);
+    border-radius: var(--card-radius);
+    box-shadow: var(--card-shadow);
+    border: 1px solid transparent; // Placeholder for bordered variant
+    overflow: hidden; // KEY IMPROVEMENT: This clips children (images, etc.) automatically.
+    transition:
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
 
-.card {
-    &__media {
-        &:not(:last-child) {
-            margin-bottom: 1.5rem;
-        }
-    }
-
-    &.rounded {
-        border-radius: 10px;
-        @extend .card-base;
-    }
-}
-
-$card-header-background-color: transparent;
-$card-header-border-radius: 0.25rem;
-$card-header-font-weight: 700;
-$card-header-padding: 0.75rem 1rem;
-$card-header-box-shadow: 0 0.125em 0.25em rgba(10, 10, 10, 0.1);
-$card-header-text-color: #363636;
-
-$card-content-background-color: transparent;
-$card-content-padding: 1.5rem;
-$card-content-border-radius: 0.25rem;
-
-$card-image-position: relative;
-$card-image-border-radius: 0.25rem;
-
-.card-header {
-    background-color: $card-header-background-color;
-    align-items: stretch;
-    box-shadow: $card-header-box-shadow;
-    display: flex;
-
-    &:first-child {
-        border-top-left-radius: $card-header-border-radius;
-        border-top-right-radius: $card-header-border-radius;
-    }
-}
-
-.card-header-title {
-    align-items: center;
-    color: $card-header-text-color;
-    display: flex;
-    flex-grow: 1;
-    font-weight: $card-header-font-weight;
-    padding: $card-header-padding;
-
-    &.is-centered {
-        justify-content: center;
-    }
-}
-
-.card-header-icon {
-    align-items: center;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    padding: $card-header-padding;
-}
-
-.card-image {
-    display: block;
-    position: $card-image-position;
-
-    &:first-child {
-        img {
-            border-top-left-radius: $card-image-border-radius;
-            border-top-right-radius: $card-image-border-radius;
-        }
-    }
-
-    &:last-child {
-        img {
-            border-bottom-left-radius: $card-image-border-radius;
-            border-bottom-right-radius: $card-image-border-radius;
-        }
-    }
-}
-
-.card-content {
-    background-color: $card-content-background-color;
-    padding: $card-content-padding;
-
-    &:first-child {
-        border-top-left-radius: $card-content-border-radius;
-        border-top-right-radius: $card-content-border-radius;
-    }
-
-    &:last-child {
-        border-bottom-left-radius: $card-content-border-radius;
-        border-bottom-right-radius: $card-content-border-radius;
-    }
-}
-
-$card-footer-bg-color: transparent;
-$card-footer-border-color: #ededed;
-$card-footer-radius: 0.25rem;
-
-.card-footer {
-    background-color: $card-footer-bg-color;
-    border-top: 1px solid $card-footer-border-color;
-    align-items: stretch;
-    display: flex;
-
-    &:first-child {
-        border-top-left-radius: $card-footer-radius;
-        border-top-right-radius: $card-footer-radius;
-    }
-
-    &:last-child {
-        border-bottom-left-radius: $card-footer-radius;
-        border-bottom-right-radius: $card-footer-radius;
-    }
-}
-
-$card-footer-item-padding: 0.75rem;
-
-.card-footer-item {
-    align-items: center;
-    display: flex;
-    flex-basis: 0;
-    flex-grow: 1;
-    flex-shrink: 0;
-    justify-content: center;
-    padding: $card-footer-item-padding;
-
-    &:not(:last-child) {
-        border-right: 1px solid $card-footer-border-color;
-    }
-}
-
-$card-background-color: var(--white);
-$card-border-color: #e8e9eb;
-$card-border-width: 1px;
-$card-border-style: solid;
-$card-border-radius: 10px;
-
-.card-heading-container {
-    background-color: $card-background-color;
-    border: $card-border-width $card-border-style $card-border-color;
-    border-radius: $card-border-radius;
-
-    &.custom-width {
-        width: 300px;
-        padding: 10px;
-    }
-
-    &.small {
-        height: 950px;
-        margin: 50px;
-    }
-
-    &.custom {
-        margin-top: 2em;
-        margin-left: 2em;
-        width: 90%;
-    }
-
-    &.large {
-        height: 950px;
-        margin: 50px;
-    }
-}
-
-@media only screen and (max-width: 768px) {
-    .card-heading-container.custom-width {
+    // BEM: Image Element
+    &__image {
+        display: block;
         width: 100%;
-        padding: 1rem;
+        // No radius needed here, the parent card's overflow clips it.
+    }
+
+    // BEM: Header Element
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: var(--card-header-padding);
+        border-bottom: 1px solid var(--card-border-color);
+    }
+
+    // BEM: Content Element
+    &__content {
+        padding: var(--card-content-padding);
+        flex-grow: 1; // Allows content to fill available space
+    }
+
+    // BEM: Title & Description Elements
+    &__title {
+        font-size: 1.25em;
+        font-weight: 600;
+        margin: 0;
+    }
+    &__description {
+        font-size: 1em;
+        color: var(--gray-600, #4b5563);
+        margin-top: 0.25em;
+    }
+
+    // BEM: Footer Element
+    &__footer {
+        display: flex;
+        justify-content: flex-end; // Common default for action buttons
+        align-items: center;
+        gap: 0.75rem;
+        padding: var(--card-footer-padding);
+        border-top: 1px solid var(--card-border-color);
     }
 }
 
-@media only screen and (max-width: 576px) {
-    .card {
-        &__media {
-            &:not(:last-child) {
-                margin-bottom: 1rem;
-            }
-        }
-
-        &.rounded {
-            border-radius: 5px;
-        }
+// Generate shadow variants
+@each $name, $shadow in $card-shadows {
+    .#{$card-prefix}--shadow-#{$name} {
+        --card-shadow: #{$shadow};
     }
+}
 
-    .card-heading-container.custom {
-        margin: 1rem;
+// Generate border-radius variants
+@each $name, $radius in $card-radii {
+    .#{$card-prefix}--radius-#{$name} {
+        --card-radius: #{$radius};
     }
+}
+
+// Generate padding variants
+@each $name, $padding in $card-paddings {
+    .#{$card-prefix}--padding-#{$name} {
+        --card-content-padding: #{$padding};
+        // CORRECTED: Use math.div() for division
+        --card-header-padding: #{math.div($padding, 1.5)} #{$padding};
+        --card-footer-padding: #{math.div($padding, 1.5)} #{$padding};
+    }
+}
+
+// Style Modifier: Bordered (replaces shadow with a border)
+.#{$card-prefix}--bordered {
+    --card-shadow: #{map.get($card-shadows, "none")};
+    border-color: var(--card-border-color);
+}
+
+// Style Modifier: Interactive (for hover effects)
+.#{$card-prefix}--interactive {
+    cursor: pointer;
+    &:hover {
+        transform: translateY(-4px);
+        --card-shadow: #{map.get($card-shadows, "lg")};
+    }
+}
+
+// Style Modifier: Flush (removes content padding)
+.#{$card-prefix}--flush {
+    --card-content-padding: 0;
 }

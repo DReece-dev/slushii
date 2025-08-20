@@ -1,89 +1,190 @@
-// Define color variables
-$blue-600: #007aff;
-$blue-800: #0052cc;
-$gray-900: #e6e6e6;
-$gray-cacaca: #cacaca;
+@use "sass:map";
 
-// Define slider styles
-.slider {
+$prefix: "slider" !default;
+
+// A map to hold all default CSS variables for easy setup and theming.
+$config: (
+    // Sizing
+    "track-height": 0.5rem,
+    "handle-size": 1.25rem,
+    "tooltip-offset": 0.5rem,
+    // Theming
+    "track-bg": #e9ecef,
+    // gray-200
+    "fill-bg": #4f46e5,
+    // indigo-600
+    "handle-bg": #4f46e5,
+    "handle-shadow":
+        "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1)",
+    "handle-focus-ring": rgba(79, 70, 229, 0.5),
+    "tooltip-bg": #111827,
+    "tooltip-fg": #ffffff,
+    "disabled-opacity": 0.5,
+    // Style
+    "radius": 9999px,
+    // Default to pill shape
+    // Animation
+    "transition": "transform 0.2s ease, background-color 0.2s ease"
+) !default;
+
+// Single source of truth for semantic color states.
+$states: (
+    "success": #22c55e,
+    // green-500
+    "warning": #f97316,
+    // orange-500
+    "danger": #ef4444,
+    // red-500
+    "dark": #374151, // gray-700
+) !default;
+
+.#{$prefix} {
+    @each $key, $value in $config {
+        --slider-#{$key}: #{$value};
+    }
+
     position: relative;
-    height: 0.5em;
-    margin: 1.25em 0 2.25em;
-    background-color: $gray-900;
+    display: block;
+    width: 100%;
+    padding: var(--slider-handle-size) 0; // Padding to prevent handle from being clipped
+    margin: 0;
     cursor: pointer;
     user-select: none;
     touch-action: none;
 
-    &.vertical {
-        display: inline-block;
-        width: 0.5em;
-        height: 12.5em;
-        margin: 0 1.25em;
-        transform: scale(1, -1);
+    &__track {
+        position: relative;
+        width: 100%;
+        height: var(--slider-track-height);
+        background-color: var(--slider-track-bg);
+        border-radius: var(--slider-radius);
     }
 
-    &.disabled,
-    [disabled] {
-        opacity: 0.25;
+    &__fill {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        background-color: var(--slider-fill-bg);
+        border-radius: var(--slider-radius);
+    }
+
+    &__handle {
+        position: absolute;
+        top: 50%;
+        // Left position is set by JS
+        transform: translate(-50%, -50%);
+        width: var(--slider-handle-size);
+        height: var(--slider-handle-size);
+        background-color: var(--slider-handle-bg);
+        border-radius: var(--slider-radius);
+        box-shadow: var(--slider-handle-shadow);
+        transition: var(--slider-transition);
+        z-index: 2;
+
+        &:focus-visible {
+            outline: none;
+            box-shadow: 0 0 0 4px var(--slider-handle-focus-ring);
+        }
+    }
+
+    &__tooltip {
+        position: absolute;
+        bottom: calc(100% + var(--slider-tooltip-offset));
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: var(--slider-tooltip-bg);
+        color: var(--slider-tooltip-fg);
+        padding: 0.25rem 0.5rem;
+        border-radius: 0.25rem;
+        font-size: 0.75rem;
+        font-weight: 600;
+        white-space: nowrap;
+        opacity: 0;
+        visibility: hidden;
+        transition:
+            opacity 0.2s ease,
+            transform 0.2s ease,
+            visibility 0s 0.2s linear;
+    }
+
+    // Active/Dragging States
+    &:hover .#{$prefix}__handle,
+    &.is-dragging .#{$prefix}__handle {
+        transform: translate(-50%, -50%) scale(1.2);
+    }
+
+    &:hover .#{$prefix}__tooltip,
+    &.is-dragging .#{$prefix}__tooltip {
+        opacity: 1;
+        visibility: visible;
+        transition-delay: 0s;
+        transform: translateX(-50%) translateY(-0.25rem);
+    }
+
+    // Disabled State
+    &.is-disabled {
+        opacity: var(--slider-disabled-opacity);
         cursor: not-allowed;
     }
 }
 
-// Define slider-fill styles
-.slider-fill {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: inline-block;
-    max-width: 100%;
-    height: 0.5em;
-    background-color: $gray-cacaca;
-    transition: all 0.2s ease-in-out;
+// --- Sizing Variants ---
+.#{$prefix}--sm {
+    --slider-track-height: 0.25rem;
+    --slider-handle-size: 1rem;
+}
+.#{$prefix}--lg {
+    --slider-track-height: 0.75rem;
+    --slider-handle-size: 1.5rem;
+}
 
-    &.dragging {
-        transition: all 0s linear;
+// --- Style Variants ---
+.#{$prefix}--squared {
+    --slider-radius: 0.25rem;
+}
+
+// --- Vertical Variant ---
+.#{$prefix}--vertical {
+    width: auto;
+    height: 12.5em; // Example height
+    padding: 0 var(--slider-handle-size);
+
+    .#{$prefix}__track {
+        width: var(--slider-track-height);
+        height: 100%;
+    }
+    .#{$prefix}__fill {
+        width: 100%;
+        height: auto; // Height is set by JS
+    }
+    .#{$prefix}__handle {
+        top: auto; // Top is set by JS
+        left: 50%;
+        transform: translate(-50%, 50%);
+    }
+    .#{$prefix}__tooltip {
+        top: 50%;
+        left: calc(100% + var(--slider-tooltip-offset));
+        bottom: auto;
+        transform: translateY(-50%);
     }
 
-    &.vertical {
-        top: 0;
-        width: 0.5em;
-        max-height: 100%;
+    &:hover .#{$prefix}__handle,
+    &.is-dragging .#{$prefix}__handle {
+        transform: translate(-50%, 50%) scale(1.2);
+    }
+    &:hover .#{$prefix}__tooltip,
+    &.is-dragging .#{$prefix}__tooltip {
+        transform: translateY(-50%) translateX(0.25rem);
     }
 }
 
-// Define slider-handle styles
-.slider-handle {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 0;
-    z-index: 1;
-    display: inline-block;
-    width: 1.4em;
-    height: 1.4em;
-    border-radius: 0;
-    background-color: $blue-600;
-    transition: all 0.2s ease-in-out;
-    touch-action: manipulation;
-
-    &:hover {
-        background-color: $blue-800;
-    }
-
-    &.dragging {
-        transition: all 0s linear;
-    }
-
-    &.vertical {
-        position: absolute;
-        top: 0;
-        left: 50%;
-        width: 1.4em;
-        height: 1.4em;
-        transform: translateX(-50%);
-    }
-
-    [data-whatinput="mouse"] & {
-        outline: 0;
+// --- Color Variants (Auto-Generated) ---
+@each $name, $color in $states {
+    .#{$prefix}--#{$name} {
+        --slider-fill-bg: #{$color};
+        --slider-handle-bg: #{$color};
+        --slider-handle-focus-ring: #{rgba($color, 0.5)};
     }
 }

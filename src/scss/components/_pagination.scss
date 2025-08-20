@@ -1,184 +1,169 @@
-$primary-color: #4338ca;
-$secondary-color: #6c757d;
-$background-color: #fff;
-$border-color: #dee2e6;
-$blue-500: var(--blue-500);
+@use "sass:map";
+@use "sass:color"; // FIX 1: Import the sass:color module
 
-.pagination {
+$prefix: "pagination" !default;
+
+// Default CSS variables for easy setup and theming.
+$config: (
+    // Sizing
+    "font-size": 1rem,
+    "padding-y": 0.5rem,
+    "padding-x": 1rem,
+    "line-height": 1.5,
+    // Spacing & Radius
+    "gap": 0.5rem,
+    "radius": 0.375rem,
+    // Colors
+    "fg": #6b7280,
+    // Muted text
+    "bg": #ffffff,
+    "border": #d1d5db,
+    "hover-fg": #1f2937,
+    // Darker text
+    "hover-bg": #f9fafb,
+    // Subtle gray
+    "active-fg": #ffffff,
+    "active-bg": #4338ca,
+    // Primary color
+    "active-border": #4338ca,
+    "disabled-fg": #d1d5db,
+    "disabled-bg": #ffffff,
+    "disabled-border": #e5e7eb,
+    // Animation
+    "transition":
+        "color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease"
+) !default;
+
+// A single map to generate all color variants.
+$colors: (
+    "primary": #4338ca,
+    "green": #16a34a,
+    "red": #dc2626,
+    "dark": #111827,
+) !default;
+
+.#{$prefix} {
+    // Generate all CSS custom properties from the config map
+    @each $key, $value in $config {
+        --pagination-#{$key}: #{$value};
+    }
+
     display: flex;
-    padding-left: 0;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 0;
+    margin: 0;
     list-style: none;
-}
+    gap: var(--pagination-gap);
 
-.pagination-item {
-    margin-right: 10px;
-}
-
-.pagination-item:last-child {
-    margin-right: 0;
-}
-
-.page-link {
-    position: relative;
-    display: block;
-    color: $primary-color;
-    text-decoration: none;
-    background-color: $background-color;
-    border: 1px solid $border-color;
-    transition: all 0.15s ease-in-out;
-    cursor: pointer;
-
-    &-icon {
-        margin-right: 5px;
+    &__item {
+        // The list item itself needs no special styling with `gap` in use
     }
 
-    &-text {
-        font-size: 1rem;
-    }
-
-    &-badge {
-        background-color: $primary-color;
-        color: #fff;
-        padding: 2px 5px;
-        border-radius: 10px;
-        font-size: 0.75rem;
-    }
-
-    &:hover {
-        z-index: 2;
-        color: $primary-color;
-        background-color: #e7e7e7;
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    }
-
-    &:focus {
-        z-index: 3;
-        color: $primary-color;
-        background-color: #ffffff;
-        outline: 2px solid $blue-500;
-    }
-
-    &--active {
-        z-index: 3;
-        color: #fff;
-        background-color: $primary-color;
-        border-color: $primary-color;
-    }
-
-    &--disabled {
-        color: $secondary-color;
-        pointer-events: none;
-        background-color: $background-color;
-        border-color: $border-color;
-    }
-
-    &.large {
-        padding: 0.75rem 1.5rem;
-        font-size: 1.25rem;
-
-        &:first-child {
-            border-radius: 0.3rem 0 0 0.3rem;
-        }
-
-        &:last-child {
-            border-radius: 0 0.3rem 0.3rem 0;
-        }
-    }
-
-    &.small {
-        padding: 0.25rem 0.5rem;
-        font-size: 0.875rem;
-
-        &:first-child {
-            border-radius: 0.2rem 0 0 0.2rem;
-        }
-
-        &:last-child {
-            border-radius: 0 0.2rem 0.2rem 0;
-        }
-    }
-}
-
-.pagination-previous,
-.pagination-next {
-    margin-right: 10px;
-}
-
-.pagination-ellipsis {
-    font-size: 1rem;
-    color: $secondary-color;
-    margin-right: 10px;
-}
-
-/* Medium screen and up */
-@media (min-width: 768px) {
-    .pagination {
+    &__link,
+    &__ellipsis {
+        display: inline-flex;
+        align-items: center;
         justify-content: center;
+        text-decoration: none;
     }
 
-    .page-link {
-        padding: 0.5rem 1rem;
-        font-size: 1rem;
+    &__link {
+        min-width: calc(
+            var(--pagination-line-height) * 1em +
+                (var(--pagination-padding-y) * 2)
+        );
+        padding: var(--pagination-padding-y) var(--pagination-padding-x);
+        font-size: var(--pagination-font-size);
+        line-height: var(--pagination-line-height);
+        color: var(--pagination-fg);
+        background-color: var(--pagination-bg);
+        border: 1px solid var(--pagination-border);
+        border-radius: var(--pagination-radius);
+        transition: var(--pagination-transition);
+        cursor: pointer;
+        user-select: none;
+
+        &:hover {
+            z-index: 2;
+            color: var(--pagination-hover-fg);
+            background-color: var(--pagination-hover-bg);
+        }
+
+        &:focus-visible {
+            z-index: 3;
+            outline: 2px solid var(--pagination-active-bg);
+            outline-offset: 2px;
+        }
+
+        &.is-active {
+            z-index: 3;
+            color: var(--pagination-active-fg);
+            background-color: var(--pagination-active-bg);
+            border-color: var(--pagination-active-border);
+        }
+
+        &.is-disabled {
+            color: var(--pagination-disabled-fg);
+            background-color: var(--pagination-disabled-bg);
+            border-color: var(--pagination-disabled-border);
+            pointer-events: none;
+        }
     }
 
-    .page-link.large {
-        padding: 1rem 2rem;
-        font-size: 1.5rem;
-    }
-
-    .page-link.small {
-        padding: 0.25rem 0.5rem;
-        font-size: 0.75rem;
-    }
-}
-
-/* Large screen and up */
-@media (min-width: 992px) {
-    .pagination {
-        justify-content: space-between;
-    }
-
-    .page-link {
-        padding: 0.75rem 1.5rem;
-        font-size: 1.25rem;
-    }
-
-    .page-link.large {
-        padding: 1.25rem 2.5rem;
-        font-size: 1.75rem;
-    }
-
-    .page-link.small {
-        padding: 0.5rem 1rem;
-        font-size: 0.875rem;
-    }
-}
-
-/* Extra large screen and up */
-@media (min-width: 1200px) {
-    .pagination {
-        justify-content: space-between;
-    }
-
-    .page-link {
-        padding: 1rem 2rem;
-        font-size: 1.5rem;
-    }
-
-    .page-link.large {
-        padding: 1.5rem 3rem;
-        font-size: 2rem;
-    }
-
-    .page-link.small {
-        padding: 0.75rem 1.5rem;
-        font-size: 1rem;
+    &__ellipsis {
+        padding: var(--pagination-padding-y)
+            calc(var(--pagination-padding-x) / 2);
+        color: var(--pagination-fg);
     }
 }
 
-@media (prefers-reduced-motion: reduce) {
-    .page-link {
-        transition: none;
+.#{$prefix}--sm {
+    --pagination-font-size: 0.875rem;
+    --pagination-padding-y: 0.25rem;
+    --pagination-padding-x: 0.625rem;
+    --pagination-gap: 0.25rem;
+}
+
+.#{$prefix}--lg {
+    --pagination-font-size: 1.125rem;
+    --pagination-padding-y: 0.75rem;
+    --pagination-padding-x: 1.25rem;
+}
+
+.#{$prefix}--rounded {
+    --pagination-radius: 0.75rem;
+}
+.#{$prefix}--circle {
+    --pagination-radius: 9999px;
+    --pagination-padding-x: var(--pagination-padding-y); // Make padding equal
+}
+.#{$prefix}--minimal {
+    .#{$prefix}__link {
+        border-color: transparent;
+        background-color: transparent;
+        &:hover {
+            background-color: var(--pagination-hover-bg);
+        }
+    }
+}
+
+.#{$prefix}--start {
+    justify-content: flex-start;
+}
+.#{$prefix}--center {
+    justify-content: center;
+}
+.#{$prefix}--end {
+    justify-content: flex-end;
+}
+
+@each $name, $color in $colors {
+    .#{$prefix}--color-#{$name} {
+        --pagination-active-bg: #{$color};
+        --pagination-active-border: #{$color};
+        --pagination-hover-fg: #{$color};
+        // FIX 2: Call mix() from the color module
+        --pagination-fg: #{color.mix($color, #6b7280, 25%)};
     }
 }

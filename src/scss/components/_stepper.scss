@@ -1,129 +1,184 @@
-// Colors
-$primary-color: #0070f3;
-$secondary-color: #eaeaea;
+@use "sass:map";
 
-// Stepper component
-.stepper {
+$prefix: "stepper" !default;
+
+// A map to hold all default CSS variables for easy setup and theming.
+$config: (
+    // Sizing
+    "marker-size": 2.5rem,
+    "line-thickness": 2px,
+    // Spacing
+    "gap": 1.5rem,
+    // Theming
+    "inactive-fg": #6b7280,
+    // gray-500
+    "inactive-border": #d1d5db,
+    // gray-300
+    "inactive-bg": #ffffff,
+    "active-color": #4f46e5,
+    // indigo-600 (default active color)
+    "active-fg": #ffffff,
+    "title-fg": #111827,
+    // gray-900
+    // Animation
+    "transition": "all 0.3s ease-in-out"
+) !default;
+
+// Single source of truth for semantic color states.
+$states: (
+    "primary": #4f46e5,
+    // indigo-600
+    "success": #22c55e,
+    // green-500
+    "danger": #ef4444, // red-500
+) !default;
+
+.#{$prefix} {
+    @each $key, $value in $config {
+        --stepper-#{$key}: #{$value};
+    }
+
     display: flex;
     flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: var(--stepper-gap);
 
-    .step {
+    &__step {
         display: flex;
-        justify-content: space-between;
+        align-items: flex-start;
+        position: relative; // For the connector line
+    }
+
+    &__marker {
+        display: inline-flex;
         align-items: center;
-        margin-bottom: 1.5rem;
-        position: relative;
-        cursor: pointer;
+        justify-content: center;
+        flex-shrink: 0;
+        width: var(--stepper-marker-size);
+        height: var(--stepper-marker-size);
+        border-radius: 50%;
+        font-size: 1.125rem;
+        font-weight: 600;
+        border: var(--stepper-line-thickness) solid
+            var(--stepper-inactive-border);
+        background-color: var(--stepper-inactive-bg);
+        color: var(--stepper-inactive-fg);
+        transition: var(--stepper-transition);
 
-        &:last-child {
-            margin-bottom: 0;
-        }
-
-        &__number {
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            height: 2.5rem;
-            width: 2.5rem;
-            border-radius: 9999px;
-            font-size: 1.5rem;
-            font-weight: 500;
-            color: $primary-color;
-            background-color: white;
-            border: 2px solid $primary-color;
-            transition: all 0.2s ease;
-
-            &--active {
-                color: white;
-                background-color: $primary-color;
-            }
-        }
-
-        &__text {
-            margin-left: 1.5rem;
-            font-size: 1rem;
-            font-weight: 500;
-            color: $primary-color;
-            transition: all 0.2s ease;
-
-            &--active {
-                color: $primary-color;
-            }
-        }
-
-        &__line {
-            flex: 1;
-            height: 0.25rem;
-            background-color: $secondary-color;
-            margin-left: 1.5rem;
+        // The vertical connector line
+        &::before {
+            content: "";
             position: absolute;
-            left: 1.25rem;
-            top: 1.25rem;
-            transition: all 0.2s ease;
-
-            &--active {
-                background-color: $primary-color;
-            }
+            top: 100%;
+            left: calc(var(--stepper-marker-size) / 2);
+            transform: translateX(-50%);
+            width: var(--stepper-line-thickness);
+            height: var(--stepper-gap);
+            background-color: var(--stepper-inactive-border);
+            transition: var(--stepper-transition);
         }
     }
 
-    &--blue {
-        .step {
-            &__number {
-                color: white;
-                background-color: $primary-color;
+    // Hide the connector on the very last step
+    li:last-child .#{$prefix}__marker::before {
+        display: none;
+    }
 
-                &--active {
-                    background-color: white;
-                    color: $primary-color;
-                }
-            }
+    &__content {
+        padding-top: 0.375rem;
+        margin-left: 1rem;
+        flex-grow: 1;
+    }
 
-            &__text {
-                color: white;
+    &__title {
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--stepper-inactive-fg);
+        transition: var(--stepper-transition);
+    }
 
-                &--active {
-                    color: $primary-color;
-                }
-            }
+    &__description {
+        font-size: 0.875rem;
+        color: var(--stepper-inactive-fg);
+        transition: var(--stepper-transition);
+    }
 
-            &__line {
-                background-color: $primary-color;
-
-                &--active {
-                    background-color: $secondary-color;
-                }
-            }
+    // --- State Styling ---
+    .#{$prefix}__step.is-active {
+        .#{$prefix}__marker {
+            border-color: var(--stepper-active-color);
+            background-color: var(--stepper-active-color);
+            color: var(--stepper-active-fg);
+        }
+        .#{$prefix}__title {
+            color: var(--stepper-title-fg);
+        }
+        .#{$prefix}__description {
+            color: var(--stepper-inactive-fg);
         }
     }
 
-    &--green {
-        .step {
-            &__number {
-                color: white;
-                background-color: green;
-
-                &--active {
-                    background-color: white;
-                    color: green;
-                }
-            }
-
-            &__text {
-                color: green;
-
-                &--active {
-                    color: $primary-color;
-                }
-            }
-
-            &__line {
-                background-color: green;
-
-                &--active {
-                    background-color: $secondary-color;
-                }
-            }
+    .#{$prefix}__step.is-complete {
+        .#{$prefix}__marker {
+            border-color: var(--stepper-active-color);
+            background-color: var(--stepper-active-color);
+            color: var(--stepper-active-fg);
+            // Optional: Replace number with a checkmark via JS
         }
+        .#{$prefix}__marker::before {
+            background-color: var(--stepper-active-color);
+        }
+        .#{$prefix}__title {
+            color: var(--stepper-title-fg);
+        }
+    }
+}
+
+// --- Layout Variant ---
+.#{$prefix}--horizontal {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 0; // No gap on the container, use flex for spacing
+
+    .#{$prefix}__step {
+        flex: 1 1 0; // Each step takes up equal width
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .#{$prefix}__marker {
+        // The horizontal connector line
+        &::before {
+            top: 50%;
+            left: calc(-50% + (var(--stepper-marker-size) / 2));
+            width: 100%;
+            height: var(--stepper-line-thickness);
+            transform: translateY(-50%);
+            z-index: -1; // Sit behind the markers
+        }
+    }
+
+    // Hide connectors on the first and last steps
+    li:first-child .#{$prefix}__marker::before {
+        left: 50%;
+        width: 50%;
+    }
+    li:last-child .#{$prefix}__marker::before {
+        width: 50%;
+    }
+
+    .#{$prefix}__content {
+        margin-left: 0;
+        margin-top: 0.75rem;
+    }
+}
+
+// --- Color Variants (Auto-Generated) ---
+@each $name, $color in $states {
+    .#{$prefix}--#{$name} {
+        --stepper-active-color: #{$color};
     }
 }

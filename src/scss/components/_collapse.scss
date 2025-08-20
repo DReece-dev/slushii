@@ -1,174 +1,144 @@
-$header-font-size: 1.4rem;
-$header-padding: 1.2rem 2rem;
-$header-color: rgba(0, 0, 0, 0.85);
-$header-border-color: rgba(0, 0, 0, 0.2);
-$header-border-radius: 0.4rem;
+@use "sass:map";
 
-.collapse-header {
-    position: relative;
-    cursor: pointer;
-    padding: $header-padding;
-    font-size: $header-font-size;
-    color: $header-color;
-    border: 1px solid $header-border-color;
-    border-radius: $header-border-radius;
-    box-shadow: none;
+$collapse-prefix: "collapse" !default;
+$accordion-prefix: "accordion" !default;
 
-    &:focus {
-        color: $header-color;
-        border-color: $header-border-color;
-        box-shadow: none;
-        outline: none;
-    }
-}
+$collapse-sizes: (
+    "sm": (
+        "font-size": 0.875rem,
+        "padding": 0.75rem 1rem,
+        "icon-size": 0.8em,
+    ),
+    "md": (
+        "font-size": 1rem,
+        "padding": 1rem 1.25rem,
+        "icon-size": 1em,
+    ),
+    "lg": (
+        "font-size": 1.125rem,
+        "padding": 1.25rem 1.5rem,
+        "icon-size": 1.1em,
+    ),
+) !default;
 
-.collapse-panel {
+.#{$collapse-prefix} {
+    // CSS variables for complete control.
+    --collapse-font-size: #{map.get($collapse-sizes, "md", "font-size")};
+    --collapse-padding: #{map.get($collapse-sizes, "md", "padding")};
+    --collapse-icon-size: #{map.get($collapse-sizes, "md", "icon-size")};
+    --collapse-bg: var(--white, #ffffff);
+    --collapse-fg: var(--gray-800, #1f2937);
+    --collapse-border-color: var(--gray-200, #e5e7eb);
+    --collapse-radius: 0.5rem;
+
+    font-size: var(--collapse-font-size);
+    background-color: var(--collapse-bg);
+    border: 1px solid var(--collapse-border-color);
+    border-radius: var(--collapse-radius);
+
+    // Smoothly reveal the content
     &[open] {
-        .collapse-header {
-            color: $header-color;
-            border-color: $header-border-color;
-            box-shadow: none;
+        & > .#{$collapse-prefix}__trigger {
+            border-bottom: 1px solid var(--collapse-border-color);
+        }
+        // Don't round the bottom corners of the trigger when open
+        .#{$collapse-prefix}__trigger {
             border-bottom-left-radius: 0;
             border-bottom-right-radius: 0;
         }
     }
+
+    // BEM: Trigger (<summary> element)
+    &__trigger {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        padding: var(--collapse-padding);
+        color: var(--collapse-fg);
+        font-weight: 500;
+        cursor: pointer;
+        list-style: none; // Remove the default disclosure triangle
+        border-radius: inherit; // Inherit radius from parent
+        transition: border-radius 0.1s ease;
+
+        &::-webkit-details-marker {
+            display: none;
+        }
+
+        // Pure CSS, themeable, and animatable chevron icon
+        &::after {
+            content: ">";
+            display: inline-block;
+            font-size: var(--collapse-icon-size);
+            font-weight: bold;
+            color: var(--gray-400, #9ca3af);
+            transform: rotate(90deg);
+            transition: transform 0.2s ease;
+        }
+    }
+    // Animate the icon when the panel is closed
+    &:not([open]) > &__trigger::after {
+        transform: rotate(0deg);
+    }
+
+    // BEM: Content (wrapper for the content)
+    &__content {
+        padding: var(--collapse-padding);
+    }
 }
 
-.collapse-header {
-    list-style-type: none;
+.#{$accordion-prefix} {
+    display: flex;
+    flex-direction: column;
 
-    &::-webkit-details-marker {
-        display: none;
+    // Key improvement: Joined appearance for items inside an accordion
+    &--joined {
+        > .#{$collapse-prefix} {
+            border-radius: 0;
+            border-bottom-width: 0;
+            border-top: none;
+        }
+        > .#{$collapse-prefix}:first-child {
+            border-top: 1px solid var(--collapse-border-color);
+            border-top-left-radius: var(--collapse-radius, 0.5rem);
+            border-top-right-radius: var(--collapse-radius, 0.5rem);
+        }
+        > .#{$collapse-prefix}:last-child {
+            border-bottom-width: 1px;
+            border-bottom-left-radius: var(--collapse-radius, 0.5rem);
+            border-bottom-right-radius: var(--collapse-radius, 0.5rem);
+        }
+        > .#{$collapse-prefix}[open]:not(:last-child) {
+            border-bottom-width: 1px;
+        }
     }
 
-    &::marker {
-        display: none;
-    }
-
-    &:not(.without-arrow) {
-        padding: 1.2rem 2rem 1.2rem 4.4rem;
-        background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAUCAYAAAC58NwRAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH5AgHFAwNJY24UQAAAJVJREFUKM+lk8ENgzAMRZ9hgS4SiRFgDN+6QifpCD1mDFbIIQuwASNwcaSqKsEW/5RI/1n+jiMAqvoE3sCScy50JGb+2H2/ggar3PQAVlWdesBilV2QWIYJWM1Mrz1pBy8k37QHkt8eryD5F6wHydn4zqCBoO63FAodGmvo4UKrETG3bXWbG/DymgHGWmtJKW3A7PmiB2rUYYave/NSAAAAAElFTkSuQmCC");
-        background-size: 0.6rem;
-        background-repeat: no-repeat;
-        background-position: 2rem center;
-    }
-}
-
-.collapse-panel[open] {
-    .collapse-header {
-        &:not(.without-arrow) {
-            padding: 1.2rem 2rem 1.2rem 4.4rem;
-            background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAI9JREFUeNpiZACCyMjIBCDVD8SOy5cvv8BAAgDqNQBS+4G4EKh3ASPUsPlQ+Q+kGIpkmABUKJEJ6jIYAEnshyok1TAQ6AcZ6Ah1GdGG4jAM7DtGQgrQvU9ILSOxColVw0is7VA2QV8wkhA+DMQECSMJgc5AyDCcBhIwFG9aZSQxrRFM+IwkJGAGYnIRQIABACQuXCKovu2mAAAAAElFTkSuQmCC");
-            background-size: 1rem;
-            background-repeat: no-repeat;
-            background-position: 2rem center;
+    // Spaced appearance for items inside an accordion
+    &--spaced {
+        gap: 1rem;
+        > .#{$collapse-prefix} {
+            border: 1px solid var(--collapse-border-color);
         }
     }
 }
 
-.collapse-header {
-    &::after {
-        content: "";
-        position: absolute;
-        display: block;
-        top: 0.2rem;
-        left: 0.2rem;
-        width: calc(100% - (2 * 0.2rem));
-        height: calc(100% - (2 * 0.2rem));
-        border-radius: 0.4rem;
-    }
-
-    &:focus::after {
-        box-shadow: none;
+// Generate size variants
+@each $name, $props in $collapse-sizes {
+    .#{$collapse-prefix}--#{$name} {
+        --collapse-font-size: #{map.get($props, "font-size")};
+        --collapse-padding: #{map.get($props, "padding")};
+        --collapse-icon-size: #{map.get($props, "icon-size")};
     }
 }
 
-.collapse-panel[open] {
-    .hidden-collapse-open {
-        display: none;
+// Style modifier: Plus/Minus icon
+.#{$collapse-prefix}--plus-icon {
+    & > &__trigger::after {
+        content: "+";
+        transform: rotate(0deg);
     }
-}
-
-.collapse-panel:not([open]) {
-    .hidden-collapse-closed {
-        display: none;
-    }
-}
-
-.collapse-content {
-    padding: 2rem;
-    font-size: 1.4rem;
-    color: rgba(0, 0, 0, 0.85);
-    background-color: transparent;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    box-shadow: none;
-    border-top: none;
-    border-bottom-left-radius: 0.4rem;
-    border-bottom-right-radius: 0.4rem;
-}
-
-.collapse-group .collapse-panel:not(:first-child) {
-    margin-top: calc((-1) * 1px);
-}
-
-.collapse-group .collapse-panel:not(:first-child) .collapse-header {
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-}
-
-.collapse-group .collapse-panel:not([open]):not(:last-child) .collapse-header {
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-}
-
-.collapse-group .collapse-panel[open]:not(:first-child) .collapse-content {
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-}
-
-.collapse-group .collapse-panel[open]:not(:last-child) .collapse-content {
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    border-bottom: 0;
-}
-
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-    .collapse-panel .collapse-header {
-        cursor: auto;
-        color: rgba(0, 0, 0, 0.85);
-        border-color: rgba(0, 0, 0, 0.2);
-        box-shadow: none;
-    }
-
-    .collapse-panel .collapse-header {
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
-    }
-
-    .collapse-panel .collapse-header:not(.without-arrow) {
-        padding: 1.2rem 2rem 1.2rem 4.4rem;
-        background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAI9JREFUeNpiZACCyMjIBCDVD8SOy5cvv8BAAgDqNQBS+4G4EKh3ASPUsPlQ+Q+kGIpkmABUKJEJ6jIYAEnshyok1TAQ6AcZ6Ah1GdGG4jAM7DtGQgrQvU9ILSOxColVw0is7VA2QV8wkhA+DMQECSMJgc5AyDCcBhIwFG9aZSQxrRFM+IwkJGAGYnIRQIABACQuXCKovu2mAAAAAElFTkSuQmCC");
-        background-size: 1rem;
-        background-repeat: no-repeat;
-        background-position: 2rem center;
-    }
-
-    .collapse-panel .hidden-collapse-open {
-        display: none;
-    }
-
-    .collapse-panel:not([open]) .hidden-collapse-closed {
-        display: inline-block;
-    }
-
-    .collapse-group .collapse-panel:not(:first-child) .collapse-content {
-        border-top-left-radius: 0;
-        border-top-right-radius: 0;
-    }
-
-    .collapse-group .collapse-panel:not(:last-child) .collapse-content {
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
-        border-bottom: 0;
+    &[open] > &__trigger::after {
+        transform: rotate(45deg);
     }
 }
