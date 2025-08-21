@@ -1,153 +1,202 @@
+@use "sass:map";
+
+// =============================================================================
+// FORM LAYOUT SYSTEM
+// =============================================================================
+
+// --- Configuration Map ---
+$config: (
+    // Spacing
+    "group-margin-bottom": 1.5rem,
+    "row-gap-x": 1.5rem,
+    "row-gap-y": 1.5rem,
+
+    // Breakpoints
+    "breakpoint-sm": "576px",
+    "breakpoint-md": "768px",
+    "breakpoint-lg": "992px",
+    "breakpoint-xl": "1200px",
+
+    // Visuals
+    "divider-color": #e5e7eb,
+    "dark-divider-color": #374151
+) !default;
+
+// --- Base Element Resets ---
 fieldset {
     padding: 0;
-    border-width: 0;
-}
-
-label {
-    display: inline-block;
-    margin-bottom: 0.6rem;
-}
-
-label.required:after {
-    content: "*";
-    color: #ff4d4f;
-    margin-left: 0.3rem;
+    margin: 0;
+    border: 0;
 }
 
 legend {
     display: block;
-    margin-bottom: 0.6rem;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: inherit;
 }
 
-.form-group {
-    margin-bottom: 2rem;
+// =============================================================================
+// 1. FORM GROUP (for single input controls)
+// =============================================================================
+$group-prefix: "form-group";
+
+.#{$group-prefix} {
+    --#{$group-prefix}-margin-bottom: #{map.get($config, "group-margin-bottom")};
+    margin-bottom: var(--#{$group-prefix}-margin-bottom);
 }
 
-.form-row {
+// --- Form Group Variants (5) ---
+.#{$group-prefix}--no-margin {
+    --#{$group-prefix}-margin-bottom: 0;
+}
+.#{$group-prefix}--mb-sm {
+    --#{$group-prefix}-margin-bottom: 0.75rem;
+}
+.#{$group-prefix}--mb-lg {
+    --#{$group-prefix}-margin-bottom: 2.5rem;
+}
+
+// For inline label/input layouts
+.#{$group-prefix}--inline {
     display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 2rem;
+    align-items: center;
+    gap: 1rem;
+    .c-form-label {
+        margin-bottom: 0;
+    }
+}
 
-    &.row-eq-spacing {
-        > [class^="col"] {
-            padding-left: 1rem;
-            padding-right: 1rem;
+// For creating a switch-like layout with the label on one side
+.#{$group-prefix}--justify-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    .c-form-label {
+        margin-bottom: 0;
+    }
+}
 
-            &:first-child {
-                padding-left: 0;
-            }
+// =============================================================================
+// 2. FORM ROW (for multi-column layouts)
+// =============================================================================
+$row-prefix: "form-row";
 
-            &:last-child {
-                padding-right: 0;
-            }
-        }
+.#{$row-prefix} {
+    @each $key, $value in $config {
+        --#{$row-prefix}-#{$key}: #{$value};
     }
 
-    @media (min-width: 640px) {
-        &.row-eq-spacing-sm:not(.row-eq-spacing) {
-            > [class^="col"] {
-                padding-left: 1rem;
-                padding-right: 1rem;
+    display: grid;
+    grid-template-columns: repeat(
+        var(--#{$row-prefix}-cols, 1),
+        minmax(0, 1fr)
+    );
+    gap: var(--#{$row-prefix}-row-gap-y) var(--#{$row-prefix}-row-gap-x);
+    margin-bottom: var(--#{$row-prefix}-row-gap-y);
 
-                &:first-child {
-                    padding-left: 0;
-                }
+    // Ensure form groups inside a row don't add extra bottom margin
+    > .#{$group-prefix} {
+        margin-bottom: 0;
+    }
+}
 
-                &:last-child {
-                    padding-right: 0;
-                }
-            }
+// --- Form Row Variants (20+) ---
+
+// --- Column Variants (Responsive) ---
+// Generates classes like .c-form-row--cols-2, .c-form-row--cols-md-3, etc.
+@mixin generate-col-variants($breakpoint-name: null) {
+    $suffix: if($breakpoint-name, "-#{$breakpoint-name}", "");
+    @for $i from 1 through 12 {
+        .#{$row-prefix}--cols#{$suffix}-#{$i} {
+            --#{$row-prefix}-cols: #{$i};
         }
     }
+}
 
-    @media (max-width: 640px) {
-        &.row-eq-spacing-sm:not(.row-eq-spacing) {
-            > [class^="col"]:not(:last-child) {
-                margin-bottom: 2rem;
-            }
-        }
+@include generate-col-variants(); // Mobile-first default columns
+@media (min-width: map.get($config, "breakpoint-sm")) {
+    @include generate-col-variants("sm");
+}
+@media (min-width: map.get($config, "breakpoint-md")) {
+    @include generate-col-variants("md");
+}
+@media (min-width: map.get($config, "breakpoint-lg")) {
+    @include generate-col-variants("lg");
+}
+@media (min-width: map.get($config, "breakpoint-xl")) {
+    @include generate-col-variants("xl");
+}
+
+// --- Spacing (Gap) Variants ---
+.#{$row-prefix}--gap-0 {
+    --#{$row-prefix}-row-gap-x: 0;
+    --#{$row-prefix}-row-gap-y: 0;
+}
+.#{$row-prefix}--gap-sm {
+    --#{$row-prefix}-row-gap-x: 0.75rem;
+    --#{$row-prefix}-row-gap-y: 0.75rem;
+}
+.#{$row-prefix}--gap-lg {
+    --#{$row-prefix}-row-gap-x: 2.5rem;
+    --#{$row-prefix}-row-gap-y: 2.5rem;
+}
+.#{$row-prefix}--gap-x-0 {
+    --#{$row-prefix}-row-gap-x: 0;
+}
+.#{$row-prefix}--gap-y-0 {
+    --#{$row-prefix}-row-gap-y: 0;
+}
+
+// --- Alignment Variants ---
+.#{$row-prefix}--align-start {
+    align-items: flex-start;
+}
+.#{$row-prefix}--align-center {
+    align-items: center;
+}
+.#{$row-prefix}--align-end {
+    align-items: flex-end;
+}
+
+// --- Visual Variants ---
+.#{$row-prefix}--v-divided {
+    --#{$row-prefix}-divider-width: 1px;
+    grid-column-gap: 0;
+    padding-left: var(--#{$row-prefix}-row-gap-x);
+    padding-right: var(--#{$row-prefix}-row-gap-x);
+
+    > * {
+        padding-left: var(--#{$row-prefix}-row-gap-x);
+        border-left: var(--#{$row-prefix}-divider-width) solid
+            var(--#{$row-prefix}-divider-color);
     }
-
-    @media (min-width: 768px) {
-        &.row-eq-spacing-md:not(.row-eq-spacing-sm):not(.row-eq-spacing) {
-            > [class^="col"] {
-                padding-left: 1rem;
-                padding-right: 1rem;
-
-                &:first-child {
-                    padding-left: 0;
-                }
-
-                &:last-child {
-                    padding-right: 0;
-                }
-            }
-        }
+    > :first-child {
+        padding-left: 0;
+        border-left: 0;
     }
+}
+.#{$row-prefix}--h-divided {
+    --#{$row-prefix}-divider-width: 1px;
+    grid-row-gap: 0;
 
-    @media (max-width: 768px) {
-        &.row-eq-spacing-md:not(.row-eq-spacing-sm):not(.row-eq-spacing) {
-            > [class^="col"]:not(:last-child) {
-                margin-bottom: 2rem;
-            }
-        }
+    > * {
+        padding-bottom: var(--#{$row-prefix}-row-gap-y);
+        border-bottom: var(--#{$row-prefix}-divider-width) solid
+            var(--#{$row-prefix}-divider-color);
     }
+}
 
-    @media (min-width: 1024px) {
-        &.row-eq-spacing-lg:not(.row-eq-spacing-md):not(.row-eq-spacing-sm):not(
-                .row-eq-spacing
-            ) {
-            > [class^="col"] {
-                padding-left: 1rem;
-                padding-right: 1rem;
-
-                &:first-child {
-                    padding-left: 0;
-                }
-
-                &:last-child {
-                    padding-right: 0;
-                }
-            }
-        }
-    }
-
-    @media (max-width: 1024px) {
-        &.row-eq-spacing-lg:not(.row-eq-spacing-md):not(.row-eq-spacing-sm):not(
-                .row-eq-spacing
-            ) {
-            > [class^="col"]:not(:last-child) {
-                margin-bottom: 2rem;
-            }
-        }
-    }
-
-    @media (min-width: 1280px) {
-        &.row-eq-spacing-xl:not(.row-eq-spacing-lg):not(.row-eq-spacing-md):not(
-                .row-eq-spacing-sm
-            ):not(.row-eq-spacing) {
-            > [class^="col"] {
-                padding-left: 1rem;
-                padding-right: 1rem;
-
-                &:first-child {
-                    padding-left: 0;
-                }
-
-                &:last-child {
-                    padding-right: 0;
-                }
-            }
-        }
-    }
-
-    @media (max-width: 1280px) {
-        &.row-eq-spacing-xl:not(.row-eq-spacing-lg):not(.row-eq-spacing-md):not(
-                .row-eq-spacing-sm
-            ):not(.row-eq-spacing) {
-            > [class^="col"]:not(:last-child) {
-                margin-bottom: 2rem;
-            }
-        }
+// --- Dark Mode ---
+.dark {
+    .#{$row-prefix}--v-divided,
+    .#{$row-prefix}--h-divided {
+        --#{$row-prefix}-divider-color: var(
+            --#{$row-prefix}-dark-divider-color
+        );
     }
 }

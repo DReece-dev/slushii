@@ -1,64 +1,373 @@
-// Variables
-$checkbox-size: 1rem;
-$border-radius: 5px;
-$focus-outline: 2px solid var(--black);
-$focus-outline-offset: 2px;
-$cursor: pointer;
+@use "sass:map";
 
-// Checkbox and radio button styles
-input[type="checkbox"],
-input[type="radio"] {
+$prefix: "checkbox-radio" !default;
+
+$config: (
+    // Sizing
+    "size": 1rem,
+    "focus-outline-width": 2px,
+    "focus-outline-offset": 2px,
+    "border-width": 1px,
+
+    // Radius
+    "radius-checkbox": 0.25rem,
+    "radius-radio": 50%,
+
+    // Colors (Light Theme)
+    "bg": #ffffff,
+    "border": #ced4da,
+    "fg-checked": #ffffff,
+    "bg-checked": #2563eb,
+    "bg-indeterminate": #2563eb,
+    "focus-outline": #2563eb,
+
+    // Theming (Dark Theme)
+    "dark-bg": #1f2937,
+    "dark-border": #4b5563,
+    "dark-fg-checked": #ffffff,
+    "dark-bg-checked": #3b82f6,
+    "dark-bg-indeterminate": #3b82f6,
+    "dark-focus-outline": #3b82f6,
+
+    // States
+    "disabled-opacity": 0.5,
+
+    // Animation
+    "transition-duration": 0.15s,
+    "transition-timing": ease-in-out,
+
+    // SVG Icons (URL-encoded)
+    "icon-checkbox":
+        "url(\"data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e\")",
+    "icon-radio":
+        "url(\"data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e\")",
+    "icon-indeterminate":
+        "url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 16 16'%3e%3cpath stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 8h8'/%3e%3c/svg%3e\")"
+) !default;
+
+// --- Keyframes ---
+@keyframes jiggle {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+@keyframes pulse {
+    50% {
+        opacity: 0.5;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+// --- Base Component ---
+.#{$prefix} {
+    @each $key, $value in $config {
+        --#{$prefix}-#{$key}: #{$value};
+    }
+
     appearance: none;
     padding: 0;
+    print-color-adjust: exact;
     display: inline-block;
     vertical-align: middle;
     background-origin: border-box;
     user-select: none;
     flex-shrink: 0;
-    height: $checkbox-size;
-    width: $checkbox-size;
-    color: var(--black);
-    background-color: #fff;
-    border: 1px solid #d1d1d1;
-    border-radius: $border-radius;
-    cursor: $cursor;
+    cursor: pointer;
 
-    &:not([type="radio"]) {
-        border-radius: 0;
+    height: var(--#{$prefix}-size);
+    width: var(--#{$prefix}-size);
+    background-color: var(--#{$prefix}-bg);
+    border: var(--#{$prefix}-border-width) solid var(--#{$prefix}-border);
+    transition: all var(--#{$prefix}-transition-duration)
+        var(--#{$prefix}-transition-timing);
+
+    &[type="checkbox"] {
+        border-radius: var(--#{$prefix}-radius-checkbox);
+    }
+    &[type="radio"] {
+        border-radius: var(--#{$prefix}-radius-radio);
     }
 
-    &:not([type="checkbox"]) {
-        border-radius: 100%;
-    }
-
-    &:focus {
-        outline: $focus-outline;
-        outline-offset: $focus-outline-offset;
-        box-shadow: 0 0 0 2px var(--black);
+    &:focus-visible {
+        outline: var(--#{$prefix}-focus-outline-width) solid
+            var(--#{$prefix}-focus-outline);
+        outline-offset: var(--#{$prefix}-focus-outline-offset);
     }
 
     &:checked {
         border-color: transparent;
-        background-color: var(--black);
+        background-color: var(--#{$prefix}-bg-checked);
         background-size: 100% 100%;
         background-position: center;
         background-repeat: no-repeat;
-
-        &:not([type="radio"]) {
-            background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
-        }
-
-        &:not([type="checkbox"]) {
-            background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e");
-        }
     }
 
-    &:indeterminate {
-        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 16 16'%3e%3cpath stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 8h8'/%3e%3c/svg%3e");
+    &[type="checkbox"]:checked {
+        background-image: var(--#{$prefix}-icon-checkbox);
+    }
+    &[type="radio"]:checked {
+        background-image: var(--#{$prefix}-icon-radio);
+    }
+
+    &[type="checkbox"]:indeterminate {
         border-color: transparent;
-        background-color: var(--black);
+        background-color: var(--#{$prefix}-bg-indeterminate);
+        background-image: var(--#{$prefix}-icon-indeterminate);
         background-size: 100% 100%;
         background-position: center;
         background-repeat: no-repeat;
     }
+
+    &:disabled {
+        opacity: var(--#{$prefix}-disabled-opacity);
+        cursor: not-allowed;
+    }
+}
+
+// =============================================================================
+// --- 25 NEW VARIANTS (Inspired by Shadcn UI) ---
+// =============================================================================
+
+// --- Color Variants (5) ---
+
+// A muted, secondary color scheme (e.g., slate gray).
+.#{$prefix}--secondary {
+    --#{$prefix}-bg-checked: #64748b;
+    --#{$prefix}-focus-outline: #64748b;
+    --#{$prefix}-bg-indeterminate: #64748b;
+}
+
+// A vibrant accent color (e.g., purple).
+.#{$prefix}--accent {
+    --#{$prefix}-bg-checked: #9333ea;
+    --#{$prefix}-focus-outline: #9333ea;
+    --#{$prefix}-bg-indeterminate: #9333ea;
+}
+
+// A very light gray for a subtle, minimal look.
+.#{$prefix}--subtle {
+    --#{$prefix}-border: #e2e8f0;
+    &:checked {
+        --#{$prefix}-bg-checked: #f1f5f9;
+        --#{$prefix}-icon-checkbox: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23475569' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
+        --#{$prefix}-icon-radio: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23475569' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e");
+    }
+}
+
+// An outline style for destructive actions.
+.#{$prefix}--destructive-outline {
+    --#{$prefix}-focus-outline: #ef4444;
+    border-color: #ef4444;
+    &:checked {
+        background-color: #ef4444;
+    }
+}
+
+// For use on dark backgrounds where the control itself is dark.
+.#{$prefix}--inverted {
+    --#{$prefix}-bg: rgba(0, 0, 0, 0.2);
+    --#{$prefix}-border: #a1a1aa;
+    --#{$prefix}-bg-checked: #fafafa;
+    --#{$prefix}-icon-checkbox: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%2318181b' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
+    --#{$prefix}-icon-radio: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%2318181b' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e");
+}
+
+// --- Sizing Variants (2) ---
+
+// Extra-small size.
+.#{$prefix}--xs {
+    --#{$prefix}-size: 0.75rem;
+}
+
+// Standard size control with a smaller icon inside.
+.#{$prefix}--icon-sm[type="checkbox"]:checked {
+    background-size: 60% 60%;
+}
+.#{$prefix}--icon-sm[type="radio"]:checked {
+    background-size: 50% 50%;
+}
+
+// --- Style Variants (10) ---
+
+// Adds a prominent, offset ring on focus (a Shadcn UI staple).
+.#{$prefix}--ring-offset:focus-visible {
+    --#{$prefix}-focus-outline-offset: 4px;
+    box-shadow: 0 0 0 2px var(--#{$prefix}-bg);
+}
+
+// A flat appearance with no border.
+.#{$prefix}--no-border {
+    --#{$prefix}-border-width: 0px;
+    background-color: #f1f5f9; // Add a subtle bg to compensate for no border
+}
+
+// A softer appearance with a lighter border and hover effect.
+.#{$prefix}--soft {
+    --#{$prefix}-border: #e2e8f0;
+    &:hover {
+        background-color: #f8fafc;
+    }
+}
+
+// Uses an SVG with a thicker stroke for better visual weight.
+.#{$prefix}--tick-thicker {
+    --#{$prefix}-icon-checkbox: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='white' stroke-width='2' d='M4 8.5l2.5 2.5L12 5' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e");
+}
+
+// For radios, uses a pseudo-element dot for a crisp, solid fill.
+.#{$prefix}--dot-fill[type="radio"] {
+    position: relative;
+    &:checked {
+        background-image: none; // Disable SVG icon
+        &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 50%;
+            height: 50%;
+            border-radius: 50%;
+            background-color: var(--#{$prefix}-fg-checked);
+            transform: translate(-50%, -50%);
+        }
+    }
+}
+
+// Applies a gradient to the border (only visible when unchecked).
+.#{$prefix}--border-gradient {
+    border: double var(--#{$prefix}-border-width) transparent;
+    border-radius: var(--#{$prefix}-radius-checkbox); // Ensure radius matches
+    background-image:
+        linear-gradient(var(--#{$prefix}-bg), var(--#{$prefix}-bg)),
+        linear-gradient(45deg, #845eee, #6415ff);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+}
+
+// Adds a soft glow effect when checked.
+.#{$prefix}--glow:checked {
+    box-shadow: 0 0 8px 1px var(--#{$prefix}-bg-checked);
+}
+
+// A more subtle box-shadow.
+.#{$prefix}--soft-shadow {
+    box-shadow:
+        0 1px 2px 0 rgba(0, 0, 0, 0.05),
+        0 1px 3px 1px rgba(0, 0, 0, 0.05);
+}
+
+// Creates a pill shape for checkboxes.
+.#{$prefix}--pill[type="checkbox"] {
+    --#{$prefix}-radius-checkbox: 9999px;
+}
+
+// Keeps the border visible when checked.
+.#{$prefix}--border-checked:checked {
+    border-color: var(--#{$prefix}-bg-checked);
+    background-color: transparent;
+    --#{$prefix}-icon-checkbox: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%232563eb' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
+    --#{$prefix}-icon-radio: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%232563eb' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e");
+}
+
+// --- Animation & Behavior Variants (5) ---
+
+// A pulsing animation on focus.
+.#{$prefix}--pulse-focus:focus-visible {
+    animation: pulse 1.5s infinite;
+}
+
+// The checkmark/dot icon fades in smoothly.
+.#{$prefix}--fade-in:checked {
+    &::after, // For --dot-fill
+    [type="checkbox"] {
+        animation: fadeIn 0.2s var(--#{$prefix}-transition-timing);
+    }
+}
+
+// The checkmark/dot icon slides in from the left.
+.#{$prefix}--slide-in-left:checked {
+    background-image: none; // Hide default immediate appearance
+    position: relative;
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        animation: slideInLeft 0.25s var(--#{$prefix}-transition-timing);
+    }
+
+    &[type="checkbox"]::after {
+        background-image: var(--#{$prefix}-icon-checkbox);
+    }
+    &[type="radio"]::after {
+        background-image: var(--#{$prefix}-icon-radio);
+    }
+}
+
+// The component flips on the Y-axis when checked.
+.#{$prefix}--flip {
+    transition: transform 0.4s;
+    transform-style: preserve-3d;
+    &:checked {
+        transform: rotateY(180deg);
+    }
+}
+
+// Scales the component up slightly on hover for better feedback.
+.#{$prefix}--hover-pop:not(:disabled):hover {
+    transform: scale(1.1);
+}
+
+// --- Stateful Variants (3) ---
+
+// Fills the background of disabled inputs with a light gray.
+.#{$prefix}--disabled-filled:disabled {
+    background-color: #f1f5f9;
+    opacity: 1;
+    border-color: #e2e8f0;
+    * {
+        opacity: var(--#{$prefix}-disabled-opacity);
+    }
+}
+
+// Style for readonly attribute to show it's not interactive.
+.#{$prefix}[readonly] {
+    cursor: default;
+    background-color: #f8fafc;
+    &:checked {
+        opacity: 0.7;
+    }
+}
+
+// Changes border color on hover.
+.#{$prefix}--hover-border:not(:disabled):hover {
+    border-color: var(--#{$prefix}-focus-outline);
 }

@@ -1,77 +1,299 @@
-.form-floating {
-    position: relative;
+@use "sass:map";
 
-    > .form-control,
-    > .form-select {
-        height: calc(3.5rem + 2px);
-        line-height: 1.25;
+$prefix: "form-floating" !default;
+
+$config: (
+    // Sizing & Spacing
+    "height": 3.5rem,
+    "padding-y": 1rem,
+    "padding-x": 0.75rem,
+    "line-height": 1.25,
+
+    // Label Transformation
+    "label-scale": 0.85,
+    "label-translate-y": -0.5rem,
+    "label-translate-x": 0.15rem,
+    "label-opacity": 0.65,
+    // --- CORRECTED LINE ---
+    "label-transition":
+        "transform 0.15s ease-in-out, opacity 0.15s ease-in-out",
+
+    // Colors & Theming
+    "label-color": #6c757d,
+
+    // Dark Theme
+    "dark-label-color": #adb5bd,
+
+    // Validation Colors
+    "success-label-color": #16a34a,
+    "danger-label-color": #dc2626,
+    "warning-label-color": #f97316
+) !default;
+
+// --- Base Component ---
+.#{$prefix} {
+    @each $key, $value in $config {
+        --#{$prefix}-#{$key}: #{$value};
     }
+
+    position: relative;
 
     > label {
         position: absolute;
         top: 0;
         left: 0;
         height: 100%;
-        padding: 1rem 0.75rem;
+        padding: var(--#{$prefix}-padding-y) var(--#{$prefix}-padding-x);
+        color: var(--#{$prefix}-label-color);
         pointer-events: none;
         border: 1px solid transparent;
         transform-origin: 0 0;
-        transition:
-            opacity 0.1s ease-in-out,
-            transform 0.1s ease-in-out;
+        transition: var(--#{$prefix}-label-transition);
+        display: flex;
+        align-items: center;
+    }
 
-        @media (prefers-reduced-motion: reduce) {
-            transition: none;
-        }
+    > .form-control,
+    > .form-select {
+        height: var(--#{$prefix}-height);
+        line-height: var(--#{$prefix}-line-height);
+        padding: var(--#{$prefix}-padding-y) var(--#{$prefix}-padding-x);
     }
 
     > .form-control {
-        padding: 1rem 0.75rem;
-
-        &::-moz-placeholder {
-            color: transparent;
-        }
-
         &::placeholder {
             color: transparent;
         }
+    }
 
-        &:not(:-moz-placeholder-shown) {
-            padding-top: 1.625rem;
-            padding-bottom: 0.625rem;
-        }
+    > .form-control:focus,
+    > .form-control:not(:placeholder-shown),
+    > .form-control:-webkit-autofill {
+        padding-top: calc(var(--#{$prefix}-padding-y) + 0.5rem);
+        padding-bottom: calc(var(--#{$prefix}-padding-y) - 0.5rem);
 
-        &:focus,
-        &:not(:placeholder-shown) {
-            padding-top: 1.625rem;
-            padding-bottom: 0.625rem;
-        }
-
-        &:-webkit-autofill {
-            padding-top: 1.625rem;
-            padding-bottom: 0.625rem;
-        }
-
-        &:not(:-moz-placeholder-shown) ~ label {
-            opacity: 0.65;
-            transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
-        }
-
-        &:focus ~ label,
-        &:not(:placeholder-shown) ~ label,
-        ~ .form-select ~ label {
-            opacity: 0.65;
-            transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
-        }
-
-        &:-webkit-autofill ~ label {
-            opacity: 0.65;
-            transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
+        ~ label {
+            opacity: var(--#{$prefix}-label-opacity);
+            transform: scale(var(--#{$prefix}-label-scale))
+                translateY(var(--#{$prefix}-label-translate-y))
+                translateX(var(--#{$prefix}-label-translate-x));
         }
     }
 
     > .form-select {
-        padding-top: 1.625rem;
-        padding-bottom: 0.625rem;
+        padding-top: calc(var(--#{$prefix}-padding-y) + 0.5rem);
+        padding-bottom: calc(var(--#{$prefix}-padding-y) - 0.5rem);
+
+        ~ label {
+            opacity: var(--#{$prefix}-label-opacity);
+            transform: scale(var(--#{$prefix}-label-scale))
+                translateY(var(--#{$prefix}-label-translate-y))
+                translateX(var(--#{$prefix}-label-translate-x));
+        }
+    }
+}
+
+// =============================================================================
+// --- 25 NEW VARIANTS ---
+// =============================================================================
+
+// --- Sizing Variants (2) ---
+.#{$prefix}--sm {
+    --#{$prefix}-height: 2.5rem;
+    --#{$prefix}-padding-y: 0.5rem;
+    > .form-control,
+    > .form-select {
+        font-size: 0.875rem;
+    }
+}
+.#{$prefix}--lg {
+    --#{$prefix}-height: 4.5rem;
+    --#{$prefix}-padding-y: 1.5rem;
+    > .form-control,
+    > .form-select {
+        font-size: 1.25rem;
+    }
+}
+
+// --- Style Variants (10) ---
+.#{$prefix}--pill {
+    .form-control,
+    .form-select {
+        border-radius: 9999px;
+    }
+}
+.#{$prefix}--square {
+    .form-control,
+    .form-select {
+        border-radius: 0;
+    }
+}
+.#{$prefix}--underline {
+    .form-control,
+    .form-select {
+        border-width: 0 0 1px 0;
+        border-radius: 0;
+        padding-inline: 0.25rem;
+    }
+    > label {
+        padding-inline: 0.25rem;
+    }
+}
+.#{$prefix}--filled {
+    .form-control,
+    .form-select {
+        background-color: #f3f4f6;
+        border-color: #f3f4f6;
+    }
+}
+.#{$prefix}--ghost {
+    .form-control,
+    .form-select {
+        background-color: transparent;
+        border-color: transparent;
+        &:focus {
+            background-color: var(--form-control-bg);
+        }
+    }
+}
+.#{$prefix}--thick {
+    .form-control,
+    .form-select {
+        border-width: 2px;
+    }
+}
+.#{$prefix}--shadow {
+    .form-control,
+    .form-select {
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    }
+}
+.#{$prefix}--inset {
+    .form-control,
+    .form-select {
+        box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075);
+    }
+}
+.#{$prefix}--label-bold > label {
+    font-weight: 500;
+}
+.#{$prefix}--animated-label > label {
+    transition-duration: 0.25s;
+}
+
+// --- Validation State Variants (3) ---
+.#{$prefix}--success {
+    > .form-control,
+    > .form-select {
+        border-color: var(--#{$prefix}-success-label-color);
+    }
+    > label {
+        color: var(--#{$prefix}-success-label-color);
+    }
+}
+.#{$prefix}--danger {
+    > .form-control,
+    > .form-select {
+        border-color: var(--#{$prefix}-danger-label-color);
+    }
+    > label {
+        color: var(--#{$prefix}-danger-label-color);
+    }
+}
+.#{$prefix}--warning {
+    > .form-control,
+    > .form-select {
+        border-color: var(--#{$prefix}-warning-label-color);
+    }
+    > label {
+        color: var(--#{$prefix}-warning-label-color);
+    }
+}
+
+// --- Disabled State Variants (2) ---
+.#{$prefix}--disabled-filled {
+    .form-control:disabled,
+    .form-select:disabled {
+        background-color: #e9ecef;
+    }
+    > label {
+        color: #adb5bd;
+    }
+}
+.#{$prefix}--disabled-dashed {
+    .form-control:disabled,
+    .form-select:disabled {
+        border-style: dashed;
+    }
+    > label {
+        color: #adb5bd;
+    }
+}
+
+// --- Icon & Addon Variants (4) ---
+.#{$prefix}--with-icon-start {
+    > .form-control,
+    > .form-select {
+        padding-inline-start: 2.5rem;
+    }
+    > label {
+        padding-inline-start: 2.5rem;
+    }
+}
+.#{$prefix}--with-icon-end {
+    > .form-control,
+    > .form-select {
+        padding-inline-end: 2.5rem;
+    }
+}
+.#{$prefix}--label-inset > label {
+    padding-inline-start: 1.5rem;
+}
+.#{$prefix}--label-no-float:not(:focus-within):not(:placeholder-shown) > label {
+    transform: none;
+    opacity: 1;
+}
+
+// --- Behavior & Composite Variants (4) ---
+.#{$prefix}--no-transition > label {
+    transition: none;
+}
+.#{$prefix}--focus-pop .form-control:focus,
+.#{$prefix}--focus-pop .form-select:focus {
+    transform: scale(1.02);
+}
+.#{$prefix}--always-float > label {
+    opacity: var(--#{$prefix}-label-opacity);
+    transform: scale(var(--#{$prefix}-label-scale))
+        translateY(var(--#{$prefix}-label-translate-y))
+        translateX(var(--#{$prefix}-label-translate-x));
+}
+.#{$prefix}--textarea {
+    > .form-control {
+        height: auto;
+        min-height: var(--#{$prefix}-height);
+    }
+    > label {
+        height: var(--#{$prefix}-height);
+    }
+}
+
+// --- Dark Mode ---
+.dark .#{$prefix} {
+    --#{$prefix}-label-color: var(--#{$prefix}-dark-label-color);
+
+    &.#{$prefix}--filled {
+        .form-control,
+        .form-select {
+            background-color: #374151;
+            border-color: #374151;
+        }
+    }
+}
+
+// --- Reduced Motion ---
+@media (prefers-reduced-motion: reduce) {
+    .#{$prefix} > label {
+        transition: none;
     }
 }

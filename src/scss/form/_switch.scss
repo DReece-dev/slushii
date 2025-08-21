@@ -1,121 +1,240 @@
-$padding: 0.25rem;
-$border-radius: 30px;
+@use "sass:map";
+@use "sass:math";
 
-@mixin switch-paddle($width, $height, $font-size, $after-width, $after-height) {
-    position: relative;
-    display: block;
-    width: $width;
-    height: $height;
-    border-radius: $border-radius;
-    background: #cacaca;
-    transition: all 0.25s ease-out;
-    font-weight: inherit;
-    color: inherit;
-    cursor: pointer;
+$prefix: "switch" !default;
 
-    &::after {
-        position: absolute;
-        top: $padding;
-        left: $padding;
-        display: block;
-        width: $after-width;
-        height: $after-height;
-        border-radius: $border-radius;
-        background: #fefefe;
-        transition: all 0.25s ease-out;
-        content: "";
+// --- Configuration Map ---
+$config: (
+    // Sizing & Spacing (for the default size)
+    "track-width": 2.25rem,
+    "track-height": 1.25rem,
+    "thumb-size": 1rem,
+    "track-padding": 2px,
+
+    // Colors (Light Theme)
+    "track-bg": #e2e8f0,
+    "track-bg-checked": #3b82f6,
+    "thumb-bg": #ffffff,
+    "focus-ring-color": rgba(59, 130, 246, 0.25),
+    "icon-color": #4b5563,
+    "icon-color-checked": #3b82f6,
+
+    // Dark Theme
+    "dark-track-bg": #4b5563,
+    "dark-track-bg-checked": #3b82f6,
+    "dark-thumb-bg": #e2e8f0,
+
+    // Typography & Transitions
+    "border-radius": 9999px,
+    "transition": 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    "focus-ring-width": 3px
+) !default;
+
+// --- Base Component ---
+// Recommended HTML:
+// <label class="c-switch">
+//   <input type="checkbox" class="c-switch__input" />
+//   <span class="c-switch__track">
+//     <span class="c-switch__thumb"></span>
+//   </span>
+//   <span class="c-switch__label">Label Text</span>
+// </label>
+.#{$prefix} {
+    @each $key, $value in $config {
+        --#{$prefix}-#{$key}: #{$value};
     }
-}
 
-.switch {
-    height: 2rem;
-    position: relative;
-    margin-bottom: 1rem;
-    outline: 0;
-    font-size: 0.875rem;
-    font-weight: bold;
-    color: #fefefe;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
     user-select: none;
 
-    &.tiny {
-        height: 1.5rem;
-        @include switch-paddle(3rem, 1.5rem, 0.625rem, 1rem, 1rem);
-
-        input:checked ~ .switch-paddle::after {
-            left: 1.75rem;
-        }
-    }
-
-    &.small {
-        height: 1.75rem;
-        @include switch-paddle(3.5rem, 1.75rem, 0.75rem, 1.25rem, 1.25rem);
-
-        input:checked ~ .switch-paddle::after {
-            left: 2rem;
-        }
-    }
-
-    &.large {
-        height: 2.5rem;
-        @include switch-paddle(5rem, 2.5rem, 1rem, 2rem, 2rem);
-
-        input:checked ~ .switch-paddle::after {
-            left: 2.75rem;
-        }
-    }
-
-    .switch-input {
+    &__input {
         position: absolute;
-        margin-bottom: 0;
-        opacity: 0;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+
+        &:focus-visible + .#{$prefix}__track {
+            box-shadow: 0 0 0 var(--#{$prefix}-focus-ring-width)
+                var(--#{$prefix}-focus-ring-color);
+        }
+
+        &:checked + .#{$prefix}__track {
+            background-color: var(--#{$prefix}-track-bg-checked);
+            .#{$prefix}__thumb {
+                transform: translateX(
+                    calc(
+                        var(--#{$prefix}-track-width) - var(
+                                --#{$prefix}-thumb-size
+                            ) -
+                            (var(--#{$prefix}-track-padding) * 2)
+                    )
+                );
+            }
+        }
+
+        &:disabled + .#{$prefix}__track {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
     }
 
-    .switch-paddle {
-        @include switch-paddle(4rem, 2rem, 0.875rem, 1.5rem, 1.5rem);
+    &__track {
+        display: inline-flex;
+        align-items: center;
+        flex-shrink: 0;
+        width: var(--#{$prefix}-track-width);
+        height: var(--#{$prefix}-track-height);
+        padding: var(--#{$prefix}-track-padding);
+        background-color: var(--#{$prefix}-track-bg);
+        border-radius: var(--#{$prefix}-border-radius);
+        transition:
+            background-color var(--#{$prefix}-transition),
+            box-shadow var(--#{$prefix}-transition);
     }
 
-    input + .switch-paddle {
-        margin: 0;
-    }
-
-    input:checked ~ .switch-paddle {
-        background: #4338ca;
-    }
-
-    input:checked ~ .switch-paddle::after {
-        left: 2.25rem;
-    }
-
-    input:disabled ~ .switch-paddle {
-        cursor: not-allowed;
-        opacity: 0.5;
-    }
-
-    [data-whatinput="mouse"] input:focus ~ .switch-paddle {
-        outline: 0;
-    }
-}
-
-.switch-active,
-.switch-inactive {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.switch-active {
-    left: 8%;
-    display: none;
-
-    input:checked + label > & {
+    &__thumb {
         display: block;
+        width: var(--#{$prefix}-thumb-size);
+        height: var(--#{$prefix}-thumb-size);
+        background-color: var(--#{$prefix}-thumb-bg);
+        border-radius: var(--#{$prefix}-border-radius);
+        box-shadow:
+            0 1px 2px 0 rgba(0, 0, 0, 0.05),
+            0 1px 3px 1px rgba(0, 0, 0, 0.05);
+        transition: transform var(--#{$prefix}-transition);
+    }
+
+    &__label {
+        color: var(
+            --c-form-label-fg,
+            #374151
+        ); // Inherits from form-label if available
+        font-weight: 500;
     }
 }
 
-.switch-inactive {
-    right: 15%;
+// =============================================================================
+// --- 25+ NEW VARIANTS ---
+// =============================================================================
 
-    input:checked + label > & {
-        display: none;
+// --- Sizing Variants (4) ---
+.#{$prefix}--sm {
+    --#{$prefix}-track-width: 1.75rem;
+    --#{$prefix}-track-height: 1rem;
+    --#{$prefix}-thumb-size: 0.75rem;
+}
+.#{$prefix}--lg {
+    --#{$prefix}-track-width: 2.75rem;
+    --#{$prefix}-track-height: 1.5rem;
+    --#{$prefix}-thumb-size: 1.25rem;
+}
+.#{$prefix}--xl {
+    --#{$prefix}-track-width: 3.5rem;
+    --#{$prefix}-track-height: 1.75rem;
+    --#{$prefix}-thumb-size: 1.5rem;
+}
+.#{$prefix}--slim {
+    --#{$prefix}-track-height: 0.75rem;
+    --#{$prefix}-thumb-size: 0.5rem;
+}
+
+// --- Color Variants (5) ---
+.#{$prefix}--success .#{$prefix}__input:checked + .#{$prefix}__track {
+    --#{$prefix}-track-bg-checked: #16a34a;
+}
+.#{$prefix}--danger .#{$prefix}__input:checked + .#{$prefix}__track {
+    --#{$prefix}-track-bg-checked: #dc2626;
+}
+.#{$prefix}--warning .#{$prefix}__input:checked + .#{$prefix}__track {
+    --#{$prefix}-track-bg-checked: #f97316;
+}
+.#{$prefix}--info .#{$prefix}__input:checked + .#{$prefix}__track {
+    --#{$prefix}-track-bg-checked: #0ea5e9;
+}
+.#{$prefix}--dark .#{$prefix}__input:checked + .#{$prefix}__track {
+    --#{$prefix}-track-bg-checked: #111827;
+}
+
+// --- Style Variants (8) ---
+.#{$prefix}--square {
+    --#{$prefix}-border-radius: 0.25rem;
+}
+.#{$prefix}--inset .#{$prefix}__track {
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.#{$prefix}--no-shadow .#{$prefix}__thumb {
+    box-shadow: none;
+}
+.#{$prefix}--track-border .#{$prefix}__track {
+    border: 1px solid #d1d5db;
+}
+.#{$prefix}--label-start {
+    order: -1;
+}
+.#{$prefix}--no-label .#{$prefix}__label {
+    display: none;
+}
+.#{$prefix}--thumb-no-bg .#{$prefix}__thumb {
+    background-color: transparent;
+    box-shadow: none;
+}
+.#{$prefix}--no-transition *,
+.#{$prefix}--no-transition *::before,
+.#{$prefix}--no-transition *::after {
+    transition: none !important;
+}
+
+// --- Icon Variants (5) ---
+// Add an icon inside the thumb. Requires an SVG as a background-image.
+.#{$prefix}--with-icon .#{$prefix}__thumb {
+    background-image: var(--#{$prefix}-icon-off-svg);
+    background-size: 60%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.#{$prefix}--with-icon
+    .#{$prefix}__input:checked
+    + .#{$prefix}__track
+    .#{$prefix}__thumb {
+    background-image: var(--#{$prefix}-icon-on-svg);
+}
+// Example icon usage:
+.#{$prefix}--icon-check {
+    --#{$prefix}-icon-on-svg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='#3b82f6' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='20 6 9 17 4 12'/%3e%3c/svg%3e");
+    --#{$prefix}-icon-off-svg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='#6b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cline x1='18' y1='6' x2='6' y2='18'/%3e%3cline x1='6' y1='6' x2='18' y2='18'/%3e%3c/svg%3e");
+}
+
+// --- Text Inside Switch Variants (3) ---
+.#{$prefix}--with-text .#{$prefix}__track {
+    color: var(--#{$prefix}-thumb-bg);
+    font-size: calc(var(--#{$prefix}-thumb-size) * 0.7);
+    font-weight: 600;
+
+    &::before {
+        content: "OFF";
+        padding-left: calc(var(--#{$prefix}-thumb-size) * 1.2);
     }
+    &::after {
+        content: "ON";
+        padding-right: calc(var(--#{$prefix}-thumb-size) * 1.2);
+    }
+    > .#{$prefix}__thumb {
+        display: none;
+    } // Hide thumb when using text
+}
+
+// --- Dark Mode ---
+.dark .#{$prefix} {
+    --#{$prefix}-track-bg: var(--#{$prefix}-dark-track-bg);
+    --#{$prefix}-track-bg-checked: var(--#{$prefix}-dark-track-bg-checked);
+    --#{$prefix}-thumb-bg: var(--#{$prefix}-dark-thumb-bg);
+    --#{$prefix}-label-fg: #d1d5db;
 }

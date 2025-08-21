@@ -1,104 +1,299 @@
-.form-range {
+@use "sass:map";
+
+$prefix: "form-range" !default;
+
+// --- Configuration Map ---
+$config: (
+    // Sizing
+    "track-height": 0.5rem,
+    "thumb-size": 1.25rem,
+    "focus-ring-width": 3px,
+    "progress-percent": 50%,
+
+    // Default fill, should be updated by JS
+    // Colors (Light Theme)
+    "track-bg": #e9ecef,
+    "thumb-bg": #3b82f6,
+    "progress-bg": #3b82f6,
+    "focus-ring-color": rgba(59, 130, 246, 0.25),
+    "disabled-thumb-bg": #adb5bd,
+    "disabled-track-bg": #dee2e6,
+
+    // Dark Theme
+    "dark-track-bg": #374151,
+    "dark-thumb-bg": #3b82f6,
+    "dark-progress-bg": #3b82f6,
+    "dark-disabled-thumb-bg": #6b7280,
+    "dark-disabled-track-bg": #4b5563,
+
+    // Typography & Transitions
+    "thumb-radius": 50%,
+    "track-radius": 1rem,
+    "transition": 0.15s ease-in-out
+) !default;
+
+// --- Base Component ---
+.#{$prefix} {
+    @each $key, $value in $config {
+        --#{$prefix}-#{$key}: #{$value};
+    }
+
+    display: block;
     width: 100%;
-    height: 1.5rem;
+    height: var(--#{$prefix}-thumb-size);
     padding: 0;
-    background-color: transparent;
+    background: transparent;
     appearance: none;
+    cursor: pointer;
 
     &:focus {
-        outline: 0;
+        outline: none;
     }
 
-    &::-webkit-slider-thumb {
-        width: 1rem;
-        height: 1rem;
-        margin-top: -0.25rem;
-        background-color: #0d6efd;
-        border: 0;
-        border-radius: 1rem;
-        transition:
-            background-color 0.15s ease-in-out,
-            border-color 0.15s ease-in-out,
-            box-shadow 0.15s ease-in-out;
-        appearance: none;
-
-        &:active {
-            background-color: #b6d4fe;
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            -webkit-transition: none;
-            transition: none;
-        }
-
-        &:focus {
-            box-shadow:
-                0 0 0 1px #fff,
-                0 0 0 0.25rem rgba(13, 110, 253, 0.25);
-        }
-    }
-
-    &::-moz-range-thumb {
-        width: 1rem;
-        height: 1rem;
-        background-color: #0d6efd;
-        border: 0;
-        border-radius: 1rem;
-        transition:
-            background-color 0.15s ease-in-out,
-            border-color 0.15s ease-in-out,
-            box-shadow 0.15s ease-in-out;
-        appearance: none;
-
-        &:active {
-            background-color: #b6d4fe;
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            -moz-transition: none;
-            transition: none;
-        }
-
-        &:focus {
-            box-shadow:
-                0 0 0 1px #fff,
-                0 0 0 0.25rem rgba(13, 110, 253, 0.25);
-        }
-    }
-
-    &::-moz-focus-outer {
-        border: 0;
+    // --- Track Styles ---
+    @mixin track-styles {
+        width: 100%;
+        height: var(--#{$prefix}-track-height);
+        cursor: pointer;
+        border-radius: var(--#{$prefix}-track-radius);
+        background: linear-gradient(
+            to right,
+            var(--#{$prefix}-progress-bg) 0%,
+            var(--#{$prefix}-progress-bg) var(--#{$prefix}-progress-percent),
+            var(--#{$prefix}-track-bg) var(--#{$prefix}-progress-percent),
+            var(--#{$prefix}-track-bg) 100%
+        );
     }
 
     &::-webkit-slider-runnable-track {
-        width: 100%;
-        height: 0.5rem;
-        color: transparent;
-        cursor: pointer;
-        background-color: #dee2e6;
-        border-color: transparent;
-        border-radius: 1rem;
+        @include track-styles;
     }
-
     &::-moz-range-track {
-        width: 100%;
-        height: 0.5rem;
-        color: transparent;
-        cursor: pointer;
-        background-color: #dee2e6;
-        border-color: transparent;
-        border-radius: 1rem;
+        @include track-styles;
     }
 
+    // --- Thumb Styles ---
+    @mixin thumb-styles {
+        height: var(--#{$prefix}-thumb-size);
+        width: var(--#{$prefix}-thumb-size);
+        background-color: var(--#{$prefix}-thumb-bg);
+        border: none;
+        border-radius: var(--#{$prefix}-thumb-radius);
+        appearance: none;
+        margin-top: calc(
+            (var(--#{$prefix}-thumb-size) - var(--#{$prefix}-track-height)) / -2
+        );
+        transition: transform var(--#{$prefix}-transition);
+
+        &:hover {
+            transform: scale(1.1);
+        }
+        &:active {
+            transform: scale(1.2);
+            cursor: grabbing;
+        }
+    }
+
+    &::-webkit-slider-thumb {
+        @include thumb-styles;
+    }
+    &::-moz-range-thumb {
+        @include thumb-styles;
+    }
+
+    // Focus State
+    &:focus-visible::-webkit-slider-thumb {
+        box-shadow: 0 0 0 var(--#{$prefix}-focus-ring-width)
+            var(--#{$prefix}-focus-ring-color);
+    }
+    &:focus-visible::-moz-range-thumb {
+        box-shadow: 0 0 0 var(--#{$prefix}-focus-ring-width)
+            var(--#{$prefix}-focus-ring-color);
+    }
+
+    // Disabled State
     &:disabled {
         pointer-events: none;
-
+        cursor: not-allowed;
         &::-webkit-slider-thumb {
-            background-color: #adb5bd;
+            background-color: var(--#{$prefix}-disabled-thumb-bg);
+            transform: scale(1);
         }
-
         &::-moz-range-thumb {
-            background-color: #adb5bd;
+            background-color: var(--#{$prefix}-disabled-thumb-bg);
+            transform: scale(1);
         }
+        &::-webkit-slider-runnable-track {
+            background: var(--#{$prefix}-disabled-track-bg);
+        }
+        &::-moz-range-track {
+            background: var(--#{$prefix}-disabled-track-bg);
+        }
+    }
+}
+
+// =============================================================================
+// --- 25+ NEW VARIANTS ---
+// =============================================================================
+
+// --- Sizing Variants (4) ---
+.#{$prefix}--xs {
+    --#{$prefix}-track-height: 0.125rem;
+    --#{$prefix}-thumb-size: 0.75rem;
+}
+.#{$prefix}--sm {
+    --#{$prefix}-track-height: 0.25rem;
+    --#{$prefix}-thumb-size: 1rem;
+}
+.#{$prefix}--lg {
+    --#{$prefix}-track-height: 0.75rem;
+    --#{$prefix}-thumb-size: 1.5rem;
+}
+.#{$prefix}--xl {
+    --#{$prefix}-track-height: 1rem;
+    --#{$prefix}-thumb-size: 2rem;
+}
+
+// --- Color Variants (5) ---
+.#{$prefix}--success {
+    --#{$prefix}-thumb-bg: #16a34a;
+    --#{$prefix}-progress-bg: #16a34a;
+    --#{$prefix}-focus-ring-color: rgba(22, 163, 74, 0.2);
+}
+.#{$prefix}--danger {
+    --#{$prefix}-thumb-bg: #dc2626;
+    --#{$prefix}-progress-bg: #dc2626;
+    --#{$prefix}-focus-ring-color: rgba(220, 38, 38, 0.2);
+}
+.#{$prefix}--warning {
+    --#{$prefix}-thumb-bg: #f97316;
+    --#{$prefix}-progress-bg: #f97316;
+    --#{$prefix}-focus-ring-color: rgba(249, 115, 22, 0.2);
+}
+.#{$prefix}--info {
+    --#{$prefix}-thumb-bg: #0ea5e9;
+    --#{$prefix}-progress-bg: #0ea5e9;
+    --#{$prefix}-focus-ring-color: rgba(14, 165, 233, 0.2);
+}
+.#{$prefix}--dark {
+    --#{$prefix}-thumb-bg: #111827;
+    --#{$prefix}-progress-bg: #111827;
+    --#{$prefix}-focus-ring-color: rgba(17, 24, 39, 0.2);
+}
+
+// --- Thumb Style Variants (6) ---
+.#{$prefix}--thumb-square {
+    --#{$prefix}-thumb-radius: 0.25rem;
+}
+.#{$prefix}--thumb-diamond {
+    --#{$prefix}-thumb-radius: 0;
+    transform: rotate(45deg);
+}
+.#{$prefix}--thumb-border {
+    &::-webkit-slider-thumb {
+        border: 2px solid #fff;
+    }
+    &::-moz-range-thumb {
+        border: 2px solid #fff;
+    }
+}
+.#{$prefix}--thumb-shadow {
+    &::-webkit-slider-thumb {
+        box-shadow:
+            0 1px 3px 0 rgba(0, 0, 0, 0.1),
+            0 1px 2px -1px rgba(0, 0, 0, 0.1);
+    }
+    &::-moz-range-thumb {
+        box-shadow:
+            0 1px 3px 0 rgba(0, 0, 0, 0.1),
+            0 1px 2px -1px rgba(0, 0, 0, 0.1);
+    }
+}
+.#{$prefix}--thumb-hidden {
+    --#{$prefix}-thumb-size: 0;
+    &::-webkit-slider-thumb {
+        height: 0;
+        width: 0;
+    }
+    &::-moz-range-thumb {
+        height: 0;
+        width: 0;
+    }
+}
+.#{$prefix}--thumb-pop-off {
+    &::-webkit-slider-thumb,
+    &::-moz-range-thumb {
+        &:hover,
+        &:active {
+            transform: scale(1);
+        }
+    }
+}
+
+// --- Track Style Variants (6) ---
+.#{$prefix}--track-square {
+    --#{$prefix}-track-radius: 0.25rem;
+}
+.#{$prefix}--track-inset {
+    &::-webkit-slider-runnable-track,
+    &::-moz-range-track {
+        box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+}
+.#{$prefix}--track-gradient {
+    --#{$prefix}-progress-bg: linear-gradient(to right, #3b82f6, #9333ea);
+}
+.#{$prefix}--no-progress {
+    &::-webkit-slider-runnable-track,
+    &::-moz-range-track {
+        background: var(--#{$prefix}-track-bg);
+    }
+}
+.#{$prefix}--progress-hidden {
+    --#{$prefix}-progress-bg: transparent;
+}
+.#{$prefix}--track-border {
+    &::-webkit-slider-runnable-track,
+    &::-moz-range-track {
+        border: 1px solid #ced4da;
+    }
+}
+
+// --- Behavior & Orientation Variants (4) ---
+.#{$prefix}--no-transition {
+    --#{$prefix}-transition: none;
+}
+.#{$prefix}--vertical {
+    appearance: slider-vertical;
+    width: var(--#{$prefix}-thumb-size);
+    height: 10rem; // Example height
+}
+.#{$prefix}--disabled-filled:disabled {
+    &::-webkit-slider-runnable-track,
+    &::-moz-range-track {
+        background: var(--#{$prefix}-disabled-track-bg);
+    }
+}
+.#{$prefix}--focus-ring-inset:focus-visible {
+    &::-webkit-slider-thumb,
+    &::-moz-range-thumb {
+        box-shadow: inset 0 0 0 var(--#{$prefix}-focus-ring-width)
+            var(--#{$prefix}-focus-ring-color);
+    }
+}
+
+// --- Dark Mode ---
+.dark .#{$prefix} {
+    --#{$prefix}-track-bg: var(--#{$prefix}-dark-track-bg);
+    --#{$prefix}-thumb-bg: var(--#{$prefix}-dark-thumb-bg);
+    --#{$prefix}-progress-bg: var(--#{$prefix}-dark-progress-bg);
+    --#{$prefix}-disabled-thumb-bg: var(--#{$prefix}-dark-disabled-thumb-bg);
+    --#{$prefix}-disabled-track-bg: var(--#{$prefix}-dark-disabled-track-bg);
+}
+
+// --- Reduced Motion ---
+@media (prefers-reduced-motion: reduce) {
+    .#{$prefix} {
+        --#{$prefix}-transition: none;
     }
 }

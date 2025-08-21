@@ -1,720 +1,241 @@
-/* Inline form */
-.form-inline,
-.form-inline .form-group {
+@use "sass:map";
+@use "sass:string"; // 1. IMPORT the string module
+
+$prefix: "form-inline" !default;
+
+// --- Expanded Configuration Map ---
+$config: (
+    // Spacing
+    "gap-x": 1rem,
+    "gap-y": 0.5rem,
+    "gap-xs": 0.25rem,
+    "gap-sm": 0.5rem,
+    "gap-lg": 1.5rem,
+    "gap-xl": 2rem,
+
+    // Breakpoints for responsive variants
+    "breakpoint-sm": "576px",
+    "breakpoint-md": "768px",
+    "breakpoint-lg": "992px",
+    "breakpoint-xl": "1200px",
+
+    // Visuals
+    "divider-color": #dee2e6,
+    "dark-divider-color": #495057,
+    "panel-bg": #ffffff,
+    "panel-border-color": #dee2e6,
+    "dark-panel-bg": #374151,
+    "dark-panel-border-color": #495057
+) !default;
+
+// --- Base Component ---
+.#{$prefix} {
+    // Generate CSS Custom Properties from the config map
+    @each $key, $value in $config {
+        --#{$prefix}-#{$key}: #{$value};
+    }
+
     display: flex;
     flex-flow: row wrap;
     align-items: center;
-}
+    gap: var(--#{$prefix}-gap-y) var(--#{$prefix}-gap-x);
 
-.form-inline .form-group {
-    width: 100%;
-}
-
-.form-inline > .form-control,
-.form-inline > .input-group,
-.form-inline .form-group > .form-control,
-.form-inline .form-group > .input-group {
-    position: relative;
-    flex: 1 1 0%;
-    min-width: 0;
-}
-
-.form-inline > label,
-.form-inline > .custom-control,
-.form-inline > .form-text,
-.form-inline > .invalid-feedback,
-.form-inline .form-group > label,
-.form-inline .form-group > .custom-control,
-.form-inline .form-group > .form-text,
-.form-inline .form-group > .invalid-feedback {
-    display: flex;
-    align-items: center;
-    min-width: 0;
-}
-
-.form-inline > label,
-.form-inline > .form-text,
-.form-inline > .invalid-feedback,
-.form-inline .form-group > label,
-.form-inline .form-group > .form-text,
-.form-inline .form-group > .invalid-feedback {
-    margin: 0;
-    padding: 0;
-    border: none;
-    white-space: nowrap;
-}
-
-.form-inline > .form-control:not(:last-child) {
-    margin-right: 1rem;
-}
-
-.form-inline > .input-group:not(:last-child) {
-    margin-right: 1rem;
-}
-
-.form-inline > label:not(:last-child) {
-    margin-right: 1rem;
-}
-
-.form-inline > .custom-control {
-    margin-right: 1rem;
-}
-
-.form-inline > .btn:not(:last-child) {
-    margin-right: 1rem;
-}
-
-.form-inline > a.btn:not(:last-child) {
-    margin-right: 1rem;
-}
-
-.form-inline > .form-text:not(:last-child) {
-    margin-right: 1rem;
-}
-
-.form-inline > .invalid-feedback:not(:last-child) {
-    margin-right: 1rem;
-}
-
-.form-inline .form-group > .form-control:not(:last-child) {
-    margin-right: 1rem;
-}
-
-.form-inline .form-group > .input-group:not(:last-child) {
-    margin-right: 1rem;
-}
-
-.form-inline .form-group > label:not(:last-child) {
-    margin-right: 1rem;
-}
-
-.form-inline .form-group > .custom-control {
-    margin-right: 1rem;
-}
-
-.form-inline .form-group > .btn:not(:last-child) {
-    margin-right: 1rem;
-}
-
-.form-inline .form-group > a.btn:not(:last-child) {
-    margin-right: 1rem;
-}
-
-.form-inline .form-group > .form-text:not(:last-child) {
-    margin-right: 1rem;
-}
-
-.form-inline .form-group > .invalid-feedback:not(:last-child) {
-    margin-right: 1rem;
-}
-@media (min-width: 640px) {
-    .form-inline-sm,
-    .form-inline-sm .form-group {
-        display: flex;
-        flex-flow: row wrap;
-        align-items: center;
+    // Default behavior for direct descendant form elements
+    > .form-control,
+    > .form-select,
+    > .btn,
+    > .input-group {
+        flex: 1 1 auto;
+        width: auto; // Allow inputs to shrink or grow as needed
     }
 
-    .form-inline-sm .form-group {
+    > .form-check,
+    > label {
+        width: auto; // Prevent checkboxes and labels from taking full width
+        flex-shrink: 0; // Prevent labels from shrinking
+    }
+}
+
+// =============================================================================
+// --- EXPANDED VARIANTS (25+) ---
+// =============================================================================
+
+// --- Spacing Variants (8) ---
+.#{$prefix}--no-gap {
+    --#{$prefix}-gap-x: 0;
+    --#{$prefix}-gap-y: 0;
+}
+.#{$prefix}--gap-xs {
+    --#{$prefix}-gap-x: var(--#{$prefix}-gap-xs);
+    --#{$prefix}-gap-y: calc(var(--#{$prefix}-gap-xs) / 2);
+}
+.#{$prefix}--gap-sm {
+    --#{$prefix}-gap-x: var(--#{$prefix}-gap-sm);
+    --#{$prefix}-gap-y: calc(var(--#{$prefix}-gap-sm) / 2);
+}
+.#{$prefix}--gap-lg {
+    --#{$prefix}-gap-x: var(--#{$prefix}-gap-lg);
+    --#{$prefix}-gap-y: calc(var(--#{$prefix}-gap-lg) / 2);
+}
+.#{$prefix}--gap-xl {
+    --#{$prefix}-gap-x: var(--#{$prefix}-gap-xl);
+    --#{$prefix}-gap-y: calc(var(--#{$prefix}-gap-xl) / 2);
+}
+.#{$prefix}--gap-x-0 {
+    --#{$prefix}-gap-x: 0;
+}
+.#{$prefix}--gap-y-0 {
+    --#{$prefix}-gap-y: 0;
+}
+.#{$prefix}--auto-width > * {
+    flex: 0 1 auto;
+} // Elements only take up their content's width
+
+// --- Alignment Variants (7) ---
+.#{$prefix}--start {
+    justify-content: flex-start;
+}
+.#{$prefix}--end {
+    justify-content: flex-end;
+}
+.#{$prefix}--center {
+    justify-content: center;
+}
+.#{$prefix}--between {
+    justify-content: space-between;
+}
+.#{$prefix}--align-start {
+    align-items: flex-start;
+}
+.#{$prefix}--align-end {
+    align-items: flex-end;
+}
+.#{$prefix}--align-stretch {
+    align-items: stretch;
+}
+
+// --- Layout & Wrapping Variants (2) ---
+.#{$prefix}--no-wrap {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+.#{$prefix}--full-width > * {
+    flex-basis: 100%;
+}
+
+// --- Structural & Grouping Variants (2) ---
+// Groups child elements together like a button group
+.#{$prefix}--attached {
+    gap: 0;
+    > .form-control,
+    > .form-select,
+    > .btn,
+    > .input-group {
+        border-radius: 0;
+        &:not(:first-child) {
+            margin-left: calc(var(--form-control-border-width, 1px) * -1);
+        }
+        &:focus-visible {
+            z-index: 1;
+        }
+    }
+    > :first-child {
+        border-top-left-radius: var(--form-control-border-radius, 0.375rem);
+        border-bottom-left-radius: var(--form-control-border-radius, 0.375rem);
+    }
+    > :last-child {
+        border-top-right-radius: var(--form-control-border-radius, 0.375rem);
+        border-bottom-right-radius: var(--form-control-border-radius, 0.375rem);
+    }
+}
+
+// --- Visual Style Variants (4) ---
+// Adds horizontal dividers between elements
+.#{$prefix}--h-divided > :not(:last-child) {
+    border-right: 1px solid var(--#{$prefix}-divider-color);
+    padding-right: var(--#{$prefix}-gap-x);
+}
+// Adds vertical dividers (for stacked layouts)
+.#{$prefix}--v-divided > :not(:last-child) {
+    border-bottom: 1px solid var(--#{$prefix}-divider-color);
+    padding-bottom: var(--#{$prefix}-gap-y);
+}
+// Makes the inline form look like a panel
+.#{$prefix}--panel {
+    background-color: var(--#{$prefix}-panel-bg);
+    border: 1px solid var(--#{$prefix}-panel-border-color);
+    padding: var(--#{$prefix}-gap-lg);
+    border-radius: 0.5rem;
+}
+// Dashed style for dividers
+.#{$prefix}--divided-dashed {
+    border-style: dashed;
+}
+
+// --- Responsive Stacking (Mobile-First Approach) ---
+// Stacks elements by default and becomes inline at the specified breakpoint
+.#{$prefix}--stacked {
+    flex-direction: column;
+    align-items: stretch;
+
+    > .form-control,
+    > .form-select,
+    > .btn,
+    > .input-group,
+    > .form-check {
         width: 100%;
     }
-
-    .form-inline-sm > .form-control,
-    .form-inline-sm > .input-group,
-    .form-inline-sm .form-group > .form-control,
-    .form-inline-sm .form-group > .input-group {
-        position: relative;
-        flex: 1 1 0%;
-        min-width: 0;
-    }
-
-    .form-inline-sm > label,
-    .form-inline-sm > .custom-control,
-    .form-inline-sm > .form-text,
-    .form-inline-sm > .invalid-feedback,
-    .form-inline-sm .form-group > label,
-    .form-inline-sm .form-group > .custom-control,
-    .form-inline-sm .form-group > .form-text,
-    .form-inline-sm .form-group > .invalid-feedback {
-        display: flex;
+}
+@media (min-width: map.get($config, "breakpoint-sm")) {
+    .#{$prefix}--stacked-sm {
+        flex-direction: row;
         align-items: center;
-        min-width: 0;
+        > * {
+            width: auto;
+        }
     }
-
-    .form-inline-sm > label,
-    .form-inline-sm > .form-text,
-    .form-inline-sm > .invalid-feedback,
-    .form-inline-sm .form-group > label,
-    .form-inline-sm .form-group > .form-text,
-    .form-inline-sm .form-group > .invalid-feedback {
-        margin: 0;
-        padding: 0;
-        border: none;
-        white-space: nowrap;
-    }
-
-    .form-inline-sm > .form-control:not(:last-child) {
-        margin-right: 1rem;
-    }
-
-    .form-inline-sm > .input-group:not(:last-child) {
-        margin-right: 1rem;
-    }
-
-    .form-inline-sm > label:not(:last-child) {
-        margin-right: 1rem;
-    }
-
-    .form-inline-sm > .custom-control {
-        margin-right: 1rem;
-    }
-
-    .form-inline-sm > .btn:not(:last-child) {
-        margin-right: 1rem;
-    }
-
-    .form-inline-sm > a.btn:not(:last-child) {
-        margin-right: 1rem;
-    }
-
-    .form-inline-sm > .form-text:not(:last-child) {
-        margin-right: 1rem;
-    }
-
-    .form-inline-sm > .invalid-feedback:not(:last-child) {
-        margin-right: 1rem;
-    }
-
-    .form-inline-sm .form-group > .form-control:not(:last-child) {
-        margin-right: 1rem;
-    }
-
-    .form-inline-sm .form-group > .input-group:not(:last-child) {
-        margin-right: 1rem;
-    }
-
-    .form-inline-sm .form-group > label:not(:last-child) {
-        margin-right: 1rem;
-    }
-
-    .form-inline-sm .form-group > .custom-control {
-        margin-right: 1rem;
-    }
-
-    .form-inline-sm .form-group > .btn:not(:last-child) {
-        margin-right: 1rem;
-    }
-
-    .form-inline-sm .form-group > a.btn:not(:last-child) {
-        margin-right: 1rem;
-    }
-
-    .form-inline-sm .form-group > .form-text:not(:last-child) {
-        margin-right: 1rem;
-    }
-
-    .form-inline-sm .form-group > .invalid-feedback:not(:last-child) {
-        margin-right: 1rem;
+}
+@media (min-width: map.get($config, "breakpoint-md")) {
+    .#{$prefix}--stacked-md {
+        flex-direction: row;
+        align-items: center;
+        > * {
+            width: auto;
+        }
     }
 }
 
-@media (max-width: 640px) {
-    .form-inline-sm > .form-control:not(:last-child) {
-        margin-bottom: 2rem;
-    }
+// --- Advanced Responsive Grid System ---
+// Use this for complex, multi-column layouts.
+.#{$prefix}--grid {
+    display: grid;
+    --#{$prefix}-cols: 1; // Default to a single column
+    grid-template-columns: repeat(var(--#{$prefix}-cols), minmax(0, 1fr));
 
-    .form-inline-sm > .input-group:not(:last-child) {
-        margin-bottom: 2rem;
-    }
-
-    .form-inline-sm > .custom-control {
-        margin-bottom: 2rem;
-    }
-
-    .form-inline-sm > .btn:not(:last-child) {
-        margin-bottom: 2rem;
-    }
-
-    .form-inline-sm > a.btn:not(:last-child) {
-        margin-bottom: 2rem;
-    }
-
-    .form-inline-sm .form-group > .form-control:not(:last-child) {
-        margin-bottom: 2rem;
-    }
-
-    .form-inline-sm .form-group > .input-group:not(:last-child) {
-        margin-bottom: 2rem;
-    }
-
-    .form-inline-sm .form-group > .custom-control {
-        margin-bottom: 2rem;
-    }
-
-    .form-inline-sm .form-group > .btn:not(:last-child) {
-        margin-bottom: 2rem;
-    }
-
-    .form-inline-sm .form-group > a.btn:not(:last-child) {
-        margin-bottom: 2rem;
+    // Responsive column variants
+    @each $bp, $width in $config {
+        // 2. FIX: Use string.slice with 1-based indexing
+        @if string.slice($bp, 1, 10) == "breakpoint" {
+            $bp-name: string.slice($bp, 12);
+            @media (min-width: #{$width}) {
+                @for $i from 1 through 6 {
+                    &.#{$prefix}--cols-#{$bp-name}-#{$i} {
+                        --#{$prefix}-cols: #{$i};
+                    }
+                }
+            }
+        }
     }
 }
 
-/* Inline form for medium screens and up (> 768px) */
-@media (min-width: 768px) {
-    .form-inline-md,
-    .form-inline-md .form-group {
-        display: flex;
-        flex-flow: row wrap;
-        align-items: center;
-    }
-
-    .form-inline-md .form-group {
-        width: 100%;
-    }
-
-    .form-inline-md > .form-control,
-    .form-inline-md > .input-group,
-    .form-inline-md .form-group > .form-control,
-    .form-inline-md .form-group > .input-group {
-        position: relative;
-        flex: 1 1 0%;
-        min-width: 0;
-    }
-
-    .form-inline-md > label,
-    .form-inline-md > .custom-control,
-    .form-inline-md > .form-text,
-    .form-inline-md > .invalid-feedback,
-    .form-inline-md .form-group > label,
-    .form-inline-md .form-group > .custom-control,
-    .form-inline-md .form-group > .form-text,
-    .form-inline-md .form-group > .invalid-feedback {
-        display: flex;
-        align-items: center;
-        min-width: 0;
-    }
-
-    .form-inline-md > label,
-    .form-inline-md > .form-text,
-    .form-inline-md > .invalid-feedback,
-    .form-inline-md .form-group > label,
-    .form-inline-md .form-group > .form-text,
-    .form-inline-md .form-group > .invalid-feedback {
-        margin: 0;
-        padding: 0;
-        border: none;
-        white-space: nowrap;
-    }
-
-    .form-inline-md > .form-control:not(:last-child) {
-        margin-right: 1rem;
-    }
-
-    .form-inline-md > .input-group:not(:last-child) {
-        margin-right: 1rem;
-    }
-
-    .form-inline-md > label:not(:last-child) {
-        margin-right: 1rem;
-    }
-
-    .form-inline-md > .custom-control {
-        margin-right: 1rem;
-    }
-
-    .form-inline-md > .btn:not(:last-child) {
-        margin-right: 1rem;
-    }
-
-    .form-inline-md > a.btn:not(:last-child) {
-        margin-right: 1rem;
-    }
-
-    .form-inline-md > .form-text:not(:last-child) {
-        margin-right: 1rem;
-    }
-
-    .form-inline-md > .invalid-feedback:not(:last-child) {
-        margin-right: 1rem;
-    }
-
-    .form-inline-md .form-group > .form-control:not(:last-child) {
-        margin-right: 1rem;
-    }
-
-    .form-inline-md .form-group > .input-group:not(:last-child) {
-        margin-right: 1rem;
-    }
-
-    .form-inline-md .form-group > label:not(:last-child) {
-        margin-right: 1rem;
-    }
-
-    .form-inline-md .form-group > .custom-control {
-        margin-right: 1rem;
-    }
-
-    .form-inline-md .form-group > .btn:not(:last-child) {
-        margin-right: 1rem;
-    }
-
-    .form-inline-md .form-group > a.btn:not(:last-child) {
-        margin-right: 1rem;
-    }
-
-    .form-inline-md .form-group > .form-text:not(:last-child) {
-        margin-right: 1rem;
-    }
-
-    .form-inline-md .form-group > .invalid-feedback:not(:last-child) {
-        margin-right: 1rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .form-inline-md > .form-control:not(:last-child) {
-        margin-bottom: 2rem;
-    }
-
-    .form-inline-md > .input-group:not(:last-child) {
-        margin-bottom: 2rem;
-    }
-
-    .form-inline-md > .custom-control {
-        margin-bottom: 2rem;
-    }
-
-    .form-inline-md > .btn:not(:last-child) {
-        margin-bottom: 2rem;
-    }
-
-    .form-inline-md > a.btn:not(:last-child) {
-        margin-bottom: 2rem;
-    }
-
-    .form-inline-md .form-group > .form-control:not(:last-child) {
-        margin-bottom: 2rem;
-    }
-
-    .form-inline-md .form-group > .input-group:not(:last-child) {
-        margin-bottom: 2rem;
-    }
-
-    .form-inline-md .form-group > .custom-control {
-        margin-bottom: 2rem;
-    }
-
-    .form-inline-md .form-group > .btn:not(:last-child) {
-        margin-bottom: 2rem;
-    }
-
-    .form-inline-md .form-group > a.btn:not(:last-child) {
-        margin-bottom: 2rem;
-    }
-}
-@media (min-width: 1024px) {
-    .form-inline-lg,
-    .form-inline-lg .form-group {
-        display: flex;
-        flex-flow: row wrap;
-        align-items: center;
-    }
-
-    .form-inline-lg .form-group {
-        width: 100%;
-    }
-
-    .form-inline-lg > .form-control,
-    .form-inline-lg > .input-group,
-    .form-inline-lg .form-group > .form-control,
-    .form-inline-lg .form-group > .input-group {
-        position: relative;
-        flex: 1 1 0%;
-        min-width: 0;
-    }
-
-    .form-inline-lg > label,
-    .form-inline-lg > .custom-control,
-    .form-inline-lg > .form-text,
-    .form-inline-lg > .invalid-feedback,
-    .form-inline-lg .form-group > label,
-    .form-inline-lg .form-group > .custom-control,
-    .form-inline-lg .form-group > .form-text,
-    .form-inline-lg .form-group > .invalid-feedback {
-        display: flex;
-        align-items: center;
-        min-width: 0;
-    }
-
-    .form-inline-lg > label,
-    .form-inline-lg > .form-text,
-    .form-inline-lg > .invalid-feedback,
-    .form-inline-lg .form-group > label,
-    .form-inline-lg .form-group > .form-text,
-    .form-inline-lg .form-group > .invalid-feedback {
-        margin: 0;
-        padding: 0;
-        border: none;
-        white-space: nowrap;
-    }
-
-    .form-inline-lg > .form-control:not(:last-child) {
-        margin-right: 1rem;
-    }
-
-    .form-inline-lg > .input-group:not(:last-child) {
-        margin-right: 1rem;
-    }
-
-    .form-inline-lg > label:not(:last-child) {
-        margin-right: 1rem;
-    }
-
-    .form-inline-lg > .custom-control {
-        margin-right: 1rem;
-    }
-
-    .form-inline-lg > .btn:not(:last-child) {
-        margin-right: 1rem;
-    }
-
-    .form-inline-lg > a.btn:not(:last-child) {
-        margin-right: 1rem;
-    }
-
-    .form-inline-lg > .form-text:not(:last-child) {
-        margin-right: 1rem;
-    }
-
-    .form-inline-lg > .invalid-feedback:not(:last-child) {
-        margin-right: 1rem;
-    }
-
-    .form-inline-lg .form-group > .form-control:not(:last-child) {
-        margin-right: 1rem;
-    }
-
-    .form-inline-lg .form-group > .input-group:not(:last-child) {
-        margin-right: 1rem;
-    }
-
-    .form-inline-lg .form-group > label:not(:last-child) {
-        margin-right: 1rem;
-    }
-
-    .form-inline-lg .form-group > .custom-control {
-        margin-right: 1rem;
-    }
-
-    .form-inline-lg .form-group > .btn:not(:last-child) {
-        margin-right: 1rem;
-    }
-
-    .form-inline-lg .form-group > a.btn:not(:last-child) {
-        margin-right: 1rem;
-    }
-
-    .form-inline-lg .form-group > .form-text:not(:last-child) {
-        margin-right: 1rem;
-    }
-
-    .form-inline-lg .form-group > .invalid-feedback:not(:last-child) {
-        margin-right: 1rem;
-    }
-}
-
-@media (max-width: 1024px) {
-    .form-inline-lg > .form-control:not(:last-child) {
-        margin-bottom: 2rem;
-    }
-
-    .form-inline-lg > .input-group:not(:last-child) {
-        margin-bottom: 2rem;
-    }
-
-    .form-inline-lg > .custom-control {
-        margin-bottom: 2rem;
-    }
-
-    .form-inline-lg > .btn:not(:last-child) {
-        margin-bottom: 2rem;
-    }
-
-    .form-inline-lg > a.btn:not(:last-child) {
-        margin-bottom: 2rem;
-    }
-
-    .form-inline-lg .form-group > .form-control:not(:last-child) {
-        margin-bottom: 2rem;
-    }
-
-    .form-inline-lg .form-group > .input-group:not(:last-child) {
-        margin-bottom: 2rem;
-    }
-
-    .form-inline-lg .form-group > .custom-control {
-        margin-bottom: 2rem;
-    }
-
-    .form-inline-lg .form-group > .btn:not(:last-child) {
-        margin-bottom: 2rem;
-    }
-
-    .form-inline-lg .form-group > a.btn:not(:last-child) {
-        margin-bottom: 2rem;
-    }
-}
-
-@media (min-width: 1201px) {
-    .form-inline-xl,
-    .form-inline-xl .form-group {
-        display: flex;
-        flex-flow: row wrap;
-        align-items: center;
-    }
-
-    .form-inline-xl .form-group {
-        width: 100%;
-    }
-
-    .form-inline-xl > .form-control,
-    .form-inline-xl > .input-group,
-    .form-inline-xl .form-group > .form-control,
-    .form-inline-xl .form-group > .input-group {
-        position: relative;
-        flex: 1 1 0%;
-        min-width: 0;
-    }
-
-    .form-inline-xl > label,
-    .form-inline-xl > .custom-control,
-    .form-inline-xl > .form-text,
-    .form-inline-xl > .invalid-feedback,
-    .form-inline-xl .form-group > label,
-    .form-inline-xl .form-group > .custom-control,
-    .form-inline-xl .form-group > .form-text,
-    .form-inline-xl .form-group > .invalid-feedback {
-        display: flex;
-        align-items: center;
-        min-width: 0;
-    }
-
-    .form-inline-xl > label,
-    .form-inline-xl > .form-text,
-    .form-inline-xl > .invalid-feedback,
-    .form-inline-xl .form-group > label,
-    .form-inline-xl .form-group > .form-text,
-    .form-inline-xl .form-group > .invalid-feedback {
-        margin: 0;
-        padding: 0;
-        border: none;
-        white-space: nowrap;
-    }
-
-    .form-inline-xl > .form-control:not(:last-child) {
-        margin-right: 1rem;
-    }
-
-    .form-inline-xl > .input-group:not(:last-child) {
-        margin-right: 1rem;
-    }
-
-    .form-inline-xl > label:not(:last-child) {
-        margin-right: 1rem;
-    }
-
-    .form-inline-xl > .custom-control {
-        margin-right: 1rem;
-    }
-
-    .form-inline-xl > .btn:not(:last-child) {
-        margin-right: 1rem;
-    }
-
-    .form-inline-xl > a.btn:not(:last-child) {
-        margin-right: 1rem;
-    }
-
-    .form-inline-xl > .form-text:not(:last-child) {
-        margin-right: 1rem;
-    }
-
-    .form-inline-xl > .invalid-feedback:not(:last-child) {
-        margin-right: 1rem;
-    }
-
-    .form-inline-xl .form-group > .form-control:not(:last-child) {
-        margin-right: 1rem;
-    }
-
-    .form-inline-xl .form-group > .input-group:not(:last-child) {
-        margin-right: 1rem;
-    }
-
-    .form-inline-xl .form-group > label:not(:last-child) {
-        margin-right: 1rem;
-    }
-
-    .form-inline-xl .form-group > .custom-control {
-        margin-right: 1rem;
-    }
-
-    .form-inline-xl .form-group > .btn:not(:last-child) {
-        margin-right: 1rem;
-    }
-
-    .form-inline-xl .form-group > a.btn:not(:last-child) {
-        margin-right: 1rem;
-    }
-
-    .form-inline-xl .form-group > .form-text:not(:last-child) {
-        margin-right: 1rem;
-    }
-
-    .form-inline-xl .form-group > .invalid-feedback:not(:last-child) {
-        margin-right: 1rem;
-    }
-}
-
-@media (max-width: 1280px) {
-    .form-inline-xl > .form-control:not(:last-child) {
-        margin-bottom: 2rem;
-    }
-
-    .form-inline-xl > .input-group:not(:last-child) {
-        margin-bottom: 2rem;
-    }
-
-    .form-inline-xl > .custom-control {
-        margin-bottom: 2rem;
-    }
-
-    .form-inline-xl > .btn:not(:last-child) {
-        margin-bottom: 2rem;
-    }
-
-    .form-inline-xl > a.btn:not(:last-child) {
-        margin-bottom: 2rem;
-    }
-
-    .form-inline-xl .form-group > .form-control:not(:last-child) {
-        margin-bottom: 2rem;
-    }
-
-    .form-inline-xl .form-group > .input-group:not(:last-child) {
-        margin-bottom: 2rem;
-    }
-
-    .form-inline-xl .form-group > .custom-control {
-        margin-bottom: 2rem;
-    }
-
-    .form-inline-xl .form-group > .btn:not(:last-child) {
-        margin-bottom: 2rem;
-    }
-
-    .form-inline-xl .form-group > a.btn:not(:last-child) {
-        margin-bottom: 2rem;
+// --- Dark Mode Theming ---
+.dark .#{$prefix} {
+    &--h-divided > :not(:last-child),
+    &--v-divided > :not(:last-child) {
+        border-color: var(--#{$prefix}-dark-divider-color);
+    }
+    &--panel {
+        background-color: var(--#{$prefix}-dark-panel-bg);
+        border-color: var(--#{$prefix}-dark-panel-border-color);
     }
 }

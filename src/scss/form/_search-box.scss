@@ -1,56 +1,300 @@
-.search-input {
-    display: flex;
-    flex-direction: row;
-    padding: 0.5rem;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #212529;
-    background-color: #fff;
-    border: 1px solid #ced4da;
-    border-radius: 0.25rem;
+@use "sass:map";
 
-    input {
+$prefix: "search-box" !default;
+
+// --- Configuration Map ---
+$config: (
+    // Box Model & Sizing
+    "height": 2.5rem,
+    "padding-x": 0.75rem,
+    "border-width": 1px,
+    "border-radius": 0.375rem,
+
+    // Typography
+    "font-size": 1rem,
+    "line-height": 1.5,
+    "transition": "border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out",
+
+    // Colors (Light Theme)
+    "bg": #ffffff,
+    "fg": #111827,
+    "border-color": #d1d5db,
+    "placeholder-color": #9ca3af,
+    "icon-color": #6b7280,
+
+    // States (Light Theme)
+    "focus-border-color": #3b82f6,
+    "focus-ring-color": rgba(59, 130, 246, 0.25),
+    "focus-ring-width": 3px,
+    "disabled-bg": #f3f4f6,
+    "disabled-opacity": 0.7,
+
+    // Dark Theme
+    "dark-bg": #1f2937,
+    "dark-fg": #d1d5db,
+    "dark-border-color": #4b5563,
+    "dark-placeholder-color": #9ca3af,
+    "dark-icon-color": #9ca3af,
+    "dark-disabled-bg": #374151,
+
+    // Icon
+    "icon-size": "1.25rem",
+    "icon-wrapper-size": "2.5rem"
+) !default;
+
+// --- Base Component ---
+.#{$prefix} {
+    @each $key, $value in $config {
+        --#{$prefix}-#{$key}: #{$value};
+    }
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: var(--#{$prefix}-height);
+    font-size: var(--#{$prefix}-font-size);
+    color: var(--#{$prefix}-fg);
+    background-color: var(--#{$prefix}-bg);
+    border: var(--#{$prefix}-border-width) solid var(--#{$prefix}-border-color);
+    border-radius: var(--#{$prefix}-border-radius);
+    transition: var(--#{$prefix}-transition);
+
+    &:focus-within {
+        border-color: var(--#{$prefix}-focus-border-color);
+        box-shadow: 0 0 0 var(--#{$prefix}-focus-ring-width)
+            var(--#{$prefix}-focus-ring-color);
+    }
+
+    &__icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: var(--#{$prefix}-icon-wrapper-size);
+        color: var(--#{$prefix}-icon-color);
+        pointer-events: none; // Let clicks pass through to the input
+
+        > svg {
+            width: var(--#{$prefix}-icon-size);
+            height: var(--#{$prefix}-icon-size);
+        }
+    }
+
+    &__input {
+        flex: 1 1 0%;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        padding-left: var(--#{$prefix}-icon-wrapper-size);
+        padding-right: var(--#{$prefix}-padding-x);
+        font: inherit;
+        color: inherit;
+        background-color: transparent;
         border: none;
-        flex: 1;
-        text-align: right;
-        padding: 0.5rem;
+        outline: none;
+        appearance: none;
 
         &::placeholder {
-            color: #999;
+            color: var(--#{$prefix}-placeholder-color);
+            opacity: 1;
         }
     }
 
-    &.rounded {
-        border-radius: 2rem;
+    &[disabled] {
+        background-color: var(--#{$prefix}-disabled-bg);
+        opacity: var(--#{$prefix}-disabled-opacity);
+        cursor: not-allowed;
+        pointer-events: none;
     }
+}
 
-    &.with-shadow {
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+// =============================================================================
+// --- 25 NEW VARIANTS ---
+// =============================================================================
+
+// --- Sizing Variants (4) ---
+.#{$prefix}--sm {
+    --#{$prefix}-height: 2rem;
+    --#{$prefix}-font-size: 0.875rem;
+    --#{$prefix}-icon-wrapper-size: 2rem;
+    --#{$prefix}-icon-size: 1rem;
+}
+.#{$prefix}--lg {
+    --#{$prefix}-height: 3rem;
+    --#{$prefix}-font-size: 1.125rem;
+    --#{$prefix}-icon-wrapper-size: 3rem;
+    --#{$prefix}-icon-size: 1.5rem;
+}
+.#{$prefix}--xl {
+    --#{$prefix}-height: 3.5rem;
+    --#{$prefix}-font-size: 1.25rem;
+    --#{$prefix}-icon-wrapper-size: 3.5rem;
+    --#{$prefix}-icon-size: 1.75rem;
+}
+.#{$prefix}--xs {
+    --#{$prefix}-height: 1.75rem;
+    --#{$prefix}-font-size: 0.75rem;
+    --#{$prefix}-icon-wrapper-size: 1.75rem;
+    --#{$prefix}-icon-size: 0.875rem;
+}
+
+// --- Shape & Style Variants (7) ---
+.#{$prefix}--pill {
+    --#{$prefix}-border-radius: 9999px;
+}
+.#{$prefix}--square {
+    --#{$prefix}-border-radius: 0;
+}
+.#{$prefix}--underline {
+    border-width: 0 0 var(--#{$prefix}-border-width) 0;
+    border-radius: 0;
+    background-color: transparent;
+    &:focus-within {
+        box-shadow: none;
     }
+    .#{$prefix}__icon {
+        left: 0;
+        width: auto;
+        padding-left: 0.25rem;
+    }
+    .#{$prefix}__input {
+        padding-left: var(--#{$prefix}-icon-wrapper-size);
+    }
+}
+.#{$prefix}--filled {
+    --#{$prefix}-bg: #f3f4f6;
+    --#{$prefix}-border-color: #f3f4f6;
+    &:focus-within {
+        --#{$prefix}-bg: #ffffff;
+    }
+}
+.#{$prefix}--ghost {
+    background-color: transparent;
+    border-color: transparent;
+    &:focus-within,
+    &:hover {
+        border-color: var(--#{$prefix}-border-color);
+    }
+}
+.#{$prefix}--thick {
+    --#{$prefix}-border-width: 2px;
+}
+.#{$prefix}--shadow {
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
 
-    &.with-button {
-        input {
-            border-top-right-radius: 0;
-            border-bottom-right-radius: 0;
+// --- Icon Placement & Style Variants (4) ---
+.#{$prefix}--icon-end {
+    .#{$prefix}__icon {
+        left: auto;
+        right: 0;
+    }
+    .#{$prefix}__input {
+        padding-left: var(--#{$prefix}-padding-x);
+        padding-right: var(--#{$prefix}-icon-wrapper-size);
+    }
+}
+.#{$prefix}--icon-primary-on-focus:focus-within .#{$prefix}__icon {
+    color: var(--#{$prefix}-focus-border-color);
+}
+.#{$prefix}--icon-sm {
+    --#{$prefix}-icon-size: 1rem;
+}
+.#{$prefix}--icon-hidden .#{$prefix}__icon {
+    display: none;
+}
+
+// --- Button Integration Variants (4) ---
+.#{$prefix}--with-btn {
+    border-radius: 0;
+    border-top-left-radius: var(--#{$prefix}-border-radius);
+    border-bottom-left-radius: var(--#{$prefix}-border-radius);
+
+    // Assumes the button is a sibling
+    + .btn {
+        margin-left: -1px;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+}
+.#{$prefix}--with-icon-btn {
+    .#{$prefix}__input {
+        padding-right: var(--#{$prefix}-icon-wrapper-size);
+    }
+}
+.#{$prefix}__btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--#{$prefix}-icon-wrapper-size);
+    background: transparent;
+    border: none;
+    color: var(--#{$prefix}-icon-color);
+    cursor: pointer;
+    &:hover {
+        color: var(--#{$prefix}-fg);
+    }
+    > svg {
+        width: var(--#{$prefix}-icon-size);
+        height: var(--#{$prefix}-icon-size);
+    }
+}
+.#{$prefix}--btn-inside .#{$prefix}__btn {
+    // This is the default structure for an icon button inside
+}
+
+// --- Color & State Variants (6) ---
+.#{$prefix}.is-invalid {
+    --#{$prefix}-border-color: #dc2626;
+    &:focus-within {
+        --#{$prefix}-focus-border-color: #dc2626;
+        --#{$prefix}-focus-ring-color: rgba(220, 38, 38, 0.25);
+    }
+}
+.#{$prefix}.is-valid {
+    --#{$prefix}-border-color: #16a34a;
+    &:focus-within {
+        --#{$prefix}-focus-border-color: #16a34a;
+        --#{$prefix}-focus-ring-color: rgba(22, 163, 74, 0.25);
+    }
+}
+.#{$prefix}--no-ring:focus-within {
+    box-shadow: none;
+}
+.#{$prefix}--no-transition {
+    --#{$prefix}-transition: none;
+}
+.#{$prefix}--hover-shadow:hover {
+    box-shadow:
+        0 4px 6px -1px rgba(0, 0, 0, 0.1),
+        0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+.#{$prefix}--focus-pop:focus-within {
+    transform: scale(1.02);
+}
+
+// --- Dark Mode ---
+.dark .#{$prefix} {
+    --#{$prefix}-bg: var(--#{$prefix}-dark-bg);
+    --#{$prefix}-fg: var(--#{$prefix}-dark-fg);
+    --#{$prefix}-border-color: var(--#{$prefix}-dark-border-color);
+    --#{$prefix}-placeholder-color: var(--#{$prefix}-dark-placeholder-color);
+    --#{$prefix}-icon-color: var(--#{$prefix}-dark-icon-color);
+    --#{$prefix}-disabled-bg: var(--#{$prefix}-dark-disabled-bg);
+
+    &.#{$prefix}--filled {
+        --#{$prefix}-bg: #374151;
+        --#{$prefix}-border-color: #374151;
+        &:focus-within {
+            --#{$prefix}-bg: var(--#{$prefix}-dark-bg);
         }
-
-        button {
-            border: none;
-            background-color: #007bff;
-            color: #fff;
-            padding: 0.5rem 1rem;
-            border-radius: 0 0.25rem 0.25rem 0;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-
-            &:hover {
-                background-color: #0056b3;
-            }
-        }
-    }
-
-    &.colored-border {
-        border-color: #007bff;
     }
 }

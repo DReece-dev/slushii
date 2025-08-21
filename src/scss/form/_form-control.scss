@@ -1,206 +1,321 @@
-.form-control {
+@use "sass:map";
+
+$prefix: "form-control" !default;
+
+$config: (
+    // Box Model & Sizing
+    "padding-y": 0.5rem,
+    // Increased for a more modern look
+    "padding-x": 0.75rem,
+    "border-width": 1px,
+    "border-radius": 0.375rem,
+
+    // Typography
+    "font-size": 1rem,
+    "font-weight": 400,
+    "line-height": 1.5,
+    "transition": 0.2s ease-in-out,
+
+    // Base Colors (Light Theme)
+    "bg": #ffffff,
+    "fg": #111827,
+    "border-color": #d1d5db,
+    "placeholder-color": #6b7280,
+
+    // Focus State (Light Theme)
+    "focus-border-color": #3b82f6,
+    "focus-ring-color": rgba(59, 130, 246, 0.25),
+    "focus-ring-width": 3px,
+
+    // Disabled State (Light Theme)
+    "disabled-bg": #f3f4f6,
+    "disabled-fg": #6b7280,
+    "disabled-opacity": 1,
+
+    // Validation States (Light Theme)
+    "success-color": #16a34a,
+    "success-ring-color": rgba(22, 163, 74, 0.2),
+    "danger-color": #dc2626,
+    "danger-ring-color": rgba(220, 38, 38, 0.2),
+    "warning-color": #f97316,
+    "warning-ring-color": rgba(249, 115, 22, 0.2),
+    // Dark Theme
+    "dark-bg": #1f2937,
+    "dark-fg": #d1d5db,
+    "dark-border-color": #4b5563,
+    "dark-placeholder-color": #9ca3af,
+    "dark-disabled-bg": #374151,
+    "dark-disabled-fg": #9ca3af,
+    "dark-success-color": #22c55e,
+    "dark-danger-color": #ef4444,
+    "dark-warning-color": #f59e0b,
+
+    // File Input
+    "file-button-bg": #f3f4f6,
+    "file-button-fg": #111827,
+    "file-button-hover-bg": #e5e7eb
+) !default;
+
+// --- Keyframes ---
+@keyframes form-control-shake {
+    10%,
+    90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+    20%,
+    80% {
+        transform: translate3d(2px, 0, 0);
+    }
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+    40%,
+    60% {
+        transform: translate3d(4px, 0, 0);
+    }
+}
+
+// --- Base Component ---
+.#{$prefix} {
+    @each $key, $value in $config {
+        --#{$prefix}-#{$key}: #{$value};
+    }
+
     display: block;
     width: 100%;
-    padding: 0.375rem 0.75rem;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #212529;
-    background-color: #fff;
+    padding: var(--#{$prefix}-padding-y) var(--#{$prefix}-padding-x);
+    font-size: var(--#{$prefix}-font-size);
+    font-weight: var(--#{$prefix}-font-weight);
+    line-height: var(--#{$prefix}-line-height);
+    color: var(--#{$prefix}-fg);
+    background-color: var(--#{$prefix}-bg);
     background-clip: padding-box;
-    border: 1px solid #ced4da;
+    border: var(--#{$prefix}-border-width) solid var(--#{$prefix}-border-color);
     appearance: none;
-    border-radius: 0.25rem;
+    border-radius: var(--#{$prefix}-border-radius);
     transition:
-        border-color 0.15s ease-in-out,
-        box-shadow 0.15s ease-in-out;
-}
+        border-color var(--#{$prefix}-transition),
+        box-shadow var(--#{$prefix}-transition);
 
-@media (prefers-reduced-motion: reduce) {
-    .form-control {
-        transition: none;
+    &::placeholder {
+        color: var(--#{$prefix}-placeholder-color);
+        opacity: 1;
+    }
+
+    &:focus-visible {
+        color: var(--#{$prefix}-fg);
+        border-color: var(--#{$prefix}-focus-border-color);
+        outline: 0;
+        box-shadow: 0 0 0 var(--#{$prefix}-focus-ring-width)
+            var(--#{$prefix}-focus-ring-color);
+    }
+
+    &:disabled,
+    &[readonly] {
+        background-color: var(--#{$prefix}-disabled-bg);
+        color: var(--#{$prefix}-disabled-fg);
+        opacity: var(--#{$prefix}-disabled-opacity);
+        cursor: not-allowed;
+    }
+
+    &[type="file"] {
+        overflow: hidden;
+        &:not(:disabled):not([readonly]) {
+            cursor: pointer;
+        }
+    }
+
+    &::file-selector-button {
+        padding: var(--#{$prefix}-padding-y) var(--#{$prefix}-padding-x);
+        margin: calc(var(--#{$prefix}-padding-y) * -1)
+            calc(var(--#{$prefix}-padding-x) * -1);
+        margin-inline-end: var(--#{$prefix}-padding-x);
+        color: var(--#{$prefix}-file-button-fg);
+        background-color: var(--#{$prefix}-file-button-bg);
+        pointer-events: none;
+        border: none;
+        border-inline-end: var(--#{$prefix}-border-width) solid
+            var(--#{$prefix}-border-color);
+        border-radius: 0;
+        transition: background-color var(--#{$prefix}-transition);
+    }
+
+    &:hover:not(:disabled):not([readonly])::file-selector-button {
+        background-color: var(--#{$prefix}-file-button-hover-bg);
     }
 }
 
-.form-control[type="file"] {
-    overflow: hidden;
+// =============================================================================
+// --- 25 NEW VARIANTS ---
+// =============================================================================
+
+// --- Sizing Variants (2) ---
+.#{$prefix}--sm {
+    --#{$prefix}-padding-y: 0.25rem;
+    --#{$prefix}-padding-x: 0.5rem;
+    --#{$prefix}-font-size: 0.875rem;
+    --#{$prefix}-border-radius: 0.25rem;
+}
+.#{$prefix}--lg {
+    --#{$prefix}-padding-y: 0.625rem;
+    --#{$prefix}-padding-x: 1rem;
+    --#{$prefix}-font-size: 1.125rem;
+    --#{$prefix}-border-radius: 0.5rem;
 }
 
-.form-control[type="file"]:not(:disabled):not([readonly]) {
-    cursor: pointer;
+// --- Validation & State Variants (5) ---
+.#{$prefix}--success,
+.#{$prefix}[aria-invalid="false"] {
+    border-color: var(--#{$prefix}-success-color);
+    &:focus-visible {
+        border-color: var(--#{$prefix}-success-color);
+        box-shadow: 0 0 0 var(--#{$prefix}-focus-ring-width)
+            var(--#{$prefix}-success-ring-color);
+    }
+}
+.#{$prefix}--danger,
+.#{$prefix}[aria-invalid="true"] {
+    border-color: var(--#{$prefix}-danger-color);
+    &:focus-visible {
+        border-color: var(--#{$prefix}-danger-color);
+        box-shadow: 0 0 0 var(--#{$prefix}-focus-ring-width)
+            var(--#{$prefix}-danger-ring-color);
+    }
+}
+.#{$prefix}--warning {
+    border-color: var(--#{$prefix}-warning-color);
+    &:focus-visible {
+        border-color: var(--#{$prefix}-warning-color);
+        box-shadow: 0 0 0 var(--#{$prefix}-focus-ring-width)
+            var(--#{$prefix}-warning-ring-color);
+    }
+}
+.#{$prefix}--ring:focus-visible {
+    --#{$prefix}-focus-border-color: var(--#{$prefix}-border-color);
+    box-shadow:
+        0 0 0 var(--#{$prefix}-focus-ring-width)
+            var(--#{$prefix}-focus-ring-color),
+        0 0 0 calc(var(--#{$prefix}-focus-ring-width) + 1px) #3b82f6;
+}
+.#{$prefix}--shake[aria-invalid="true"] {
+    animation: form-control-shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97)
+        both;
 }
 
-.form-control:focus {
-    color: #212529;
-    background-color: #fff;
-    border-color: #86b7fe;
-    outline: 0;
-    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+// --- Style & Shape Variants (10) ---
+.#{$prefix}--pill {
+    --#{$prefix}-border-radius: 9999px;
 }
-
-.form-control::-webkit-date-and-time-value {
-    height: 1.5em;
+.#{$prefix}--flushed {
+    --#{$prefix}-border-radius: 0;
 }
-
-.form-control::-moz-placeholder {
-    color: #6c757d;
-    opacity: 1;
-}
-
-.form-control::placeholder {
-    color: #6c757d;
-    opacity: 1;
-}
-
-.form-control:disabled,
-.form-control[readonly] {
-    background-color: #e9ecef;
-    opacity: 1;
-}
-
-.form-control::file-selector-button {
-    padding: 0.375rem 0.75rem;
-    margin: -0.375rem -0.75rem;
-    margin-inline-end: 0.75rem;
-    color: #212529;
-    background-color: #e9ecef;
-    pointer-events: none;
-    border-color: inherit;
-    border-style: solid;
-    border-width: 0;
-    border-inline-end-width: 1px;
+.#{$prefix}--underline {
+    border-width: 0 0 var(--#{$prefix}-border-width) 0;
     border-radius: 0;
-    transition:
-        color 0.15s ease-in-out,
-        background-color 0.15s ease-in-out,
-        border-color 0.15s ease-in-out,
-        box-shadow 0.15s ease-in-out;
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .form-control::file-selector-button {
-        transition: none;
-    }
-}
-
-.form-control:hover:not(:disabled):not([readonly])::file-selector-button {
-    background-color: #dde0e3;
-}
-
-.form-control::-webkit-file-upload-button {
-    padding: 0.375rem 0.75rem;
-    margin: -0.375rem -0.75rem;
-    margin-inline-end: 0.75rem;
-    color: #212529;
-    background-color: #e9ecef;
-    pointer-events: none;
-    border-color: inherit;
-    border-style: solid;
-    border-width: 0;
-    border-inline-end-width: 1px;
-    border-radius: 0;
-    transition:
-        color 0.15s ease-in-out,
-        background-color 0.15s ease-in-out,
-        border-color 0.15s ease-in-out,
-        box-shadow 0.15s ease-in-out;
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .form-control::-webkit-file-upload-button {
-        -webkit-transition: none;
-        transition: none;
-    }
-}
-
-.form-control:hover:not(:disabled):not([readonly])::-webkit-file-upload-button {
-    background-color: #dde0e3;
-}
-
-.form-control-plaintext {
-    display: block;
-    width: 100%;
-    padding: 0.375rem 0;
-    margin-bottom: 0;
-    line-height: 1.5;
-    color: #212529;
+    padding-inline: 0;
     background-color: transparent;
-    border: solid transparent;
-    border-width: 1px 0;
+}
+.#{$prefix}--filled {
+    --#{$prefix}-bg: #f3f4f6;
+    --#{$prefix}-border-color: #f3f4f6;
+    &:focus-visible {
+        --#{$prefix}-bg: #ffffff;
+    }
+}
+.#{$prefix}--ghost {
+    background-color: transparent;
+    border-color: transparent;
+    &:focus-visible {
+        border-color: var(--#{$prefix}-focus-border-color);
+        background-color: var(--#{$prefix}-bg);
+    }
+    &:hover:not(:focus-visible) {
+        border-color: var(--#{$prefix}-border-color);
+    }
+}
+.#{$prefix}--thick {
+    --#{$prefix}-border-width: 2px;
+}
+.#{$prefix}--shadow {
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+.#{$prefix}--inset {
+    background-color: #e9ecef;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075);
+}
+.#{$prefix}--no-spin::-webkit-inner-spin-button,
+.#{$prefix}--no-spin::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.#{$prefix}--no-spin[type="number"] {
+    -moz-appearance: textfield;
+}
+.#{$prefix}--plaintext {
+    border-color: transparent;
+    background-color: transparent;
+    padding-inline: 0;
+    &:focus-visible {
+        box-shadow: none;
+        border-color: transparent;
+    }
 }
 
-.form-control-plaintext.form-control-sm,
-.form-control-plaintext.form-control-lg {
-    padding-right: 0;
-    padding-left: 0;
+// --- Icon & Addon Variants (4) ---
+.#{$prefix}--icon-start {
+    padding-inline-start: 2.5rem;
+}
+.#{$prefix}--icon-end {
+    padding-inline-end: 2.5rem;
+}
+.#{$prefix}--rounded-start-none {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.#{$prefix}--rounded-end-none {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
-.form-control-sm {
-    min-height: calc(1.5em + 0.5rem + 2px);
-    padding: 0.25rem 0.5rem;
-    font-size: 0.875rem;
-    border-radius: 0.2rem;
+// --- Behavior Variants (4) ---
+.#{$prefix}--no-transition {
+    --#{$prefix}-transition: none;
+}
+.#{$prefix}--focus-pop:focus-visible {
+    transform: scale(1.02);
+}
+.#{$prefix}--read-only-filled[readonly] {
+    --#{$prefix}-bg: #f8fafc;
+    border-color: var(--#{$prefix}-border-color);
+    color: var(--#{$prefix}-fg);
+    opacity: 0.8;
+}
+.#{$prefix}--hover-border:hover:not(:focus-visible):not(:disabled) {
+    border-color: var(--#{$prefix}-focus-border-color);
 }
 
-.form-control-sm::file-selector-button {
-    padding: 0.25rem 0.5rem;
-    margin: -0.25rem -0.5rem;
-    margin-inline-end: 0.5rem;
-}
+// --- Dark Mode ---
+.dark .#{$prefix} {
+    --#{$prefix}-bg: var(--#{$prefix}-dark-bg);
+    --#{$prefix}-fg: var(--#{$prefix}-dark-fg);
+    --#{$prefix}-border-color: var(--#{$prefix}-dark-border-color);
+    --#{$prefix}-placeholder-color: var(--#{$prefix}-dark-placeholder-color);
+    --#{$prefix}-disabled-bg: var(--#{$prefix}-dark-disabled-bg);
+    --#{$prefix}-disabled-fg: var(--#{$prefix}-dark-disabled-fg);
+    --#{$prefix}-success-color: var(--#{$prefix}-dark-success-color);
+    --#{$prefix}-danger-color: var(--#{$prefix}-dark-danger-color);
+    --#{$prefix}-warning-color: var(--#{$prefix}-dark-warning-color);
+    --#{$prefix}-file-button-bg: #374151;
+    --#{$prefix}-file-button-fg: #d1d5db;
+    --#{$prefix}-file-button-hover-bg: #4b5563;
 
-.form-control-sm::-webkit-file-upload-button {
-    padding: 0.25rem 0.5rem;
-    margin: -0.25rem -0.5rem;
-    margin-inline-end: 0.5rem;
-}
-
-.form-control-lg {
-    min-height: calc(1.5em + 1rem + 2px);
-    padding: 0.5rem 1rem;
-    font-size: 1.25rem;
-    border-radius: 0.3rem;
-}
-
-.form-control-lg::file-selector-button {
-    padding: 0.5rem 1rem;
-    margin: -0.5rem -1rem;
-    margin-inline-end: 1rem;
-}
-
-.form-control-lg::-webkit-file-upload-button {
-    padding: 0.5rem 1rem;
-    margin: -0.5rem -1rem;
-    margin-inline-end: 1rem;
-}
-
-textarea.form-control {
-    min-height: calc(1.5em + 0.75rem + 2px);
-}
-
-textarea.form-control-sm {
-    min-height: calc(1.5em + 0.5rem + 2px);
-}
-
-textarea.form-control-lg {
-    min-height: calc(1.5em + 1rem + 2px);
-}
-
-.form-control-color {
-    width: 3rem;
-    height: auto;
-    padding: 0.375rem;
-}
-
-.form-control-color:not(:disabled):not([readonly]) {
-    cursor: pointer;
-}
-
-.form-control-color::-moz-color-swatch {
-    height: 1.5em;
-    border-radius: 0.25rem;
-}
-
-.form-control-color::-webkit-color-swatch {
-    height: 1.5em;
-    border-radius: 0.25rem;
+    &.#{$prefix}--filled {
+        --#{$prefix}-bg: #374151;
+        --#{$prefix}-border-color: #374151;
+        &:focus-visible {
+            --#{$prefix}-bg: var(--#{$prefix}-dark-bg);
+        }
+    }
 }

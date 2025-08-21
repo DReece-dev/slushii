@@ -1,21 +1,176 @@
-.form-label {
-    margin-bottom: 0.5rem;
+@use "sass:map";
 
-    &.sm {
-        padding-top: calc(0.25rem + 1px);
-        padding-bottom: calc(0.25rem + 1px);
-        font-size: 0.875rem;
+$prefix: "form-label" !default;
+
+// --- Configuration Map ---
+$config: (
+    // Typography
+    "font-size": 1rem,
+    "font-weight": 500,
+    // Medium weight for better readability
+    "line-height": 1.5,
+
+    // Box Model
+    "margin-bottom": 0.5rem,
+
+    // Colors (Light Theme)
+    "fg": #374151,
+    "required-color": #dc2626,
+    "optional-color": #6b7280,
+    "disabled-fg": #9ca3af,
+
+    // Dark Theme
+    "dark-fg": #d1d5db,
+    "dark-required-color": #ef4444,
+    "dark-optional-color": #9ca3af,
+    "dark-disabled-fg": #6b7280,
+
+    // Sizing Variants
+    "font-size-xs": 0.75rem,
+    "font-size-sm": 0.875rem,
+    "font-size-lg": 1.125rem,
+    "font-size-xl": 1.25rem
+) !default;
+
+// --- Base Component ---
+.#{$prefix} {
+    // Generate CSS Custom Properties from the config map
+    @each $key, $value in $config {
+        --#{$prefix}-#{$key}: #{$value};
     }
 
-    &.lg {
-        padding-top: calc(0.5rem + 1px);
-        padding-bottom: calc(0.5rem + 1px);
-        font-size: 1.25rem;
-    }
+    display: inline-block;
+    font-size: var(--#{$prefix}-font-size);
+    font-weight: var(--#{$prefix}-font-weight);
+    line-height: var(--#{$prefix}-line-height);
+    color: var(--#{$prefix}-fg);
+    margin-bottom: var(--#{$prefix}-margin-bottom);
+    cursor: pointer;
+}
 
-    &.xl {
-        padding-top: calc(0.8rem + 1px);
-        padding-bottom: calc(0.8rem + 1px);
-        font-size: 1.55rem;
-    }
+// =============================================================================
+// --- 25 NEW VARIANTS ---
+// =============================================================================
+
+// --- Sizing Variants (4) ---
+.#{$prefix}--xs {
+    --#{$prefix}-font-size: var(--#{$prefix}-font-size-xs);
+}
+.#{$prefix}--sm {
+    --#{$prefix}-font-size: var(--#{$prefix}-font-size-sm);
+}
+.#{$prefix}--lg {
+    --#{$prefix}-font-size: var(--#{$prefix}-font-size-lg);
+}
+.#{$prefix}--xl {
+    --#{$prefix}-font-size: var(--#{$prefix}-font-size-xl);
+}
+
+// --- Typography Variants (7) ---
+.#{$prefix}--font-light {
+    font-weight: 300;
+}
+.#{$prefix}--font-normal {
+    --#{$prefix}-font-weight: 400;
+}
+.#{$prefix}--font-semibold {
+    --#{$prefix}-font-weight: 600;
+}
+.#{$prefix}--font-bold {
+    --#{$prefix}-font-weight: 700;
+}
+.#{$prefix}--uppercase {
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+.#{$prefix}--italic {
+    font-style: italic;
+}
+.#{$prefix}--nowrap {
+    white-space: nowrap;
+}
+
+// --- Structural & Style Variants (7) ---
+// Adds a red asterisk for required fields
+.#{$prefix}--required::after {
+    content: " *";
+    color: var(--#{$prefix}-required-color);
+    font-weight: var(--#{$prefix}-font-weight);
+}
+// Adds a subtle "(optional)" text
+.#{$prefix}--optional::after {
+    content: " (optional)";
+    color: var(--#{$prefix}-optional-color);
+    font-size: 0.9em;
+    font-weight: 400;
+    margin-left: 0.5em;
+}
+// For labels that are not stacked on top of inputs
+.#{$prefix}--inline {
+    margin-bottom: 0;
+    vertical-align: middle;
+}
+// For aligning with form-check controls
+.#{$prefix}--check {
+    font-weight: 400; // Check labels are typically normal weight
+    margin-bottom: 0;
+}
+// Removes the bottom margin
+.#{$prefix}--no-margin {
+    --#{$prefix}-margin-bottom: 0;
+}
+// Visually hides the label, but keeps it accessible for screen readers
+.#{$prefix}--visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+// Adds a colon at the end of the label text
+.#{$prefix}--colon::after {
+    content: ":";
+}
+
+// --- State & Color Variants (7) ---
+// For disabled elements
+.#{$prefix}--disabled {
+    color: var(--#{$prefix}-disabled-fg);
+    cursor: not-allowed;
+}
+// Muted color for secondary labels
+.#{$prefix}--muted {
+    --#{$prefix}-fg: var(--#{$prefix}-optional-color);
+}
+// Contextual colors
+.#{$prefix}--success {
+    --#{$prefix}-fg: var(--form-control-success-color, #16a34a);
+}
+.#{$prefix}--danger {
+    --#{$prefix}-fg: var(--form-control-danger-color, #dc2626);
+}
+.#{$prefix}--warning {
+    --#{$prefix}-fg: var(--form-control-warning-color, #f97316);
+}
+.#{$prefix}--info {
+    --#{$prefix}-fg: #0ea5e9;
+}
+// Uses custom properties for a color fill, making it look like a badge
+.#{$prefix}--badge {
+    padding: 0.25em 0.6em;
+    border-radius: 0.25rem;
+    color: #fff;
+    background-color: var(--#{$prefix}-fg); // Uses the current text color as bg
+}
+
+// --- Dark Mode ---
+.dark .#{$prefix} {
+    --#{$prefix}-fg: var(--#{$prefix}-dark-fg);
+    --#{$prefix}-required-color: var(--#{$prefix}-dark-required-color);
+    --#{$prefix}-optional-color: var(--#{$prefix}-dark-optional-color);
+    --#{$prefix}-disabled-fg: var(--#{$prefix}-dark-disabled-fg);
 }

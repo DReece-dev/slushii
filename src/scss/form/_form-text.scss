@@ -1,20 +1,191 @@
-// Variables
-$spacer-quarter: 0.25rem;
-$font-size-sm: 0.875em;
-$gray-600: #6c757d;
-$danger: #ff4d4f;
-$spacer-half: 0.8rem;
-$spacer-zero: 0;
+@use "sass:map";
 
-// Styles
-.form-text {
-    margin-top: $spacer-quarter;
-    font-size: $font-size-sm;
-    color: $gray-600;
+$prefix: "form-text" !default;
+
+// --- Configuration Map ---
+$config: (
+    // Typography
+    "font-size": 0.875rem,
+    // Default to a smaller size
+    "font-weight": 400,
+    "line-height": 1.4,
+
+    // Box Model
+    "margin-top": 0.25rem,
+    "icon-gap": 0.375rem,
+
+    // Colors (Light Theme)
+    "fg": #6b7280,
+    // Default muted color
+    "success-fg": #15803d,
+    "danger-fg": #b91c1c,
+    "warning-fg": #b45309,
+    "info-fg": #0369a1,
+    "disabled-fg": #9ca3af,
+
+    // Dark Theme
+    "dark-fg": #9ca3af,
+    "dark-success-fg": #34d399,
+    "dark-danger-fg": #f87171,
+    "dark-warning-fg": #fbbf24,
+    "dark-info-fg": #60a5fa,
+    "dark-disabled-fg": #6b7280,
+
+    // Sizing
+    "font-size-xs": "0.75rem",
+    "font-size-sm": "0.875rem",
+    "font-size-lg": "1rem",
+    "font-size-xl": "1.125rem"
+) !default;
+
+// --- Keyframes ---
+@keyframes helper-fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes helper-slide-up {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.invalid-feedback {
-    color: $danger;
-    font-size: 1.4rem;
-    padding: $spacer-half $spacer-zero;
+// --- Base Component ---
+.#{$prefix} {
+    @each $key, $value in $config {
+        --#{$prefix}-#{$key}: #{$value};
+    }
+
+    display: block;
+    margin-top: var(--#{$prefix}-margin-top);
+    font-size: var(--#{$prefix}-font-size);
+    font-weight: var(--#{$prefix}-font-weight);
+    line-height: var(--#{$prefix}-line-height);
+    color: var(--#{$prefix}-fg);
+}
+
+// =============================================================================
+// --- 25 NEW VARIANTS ---
+// =============================================================================
+
+// --- Sizing Variants (4) ---
+.#{$prefix}--xs {
+    --#{$prefix}-font-size: var(--#{$prefix}-font-size-xs);
+}
+.#{$prefix}--sm {
+    --#{$prefix}-font-size: var(--#{$prefix}-font-size-sm);
+} // Default size
+.#{$prefix}--lg {
+    --#{$prefix}-font-size: var(--#{$prefix}-font-size-lg);
+}
+.#{$prefix}--xl {
+    --#{$prefix}-font-size: var(--#{$prefix}-font-size-xl);
+}
+
+// --- State & Color Variants (5) ---
+.#{$prefix}--success {
+    color: var(--#{$prefix}-success-fg);
+}
+.#{$prefix}--danger {
+    color: var(--#{$prefix}-danger-fg);
+} // Replaces .invalid-feedback
+.#{$prefix}--warning {
+    color: var(--#{$prefix}-warning-fg);
+}
+.#{$prefix}--info {
+    color: var(--#{$prefix}-info-fg);
+}
+.#{$prefix}--disabled {
+    color: var(--#{$prefix}-disabled-fg);
+}
+
+// --- Typography Variants (6) ---
+.#{$prefix}--font-medium {
+    --#{$prefix}-font-weight: 500;
+}
+.#{$prefix}--font-semibold {
+    --#{$prefix}-font-weight: 600;
+}
+.#{$prefix}--italic {
+    font-style: italic;
+}
+.#{$prefix}--uppercase {
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+.#{$prefix}--text-center {
+    text-align: center;
+}
+.#{$prefix}--text-end {
+    text-align: right;
+}
+
+// --- Structural & Style Variants (7) ---
+.#{$prefix}--no-margin {
+    --#{$prefix}-margin-top: 0;
+}
+.#{$prefix}--inline {
+    display: inline-block;
+}
+.#{$prefix}--with-icon {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--#{$prefix}-icon-gap);
+    > svg {
+        flex-shrink: 0;
+        width: 1em;
+        height: 1em;
+        margin-top: 0.15em; // Fine-tune alignment
+    }
+}
+.#{$prefix}--block {
+    width: 100%;
+}
+// For character counters, often paired with --text-end
+.#{$prefix}--counter {
+    --#{$prefix}-font-size: var(--#{$prefix}-font-size-xs);
+}
+.#{$prefix}--visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+.#{$prefix}--multiline {
+    white-space: pre-line;
+    line-height: 1.6;
+}
+
+// --- Animation Variants (3) ---
+.#{$prefix}--animated-fade-in {
+    animation: helper-fade-in 0.3s ease-out;
+}
+.#{$prefix}--animated-slide-up {
+    animation: helper-slide-up 0.3s ease-out;
+}
+.#{$prefix}--animated-on-danger.c-form-helper-text--danger {
+    animation: helper-slide-up 0.3s ease-out;
+}
+
+// --- Dark Mode ---
+.dark .#{$prefix} {
+    --#{$prefix}-fg: var(--#{$prefix}-dark-fg);
+    --#{$prefix}-success-fg: var(--#{$prefix}-dark-success-fg);
+    --#{$prefix}-danger-fg: var(--#{$prefix}-dark-danger-fg);
+    --#{$prefix}-warning-fg: var(--#{$prefix}-dark-warning-fg);
+    --#{$prefix}-info-fg: var(--#{$prefix}-dark-info-fg);
+    --#{$prefix}-disabled-fg: var(--#{$prefix}-dark-disabled-fg);
 }
