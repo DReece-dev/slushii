@@ -8,6 +8,7 @@
 @use "box";
 @use "pagination";
 @use "modal";
+@use "dialog";
 @use "card";
 @use "chip";
 @use "label";
@@ -42,3 +43,6 @@
 @use "avatar";
 @use "skeleton";
 @use "draggable";
+@use "loading-bar";
+@use "code-block";
+@use "color-picker";

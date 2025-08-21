@@ -1,0 +1,286 @@
+@use "sass:map";
+
+$color-picker-prefix: "color-picker" !default;
+
+$color-picker-sizes: (
+    "sm": 220px,
+    "md": 260px,
+    "lg": 300px,
+) !default;
+
+$color-picker-radii: (
+    "sm": 0.25rem,
+    "md": 0.5rem,
+    "lg": 0.75rem,
+) !default;
+
+/*
+    NOTE ON USAGE:
+    This component is highly dependent on JavaScript for functionality.
+    JS is needed to:
+    1. Toggle the visibility of the `__panel`.
+    2. Update handle positions on the `__sv-panel` and sliders.
+    3. Update CSS variables like `--selected-color`, `--selected-hue`, etc.
+    4. Handle color model conversions and update input values.
+*/
+.#{$color-picker-prefix} {
+    // CSS variables for complete control
+    --color-picker-size: #{map.get($color-picker-sizes, "md")};
+    --color-picker-radius: #{map.get($color-picker-radii, "md")};
+    --color-picker-bg: var(--white, #ffffff);
+    --color-picker-fg: var(--gray-800, #1f2937);
+    --color-picker-border-color: var(--gray-200, #e5e7eb);
+    --color-picker-panel-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    --color-picker-handle-size: 16px;
+    --color-picker-handle-color: var(--white, #ffffff);
+    --color-picker-checkerboard-color: var(--gray-200, #e5e7eb);
+
+    // JS-Controlled Variables
+    --selected-color: #007acc; // The final, fully calculated color
+    --selected-hue: 207; // The hue value (0-360) for the SV panel
+
+    display: inline-block;
+    position: relative;
+
+    // BEM: Trigger Element
+    // The button that opens the picker and shows the current color.
+    &__trigger {
+        width: 36px;
+        height: 36px;
+        border-radius: #{map.get($color-picker-radii, "sm")};
+        border: 1px solid var(--color-picker-border-color);
+        cursor: pointer;
+        background-color: var(--selected-color);
+        // Checkerboard pattern for visualizing transparency
+        background-image: repeating-conic-gradient(
+            var(--color-picker-checkerboard-color) 0% 25%,
+            transparent 0% 50%
+        );
+        background-size: 16px 16px;
+    }
+
+    // BEM: Panel Element
+    // The main popover that contains all the controls.
+    &__panel {
+        position: absolute;
+        top: calc(100% + 8px);
+        left: 0;
+        z-index: 10;
+        width: var(--color-picker-size);
+        background-color: var(--color-picker-bg);
+        border-radius: var(--color-picker-radius);
+        box-shadow: var(--color-picker-panel-shadow);
+        padding: 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition:
+            opacity 0.2s ease,
+            transform 0.2s ease,
+            visibility 0.2s;
+
+        // JS Hook: Add `.is-open` to show the panel
+        &.is-open {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+    }
+
+    // BEM: Saturation-Value (SV) Panel
+    &__sv-panel {
+        position: relative;
+        width: 100%;
+        height: calc(var(--color-picker-size) * 0.6);
+        border-radius: #{map.get($color-picker-radii, "sm")};
+        cursor: crosshair;
+        // The magic: the background color is the pure hue, controlled by JS.
+        // Two gradients are overlaid to create the saturation/value plane.
+        background-color: hsl(var(--selected-hue), 100%, 50%);
+        background-image:
+            linear-gradient(to right, white, transparent),
+            linear-gradient(to top, black, transparent);
+    }
+
+    // BEM: Draggable Handle for SV Panel and Sliders
+    &__handle {
+        position: absolute;
+        width: var(--color-picker-handle-size);
+        height: var(--color-picker-handle-size);
+        border-radius: 50%;
+        border: 2px solid var(--color-picker-handle-color);
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+        transform: translate(-50%, -50%); // Center the handle on the cursor
+        pointer-events: none; // Allows clicks to pass through to the panel
+    }
+
+    // BEM: Controls Container (for sliders)
+    &__controls {
+        display: flex;
+        gap: 12px;
+    }
+
+    // BEM: Sliders Container
+    &__sliders {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    // BEM: Generic Slider Track
+    &__slider {
+        position: relative;
+        width: 100%;
+        height: 12px;
+        border-radius: 999px;
+        cursor: pointer;
+
+        .#{$color-picker-prefix}__handle {
+            top: 50%; // Center handle vertically
+        }
+    }
+
+    // BEM: Hue Slider
+    &__hue-slider {
+        background-image: linear-gradient(
+            to right,
+            red,
+            yellow,
+            lime,
+            cyan,
+            blue,
+            magenta,
+            red
+        );
+    }
+
+    // BEM: Alpha (Opacity) Slider
+    &__alpha-slider {
+        background-image:
+            repeating-conic-gradient(
+                var(--color-picker-checkerboard-color) 0% 25%,
+                transparent 0% 50%
+            ),
+            linear-gradient(
+                to right,
+                transparent,
+                hsl(var(--selected-hue), 100%, 50%)
+            );
+        background-size:
+            12px 12px,
+            100% 100%;
+    }
+
+    // BEM: Eyedropper & Preview
+    &__tools {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    // BEM: Eyedropper Button
+    &__eyedropper {
+        // Style your eyedropper button here
+    }
+
+    // BEM: Color Preview Swatch
+    &__preview {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        border: 1px solid var(--color-picker-border-color);
+        background-color: var(--selected-color);
+        background-image: repeating-conic-gradient(
+            var(--color-picker-checkerboard-color) 0% 25%,
+            transparent 0% 50%
+        );
+        background-size: 10px 10px;
+    }
+
+    // BEM: Predefined Swatches
+    &__swatches {
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        gap: 8px;
+    }
+    &__swatch {
+        width: 100%;
+        padding-bottom: 100%; // Aspect ratio 1:1 trick
+        border-radius: 50%;
+        cursor: pointer;
+        border: 1px solid transparent;
+        &:hover {
+            border-color: var(--color-picker-fg);
+        }
+    }
+
+    // BEM: Manual Input Fields
+    &__inputs {
+        display: grid;
+        grid-template-columns: 2fr repeat(3, 1fr); // HEX, R, G, B
+        gap: 8px;
+        align-items: center;
+        text-align: center;
+        font-size: 0.875rem;
+
+        input {
+            width: 100%;
+            padding: 4px;
+            border: 1px solid var(--color-picker-border-color);
+            border-radius: #{map.get($color-picker-radii, "sm")};
+            background-color: transparent;
+            color: inherit;
+            text-align: center;
+        }
+        label {
+            color: var(--gray-500, #6b7280);
+        }
+    }
+}
+
+@each $name, $size in $color-picker-sizes {
+    .#{$color-picker-prefix}--size-#{$name} {
+        --color-picker-size: #{$size};
+    }
+}
+
+@each $name, $radius in $color-picker-radii {
+    .#{$color-picker-prefix}--radius-#{$name} {
+        --color-picker-radius: #{$radius};
+    }
+}
+
+// Modifier: Square Trigger
+.#{$color-picker-prefix}--trigger-square {
+    .#{$color-picker-prefix}__trigger {
+        border-radius: 0;
+    }
+}
+
+// Modifier: No Swatches
+.#{$color-picker-prefix}--no-swatches {
+    .#{$color-picker-prefix}__swatches {
+        display: none;
+    }
+}
+
+// Modifier: No Inputs
+.#{$color-picker-prefix}--no-inputs {
+    .#{$color-picker-prefix}__inputs {
+        display: none;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .#{$color-picker-prefix} {
+        --color-picker-bg: #2d3748; // gray-800
+        --color-picker-fg: #f7fafc; // gray-100
+        --color-picker-border-color: #4a5568; // gray-600
+        --color-picker-handle-color: #1a202c; // gray-900
+        --color-picker-checkerboard-color: #4a5568; // gray-600
+    }
+}

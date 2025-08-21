@@ -1,0 +1,311 @@
+@use "sass:map";
+
+$loading-bar-prefix: "loading-bar" !default;
+
+$loading-bar-heights: (
+    "sm": 0.25rem,
+    // 4px
+    "md": 0.5rem,
+    // 8px
+    "lg": 0.75rem, // 12px
+) !default;
+
+$loading-bar-colors: (
+    "info": var(--blue-500, #3b82f6),
+    "success": var(--green-500, #22c55e),
+    "warning": var(--yellow-500, #eab308),
+    "danger": var(--red-500, #ef4444),
+) !default;
+
+@keyframes loading-bar-indeterminate {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(250%);
+    }
+}
+
+@keyframes loading-bar-stripes {
+    from {
+        background-position: 1rem 0;
+    }
+    to {
+        background-position: 0 0;
+    }
+}
+
+@keyframes loading-bar-flash {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.6;
+    }
+}
+
+@keyframes loading-bar-pulse {
+    0%,
+    100% {
+        filter: brightness(1);
+    }
+    50% {
+        filter: brightness(1.2);
+    }
+}
+
+.#{$loading-bar-prefix} {
+    --loading-bar-height: #{map.get($loading-bar-heights, "md")};
+    --loading-bar-bg: var(--gray-200, #e5e7eb);
+    --loading-bar-fg: var(--blue-600, #2563eb);
+    --loading-bar-radius: 9999px;
+    --loading-bar-value: 0;
+    --loading-bar-label-color: var(--gray-700, #374151);
+
+    display: block;
+    position: relative; // For positioning labels and other elements
+    width: 100%;
+    height: var(--loading-bar-height);
+    background-color: var(--loading-bar-bg);
+    border-radius: var(--loading-bar-radius);
+    overflow: hidden;
+
+    &__indicator {
+        height: 100%;
+        width: calc(var(--loading-bar-value) * 1%);
+        background-color: var(--loading-bar-fg);
+        border-radius: inherit;
+        transition: width 0.3s ease-in-out;
+    }
+}
+
+@each $name, $height in $loading-bar-heights {
+    .#{$loading-bar-prefix}--height-#{$name} {
+        --loading-bar-height: #{$height};
+    }
+}
+@each $name, $color in $loading-bar-colors {
+    .#{$loading-bar-prefix}--color-#{$name} {
+        --loading-bar-fg: #{$color};
+    }
+}
+
+.#{$loading-bar-prefix}--sharp {
+    --loading-bar-radius: 0;
+}
+.#{$loading-bar-prefix}--striped .#{$loading-bar-prefix}__indicator {
+    background-image: linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.15) 25%,
+        transparent 25%,
+        transparent 50%,
+        rgba(255, 255, 255, 0.15) 50%,
+        rgba(255, 255, 255, 0.15) 75%,
+        transparent 75%,
+        transparent
+    );
+    background-size: 1rem 1rem;
+}
+.#{$loading-bar-prefix}--animated .#{$loading-bar-prefix}__indicator {
+    animation: loading-bar-stripes 1s linear infinite;
+}
+.#{$loading-bar-prefix}--indeterminate .#{$loading-bar-prefix}__indicator {
+    width: 40%;
+    transition: none;
+    animation: loading-bar-indeterminate 1.5s ease-in-out infinite;
+}
+
+// --- Aesthetic & Style Variants (10) ---
+.#{$loading-bar-prefix}--gradient .#{$loading-bar-prefix}__indicator {
+    background-image: linear-gradient(
+        to right,
+        var(--loading-bar-fg),
+        var(--loading-bar-bg)
+    );
+}
+.#{$loading-bar-prefix}--glowing {
+    box-shadow: 0 0 12px -2px var(--loading-bar-fg);
+}
+.#{$loading-bar-prefix}--trackless {
+    --loading-bar-bg: transparent;
+}
+.#{$loading-bar-prefix}--bordered {
+    border: 1px solid var(--gray-300, #d1d5db);
+}
+.#{$loading-bar-prefix}--inset .#{$loading-bar-prefix}__indicator {
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.#{$loading-bar-prefix}--thin-indicator {
+    padding: 2px;
+    .#{$loading-bar-prefix}__indicator {
+        height: calc(100% - 4px);
+    }
+}
+.#{$loading-bar-prefix}--dotted .#{$loading-bar-prefix}__indicator {
+    background-image: repeating-linear-gradient(
+        to right,
+        var(--loading-bar-fg),
+        var(--loading-bar-fg) 5px,
+        transparent 5px,
+        transparent 10px
+    );
+}
+.#{$loading-bar-prefix}--radius-sm {
+    --loading-bar-radius: 0.25rem;
+}
+.#{$loading-bar-prefix}--radius-md {
+    --loading-bar-radius: 0.5rem;
+}
+.#{$loading-bar-prefix}--smooth-animation .#{$loading-bar-prefix}__indicator {
+    transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+// --- Structural & Layout Variants (8) ---
+.#{$loading-bar-prefix}--page-top {
+    @extend .#{$loading-bar-prefix}--sharp;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}
+.#{$loading-bar-prefix}--vertical {
+    width: var(--loading-bar-height);
+    height: 10rem;
+    .#{$loading-bar-prefix}__indicator {
+        width: 100%;
+        height: calc(var(--loading-bar-value) * 1%);
+        transition: height 0.3s ease-in-out;
+    }
+}
+.#{$loading-bar-prefix}--contained {
+    max-width: 400px;
+}
+.#{$loading-bar-prefix}--segmented {
+    --segments: 5;
+    background-color: transparent;
+    border-radius: 0;
+    background-image: repeating-linear-gradient(
+        to right,
+        var(--loading-bar-bg) 0,
+        var(--loading-bar-bg) calc(100% / var(--segments) - 4px),
+        transparent 0,
+        transparent calc(100% / var(--segments))
+    );
+}
+.#{$loading-bar-prefix}--reversed {
+    .#{$loading-bar-prefix}__indicator {
+        transform-origin: right;
+        right: 0;
+        left: auto;
+    }
+}
+.#{$loading-bar-prefix}--mirrored {
+    display: flex;
+    justify-content: center;
+    .#{$loading-bar-prefix}__indicator {
+        width: calc(
+            var(--loading-bar-value) * 0.5%
+        ); /* Two indicators needed in HTML */
+    }
+}
+.#{$loading-bar-prefix}--within-button {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-bottom-left-radius: inherit;
+    border-bottom-right-radius: inherit;
+}
+.#{$loading-bar-prefix}--multi-bar {
+    display: flex;
+    padding: 0; /* Requires multiple __indicator divs with different --loading-bar-value */
+}
+
+// --- Label & Content Variants (6) ---
+.#{$loading-bar-prefix}__label {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: calc(var(--loading-bar-height) * 0.8);
+    line-height: 1;
+    color: var(--loading-bar-label-color);
+}
+.#{$loading-bar-prefix}--label-inside {
+    overflow: visible;
+    .#{$loading-bar-prefix}__indicator {
+        overflow: hidden;
+    }
+    .#{$loading-bar-prefix}__indicator .#{$loading-bar-prefix}__label {
+        color: white;
+    }
+}
+.#{$loading-bar-prefix}--label-outside {
+    overflow: visible;
+    padding-right: 4em;
+    .#{$loading-bar-prefix}__label {
+        text-align: right;
+        width: auto;
+        right: 0;
+    }
+}
+.#{$loading-bar-prefix}--label-on-indicator {
+    .#{$loading-bar-prefix}__label {
+        width: auto;
+        right: 5px;
+        color: white;
+        transform: translate(
+            calc(var(--loading-bar-value) * -1%),
+            -50%
+        ); /* Complex positioning */
+    }
+}
+.#{$loading-bar-prefix}--with-percentage::after {
+    content: attr(data-value) "%"; /* Use data-value attribute */
+}
+.#{$loading-bar-prefix}--with-icon {
+    padding-left: 2em;
+    .#{$loading-bar-prefix}__icon {
+        position: absolute;
+        left: 5px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+// --- Behavioral & State Variants (6) ---
+.#{$loading-bar-prefix}--paused .#{$loading-bar-prefix}__indicator {
+    animation-play-state: paused !important;
+}
+.#{$loading-bar-prefix}--pulsing .#{$loading-bar-prefix}__indicator {
+    animation: loading-bar-pulse 1.2s ease-in-out infinite;
+}
+.#{$loading-bar-prefix}--error {
+    --loading-bar-fg: var(--red-500, #ef4444);
+} /* Could also add shake animation */
+/* JS Hook: Add `--is-complete` class when bar reaches 100% */
+.#{$loading-bar-prefix}--flash-on-complete.#{$loading-bar-prefix}--is-complete
+    .#{$loading-bar-prefix}__indicator {
+    animation: loading-bar-flash 0.5s ease;
+}
+/* JS Hook: Add `--is-complete` class when bar reaches 100% */
+.#{$loading-bar-prefix}--hide-on-complete.#{$loading-bar-prefix}--is-complete {
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+.#{$loading-bar-prefix}--interactive {
+    cursor: pointer;
+}
+
+@media (prefers-color-scheme: dark) {
+    .#{$loading-bar-prefix} {
+        --loading-bar-bg: var(--gray-700, #374151);
+        --loading-bar-label-color: var(--gray-300, #d1d5db);
+    }
+    .#{$loading-bar-prefix}--bordered {
+        border-color: var(--gray-600, #4b5563);
+    }
+}
